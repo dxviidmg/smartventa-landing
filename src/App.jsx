@@ -1,32 +1,30 @@
-import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
+import { ThemeProvider, CssBaseline, Box } from '@mui/material';
+import { theme } from './theme';
+import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import Problem from './components/Problem';
 import Features from './components/Features';
+import Dashboard from './components/Dashboard';
 import Benefits from './components/Benefits';
-import Screenshots from './components/Screenshots';
-import Pricing from './components/Pricing';
+import CTA from './components/CTA';
 import Contact from './components/Contact';
-
-const theme = createTheme({
-  palette: {
-    primary: { main: '#04346b' },
-    secondary: { main: '#0066cc' },
-    background: { default: '#f1f5f9' },
-  },
-  typography: {
-    fontFamily: '"Inter", "Roboto", "Helvetica", "Arial", sans-serif',
-  },
-});
+import Footer from './components/Footer';
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Hero />
-      <Features />
-      <Benefits />
-      <Screenshots />
-      <Pricing />
-      <Contact />
+      <Box>
+        <Navbar />
+        <Hero />
+        <Problem />
+        <Features />
+        <Dashboard />
+        <Benefits />
+        <CTA />
+        <Contact />
+        <Footer />
+      </Box>
     </ThemeProvider>
   );
 }
