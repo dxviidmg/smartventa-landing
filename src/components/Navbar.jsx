@@ -10,7 +10,7 @@ const Navbar = () => {
           <Box component="img" src="/src/assets/logo.jpg" alt="Smartventa" sx={{ height: 40, borderRadius: 1, cursor: 'pointer' }} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} onError={(e) => e.target.style.display = 'none'} />
           <Box sx={{ display: 'flex', gap: 2 }}>
             <Button onClick={() => scrollTo('features')} sx={{ textTransform: 'none', color: 'white', fontWeight: 500 }}>Características</Button>
-            <Button onClick={() => scrollTo('contact')} variant="contained" sx={{ textTransform: 'none', fontWeight: 500, bgcolor: 'white', color: 'primary.main', '&:hover': { bgcolor: 'rgba(255,255,255,0.9)' } }}>Solicitar demo</Button>
+            <Button onClick={() => scrollTo('contact')} variant="contained" sx={{ textTransform: 'none', fontWeight: 500, bgcolor: '#ff6b35', color: 'white', '&:hover': { bgcolor: '#e55a2b' } }}>Solicitar demo</Button>
           </Box>
         </Toolbar>
       </Container>

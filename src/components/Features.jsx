@@ -128,7 +128,7 @@ const Features = () => {
   ];
 
   return (
-    <Box id="features" sx={{ py: { xs: 8, md: 12 }, bgcolor: "background.default" }}>
+    <Box id="features" sx={{ py: { xs: 8, md: 12 }, bgcolor: "#04346b" }}>
       <Container maxWidth="xl">
         <Stack spacing={6}>
           <Stack spacing={2} alignItems="center" textAlign="center">
@@ -140,7 +140,7 @@ const Features = () => {
             >
               <Typography
                 variant="h2"
-                sx={{ fontSize: { xs: "2rem", md: "2.5rem" }, color: "text.primary" }}
+                sx={{ fontSize: { xs: "2rem", md: "2.5rem" }, color: "white" }}
               >
                 Todo lo que necesitas en una sola plataforma
               </Typography>
@@ -154,7 +154,7 @@ const Features = () => {
               <Typography
                 variant="body1"
                 sx={{
-                  color: "text.secondary",
+                  color: "rgba(255,255,255,0.9)",
                   maxWidth: "700px",
                   fontSize: "1.1rem",
                 }}
@@ -241,7 +241,7 @@ const Features = () => {
                         backfaceVisibility: 'hidden',
                         transform: 'rotateY(-180deg)',
                         transition: 'transform 0.6s',
-                        bgcolor: 'primary.main',
+                        bgcolor: '#ff6b35',
                         color: 'white',
                         boxShadow: 4,
                         overflow: 'auto',

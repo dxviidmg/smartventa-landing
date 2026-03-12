@@ -6,11 +6,11 @@ const Contact = () => {
   const openWhatsApp = () => window.open(`https://wa.me/525561652599?text=${encodeURIComponent('Hola, me interesa solicitar una demo de Smartventa')}`, '_blank');
 
   return (
-    <Box id="contact" sx={{ py: { xs: 8, md: 12 }, bgcolor: 'background.paper' }}>
+    <Box id="contact" sx={{ py: { xs: 8, md: 12 }, bgcolor: '#ffffff' }}>
       <Container maxWidth="md">
         <Box sx={{ textAlign: "center" }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
-            <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.5rem' }, mb: 2 }}>Solicita tu demo</Typography>
+            <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.5rem' }, mb: 2, color: 'text.primary' }}>Solicita tu demo</Typography>
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }}>
             <Typography variant="body1" sx={{ color: 'text.secondary', fontSize: '1.1rem', mb: 4 }}>

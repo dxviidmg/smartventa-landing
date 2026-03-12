@@ -5,7 +5,7 @@ import Hero from './components/Hero';
 import Features from './components/Features';
 import HowItWorks from './components/HowItWorks';
 import Industries from './components/Industries';
-import Comparison from './components/Comparison';
+import Stats from './components/Stats';
 import Benefits from './components/Benefits';
 import Pricing from './components/Pricing';
 import FAQ from './components/FAQ';
@@ -20,9 +20,9 @@ function App() {
         <Navbar />
         <Hero />
         <Industries />
-        <Comparison />
         <Features />
         <HowItWorks />
+        <Stats />
         <Benefits />
         <Pricing />
         <FAQ />

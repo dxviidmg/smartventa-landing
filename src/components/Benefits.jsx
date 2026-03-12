@@ -55,7 +55,7 @@ const Benefits = () => {
   ];
 
   return (
-    <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: 'primary.main', color: 'white' }}>
+    <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: '#04346b', color: 'white' }}>
       <Container maxWidth="xl">
         <Box sx={{ textAlign: "center", mb: 6 }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>

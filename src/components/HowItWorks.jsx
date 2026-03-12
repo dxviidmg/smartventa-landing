@@ -31,7 +31,7 @@ const HowItWorks = () => {
   ];
 
   return (
-    <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: 'background.paper' }}>
+    <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: '#ffffff' }}>
       <Container maxWidth="lg">
         <Stack spacing={6}>
           <Stack spacing={2} alignItems="center" textAlign="center">
@@ -74,7 +74,7 @@ const HowItWorks = () => {
                         minWidth: 80,
                         height: 80,
                         borderRadius: '50%',
-                        bgcolor: 'primary.main',
+                        bgcolor: '#ff6b35',
                         color: 'white',
                         display: 'flex',
                         alignItems: 'center',
@@ -87,7 +87,7 @@ const HowItWorks = () => {
                       {step.number}
                     </Box>
                     <motion.div
-                      animate={{ color: ['#04346b', '#1976d2', '#04346b'] }}
+                      animate={{ color: ['#ff6b35', '#ff8c42', '#ff6b35'] }}
                       transition={{ duration: 4, delay: index * 0.5, repeat: Infinity, ease: "easeInOut" }}
                     >
                       {step.icon}
