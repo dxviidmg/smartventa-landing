@@ -1,4 +1,5 @@
 import { Box, Container, Typography, Grid, Card, Stack, Paper } from '@mui/material';
+import { motion } from 'framer-motion';
 import { BarChart } from '@mui/x-charts/BarChart';
 import { LineChart } from '@mui/x-charts/LineChart';
 import { PieChart } from '@mui/x-charts/PieChart';
@@ -35,137 +36,153 @@ const Dashboard = () => {
       <Container maxWidth="lg">
         <Stack spacing={6}>
           <Stack spacing={2} alignItems="center" textAlign="center">
-            <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.5rem' } }}>
-              Dashboard con métricas en tiempo real
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{ color: 'text.secondary', maxWidth: '700px', fontSize: '1.1rem' }}
-            >
-              Visualiza el rendimiento de tu negocio con reportes y gráficos actualizados
-            </Typography>
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
+              <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.5rem' } }}>
+                Dashboard con métricas en tiempo real
+              </Typography>
+            </motion.div>
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }}>
+              <Typography
+                variant="body1"
+                sx={{ color: 'text.secondary', maxWidth: '700px', fontSize: '1.1rem' }}
+              >
+                Visualiza el rendimiento de tu negocio con reportes y gráficos actualizados
+              </Typography>
+            </motion.div>
           </Stack>
 
           <Grid container spacing={3}>
             <Grid item xs={12} md={8}>
-              <Card sx={{ bgcolor: 'white', height: '100%' }}>
-                <Stack spacing={2}>
-                  <Typography variant="h6" sx={{ fontWeight: 600 }}>
-                    Ventas Mensuales
-                  </Typography>
-                  <Box sx={{ width: '100%', height: 300 }}>
-                    <BarChart
-                      dataset={salesData}
-                      xAxis={[{ scaleType: 'band', dataKey: 'month' }]}
-                      series={[
-                        {
-                          dataKey: 'ventas',
-                          label: 'Ventas ($)',
-                          color: '#04346b',
-                        },
-                      ]}
-                      height={300}
-                    />
-                  </Box>
-                </Stack>
-              </Card>
+              <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }} style={{ height: '100%' }}>
+                <Card sx={{ bgcolor: 'white', height: '100%' }}>
+                  <Stack spacing={2}>
+                    <Typography variant="h6" sx={{ fontWeight: 600 }}>
+                      Ventas Mensuales
+                    </Typography>
+                    <Box sx={{ width: '100%', height: 300 }}>
+                      <BarChart
+                        dataset={salesData}
+                        xAxis={[{ scaleType: 'band', dataKey: 'month' }]}
+                        series={[
+                          {
+                            dataKey: 'ventas',
+                            label: 'Ventas ($)',
+                            color: '#04346b',
+                          },
+                        ]}
+                        height={300}
+                      />
+                    </Box>
+                  </Stack>
+                </Card>
+              </motion.div>
             </Grid>
 
             <Grid item xs={12} md={4}>
-              <Card sx={{ bgcolor: 'white', height: '100%' }}>
-                <Stack spacing={2}>
-                  <Typography variant="h6" sx={{ fontWeight: 600 }}>
-                    Ventas por Tienda
-                  </Typography>
-                  <Box sx={{ width: '100%', height: 300, display: 'flex', justifyContent: 'center' }}>
-                    <PieChart
-                      series={[
-                        {
-                          data: storesData,
-                          highlightScope: { faded: 'global', highlighted: 'item' },
-                        },
-                      ]}
-                      height={300}
-                      slotProps={{
-                        legend: { hidden: true },
-                      }}
-                    />
-                  </Box>
-                </Stack>
-              </Card>
+              <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.1 }} style={{ height: '100%' }}>
+                <Card sx={{ bgcolor: 'white', height: '100%' }}>
+                  <Stack spacing={2}>
+                    <Typography variant="h6" sx={{ fontWeight: 600 }}>
+                      Ventas por Tienda
+                    </Typography>
+                    <Box sx={{ width: '100%', height: 300, display: 'flex', justifyContent: 'center' }}>
+                      <PieChart
+                        series={[
+                          {
+                            data: storesData,
+                            highlightScope: { faded: 'global', highlighted: 'item' },
+                          },
+                        ]}
+                        height={300}
+                        slotProps={{
+                          legend: { hidden: true },
+                        }}
+                      />
+                    </Box>
+                  </Stack>
+                </Card>
+              </motion.div>
             </Grid>
 
             <Grid item xs={12}>
-              <Card sx={{ bgcolor: 'white' }}>
-                <Stack spacing={2}>
-                  <Typography variant="h6" sx={{ fontWeight: 600 }}>
-                    Movimiento de Inventario
+              <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.2 }}>
+                <Card sx={{ bgcolor: 'white' }}>
+                  <Stack spacing={2}>
+                    <Typography variant="h6" sx={{ fontWeight: 600 }}>
+                      Movimiento de Inventario
+                    </Typography>
+                    <Box sx={{ width: '100%', height: 300 }}>
+                      <LineChart
+                        dataset={inventoryData}
+                        xAxis={[{ scaleType: 'band', dataKey: 'day' }]}
+                        series={[
+                          {
+                            dataKey: 'stock',
+                            label: 'Productos en Stock',
+                            color: '#04346b',
+                            curve: 'natural',
+                          },
+                        ]}
+                        height={300}
+                      />
+                    </Box>
+                  </Stack>
+                </Card>
+              </motion.div>
+            </Grid>
+
+            <Grid item xs={12} sm={4}>
+              <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.3 }}>
+                <Paper
+                  sx={{
+                    p: 3,
+                    bgcolor: 'primary.main',
+                    color: 'white',
+                    textAlign: 'center',
+                  }}
+                >
+                  <Typography variant="h3" sx={{ fontWeight: 600, mb: 1 }}>
+                    4
                   </Typography>
-                  <Box sx={{ width: '100%', height: 300 }}>
-                    <LineChart
-                      dataset={inventoryData}
-                      xAxis={[{ scaleType: 'band', dataKey: 'day' }]}
-                      series={[
-                        {
-                          dataKey: 'stock',
-                          label: 'Productos en Stock',
-                          color: '#04346b',
-                          curve: 'natural',
-                        },
-                      ]}
-                      height={300}
-                    />
-                  </Box>
-                </Stack>
-              </Card>
+                  <Typography variant="body1">Tiendas Activas</Typography>
+                </Paper>
+              </motion.div>
             </Grid>
 
             <Grid item xs={12} sm={4}>
-              <Paper
-                sx={{
-                  p: 3,
-                  bgcolor: 'primary.main',
-                  color: 'white',
-                  textAlign: 'center',
-                }}
-              >
-                <Typography variant="h3" sx={{ fontWeight: 600, mb: 1 }}>
-                  4
-                </Typography>
-                <Typography variant="body1">Tiendas Activas</Typography>
-              </Paper>
+              <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.4 }}>
+                <Paper
+                  sx={{
+                    p: 3,
+                    bgcolor: 'primary.main',
+                    color: 'white',
+                    textAlign: 'center',
+                  }}
+                >
+                  <Typography variant="h3" sx={{ fontWeight: 600, mb: 1 }}>
+                    $67K
+                  </Typography>
+                  <Typography variant="body1">Ventas del Mes</Typography>
+                </Paper>
+              </motion.div>
             </Grid>
 
             <Grid item xs={12} sm={4}>
-              <Paper
-                sx={{
-                  p: 3,
-                  bgcolor: 'primary.main',
-                  color: 'white',
-                  textAlign: 'center',
-                }}
-              >
-                <Typography variant="h3" sx={{ fontWeight: 600, mb: 1 }}>
-                  $67K
-                </Typography>
-                <Typography variant="body1">Ventas del Mes</Typography>
-              </Paper>
-            </Grid>
-
-            <Grid item xs={12} sm={4}>
-              <Paper
-                sx={{
-                  p: 3,
-                  bgcolor: 'primary.main',
-                  color: 'white',
-                  textAlign: 'center',
-                }}
-              >
-                <Typography variant="h3" sx={{ fontWeight: 600, mb: 1 }}>
-                  980
-                </Typography>
-                <Typography variant="body1">Productos en Stock</Typography>
-              </Paper>
+              <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.5 }}>
+                <Paper
+                  sx={{
+                    p: 3,
+                    bgcolor: 'primary.main',
+                    color: 'white',
+                    textAlign: 'center',
+                  }}
+                >
+                  <Typography variant="h3" sx={{ fontWeight: 600, mb: 1 }}>
+                    980
+                  </Typography>
+                  <Typography variant="body1">Productos en Stock</Typography>
+                </Paper>
+              </motion.div>
             </Grid>
           </Grid>
         </Stack>

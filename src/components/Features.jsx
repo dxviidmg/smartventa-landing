@@ -1,4 +1,5 @@
 import { Box, Container, Typography, Grid, Card, Stack } from '@mui/material';
+import { motion } from 'framer-motion';
 import {
   Inventory2Outlined,
   PointOfSaleOutlined,
@@ -53,23 +54,37 @@ const Features = () => {
       <Container maxWidth="xl">
         <Stack spacing={6}>
           <Stack spacing={2} alignItems="center" textAlign="center">
-            <Typography
-              variant="h2"
-              sx={{ fontSize: { xs: "2rem", md: "2.5rem" }, color: "text.primary" }}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
             >
-              Todo lo que necesitas en una sola plataforma
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{
-                color: "text.secondary",
-                maxWidth: "700px",
-                fontSize: "1.1rem",
-              }}
+              <Typography
+                variant="h2"
+                sx={{ fontSize: { xs: "2rem", md: "2.5rem" }, color: "text.primary" }}
+              >
+                Todo lo que necesitas en una sola plataforma
+              </Typography>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
             >
-              Smartventa incluye todas las herramientas para gestionar tu
-              negocio multi-tienda
-            </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  color: "text.secondary",
+                  maxWidth: "700px",
+                  fontSize: "1.1rem",
+                }}
+              >
+                Smartventa incluye todas las herramientas para gestionar tu
+                negocio multi-tienda
+              </Typography>
+            </motion.div>
           </Stack>
 
           <Grid
@@ -79,45 +94,56 @@ const Features = () => {
           >
             {features.map((feature, index) => (
               <Grid key={index} size={{ xs: 2, sm: 4, md: 4 }}>
-                <Card
-                  sx={{
-                    width: "100%",
-                    height: "100%",
-                    p: 4,
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    textAlign: "center",
-                    borderRadius: 3,
-                    transition: "transform 0.2s ease, box-shadow 0.2s ease",
-                    "&:hover": {
-                      transform: "translateY(-4px)",
-                      boxShadow: "0 12px 24px rgba(0,0,0,0.1)",
-                    },
-                  }}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  style={{ height: '100%' }}
                 >
-                  <Box sx={{ color: "primary.main", mb: 2 }}>
-                    {feature.icon}
-                  </Box>
+                  <motion.div whileHover={{ y: -8 }} transition={{ duration: 0.3 }} style={{ height: '100%' }}>
+                    <Card
+                      sx={{
+                        width: "100%",
+                        height: "100%",
+                        p: 4,
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        textAlign: "center",
+                        borderRadius: 3,
+                        transition: "box-shadow 0.3s ease",
+                        "&:hover": {
+                          boxShadow: "0 12px 24px rgba(0,0,0,0.1)",
+                        },
+                      }}
+                    >
+                      <motion.div whileHover={{ rotate: 360 }} transition={{ duration: 0.6 }}>
+                        <Box sx={{ color: "primary.main", mb: 2 }}>
+                          {feature.icon}
+                        </Box>
+                      </motion.div>
 
-                  <Typography
-                    variant="h6"
-                    sx={{ fontWeight: 600, mb: 2, minHeight: "3em" }}
-                  >
-                    {feature.title}
-                  </Typography>
+                      <Typography
+                        variant="h6"
+                        sx={{ fontWeight: 600, mb: 2, minHeight: "3em" }}
+                      >
+                        {feature.title}
+                      </Typography>
 
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      color: "text.secondary",
-                      lineHeight: 1.7,
-                      flexGrow: 1,
-                    }}
-                  >
-                    {feature.description}
-                  </Typography>
-                </Card>
+                      <Typography
+                        variant="body2"
+                        sx={{
+                          color: "text.secondary",
+                          lineHeight: 1.7,
+                          flexGrow: 1,
+                        }}
+                      >
+                        {feature.description}
+                      </Typography>
+                    </Card>
+                  </motion.div>
+                </motion.div>
               </Grid>
             ))}
           </Grid>
