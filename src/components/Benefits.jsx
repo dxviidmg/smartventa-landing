@@ -1,11 +1,5 @@
-import { Box, Container, Typography, Grid, Stack } from '@mui/material';
-import {
-  BusinessOutlined,
-  TrendingUpOutlined,
-  VerifiedOutlined,
-  SpeedOutlined,
-  CloudDoneOutlined,
-} from '@mui/icons-material';
+import { Box, Container, Typography, Grid } from '@mui/material';
+import { BusinessOutlined, TrendingUpOutlined, VerifiedOutlined, SpeedOutlined, CloudDoneOutlined } from '@mui/icons-material';
 
 const Benefits = () => {
   const benefits = [
@@ -17,30 +11,28 @@ const Benefits = () => {
   ];
 
   return (
-    <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: 'primary.main' }}>
+    <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: 'primary.main', color: 'white' }}>
       <Container maxWidth="lg">
-        <Stack spacing={6}>
-          <Stack spacing={2} alignItems="center" textAlign="center">
-            <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.5rem' }, color: 'white' }}>
-              Beneficios de usar Smartventa
-            </Typography>
-            <Typography variant="body1" sx={{ color: 'rgba(255,255,255,0.9)', maxWidth: '700px', fontSize: '1.1rem' }}>
-              Optimiza tu negocio y toma el control total de tus operaciones
-            </Typography>
-          </Stack>
+        <Box sx={{ textAlign: "center", mb: 6 }}>
+          <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.5rem' }, mb: 2 }}>
+            Beneficios de usar Smartventa
+          </Typography>
+          <Typography variant="body1" sx={{ color: 'rgba(255,255,255,0.9)', fontSize: '1.1rem' }}>
+            Optimiza tu negocio y toma el control total de tus operaciones
+          </Typography>
+        </Box>
 
-          <Grid container spacing={{ xs: 2, md: 3 }} justifyContent="center">
-            {benefits.map((benefit, index) => (
-              <Grid item xs={12} sm={6} md={4} key={index}>
-                <Stack spacing={2} alignItems="center" textAlign="center">
-                  <Box sx={{ color: 'white' }}>{benefit.icon}</Box>
-                  <Typography variant="h6" sx={{ fontWeight: 600, color: 'white' }}>{benefit.title}</Typography>
-                  <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.8)', lineHeight: 1.7 }}>{benefit.description}</Typography>
-                </Stack>
-              </Grid>
-            ))}
-          </Grid>
-        </Stack>
+        <Grid container spacing={3} justifyContent="center">
+          {benefits.map((b, i) => (
+            <Grid item xs={12} sm={6} md={4} key={i}>
+              <Box sx={{ textAlign: "center" }}>
+                <Box sx={{ mb: 2 }}>{b.icon}</Box>
+                <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>{b.title}</Typography>
+                <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.8)', lineHeight: 1.7 }}>{b.description}</Typography>
+              </Box>
+            </Grid>
+          ))}
+        </Grid>
       </Container>
     </Box>
   );
