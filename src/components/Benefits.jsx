@@ -9,31 +9,11 @@ import {
 
 const Benefits = () => {
   const benefits = [
-    {
-      icon: <BusinessOutlined sx={{ fontSize: 56 }} />,
-      title: 'Control total de todas tus sucursales',
-      description: 'Administra múltiples tiendas desde una sola plataforma centralizada',
-    },
-    {
-      icon: <TrendingUpOutlined sx={{ fontSize: 56 }} />,
-      title: 'Reportes en tiempo real',
-      description: 'Accede a métricas actualizadas de ventas, inventario y rendimiento',
-    },
-    {
-      icon: <VerifiedOutlined sx={{ fontSize: 56 }} />,
-      title: 'Reduce errores de inventario',
-      description: 'Sincronización automática y trazabilidad completa de movimientos',
-    },
-    {
-      icon: <SpeedOutlined sx={{ fontSize: 56 }} />,
-      title: 'Mejora la toma de decisiones',
-      description: 'Datos precisos y actualizados para decisiones estratégicas informadas',
-    },
-    {
-      icon: <CloudDoneOutlined sx={{ fontSize: 56 }} />,
-      title: 'Plataforma escalable',
-      description: 'Crece sin límites, agrega tiendas y usuarios según lo necesites',
-    },
+    { icon: <BusinessOutlined sx={{ fontSize: 56 }} />, title: 'Control total de todas tus sucursales', description: 'Administra múltiples tiendas desde una sola plataforma centralizada' },
+    { icon: <TrendingUpOutlined sx={{ fontSize: 56 }} />, title: 'Reportes en tiempo real', description: 'Accede a métricas actualizadas de ventas, inventario y rendimiento' },
+    { icon: <VerifiedOutlined sx={{ fontSize: 56 }} />, title: 'Reduce errores de inventario', description: 'Sincronización automática y trazabilidad completa de movimientos' },
+    { icon: <SpeedOutlined sx={{ fontSize: 56 }} />, title: 'Mejora la toma de decisiones', description: 'Datos precisos y actualizados para decisiones estratégicas informadas' },
+    { icon: <CloudDoneOutlined sx={{ fontSize: 56 }} />, title: 'Plataforma escalable', description: 'Crece sin límites, agrega tiendas y usuarios según lo necesites' },
   ];
 
   return (
