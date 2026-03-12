@@ -166,7 +166,7 @@ const Features = () => {
 
           <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
             {mainFeatures.map((feature, index) => (
-              <Grid key={index} size={{ xs: 2, sm: 4, md: 4 }}>
+              <Grid key={index} size={{ xs: 12, sm: 4, md: 4 }}>
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
