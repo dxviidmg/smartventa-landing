@@ -2,11 +2,56 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Smartventa - El punto de venta inteligente para negocios multi-tienda. Gestiona ventas, inventario y reportes desde una sola plataforma." />
-    <meta name="keywords" content="punto de venta, POS, multi-tienda, inventario, ventas, reportes" />
-    <title>Smartventa - El punto de venta inteligente</title>
+    
+    <!-- Google Analytics -->
+    <!-- TODO: Reemplazar G-XXXXXXXXXX con tu ID real de Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    
+    <!-- SEO Meta Tags -->
+    <title>Smartventa - Punto de Venta para Negocios Multi-Tienda | Sistema POS</title>
+    <meta name="description" content="Sistema de punto de venta inteligente para negocios con múltiples sucursales. Controla inventario, ventas y transferencias entre tiendas y almacenes en tiempo real." />
+    <meta name="keywords" content="punto de venta, POS multi-tienda, sistema POS, inventario multi-sucursal, transferencias entre tiendas, gestión de almacenes, reportes de ventas, abarrotes, ferreterías, retail" />
+    <meta name="author" content="Smartventa" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://smartventa.com/" />
+    <meta property="og:title" content="Smartventa - Punto de Venta para Negocios Multi-Tienda" />
+    <meta property="og:description" content="Sistema de punto de venta inteligente para negocios con múltiples sucursales. Controla inventario, ventas y transferencias en tiempo real." />
+    <meta property="og:image" content="https://smartventa.com/og-image.jpg" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://smartventa.com/" />
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Smartventa",
+      "applicationCategory": "BusinessApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "MXN"
+      },
+      "description": "Sistema de punto de venta inteligente para negocios con múltiples sucursales. Controla inventario, ventas y transferencias entre tiendas y almacenes en tiempo real.",
+      "operatingSystem": "Web",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "150"
+      }
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

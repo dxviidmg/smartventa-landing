@@ -10,6 +10,7 @@ Landing page moderna y profesional para **Smartventa**, el punto de venta inteli
 - **@mui/icons-material** - Iconos
 - **@mui/x-charts** - Gráficos y visualizaciones
 - **Framer Motion** - Animaciones
+- **EmailJS** - Envío de formularios
 
 ## 🎨 Diseño
 
@@ -21,6 +22,7 @@ Landing page moderna y profesional para **Smartventa**, el punto de venta inteli
 - **Paper**: `#f8fafc`
 - **Text Primary**: `#1e293b`
 - **Text Secondary**: `#334155`
+- **Success (CTA)**: `#10b981`
 
 ### Características de diseño
 
@@ -52,36 +54,76 @@ El servidor de desarrollo se ejecutará en `http://localhost:5173`
 npm run build
 ```
 
+## ⚙️ Configuración
+
+### Google Analytics
+
+1. Crea una cuenta en [Google Analytics](https://analytics.google.com/)
+2. Obtén tu ID de medición (formato: `G-XXXXXXXXXX`)
+3. Reemplaza `G-XXXXXXXXXX` en:
+   - `/index.html` (líneas 9 y 13)
+   - `/src/analytics.js` (línea 4)
+
+### Dominio
+
+Actualiza las URLs en:
+- `/index.html` - Meta tags Open Graph y canonical
+- `/public/sitemap.xml` - URL del sitemap
+- `/public/robots.txt` - URL del sitemap
+
+### Imagen Open Graph
+
+Crea una imagen de 1200x630px con tu logo y texto, guárdala como `/public/og-image.jpg`
+
 ## 📄 Estructura
 
 ```
 src/
 ├── components/
-│   ├── Navbar.jsx       # Barra de navegación
-│   ├── Hero.jsx         # Sección hero principal
-│   ├── Problem.jsx      # Problema/Solución
-│   ├── Features.jsx     # Características principales
-│   ├── Dashboard.jsx    # Dashboard con gráficos
-│   ├── Benefits.jsx     # Beneficios
-│   ├── CTA.jsx          # Call to action
-│   ├── Contact.jsx      # Formulario de contacto
-│   └── Footer.jsx       # Footer
-├── theme.js             # Tema de Material UI
-├── App.jsx              # Componente principal
-├── main.jsx             # Entry point
-└── index.css            # Estilos globales
+│   ├── Navbar.jsx           # Barra de navegación
+│   ├── Hero.jsx             # Sección hero principal
+│   ├── Industries.jsx       # Tipos de negocio
+│   ├── Features.jsx         # Características principales
+│   ├── HowItWorks.jsx       # Cómo funciona
+│   ├── Benefits.jsx         # Beneficios
+│   ├── Pricing.jsx          # Precios
+│   ├── FAQ.jsx              # Preguntas frecuentes
+│   ├── Contact.jsx          # Contacto
+│   ├── Footer.jsx           # Footer
+│   ├── WhatsAppButton.jsx   # Botón flotante de WhatsApp
+│   ├── Loading.jsx          # Pantalla de carga
+│   ├── NotFound.jsx         # Página 404
+│   ├── Privacy.jsx          # Política de privacidad
+│   └── Terms.jsx            # Términos y condiciones
+├── theme.js                 # Tema de Material UI
+├── analytics.js             # Configuración de Google Analytics
+├── App.jsx                  # Componente principal
+├── main.jsx                 # Entry point
+└── index.css                # Estilos globales
 ```
 
 ## 🎯 Secciones
 
 1. **Hero** - Título principal con CTAs
-2. **Problema/Solución** - Contexto del producto
-3. **Features** - 6 características principales
-4. **Dashboard** - Visualización con gráficos reales
+2. **Industries** - Tipos de negocio ideales
+3. **Features** - 9 características principales (cards con flip)
+4. **HowItWorks** - 4 pasos de cómo funciona
 5. **Benefits** - Lista de beneficios
-6. **CTA** - Call to action final
-7. **Contact** - Formulario de solicitud de demo
-8. **Footer** - Información de contacto y enlaces
+6. **Pricing** - Planes de precios
+7. **FAQ** - Preguntas frecuentes
+8. **Contact** - Botón de WhatsApp para solicitar demo
+9. **Footer** - Información de contacto y enlaces legales
+
+## 📱 Funcionalidades
+
+- ✅ SEO optimizado (meta tags, sitemap, robots.txt)
+- ✅ Google Analytics integrado
+- ✅ Botón flotante de WhatsApp
+- ✅ Animaciones suaves
+- ✅ Responsive design
+- ✅ Política de privacidad y términos
+- ✅ Página 404
+- ✅ Schema.org para SEO
 
 ## 📝 Objetivo
 
@@ -95,6 +137,15 @@ Dueños de negocios retail con 2 o más sucursales:
 - Farmacias
 - Ferreterías
 - Mini supermercados
+- Papelerías
+- Cosméticos
+- Tiendas de mascotas
+- Jugueterías
+
+## 📞 Contacto
+
+- **WhatsApp**: +52 55 6165 2599
+- **Email**: contacto@smartventa.com
 
 ---
 
