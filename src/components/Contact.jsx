@@ -1,5 +1,6 @@
 import { Box, Container, Typography, Button, Stack } from '@mui/material';
 import { WhatsApp } from '@mui/icons-material';
+import { motion } from 'framer-motion';
 
 const Contact = () => {
   const handleWhatsApp = () => {
@@ -11,7 +12,13 @@ const Contact = () => {
   return (
     <Box id="contact" sx={{ py: { xs: 8, md: 12 }, bgcolor: 'background.paper' }}>
       <Container maxWidth="md">
-        <Stack spacing={4} alignItems="center" textAlign="center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <Stack spacing={4} alignItems="center" textAlign="center">
           <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.5rem' } }}>
             Solicita tu demo
           </Typography>
@@ -40,34 +47,53 @@ const Contact = () => {
             Solicitar demo por WhatsApp
           </Button>
         </Stack>
+        </motion.div>
       </Container>
 
       {/* Botón flotante de WhatsApp */}
-      <Box
-        onClick={handleWhatsApp}
-        sx={{
-          position: 'fixed',
-          bottom: 24,
-          right: 24,
-          width: 60,
-          height: 60,
-          borderRadius: '50%',
-          bgcolor: '#25D366',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          cursor: 'pointer',
-          boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
-          transition: 'transform 0.2s ease, box-shadow 0.2s ease',
-          zIndex: 1000,
-          '&:hover': {
-            transform: 'scale(1.1)',
-            boxShadow: '0 6px 16px rgba(0,0,0,0.2)',
-          },
-        }}
+      <motion.div
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ delay: 1, type: 'spring', stiffness: 200 }}
       >
-        <WhatsApp sx={{ fontSize: 32, color: 'white' }} />
-      </Box>
+        <Box
+          onClick={handleWhatsApp}
+          sx={{
+            position: 'fixed',
+            bottom: 24,
+            right: 24,
+            width: 60,
+            height: 60,
+            borderRadius: '50%',
+            bgcolor: '#25D366',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'pointer',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+            transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+            zIndex: 1000,
+            animation: 'pulse 2s infinite',
+            '@keyframes pulse': {
+              '0%': {
+                boxShadow: '0 4px 12px rgba(37, 211, 102, 0.4)',
+              },
+              '50%': {
+                boxShadow: '0 4px 20px rgba(37, 211, 102, 0.8)',
+              },
+              '100%': {
+                boxShadow: '0 4px 12px rgba(37, 211, 102, 0.4)',
+              },
+            },
+            '&:hover': {
+              transform: 'scale(1.1)',
+              boxShadow: '0 6px 16px rgba(0,0,0,0.2)',
+            },
+          }}
+        >
+          <WhatsApp sx={{ fontSize: 32, color: 'white' }} />
+        </Box>
+      </motion.div>
     </Box>
   );
 };
