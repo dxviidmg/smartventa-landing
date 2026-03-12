@@ -63,7 +63,7 @@ const Hero = () => {
               El{' '}
               <motion.span
                 animate={{ 
-                  color: ['#ff6b35', '#ff8c42', '#ff6b35'],
+                  color: ['#10b981', '#34d399', '#10b981'],
                 }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
                 style={{ display: 'inline-block', fontSize: '1.2em', fontWeight: 800 }}
@@ -73,7 +73,7 @@ const Hero = () => {
               {' '}inteligente para negocios{' '}
               <motion.span
                 animate={{ 
-                  color: ['#ff6b35', '#ff8c42', '#ff6b35'],
+                  color: ['#10b981', '#34d399', '#10b981'],
                 }}
                 transition={{ duration: 5, repeat: Infinity, delay: 2.5, ease: "easeInOut" }}
                 style={{ display: 'inline-block', fontSize: '1.2em', fontWeight: 800 }}
@@ -129,7 +129,7 @@ const Hero = () => {
           >
             <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button variant="contained" size="large" onClick={() => scrollTo('contact')} sx={{ px: 4, py: 1.5, fontSize: '1.1rem', bgcolor: '#ff6b35', color: 'white', '&:hover': { bgcolor: '#e55a2b' }, boxShadow: '0 4px 20px rgba(255,107,53,0.4)' }}>
+                <Button variant="contained" size="large" onClick={() => scrollTo('contact')} sx={{ px: 4, py: 1.5, fontSize: '1.1rem', bgcolor: '#10b981', color: 'white', '&:hover': { bgcolor: '#059669' }, boxShadow: '0 4px 20px rgba(16,185,129,0.4)' }}>
                   Solicitar demo
                 </Button>
               </motion.div>

@@ -128,7 +128,7 @@ const Features = () => {
   ];
 
   return (
-    <Box id="features" sx={{ py: { xs: 8, md: 12 }, bgcolor: "#04346b" }}>
+    <Box id="features" sx={{ py: { xs: 8, md: 12 }, bgcolor: "#1976d2" }}>
       <Container maxWidth="xl">
         <Stack spacing={6}>
           <Stack spacing={2} alignItems="center" textAlign="center">
@@ -241,7 +241,7 @@ const Features = () => {
                         backfaceVisibility: 'hidden',
                         transform: 'rotateY(-180deg)',
                         transition: 'transform 0.6s',
-                        bgcolor: '#ff6b35',
+                        bgcolor: '#10b981',
                         color: 'white',
                         boxShadow: 4,
                         overflow: 'auto',

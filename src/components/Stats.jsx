@@ -31,11 +31,11 @@ const Stats = () => {
   ];
 
   return (
-    <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: '#1976d2', color: 'white' }}>
+    <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: '#ffffff', color: 'text.primary' }}>
       <Container maxWidth="lg">
         <Stack spacing={6}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
-            <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.5rem' }, textAlign: 'center', mb: 2 }}>
+            <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.5rem' }, textAlign: 'center', mb: 2, color: 'text.primary' }}>
               Resultados que hablan por sí solos
             </Typography>
           </motion.div>
@@ -57,31 +57,31 @@ const Stats = () => {
                       flexDirection: 'column',
                       justifyContent: 'center',
                       textAlign: 'center',
-                      bgcolor: 'rgba(255,255,255,0.1)',
-                      backdropFilter: 'blur(10px)',
-                      border: '1px solid rgba(255,255,255,0.2)',
+                      bgcolor: '#f8fafc',
+                      border: '2px solid #1976d2',
                       borderRadius: 3,
                       transition: 'all 0.3s ease',
                       '&:hover': {
-                        bgcolor: 'rgba(255,255,255,0.15)',
+                        bgcolor: '#e3f2fd',
                         transform: 'translateY(-4px)',
+                        boxShadow: 4,
                       },
                     }}
                   >
                     <Stack spacing={2} alignItems="center">
                       <motion.div
-                        animate={{ color: ['rgba(255,255,255,1)', 'rgba(255,255,255,0.7)', 'rgba(255,255,255,1)'] }}
+                        animate={{ color: ['#1976d2', '#10b981', '#1976d2'] }}
                         transition={{ duration: 3, delay: index * 0.3, repeat: Infinity, ease: "easeInOut" }}
                       >
                         {stat.icon}
                       </motion.div>
-                      <Typography variant="h3" sx={{ fontWeight: 700, color: 'white' }}>
+                      <Typography variant="h3" sx={{ fontWeight: 700, color: 'text.primary' }}>
                         {stat.value}
                       </Typography>
-                      <Typography variant="h6" sx={{ fontWeight: 600, color: 'white' }}>
+                      <Typography variant="h6" sx={{ fontWeight: 600, color: 'text.primary' }}>
                         {stat.label}
                       </Typography>
-                      <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.8)' }}>
+                      <Typography variant="body2" sx={{ color: 'text.secondary' }}>
                         {stat.description}
                       </Typography>
                     </Stack>

@@ -8,9 +8,13 @@ const Navbar = () => {
       <Container maxWidth="lg">
         <Toolbar disableGutters sx={{ justifyContent: 'space-between' }}>
           <Box component="img" src="/src/assets/logo.jpg" alt="Smartventa" sx={{ height: 40, borderRadius: 1, cursor: 'pointer' }} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} onError={(e) => e.target.style.display = 'none'} />
-          <Box sx={{ display: 'flex', gap: 2 }}>
-            <Button onClick={() => scrollTo('features')} sx={{ textTransform: 'none', color: 'white', fontWeight: 500 }}>Características</Button>
-            <Button onClick={() => scrollTo('contact')} variant="contained" sx={{ textTransform: 'none', fontWeight: 500, bgcolor: '#ff6b35', color: 'white', '&:hover': { bgcolor: '#e55a2b' } }}>Solicitar demo</Button>
+          <Box sx={{ display: 'flex', gap: 2, alignItems: 'center' }}>
+            <Button onClick={() => scrollTo('features')} sx={{ textTransform: 'none', color: 'white', fontWeight: 500, display: { xs: 'none', md: 'block' } }}>Características</Button>
+            <Button onClick={() => scrollTo('how-it-works')} sx={{ textTransform: 'none', color: 'white', fontWeight: 500, display: { xs: 'none', md: 'block' } }}>Cómo funciona</Button>
+            <Button onClick={() => scrollTo('benefits')} sx={{ textTransform: 'none', color: 'white', fontWeight: 500, display: { xs: 'none', md: 'block' } }}>Beneficios</Button>
+            <Button onClick={() => scrollTo('pricing')} sx={{ textTransform: 'none', color: 'white', fontWeight: 500, display: { xs: 'none', md: 'block' } }}>Precios</Button>
+            <Button onClick={() => scrollTo('faq')} sx={{ textTransform: 'none', color: 'white', fontWeight: 500, display: { xs: 'none', md: 'block' } }}>FAQ</Button>
+            <Button onClick={() => scrollTo('contact')} variant="contained" sx={{ textTransform: 'none', fontWeight: 500, bgcolor: '#10b981', color: 'white', '&:hover': { bgcolor: '#059669' } }}>Solicitar demo</Button>
           </Box>
         </Toolbar>
       </Container>

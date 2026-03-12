@@ -31,17 +31,17 @@ const HowItWorks = () => {
   ];
 
   return (
-    <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: '#ffffff' }}>
+    <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: '#04346b' }} id="how-it-works">
       <Container maxWidth="lg">
         <Stack spacing={6}>
           <Stack spacing={2} alignItems="center" textAlign="center">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
-              <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.5rem' }, color: 'text.primary' }}>
+              <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.5rem' }, color: 'white' }}>
                 ¿Cómo funciona Smartventa?
               </Typography>
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }}>
-              <Typography variant="body1" sx={{ color: 'text.secondary', maxWidth: '700px', fontSize: '1.1rem' }}>
+              <Typography variant="body1" sx={{ color: 'rgba(255,255,255,0.9)', maxWidth: '700px', fontSize: '1.1rem' }}>
                 Cuatro pasos simples para transformar la gestión de tu negocio multi-tienda
               </Typography>
             </motion.div>
@@ -74,7 +74,7 @@ const HowItWorks = () => {
                         minWidth: 80,
                         height: 80,
                         borderRadius: '50%',
-                        bgcolor: '#ff6b35',
+                        bgcolor: '#10b981',
                         color: 'white',
                         display: 'flex',
                         alignItems: 'center',
@@ -87,7 +87,7 @@ const HowItWorks = () => {
                       {step.number}
                     </Box>
                     <motion.div
-                      animate={{ color: ['#ff6b35', '#ff8c42', '#ff6b35'] }}
+                      animate={{ color: ['#10b981', '#34d399', '#10b981'] }}
                       transition={{ duration: 4, delay: index * 0.5, repeat: Infinity, ease: "easeInOut" }}
                     >
                       {step.icon}
