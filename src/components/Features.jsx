@@ -42,7 +42,7 @@ const Features = () => {
     {
       icon: <Assessment sx={{ fontSize: 48 }} />,
       title: "Control de Inventario",
-      description: "Monitorea el stock de todas tus sucursales y almacenes en tiempo real",
+      description: "Monitorea el stock de todas tus sucursales y almacenes",
       details: [
         'Actualización de stock en tiempo real',
         'Inventario por tienda y almacén',

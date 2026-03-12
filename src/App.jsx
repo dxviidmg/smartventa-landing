@@ -9,7 +9,6 @@ import Comparison from './components/Comparison';
 import Benefits from './components/Benefits';
 import Pricing from './components/Pricing';
 import FAQ from './components/FAQ';
-import CTA from './components/CTA';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -27,7 +26,6 @@ function App() {
         <Benefits />
         <Pricing />
         <FAQ />
-        <CTA />
         <Contact />
         <Footer />
       </Box>

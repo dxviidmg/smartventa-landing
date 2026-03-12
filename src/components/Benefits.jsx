@@ -4,8 +4,8 @@ import { BusinessOutlined, TrendingUpOutlined, VerifiedOutlined, SpeedOutlined, 
 
 const Benefits = () => {
   const mainBenefits = [
-    { icon: <BusinessOutlined sx={{ fontSize: 56 }} />, title: 'Control total de todas tus sucursales', description: 'Administra múltiples tiendas desde una sola plataforma centralizada' },
-    { icon: <TrendingUpOutlined sx={{ fontSize: 56 }} />, title: 'Reportes en tiempo real', description: 'Accede a métricas actualizadas de ventas, inventario y rendimiento' },
+    { icon: <BusinessOutlined sx={{ fontSize: 56 }} />, title: 'Control total de todas tus sucursales', description: 'Administra múltiples tiendas desde un solo lugar' },
+    { icon: <TrendingUpOutlined sx={{ fontSize: 56 }} />, title: 'Reportes actualizados', description: 'Accede a métricas de ventas, inventario y rendimiento al instante' },
     { icon: <VerifiedOutlined sx={{ fontSize: 56 }} />, title: 'Reduce errores de inventario', description: 'Sincronización automática y trazabilidad completa de movimientos' },
     { icon: <SpeedOutlined sx={{ fontSize: 56 }} />, title: 'Mejora la toma de decisiones', description: 'Datos precisos y actualizados para decisiones estratégicas informadas' },
     { icon: <CloudDoneOutlined sx={{ fontSize: 56 }} />, title: 'Plataforma escalable', description: 'Crece sin límites, agrega tiendas y usuarios según lo necesites' },
@@ -28,7 +28,7 @@ const Benefits = () => {
       items: [
         'Interfaz fácil de aprender y usar',
         'Proceso de venta rápido y eficiente',
-        'Menos tiempo en capacitación',
+        'Compatible con lectores de código de barras',
         'Acceso desde cualquier dispositivo',
       ],
     },
@@ -37,9 +37,9 @@ const Benefits = () => {
       title: 'Técnicos',
       items: [
         'Sin instalación compleja (aplicación web)',
+        'Compatible con impresoras de tickets estándar',
         'Actualizaciones automáticas',
         'Respaldo automático de datos',
-        'Seguridad con autenticación y autorización',
       ],
     },
     {

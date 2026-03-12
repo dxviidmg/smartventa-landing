@@ -6,11 +6,11 @@ const Comparison = () => {
   const comparisons = [
     {
       without: 'Sistemas separados por tienda',
-      with: 'Una sola plataforma centralizada',
+      with: 'Una sola plataforma para todo',
     },
     {
       without: 'Actualización manual de inventarios',
-      with: 'Sincronización automática en tiempo real',
+      with: 'Sincronización automática instantánea',
     },
     {
       without: 'Errores frecuentes en conteos',

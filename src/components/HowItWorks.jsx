@@ -19,8 +19,8 @@ const HowItWorks = () => {
     {
       number: '3',
       icon: <PointOfSale sx={{ fontSize: 48 }} />,
-      title: 'Vende en tiempo real',
-      description: 'Procesa ventas rápidamente con el punto de venta. El inventario se actualiza automáticamente.',
+      title: 'Vende con agilidad',
+      description: 'Procesa ventas rápidamente con el punto de venta. El inventario se actualiza al instante.',
     },
     {
       number: '4',

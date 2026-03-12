@@ -15,10 +15,9 @@ const Pricing = () => {
       period: 'MXN/mes',
       features: [
         'Punto de venta completo',
-        'Control de inventario',
-        'Reportes y métricas',
-        'Gestión de empleados',
-        'Soporte técnico',
+        'Gestión de inventario',
+        'Usuarios ilimitados',
+        'Actualizaciones incluidas',
       ],
     },
     {
@@ -27,11 +26,10 @@ const Pricing = () => {
       price: '$500',
       period: 'MXN/mes',
       features: [
-        'Control de inventario',
+        'Control de stock',
         'Distribución a tiendas',
-        'Trazabilidad completa',
-        'Reportes de movimientos',
-        'Soporte técnico',
+        'Usuarios ilimitados',
+        'Actualizaciones incluidas',
       ],
     },
   ];
