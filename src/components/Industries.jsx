@@ -71,6 +71,7 @@ const Industries = () => {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
+                  style={{ height: '100%' }}
                 >
                   <Card
                     sx={{
@@ -79,6 +80,7 @@ const Industries = () => {
                       textAlign: 'center',
                       borderRadius: 3,
                       boxShadow: 2,
+                      bgcolor: '#e2e8f0',
                       transition: 'all 0.3s ease',
                       '&:hover': {
                         boxShadow: 6,

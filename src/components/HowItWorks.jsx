@@ -61,6 +61,7 @@ const HowItWorks = () => {
                     p: 4,
                     borderRadius: 3,
                     boxShadow: 2,
+                    bgcolor: '#e2e8f0',
                     transition: 'all 0.3s ease',
                     '&:hover': {
                       boxShadow: 6,
@@ -74,7 +75,7 @@ const HowItWorks = () => {
                         minWidth: 80,
                         height: 80,
                         borderRadius: '50%',
-                        bgcolor: '#10b981',
+                        bgcolor: '#1976d2',
                         color: 'white',
                         display: 'flex',
                         alignItems: 'center',
@@ -87,7 +88,7 @@ const HowItWorks = () => {
                       {step.number}
                     </Box>
                     <motion.div
-                      animate={{ color: ['#10b981', '#34d399', '#10b981'] }}
+                      animate={{ color: ['#1976d2', '#42a5f5', '#1976d2'] }}
                       transition={{ duration: 4, delay: index * 0.5, repeat: Infinity, ease: "easeInOut" }}
                     >
                       {step.icon}

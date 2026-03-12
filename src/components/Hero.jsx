@@ -63,7 +63,7 @@ const Hero = () => {
               El{' '}
               <motion.span
                 animate={{ 
-                  color: ['#10b981', '#34d399', '#10b981'],
+                  color: ['#1976d2', '#42a5f5', '#1976d2'],
                 }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
                 style={{ display: 'inline-block', fontSize: '1.2em', fontWeight: 800 }}
@@ -73,7 +73,7 @@ const Hero = () => {
               {' '}inteligente para negocios{' '}
               <motion.span
                 animate={{ 
-                  color: ['#10b981', '#34d399', '#10b981'],
+                  color: ['#1976d2', '#42a5f5', '#1976d2'],
                 }}
                 transition={{ duration: 5, repeat: Infinity, delay: 2.5, ease: "easeInOut" }}
                 style={{ display: 'inline-block', fontSize: '1.2em', fontWeight: 800 }}
@@ -88,7 +88,11 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <Typography variant="h5" sx={{ fontSize: { xs: '1.1rem', md: '1.3rem' }, color: 'rgba(255,255,255,0.9)', maxWidth: '1000px' }}>
-              Controla inventario, ventas y operaciones de todas tus tiendas y almacenes desde una sola plataforma
+              Controla inventario, ventas y operaciones de todas tus{' '}
+              <Box component="span" sx={{ color: '#10b981', fontWeight: 700 }}>tiendas</Box>
+              {' '}y{' '}
+              <Box component="span" sx={{ color: '#10b981', fontWeight: 700 }}>almacenes</Box>
+              {' '}desde una sola plataforma
             </Typography>
           </motion.div>
 

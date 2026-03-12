@@ -17,7 +17,6 @@ const Benefits = () => {
       title: 'Para Administradores',
       items: [
         'Visibilidad completa del negocio desde un solo lugar',
-        'Identifica tendencias y patrones de venta',
         'Detecta sucursales con mejor/peor rendimiento',
         'Optimiza inventario basado en datos reales',
       ],
@@ -28,7 +27,6 @@ const Benefits = () => {
       items: [
         'Interfaz fácil de aprender y usar',
         'Proceso de venta rápido y eficiente',
-        'Compatible con lectores de código de barras',
         'Acceso desde cualquier dispositivo',
       ],
     },
@@ -38,8 +36,7 @@ const Benefits = () => {
       items: [
         'Sin instalación compleja (aplicación web)',
         'Compatible con impresoras de tickets estándar',
-        'Actualizaciones automáticas',
-        'Respaldo automático de datos',
+        'Actualizaciones automáticas'
       ],
     },
     {
@@ -48,7 +45,6 @@ const Benefits = () => {
       items: [
         'Reduce costos de infraestructura',
         'No requiere hardware especializado',
-        'ROI rápido por automatización de procesos',
         'Evita pérdidas por mal manejo de inventario',
       ],
     },

@@ -241,7 +241,7 @@ const Features = () => {
                         backfaceVisibility: 'hidden',
                         transform: 'rotateY(-180deg)',
                         transition: 'transform 0.6s',
-                        bgcolor: '#10b981',
+                        bgcolor: '#1976d2',
                         color: 'white',
                         boxShadow: 4,
                         overflow: 'auto',
