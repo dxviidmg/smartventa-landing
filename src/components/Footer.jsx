@@ -1,10 +1,11 @@
 import { Box, Container, Typography, Grid, Stack, Link, Dialog, DialogTitle, DialogContent, IconButton } from '@mui/material';
 import { PhoneOutlined, Close } from '@mui/icons-material';
-import { useState } from 'react';
+import { useModal } from '../hooks/useModal';
+import { CONFIG } from '../config/constants';
 
 const Footer = () => {
-  const [openPrivacy, setOpenPrivacy] = useState(false);
-  const [openTerms, setOpenTerms] = useState(false);
+  const privacyModal = useModal();
+  const termsModal = useModal();
 
   return (
     <>
@@ -12,9 +13,9 @@ const Footer = () => {
         <Container maxWidth="lg">
           <Grid container spacing={4} justifyContent="center">
             <Grid item xs={12} md={4}>
-              <Typography variant="h6" sx={{ fontWeight: 600, mb: 2 }}>Smartventa</Typography>
+              <Typography variant="h6" sx={{ fontWeight: 600, mb: 2 }}>{CONFIG.company.name}</Typography>
               <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.8)' }}>
-                El punto de venta inteligente para negocios multi-tienda
+                {CONFIG.company.tagline}
               </Typography>
             </Grid>
             <Grid item xs={12} md={4}>
@@ -23,7 +24,7 @@ const Footer = () => {
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                   <PhoneOutlined sx={{ fontSize: 20 }} />
                   <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.8)' }}>
-                    +52 55 6165 2599
+                    {CONFIG.contact.phone}
                   </Typography>
                 </Box>
               </Stack>
@@ -33,14 +34,14 @@ const Footer = () => {
               <Stack spacing={1}>
                 <Link 
                   component="button" 
-                  onClick={() => setOpenPrivacy(true)} 
+                  onClick={privacyModal.open} 
                   sx={{ color: 'rgba(255,255,255,0.8)', textDecoration: 'none', textAlign: 'left', '&:hover': { color: 'white' } }}
                 >
                   Política de Privacidad
                 </Link>
                 <Link 
                   component="button" 
-                  onClick={() => setOpenTerms(true)} 
+                  onClick={termsModal.open} 
                   sx={{ color: 'rgba(255,255,255,0.8)', textDecoration: 'none', textAlign: 'left', '&:hover': { color: 'white' } }}
                 >
                   Términos y Condiciones
@@ -50,17 +51,17 @@ const Footer = () => {
           </Grid>
           <Box sx={{ mt: 6, pt: 3, borderTop: '1px solid rgba(255,255,255,0.2)', textAlign: 'center' }}>
             <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.7)' }}>
-              © {new Date().getFullYear()} Smartventa. Todos los derechos reservados.
+              © {new Date().getFullYear()} {CONFIG.company.name}. Todos los derechos reservados.
             </Typography>
           </Box>
         </Container>
       </Box>
 
       {/* Modal Política de Privacidad */}
-      <Dialog open={openPrivacy} onClose={() => setOpenPrivacy(false)} maxWidth="md" fullWidth>
+      <Dialog open={privacyModal.isOpen} onClose={privacyModal.close} maxWidth="md" fullWidth>
         <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           Política de Privacidad
-          <IconButton onClick={() => setOpenPrivacy(false)}>
+          <IconButton onClick={privacyModal.close}>
             <Close />
           </IconButton>
         </DialogTitle>
@@ -110,10 +111,10 @@ const Footer = () => {
       </Dialog>
 
       {/* Modal Términos y Condiciones */}
-      <Dialog open={openTerms} onClose={() => setOpenTerms(false)} maxWidth="md" fullWidth>
+      <Dialog open={termsModal.isOpen} onClose={termsModal.close} maxWidth="md" fullWidth>
         <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           Términos y Condiciones
-          <IconButton onClick={() => setOpenTerms(false)}>
+          <IconButton onClick={termsModal.close}>
             <Close />
           </IconButton>
         </DialogTitle>

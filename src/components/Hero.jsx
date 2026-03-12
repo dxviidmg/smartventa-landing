@@ -1,9 +1,10 @@
 import { Box, Container, Typography, Button, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
 import { TrendingUp, Inventory, Store } from '@mui/icons-material';
+import { scrollToSection } from '../utils/helpers';
+import { FadeInView } from './common/AnimatedComponents';
 
 const Hero = () => {
-  const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 
   const floatingIcons = [
     { Icon: TrendingUp, delay: 0, x: -100, y: -50 },
@@ -133,12 +134,12 @@ const Hero = () => {
           >
             <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button variant="contained" size="large" onClick={() => scrollTo('contact')} sx={{ px: 4, py: 1.5, fontSize: '1.1rem', bgcolor: '#10b981', color: 'white', '&:hover': { bgcolor: '#059669' }, boxShadow: '0 4px 20px rgba(16,185,129,0.4)' }}>
+                <Button variant="contained" size="large" onClick={() => scrollToSection('contact')} sx={{ px: 4, py: 1.5, fontSize: '1.1rem', bgcolor: '#10b981', color: 'white', '&:hover': { bgcolor: '#059669' }, boxShadow: '0 4px 20px rgba(16,185,129,0.4)' }}>
                   Solicitar demo
                 </Button>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button variant="outlined" size="large" onClick={() => scrollTo('features')} sx={{ px: 4, py: 1.5, fontSize: '1.1rem', borderColor: 'white', color: 'white', '&:hover': { borderColor: 'white', bgcolor: 'rgba(255,255,255,0.1)' } }}>
+                <Button variant="outlined" size="large" onClick={() => scrollToSection('features')} sx={{ px: 4, py: 1.5, fontSize: '1.1rem', borderColor: 'white', color: 'white', '&:hover': { borderColor: 'white', bgcolor: 'rgba(255,255,255,0.1)' } }}>
                   Ver características
                 </Button>
               </motion.div>
