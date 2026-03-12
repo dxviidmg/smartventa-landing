@@ -17,7 +17,7 @@ const Navbar = () => {
         <Toolbar disableGutters sx={{ justifyContent: 'space-between' }}>
           <Box 
             component="img" 
-            src="/src/assets/logo.jpg" 
+            src="/logo.jpg" 
             alt={CONFIG.company.name}
             sx={{ height: 40, borderRadius: 1, cursor: 'pointer' }} 
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} 
