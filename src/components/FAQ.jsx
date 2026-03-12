@@ -28,14 +28,6 @@ const FAQ = () => {
       question: '¿Cómo funciona la demo?',
       answer: 'Te damos acceso a una cuenta demo completa donde puedes explorar todas las funcionalidades del sistema sin compromiso.',
     },
-    {
-      question: '¿Puedo controlar los permisos de mis empleados?',
-      answer: 'Sí, puedes crear roles personalizados y asignar permisos específicos por tienda. Cada empleado tiene su propio acceso seguro.',
-    },
-    {
-      question: '¿Los datos están seguros?',
-      answer: 'Sí, utilizamos autenticación segura y respaldos automáticos. Tus datos están protegidos y disponibles 24/7.',
-    },
   ];
 
   return (

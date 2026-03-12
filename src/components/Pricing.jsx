@@ -118,7 +118,7 @@ const Pricing = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <Stack spacing={3} alignItems="center" textAlign="center">
-              <Typography variant="body1" sx={{ color: 'text.secondary', fontSize: '1rem' }}>
+              <Typography variant="body1" sx={{ color: 'rgba(255,255,255,0.9)', fontSize: '1rem' }}>
                 💡 <strong>Ejemplo:</strong> 3 tiendas + 1 almacén = $2,000 MXN/mes
               </Typography>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
