@@ -7,7 +7,7 @@ export const CONFIG = {
   },
   company: {
     name: 'Smartventa',
-    tagline: 'El punto de venta inteligente para negocios multi-tienda',
+    tagline: 'El punto de venta inteligente',
   },
   urls: {
     domain: 'https://smartventa.com',
