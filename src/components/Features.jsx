@@ -1,4 +1,4 @@
-import { Box, Container, Typography, Grid, Card } from '@mui/material';
+import { Box, Container, Typography, Grid, Card, Stack } from '@mui/material';
 import {
   Inventory2Outlined,
   PointOfSaleOutlined,

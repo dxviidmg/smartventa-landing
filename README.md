@@ -83,11 +83,6 @@ src/
 7. **Contact** - Formulario de solicitud de demo
 8. **Footer** - Información de contacto y enlaces
 
-## 🔗 Enlaces
-
-- **Backend**: [github.com/dxviidmg/pos_multi_store](https://github.com/dxviidmg/pos_multi_store)
-- **Frontend**: [github.com/dxviidmg/pos-multi-store](https://github.com/dxviidmg/pos-multi-store)
-
 ## 📝 Objetivo
 
 Captar leads para demos del sistema POS multi-tienda Smartventa, ofreciendo acceso a una cuenta demo genérica para explorar el sistema.
