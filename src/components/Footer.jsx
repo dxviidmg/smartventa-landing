@@ -14,19 +14,6 @@ const Footer = () => {
         <Grid container spacing={4} justifyContent="center">
           <Grid item xs={12} md={5}>
             <Stack spacing={2}>
-              <Box
-                component="img"
-                src="/src/assets/logo.jpg"
-                alt="Smartventa"
-                sx={{
-                  width: 120,
-                  height: 'auto',
-                  borderRadius: 2,
-                }}
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                }}
-              />
               <Typography variant="h6" sx={{ fontWeight: 600 }}>
                 Smartventa
               </Typography>

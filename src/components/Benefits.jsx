@@ -1,5 +1,4 @@
 import { Box, Container, Typography, Grid, Stack } from '@mui/material';
-import { motion } from 'framer-motion';
 import {
   BusinessOutlined,
   TrendingUpOutlined,
@@ -41,61 +40,23 @@ const Benefits = () => {
     <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: 'primary.main' }}>
       <Container maxWidth="lg">
         <Stack spacing={6}>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <Stack spacing={2} alignItems="center" textAlign="center">
-              <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.5rem' }, color: 'white' }}>
-                Beneficios de usar Smartventa
-              </Typography>
-              <Typography
-                variant="body1"
-                sx={{ color: 'rgba(255,255,255,0.9)', maxWidth: '700px', fontSize: '1.1rem' }}
-              >
-                Optimiza tu negocio y toma el control total de tus operaciones
-              </Typography>
-            </Stack>
-          </motion.div>
+          <Stack spacing={2} alignItems="center" textAlign="center">
+            <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.5rem' }, color: 'white' }}>
+              Beneficios de usar Smartventa
+            </Typography>
+            <Typography variant="body1" sx={{ color: 'rgba(255,255,255,0.9)', maxWidth: '700px', fontSize: '1.1rem' }}>
+              Optimiza tu negocio y toma el control total de tus operaciones
+            </Typography>
+          </Stack>
 
-          <Grid
-            container
-            spacing={{ xs: 2, md: 3 }}
-            justifyContent="center"
-          >
+          <Grid container spacing={{ xs: 2, md: 3 }} justifyContent="center">
             {benefits.map((benefit, index) => (
-              <Grid item xs={12} sm={6} md={4} key={index} sx={{ display: 'flex' }}>
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  style={{ width: '100%' }}
-                >
-                  <Stack 
-                    spacing={2} 
-                    alignItems="center" 
-                    textAlign="center"
-                    sx={{ 
-                      width: '100%', 
-                      height: '100%',
-                      transition: 'transform 0.2s ease',
-                      '&:hover': {
-                        transform: 'translateY(-8px)',
-                      },
-                    }}
-                  >
-                    <Box sx={{ color: 'white' }}>{benefit.icon}</Box>
-                    <Typography variant="h6" sx={{ fontWeight: 600, color: 'white', minHeight: '3em' }}>
-                      {benefit.title}
-                    </Typography>
-                    <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.8)', lineHeight: 1.7, flexGrow: 1 }}>
-                      {benefit.description}
-                    </Typography>
-                  </Stack>
-                </motion.div>
+              <Grid item xs={12} sm={6} md={4} key={index}>
+                <Stack spacing={2} alignItems="center" textAlign="center">
+                  <Box sx={{ color: 'white' }}>{benefit.icon}</Box>
+                  <Typography variant="h6" sx={{ fontWeight: 600, color: 'white' }}>{benefit.title}</Typography>
+                  <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.8)', lineHeight: 1.7 }}>{benefit.description}</Typography>
+                </Stack>
               </Grid>
             ))}
           </Grid>
