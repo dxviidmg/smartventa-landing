@@ -26,7 +26,7 @@ const Industries = () => {
     },
     {
       icon: <Spa sx={{ fontSize: 60 }} />,
-      title: 'Perfumerías y Cosméticos',
+      title: 'Cosméticos',
       description: 'Controla productos de belleza, maquillaje y cuidado personal',
     },
     {
@@ -38,11 +38,6 @@ const Industries = () => {
       icon: <Toys sx={{ fontSize: 60 }} />,
       title: 'Jugueterías',
       description: 'Administra juguetes y artículos infantiles en todas tus sucursales',
-    },
-    {
-      icon: <Cake sx={{ fontSize: 60 }} />,
-      title: 'Dulcerías',
-      description: 'Controla dulces, chocolates y snacks con facilidad',
     },
     {
       icon: <Store sx={{ fontSize: 60 }} />,
@@ -70,7 +65,7 @@ const Industries = () => {
 
           <Grid container spacing={3} columns={{ xs: 4, sm: 8, md: 12 }} justifyContent="center">
             {industries.map((industry, index) => (
-              <Grid item size={{ xs: 4, sm: 4, md: 4 }} key={index}>
+              <Grid item size={{ xs: 12, sm: 12, md: 3 }} key={index}>
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
