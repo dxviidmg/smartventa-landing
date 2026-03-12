@@ -93,11 +93,11 @@ const Benefits = () => {
           ))}
         </Grid>
 
-        <Grid container spacing={3}>
+        <Grid container spacing={3} columns={{ xs: 4, sm: 8, md: 12 }}>
           {detailedBenefits.map((benefit, index) => (
-            <Grid item xs={12} sm={6} md={3} key={index}>
-              <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}>
-                <Paper sx={{ p: 3, height: '100%', borderRadius: 3, bgcolor: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.2)' }}>
+            <Grid item size={{ xs: 4, sm: 4, md: 3 }} key={index}>
+              <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }} style={{ height: '100%' }}>
+                <Paper sx={{ p: 3, height: '100%', minHeight: '280px', borderRadius: 3, bgcolor: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.2)' }}>
                   <Stack spacing={2}>
                     <motion.div
                       animate={{ color: ['rgba(255,255,255,1)', 'rgba(255,255,255,0.7)', 'rgba(255,255,255,1)'] }}
@@ -110,8 +110,8 @@ const Benefits = () => {
                     </Typography>
                     <Stack spacing={1}>
                       {benefit.items.map((item, i) => (
-                        <Stack key={i} direction="row" spacing={1} alignItems="flex-start">
-                          <Box sx={{ width: 5, height: 5, borderRadius: '50%', bgcolor: 'white', mt: 0.8, flexShrink: 0 }} />
+                        <Stack key={i} direction="row" spacing={1} alignItems="center">
+                          <Box sx={{ width: 5, height: 5, borderRadius: '50%', bgcolor: 'white', flexShrink: 0 }} />
                           <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.85)', lineHeight: 1.6, fontSize: '0.85rem' }}>
                             {item}
                           </Typography>
