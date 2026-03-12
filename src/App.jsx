@@ -17,9 +17,7 @@ function App() {
       <Box>
         <Navbar />
         <Hero />
-        <Problem />
         <Features />
-        <Dashboard />
         <Benefits />
         <CTA />
         <Contact />

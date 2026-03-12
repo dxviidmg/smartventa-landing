@@ -8,10 +8,11 @@ const Navbar = () => {
   return (
     <AppBar
       position="fixed"
-      elevation={1}
+      elevation={3}
       sx={{
-        bgcolor: 'white',
-        color: 'text.primary',
+        bgcolor: 'primary.dark',
+        color: 'white',
+        borderBottom: '2px solid rgba(255,255,255,0.1)',
       }}
     >
       <Container maxWidth="lg">
@@ -37,7 +38,7 @@ const Navbar = () => {
               onClick={() => scrollToSection('features')}
               sx={{
                 textTransform: 'none',
-                color: 'text.primary',
+                color: 'white',
                 fontWeight: 500,
               }}
             >
@@ -49,6 +50,11 @@ const Navbar = () => {
               sx={{
                 textTransform: 'none',
                 fontWeight: 500,
+                bgcolor: 'white',
+                color: 'primary.main',
+                '&:hover': {
+                  bgcolor: 'rgba(255,255,255,0.9)',
+                },
               }}
             >
               Solicitar demo

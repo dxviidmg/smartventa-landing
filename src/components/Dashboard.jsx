@@ -31,7 +31,7 @@ const Dashboard = () => {
   ];
 
   return (
-    <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: 'background.default' }}>
+    <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: 'background.paper' }}>
       <Container maxWidth="lg">
         <Stack spacing={6}>
           <Stack spacing={2} alignItems="center" textAlign="center">

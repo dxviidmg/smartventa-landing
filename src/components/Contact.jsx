@@ -45,7 +45,7 @@ const Contact = () => {
   ];
 
   return (
-    <Box id="contact" sx={{ py: { xs: 8, md: 12 }, bgcolor: 'background.default' }}>
+    <Box id="contact" sx={{ py: { xs: 8, md: 12 }, bgcolor: 'background.paper' }}>
       <Container maxWidth="md">
         <Stack spacing={4}>
           <Stack spacing={2} alignItems="center" textAlign="center">

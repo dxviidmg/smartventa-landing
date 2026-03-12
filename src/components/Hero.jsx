@@ -13,9 +13,10 @@ const Hero = () => {
   return (
     <Box
       sx={{
-        background: 'linear-gradient(135deg, rgba(4,53,107,0.03) 0%, rgba(4,53,107,0.08) 100%)',
+        background: 'linear-gradient(135deg, #04346b 0%, #03294d 100%)',
         pt: { xs: 12, md: 16 },
         pb: { xs: 8, md: 12 },
+        color: 'white',
       }}
     >
       <Container maxWidth="lg">
@@ -30,11 +31,11 @@ const Hero = () => {
               sx={{
                 fontSize: { xs: '2.5rem', md: '3.5rem' },
                 fontWeight: 600,
-                color: 'text.primary',
+                color: 'white',
                 mb: 2,
               }}
             >
-              Controla todas tus tiendas desde un solo lugar
+              Smartventa, el punto de venta inteligente
             </Typography>
           </motion.div>
 
@@ -48,13 +49,12 @@ const Hero = () => {
               sx={{
                 fontSize: { xs: '1.1rem', md: '1.3rem' },
                 fontWeight: 500,
-                color: 'text.secondary',
+                color: 'rgba(255,255,255,0.9)',
                 maxWidth: '800px',
                 lineHeight: 1.6,
               }}
             >
-              Smartventa es el punto de venta inteligente que te permite gestionar ventas,
-              inventario y reportes de múltiples sucursales desde una sola plataforma.
+              Controla todas tus sucursales desde una sola plataforma. Gestiona ventas, inventario y obtén reportes en tiempo real para tomar mejores decisiones.
             </Typography>
           </motion.div>
 
@@ -73,7 +73,12 @@ const Hero = () => {
                   py: 1.5,
                   fontSize: '1.1rem',
                   textTransform: 'none',
-                  boxShadow: '0 4px 6px rgba(4,53,107,0.2)',
+                  bgcolor: 'white',
+                  color: 'primary.main',
+                  '&:hover': {
+                    bgcolor: 'rgba(255,255,255,0.9)',
+                  },
+                  boxShadow: '0 4px 6px rgba(0,0,0,0.2)',
                 }}
               >
                 Solicitar acceso a demo
@@ -88,8 +93,12 @@ const Hero = () => {
                   fontSize: '1.1rem',
                   textTransform: 'none',
                   borderWidth: 2,
+                  borderColor: 'white',
+                  color: 'white',
                   '&:hover': {
                     borderWidth: 2,
+                    borderColor: 'white',
+                    bgcolor: 'rgba(255,255,255,0.1)',
                   },
                 }}
               >
