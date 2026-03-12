@@ -49,20 +49,20 @@ const Features = () => {
   ];
 
   return (
-    <Box id="features" sx={{ py: { xs: 8, md: 12 }, bgcolor: "primary.main" }}>
+    <Box id="features" sx={{ py: { xs: 8, md: 12 }, bgcolor: "background.default" }}>
       <Container maxWidth="xl">
         <Stack spacing={6}>
           <Stack spacing={2} alignItems="center" textAlign="center">
             <Typography
               variant="h2"
-              sx={{ fontSize: { xs: "2rem", md: "2.5rem" }, color: "white" }}
+              sx={{ fontSize: { xs: "2rem", md: "2.5rem" }, color: "text.primary" }}
             >
               Todo lo que necesitas en una sola plataforma
             </Typography>
             <Typography
               variant="body1"
               sx={{
-                color: "rgba(255,255,255,0.9)",
+                color: "text.secondary",
                 maxWidth: "700px",
                 fontSize: "1.1rem",
               }}

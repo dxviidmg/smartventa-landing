@@ -10,7 +10,7 @@ const Navbar = () => {
       position="fixed"
       elevation={3}
       sx={{
-        bgcolor: 'primary.dark',
+        bgcolor: 'primary.main',
         color: 'white',
         borderBottom: '2px solid rgba(255,255,255,0.1)',
       }}
