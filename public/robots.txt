@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://smartventa.com/sitemap.xml
+Sitemap: https://smartventa-pos.vercel.app/sitemap.xml
