@@ -1,16 +1,16 @@
 import { Box, Container, Typography, Grid, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
 import {
-  CloudOutlined, InventoryOutlined, ShoppingCartOutlined,
-  SpeedOutlined, SecurityOutlined,
+  CloudOutlined, ShoppingCartOutlined,
+  SpeedOutlined, SecurityOutlined, BlockOutlined,
 } from '@mui/icons-material';
 
 const items = [
-  { icon: <CloudOutlined />, title: 'Arquitectura multi-tenant', desc: 'Diseñado desde cero para manejar múltiples negocios y sucursales de forma aislada y segura.' },
-  { icon: <InventoryOutlined />, title: 'Consistencia de stock en tiempo real', desc: 'Previene stock negativo y mantiene el inventario sincronizado entre todas las ubicaciones.' },
-  { icon: <ShoppingCartOutlined />, title: 'POS multi-carrito', desc: 'Atiende varios clientes simultáneamente con múltiples carritos abiertos en el punto de venta.' },
-  { icon: <SpeedOutlined />, title: 'Optimizado para velocidad', desc: 'Interfaz diseñada para teclado y código de barras. Procesa ventas en segundos.' },
-  { icon: <SecurityOutlined />, title: 'Sistema de auditoría integrado', desc: 'Detecta discrepancias de inventario automáticamente con auditorías periódicas y reportes.' },
+  { icon: <CloudOutlined />, title: 'Arquitectura multi-sucursal', desc: 'Cada sucursal opera de forma aislada y segura. Tus datos nunca se mezclan con los de otros.' },
+  { icon: <BlockOutlined />, title: 'Sin stock negativo', desc: 'El sistema previene automáticamente que se venda más de lo que hay en existencia.' },
+  { icon: <ShoppingCartOutlined />, title: 'POS multi-carrito', desc: 'Atiende varios clientes a la vez con múltiples carritos abiertos simultáneamente.' },
+  { icon: <SpeedOutlined />, title: 'Hecho para velocidad', desc: 'Atajos de teclado, escaneo de código de barras y flujos optimizados para cobrar en segundos.' },
+  { icon: <SecurityOutlined />, title: 'Auditorías automáticas', desc: 'Programa auditorías periódicas que comparan stock físico vs. sistema y generan reportes.' },
 ];
 
 const Differentiators = () => (
@@ -32,37 +32,23 @@ const Differentiators = () => (
 
         <Grid container spacing={3}>
           {items.map((item, i) => (
-            <Grid item xs={12} sm={6} md={i < 3 ? 4 : 6} key={i}>
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                style={{ height: '100%' }}
-              >
-                <Box
-                  sx={{
-                    p: 4, height: '100%', borderRadius: 4,
-                    background: 'linear-gradient(135deg, #04346b, #0d47a1)',
-                    color: '#fff',
-                    transition: 'all 0.3s ease',
-                    '&:hover': { transform: 'translateY(-4px)', boxShadow: '0 16px 48px rgba(4,52,107,0.3)' },
-                  }}
-                >
+            <Grid size={{ xs: 12, sm: 6, md: i < 3 ? 4 : 6 }} key={i}>
+              <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} style={{ height: '100%' }}>
+                <Box sx={{
+                  p: 4, height: '100%', borderRadius: 4,
+                  background: 'linear-gradient(135deg, #04346b, #0d47a1)',
+                  color: '#fff', transition: 'all 0.3s ease',
+                  '&:hover': { transform: 'translateY(-4px)', boxShadow: '0 16px 48px rgba(4,52,107,0.3)' },
+                }}>
                   <Box sx={{
-                    width: 44, height: 44, borderRadius: 2.5,
-                    bgcolor: 'rgba(255,255,255,0.15)',
+                    width: 44, height: 44, borderRadius: 2.5, bgcolor: 'rgba(255,255,255,0.15)',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     mb: 2.5, '& svg': { fontSize: 22 },
                   }}>
                     {item.icon}
                   </Box>
-                  <Typography variant="h6" sx={{ fontWeight: 600, mb: 1, fontSize: '1.05rem' }}>
-                    {item.title}
-                  </Typography>
-                  <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.75)', lineHeight: 1.7 }}>
-                    {item.desc}
-                  </Typography>
+                  <Typography variant="h6" sx={{ fontWeight: 600, mb: 1, fontSize: '1.05rem' }}>{item.title}</Typography>
+                  <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.75)', lineHeight: 1.7 }}>{item.desc}</Typography>
                 </Box>
               </motion.div>
             </Grid>

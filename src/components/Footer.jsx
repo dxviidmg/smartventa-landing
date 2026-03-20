@@ -12,13 +12,13 @@ const Footer = () => {
       <Box sx={{ py: 6, bgcolor: (t) => t.palette.mode === 'dark' ? '#0b1120' : '#04346b', color: 'white' }}>
         <Container maxWidth="lg">
           <Grid container spacing={4}>
-            <Grid item xs={12} md={4}>
+            <Grid size={{ xs: 12, md: 4 }}>
               <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>{CONFIG.company.name}</Typography>
               <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.6)', lineHeight: 1.7 }}>
                 {CONFIG.company.tagline}
               </Typography>
             </Grid>
-            <Grid item xs={12} md={4}>
+            <Grid size={{ xs: 12, md: 4 }}>
               <Typography variant="subtitle2" sx={{ fontWeight: 600, mb: 1.5 }}>Contacto</Typography>
               <Stack spacing={1}>
                 <Stack direction="row" spacing={1} alignItems="center">
@@ -31,7 +31,7 @@ const Footer = () => {
                 </Stack>
               </Stack>
             </Grid>
-            <Grid item xs={12} md={4}>
+            <Grid size={{ xs: 12, md: 4 }}>
               <Typography variant="subtitle2" sx={{ fontWeight: 600, mb: 1.5 }}>Legal</Typography>
               <Stack spacing={1}>
                 <Link component="button" onClick={privacyModal.open} sx={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', textAlign: 'left', fontSize: '0.875rem', '&:hover': { color: 'white' } }}>

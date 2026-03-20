@@ -1,17 +1,16 @@
 import { Box, Container, Typography, Grid, Stack, Paper } from '@mui/material';
 import { motion } from 'framer-motion';
 import {
-  StorefrontOutlined, VisibilityOutlined, SpeedOutlined,
-  BugReportOutlined, TrendingUpOutlined,
+  StorefrontOutlined, VisibilityOutlined,
+  AccessTimeOutlined, SavingsOutlined,
   AdminPanelSettings, Person, Engineering, AttachMoney,
 } from '@mui/icons-material';
 
 const mainBenefits = [
   { icon: <StorefrontOutlined />, title: 'Controla todas tus tiendas en un solo lugar', desc: 'Gestiona ventas, inventario y empleados de todas tus sucursales desde una sola plataforma centralizada.' },
-  { icon: <VisibilityOutlined />, title: 'Visibilidad de inventario en tiempo real', desc: 'Conoce el stock exacto de cada tienda y almacén al instante. Sin sorpresas ni faltantes.' },
-  { icon: <SpeedOutlined />, title: 'Ventas más rápidas con un POS optimizado', desc: 'Interfaz diseñada para velocidad: escaneo de códigos, atajos de teclado y múltiples carritos.' },
-  { icon: <BugReportOutlined />, title: 'Reduce errores y problemas de stock', desc: 'Sistema de auditoría integrado que detecta inconsistencias y previene stock negativo automáticamente.' },
-  { icon: <TrendingUpOutlined />, title: 'Escala conforme crece tu negocio', desc: 'Agrega tiendas, almacenes y usuarios sin límite. La plataforma crece contigo.' },
+  { icon: <VisibilityOutlined />, title: 'Visibilidad total de tu negocio', desc: 'Conoce el stock exacto, las ventas del día y el rendimiento de cada sucursal al instante.' },
+  { icon: <AccessTimeOutlined />, title: 'Ahorra tiempo en tareas operativas', desc: 'Importaciones masivas, transferencias automatizadas y reportes listos para descargar.' },
+  { icon: <SavingsOutlined />, title: 'Reduce pérdidas por errores de inventario', desc: 'Auditorías integradas que detectan inconsistencias antes de que se conviertan en pérdidas.' },
 ];
 
 const roleBenefits = [
@@ -38,10 +37,9 @@ const Benefits = () => (
           </motion.div>
         </Stack>
 
-        {/* Main benefits */}
         <Grid container spacing={4}>
           {mainBenefits.map((b, i) => (
-            <Grid item xs={12} sm={6} md={i < 3 ? 4 : 6} key={i}>
+            <Grid size={{ xs: 12, sm: 6, md: 3 }} key={i}>
               <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} style={{ height: '100%' }}>
                 <Box sx={{
                   p: 4, height: '100%', borderRadius: 4, bgcolor: 'background.paper',
@@ -63,15 +61,11 @@ const Benefits = () => (
           ))}
         </Grid>
 
-        {/* Role-based benefits */}
         <Grid container spacing={3}>
           {roleBenefits.map((rb, i) => (
-            <Grid item xs={12} sm={6} md={3} key={i}>
+            <Grid size={{ xs: 12, sm: 6, md: 3 }} key={i}>
               <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 + i * 0.08 }} style={{ height: '100%' }}>
-                <Paper elevation={0} sx={{
-                  p: 3, height: '100%', borderRadius: 4,
-                  bgcolor: 'primary.main', color: '#fff',
-                }}>
+                <Paper elevation={0} sx={{ p: 3, height: '100%', borderRadius: 4, bgcolor: 'primary.main', color: '#fff' }}>
                   <Box sx={{ mb: 1.5, '& svg': { fontSize: 28 } }}>{rb.icon}</Box>
                   <Typography variant="subtitle2" sx={{ fontWeight: 600, mb: 1.5 }}>{rb.title}</Typography>
                   <Stack spacing={1}>

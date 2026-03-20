@@ -41,7 +41,7 @@ const TargetAudience = () => (
 
         <Grid container spacing={4}>
           {audiences.map((a, i) => (
-            <Grid item xs={12} md={4} key={i}>
+            <Grid size={{ xs: 12, md: 4 }} key={i}>
               <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} style={{ height: '100%' }}>
                 <Box sx={{
                   p: 4, height: '100%', borderRadius: 4, textAlign: 'center',
@@ -73,7 +73,7 @@ const TargetAudience = () => (
         </motion.div>
         <Grid container spacing={2} justifyContent="center">
           {industries.map((ind, i) => (
-            <Grid item xs={6} sm={3} md={1.5} key={i}>
+            <Grid size={{ xs: 6, sm: 3, md: 1.5 }} key={i}>
               <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}>
                 <Stack alignItems="center" spacing={1} sx={{
                   py: 2, px: 1, borderRadius: 3,

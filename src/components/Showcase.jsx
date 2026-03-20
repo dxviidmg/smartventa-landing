@@ -75,7 +75,7 @@ const Showcase = () => (
 
         <Grid container spacing={3}>
           {/* Dashboard */}
-          <Grid item xs={12} md={8}>
+          <Grid size={{ xs: 12, md: 8 }}>
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ height: '100%' }}>
               <MockCard title="Dashboard — Ventas Mensuales" chip="Tiempo real">
                 <Box sx={{ width: '100%', height: 280 }}>
@@ -92,7 +92,7 @@ const Showcase = () => (
           </Grid>
 
           {/* Pie chart */}
-          <Grid item xs={12} md={4}>
+          <Grid size={{ xs: 12, md: 4 }}>
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ height: '100%' }}>
               <MockCard title="Ventas por Tienda">
                 <Box sx={{ width: '100%', height: 280, display: 'flex', justifyContent: 'center' }}>
@@ -107,7 +107,7 @@ const Showcase = () => (
           </Grid>
 
           {/* POS */}
-          <Grid item xs={12} md={5}>
+          <Grid size={{ xs: 12, md: 5 }}>
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }} style={{ height: '100%' }}>
               <MockCard title="Punto de Venta" chip="POS">
                 <Stack spacing={1}>
@@ -136,7 +136,7 @@ const Showcase = () => (
           </Grid>
 
           {/* Inventory */}
-          <Grid item xs={12} md={7}>
+          <Grid size={{ xs: 12, md: 7 }}>
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} style={{ height: '100%' }}>
               <MockCard title="Inventario Multi-Tienda" chip="Sincronizado">
                 <Box sx={{ overflowX: 'auto' }}>

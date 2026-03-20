@@ -21,12 +21,11 @@ function App() {
         <Navbar />
         <Hero />
         <Benefits />
+        <TargetAudience />
         <Features />
         <HowItWorks />
-        <Showcase />
         <Differentiators />
         <Pricing />
-        <TargetAudience />
         <FAQ />
         <CTA />
         <Footer />
