@@ -43,10 +43,7 @@ const Differentiators = () => (
                 <Box
                   sx={{
                     p: 4, height: '100%', borderRadius: 4,
-                    background: (theme) =>
-                      theme.palette.mode === 'dark'
-                        ? 'linear-gradient(135deg, rgba(30,41,59,0.8), rgba(15,23,42,0.8))'
-                        : 'linear-gradient(135deg, #04346b, #0d47a1)',
+                    background: 'linear-gradient(135deg, #04346b, #0d47a1)',
                     color: '#fff',
                     transition: 'all 0.3s ease',
                     '&:hover': { transform: 'translateY(-4px)', boxShadow: '0 16px 48px rgba(4,52,107,0.3)' },

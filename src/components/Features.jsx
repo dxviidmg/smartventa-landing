@@ -1,21 +1,23 @@
 import { Box, Container, Typography, Grid, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
 import {
-  StorefrontOutlined, PointOfSaleOutlined, Inventory2Outlined,
+  Inventory2Outlined, StorefrontOutlined, PointOfSaleOutlined,
   SwapHorizOutlined, PeopleOutlined, AssessmentOutlined,
   AdminPanelSettingsOutlined, TableChartOutlined, ReceiptLongOutlined,
+  AssessmentOutlined as StockIcon,
 } from '@mui/icons-material';
 
 const features = [
-  { icon: <StorefrontOutlined />, title: 'Gestión multi-tienda', desc: 'Administra todas tus sucursales y almacenes desde una sola cuenta.' },
-  { icon: <PointOfSaleOutlined />, title: 'POS con código de barras', desc: 'Punto de venta rápido, optimizado para teclado y lectores de barras.' },
-  { icon: <Inventory2Outlined />, title: 'Inventario en tiempo real', desc: 'Stock actualizado al instante en todas tus ubicaciones.' },
-  { icon: <SwapHorizOutlined />, title: 'Transferencias entre tiendas', desc: 'Mueve productos entre sucursales y almacenes con trazabilidad completa.' },
-  { icon: <PeopleOutlined />, title: 'Clientes y descuentos', desc: 'Registra clientes y aplica descuentos personalizados por cliente.' },
-  { icon: <AssessmentOutlined />, title: 'Reportes y dashboard', desc: 'Gráficos de ventas, comparativas entre tiendas y métricas clave.' },
-  { icon: <AdminPanelSettingsOutlined />, title: 'Auditoría integrada', desc: 'Detecta inconsistencias de inventario con auditorías periódicas.' },
-  { icon: <TableChartOutlined />, title: 'Importación y exportación Excel', desc: 'Carga productos e inventario masivamente. Exporta reportes a Excel.' },
-  { icon: <ReceiptLongOutlined />, title: 'Impresión de tickets', desc: 'Conexión directa con impresoras térmicas para tickets de venta.' },
+  { icon: <Inventory2Outlined />, title: 'Gestión de Productos', desc: 'Catálogo completo con precios unificados, mayoreo, códigos de barras, SKU e importación masiva vía Excel.' },
+  { icon: <StorefrontOutlined />, title: 'Gestión de Almacenes', desc: 'Inventario separado por almacén, distribución a tiendas, control centralizado y seguimiento de productos en tránsito.' },
+  { icon: <StockIcon />, title: 'Control de Inventario', desc: 'Stock en tiempo real por tienda y almacén, alertas de bajo stock e importación masiva de inventario.' },
+  { icon: <SwapHorizOutlined />, title: 'Transferencias entre Sucursales', desc: 'Solicita, aprueba y confirma movimientos entre tiendas y almacenes con trazabilidad completa.' },
+  { icon: <PointOfSaleOutlined />, title: 'Punto de Venta', desc: 'Interfaz rápida con lectores de código de barras, múltiples métodos de pago e historial de transacciones.' },
+  { icon: <PeopleOutlined />, title: 'Clientes y Descuentos', desc: 'Registro de clientes, descuentos personalizados e historial de compras por cliente.' },
+  { icon: <AssessmentOutlined />, title: 'Dashboard y Reportes', desc: 'Gráficos de ventas, comparativas entre tiendas, análisis por periodo y exportación a Excel.' },
+  { icon: <AdminPanelSettingsOutlined />, title: 'Gestión de Empleados', desc: 'Roles y permisos personalizables, control de acceso por tienda y registro de actividad.' },
+  { icon: <TableChartOutlined />, title: 'Importación y Exportación Excel', desc: 'Carga productos e inventario masivamente. Exporta reportes y auditorías a Excel.' },
+  { icon: <ReceiptLongOutlined />, title: 'Impresión de Tickets', desc: 'Conexión directa con impresoras térmicas para tickets de venta.' },
 ];
 
 const Features = () => (

@@ -1,11 +1,12 @@
 import { Box, Container, Typography, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
-import { SettingsOutlined, PointOfSaleOutlined, InsightsOutlined } from '@mui/icons-material';
+import { SettingsOutlined, StorefrontOutlined, PointOfSaleOutlined, InsightsOutlined } from '@mui/icons-material';
 
 const steps = [
-  { icon: <SettingsOutlined />, num: '01', title: 'Configura tus tiendas y productos', desc: 'Agrega tus sucursales, almacenes y catálogo de productos. Importa masivamente desde Excel.' },
-  { icon: <PointOfSaleOutlined />, num: '02', title: 'Empieza a vender desde cualquier ubicación', desc: 'Usa el punto de venta en cualquier tienda. El inventario se actualiza automáticamente.' },
-  { icon: <InsightsOutlined />, num: '03', title: 'Monitorea todo en tiempo real', desc: 'Revisa ventas, inventario y rendimiento de todas tus sucursales desde el dashboard.' },
+  { icon: <SettingsOutlined />, num: '01', title: 'Configura tu catálogo', desc: 'Agrega tus productos con precios, categorías y códigos de barras. Importa masivamente desde Excel.' },
+  { icon: <StorefrontOutlined />, num: '02', title: 'Distribuye a tus tiendas', desc: 'Asigna inventario a cada sucursal y almacén. Realiza transferencias entre ubicaciones fácilmente.' },
+  { icon: <PointOfSaleOutlined />, num: '03', title: 'Vende con agilidad', desc: 'Procesa ventas rápidamente con el punto de venta. El inventario se actualiza al instante.' },
+  { icon: <InsightsOutlined />, num: '04', title: 'Analiza y optimiza', desc: 'Revisa reportes y métricas para tomar decisiones informadas y hacer crecer tu negocio.' },
 ];
 
 const HowItWorks = () => (
@@ -20,7 +21,7 @@ const HowItWorks = () => (
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
             <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' } }}>
-              Tres pasos para empezar
+              Cuatro pasos para empezar
             </Typography>
           </motion.div>
         </Stack>
