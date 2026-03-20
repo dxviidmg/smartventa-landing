@@ -1,5 +1,5 @@
 import { ThemeProvider, CssBaseline, Box } from '@mui/material';
-import { ColorModeProvider, useColorMode } from './hooks/useColorMode';
+import { lightTheme } from './theme';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Benefits from './components/Benefits';
@@ -13,10 +13,9 @@ import FAQ from './components/FAQ';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
 
-const AppContent = () => {
-  const { theme } = useColorMode();
+function App() {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={lightTheme}>
       <CssBaseline />
       <Box sx={{ bgcolor: 'background.default', minHeight: '100vh' }}>
         <Navbar />
@@ -33,14 +32,6 @@ const AppContent = () => {
         <Footer />
       </Box>
     </ThemeProvider>
-  );
-};
-
-function App() {
-  return (
-    <ColorModeProvider>
-      <AppContent />
-    </ColorModeProvider>
   );
 }
 

@@ -2,8 +2,6 @@ import { Box, Container, Typography, Grid, Stack, Paper, Chip } from '@mui/mater
 import { motion } from 'framer-motion';
 import { BarChart } from '@mui/x-charts/BarChart';
 import { PieChart } from '@mui/x-charts/PieChart';
-import { useColorMode } from '../hooks/useColorMode';
-
 const salesData = [
   { month: 'Ene', ventas: 45200 },
   { month: 'Feb', ventas: 52800 },
@@ -35,13 +33,12 @@ const inventoryRows = [
 ];
 
 const MockCard = ({ title, children, chip }) => {
-  const { mode } = useColorMode();
   return (
     <Paper
       elevation={0}
       sx={{
         p: 3, borderRadius: 4, height: '100%',
-        bgcolor: mode === 'dark' ? 'background.paper' : '#fff',
+        bgcolor: '#fff',
         border: '1px solid', borderColor: 'divider',
       }}
     >

@@ -3,9 +3,8 @@ import {
   AppBar, Toolbar, Container, Button, Box, IconButton, Drawer,
   List, ListItem, ListItemButton, ListItemText, Stack,
 } from '@mui/material';
-import { Menu as MenuIcon, DarkMode, LightMode } from '@mui/icons-material';
+import { Menu as MenuIcon } from '@mui/icons-material';
 import { scrollToSection } from '../utils/helpers';
-import { useColorMode } from '../hooks/useColorMode';
 import { CONFIG } from '../config/constants';
 
 const NAV_ITEMS = [
@@ -18,7 +17,6 @@ const NAV_ITEMS = [
 
 const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const { mode, toggle } = useColorMode();
 
   const handleNav = (id) => {
     scrollToSection(id);
@@ -31,10 +29,8 @@ const Navbar = () => {
         position="fixed"
         elevation={0}
         sx={{
-          bgcolor: mode === 'light' ? 'rgba(255,255,255,0.8)' : 'rgba(15,23,42,0.8)',
-          backdropFilter: 'blur(20px)',
-          borderBottom: '1px solid',
-          borderColor: mode === 'light' ? 'rgba(0,0,0,0.06)' : 'rgba(255,255,255,0.06)',
+          bgcolor: 'primary.main',
+          borderBottom: '1px solid rgba(255,255,255,0.1)',
         }}
       >
         <Container maxWidth="lg">
@@ -53,14 +49,11 @@ const Navbar = () => {
                 <Button
                   key={id}
                   onClick={() => handleNav(id)}
-                  sx={{ color: 'text.secondary', fontWeight: 500, fontSize: '0.9rem', '&:hover': { color: 'primary.main' } }}
+                  sx={{ color: 'rgba(255,255,255,0.8)', fontWeight: 500, fontSize: '0.9rem', '&:hover': { color: '#fff' } }}
                 >
                   {label}
                 </Button>
               ))}
-              <IconButton onClick={toggle} size="small" sx={{ ml: 1 }}>
-                {mode === 'light' ? <DarkMode fontSize="small" /> : <LightMode fontSize="small" />}
-              </IconButton>
               <Button
                 variant="contained"
                 onClick={() => handleNav('cta')}
@@ -76,14 +69,9 @@ const Navbar = () => {
               </Button>
             </Stack>
 
-            <Stack direction="row" spacing={1} sx={{ display: { xs: 'flex', md: 'none' } }}>
-              <IconButton onClick={toggle} size="small">
-                {mode === 'light' ? <DarkMode fontSize="small" /> : <LightMode fontSize="small" />}
-              </IconButton>
-              <IconButton onClick={() => setDrawerOpen(true)}>
-                <MenuIcon />
-              </IconButton>
-            </Stack>
+            <IconButton onClick={() => setDrawerOpen(true)} sx={{ display: { xs: 'flex', md: 'none' }, color: '#fff' }}>
+              <MenuIcon />
+            </IconButton>
           </Toolbar>
         </Container>
       </AppBar>

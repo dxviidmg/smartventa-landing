@@ -2,12 +2,8 @@ import { Box, Container, Typography, Stack, Button } from '@mui/material';
 import { motion } from 'framer-motion';
 import { ArrowForward, WhatsApp } from '@mui/icons-material';
 import { openWhatsApp } from '../utils/helpers';
-import { useColorMode } from '../hooks/useColorMode';
 
 const CTA = () => {
-  const { mode } = useColorMode();
-  const isDark = mode === 'dark';
-
   return (
     <Box
       id="cta"
@@ -15,9 +11,7 @@ const CTA = () => {
         py: { xs: 10, md: 14 },
         position: 'relative',
         overflow: 'hidden',
-        background: isDark
-          ? 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)'
-          : 'linear-gradient(135deg, #04346b 0%, #0d47a1 100%)',
+        background: 'linear-gradient(135deg, #04346b 0%, #0d47a1 100%)',
       }}
     >
       <Box sx={{

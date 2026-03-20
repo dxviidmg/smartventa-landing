@@ -2,12 +2,8 @@ import { Box, Container, Typography, Button, Stack, Chip } from '@mui/material';
 import { motion } from 'framer-motion';
 import { PlayArrow, ArrowForward } from '@mui/icons-material';
 import { scrollToSection } from '../utils/helpers';
-import { useColorMode } from '../hooks/useColorMode';
 
 const Hero = () => {
-  const { mode } = useColorMode();
-  const isDark = mode === 'dark';
-
   return (
     <Box
       sx={{
@@ -15,9 +11,7 @@ const Hero = () => {
         pb: { xs: 10, md: 16 },
         position: 'relative',
         overflow: 'hidden',
-        background: isDark
-          ? 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)'
-          : 'linear-gradient(135deg, #04346b 0%, #0d47a1 50%, #1565c0 100%)',
+        background: 'linear-gradient(135deg, #04346b 0%, #0d47a1 50%, #1565c0 100%)',
       }}
     >
       {/* Gradient orbs */}

@@ -37,21 +37,9 @@ const baseTheme = {
 export const lightTheme = createTheme({
   ...baseTheme,
   palette: {
-    mode: 'light',
     primary: { main: '#04346b', dark: '#03294d', light: '#1565c0' },
     secondary: { main: '#10b981' },
     background: { default: '#f8fafc', paper: '#ffffff' },
     text: { primary: '#0f172a', secondary: '#475569' },
-  },
-});
-
-export const darkTheme = createTheme({
-  ...baseTheme,
-  palette: {
-    mode: 'dark',
-    primary: { main: '#60a5fa', dark: '#3b82f6', light: '#93c5fd' },
-    secondary: { main: '#34d399' },
-    background: { default: '#0f172a', paper: '#1e293b' },
-    text: { primary: '#f1f5f9', secondary: '#94a3b8' },
   },
 });
