@@ -21,7 +21,7 @@ const roleBenefits = [
 ];
 
 const Benefits = () => (
-  <Box id="benefits" sx={{ py: { xs: 10, md: 14 }, bgcolor: '#04346b', color: '#fff' }}>
+  <Box id="benefits" sx={{ py: { xs: 6, md: 8 }, bgcolor: '#04346b', color: '#fff' }}>
     <Container maxWidth="lg">
       <Stack spacing={8}>
         <Stack spacing={2} alignItems="center" textAlign="center">

@@ -2,7 +2,6 @@ export const CONFIG = {
   contact: {
     phone: '+52 55 6165 2599',
     phoneFormatted: '525561652599',
-    email: 'contacto@smartventa.com',
     whatsappMessage: 'Hola, me interesa solicitar una demo de SmartVenta',
   },
   company: {

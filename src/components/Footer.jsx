@@ -1,5 +1,5 @@
 import { Box, Container, Typography, Grid, Stack, Link, Dialog, DialogTitle, DialogContent, IconButton } from '@mui/material';
-import { PhoneOutlined, EmailOutlined, Close } from '@mui/icons-material';
+import { PhoneOutlined, Close } from '@mui/icons-material';
 import { useModal } from '../hooks/useModal';
 import { CONFIG } from '../config/constants';
 
@@ -24,10 +24,6 @@ const Footer = () => {
                 <Stack direction="row" spacing={1} alignItems="center">
                   <PhoneOutlined sx={{ fontSize: 16, color: 'rgba(255,255,255,0.5)' }} />
                   <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.7)' }}>{CONFIG.contact.phone}</Typography>
-                </Stack>
-                <Stack direction="row" spacing={1} alignItems="center">
-                  <EmailOutlined sx={{ fontSize: 16, color: 'rgba(255,255,255,0.5)' }} />
-                  <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.7)' }}>{CONFIG.contact.email}</Typography>
                 </Stack>
               </Stack>
             </Grid>

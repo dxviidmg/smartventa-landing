@@ -14,7 +14,7 @@ const items = [
 ];
 
 const Differentiators = () => (
-  <Box sx={{ py: { xs: 10, md: 14 }, bgcolor: 'background.default' }}>
+  <Box sx={{ py: { xs: 6, md: 8 }, bgcolor: 'background.default' }}>
     <Container maxWidth="lg">
       <Stack spacing={8}>
         <Stack spacing={2} alignItems="center" textAlign="center">

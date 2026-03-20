@@ -4,7 +4,7 @@ import {
   List, ListItem, ListItemButton, ListItemText, Stack,
 } from '@mui/material';
 import { Menu as MenuIcon } from '@mui/icons-material';
-import { scrollToSection } from '../utils/helpers';
+import { scrollToSection, openWhatsApp } from '../utils/helpers';
 import { CONFIG } from '../config/constants';
 
 const NAV_ITEMS = [
@@ -56,7 +56,7 @@ const Navbar = () => {
               ))}
               <Button
                 variant="contained"
-                onClick={() => handleNav('cta')}
+                onClick={() => openWhatsApp()}
                 sx={{
                   ml: 1,
                   bgcolor: 'secondary.main',
@@ -87,7 +87,7 @@ const Navbar = () => {
               </ListItem>
             ))}
             <ListItem disablePadding>
-              <ListItemButton onClick={() => handleNav('cta')}>
+              <ListItemButton onClick={() => { openWhatsApp(); setDrawerOpen(false); }}>
                 <ListItemText primary="Solicitar demo" primaryTypographyProps={{ color: 'secondary.main', fontWeight: 600 }} />
               </ListItemButton>
             </ListItem>

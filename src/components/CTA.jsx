@@ -1,6 +1,6 @@
 import { Box, Container, Typography, Stack, Button } from '@mui/material';
 import { motion } from 'framer-motion';
-import { ArrowForward, WhatsApp } from '@mui/icons-material';
+import { WhatsApp } from '@mui/icons-material';
 import { openWhatsApp } from '../utils/helpers';
 
 const CTA = () => {
@@ -8,7 +8,7 @@ const CTA = () => {
     <Box
       id="cta"
       sx={{
-        py: { xs: 10, md: 14 },
+        py: { xs: 6, md: 8 },
         position: 'relative',
         overflow: 'hidden',
         background: 'linear-gradient(135deg, #04346b 0%, #0d47a1 100%)',
@@ -33,12 +33,11 @@ const CTA = () => {
             </Typography>
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
-            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
-              <Button
+            <Button
                 variant="contained"
                 size="large"
-                endIcon={<ArrowForward />}
-                onClick={() => openWhatsApp('Hola, me interesa una prueba gratuita de SmartVenta')}
+                startIcon={<WhatsApp />}
+                onClick={() => openWhatsApp()}
                 sx={{
                   px: 4, py: 1.5, fontSize: '1rem',
                   bgcolor: '#10b981', color: '#fff',
@@ -46,22 +45,8 @@ const CTA = () => {
                   boxShadow: '0 4px 24px rgba(16,185,129,0.4)',
                 }}
               >
-                Prueba gratis
-              </Button>
-              <Button
-                variant="outlined"
-                size="large"
-                startIcon={<WhatsApp />}
-                onClick={() => openWhatsApp()}
-                sx={{
-                  px: 4, py: 1.5, fontSize: '1rem',
-                  borderColor: 'rgba(255,255,255,0.3)', color: 'white',
-                  '&:hover': { borderColor: 'rgba(255,255,255,0.6)', bgcolor: 'rgba(255,255,255,0.05)' },
-                }}
-              >
                 Solicitar demo
               </Button>
-            </Stack>
           </motion.div>
         </Stack>
       </Container>

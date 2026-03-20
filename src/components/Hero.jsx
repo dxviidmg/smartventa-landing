@@ -1,14 +1,14 @@
 import { Box, Container, Typography, Button, Stack, Chip } from '@mui/material';
 import { motion } from 'framer-motion';
-import { PlayArrow, ArrowForward } from '@mui/icons-material';
-import { scrollToSection } from '../utils/helpers';
+import { ArrowForward } from '@mui/icons-material';
+import { openWhatsApp } from '../utils/helpers';
 
 const Hero = () => {
   return (
     <Box
       sx={{
-        pt: { xs: 16, md: 20 },
-        pb: { xs: 10, md: 16 },
+        pt: { xs: 14, md: 16 },
+        pb: { xs: 6, md: 8 },
         position: 'relative',
         overflow: 'hidden',
         background: 'linear-gradient(135deg, #04346b 0%, #0d47a1 50%, #1565c0 100%)',
@@ -85,12 +85,11 @@ const Hero = () => {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.35 }}>
-            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ mt: 2 }}>
-              <Button
+            <Button
                 variant="contained"
                 size="large"
                 endIcon={<ArrowForward />}
-                onClick={() => scrollToSection('cta')}
+                onClick={() => openWhatsApp()}
                 sx={{
                   px: 4, py: 1.5, fontSize: '1rem',
                   bgcolor: '#10b981', color: '#fff',
@@ -98,22 +97,8 @@ const Hero = () => {
                   boxShadow: '0 4px 24px rgba(16,185,129,0.4)',
                 }}
               >
-                Prueba gratis
-              </Button>
-              <Button
-                variant="outlined"
-                size="large"
-                startIcon={<PlayArrow />}
-                onClick={() => scrollToSection('cta')}
-                sx={{
-                  px: 4, py: 1.5, fontSize: '1rem',
-                  borderColor: 'rgba(255,255,255,0.3)', color: 'white',
-                  '&:hover': { borderColor: 'rgba(255,255,255,0.6)', bgcolor: 'rgba(255,255,255,0.05)' },
-                }}
-              >
                 Solicitar demo
               </Button>
-            </Stack>
           </motion.div>
         </Stack>
       </Container>

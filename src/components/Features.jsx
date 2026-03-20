@@ -21,7 +21,7 @@ const features = [
 ];
 
 const Features = () => (
-  <Box id="features" sx={{ py: { xs: 10, md: 14 }, bgcolor: 'background.paper' }}>
+  <Box id="features" sx={{ py: { xs: 6, md: 8 }, bgcolor: 'background.paper' }}>
     <Container maxWidth="lg">
       <Stack spacing={8}>
         <Stack spacing={2} alignItems="center" textAlign="center">
