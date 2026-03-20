@@ -13,7 +13,7 @@ const faqs = [
 ];
 
 const FAQ = () => (
-  <Box id="faq" sx={{ py: { xs: 10, md: 14 }, bgcolor: 'background.paper' }}>
+  <Box id="faq" sx={{ py: { xs: 10, md: 14 }, bgcolor: 'background.default' }}>
     <Container maxWidth="md">
       <Stack spacing={6}>
         <Stack spacing={2} alignItems="center" textAlign="center">

@@ -10,17 +10,17 @@ const steps = [
 ];
 
 const HowItWorks = () => (
-  <Box id="how-it-works" sx={{ py: { xs: 10, md: 14 }, bgcolor: 'background.default' }}>
+  <Box id="how-it-works" sx={{ py: { xs: 10, md: 14 }, bgcolor: '#04346b', color: '#fff' }}>
     <Container maxWidth="md">
       <Stack spacing={8}>
         <Stack spacing={2} alignItems="center" textAlign="center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <Typography variant="overline" sx={{ color: 'secondary.main', fontWeight: 700, letterSpacing: 2 }}>
+            <Typography variant="overline" sx={{ color: '#34d399', fontWeight: 700, letterSpacing: 2 }}>
               Cómo funciona
             </Typography>
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
-            <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' } }}>
+            <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' }, color: '#fff' }}>
               Cuatro pasos para empezar
             </Typography>
           </motion.div>
@@ -41,26 +41,25 @@ const HowItWorks = () => (
                 alignItems="flex-start"
                 sx={{
                   py: 4,
-                  borderBottom: i < steps.length - 1 ? '1px solid' : 'none',
-                  borderColor: 'divider',
+                  borderBottom: i < steps.length - 1 ? '1px solid rgba(255,255,255,0.15)' : 'none',
                 }}
               >
                 <Box sx={{
                   minWidth: 56, height: 56, borderRadius: 3,
-                  bgcolor: 'primary.main', color: '#fff',
+                  bgcolor: 'rgba(255,255,255,0.1)', color: '#34d399',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   '& svg': { fontSize: 26 },
                 }}>
                   {s.icon}
                 </Box>
                 <Box sx={{ flex: 1 }}>
-                  <Typography variant="overline" sx={{ color: 'text.secondary', fontSize: '0.7rem' }}>
+                  <Typography variant="overline" sx={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.7rem' }}>
                     Paso {s.num}
                   </Typography>
-                  <Typography variant="h6" sx={{ fontWeight: 600, mb: 0.5 }}>
+                  <Typography variant="h6" sx={{ fontWeight: 600, mb: 0.5, color: '#fff' }}>
                     {s.title}
                   </Typography>
-                  <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.7 }}>
+                  <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.7 }}>
                     {s.desc}
                   </Typography>
                 </Box>

@@ -21,17 +21,17 @@ const roleBenefits = [
 ];
 
 const Benefits = () => (
-  <Box id="benefits" sx={{ py: { xs: 10, md: 14 }, bgcolor: 'background.default' }}>
+  <Box id="benefits" sx={{ py: { xs: 10, md: 14 }, bgcolor: '#04346b', color: '#fff' }}>
     <Container maxWidth="lg">
       <Stack spacing={8}>
         <Stack spacing={2} alignItems="center" textAlign="center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <Typography variant="overline" sx={{ color: 'secondary.main', fontWeight: 700, letterSpacing: 2 }}>
+            <Typography variant="overline" sx={{ color: '#34d399', fontWeight: 700, letterSpacing: 2 }}>
               Beneficios
             </Typography>
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
-            <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' }, maxWidth: 700 }}>
+            <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' }, maxWidth: 700, color: '#fff' }}>
               Resultados reales para tu negocio
             </Typography>
           </motion.div>
@@ -42,19 +42,20 @@ const Benefits = () => (
             <Grid size={{ xs: 12, sm: 6, md: 3 }} key={i}>
               <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} style={{ height: '100%' }}>
                 <Box sx={{
-                  p: 4, height: '100%', borderRadius: 4, bgcolor: 'background.paper',
-                  border: '1px solid', borderColor: 'divider', transition: 'all 0.3s ease',
-                  '&:hover': { borderColor: 'secondary.main', transform: 'translateY(-4px)', boxShadow: '0 12px 40px rgba(0,0,0,0.08)' },
+                  p: 4, height: '100%', borderRadius: 4,
+                  bgcolor: 'rgba(255,255,255,0.08)',
+                  border: '1px solid rgba(255,255,255,0.12)', transition: 'all 0.3s ease',
+                  '&:hover': { bgcolor: 'rgba(255,255,255,0.12)', transform: 'translateY(-4px)' },
                 }}>
                   <Box sx={{
-                    width: 48, height: 48, borderRadius: 3, bgcolor: 'rgba(16,185,129,0.1)',
+                    width: 48, height: 48, borderRadius: 3, bgcolor: 'rgba(52,211,153,0.15)',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    mb: 2.5, color: 'secondary.main', '& svg': { fontSize: 24 },
+                    mb: 2.5, color: '#34d399', '& svg': { fontSize: 24 },
                   }}>
                     {b.icon}
                   </Box>
-                  <Typography variant="h6" sx={{ fontWeight: 600, mb: 1, fontSize: '1.05rem' }}>{b.title}</Typography>
-                  <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.7 }}>{b.desc}</Typography>
+                  <Typography variant="h6" sx={{ fontWeight: 600, mb: 1, fontSize: '1.05rem', color: '#fff' }}>{b.title}</Typography>
+                  <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.7 }}>{b.desc}</Typography>
                 </Box>
               </motion.div>
             </Grid>
@@ -65,8 +66,8 @@ const Benefits = () => (
           {roleBenefits.map((rb, i) => (
             <Grid size={{ xs: 12, sm: 6, md: 3 }} key={i}>
               <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 + i * 0.08 }} style={{ height: '100%' }}>
-                <Paper elevation={0} sx={{ p: 3, height: '100%', borderRadius: 4, bgcolor: 'primary.main', color: '#fff' }}>
-                  <Box sx={{ mb: 1.5, '& svg': { fontSize: 28 } }}>{rb.icon}</Box>
+                <Paper elevation={0} sx={{ p: 3, height: '100%', borderRadius: 4, bgcolor: 'rgba(255,255,255,0.1)', color: '#fff' }}>
+                  <Box sx={{ mb: 1.5, '& svg': { fontSize: 28 }, color: '#34d399' }}>{rb.icon}</Box>
                   <Typography variant="subtitle2" sx={{ fontWeight: 600, mb: 1.5 }}>{rb.title}</Typography>
                   <Stack spacing={1}>
                     {rb.items.map((item, j) => (

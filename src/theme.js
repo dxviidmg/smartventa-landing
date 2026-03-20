@@ -39,7 +39,7 @@ export const lightTheme = createTheme({
   palette: {
     primary: { main: '#04346b', dark: '#03294d', light: '#1565c0' },
     secondary: { main: '#10b981' },
-    background: { default: '#f8fafc', paper: '#ffffff' },
+    background: { default: '#eef2f6', paper: '#ffffff' },
     text: { primary: '#0f172a', secondary: '#475569' },
   },
 });
