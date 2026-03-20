@@ -7,7 +7,7 @@ import {
 
 const audiences = [
   { icon: <StorefrontOutlined />, title: 'Tiendas retail', desc: 'Negocios de venta al público que necesitan un punto de venta ágil y control de inventario.' },
-  { icon: <AccountTreeOutlined />, title: 'Negocios multi-sucursal', desc: 'Cadenas de tiendas que necesitan control centralizado de todas sus operaciones.' },
+  { icon: <AccountTreeOutlined />, title: 'Negocios multi-sucursal', desc: 'Cadenas de tiendas que requieren visibilidad y coordinación entre todas sus ubicaciones.' },
   { icon: <WarehouseOutlined />, title: 'Operaciones con almacén', desc: 'Negocios que distribuyen productos desde almacenes centrales a sus puntos de venta.' },
 ];
 
@@ -42,12 +42,12 @@ const TargetAudience = () => (
         <Grid container spacing={4}>
           {audiences.map((a, i) => (
             <Grid size={{ xs: 12, md: 4 }} key={i}>
-              <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} style={{ height: '100%' }}>
+              <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -6 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} style={{ height: '100%' }}>
                 <Box sx={{
                   p: 4, height: '100%', borderRadius: 4, textAlign: 'center',
                   border: '1px solid', borderColor: 'divider', bgcolor: 'background.paper',
                   transition: 'all 0.3s ease',
-                  '&:hover': { borderColor: 'primary.light', transform: 'translateY(-4px)', boxShadow: '0 12px 40px rgba(0,0,0,0.08)' },
+                  '&:hover': { borderColor: 'primary.light', boxShadow: '0 12px 40px rgba(0,0,0,0.08)' },
                 }}>
                   <Box sx={{
                     width: 56, height: 56, borderRadius: 3, mx: 'auto',
@@ -75,7 +75,7 @@ const TargetAudience = () => (
           <Grid container spacing={2} justifyContent="center">
           {industries.map((ind, i) => (
             <Grid size={{ xs: 6, sm: 3, md: 1.5 }} key={i}>
-              <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}>
+              <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} whileHover={{ scale: 1.08, y: -3 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}>
                 <Stack alignItems="center" spacing={1} sx={{
                   py: 2, px: 1, borderRadius: 3,
                   border: '1px solid', borderColor: 'divider',

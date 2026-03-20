@@ -32,6 +32,7 @@ const HowItWorks = () => (
               key={i}
               initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
               whileInView={{ opacity: 1, x: 0 }}
+              whileHover={{ x: 8 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.15 }}
             >

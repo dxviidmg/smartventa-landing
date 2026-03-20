@@ -10,7 +10,7 @@ const items = [
   { icon: <BlockOutlined />, title: 'Sin stock negativo', desc: 'El sistema previene automáticamente que se venda más de lo que hay en existencia.' },
   { icon: <ShoppingCartOutlined />, title: 'POS multi-carrito', desc: 'Atiende varios clientes a la vez con múltiples carritos abiertos simultáneamente.' },
   { icon: <SpeedOutlined />, title: 'Hecho para velocidad', desc: 'Atajos de teclado, escaneo de código de barras y flujos optimizados para cobrar en segundos.' },
-  { icon: <SecurityOutlined />, title: 'Auditorías automáticas', desc: 'Programa auditorías periódicas que comparan stock físico vs. sistema y generan reportes.' },
+  { icon: <SecurityOutlined />, title: 'Datos aislados y seguros', desc: 'Cada negocio tiene su propia base de datos. Tu información nunca se mezcla con la de otros.' },
 ];
 
 const Differentiators = () => (
@@ -33,12 +33,12 @@ const Differentiators = () => (
         <Grid container spacing={3}>
           {items.map((item, i) => (
             <Grid size={{ xs: 12, sm: 6, md: i < 3 ? 4 : 6 }} key={i}>
-              <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} style={{ height: '100%' }}>
+              <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -6 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} style={{ height: '100%' }}>
                 <Box sx={{
                   p: 4, height: '100%', borderRadius: 4,
                   background: 'linear-gradient(135deg, #04346b, #0d47a1)',
                   color: '#fff', transition: 'all 0.3s ease',
-                  '&:hover': { transform: 'translateY(-4px)', boxShadow: '0 16px 48px rgba(4,52,107,0.3)' },
+                  '&:hover': { boxShadow: '0 16px 48px rgba(4,52,107,0.3)' },
                 }}>
                   <Box sx={{
                     width: 44, height: 44, borderRadius: 2.5, bgcolor: 'rgba(255,255,255,0.15)',

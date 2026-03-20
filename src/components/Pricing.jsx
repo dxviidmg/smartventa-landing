@@ -5,7 +5,7 @@ import { scrollToSection } from '../utils/helpers';
 
 const includes = [
   'POS completo', 'Inventario multi-tienda', 'Transferencias', 'Dashboard y reportes',
-  'Usuarios ilimitados', 'Auditoría', 'Soporte WhatsApp', 'Actualizaciones',
+  'Usuarios ilimitados', 'Soporte WhatsApp', 'Actualizaciones',
 ];
 
 const Pricing = () => (
@@ -52,14 +52,16 @@ const Pricing = () => (
             <Typography variant="caption" sx={{ color: 'text.secondary', fontStyle: 'italic' }}>
               💡 3 tiendas + 1 almacén = $2,000/mes
             </Typography>
-            <Button
-              variant="contained"
-              endIcon={<ArrowForward />}
-              onClick={() => scrollToSection('cta')}
-              sx={{ mt: 1, bgcolor: 'primary.main', '&:hover': { bgcolor: 'primary.dark' } }}
-            >
-              Comenzar ahora
-            </Button>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button
+                variant="contained"
+                endIcon={<ArrowForward />}
+                onClick={() => scrollToSection('cta')}
+                sx={{ mt: 1, bgcolor: 'primary.main', '&:hover': { bgcolor: 'primary.dark' } }}
+              >
+                Comenzar ahora
+              </Button>
+            </motion.div>
           </Stack>
 
           {/* Right: what's included */}

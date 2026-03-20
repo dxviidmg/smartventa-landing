@@ -24,7 +24,7 @@ const CTA = () => {
         <Stack spacing={4} alignItems="center" textAlign="center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <Typography variant="h2" sx={{ color: 'white', fontSize: { xs: '2rem', md: '2.8rem' }, maxWidth: 600 }}>
-              Empieza a gestionar tu negocio de forma inteligente
+              Empieza a controlar todas tus tiendas hoy
             </Typography>
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
@@ -33,7 +33,8 @@ const CTA = () => {
             </Typography>
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
-            <Button
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button
                 variant="contained"
                 size="large"
                 startIcon={<WhatsApp />}
@@ -47,6 +48,7 @@ const CTA = () => {
               >
                 Solicitar demo
               </Button>
+            </motion.div>
           </motion.div>
         </Stack>
       </Container>
@@ -66,6 +68,13 @@ const CTA = () => {
             width: 56, height: 56, borderRadius: '50%',
             bgcolor: '#25D366', display: 'flex', alignItems: 'center', justifyContent: 'center',
             cursor: 'pointer', boxShadow: '0 4px 16px rgba(37,211,102,0.4)',
+            position: 'relative',
+            '&::before': {
+              content: '""', position: 'absolute', inset: -4,
+              borderRadius: '50%', border: '2px solid #25D366',
+              animation: 'ping 2s cubic-bezier(0,0,0.2,1) infinite',
+              '@keyframes ping': { '0%': { transform: 'scale(1)', opacity: 0.6 }, '100%': { transform: 'scale(1.4)', opacity: 0 } },
+            },
           }}
         >
           <WhatsApp sx={{ fontSize: 28, color: 'white' }} />

@@ -7,14 +7,14 @@ import {
 } from '@mui/icons-material';
 
 const mainBenefits = [
-  { icon: <StorefrontOutlined />, title: 'Controla todas tus tiendas en un solo lugar', desc: 'Gestiona ventas, inventario y empleados de todas tus sucursales desde una sola plataforma centralizada.' },
-  { icon: <VisibilityOutlined />, title: 'Visibilidad total de tu negocio', desc: 'Conoce el stock exacto, las ventas del día y el rendimiento de cada sucursal al instante.' },
+  { icon: <StorefrontOutlined />, title: 'Centraliza tus operaciones', desc: 'Gestiona ventas, inventario y empleados de todas tus sucursales desde una sola plataforma.' },
+  { icon: <VisibilityOutlined />, title: 'Decisiones basadas en datos', desc: 'Conoce el stock exacto, las ventas del día y el rendimiento de cada sucursal al instante.' },
   { icon: <AccessTimeOutlined />, title: 'Ahorra tiempo en tareas operativas', desc: 'Importaciones masivas, transferencias automatizadas y reportes listos para descargar.' },
-  { icon: <SavingsOutlined />, title: 'Reduce pérdidas por errores de inventario', desc: 'Auditorías integradas que detectan inconsistencias antes de que se conviertan en pérdidas.' },
+  { icon: <SavingsOutlined />, title: 'Reduce pérdidas por errores de inventario', desc: 'Control preciso de stock que detecta inconsistencias antes de que se conviertan en pérdidas.' },
 ];
 
 const roleBenefits = [
-  { icon: <AdminPanelSettings />, title: 'Para Administradores', items: ['Visibilidad completa del negocio desde un solo lugar', 'Detecta sucursales con mejor/peor rendimiento', 'Optimiza inventario basado en datos reales'] },
+  { icon: <AdminPanelSettings />, title: 'Para Administradores', items: ['Compara rendimiento entre sucursales', 'Detecta sucursales con mejor/peor desempeño', 'Optimiza inventario basado en datos reales'] },
   { icon: <Person />, title: 'Para Empleados', items: ['Interfaz fácil de aprender y usar', 'Proceso de venta rápido y eficiente', 'Acceso desde cualquier dispositivo'] },
   { icon: <Engineering />, title: 'Técnicos', items: ['Sin instalación (aplicación web)', 'Compatible con impresoras de tickets', 'Actualizaciones automáticas'] },
   { icon: <AttachMoney />, title: 'Financieros', items: ['Reduce costos de infraestructura', 'No requiere hardware especializado', 'Evita pérdidas por mal manejo de inventario'] },
@@ -50,12 +50,12 @@ const Benefits = () => (
           </Grid>
           {mainBenefits.map((b, i) => (
             <Grid size={{ xs: 12, sm: 6, md: 3 }} key={i}>
-              <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} style={{ height: '100%' }}>
+              <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -6 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} style={{ height: '100%' }}>
                 <Box sx={{
                   p: 4, height: '100%', borderRadius: 4,
                   bgcolor: 'rgba(255,255,255,0.08)',
                   border: '1px solid rgba(255,255,255,0.12)', transition: 'all 0.3s ease',
-                  '&:hover': { bgcolor: 'rgba(255,255,255,0.12)', transform: 'translateY(-4px)' },
+                  '&:hover': { bgcolor: 'rgba(255,255,255,0.14)' },
                 }}>
                   <Box sx={{
                     width: 48, height: 48, borderRadius: 3, bgcolor: 'rgba(52,211,153,0.15)',
