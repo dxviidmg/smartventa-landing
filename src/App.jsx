@@ -1,33 +1,46 @@
 import { ThemeProvider, CssBaseline, Box } from '@mui/material';
-import { theme } from './theme';
+import { ColorModeProvider, useColorMode } from './hooks/useColorMode';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import Benefits from './components/Benefits';
 import Features from './components/Features';
 import HowItWorks from './components/HowItWorks';
-import Industries from './components/Industries';
-import Benefits from './components/Benefits';
+import Showcase from './components/Showcase';
+import Differentiators from './components/Differentiators';
 import Pricing from './components/Pricing';
+import TargetAudience from './components/TargetAudience';
 import FAQ from './components/FAQ';
-import Contact from './components/Contact';
+import CTA from './components/CTA';
 import Footer from './components/Footer';
 
-function App() {
+const AppContent = () => {
+  const { theme } = useColorMode();
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Box>
+      <Box sx={{ bgcolor: 'background.default', minHeight: '100vh' }}>
         <Navbar />
         <Hero />
-        <Industries />
+        <Benefits />
         <Features />
         <HowItWorks />
-        <Benefits />
+        <Showcase />
+        <Differentiators />
         <Pricing />
+        <TargetAudience />
         <FAQ />
-        <Contact />
+        <CTA />
         <Footer />
       </Box>
     </ThemeProvider>
+  );
+};
+
+function App() {
+  return (
+    <ColorModeProvider>
+      <AppContent />
+    </ColorModeProvider>
   );
 }
 

@@ -1,115 +1,75 @@
-import { Box, Container, Typography, Stack, Paper } from '@mui/material';
+import { Box, Container, Typography, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
-import { Inventory2, Store, PointOfSale, Assessment } from '@mui/icons-material';
+import { SettingsOutlined, PointOfSaleOutlined, InsightsOutlined } from '@mui/icons-material';
 
-const HowItWorks = () => {
-  const steps = [
-    {
-      number: '1',
-      icon: <Inventory2 sx={{ fontSize: 48 }} />,
-      title: 'Configura tu catálogo',
-      description: 'Añade tus productos con precios, categorías y códigos de barras. Importa masivamente desde Excel.',
-    },
-    {
-      number: '2',
-      icon: <Store sx={{ fontSize: 48 }} />,
-      title: 'Distribuye a tus tiendas',
-      description: 'Asigna inventario a cada sucursal y almacén. Realiza transferencias entre ubicaciones fácilmente.',
-    },
-    {
-      number: '3',
-      icon: <PointOfSale sx={{ fontSize: 48 }} />,
-      title: 'Vende con agilidad',
-      description: 'Procesa ventas rápidamente con el punto de venta. El inventario se actualiza al instante.',
-    },
-    {
-      number: '4',
-      icon: <Assessment sx={{ fontSize: 48 }} />,
-      title: 'Analiza y optimiza',
-      description: 'Revisa reportes y métricas para tomar decisiones informadas y mejorar tu negocio.',
-    },
-  ];
+const steps = [
+  { icon: <SettingsOutlined />, num: '01', title: 'Configura tus tiendas y productos', desc: 'Agrega tus sucursales, almacenes y catálogo de productos. Importa masivamente desde Excel.' },
+  { icon: <PointOfSaleOutlined />, num: '02', title: 'Empieza a vender desde cualquier ubicación', desc: 'Usa el punto de venta en cualquier tienda. El inventario se actualiza automáticamente.' },
+  { icon: <InsightsOutlined />, num: '03', title: 'Monitorea todo en tiempo real', desc: 'Revisa ventas, inventario y rendimiento de todas tus sucursales desde el dashboard.' },
+];
 
-  return (
-    <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: '#ffffff' }} id="how-it-works">
-      <Container maxWidth="lg">
-        <Stack spacing={6}>
-          <Stack spacing={2} alignItems="center" textAlign="center">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
-              <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.5rem' }, color: 'text.primary' }}>
-                ¿Cómo funciona Smartventa?
-              </Typography>
-            </motion.div>
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }}>
-              <Typography variant="body1" sx={{ color: 'text.secondary', maxWidth: '700px', fontSize: '1.1rem' }}>
-                Cuatro pasos simples para transformar la gestión de tu negocio multi-tienda
-              </Typography>
-            </motion.div>
-          </Stack>
-
-          <Stack spacing={4}>
-            {steps.map((step, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <Paper
-                  sx={{
-                    p: 4,
-                    borderRadius: 3,
-                    boxShadow: 2,
-                    bgcolor: '#e2e8f0',
-                    transition: 'all 0.3s ease',
-                    '&:hover': {
-                      boxShadow: 6,
-                      transform: 'translateY(-4px)',
-                    },
-                  }}
-                >
-                  <Stack direction={{ xs: 'column', md: 'row' }} spacing={3} alignItems="center">
-                    <Box
-                      sx={{
-                        minWidth: 80,
-                        height: 80,
-                        borderRadius: '50%',
-                        bgcolor: '#1976d2',
-                        color: 'white',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        fontSize: '2rem',
-                        fontWeight: 700,
-                        boxShadow: 3,
-                      }}
-                    >
-                      {step.number}
-                    </Box>
-                    <motion.div
-                      animate={{ color: ['#1976d2', '#42a5f5', '#1976d2'] }}
-                      transition={{ duration: 4, delay: index * 0.5, repeat: Infinity, ease: "easeInOut" }}
-                    >
-                      {step.icon}
-                    </motion.div>
-                    <Stack spacing={1} sx={{ flex: 1, textAlign: { xs: 'center', md: 'left' } }}>
-                      <Typography variant="h5" sx={{ fontWeight: 600, color: 'text.primary' }}>
-                        {step.title}
-                      </Typography>
-                      <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.7 }}>
-                        {step.description}
-                      </Typography>
-                    </Stack>
-                  </Stack>
-                </Paper>
-              </motion.div>
-            ))}
-          </Stack>
+const HowItWorks = () => (
+  <Box id="how-it-works" sx={{ py: { xs: 10, md: 14 }, bgcolor: 'background.default' }}>
+    <Container maxWidth="md">
+      <Stack spacing={8}>
+        <Stack spacing={2} alignItems="center" textAlign="center">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <Typography variant="overline" sx={{ color: 'secondary.main', fontWeight: 700, letterSpacing: 2 }}>
+              Cómo funciona
+            </Typography>
+          </motion.div>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
+            <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' } }}>
+              Tres pasos para empezar
+            </Typography>
+          </motion.div>
         </Stack>
-      </Container>
-    </Box>
-  );
-};
+
+        <Stack spacing={0}>
+          {steps.map((s, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.15 }}
+            >
+              <Stack
+                direction="row"
+                spacing={3}
+                alignItems="flex-start"
+                sx={{
+                  py: 4,
+                  borderBottom: i < steps.length - 1 ? '1px solid' : 'none',
+                  borderColor: 'divider',
+                }}
+              >
+                <Box sx={{
+                  minWidth: 56, height: 56, borderRadius: 3,
+                  bgcolor: 'primary.main', color: '#fff',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  '& svg': { fontSize: 26 },
+                }}>
+                  {s.icon}
+                </Box>
+                <Box sx={{ flex: 1 }}>
+                  <Typography variant="overline" sx={{ color: 'text.secondary', fontSize: '0.7rem' }}>
+                    Paso {s.num}
+                  </Typography>
+                  <Typography variant="h6" sx={{ fontWeight: 600, mb: 0.5 }}>
+                    {s.title}
+                  </Typography>
+                  <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.7 }}>
+                    {s.desc}
+                  </Typography>
+                </Box>
+              </Stack>
+            </motion.div>
+          ))}
+        </Stack>
+      </Stack>
+    </Container>
+  </Box>
+);
 
 export default HowItWorks;

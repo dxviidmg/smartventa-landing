@@ -1,148 +1,105 @@
-import { Box, Container, Typography, Grid, Card, Stack, Button } from '@mui/material';
+import { Box, Container, Typography, Stack, Card, Button, Chip } from '@mui/material';
 import { motion } from 'framer-motion';
-import { Store, Warehouse, Check } from '@mui/icons-material';
+import { Check, ArrowForward } from '@mui/icons-material';
+import { scrollToSection } from '../utils/helpers';
 
-const Pricing = () => {
-  const scrollToContact = () => {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-  };
+const features = [
+  'Punto de venta completo',
+  'Gestión de inventario multi-tienda',
+  'Transferencias entre sucursales',
+  'Dashboard y reportes',
+  'Usuarios ilimitados',
+  'Auditoría integrada',
+  'Soporte por WhatsApp',
+  'Actualizaciones incluidas',
+];
 
-  const plans = [
-    {
-      icon: <Store sx={{ fontSize: 60 }} />,
-      title: 'Por Tienda',
-      price: '$500',
-      period: 'MXN/mes',
-      features: [
-        'Punto de venta completo',
-        'Gestión de inventario',
-        'Usuarios ilimitados',
-        'Actualizaciones incluidas',
-      ],
-    },
-    {
-      icon: <Warehouse sx={{ fontSize: 60 }} />,
-      title: 'Por Almacén',
-      price: '$500',
-      period: 'MXN/mes',
-      features: [
-        'Control de stock',
-        'Distribución a tiendas',
-        'Usuarios ilimitados',
-        'Actualizaciones incluidas',
-      ],
-    },
-  ];
-
-  return (
-    <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: '#04346b' }} id="pricing">
-      <Container maxWidth="lg">
-        <Stack spacing={6}>
-          <Stack spacing={2} alignItems="center" textAlign="center">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
-              <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.5rem' }, color: 'white' }}>
-                Precios transparentes y accesibles
-              </Typography>
-            </motion.div>
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }}>
-              <Typography variant="body1" sx={{ color: 'rgba(255,255,255,0.9)', maxWidth: '700px', fontSize: '1.1rem' }}>
-                Paga solo por lo que necesitas. Sin costos ocultos ni contratos largos.
-              </Typography>
-            </motion.div>
-          </Stack>
-
-          <Grid container spacing={4} justifyContent="center">
-            {plans.map((plan, index) => (
-              <Grid item xs={12} sm={6} md={5} key={index}>
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.2 }}
-                >
-                  <Card
-                    sx={{
-                      p: 4,
-                      height: '100%',
-                      borderRadius: 3,
-                      boxShadow: 3,
-                      transition: 'all 0.3s ease',
-                      '&:hover': {
-                        boxShadow: 8,
-                        transform: 'translateY(-8px)',
-                      },
-                    }}
-                  >
-                    <Stack spacing={3} alignItems="center" textAlign="center">
-                      <motion.div
-                        animate={{ color: ['#04346b', '#1976d2', '#04346b'] }}
-                        transition={{ duration: 4, delay: index * 0.5, repeat: Infinity, ease: "easeInOut" }}
-                      >
-                        {plan.icon}
-                      </motion.div>
-                      
-                      <Typography variant="h5" sx={{ fontWeight: 600, color: 'text.primary' }}>
-                        {plan.title}
-                      </Typography>
-
-                      <Box>
-                        <Typography variant="h3" sx={{ fontWeight: 700, color: 'primary.main' }}>
-                          {plan.price}
-                        </Typography>
-                        <Typography variant="body1" sx={{ color: 'text.secondary' }}>
-                          {plan.period}
-                        </Typography>
-                      </Box>
-
-                      <Stack spacing={1.5} sx={{ width: '100%', mt: 2 }}>
-                        {plan.features.map((feature, i) => (
-                          <Stack key={i} direction="row" spacing={1.5} alignItems="center">
-                            <Check sx={{ color: 'primary.main', fontSize: 20 }} />
-                            <Typography variant="body2" sx={{ color: 'text.secondary', textAlign: 'left' }}>
-                              {feature}
-                            </Typography>
-                          </Stack>
-                        ))}
-                      </Stack>
-                    </Stack>
-                  </Card>
-                </motion.div>
-              </Grid>
-            ))}
-          </Grid>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
-            <Stack spacing={3} alignItems="center" textAlign="center">
-              <Typography variant="body1" sx={{ color: 'rgba(255,255,255,0.9)', fontSize: '1rem' }}>
-                💡 <strong>Ejemplo:</strong> 3 tiendas + 1 almacén = $2,000 MXN/mes
-              </Typography>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button
-                  variant="contained"
-                  size="large"
-                  onClick={scrollToContact}
-                  sx={{
-                    px: 5,
-                    py: 2,
-                    fontSize: '1.1rem',
-                    textTransform: 'none',
-                    boxShadow: 3,
-                  }}
-                >
-                  Solicitar demo gratuita
-                </Button>
-              </motion.div>
-            </Stack>
+const Pricing = () => (
+  <Box id="pricing" sx={{ py: { xs: 10, md: 14 }, bgcolor: 'background.paper' }}>
+    <Container maxWidth="sm">
+      <Stack spacing={8}>
+        <Stack spacing={2} alignItems="center" textAlign="center">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <Typography variant="overline" sx={{ color: 'secondary.main', fontWeight: 700, letterSpacing: 2 }}>
+              Precios
+            </Typography>
+          </motion.div>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
+            <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' } }}>
+              Simple y transparente
+            </Typography>
+          </motion.div>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }}>
+            <Typography variant="body1" sx={{ color: 'text.secondary', fontSize: '1.05rem' }}>
+              Un solo plan. Sin costos ocultos. Sin contratos.
+            </Typography>
           </motion.div>
         </Stack>
-      </Container>
-    </Box>
-  );
-};
+
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
+          <Card
+            elevation={0}
+            sx={{
+              p: { xs: 4, md: 5 },
+              borderRadius: 4,
+              border: '2px solid',
+              borderColor: 'primary.main',
+              position: 'relative',
+              overflow: 'visible',
+            }}
+          >
+            <Chip
+              label="Más popular"
+              color="primary"
+              size="small"
+              sx={{
+                position: 'absolute', top: -14, left: '50%', transform: 'translateX(-50%)',
+                fontWeight: 600, px: 1,
+              }}
+            />
+
+            <Stack spacing={4} alignItems="center" textAlign="center">
+              <Box>
+                <Typography variant="overline" sx={{ color: 'text.secondary' }}>Por tienda o almacén</Typography>
+                <Stack direction="row" alignItems="baseline" justifyContent="center" spacing={0.5}>
+                  <Typography variant="h2" sx={{ fontWeight: 800, fontSize: '3.5rem' }}>$500</Typography>
+                  <Typography variant="body1" sx={{ color: 'text.secondary' }}>MXN/mes</Typography>
+                </Stack>
+              </Box>
+
+              <Stack spacing={1.5} sx={{ width: '100%', textAlign: 'left' }}>
+                {features.map((f, i) => (
+                  <Stack key={i} direction="row" spacing={1.5} alignItems="center">
+                    <Check sx={{ color: 'secondary.main', fontSize: 20 }} />
+                    <Typography variant="body2" sx={{ color: 'text.secondary' }}>{f}</Typography>
+                  </Stack>
+                ))}
+              </Stack>
+
+              <Box sx={{ pt: 1, width: '100%' }}>
+                <Typography variant="body2" sx={{ color: 'text.secondary', mb: 2, fontStyle: 'italic' }}>
+                  💡 Ejemplo: 3 tiendas + 1 almacén = $2,000 MXN/mes
+                </Typography>
+                <Button
+                  fullWidth
+                  variant="contained"
+                  size="large"
+                  endIcon={<ArrowForward />}
+                  onClick={() => scrollToSection('cta')}
+                  sx={{
+                    py: 1.5, fontSize: '1rem',
+                    bgcolor: 'primary.main', '&:hover': { bgcolor: 'primary.dark' },
+                  }}
+                >
+                  Comenzar ahora
+                </Button>
+              </Box>
+            </Stack>
+          </Card>
+        </motion.div>
+      </Stack>
+    </Container>
+  </Box>
+);
 
 export default Pricing;

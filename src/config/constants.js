@@ -1,18 +1,20 @@
-// Configuración centralizada de la aplicación
 export const CONFIG = {
   contact: {
     phone: '+52 55 6165 2599',
     phoneFormatted: '525561652599',
-    whatsappMessage: 'Hola, me interesa solicitar una demo de Smartventa',
+    email: 'contacto@smartventa.com',
+    whatsappMessage: 'Hola, me interesa solicitar una demo de SmartVenta',
   },
   company: {
-    name: 'Smartventa',
-    tagline: 'El punto de venta inteligente',
+    name: 'SmartVenta',
+    tagline: 'El punto de venta inteligente para negocios multi-tienda',
   },
   urls: {
     domain: 'https://smartventa.com',
+    app: 'https://app.smartventa.com',
   },
-  analytics: {
-    gaId: 'G-XXXXXXXXXX', // TODO: Reemplazar con ID real
+  pricing: {
+    perStore: 500,
+    currency: 'MXN',
   },
 };
