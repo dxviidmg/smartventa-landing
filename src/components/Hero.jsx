@@ -115,30 +115,6 @@ const Hero = () => {
               </Button>
             </Stack>
           </motion.div>
-
-          {/* Stats row */}
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.5 }}>
-            <Stack
-              direction="row"
-              spacing={{ xs: 3, md: 6 }}
-              sx={{ mt: 4, pt: 4, borderTop: '1px solid rgba(255,255,255,0.1)' }}
-            >
-              {[
-                { value: '100%', label: 'En la nube' },
-                { value: '∞', label: 'Sucursales' },
-                { value: '24/7', label: 'Disponible' },
-              ].map((stat, i) => (
-                <Box key={i} sx={{ textAlign: 'center' }}>
-                  <Typography variant="h4" sx={{ color: 'white', fontWeight: 800, fontSize: { xs: '1.5rem', md: '2rem' } }}>
-                    {stat.value}
-                  </Typography>
-                  <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.8rem', mt: 0.5 }}>
-                    {stat.label}
-                  </Typography>
-                </Box>
-              ))}
-            </Stack>
-          </motion.div>
         </Stack>
       </Container>
     </Box>

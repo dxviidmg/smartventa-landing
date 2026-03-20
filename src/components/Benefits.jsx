@@ -38,6 +38,16 @@ const Benefits = () => (
         </Stack>
 
         <Grid container spacing={4}>
+          <Grid size={{ xs: 12 }}>
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+              <Typography variant="h5" sx={{ fontWeight: 600, textAlign: 'center', color: '#fff', mb: 1 }}>
+                ¿Qué gana tu negocio?
+              </Typography>
+              <Typography variant="body2" sx={{ textAlign: 'center', color: 'rgba(255,255,255,0.5)' }}>
+                Resultados concretos desde el primer día
+              </Typography>
+            </motion.div>
+          </Grid>
           {mainBenefits.map((b, i) => (
             <Grid size={{ xs: 12, sm: 6, md: 3 }} key={i}>
               <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} style={{ height: '100%' }}>
@@ -63,6 +73,16 @@ const Benefits = () => (
         </Grid>
 
         <Grid container spacing={3}>
+          <Grid size={{ xs: 12 }}>
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+              <Typography variant="h5" sx={{ fontWeight: 600, textAlign: 'center', color: '#fff', mb: 1 }}>
+                Beneficios para cada rol
+              </Typography>
+              <Typography variant="body2" sx={{ textAlign: 'center', color: 'rgba(255,255,255,0.5)' }}>
+                SmartVenta aporta valor a todo tu equipo
+              </Typography>
+            </motion.div>
+          </Grid>
           {roleBenefits.map((rb, i) => (
             <Grid size={{ xs: 12, sm: 6, md: 3 }} key={i}>
               <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 + i * 0.08 }} style={{ height: '100%' }}>

@@ -66,12 +66,13 @@ const TargetAudience = () => (
         </Grid>
 
         {/* Industries */}
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-          <Typography variant="subtitle1" sx={{ textAlign: 'center', fontWeight: 600, mb: 3 }}>
-            Ideal para tu tipo de negocio
-          </Typography>
-        </motion.div>
-        <Grid container spacing={2} justifyContent="center">
+        <Stack spacing={2}>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <Typography variant="subtitle1" sx={{ textAlign: 'center', fontWeight: 600 }}>
+              Ideal para tu tipo de negocio
+            </Typography>
+          </motion.div>
+          <Grid container spacing={2} justifyContent="center">
           {industries.map((ind, i) => (
             <Grid size={{ xs: 6, sm: 3, md: 1.5 }} key={i}>
               <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}>
@@ -88,6 +89,7 @@ const TargetAudience = () => (
             </Grid>
           ))}
         </Grid>
+        </Stack>
       </Stack>
     </Container>
   </Box>
