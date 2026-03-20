@@ -32,39 +32,76 @@ const Hero = () => (
     />
 
     <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
-      <Stack spacing={3} alignItems="center" textAlign="center">
-        <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5 }}>
+      <Stack spacing={4} alignItems="center" textAlign="center">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1, y: [0, -6, 0] }}
+          transition={{ duration: 0.5, y: { duration: 3, repeat: Infinity, ease: 'easeInOut' } }}
+        >
           <Chip
-            label="☁️ Sistema POS en la nube para múltiples sucursales"
+            label="☁️ Punto de venta en la nube para múltiples sucursales"
             sx={{
               bgcolor: 'rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.9)',
               fontWeight: 500, fontSize: '0.85rem',
-              backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.15)',
+              backdropFilter: 'blur(10px)',
+              border: '1px solid rgba(255,255,255,0.2)',
               py: 2.5, px: 1,
+              position: 'relative', overflow: 'hidden',
+              '&::before': {
+                content: '""', position: 'absolute', top: 0, left: '-100%',
+                width: '100%', height: '100%',
+                background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent)',
+                animation: 'shimmer 4s infinite',
+                '@keyframes shimmer': { '0%': { left: '-100%' }, '100%': { left: '100%' } },
+              },
             }}
           />
         </motion.div>
 
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: [0, -6, 0] }}
+          transition={{ duration: 0.6, delay: 0.1, y: { duration: 3, repeat: Infinity, ease: 'easeInOut', delay: 0.5 } }}
+        >
           <Typography
             variant="h1"
             sx={{
-              fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4.2rem' },
+              fontSize: { xs: '2.8rem', sm: '3.5rem', md: '4.2rem' },
               color: 'white', lineHeight: 1.1, maxWidth: '900px', letterSpacing: '-0.02em',
             }}
           >
-            Controla todas tus tiendas y almacenes{' '}
             <motion.span
-              animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
-              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              style={{ display: 'inline-block' }}
+            >
+              Controla todas tus tiendas
+            </motion.span>{' '}
+            <motion.span
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
               style={{
+                display: 'inline-block',
                 background: 'linear-gradient(90deg, #34d399, #10b981, #6ee7b7, #34d399)',
                 backgroundSize: '200% 200%',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
               }}
             >
-              desde un solo lugar
+              <motion.span
+                animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
+                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                style={{
+                  background: 'linear-gradient(90deg, #34d399, #10b981, #6ee7b7, #34d399)',
+                  backgroundSize: '200% 200%',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                }}
+              >
+                desde un solo lugar
+              </motion.span>
             </motion.span>
           </Typography>
         </motion.div>
@@ -77,7 +114,7 @@ const Hero = () => (
               fontSize: { xs: '1.05rem', md: '1.25rem' }, fontWeight: 400, lineHeight: 1.6,
             }}
           >
-            Controla ventas, inventario y operaciones de todas tus tiendas y almacenes en tiempo real, desde una sola plataforma en la nube.
+            Gestiona inventario, ventas y operaciones de todas tus sucursales y almacenes en tiempo real. Sin instalación, desde cualquier dispositivo.
           </Typography>
         </motion.div>
 
@@ -104,33 +141,6 @@ const Hero = () => (
           </motion.div>
         </motion.div>
 
-        {/* Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-        >
-          <Stack
-            direction="row"
-            spacing={{ xs: 3, md: 6 }}
-            sx={{ mt: 2, pt: 3, borderTop: '1px solid rgba(255,255,255,0.1)' }}
-          >
-            {[
-              { value: '100%', label: 'En la nube' },
-              { value: '∞', label: 'Sucursales' },
-              { value: '24/7', label: 'Disponible' },
-            ].map((stat, i) => (
-              <Box key={i} sx={{ textAlign: 'center' }}>
-                  <Typography variant="h4" sx={{ color: 'white', fontWeight: 800, fontSize: { xs: '1.5rem', md: '2rem' } }}>
-                    {stat.value}
-                  </Typography>
-                  <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.8rem', mt: 0.5 }}>
-                    {stat.label}
-                  </Typography>
-              </Box>
-            ))}
-          </Stack>
-        </motion.div>
       </Stack>
     </Container>
   </Box>
