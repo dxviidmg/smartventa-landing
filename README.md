@@ -106,7 +106,7 @@ src/
 
 1. **Hero** - Título principal con CTAs
 2. **Industries** - Tipos de negocio ideales
-3. **Features** - 9 características principales (cards con flip)
+3. **Features** - 13 características principales
 4. **HowItWorks** - 4 pasos de cómo funciona
 5. **Benefits** - Lista de beneficios
 6. **Pricing** - Planes de precios
