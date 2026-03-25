@@ -14,10 +14,10 @@ const mainBenefits = [
 ];
 
 const roleBenefits = [
-  { icon: <AdminPanelSettings />, title: 'Para Administradores', items: ['Compara rendimiento entre sucursales', 'Detecta sucursales con mejor/peor desempeño', 'Optimiza inventario basado en datos reales'] },
+  { icon: <AdminPanelSettings />, title: 'Para Administradores', items: ['Compara rendimiento entre sucursales', 'Detecta sucursales con mejor/peor desempeño', 'Optimiza inventario basado en datos reales', 'Auditoría de transacciones y productos'] },
   { icon: <Person />, title: 'Para Empleados', items: ['Interfaz fácil de aprender y usar', 'Proceso de venta rápido y eficiente', 'Acceso desde cualquier dispositivo'] },
   { icon: <Engineering />, title: 'Técnicos', items: ['Sin instalación (aplicación web)', 'Compatible con impresoras de tickets', 'Actualizaciones automáticas'] },
-  { icon: <AttachMoney />, title: 'Financieros', items: ['Reduce costos de infraestructura', 'No requiere hardware especializado', 'Evita pérdidas por mal manejo de inventario'] },
+  { icon: <AttachMoney />, title: 'Financieros', items: ['Reduce costos de equipo y servidores', 'No requiere hardware especializado', 'Evita pérdidas por mal manejo de inventario'] },
 ];
 
 const Benefits = () => (

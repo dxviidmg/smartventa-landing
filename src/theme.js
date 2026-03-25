@@ -2,7 +2,7 @@ import { createTheme } from '@mui/material/styles';
 
 const baseTheme = {
   typography: {
-    fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif',
+    fontFamily: '"Inter", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif',
     h1: { fontWeight: 800 },
     h2: { fontWeight: 700 },
     h3: { fontWeight: 700 },
@@ -19,6 +19,7 @@ const baseTheme = {
           borderRadius: 10,
           textTransform: 'none',
           fontWeight: 600,
+          letterSpacing: '0.02em',
           padding: '10px 24px',
         },
       },
@@ -31,15 +32,23 @@ const baseTheme = {
         },
       },
     },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          borderRadius: 14,
+        },
+      },
+    },
   },
 };
 
 export const lightTheme = createTheme({
   ...baseTheme,
   palette: {
-    primary: { main: '#04346b', dark: '#03294d', light: '#1565c0' },
+    primary: { main: '#04346b', dark: '#022347', light: '#065a9e' },
     secondary: { main: '#10b981' },
-    background: { default: '#eef2f6', paper: '#ffffff' },
-    text: { primary: '#0f172a', secondary: '#475569' },
+    background: { default: 'rgba(4, 53, 107, 0.08)', paper: '#ffffff' },
+    text: { primary: '#1e293b', secondary: '#4a5568' },
+    divider: '#e8ecf1',
   },
 });

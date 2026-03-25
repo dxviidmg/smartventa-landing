@@ -6,10 +6,11 @@ const faqs = [
   { q: '¿Necesito instalar algo en mis computadoras?', a: 'No. SmartVenta es una aplicación web. Solo necesitas un navegador y conexión a internet. Funciona en computadoras, tablets y celulares.' },
   { q: '¿Cuántas tiendas puedo administrar?', a: 'No hay límite. Puedes agregar tantas tiendas y almacenes como necesites. El sistema escala con tu negocio.' },
   { q: '¿Funciona con lectores de código de barras?', a: 'Sí. SmartVenta es compatible con lectores de código de barras estándar y se conecta directamente con impresoras de tickets térmicas.' },
-  { q: '¿Puedo importar mis productos desde Excel?', a: 'Sí. Puedes importar productos e inventario masivamente desde archivos Excel. También puedes exportar reportes.' },
+  { q: '¿Puedo importar mis productos desde Excel?', a: 'Sí. Puedes importar productos e inventario desde archivos Excel. También puedes exportar reportes.' },
   { q: '¿Qué pasa si pierdo conexión a internet?', a: 'El sistema requiere conexión para sincronizar datos en tiempo real. Recomendamos una conexión estable para la mejor experiencia.' },
   { q: '¿Cómo funciona la demo?', a: 'Te damos acceso a una cuenta demo completa donde puedes explorar todas las funcionalidades del sistema sin compromiso.' },
   { q: '¿Hay costos ocultos o contratos?', a: 'No. Pagas $500 MXN por tienda o almacén al mes. Sin contratos a largo plazo, sin costos de instalación, sin sorpresas.' },
+  { q: '¿Qué roles y permisos maneja el sistema?', a: 'Tres niveles: dueño, administrador y vendedor. Cada rol tiene su propia vista, acciones y restricciones. El dueño controla ajustes de stock y edición de productos.' },
 ];
 
 const FAQ = () => (

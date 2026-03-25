@@ -16,7 +16,7 @@ const Hero = () => (
       pb: { xs: 6, md: 8 },
       position: 'relative',
       overflow: 'hidden',
-      background: 'linear-gradient(135deg, #04346b 0%, #0d47a1 50%, #1565c0 100%)',
+      background: 'linear-gradient(135deg, #04346b 0%, #065a9e 100%)',
     }}
   >
     {/* Animated gradient orbs */}

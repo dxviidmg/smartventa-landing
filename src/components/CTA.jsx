@@ -11,7 +11,7 @@ const CTA = () => {
         py: { xs: 6, md: 8 },
         position: 'relative',
         overflow: 'hidden',
-        background: 'linear-gradient(135deg, #04346b 0%, #0d47a1 100%)',
+        background: 'linear-gradient(135deg, #04346b 0%, #065a9e 100%)',
       }}
     >
       <Box sx={{

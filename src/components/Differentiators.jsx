@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import {
   CloudOutlined, ShoppingCartOutlined,
   SpeedOutlined, SecurityOutlined, BlockOutlined,
+  BoltOutlined, FactCheckOutlined,
 } from '@mui/icons-material';
 
 const items = [
@@ -11,6 +12,8 @@ const items = [
   { icon: <ShoppingCartOutlined />, title: 'POS multi-carrito', desc: 'Atiende varios clientes a la vez con múltiples carritos abiertos simultáneamente.' },
   { icon: <SpeedOutlined />, title: 'Hecho para velocidad', desc: 'Atajos de teclado, escaneo de código de barras y flujos optimizados para cobrar en segundos.' },
   { icon: <SecurityOutlined />, title: 'Datos aislados y seguros', desc: 'Cada negocio tiene su propia base de datos. Tu información nunca se mezcla con la de otros.' },
+  { icon: <BoltOutlined />, title: 'Actualizaciones instantáneas', desc: 'Notificaciones en tiempo real sin recargar. Cada movimiento entre tiendas se refleja al instante en todas las pantallas.' },
+  { icon: <FactCheckOutlined />, title: 'Control de ajustes de inventario', desc: 'Los empleados solicitan ajustes de stock y el dueño aprueba o rechaza. Nada se modifica sin autorización.' },
 ];
 
 const Differentiators = () => (
@@ -32,11 +35,11 @@ const Differentiators = () => (
 
         <Grid container spacing={3}>
           {items.map((item, i) => (
-            <Grid size={{ xs: 12, sm: 6, md: i < 3 ? 4 : 6 }} key={i}>
+            <Grid size={{ xs: 12, sm: 6, md: 4 }} key={i}>
               <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -6 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} style={{ height: '100%' }}>
                 <Box sx={{
                   p: 4, height: '100%', borderRadius: 4,
-                  background: 'linear-gradient(135deg, #04346b, #0d47a1)',
+                  background: 'linear-gradient(135deg, #04346b, #065a9e)',
                   color: '#fff', transition: 'all 0.3s ease',
                   '&:hover': { boxShadow: '0 16px 48px rgba(4,52,107,0.3)' },
                 }}>
