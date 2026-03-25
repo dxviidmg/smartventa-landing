@@ -9,15 +9,15 @@ import {
 const mainBenefits = [
   { icon: <StorefrontOutlined />, title: 'Centraliza tus operaciones', desc: 'Gestiona ventas, inventario y empleados de todas tus sucursales desde una sola plataforma.' },
   { icon: <VisibilityOutlined />, title: 'Decisiones basadas en datos', desc: 'Conoce el stock exacto, las ventas del día y el rendimiento de cada sucursal al instante.' },
-  { icon: <AccessTimeOutlined />, title: 'Ahorra tiempo en tareas operativas', desc: 'Importaciones masivas, transferencias automatizadas y reportes listos para descargar.' },
-  { icon: <SavingsOutlined />, title: 'Reduce pérdidas por errores de inventario', desc: 'Control preciso de stock que detecta inconsistencias antes de que se conviertan en pérdidas.' },
+  { icon: <AccessTimeOutlined />, title: 'Ahorra tiempo en tareas operativas', desc: 'Importación desde Excel, transferencias automatizadas y reportes listos para descargar.' },
+  { icon: <SavingsOutlined />, title: 'Reduce pérdidas por errores de inventario', desc: 'Control preciso de stock que detecta errores antes de que se conviertan en pérdidas.' },
 ];
 
 const roleBenefits = [
   { icon: <AdminPanelSettings />, title: 'Para Administradores', items: ['Compara rendimiento entre sucursales', 'Detecta sucursales con mejor/peor desempeño', 'Optimiza inventario basado en datos reales', 'Auditoría de transacciones y productos'] },
   { icon: <Person />, title: 'Para Empleados', items: ['Interfaz fácil de aprender y usar', 'Proceso de venta rápido y eficiente', 'Acceso desde cualquier dispositivo'] },
-  { icon: <Engineering />, title: 'Técnicos', items: ['Sin instalación (aplicación web)', 'Compatible con impresoras de tickets', 'Actualizaciones automáticas'] },
-  { icon: <AttachMoney />, title: 'Financieros', items: ['Reduce costos de equipo y servidores', 'No requiere hardware especializado', 'Evita pérdidas por mal manejo de inventario'] },
+  { icon: <Engineering />, title: 'Para tu equipo técnico', items: ['Sin instalación (aplicación web)', 'Compatible con impresoras de tickets', 'Actualizaciones automáticas'] },
+  { icon: <AttachMoney />, title: 'Para tus finanzas', items: ['Reduce costos de equipo y servidores', 'No requiere hardware especializado', 'Evita pérdidas por mal manejo de inventario'] },
 ];
 
 const Benefits = () => (

@@ -2,17 +2,15 @@ import { Box, Container, Typography, Grid, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
 import {
   CloudOutlined, ShoppingCartOutlined,
-  SpeedOutlined, SecurityOutlined, BlockOutlined,
-  BoltOutlined, FactCheckOutlined,
+  SpeedOutlined, BlockOutlined,
+  FactCheckOutlined,
 } from '@mui/icons-material';
 
 const items = [
-  { icon: <CloudOutlined />, title: 'Arquitectura multi-sucursal', desc: 'Cada sucursal opera de forma aislada y segura. Tus datos nunca se mezclan con los de otros.' },
+  { icon: <CloudOutlined />, title: 'Arquitectura multi-sucursal', desc: 'Cada sucursal opera de forma independiente y segura. Tus datos nunca se mezclan entre tiendas.' },
   { icon: <BlockOutlined />, title: 'Sin stock negativo', desc: 'El sistema previene automáticamente que se venda más de lo que hay en existencia.' },
   { icon: <ShoppingCartOutlined />, title: 'POS multi-carrito', desc: 'Atiende varios clientes a la vez con múltiples carritos abiertos simultáneamente.' },
   { icon: <SpeedOutlined />, title: 'Hecho para velocidad', desc: 'Atajos de teclado, escaneo de código de barras y flujos optimizados para cobrar en segundos.' },
-  { icon: <SecurityOutlined />, title: 'Datos aislados y seguros', desc: 'Cada negocio tiene su propia base de datos. Tu información nunca se mezcla con la de otros.' },
-  { icon: <BoltOutlined />, title: 'Actualizaciones instantáneas', desc: 'Notificaciones en tiempo real sin recargar. Cada movimiento entre tiendas se refleja al instante en todas las pantallas.' },
   { icon: <FactCheckOutlined />, title: 'Control de ajustes de inventario', desc: 'Los empleados solicitan ajustes de stock y el dueño aprueba o rechaza. Nada se modifica sin autorización.' },
 ];
 
