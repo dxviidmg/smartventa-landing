@@ -7,6 +7,7 @@ import {
   WarehouseOutlined, BugReportOutlined,
   HelpOutlineOutlined,
   SummarizeOutlined, NotificationsOutlined, HistoryOutlined, TrendingUpOutlined,
+  UndoOutlined, DarkModeOutlined, CategoryOutlined,
 } from '@mui/icons-material';
 
 const features = [
@@ -14,9 +15,9 @@ const features = [
   { icon: <StorefrontOutlined />, title: 'Gestión de Almacenes', desc: 'Inventario separado por almacén, distribución a tiendas y seguimiento de productos en tránsito.' },
   { icon: <WarehouseOutlined />, title: 'Control de Inventario', desc: 'Stock en tiempo real por tienda y almacén con alertas automáticas de bajo stock.' },
   { icon: <SwapHorizOutlined />, title: 'Transferencias entre Sucursales', desc: 'Solicita, aprueba y confirma movimientos entre tiendas y almacenes con seguimiento completo.' },
-  { icon: <PointOfSaleOutlined />, title: 'Punto de Venta', desc: 'Interfaz rápida con lectores de código de barras, múltiples métodos de pago e historial de transacciones.' },
+  { icon: <PointOfSaleOutlined />, title: 'Punto de Venta', desc: 'Interfaz rápida con lectores de código de barras, múltiples carritos simultáneos, métodos de pago e historial de transacciones.' },
   { icon: <PeopleOutlined />, title: 'Clientes y Descuentos', desc: 'Registro de clientes, descuentos personalizados e historial de compras por cliente.' },
-  { icon: <AssessmentOutlined />, title: 'Dashboard de Ventas', desc: 'Resumen de ventas, rendimiento por tienda y actividad por periodo. Filtra por año y mes.' },
+  { icon: <AssessmentOutlined />, title: 'Dashboard de Ventas', desc: 'Resumen de ventas, rendimiento por tienda, actividad por periodo y tablero de cancelaciones con KPIs y tendencias.' },
   { icon: <BugReportOutlined />, title: 'Auditoría de Productos', desc: 'Detecta códigos repetidos, costos en cero, precios de mayoreo incorrectos, faltantes en tiendas y productos sin movimiento.' },
   { icon: <AdminPanelSettingsOutlined />, title: 'Gestión de Empleados', desc: 'Roles y permisos personalizables, control de acceso por tienda y registro de actividad.' },
   { icon: <TableChartOutlined />, title: 'Importación y Exportación', desc: 'Carga masiva de productos e inventario desde Excel. Exporta reportes a Excel.' },
@@ -26,6 +27,9 @@ const features = [
   { icon: <NotificationsOutlined />, title: 'Notificaciones en Tiempo Real', desc: 'Recibe alertas instantáneas de traspasos, distribuciones y solicitudes de ajuste. Sin recargar la página.' },
   { icon: <HistoryOutlined />, title: 'Historial de Stock', desc: 'Registro detallado de cada movimiento de inventario: ventas, traspasos, distribuciones y ajustes. Rastrea cualquier diferencia.' },
   { icon: <TrendingUpOutlined />, title: 'Historial de Precios', desc: 'Consulta los cambios de precio de cada producto agrupados por fecha. Útil para auditoría y control de márgenes.' },
+  { icon: <UndoOutlined />, title: 'Devoluciones y Cancelaciones', desc: 'Cancela ventas o devuelve productos parcialmente con registro de motivo. Filtros rápidos por ventas duplicadas, canceladas y con devolución.' },
+  { icon: <CategoryOutlined />, title: 'Tablero de Marcas y Productos', desc: 'Top marcas y productos más y menos vendidos con porcentaje de participación en tus ventas.' },
+  { icon: <DarkModeOutlined />, title: 'Modo Oscuro / Claro', desc: 'Interfaz adaptable a la preferencia visual de cada usuario para mayor comodidad.' },
 ];
 
 const Features = () => (

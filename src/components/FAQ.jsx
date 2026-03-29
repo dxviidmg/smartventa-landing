@@ -10,6 +10,7 @@ const faqs = [
   { q: '¿Qué pasa si pierdo conexión a internet?', a: 'El sistema requiere conexión para sincronizar datos en tiempo real. Recomendamos una conexión estable para la mejor experiencia.' },
   { q: '¿Cómo funciona la demo?', a: 'Te damos acceso a una cuenta demo completa donde puedes explorar todas las funcionalidades del sistema sin compromiso.' },
   { q: '¿Hay costos ocultos o contratos?', a: 'No. Pagas $500 MXN por tienda o almacén al mes. Sin contratos a largo plazo, sin costos de instalación, sin sorpresas.' },
+  { q: '¿Cómo contacto a soporte?', a: 'El sistema tiene un botón de soporte por WhatsApp integrado directamente en la aplicación. Puedes escribirnos en cualquier momento sin salir del sistema.' },
   { q: '¿Qué roles y permisos maneja el sistema?', a: 'Tres niveles: dueño, administrador y vendedor. Cada rol tiene su propia vista, acciones y restricciones. El dueño controla ajustes de stock y edición de productos.' },
 ];
 

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import {
   StorefrontOutlined, AccountTreeOutlined, WarehouseOutlined,
   ShoppingCart, Construction, MenuBook, Spa, Pets, Toys, Store,
+  CheckroomOutlined, LocalPharmacyOutlined,
 } from '@mui/icons-material';
 
 const audiences = [
@@ -12,7 +13,9 @@ const audiences = [
 ];
 
 const industries = [
+  { icon: <CheckroomOutlined />, label: 'Ropa' },
   { icon: <ShoppingCart />, label: 'Abarrotes' },
+  { icon: <LocalPharmacyOutlined />, label: 'Farmacias' },
   { icon: <Construction />, label: 'Ferreterías' },
   { icon: <Store />, label: 'Mini Súpers' },
   { icon: <MenuBook />, label: 'Papelerías' },
