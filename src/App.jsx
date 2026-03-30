@@ -2,15 +2,13 @@ import { ThemeProvider, CssBaseline, Box } from '@mui/material';
 import { lightTheme } from './theme';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Benefits from './components/Benefits';
+import Industries from './components/Industries';
 import Features from './components/Features';
 import HowItWorks from './components/HowItWorks';
-import Showcase from './components/Showcase';
-import Differentiators from './components/Differentiators';
+import Benefits from './components/Benefits';
 import Pricing from './components/Pricing';
-import TargetAudience from './components/TargetAudience';
 import FAQ from './components/FAQ';
-import CTA from './components/CTA';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 function App() {
@@ -20,14 +18,13 @@ function App() {
       <Box sx={{ bgcolor: 'background.default', minHeight: '100vh' }}>
         <Navbar />
         <Hero />
-        <Benefits />
-        <TargetAudience />
+        <Industries />
         <Features />
         <HowItWorks />
-        <Differentiators />
+        <Benefits />
         <Pricing />
         <FAQ />
-        <CTA />
+        <Contact />
         <Footer />
       </Box>
     </ThemeProvider>

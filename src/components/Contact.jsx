@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 import { WhatsApp } from '@mui/icons-material';
 import { openWhatsApp } from '../utils/helpers';
 
-const CTA = () => {
+const Contact = () => {
   return (
     <Box
-      id="cta"
+      id="contact"
       sx={{
         py: { xs: 6, md: 8 },
         position: 'relative',
@@ -52,36 +52,8 @@ const CTA = () => {
           </motion.div>
         </Stack>
       </Container>
-
-      {/* Floating WhatsApp button */}
-      <motion.div
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ delay: 1, type: 'spring' }}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        style={{ position: 'fixed', bottom: 24, right: 24, zIndex: 1000 }}
-      >
-        <Box
-          onClick={() => openWhatsApp()}
-          sx={{
-            width: 56, height: 56, borderRadius: '50%',
-            bgcolor: '#25D366', display: 'flex', alignItems: 'center', justifyContent: 'center',
-            cursor: 'pointer', boxShadow: '0 4px 16px rgba(37,211,102,0.4)',
-            position: 'relative',
-            '&::before': {
-              content: '""', position: 'absolute', inset: -4,
-              borderRadius: '50%', border: '2px solid #25D366',
-              animation: 'ping 2s cubic-bezier(0,0,0.2,1) infinite',
-              '@keyframes ping': { '0%': { transform: 'scale(1)', opacity: 0.6 }, '100%': { transform: 'scale(1.4)', opacity: 0 } },
-            },
-          }}
-        >
-          <WhatsApp sx={{ fontSize: 28, color: 'white' }} />
-        </Box>
-      </motion.div>
     </Box>
   );
 };
 
-export default CTA;
+export default Contact;

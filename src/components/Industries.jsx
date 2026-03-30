@@ -25,7 +25,7 @@ const industries = [
   { icon: <Store />, label: 'Y más...' },
 ];
 
-const TargetAudience = () => (
+const Industries = () => (
   <Box sx={{ py: { xs: 6, md: 8 }, bgcolor: 'background.default' }}>
     <Container maxWidth="lg">
       <Stack spacing={8}>
@@ -98,4 +98,4 @@ const TargetAudience = () => (
   </Box>
 );
 
-export default TargetAudience;
+export default Industries;

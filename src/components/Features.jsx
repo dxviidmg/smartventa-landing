@@ -6,8 +6,7 @@ import {
   AdminPanelSettingsOutlined, TableChartOutlined, ReceiptLongOutlined,
   WarehouseOutlined, BugReportOutlined,
   HelpOutlineOutlined,
-  SummarizeOutlined, NotificationsOutlined, HistoryOutlined, TrendingUpOutlined,
-  UndoOutlined, DarkModeOutlined, CategoryOutlined,
+  SummarizeOutlined,
 } from '@mui/icons-material';
 
 const features = [
@@ -24,12 +23,6 @@ const features = [
   { icon: <ReceiptLongOutlined />, title: 'Impresión de Tickets', desc: 'Conexión directa con impresoras térmicas para tickets de venta.' },
   { icon: <HelpOutlineOutlined />, title: 'Ayuda Contextual', desc: 'Un botón de ayuda en cada página que explica qué hace cada sección. Ideal para nuevos usuarios.' },
   { icon: <SummarizeOutlined />, title: 'Corte de Caja', desc: 'Resumen diario de ventas por método de pago: efectivo, tarjeta y transferencia. Con detalle de movimientos de caja.' },
-  { icon: <NotificationsOutlined />, title: 'Notificaciones en Tiempo Real', desc: 'Recibe alertas instantáneas de traspasos, distribuciones y solicitudes de ajuste. Sin recargar la página.' },
-  { icon: <HistoryOutlined />, title: 'Historial de Stock', desc: 'Registro detallado de cada movimiento de inventario: ventas, traspasos, distribuciones y ajustes. Rastrea cualquier diferencia.' },
-  { icon: <TrendingUpOutlined />, title: 'Historial de Precios', desc: 'Consulta los cambios de precio de cada producto agrupados por fecha. Útil para auditoría y control de márgenes.' },
-  { icon: <UndoOutlined />, title: 'Devoluciones y Cancelaciones', desc: 'Cancela ventas o devuelve productos parcialmente con registro de motivo. Filtros rápidos por ventas duplicadas, canceladas y con devolución.' },
-  { icon: <CategoryOutlined />, title: 'Tablero de Marcas y Productos', desc: 'Top marcas y productos más y menos vendidos con porcentaje de participación en tus ventas.' },
-  { icon: <DarkModeOutlined />, title: 'Modo Oscuro / Claro', desc: 'Interfaz adaptable a la preferencia visual de cada usuario para mayor comodidad.' },
 ];
 
 const Features = () => (
