@@ -1,12 +1,12 @@
 import { Box, Container, Typography, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
-import { SettingsOutlined, StorefrontOutlined, PointOfSaleOutlined, InsightsOutlined } from '@mui/icons-material';
+import { Settings, Storefront, PointOfSale, Insights } from '@mui/icons-material';
 
 const steps = [
-  { icon: <SettingsOutlined />, num: '01', title: 'Configura tu catálogo', desc: 'Agrega tus productos con precios, categorías y códigos de barras. Importa todos tus productos desde Excel.' },
-  { icon: <StorefrontOutlined />, num: '02', title: 'Distribuye a tus tiendas', desc: 'Asigna inventario a cada sucursal y almacén. Realiza transferencias entre ubicaciones fácilmente.' },
-  { icon: <PointOfSaleOutlined />, num: '03', title: 'Vende con agilidad', desc: 'Procesa ventas rápidamente con el punto de venta. El inventario se actualiza al instante.' },
-  { icon: <InsightsOutlined />, num: '04', title: 'Analiza y optimiza', desc: 'Revisa reportes y métricas para tomar decisiones informadas y hacer crecer tu negocio.' },
+  { icon: <Settings />, num: '01', title: 'Configura tu catálogo', desc: 'Agrega tus productos con precios, categorías y códigos de barras. Importa todos tus productos desde Excel.' },
+  { icon: <Storefront />, num: '02', title: 'Distribuye a tus tiendas', desc: 'Asigna inventario a cada sucursal y almacén. Realiza transferencias entre ubicaciones fácilmente.' },
+  { icon: <PointOfSale />, num: '03', title: 'Vende con agilidad', desc: 'Procesa ventas rápidamente con el punto de venta. El inventario se actualiza al instante.' },
+  { icon: <Insights />, num: '04', title: 'Analiza y optimiza', desc: 'Revisa reportes y métricas para tomar decisiones informadas y hacer crecer tu negocio.' },
 ];
 
 const HowItWorks = () => (

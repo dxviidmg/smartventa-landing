@@ -1,28 +1,13 @@
 import { Box, Container, Typography, Grid, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
 import {
-  StorefrontOutlined, AccountTreeOutlined, WarehouseOutlined,
-  ShoppingCart, Construction, MenuBook, Spa, Pets, Toys, Store,
-  CheckroomOutlined, LocalPharmacyOutlined,
+  Storefront, AccountTree, Warehouse,
 } from '@mui/icons-material';
 
 const audiences = [
-  { icon: <StorefrontOutlined />, title: 'Tiendas retail', desc: 'Negocios de venta al público que necesitan un punto de venta ágil y control de inventario.' },
-  { icon: <AccountTreeOutlined />, title: 'Negocios multi-sucursal', desc: 'Cadenas de tiendas que requieren visibilidad y coordinación entre todas sus ubicaciones.' },
-  { icon: <WarehouseOutlined />, title: 'Operaciones con almacén', desc: 'Negocios que distribuyen productos desde almacenes centrales a sus puntos de venta.' },
-];
-
-const industries = [
-  { icon: <CheckroomOutlined />, label: 'Ropa' },
-  { icon: <ShoppingCart />, label: 'Abarrotes' },
-  { icon: <LocalPharmacyOutlined />, label: 'Farmacias' },
-  { icon: <Construction />, label: 'Ferreterías' },
-  { icon: <Store />, label: 'Mini Súpers' },
-  { icon: <MenuBook />, label: 'Papelerías' },
-  { icon: <Spa />, label: 'Cosméticos' },
-  { icon: <Pets />, label: 'Mascotas' },
-  { icon: <Toys />, label: 'Jugueterías' },
-  { icon: <Store />, label: 'Y más...' },
+  { icon: <Storefront />, title: 'Negocios minoristas', desc: 'Tiendas que operan con varias sucursales y necesitan control centralizado de su operación.' },
+  { icon: <AccountTree />, title: 'Negocios mayoristas', desc: 'Empresas que distribuyen productos a múltiples puntos de venta y necesitan visibilidad en tiempo real.' },
+  { icon: <Warehouse />, title: 'Operaciones con almacén', desc: 'Negocios que requieren coordinación entre almacenes centrales y puntos de venta.' },
 ];
 
 const Industries = () => (
@@ -32,12 +17,17 @@ const Industries = () => (
         <Stack spacing={2} alignItems="center" textAlign="center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <Typography variant="overline" sx={{ color: 'secondary.main', fontWeight: 700, letterSpacing: 2 }}>
-              ¿Para quién es?
+              ¿Para quién es SmartVenta?
             </Typography>
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
             <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' }, maxWidth: 700 }}>
               Hecho para negocios como el tuyo
+            </Typography>
+          </motion.div>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }}>
+            <Typography variant="body1" sx={{ color: 'text.secondary', maxWidth: 600, fontSize: '1.05rem' }}>
+              Negocios minoristas y mayoristas que operan con varias tiendas y/o almacenes, y necesitan control centralizado de su operación sin depender de software costoso o complicado.
             </Typography>
           </motion.div>
         </Stack>
@@ -67,32 +57,6 @@ const Industries = () => (
             </Grid>
           ))}
         </Grid>
-
-        {/* Industries */}
-        <Stack spacing={2}>
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <Typography variant="subtitle1" sx={{ textAlign: 'center', fontWeight: 600 }}>
-              Ideal para tu tipo de negocio
-            </Typography>
-          </motion.div>
-          <Grid container spacing={2} justifyContent="center">
-          {industries.map((ind, i) => (
-            <Grid size={{ xs: 6, sm: 3, md: 1.5 }} key={i}>
-              <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} whileHover={{ scale: 1.08, y: -3 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}>
-                <Stack alignItems="center" spacing={1} sx={{
-                  py: 2, px: 1, borderRadius: 3,
-                  border: '1px solid', borderColor: 'divider',
-                  transition: 'all 0.3s ease',
-                  '&:hover': { borderColor: 'primary.light', transform: 'translateY(-2px)' },
-                }}>
-                  <Box sx={{ color: 'primary.main', '& svg': { fontSize: 28 } }}>{ind.icon}</Box>
-                  <Typography variant="caption" sx={{ fontWeight: 600, textAlign: 'center' }}>{ind.label}</Typography>
-                </Stack>
-              </motion.div>
-            </Grid>
-          ))}
-        </Grid>
-        </Stack>
       </Stack>
     </Container>
   </Box>

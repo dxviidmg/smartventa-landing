@@ -1,16 +1,15 @@
 import { Box, Container, Typography, Grid, Stack, Paper } from '@mui/material';
 import { motion } from 'framer-motion';
 import {
-  StorefrontOutlined, VisibilityOutlined,
-  AccessTimeOutlined, SavingsOutlined,
-  AdminPanelSettings, Person, Engineering, AttachMoney,
+  Storefront, Visibility, AccessTime,
+  Savings, AdminPanelSettings, Person, Engineering, AttachMoney,
 } from '@mui/icons-material';
 
 const mainBenefits = [
-  { icon: <StorefrontOutlined />, title: 'Centraliza tus operaciones', desc: 'Gestiona ventas, inventario y empleados de todas tus sucursales desde una sola plataforma.' },
-  { icon: <VisibilityOutlined />, title: 'Decisiones basadas en datos', desc: 'Conoce el stock exacto, las ventas del día y el rendimiento de cada sucursal al instante.' },
-  { icon: <AccessTimeOutlined />, title: 'Ahorra tiempo en tareas operativas', desc: 'Importación desde Excel, transferencias automatizadas y reportes listos para descargar.' },
-  { icon: <SavingsOutlined />, title: 'Reduce pérdidas por errores de inventario', desc: 'Control preciso de stock que detecta errores antes de que se conviertan en pérdidas.' },
+  { icon: <Storefront />, title: 'Centraliza tus operaciones', desc: 'Gestiona ventas, inventario y empleados de todas tus sucursales desde una sola plataforma.' },
+  { icon: <Visibility />, title: 'Decisiones basadas en datos', desc: 'Conoce el stock exacto, las ventas del día y el rendimiento de cada sucursal al instante.' },
+  { icon: <AccessTime />, title: 'Ahorra tiempo en tareas operativas', desc: 'Importación desde Excel, transferencias automatizadas y reportes listos para descargar.' },
+  { icon: <Savings />, title: 'Reduce pérdidas por errores de inventario', desc: 'Control preciso de stock que detecta errores antes de que se conviertan en pérdidas.' },
 ];
 
 const roleBenefits = [
