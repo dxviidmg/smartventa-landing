@@ -2,7 +2,7 @@ import { Box, Container, Typography, Grid, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
 import {
   SearchOutlined, ShoppingCart, AttachMoney,
-  ViewStream, KeyboardShortcut,
+  ViewStream, Keyboard,
   PrintOutlined,
   Storefront, AccountTree, Inventory,
   SwapHoriz, Warehouse, CheckCircle,
@@ -19,7 +19,7 @@ const features = [
   { icon: <ShoppingCart />, title: 'Múltiples carritos simultáneos', desc: 'Atiende a varios clientes al mismo tiempo sin perder información.' },
   { icon: <AttachMoney />, title: 'Precios dinámicos', desc: 'Precio unitario y precio mayoreo automático según cantidad.' },
   { icon: <ViewStream />, title: 'Una pantalla para todo', desc: 'Ventas, traspasos y distribuciones desde la misma interfaz.' },
-  { icon: <KeyboardShortcut />, title: 'Atajos de teclado', desc: 'Ctrl+Q/W para buscar, Ctrl+E/R/T/Y/U para tipo de operación, Ctrl+B para enfocar búsqueda.' },
+  { icon: <Keyboard />, title: 'Atajos de teclado', desc: 'Ctrl+Q/W para buscar, Ctrl+E/R/T/Y/U para tipo de operación, Ctrl+B para enfocar búsqueda.' },
   { icon: <PrintOutlined />, title: 'Impresión de tickets', desc: 'Compatible con impresoras térmicas estándar.' },
   { icon: <Storefront />, title: 'Panel centralizado', desc: 'Administra todas tus tiendas y almacenes desde un solo lugar.' },
   { icon: <AccountTree />, title: 'Cambio instantáneo', desc: 'Pasa de una tienda a otra sin cerrar sesión.' },
