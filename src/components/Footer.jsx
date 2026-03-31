@@ -9,38 +9,36 @@ const Footer = () => {
 
   return (
     <>
-      <Box sx={{ py: 6, bgcolor: (t) => t.palette.mode === 'dark' ? '#0b1120' : '#04346b', color: 'white' }}>
+      <Box sx={{ py: 6, bgcolor: '#0f172a', color: 'white' }}>
         <Container maxWidth="lg">
           <Grid container spacing={4}>
             <Grid size={{ xs: 12, md: 4 }}>
               <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>{CONFIG.company.name}</Typography>
-              <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.6)', lineHeight: 1.7 }}>
+              <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>
                 {CONFIG.company.tagline}
               </Typography>
             </Grid>
             <Grid size={{ xs: 12, md: 4 }}>
               <Typography variant="subtitle2" sx={{ fontWeight: 600, mb: 1.5 }}>Contacto</Typography>
-              <Stack spacing={1}>
-                <Stack direction="row" spacing={1} alignItems="center">
-                  <PhoneOutlined sx={{ fontSize: 16, color: 'rgba(255,255,255,0.5)' }} />
-                  <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.7)' }}>{CONFIG.contact.phone}</Typography>
-                </Stack>
+              <Stack direction="row" spacing={1} alignItems="center">
+                <PhoneOutlined sx={{ fontSize: 16, color: 'rgba(255,255,255,0.4)' }} />
+                <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.6)' }}>{CONFIG.contact.phone}</Typography>
               </Stack>
             </Grid>
             <Grid size={{ xs: 12, md: 4 }}>
               <Typography variant="subtitle2" sx={{ fontWeight: 600, mb: 1.5 }}>Legal</Typography>
               <Stack spacing={1}>
-                <Link component="button" onClick={privacyModal.open} sx={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', textAlign: 'left', fontSize: '0.875rem', '&:hover': { color: 'white' } }}>
+                <Link component="button" onClick={privacyModal.open} sx={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none', textAlign: 'left', fontSize: '0.875rem', '&:hover': { color: 'white' } }}>
                   Política de Privacidad
                 </Link>
-                <Link component="button" onClick={termsModal.open} sx={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', textAlign: 'left', fontSize: '0.875rem', '&:hover': { color: 'white' } }}>
+                <Link component="button" onClick={termsModal.open} sx={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none', textAlign: 'left', fontSize: '0.875rem', '&:hover': { color: 'white' } }}>
                   Términos y Condiciones
                 </Link>
               </Stack>
             </Grid>
           </Grid>
-          <Box sx={{ mt: 5, pt: 3, borderTop: '1px solid rgba(255,255,255,0.1)', textAlign: 'center' }}>
-            <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.8rem' }}>
+          <Box sx={{ mt: 5, pt: 3, borderTop: '1px solid rgba(255,255,255,0.08)', textAlign: 'center' }}>
+            <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.3)', fontSize: '0.8rem' }}>
               © {new Date().getFullYear()} {CONFIG.company.name}. Todos los derechos reservados.
             </Typography>
           </Box>
@@ -51,7 +49,7 @@ const Footer = () => {
       <Dialog open={privacyModal.isOpen} onClose={privacyModal.close} maxWidth="md" fullWidth>
         <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           Política de Privacidad
-          <IconButton onClick={privacyModal.close}><Close /></IconButton>
+          <IconButton onClick={privacyModal.close} aria-label="cerrar"><Close /></IconButton>
         </DialogTitle>
         <DialogContent>
           <Stack spacing={3}>
@@ -75,7 +73,7 @@ const Footer = () => {
       <Dialog open={termsModal.isOpen} onClose={termsModal.close} maxWidth="md" fullWidth>
         <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           Términos y Condiciones
-          <IconButton onClick={termsModal.close}><Close /></IconButton>
+          <IconButton onClick={termsModal.close} aria-label="cerrar"><Close /></IconButton>
         </DialogTitle>
         <DialogContent>
           <Stack spacing={3}>

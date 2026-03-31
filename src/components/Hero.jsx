@@ -1,129 +1,79 @@
 import { Box, Container, Typography, Button, Stack, Chip } from '@mui/material';
 import { motion } from 'framer-motion';
-import { ArrowForward } from '@mui/icons-material';
-import { openWhatsApp } from '../utils/helpers';
-
-const floatingOrb = (top, left, size, color, duration) => ({
-  position: 'absolute', top, left, width: size, height: size,
-  borderRadius: '50%', background: `radial-gradient(circle, ${color} 0%, transparent 70%)`,
-  filter: 'blur(60px)',
-});
+import { ArrowForward, PlayArrow } from '@mui/icons-material';
+import { openWhatsApp, scrollToSection } from '../utils/helpers';
 
 const Hero = () => (
   <Box
     sx={{
-      pt: { xs: 14, md: 16 },
-      pb: { xs: 6, md: 8 },
+      pt: { xs: 16, md: 20 },
+      pb: { xs: 10, md: 14 },
       position: 'relative',
       overflow: 'hidden',
-      background: 'linear-gradient(135deg, #04346b 0%, #065a9e 100%)',
+      background: 'linear-gradient(145deg, #022347 0%, #04346b 40%, #065a9e 100%)',
     }}
   >
-    {/* Animated gradient orbs */}
-    <motion.div
-      animate={{ x: [0, 30, 0], y: [0, -20, 0] }}
-      transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-      style={floatingOrb('-20%', '-10%', '500px', 'rgba(96,165,250,0.15)')}
-    />
-    <motion.div
-      animate={{ x: [0, -20, 0], y: [0, 30, 0] }}
-      transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
-      style={floatingOrb('-10%', '60%', '600px', 'rgba(16,185,129,0.12)')}
-    />
+    {/* Gradient mesh */}
+    <Box sx={{
+      position: 'absolute', inset: 0,
+      background: 'radial-gradient(ellipse at 20% 50%, rgba(16,185,129,0.08) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(96,165,250,0.1) 0%, transparent 50%)',
+    }} />
+    {/* Grid pattern */}
+    <Box sx={{
+      position: 'absolute', inset: 0, opacity: 0.03,
+      backgroundImage: 'linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)',
+      backgroundSize: '60px 60px',
+    }} />
 
     <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
       <Stack spacing={4} alignItems="center" textAlign="center">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1, y: [0, -6, 0] }}
-          transition={{ duration: 0.5, y: { duration: 3, repeat: Infinity, ease: 'easeInOut' } }}
-        >
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
           <Chip
-            label="☁️ Punto de venta en la nube para múltiples sucursales"
+            label="🚀 El POS multi-sucursal #1 en México"
             sx={{
-              bgcolor: 'rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.9)',
+              bgcolor: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.9)',
               fontWeight: 500, fontSize: '0.85rem',
-              backdropFilter: 'blur(10px)',
-              border: '1px solid rgba(255,255,255,0.2)',
-              py: 2.5, px: 1,
-              position: 'relative', overflow: 'hidden',
-              '&::before': {
-                content: '""', position: 'absolute', top: 0, left: '-100%',
-                width: '100%', height: '100%',
-                background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent)',
-                animation: 'shimmer 4s infinite',
-                '@keyframes shimmer': { '0%': { left: '-100%' }, '100%': { left: '100%' } },
-              },
+              border: '1px solid rgba(255,255,255,0.12)',
+              backdropFilter: 'blur(10px)', py: 2.5, px: 1,
             }}
           />
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: [0, -6, 0] }}
-          transition={{ duration: 0.6, delay: 0.1, y: { duration: 3, repeat: Infinity, ease: 'easeInOut', delay: 0.5 } }}
-        >
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}>
           <Typography
             variant="h1"
             sx={{
-              fontSize: { xs: '2.8rem', sm: '3.5rem', md: '4.2rem' },
-              color: 'white', lineHeight: 1.1, maxWidth: '900px', letterSpacing: '-0.02em',
+              fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4.5rem' },
+              color: 'white', maxWidth: '850px',
             }}
           >
-            <motion.span
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              style={{ display: 'inline-block' }}
-            >
-              Controla todas tus tiendas
-            </motion.span>{' '}
-            <motion.span
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-              style={{
-                display: 'inline-block',
-                background: 'linear-gradient(90deg, #34d399, #10b981, #6ee7b7, #34d399)',
-                backgroundSize: '200% 200%',
+            Controla todas tus tiendas{' '}
+            <Box
+              component="span"
+              sx={{
+                background: 'linear-gradient(135deg, #34d399, #6ee7b7)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
               }}
             >
-              <motion.span
-                animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
-                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                style={{
-                  background: 'linear-gradient(90deg, #34d399, #10b981, #6ee7b7, #34d399)',
-                  backgroundSize: '200% 200%',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                }}
-              >
-                desde un solo lugar
-              </motion.span>
-            </motion.span>
+              desde un solo lugar
+            </Box>
           </Typography>
         </motion.div>
 
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
           <Typography
-            variant="h5"
             sx={{
-              color: 'rgba(255,255,255,0.75)', maxWidth: '650px',
-              fontSize: { xs: '1.05rem', md: '1.25rem' }, fontWeight: 400, lineHeight: 1.6,
+              color: 'rgba(255,255,255,0.65)', maxWidth: '580px',
+              fontSize: { xs: '1rem', md: '1.2rem' }, lineHeight: 1.7,
             }}
           >
-            Gestiona inventario, ventas y operaciones de todas tus sucursales y almacenes en tiempo real. Sin instalación, desde cualquier dispositivo.
+            Inventario, ventas, transferencias y reportes de todas tus sucursales en tiempo real. Sin instalación. Desde cualquier dispositivo.
           </Typography>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.35 }}
-        >
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.35 }}>
+          <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} alignItems="center">
             <Button
               variant="contained"
               size="large"
@@ -133,14 +83,35 @@ const Hero = () => (
                 px: 4, py: 1.5, fontSize: '1rem',
                 bgcolor: '#10b981', color: '#fff',
                 '&:hover': { bgcolor: '#059669' },
-                boxShadow: '0 4px 24px rgba(16,185,129,0.4)',
+                boxShadow: '0 4px 24px rgba(16,185,129,0.35)',
               }}
             >
-              Solicitar demo
+              Solicitar demo gratis
             </Button>
-          </motion.div>
+            <Button
+              size="large"
+              startIcon={<PlayArrow />}
+              onClick={() => scrollToSection('dashboard-preview')}
+              sx={{
+                color: 'rgba(255,255,255,0.8)', fontSize: '0.95rem',
+                '&:hover': { bgcolor: 'rgba(255,255,255,0.06)' },
+              }}
+            >
+              Ver cómo funciona
+            </Button>
+          </Stack>
         </motion.div>
 
+        {/* Social proof */}
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.6 }}>
+          <Stack direction="row" spacing={4} sx={{ mt: 4, opacity: 0.5 }} alignItems="center" justifyContent="center" flexWrap="wrap">
+            {['Sin instalación', 'Sin contratos', 'Soporte incluido'].map((t) => (
+              <Typography key={t} variant="caption" sx={{ color: 'white', fontSize: '0.8rem', letterSpacing: 1 }}>
+                ✓ {t}
+              </Typography>
+            ))}
+          </Stack>
+        </motion.div>
       </Stack>
     </Container>
   </Box>

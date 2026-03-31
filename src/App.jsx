@@ -2,10 +2,11 @@ import { ThemeProvider, CssBaseline, Box } from '@mui/material';
 import { lightTheme } from './theme';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Industries from './components/Industries';
+import ProblemSolution from './components/ProblemSolution';
 import Features from './components/Features';
-import HowItWorks from './components/HowItWorks';
+import DashboardPreview from './components/DashboardPreview';
 import Benefits from './components/Benefits';
+import Testimonials from './components/Testimonials';
 import Pricing from './components/Pricing';
 import FAQ from './components/FAQ';
 import Contact from './components/Contact';
@@ -18,10 +19,11 @@ function App() {
       <Box sx={{ bgcolor: 'background.default', minHeight: '100vh' }}>
         <Navbar />
         <Hero />
-        <Industries />
+        <ProblemSolution />
         <Features />
-        <HowItWorks />
+        <DashboardPreview />
         <Benefits />
+        <Testimonials />
         <Pricing />
         <FAQ />
         <Contact />

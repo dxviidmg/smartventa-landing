@@ -10,58 +10,47 @@ const faqs = [
   { q: '¿Qué pasa si pierdo conexión a internet?', a: 'El sistema requiere conexión para sincronizar datos en tiempo real. Recomendamos una conexión estable para la mejor experiencia.' },
   { q: '¿Cómo funciona la demo?', a: 'Te damos acceso a una cuenta demo completa donde puedes explorar todas las funcionalidades del sistema sin compromiso.' },
   { q: '¿Hay costos ocultos o contratos?', a: 'No. Pagas $500 MXN por tienda o almacén al mes. Sin contratos a largo plazo, sin costos de instalación, sin sorpresas.' },
-  { q: '¿Cómo contacto a soporte?', a: 'El sistema tiene un botón de soporte por WhatsApp integrado directamente en la aplicación. Puedes escribirnos en cualquier momento sin salir del sistema.' },
-  { q: '¿Qué roles y permisos maneja el sistema?', a: 'Tres niveles: dueño, administrador y vendedor. Cada rol tiene su propia vista, acciones y restricciones. El dueño controla ajustes de stock y edición de productos.' },
+  { q: '¿Cómo contacto a soporte?', a: 'El sistema tiene un botón de soporte por WhatsApp integrado directamente en la aplicación. Puedes escribirnos en cualquier momento.' },
+  { q: '¿Qué roles y permisos maneja el sistema?', a: 'Tres niveles: dueño, administrador y vendedor. Cada rol tiene su propia vista, acciones y restricciones.' },
 ];
 
 const FAQ = () => (
-  <Box id="faq" sx={{ py: { xs: 6, md: 8 }, bgcolor: 'background.default' }}>
+  <Box id="faq" sx={{ py: { xs: 8, md: 12 }, bgcolor: 'background.default' }}>
     <Container maxWidth="md">
-      <Stack spacing={6}>
-        <Stack spacing={2} alignItems="center" textAlign="center">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <Typography variant="overline" sx={{ color: 'secondary.main', fontWeight: 700, letterSpacing: 2 }}>
-              FAQ
-            </Typography>
-          </motion.div>
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
-            <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' } }}>
-              Preguntas frecuentes
-            </Typography>
-          </motion.div>
-        </Stack>
+      <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 6 }}>
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          <Typography variant="overline" sx={{ color: 'secondary.main', fontWeight: 700, letterSpacing: 2 }}>
+            FAQ
+          </Typography>
+        </motion.div>
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
+          <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' } }}>
+            Preguntas frecuentes
+          </Typography>
+        </motion.div>
+      </Stack>
 
-        <Stack spacing={1.5}>
-          {faqs.map((faq, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.04 }}
+      <Stack spacing={1.5}>
+        {faqs.map((faq, i) => (
+          <motion.div key={i} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.04 }}>
+            <Accordion
+              elevation={0}
+              sx={{
+                bgcolor: 'background.paper',
+                border: '1px solid', borderColor: 'divider', borderRadius: '12px !important',
+                '&:before': { display: 'none' },
+                '&.Mui-expanded': { borderColor: 'primary.light' },
+              }}
             >
-              <Accordion
-                elevation={0}
-                sx={{
-                  border: '1px solid', borderColor: 'divider', borderRadius: '12px !important',
-                  '&:before': { display: 'none' },
-                  '&.Mui-expanded': { borderColor: 'primary.light' },
-                }}
-              >
-                <AccordionSummary expandIcon={<Add sx={{ fontSize: 20 }} />}>
-                  <Typography variant="body1" sx={{ fontWeight: 600, fontSize: '0.95rem' }}>
-                    {faq.q}
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails sx={{ pt: 0 }}>
-                  <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.7 }}>
-                    {faq.a}
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-            </motion.div>
-          ))}
-        </Stack>
+              <AccordionSummary expandIcon={<Add sx={{ fontSize: 20 }} />}>
+                <Typography sx={{ fontWeight: 600, fontSize: '0.95rem' }}>{faq.q}</Typography>
+              </AccordionSummary>
+              <AccordionDetails sx={{ pt: 0 }}>
+                <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>{faq.a}</Typography>
+              </AccordionDetails>
+            </Accordion>
+          </motion.div>
+        ))}
       </Stack>
     </Container>
   </Box>

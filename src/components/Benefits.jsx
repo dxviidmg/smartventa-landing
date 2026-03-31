@@ -1,107 +1,92 @@
-import { Box, Container, Typography, Grid, Stack, Paper } from '@mui/material';
+import { Box, Container, Typography, Grid, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
-import {
-  Storefront, Visibility, AccessTime,
-  Savings, AdminPanelSettings, Person, Engineering, AttachMoney,
-} from '@mui/icons-material';
+import { AccessTime, Shield, TrendingUp, Devices } from '@mui/icons-material';
 
-const mainBenefits = [
-  { icon: <Storefront />, title: 'Centraliza tus operaciones', desc: 'Gestiona ventas, inventario y empleados de todas tus sucursales desde una sola plataforma.' },
-  { icon: <Visibility />, title: 'Decisiones basadas en datos', desc: 'Conoce el stock exacto, las ventas del día y el rendimiento de cada sucursal al instante.' },
-  { icon: <AccessTime />, title: 'Ahorra tiempo en tareas operativas', desc: 'Importación desde Excel, transferencias automatizadas y reportes listos para descargar.' },
-  { icon: <Savings />, title: 'Reduce pérdidas por errores de inventario', desc: 'Control preciso de stock que detecta errores antes de que se conviertan en pérdidas.' },
-];
-
-const roleBenefits = [
-  { icon: <AdminPanelSettings />, title: 'Para Administradores', items: ['Compara rendimiento entre sucursales', 'Detecta sucursales con mejor/peor desempeño', 'Optimiza inventario basado en datos reales', 'Auditoría de transacciones y productos'] },
-  { icon: <Person />, title: 'Para Empleados', items: ['Interfaz fácil de aprender y usar', 'Proceso de venta rápido y eficiente', 'Acceso desde cualquier dispositivo'] },
-  { icon: <Engineering />, title: 'Para tu equipo técnico', items: ['Sin instalación (aplicación web)', 'Compatible con impresoras de tickets', 'Actualizaciones automáticas'] },
-  { icon: <AttachMoney />, title: 'Para tus finanzas', items: ['Reduce costos de equipo y servidores', 'No requiere hardware especializado', 'Evita pérdidas por mal manejo de inventario'] },
+const benefits = [
+  {
+    icon: <AccessTime />, title: 'Ahorra horas cada semana',
+    desc: 'Importación masiva desde Excel, reportes automáticos y transferencias en un clic. Menos tiempo operando, más tiempo creciendo.',
+    metric: '70%', metricLabel: 'menos tiempo en tareas operativas',
+  },
+  {
+    icon: <Shield />, title: 'Reduce errores y pérdidas',
+    desc: 'Auditoría integrada que detecta stock faltante, ventas duplicadas y precios incorrectos antes de que se conviertan en pérdidas.',
+    metric: '0', metricLabel: 'sorpresas en inventario',
+  },
+  {
+    icon: <TrendingUp />, title: 'Decisiones con datos reales',
+    desc: 'Conoce tu mejor tienda, tu hora pico, tu producto estrella. Deja de adivinar y empieza a optimizar.',
+    metric: '100%', metricLabel: 'visibilidad de tu negocio',
+  },
+  {
+    icon: <Devices />, title: 'Escala sin complicaciones',
+    desc: 'Agrega sucursales en minutos. Sin servidores, sin instalaciones, sin equipo técnico. Solo abre el navegador y listo.',
+    metric: '∞', metricLabel: 'sucursales sin límite',
+  },
 ];
 
 const Benefits = () => (
-  <Box id="benefits" sx={{ py: { xs: 6, md: 8 }, bgcolor: '#04346b', color: '#fff' }}>
+  <Box id="benefits" sx={{ py: { xs: 8, md: 12 }, background: 'linear-gradient(145deg, #022347 0%, #04346b 100%)' }}>
     <Container maxWidth="lg">
-      <Stack spacing={8}>
-        <Stack spacing={2} alignItems="center" textAlign="center">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <Typography variant="overline" sx={{ color: '#34d399', fontWeight: 700, letterSpacing: 2 }}>
-              Beneficios
-            </Typography>
-          </motion.div>
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
-            <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' }, maxWidth: 700, color: '#fff' }}>
-              Resultados reales para tu negocio
-            </Typography>
-          </motion.div>
-        </Stack>
+      <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 8 }}>
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          <Typography variant="overline" sx={{ color: '#34d399', fontWeight: 700, letterSpacing: 2 }}>
+            Beneficios
+          </Typography>
+        </motion.div>
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
+          <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' }, color: 'white', maxWidth: 600 }}>
+            Resultados reales desde el primer día
+          </Typography>
+        </motion.div>
+      </Stack>
 
-        <Grid container spacing={4}>
-          <Grid size={{ xs: 12 }}>
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              <Typography variant="h5" sx={{ fontWeight: 600, textAlign: 'center', color: '#fff', mb: 1 }}>
-                ¿Qué gana tu negocio?
-              </Typography>
-              <Typography variant="body2" sx={{ textAlign: 'center', color: 'rgba(255,255,255,0.5)' }}>
-                Resultados concretos desde el primer día
-              </Typography>
-            </motion.div>
-          </Grid>
-          {mainBenefits.map((b, i) => (
-            <Grid size={{ xs: 12, sm: 6, md: 3 }} key={i}>
-              <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -6 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} style={{ height: '100%' }}>
-                <Box sx={{
-                  p: 4, height: '100%', borderRadius: 4,
-                  bgcolor: 'rgba(255,255,255,0.08)',
-                  border: '1px solid rgba(255,255,255,0.12)', transition: 'all 0.3s ease',
-                  '&:hover': { bgcolor: 'rgba(255,255,255,0.14)' },
-                }}>
+      <Grid container spacing={3}>
+        {benefits.map((b, i) => (
+          <Grid size={{ xs: 12, sm: 6 }} key={i}>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              style={{ height: '100%' }}
+            >
+              <Box sx={{
+                p: 4, height: '100%', borderRadius: 4,
+                bgcolor: 'rgba(255,255,255,0.04)',
+                border: '1px solid rgba(255,255,255,0.08)',
+                transition: 'all 0.3s ease',
+                '&:hover': { bgcolor: 'rgba(255,255,255,0.07)', transform: 'translateY(-4px)' },
+              }}>
+                <Stack direction="row" justifyContent="space-between" alignItems="flex-start" sx={{ mb: 2.5 }}>
                   <Box sx={{
-                    width: 48, height: 48, borderRadius: 3, bgcolor: 'rgba(52,211,153,0.15)',
+                    width: 48, height: 48, borderRadius: 3,
+                    bgcolor: 'rgba(52,211,153,0.12)', color: '#34d399',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    mb: 2.5, color: '#34d399', '& svg': { fontSize: 24 },
+                    '& svg': { fontSize: 24 },
                   }}>
                     {b.icon}
                   </Box>
-                  <Typography variant="h6" sx={{ fontWeight: 600, mb: 1, fontSize: '1.05rem', color: '#fff' }}>{b.title}</Typography>
-                  <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.7 }}>{b.desc}</Typography>
-                </Box>
-              </motion.div>
-            </Grid>
-          ))}
-        </Grid>
-
-        <Grid container spacing={3}>
-          <Grid size={{ xs: 12 }}>
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              <Typography variant="h5" sx={{ fontWeight: 600, textAlign: 'center', color: '#fff', mb: 1 }}>
-                Beneficios para cada rol
-              </Typography>
-              <Typography variant="body2" sx={{ textAlign: 'center', color: 'rgba(255,255,255,0.5)' }}>
-                SmartVenta aporta valor a todo tu equipo
-              </Typography>
+                  <Stack alignItems="flex-end">
+                    <Typography sx={{ color: '#34d399', fontWeight: 800, fontSize: '1.5rem', lineHeight: 1 }}>
+                      {b.metric}
+                    </Typography>
+                    <Typography sx={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.7rem' }}>
+                      {b.metricLabel}
+                    </Typography>
+                  </Stack>
+                </Stack>
+                <Typography variant="h6" sx={{ fontWeight: 700, mb: 1, color: 'white', fontSize: '1.05rem' }}>
+                  {b.title}
+                </Typography>
+                <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.6)', lineHeight: 1.8 }}>
+                  {b.desc}
+                </Typography>
+              </Box>
             </motion.div>
           </Grid>
-          {roleBenefits.map((rb, i) => (
-            <Grid size={{ xs: 12, sm: 6, md: 3 }} key={i}>
-              <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 + i * 0.08 }} style={{ height: '100%' }}>
-                <Paper elevation={0} sx={{ p: 3, height: '100%', borderRadius: 4, bgcolor: 'rgba(255,255,255,0.1)', color: '#fff' }}>
-                  <Box sx={{ mb: 1.5, '& svg': { fontSize: 28 }, color: '#34d399' }}>{rb.icon}</Box>
-                  <Typography variant="subtitle2" sx={{ fontWeight: 600, mb: 1.5 }}>{rb.title}</Typography>
-                  <Stack spacing={1}>
-                    {rb.items.map((item, j) => (
-                      <Stack key={j} direction="row" spacing={1} alignItems="flex-start">
-                        <Box sx={{ width: 5, height: 5, borderRadius: '50%', bgcolor: 'rgba(255,255,255,0.5)', mt: 0.8, flexShrink: 0 }} />
-                        <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.8)', lineHeight: 1.6, fontSize: '0.8rem' }}>{item}</Typography>
-                      </Stack>
-                    ))}
-                  </Stack>
-                </Paper>
-              </motion.div>
-            </Grid>
-          ))}
-        </Grid>
-      </Stack>
+        ))}
+      </Grid>
     </Container>
   </Box>
 );
