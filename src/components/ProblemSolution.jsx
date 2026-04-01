@@ -17,7 +17,7 @@ const solutions = [
 ];
 
 const ProblemSolution = () => (
-  <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: 'background.paper' }}>
+  <Box sx={{ py: { xs: 6, md: 10 }, bgcolor: 'background.paper' }}>
     <Container maxWidth="lg">
       <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
         <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' }, textAlign: 'center', mb: 2 }}>

@@ -7,39 +7,39 @@ import {
 
 const features = [
   {
-    icon: <Storefront />, title: 'Multi-sucursal real',
-    desc: 'Administra todas tus tiendas y almacenes desde un panel centralizado. Cambia entre sucursales al instante.',
+    icon: <Storefront />, title: 'Multi-sucursal Nativo',
+    desc: 'Controla infinitas tiendas desde una sola cuenta. Transfiere stock y compara rendimiento al instante.',
     color: '#3b82f6',
   },
   {
-    icon: <Inventory />, title: 'Inventario inteligente',
-    desc: 'Stock unificado en tiempo real. Reservas automáticas entre carritos para evitar ventas duplicadas.',
+    icon: <Inventory />, title: 'Inventario Inteligente',
+    desc: 'Sincronización en tiempo real. Alertas de bajo stock, gestión de proveedores y órdenes de compra automáticas.',
     color: '#8b5cf6',
   },
   {
-    icon: <PointOfSale />, title: 'Punto de venta ágil',
-    desc: 'Búsqueda instantánea, múltiples carritos, atajos de teclado y precios dinámicos. Vende más rápido.',
+    icon: <PointOfSale />, title: 'POS Ultrarrápido',
+    desc: 'Vende sin interrupciones. Interfaz optimizada con atajos de teclado para que tus cajeros operen a máxima velocidad.',
     color: '#10b981',
   },
   {
-    icon: <Assessment />, title: 'Reportes y analytics',
+    icon: <Assessment />, title: 'Reportes en Tiempo Real',
     desc: 'KPIs, heatmaps de ventas, tendencias y top de productos. Datos reales para decisiones inteligentes.',
     color: '#f59e0b',
   },
   {
-    icon: <People />, title: 'Roles y permisos',
+    icon: <People />, title: 'Roles y Permisos',
     desc: 'Tres niveles de acceso: Dueño, Administrador y Vendedor. Cada quien ve solo lo que necesita.',
     color: '#ec4899',
   },
   {
-    icon: <SwapHoriz />, title: 'Traspasos y distribuciones',
+    icon: <SwapHoriz />, title: 'Traspasos y Distribuciones',
     desc: 'Mueve mercancía entre tiendas con trazabilidad completa. Confirmación obligatoria en cada recepción.',
     color: '#06b6d4',
   },
 ];
 
 const Features = () => (
-  <Box id="features" sx={{ py: { xs: 8, md: 12 }, bgcolor: 'background.default' }}>
+  <Box id="features" sx={{ py: { xs: 6, md: 10 }, bgcolor: 'background.default' }}>
     <Container maxWidth="lg">
       <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 8 }}>
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
@@ -49,12 +49,12 @@ const Features = () => (
         </motion.div>
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
           <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' }, maxWidth: 650 }}>
-            Todo lo que tu negocio necesita para crecer
+            Todo lo que necesitas, nada de lo que sobra
           </Typography>
         </motion.div>
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }}>
           <Typography sx={{ color: 'text.secondary', maxWidth: 550, fontSize: '1.05rem' }}>
-            Herramientas diseñadas para dueños de negocio que quieren control total sin complicaciones técnicas.
+            Diseñado específicamente para resolver el caos operativo. Centraliza tu información y toma decisiones informadas.
           </Typography>
         </motion.div>
       </Stack>

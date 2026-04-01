@@ -8,10 +8,9 @@ import { scrollToSection, openWhatsApp } from '../utils/helpers';
 import { CONFIG } from '../config/constants';
 
 const NAV_ITEMS = [
-  { label: 'Beneficios', id: 'benefits' },
   { label: 'Características', id: 'features' },
+  { label: 'Beneficios', id: 'benefits' },
   { label: 'Precios', id: 'pricing' },
-  { label: 'FAQ', id: 'faq' },
 ];
 
 const Navbar = () => {
@@ -32,8 +31,8 @@ const Navbar = () => {
         position="fixed"
         elevation={0}
         sx={{
-          bgcolor: scrolled ? 'rgba(255,255,255,0.85)' : 'transparent',
-          backdropFilter: scrolled ? 'blur(20px)' : 'none',
+          bgcolor: '#05346B',
+          backdropFilter: 'blur(20px)',
           borderBottom: scrolled ? '1px solid rgba(0,0,0,0.06)' : 'none',
           transition: 'all 0.3s ease',
         }}
@@ -44,7 +43,7 @@ const Navbar = () => {
               component="img"
               src="/logo.jpg"
               alt={CONFIG.company.name}
-              sx={{ height: 34, borderRadius: 1, cursor: 'pointer' }}
+              sx={{ height: 34, borderRadius: 0, cursor: 'pointer' }}
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               onError={(e) => { e.target.style.display = 'none'; }}
             />
@@ -55,24 +54,34 @@ const Navbar = () => {
                   key={id}
                   onClick={() => handleNav(id)}
                   sx={{
-                    color: scrolled ? 'text.primary' : 'white',
+                    color: 'white',
                     fontWeight: 500, fontSize: '0.88rem',
-                    '&:hover': { bgcolor: scrolled ? 'rgba(0,0,0,0.04)' : 'rgba(255,255,255,0.1)' },
+                    '&:hover': { bgcolor: 'rgba(255,255,255,0.1)' },
                   }}
                 >
                   {label}
                 </Button>
               ))}
               <Button
+                onClick={() => window.open(CONFIG.urls.app, '_blank')}
+                sx={{
+                  ml: 1,
+                  color: 'white',
+                  fontWeight: 500, fontSize: '0.88rem',
+                }}
+              >
+                Iniciar Sesión
+              </Button>
+              <Button
                 variant="contained"
                 onClick={() => openWhatsApp()}
                 sx={{
-                  ml: 1, bgcolor: '#10b981', color: '#fff',
+                  ml: 0.5, bgcolor: '#10b981', color: '#fff',
                   '&:hover': { bgcolor: '#059669' },
                   boxShadow: '0 2px 12px rgba(16,185,129,0.3)',
                 }}
               >
-                Solicitar demo
+                Empieza Gratis
               </Button>
             </Stack>
 
@@ -100,8 +109,13 @@ const Navbar = () => {
               </ListItem>
             ))}
             <ListItem disablePadding>
+              <ListItemButton onClick={() => window.open(CONFIG.urls.app, '_blank')}>
+                <ListItemText primary="Iniciar Sesión" />
+              </ListItemButton>
+            </ListItem>
+            <ListItem disablePadding>
               <ListItemButton onClick={() => { openWhatsApp(); setDrawerOpen(false); }}>
-                <ListItemText primary="Solicitar demo" primaryTypographyProps={{ color: 'secondary.main', fontWeight: 600 }} />
+                <ListItemText primary="Empieza Gratis" primaryTypographyProps={{ color: 'secondary.main', fontWeight: 600 }} />
               </ListItemButton>
             </ListItem>
           </List>

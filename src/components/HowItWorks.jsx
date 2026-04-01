@@ -1,0 +1,77 @@
+import { Box, Container, Typography, Stack } from '@mui/material';
+import { motion } from 'framer-motion';
+import { Settings, Storefront, PointOfSale, Insights } from '@mui/icons-material';
+
+const steps = [
+  { icon: <Settings />, num: '01', title: 'Configura tu catálogo', desc: 'Agrega tus productos con precios, categorías y códigos de barras. Importa todos tus productos desde Excel.' },
+  { icon: <Storefront />, num: '02', title: 'Distribuye a tus tiendas', desc: 'Asigna inventario a cada sucursal y almacén. Realiza transferencias entre ubicaciones fácilmente.' },
+  { icon: <PointOfSale />, num: '03', title: 'Vende con agilidad', desc: 'Procesa ventas rápidamente con el punto de venta. El inventario se actualiza al instante.' },
+  { icon: <Insights />, num: '04', title: 'Analiza y optimiza', desc: 'Revisa reportes y métricas para tomar decisiones informadas y hacer crecer tu negocio.' },
+];
+
+const HowItWorks = () => (
+  <Box id="how-it-works" sx={{ py: { xs: 6, md: 10 }, bgcolor: 'background.paper' }}>
+    <Container maxWidth="md">
+      <Stack spacing={8}>
+        <Stack spacing={2} alignItems="center" textAlign="center">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <Typography variant="overline" sx={{ color: 'secondary.main', fontWeight: 700, letterSpacing: 2 }}>
+              Cómo funciona
+            </Typography>
+          </motion.div>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
+            <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' } }}>
+              Cuatro pasos para empezar
+            </Typography>
+          </motion.div>
+        </Stack>
+
+        <Stack spacing={0}>
+          {steps.map((s, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              whileHover={{ x: 8 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.15 }}
+            >
+              <Stack
+                direction="row"
+                spacing={3}
+                alignItems="flex-start"
+                sx={{
+                  py: 4,
+                  borderBottom: i < steps.length - 1 ? '1px solid' : 'none',
+                  borderColor: 'divider',
+                }}
+              >
+                <Box sx={{
+                  minWidth: 56, height: 56, borderRadius: 3,
+                  bgcolor: 'primary.main', color: '#fff',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  '& svg': { fontSize: 26 },
+                }}>
+                  {s.icon}
+                </Box>
+                <Box sx={{ flex: 1 }}>
+                  <Typography variant="overline" sx={{ color: 'text.secondary', fontSize: '0.7rem' }}>
+                    Paso {s.num}
+                  </Typography>
+                  <Typography variant="h6" sx={{ fontWeight: 600, mb: 0.5 }}>
+                    {s.title}
+                  </Typography>
+                  <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.7 }}>
+                    {s.desc}
+                  </Typography>
+                </Box>
+              </Stack>
+            </motion.div>
+          ))}
+        </Stack>
+      </Stack>
+    </Container>
+  </Box>
+);
+
+export default HowItWorks;

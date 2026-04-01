@@ -24,7 +24,7 @@ const testimonials = [
 ];
 
 const Testimonials = () => (
-  <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: 'background.default' }}>
+  <Box sx={{ py: { xs: 6, md: 10 }, bgcolor: 'background.default' }}>
     <Container maxWidth="lg">
       <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 8 }}>
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>

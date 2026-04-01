@@ -10,7 +10,7 @@ export const CONFIG = {
   },
   urls: {
     domain: 'https://smartventa.com',
-    app: 'https://app.smartventa.com',
+    app: 'https://app-smartventa.vercel.app',
   },
   pricing: {
     perStore: 500,

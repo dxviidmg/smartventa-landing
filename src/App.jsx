@@ -6,7 +6,9 @@ import ProblemSolution from './components/ProblemSolution';
 import Features from './components/Features';
 import DashboardPreview from './components/DashboardPreview';
 import Benefits from './components/Benefits';
-import Testimonials from './components/Testimonials';
+import Industries from './components/Industries';
+import HowItWorks from './components/HowItWorks';
+import Integrations from './components/Integrations';
 import Pricing from './components/Pricing';
 import FAQ from './components/FAQ';
 import Contact from './components/Contact';
@@ -23,7 +25,9 @@ function App() {
         <Features />
         <DashboardPreview />
         <Benefits />
-        <Testimonials />
+        <Industries />
+        <HowItWorks />
+        <Integrations />
         <Pricing />
         <FAQ />
         <Contact />

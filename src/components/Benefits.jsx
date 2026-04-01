@@ -4,29 +4,29 @@ import { AccessTime, Shield, TrendingUp, Devices } from '@mui/icons-material';
 
 const benefits = [
   {
-    icon: <AccessTime />, title: 'Ahorra horas cada semana',
-    desc: 'Importación masiva desde Excel, reportes automáticos y transferencias en un clic. Menos tiempo operando, más tiempo creciendo.',
-    metric: '70%', metricLabel: 'menos tiempo en tareas operativas',
+    icon: <AccessTime />, title: 'Ahorra hasta 10 horas semanales',
+    desc: 'Automatiza cuadres de caja y conteo de inventario. Menos tiempo operando, más tiempo creciendo.',
+    metric: '10h', metricLabel: 'ahorradas por semana',
   },
   {
-    icon: <Shield />, title: 'Reduce errores y pérdidas',
-    desc: 'Auditoría integrada que detecta stock faltante, ventas duplicadas y precios incorrectos antes de que se conviertan en pérdidas.',
-    metric: '0', metricLabel: 'sorpresas en inventario',
+    icon: <Shield />, title: 'Elimina robos y mermas',
+    desc: 'Auditoría completa de cada movimiento, usuario y transacción. Nada pasa sin quedar registrado.',
+    metric: '0', metricLabel: 'pérdidas invisibles',
   },
   {
-    icon: <TrendingUp />, title: 'Decisiones con datos reales',
-    desc: 'Conoce tu mejor tienda, tu hora pico, tu producto estrella. Deja de adivinar y empieza a optimizar.',
-    metric: '100%', metricLabel: 'visibilidad de tu negocio',
+    icon: <TrendingUp />, title: 'Datos para decidir mejor',
+    desc: 'Reportes de productos más vendidos, horas pico y rentabilidad por sucursal. Deja de adivinar.',
+    metric: '100%', metricLabel: 'visibilidad del negocio',
   },
   {
     icon: <Devices />, title: 'Escala sin complicaciones',
-    desc: 'Agrega sucursales en minutos. Sin servidores, sin instalaciones, sin equipo técnico. Solo abre el navegador y listo.',
+    desc: 'Agrega sucursales en minutos. Sin servidores, sin instalaciones. Solo abre el navegador y listo.',
     metric: '∞', metricLabel: 'sucursales sin límite',
   },
 ];
 
 const Benefits = () => (
-  <Box id="benefits" sx={{ py: { xs: 8, md: 12 }, background: 'linear-gradient(145deg, #022347 0%, #04346b 100%)' }}>
+  <Box id="benefits" sx={{ py: { xs: 6, md: 10 }, background: 'linear-gradient(145deg, #022347 0%, #04346b 100%)' }}>
     <Container maxWidth="lg">
       <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 8 }}>
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
@@ -36,7 +36,7 @@ const Benefits = () => (
         </motion.div>
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
           <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' }, color: 'white', maxWidth: 600 }}>
-            Resultados reales desde el primer día
+            Deja de adivinar, empieza a crecer
           </Typography>
         </motion.div>
       </Stack>
@@ -87,6 +87,8 @@ const Benefits = () => (
           </Grid>
         ))}
       </Grid>
+
+
     </Container>
   </Box>
 );

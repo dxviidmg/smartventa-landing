@@ -15,7 +15,7 @@ const faqs = [
 ];
 
 const FAQ = () => (
-  <Box id="faq" sx={{ py: { xs: 8, md: 12 }, bgcolor: 'background.default' }}>
+  <Box id="faq" sx={{ py: { xs: 6, md: 10 }, bgcolor: 'background.default' }}>
     <Container maxWidth="md">
       <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 6 }}>
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
