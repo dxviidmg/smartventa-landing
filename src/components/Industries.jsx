@@ -1,14 +1,33 @@
 import { Box, Container, Typography, Grid, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
-import { Storefront, LocalPharmacy, Build, ShoppingBag, Cake, PetsOutlined } from '@mui/icons-material';
+import {
+  Store,
+  Spa,
+  ContentCut,
+  PetsOutlined,
+  Build,
+  Hardware,
+  PhoneIphone,
+  Computer,
+  Tv,
+  DirectionsCar,
+  SportsSoccer,
+  Diamond
+} from '@mui/icons-material';
 
 const industries = [
-  { icon: <Storefront />, name: 'Tiendas de Ropa', desc: 'Control de inventario por talla y color' },
-  { icon: <LocalPharmacy />, name: 'Farmacias', desc: 'Gestión de medicamentos y lotes' },
   { icon: <Build />, name: 'Ferreterías', desc: 'Inventario de herramientas y materiales' },
-  { icon: <ShoppingBag />, name: 'Abarrotes', desc: 'Control de productos perecederos' },
-  { icon: <Cake />, name: 'Panaderías', desc: 'Gestión de producción y ventas' },
-  { icon: <PetsOutlined />, name: 'Tiendas de Mascotas', desc: 'Inventario de alimentos y accesorios' },
+  { icon: <Hardware />, name: 'Materiales', desc: 'Gestión de insumos y stock pesado' },
+  { icon: <PhoneIphone />, name: 'Celulares', desc: 'Control de equipos, accesorios y reparaciones' },
+  { icon: <Computer />, name: 'Electrónica', desc: 'Gestión de productos tecnológicos' },
+  { icon: <Tv />, name: 'Electrodomésticos', desc: 'Control de equipos de alto valor' },
+  { icon: <DirectionsCar />, name: 'Refaccionarias', desc: 'Inventario por modelo y compatibilidad' },
+  { icon: <PetsOutlined />, name: 'Tiendas de Mascotas', desc: 'Control de productos y accesorios' },
+  { icon: <Spa />, name: 'Estéticas', desc: 'Gestión de servicios y productos' },
+  { icon: <ContentCut />, name: 'Barberías', desc: 'Control de servicios y ventas' },
+  { icon: <SportsSoccer />, name: 'Deportes', desc: 'Inventario de artículos deportivos' },
+  { icon: <Diamond />, name: 'Joyerías', desc: 'Control de productos de alto valor' },
+  { icon: <Store />, name: 'Y mas', desc: 'Podemos adaptarnos a tu negocio' },
 ];
 
 const Industries = () => (
@@ -22,19 +41,19 @@ const Industries = () => (
         </motion.div>
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
           <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' }, maxWidth: 650 }}>
-            Hecho para cualquier tipo de negocio
+            Hecho para negocios multi-sucursal
           </Typography>
         </motion.div>
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }}>
           <Typography sx={{ color: 'text.secondary', maxWidth: 550, fontSize: '1.05rem' }}>
-            Desde tiendas pequeñas hasta cadenas grandes, SmartVenta se adapta a tu negocio.
+            Ideal para negocios retail que necesitan control centralizado de inventario y ventas.
           </Typography>
         </motion.div>
       </Stack>
 
       <Grid container spacing={3}>
         {industries.map((ind, i) => (
-          <Grid size={{ xs: 12, sm: 6, md: 4 }} key={i}>
+          <Grid size={{ xs: 12, sm: 6, md: 3 }} key={i}>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}

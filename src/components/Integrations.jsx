@@ -4,20 +4,16 @@ import { Print, QrCode2, Cloud, Smartphone } from '@mui/icons-material';
 
 const integrations = [
   {
+    icon: <Print />, name: 'Tu computadora',
+    desc: 'Con una computadora regular es sificiente',
+  },
+  {
     icon: <Print />, name: 'Impresoras Térmicas',
     desc: 'Compatible con impresoras de tickets estándar. Imprime recibos al instante.',
   },
   {
     icon: <QrCode2 />, name: 'Lectores de Código de Barras',
     desc: 'Funciona con cualquier lector USB estándar. Búsqueda instantánea de productos.',
-  },
-  {
-    icon: <Cloud />, name: 'Sincronización en la Nube',
-    desc: 'Todos tus datos sincronizados en tiempo real. Acceso desde cualquier dispositivo.',
-  },
-  {
-    icon: <Smartphone />, name: 'Multiplataforma',
-    desc: 'Funciona en computadoras, tablets y celulares. Responsive y optimizado.',
   },
 ];
 
@@ -44,7 +40,7 @@ const Integrations = () => (
 
       <Grid container spacing={3}>
         {integrations.map((int, i) => (
-          <Grid size={{ xs: 12, sm: 6, md: 3 }} key={i}>
+          <Grid size={{ xs: 12, sm: 4 }} key={i}>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}

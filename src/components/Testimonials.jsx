@@ -5,7 +5,7 @@ import { FormatQuote } from '@mui/icons-material';
 const testimonials = [
   {
     name: 'Roberto M.',
-    role: 'Dueño de 4 tiendas de ropa',
+    role: 'Dueño de 3 ferreterías',
     text: 'Antes tardaba horas revisando inventario tienda por tienda. Ahora lo veo todo en un solo dashboard. SmartVenta me devolvió tiempo para enfocarme en hacer crecer mi negocio.',
     avatar: 'R',
   },

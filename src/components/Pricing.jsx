@@ -5,23 +5,24 @@ import { openWhatsApp } from '../utils/helpers';
 
 const plans = [
   {
-    name: 'Básico',
-    price: '$29',
+    name: 'Paquete Emprende',
+    price: '$500 MXN',
     period: '/mes',
     desc: 'Ideal para 1 tienda que necesita poner orden.',
-    features: ['1 Sucursal incluida', 'Inventario básico', 'POS rápido', 'Soporte por email'],
+    features: ['1 Sucursal incluida', 'Inventario básico'],
     cta: 'Comenzar Básico',
     popular: false,
   },
   {
-    name: 'Pro',
-    price: '$79',
+    name: 'Empresarial',
+    price: '$2500 MXN',
     period: '/mes',
     desc: 'Para negocios en expansión con múltiples locales.',
-    features: ['Sucursales ilimitadas', 'Inventario avanzado & transferencias', 'Reportes y Analíticas avanzadas', 'Soporte prioritario 24/7'],
-    cta: 'Prueba Gratis 14 Días',
+    features: ['8 Sucursales (tiendas o almacenes)', 'Inventario avanzado & transferencias', 'Soporte prioritario'],
+    cta: 'Comprar',
     popular: true,
   },
+
 ];
 
 const Pricing = () => (

@@ -33,7 +33,6 @@ const Navbar = () => {
         sx={{
           bgcolor: '#05346B',
           backdropFilter: 'blur(20px)',
-          borderBottom: scrolled ? '1px solid rgba(0,0,0,0.06)' : 'none',
           transition: 'all 0.3s ease',
         }}
       >
@@ -66,22 +65,12 @@ const Navbar = () => {
                 onClick={() => window.open(CONFIG.urls.app, '_blank')}
                 sx={{
                   ml: 1,
-                  color: 'white',
-                  fontWeight: 500, fontSize: '0.88rem',
-                }}
-              >
-                Iniciar Sesión
-              </Button>
-              <Button
-                variant="contained"
-                onClick={() => openWhatsApp()}
-                sx={{
-                  ml: 0.5, bgcolor: '#10b981', color: '#fff',
+                  bgcolor: '#10b981', color: '#fff',
                   '&:hover': { bgcolor: '#059669' },
                   boxShadow: '0 2px 12px rgba(16,185,129,0.3)',
                 }}
               >
-                Empieza Gratis
+                Iniciar Sesión
               </Button>
             </Stack>
 
@@ -115,7 +104,7 @@ const Navbar = () => {
             </ListItem>
             <ListItem disablePadding>
               <ListItemButton onClick={() => { openWhatsApp(); setDrawerOpen(false); }}>
-                <ListItemText primary="Empieza Gratis" primaryTypographyProps={{ color: 'secondary.main', fontWeight: 600 }} />
+                <ListItemText primary="Solicitar Demo" primaryTypographyProps={{ color: 'secondary.main', fontWeight: 600 }} />
               </ListItemButton>
             </ListItem>
           </List>

@@ -34,10 +34,11 @@ const ProblemSolution = () => (
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
             <Box sx={{
               p: 4, borderRadius: 4, height: '100%',
-              bgcolor: '#fef2f2', border: '1px solid #fecaca',
+              bgcolor: 'rgba(239, 68, 68, 0.05)', border: '1px solid rgba(239, 68, 68, 0.2)',
+              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)',
             }}>
               <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 3 }}>
-                <ErrorOutline sx={{ color: '#ef4444' }} />
+                <ErrorOutline sx={{ color: '#dc2626' }} />
                 <Typography variant="h6" sx={{ fontWeight: 700, color: '#991b1b' }}>El problema</Typography>
               </Stack>
               <Stack spacing={2.5}>
@@ -59,18 +60,19 @@ const ProblemSolution = () => (
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
             <Box sx={{
               p: 4, borderRadius: 4, height: '100%',
-              bgcolor: '#f0fdf4', border: '1px solid #bbf7d0',
+              bgcolor: 'rgba(16, 185, 129, 0.05)', border: '1px solid rgba(16, 185, 129, 0.2)',
+              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)',
             }}>
               <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 3 }}>
                 <TrendingUp sx={{ color: '#10b981' }} />
-                <Typography variant="h6" sx={{ fontWeight: 700, color: '#14532d' }}>Con SmartVenta</Typography>
+                <Typography variant="h6" sx={{ fontWeight: 700, color: '#065f46' }}>Con SmartVenta</Typography>
               </Stack>
               <Stack spacing={2.5}>
                 {solutions.map((s, i) => (
                   <motion.div key={i} initial={{ opacity: 0, x: 10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
                     <Stack direction="row" spacing={2} alignItems="center">
                       <Typography sx={{ fontSize: '1.3rem' }}>{s.emoji}</Typography>
-                      <Typography sx={{ color: '#14532d', fontWeight: 500 }}>{s.text}</Typography>
+                      <Typography sx={{ color: '#065f46', fontWeight: 500 }}>{s.text}</Typography>
                     </Stack>
                   </motion.div>
                 ))}
