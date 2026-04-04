@@ -3,19 +3,18 @@ import { motion } from 'framer-motion';
 import { Add } from '@mui/icons-material';
 
 const faqs = [
-  { q: '¿Necesito instalar algo en mis computadoras?', a: 'No. SmartVenta es una aplicación web. Solo necesitas un navegador y conexión a internet. Funciona en computadoras, tablets y celulares.' },
-  { q: '¿Cuántas tiendas puedo administrar?', a: 'No hay límite. Puedes agregar tantas tiendas y almacenes como necesites. El sistema escala con tu negocio.' },
-  { q: '¿Funciona con lectores de código de barras?', a: 'Sí. SmartVenta es compatible con lectores de código de barras estándar y se conecta directamente con impresoras de tickets térmicas.' },
-  { q: '¿Puedo importar mis productos desde Excel?', a: 'Sí. Puedes importar productos e inventario desde archivos Excel. También puedes exportar reportes.' },
-  { q: '¿Qué pasa si pierdo conexión a internet?', a: 'El sistema requiere conexión para sincronizar datos en tiempo real. Recomendamos una conexión estable para la mejor experiencia.' },
-  { q: '¿Cómo funciona la demo?', a: 'Te damos acceso a una cuenta demo completa donde puedes explorar todas las funcionalidades del sistema sin compromiso.' },
-  { q: '¿Hay costos ocultos o contratos?', a: 'No. Pagas $500 MXN por tienda o almacén al mes. Sin contratos a largo plazo, sin costos de instalación, sin sorpresas.' },
-  { q: '¿Cómo contacto a soporte?', a: 'El sistema tiene un botón de soporte por WhatsApp integrado directamente en la aplicación. Puedes escribirnos en cualquier momento.' },
-  { q: '¿Qué roles y permisos maneja el sistema?', a: 'Tres niveles: dueño, administrador y vendedor. Cada rol tiene su propia vista, acciones y restricciones.' },
+  { q: '¿Necesito instalar algo?', a: 'No. SmartVenta funciona en la nube. Solo necesitas internet y un navegador.' },
+  { q: '¿Puedo manejar varias sucursales?', a: 'Sí. Puedes administrar múltiples tiendas y almacenes desde una sola cuenta.' },
+  { q: '¿Tiene costo mensual?', a: 'Sí. El costo es desde $500 MXN por sucursal al mes, sin contratos.' },
+  { q: '¿Puedo acceder desde mi celular?', a: 'Sí. SmartVenta es totalmente responsive y funciona en cualquier dispositivo con navegador.' },
+  { q: '¿Cómo funciona el soporte?', a: 'Tienes soporte directo por WhatsApp y ayuda contextual dentro del sistema.' },
+  { q: '¿Puedo importar mis productos?', a: 'Sí. Puedes importar masivamente desde Excel con plantillas descargables.' },
+  { q: '¿Tiene reportes y estadísticas?', a: 'Sí. Incluye tableros de KPIs, heatmaps, análisis de ventas y más.' },
+  { q: '¿Puedo dar descuentos?', a: 'Sí. Puedes configurar descuentos personalizados por cliente o por producto.' },
 ];
 
 const FAQ = () => (
-  <Box id="faq" sx={{ py: { xs: 6, md: 10 }, bgcolor: 'background.default' }}>
+  <Box id="faq" sx={{ py: { xs: 6, md: 10 }, bgcolor: '#CAD2DE' }}>
     <Container maxWidth="md">
       <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 6 }}>
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>

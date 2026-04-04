@@ -1,19 +1,19 @@
 import { Box, Container, Typography, Grid, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
-import { ErrorOutline, TrendingUp } from '@mui/icons-material';
+import { ErrorOutline, TrendingUp, Inventory, TrendingDown, SwapHoriz, Insights } from '@mui/icons-material';
 
 const problems = [
-  { emoji: '😰', text: 'No sabes cuánto inventario tiene cada sucursal' },
-  { emoji: '📉', text: 'Pierdes ventas por falta de control en tu stock' },
-  { emoji: '🔄', text: 'Transferir productos entre tiendas es un caos' },
-  { emoji: '📊', text: 'No tienes datos claros para tomar decisiones' },
+  { icon: <Inventory />, text: 'No sabes cuánto inventario tiene cada sucursal' },
+  { icon: <TrendingDown />, text: 'Pierdes ventas por falta de control en tu stock' },
+  { icon: <SwapHoriz />, text: 'Transferir productos entre tiendas es un caos' },
+  { icon: <Insights />, text: 'No tienes datos claros para tomar decisiones' },
 ];
 
 const solutions = [
-  { emoji: '✅', text: 'Inventario unificado y en tiempo real por sucursal' },
-  { emoji: '✅', text: 'Alertas y auditoría que previenen pérdidas' },
-  { emoji: '✅', text: 'Traspasos con trazabilidad y confirmación' },
-  { emoji: '✅', text: 'Dashboards con KPIs, tendencias y heatmaps' },
+  { icon: <Inventory />, text: 'Inventario unificado y en tiempo real por sucursal' },
+  { icon: <ErrorOutline />, text: 'Alertas y auditoría que previenen pérdidas' },
+  { icon: <SwapHoriz />, text: 'Traspasos con trazabilidad y confirmación' },
+  { icon: <TrendingUp />, text: 'Dashboards con KPIs, tendencias y heatmaps' },
 ];
 
 const ProblemSolution = () => (
@@ -34,19 +34,26 @@ const ProblemSolution = () => (
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
             <Box sx={{
               p: 4, borderRadius: 4, height: '100%',
-              bgcolor: 'rgba(239, 68, 68, 0.05)', border: '1px solid rgba(239, 68, 68, 0.2)',
+              bgcolor: 'background.paper', border: '1px solid', borderColor: 'divider',
               boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)',
             }}>
               <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 3 }}>
-                <ErrorOutline sx={{ color: '#dc2626' }} />
-                <Typography variant="h6" sx={{ fontWeight: 700, color: '#991b1b' }}>El problema</Typography>
+                <ErrorOutline sx={{ color: 'primary.main' }} />
+                <Typography variant="h6" sx={{ fontWeight: 700, color: 'text.primary' }}>El problema</Typography>
               </Stack>
               <Stack spacing={2.5}>
                 {problems.map((p, i) => (
                   <motion.div key={i} initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
                     <Stack direction="row" spacing={2} alignItems="center">
-                      <Typography sx={{ fontSize: '1.3rem' }}>{p.emoji}</Typography>
-                      <Typography sx={{ color: '#7f1d1d', fontWeight: 500 }}>{p.text}</Typography>
+                      <Box sx={{
+                        width: 36, height: 36, borderRadius: 2,
+                        bgcolor: 'rgba(4, 52, 107, 0.1)', color: 'primary.main',
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        '& svg': { fontSize: 20 },
+                      }}>
+                        {p.icon}
+                      </Box>
+                      <Typography sx={{ color: 'text.primary', fontWeight: 500 }}>{p.text}</Typography>
                     </Stack>
                   </motion.div>
                 ))}
@@ -60,19 +67,26 @@ const ProblemSolution = () => (
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
             <Box sx={{
               p: 4, borderRadius: 4, height: '100%',
-              bgcolor: 'rgba(16, 185, 129, 0.05)', border: '1px solid rgba(16, 185, 129, 0.2)',
+              bgcolor: 'background.paper', border: '1px solid', borderColor: 'divider',
               boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)',
             }}>
               <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 3 }}>
-                <TrendingUp sx={{ color: '#10b981' }} />
-                <Typography variant="h6" sx={{ fontWeight: 700, color: '#065f46' }}>Con SmartVenta</Typography>
+                <TrendingUp sx={{ color: 'primary.main' }} />
+                <Typography variant="h6" sx={{ fontWeight: 700, color: 'text.primary' }}>Con SmartVenta</Typography>
               </Stack>
               <Stack spacing={2.5}>
                 {solutions.map((s, i) => (
                   <motion.div key={i} initial={{ opacity: 0, x: 10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
                     <Stack direction="row" spacing={2} alignItems="center">
-                      <Typography sx={{ fontSize: '1.3rem' }}>{s.emoji}</Typography>
-                      <Typography sx={{ color: '#065f46', fontWeight: 500 }}>{s.text}</Typography>
+                      <Box sx={{
+                        width: 36, height: 36, borderRadius: 2,
+                        bgcolor: 'rgba(4, 52, 107, 0.1)', color: 'primary.main',
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        '& svg': { fontSize: 20 },
+                      }}>
+                        {s.icon}
+                      </Box>
+                      <Typography sx={{ color: 'text.primary', fontWeight: 500 }}>{s.text}</Typography>
                     </Stack>
                   </motion.div>
                 ))}

@@ -81,10 +81,9 @@ const Hero = () => {
                   startIcon={<PlayArrow />}
                   onClick={() => setVideoOpen(true)}
                   sx={{
-                    px: 4, py: 1.5, fontSize: '1rem',
-                    bgcolor: '#04346b', color: '#fff',
-                    '&:hover': { bgcolor: '#022347' },
-                    boxShadow: '0 4px 24px rgba(4,52,107,0.35)',
+                    color: 'white',
+                    fontWeight: 500, fontSize: '0.95rem',
+                    '&:hover': { bgcolor: 'rgba(255,255,255,0.1)' },
                   }}
                 >
                   Ver demo

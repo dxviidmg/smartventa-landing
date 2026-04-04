@@ -1,42 +1,47 @@
 import { Box, Container, Typography, Grid, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
-import { AccessTime, Shield, TrendingUp, Devices } from '@mui/icons-material';
+import { Speed, CheckCircle, TrendingUp, Store } from '@mui/icons-material';
 
 const benefits = [
   {
-    icon: <AccessTime />, title: 'Ahorra hasta 10 horas semanales',
-    desc: 'Automatiza cuadres de caja y conteo de inventario. Menos tiempo operando, más tiempo creciendo.',
-    metric: '10h', metricLabel: 'ahorradas por semana',
+    icon: <Speed />, title: 'Resultados desde el día 1',
+    desc: 'Configuración en minutos. Tu equipo vende desde el primer día sin curva de aprendizaje.',
+    metric: '30', metricLabel: 'minutos para empezar',
   },
   {
-    icon: <Shield />, title: 'Elimina robos y mermas',
-    desc: 'Auditoría completa de cada movimiento, usuario y transacción. Nada pasa sin quedar registrado.',
-    metric: '0', metricLabel: 'pérdidas invisibles',
+    icon: <CheckCircle />, title: 'Cero errores de caja',
+    desc: 'Detecta inconsistencias automáticamente. Tu cuadre siempre cierra perfecto.',
+    metric: '100%', metricLabel: 'precisión garantizada',
   },
   {
-    icon: <TrendingUp />, title: 'Datos para decidir mejor',
-    desc: 'Reportes de productos más vendidos, horas pico y rentabilidad por sucursal. Deja de adivinar.',
-    metric: '100%', metricLabel: 'visibilidad del negocio',
+    icon: <TrendingUp />, title: 'Ventas en tiempo real',
+    desc: 'Mira tus ingresos mientras ocurren. Sin esperar reportes de cierre.',
+    metric: '0', metricLabel: 'retraso en datos',
   },
   {
-    icon: <Devices />, title: 'Escala sin complicaciones',
-    desc: 'Agrega sucursales en minutos. Sin servidores, sin instalaciones. Solo abre el navegador y listo.',
-    metric: '∞', metricLabel: 'sucursales sin límite',
+    icon: <Store />, title: 'Multi-sucursal instantáneo',
+    desc: 'Administra todas tus tiendas desde un solo panel. Sin costo extra por sucursal.',
+    metric: '∞', metricLabel: 'control total',
   },
 ];
 
 const Benefits = () => (
-  <Box id="benefits" sx={{ py: { xs: 6, md: 10 }, background: 'linear-gradient(145deg, #022347 0%, #04346b 100%)' }}>
+  <Box id="benefits" sx={{ py: { xs: 8, md: 12 }, background: 'linear-gradient(145deg, #022347 0%, #04346b 100%)' }}>
     <Container maxWidth="lg">
       <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 8 }}>
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-          <Typography variant="overline" sx={{ color: '#34d399', fontWeight: 700, letterSpacing: 2 }}>
+          <Typography variant="overline" sx={{ color: '#34d399', fontWeight: 700, letterSpacing: 2, fontSize: '0.75rem' }}>
             Beneficios
           </Typography>
         </motion.div>
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
-          <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' }, color: 'white', maxWidth: 600 }}>
-            Deja de adivinar, empieza a crecer
+          <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '3rem' }, color: 'white', maxWidth: 600, fontWeight: 800 }}>
+            Resultados desde el primer día
+          </Typography>
+        </motion.div>
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
+          <Typography variant="body1" sx={{ color: 'rgba(255,255,255,0.7)', maxWidth: 500, fontSize: '1.1rem', fontWeight: 500 }}>
+            Comienza a ver resultados inmediatos. Sin complicaciones, sin espera.
           </Typography>
         </motion.div>
       </Stack>
@@ -60,26 +65,27 @@ const Benefits = () => (
               }}>
                 <Stack direction="row" justifyContent="space-between" alignItems="flex-start" sx={{ mb: 2.5 }}>
                   <Box sx={{
-                    width: 48, height: 48, borderRadius: 3,
+                    width: 56, height: 56, borderRadius: 3,
                     bgcolor: 'rgba(52,211,153,0.12)', color: '#34d399',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    '& svg': { fontSize: 24 },
+                    boxShadow: '0 4px 12px rgba(52,211,153,0.2)',
+                    '& svg': { fontSize: 28 },
                   }}>
                     {b.icon}
                   </Box>
                   <Stack alignItems="flex-end">
-                    <Typography sx={{ color: '#34d399', fontWeight: 800, fontSize: '1.5rem', lineHeight: 1 }}>
+                    <Typography sx={{ color: '#34d399', fontWeight: 900, fontSize: '1.75rem', lineHeight: 1 }}>
                       {b.metric}
                     </Typography>
-                    <Typography sx={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.7rem' }}>
+                    <Typography sx={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase' }}>
                       {b.metricLabel}
                     </Typography>
                   </Stack>
                 </Stack>
-                <Typography variant="h6" sx={{ fontWeight: 700, mb: 1, color: 'white', fontSize: '1.05rem' }}>
+                <Typography variant="h6" sx={{ fontWeight: 700, mb: 1, color: 'white', fontSize: '1.1rem' }}>
                   {b.title}
                 </Typography>
-                <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.6)', lineHeight: 1.8 }}>
+                <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.6)', lineHeight: 1.7, fontWeight: 500 }}>
                   {b.desc}
                 </Typography>
               </Box>
@@ -87,8 +93,6 @@ const Benefits = () => (
           </Grid>
         ))}
       </Grid>
-
-
     </Container>
   </Box>
 );
