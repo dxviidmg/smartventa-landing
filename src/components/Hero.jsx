@@ -2,6 +2,7 @@ import { Box, Container, Typography, Button, Stack, Chip } from '@mui/material';
 import { motion } from 'framer-motion';
 import { ArrowForward } from '@mui/icons-material';
 import { useWhatsApp } from '../contexts/WhatsAppContext';
+import { useMemoized } from '../hooks/useMemoized';
 
 const floatingOrb = (top, left, size, color, duration) => ({
   position: 'absolute', top, left, width: size, height: size,
@@ -11,6 +12,11 @@ const floatingOrb = (top, left, size, color, duration) => ({
 
 const Hero = () => {
   const { openWhatsApp } = useWhatsApp();
+
+  const orbStyles = useMemoized(() => ({
+    orb1: floatingOrb('-20%', '-10%', '500px', 'rgba(96,165,250,0.15)', 8),
+    orb2: floatingOrb('-10%', '60%', '600px', 'rgba(16,185,129,0.12)', 10),
+  }), []);
 
   return (
     <Box
@@ -26,12 +32,12 @@ const Hero = () => {
       <motion.div
         animate={{ x: [0, 30, 0], y: [0, -20, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-        style={floatingOrb('-20%', '-10%', '500px', 'rgba(96,165,250,0.15)')}
+        style={orbStyles.orb1}
       />
       <motion.div
         animate={{ x: [0, -20, 0], y: [0, 30, 0] }}
         transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
-        style={floatingOrb('-10%', '60%', '600px', 'rgba(16,185,129,0.12)')}
+        style={orbStyles.orb2}
       />
 
       <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>

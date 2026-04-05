@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import { Box, Container, Typography, Stack, Card, Modal } from '@mui/material';
 import { motion, AnimatePresence } from 'framer-motion';
 import tableroImg from '../assets/Tablero.png';
@@ -6,6 +6,7 @@ import tiendasImg from '../assets/Tiendas.png';
 import corteImg from '../assets/Corte de caja.png';
 import carritoImg from '../assets/Carrito de venta.png';
 import { dashboardCarousel } from '../constants';
+import { LazyImage } from './LazyImage';
 
 const features = [
   { img: tableroImg, title: 'Tablero', desc: 'KPIs y métricas en tiempo real' },
@@ -27,6 +28,13 @@ const DashboardPreview = () => {
     return () => clearInterval(interval);
   }, [isHovered, modalOpen]);
 
+  const handleCardClick = useCallback(() => setModalOpen(true), []);
+  const handleHoverChange = useCallback((hovered) => setIsHovered(hovered), []);
+
+  const carouselProps = useMemo(() => ({
+    ...dashboardCarousel,
+  }), [activeIndex]);
+
   return (
     <Box sx={{ py: 8, bgcolor: '#CAD2DE' }}>
       <Container maxWidth="lg">
@@ -43,14 +51,11 @@ const DashboardPreview = () => {
         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
           <Box sx={{ position: 'relative', width: { xs: '100%', md: '70%' }, maxWidth: 900 }}>
             <AnimatePresence mode="wait">
-              <motion.div
-                key={activeIndex}
-                {...dashboardCarousel}
-              >
+              <motion.div key={activeIndex} {...carouselProps}>
                 <Card
-                  onClick={() => setModalOpen(true)}
-                  onMouseEnter={() => setIsHovered(true)}
-                  onMouseLeave={() => setIsHovered(false)}
+                  onClick={handleCardClick}
+                  onMouseEnter={() => handleHoverChange(true)}
+                  onMouseLeave={() => handleHoverChange(false)}
                   sx={{
                     overflow: 'hidden',
                     boxShadow: '0 20px 60px rgba(0,0,0,0.15)',
@@ -58,8 +63,7 @@ const DashboardPreview = () => {
                   }}
                 >
                   <Box sx={{ position: 'relative' }}>
-                    <Box
-                      component="img"
+                    <LazyImage
                       src={features[activeIndex].img}
                       alt={features[activeIndex].title}
                       sx={{ width: '100%', height: 'auto', display: 'block' }}
@@ -111,8 +115,7 @@ const DashboardPreview = () => {
               boxShadow: '0 20px 80px rgba(0,0,0,0.5)',
             }}
           >
-            <Box
-              component="img"
+            <LazyImage
               src={features[activeIndex].img}
               alt={features[activeIndex].title}
               sx={{ width: '100%', height: 'auto', display: 'block' }}
