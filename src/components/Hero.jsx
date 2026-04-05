@@ -36,7 +36,7 @@ const Hero = () => {
                 variant="h1"
                 sx={{ fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4rem' }, color: 'white', maxWidth: '850px' }}
               >
-                El punto de venta inteligente{' '}
+                El punto de venta{' '}
                 <Box
                   component="span"
                   sx={{
@@ -45,7 +45,7 @@ const Hero = () => {
                     WebkitTextFillColor: 'transparent',
                   }}
                 >
-                  para negocios multi-tienda.
+                  inteligente.
                 </Box>
               </Typography>
             </motion.div>
@@ -75,7 +75,7 @@ const Hero = () => {
                     boxShadow: '0 4px 24px rgba(16,185,129,0.35)',
                   }}
                 >
-                  Solicita tu cuenta demo gratis
+                  Probar el sistema
                 </Button>
                 <Button
                   size="large"

@@ -45,7 +45,7 @@ const Features = () => (
         </motion.div>
         <motion.div {...sectionHeader.title}>
           <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' }, maxWidth: 650 }}>
-            Todo lo que necesitas para escalar
+            Todo lo que necesitas para controlar mejor tu negocio
           </Typography>
         </motion.div>
         <motion.div {...sectionHeader.subtitle}>

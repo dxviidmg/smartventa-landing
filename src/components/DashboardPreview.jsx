@@ -28,7 +28,7 @@ const DashboardPreview = () => {
   }, [isHovered, modalOpen]);
 
   return (
-    <Box sx={{ py: 8, bgcolor: 'background.paper' }}>
+    <Box sx={{ py: 8, bgcolor: '#CAD2DE' }}>
       <Container maxWidth="lg">
         <Stack spacing={1} alignItems="center" textAlign="center" sx={{ mb: 6 }}>
           <Typography variant="overline" sx={{ color: '#10b981', fontWeight: 700, letterSpacing: 2 }}>

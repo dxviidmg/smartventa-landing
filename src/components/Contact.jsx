@@ -35,10 +35,9 @@ const Contact = () => (
 
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}>
           <Typography sx={{ color: 'rgba(255,255,255,0.6)', fontSize: '1.1rem', maxWidth: 480 }}>
-            Únete a cientos de negocios que ya optimizan sus operaciones diarias con SmartVenta. Solicita tu cuenta demo HOY.
+            Únete a negocios que ya optimizan sus operaciones diarias con SmartVenta. Solicita tu cuenta demo HOY.
           </Typography>
         </motion.div>
-
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }}>
           <Button
             variant="contained"
@@ -52,7 +51,7 @@ const Contact = () => (
               boxShadow: '0 4px 24px rgba(16,185,129,0.35)',
             }}
           >
-            Solicita tu Demo Gratis
+            Probar el sistema
           </Button>
         </motion.div>
       </Stack>

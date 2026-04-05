@@ -42,7 +42,7 @@ const industries = [
 ];
 
 const Industries = () => (
-  <Box sx={{ py: { xs: 6, md: 10 }, bgcolor: '#CAD2DE' }}>
+  <Box sx={{ py: { xs: 6, md: 10 } }}>
     <Container maxWidth="lg">
       <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 8 }}>
         <motion.div {...sectionHeader.overline}>
@@ -52,7 +52,7 @@ const Industries = () => (
         </motion.div>
         <motion.div {...sectionHeader.title}>
           <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' }, maxWidth: 650 }}>
-            Solución integral para negocios en expansión
+            El sistema que unifica tus tiendas y almacenes en un solo lugar
           </Typography>
         </motion.div>
       </Stack>

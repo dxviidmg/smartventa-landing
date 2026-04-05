@@ -15,15 +15,15 @@ import WhatsAppButton from './components/WhatsAppButton';
 
 function App() {
   const sections = [
-    { component: <Hero />, bg: 'linear-gradient(145deg, #022347 0%, #04346b 100%)' },
-    { component: <Industries />, bg: 'linear-gradient(145deg, #022347 0%, #04346b 100%)' },
-    { component: <Benefits />, bg: '#CAD2DE' },
+    { component: <Hero />, bg: 'transparent' },
+    { component: <Industries />, bg: '#CAD2DE' },
+    { component: <Benefits />, bg: 'transparent' },
     { component: <Features />, bg: '#CAD2DE' },
-    { component: <HowItWorks />, bg: 'white' },
+    { component: <HowItWorks />, bg: 'transparent' },
     { component: <DashboardPreview />, bg: '#CAD2DE' },
-    { component: <Pricing />, bg: 'white' },
+    { component: <Pricing />, bg: 'transparent' },
     { component: <FAQ />, bg: '#CAD2DE' },
-    { component: <Contact />, bg: 'white' },
+    { component: <Contact />, bg: 'transparent' },
   ];
 
   return (
