@@ -34,5 +34,8 @@ export const lightTheme = createTheme({
     MuiCard: {
       styleOverrides: { root: { borderRadius: 16, transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)' } },
     },
+    MuiContainer: {
+      styleOverrides: { root: { paddingLeft: 0, paddingRight: 0 } },
+    },
   },
 });

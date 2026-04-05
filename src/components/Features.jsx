@@ -1,12 +1,7 @@
 import { Box, Container, Typography, Grid, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
 import {
-  PointOfSale,
-  Assessment, People, SwapHoriz, Warehouse,
-  LocalOffer, Image, AttachMoney,
-  Keyboard, QrCodeScanner, History, TableChart,
-  Security, Print, Payment,
-  AccountBalance, Support
+  PointOfSale, Assessment, People, SwapHoriz, Warehouse, LocalOffer, Image, AttachMoney, Keyboard, QrCodeScanner, History, TableChart, Security, Print, Payment, AccountBalance, Support
 } from '@mui/icons-material';
 import { sectionHeader, cardGridItem } from '../utils/animations';
 

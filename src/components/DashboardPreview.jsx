@@ -77,7 +77,6 @@ const DashboardPreview = () => {
               </motion.div>
             </AnimatePresence>
 
-            {/* Dots */}
             <Stack direction="row" spacing={1.5} justifyContent="center" sx={{ mt: 3 }}>
               {features.map((_, i) => (
                 <Box
@@ -87,10 +86,10 @@ const DashboardPreview = () => {
                     width: 10,
                     height: 10,
                     borderRadius: '50%',
-                    bgcolor: i === activeIndex ? '#10b981' : 'rgba(0,0,0,0.2)',
+                    bgcolor: i === activeIndex ? 'secondary.main' : 'rgba(0,0,0,0.2)',
                     cursor: 'pointer',
                     transition: 'all 0.3s ease',
-                    '&:hover': { bgcolor: '#10b981' },
+                    '&:hover': { bgcolor: 'secondary.main' },
                   }}
                 />
               ))}
@@ -98,7 +97,6 @@ const DashboardPreview = () => {
           </Box>
         </Box>
 
-        {/* Modal */}
         <Modal open={modalOpen} onClose={() => setModalOpen(false)}>
           <Box
             sx={{

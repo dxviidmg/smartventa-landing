@@ -8,7 +8,8 @@ const Contact = () => (
   <Box
     sx={{
       py: { xs: 6, md: 10 },
-      position: 'relative', overflow: 'hidden',
+      position: 'relative',
+      overflow: 'hidden',
       background: 'linear-gradient(145deg, #022347 0%, #04346b 40%, #065a9e 100%)',
     }}
   >
@@ -19,7 +20,8 @@ const Contact = () => (
             ¿Listo para retomar el{' '}
             <Box component="span" sx={{
               background: 'linear-gradient(135deg, #34d399, #6ee7b7)',
-              WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
             }}>
               control?
             </Box>
@@ -38,8 +40,11 @@ const Contact = () => (
             endIcon={<ArrowForward />}
             onClick={() => openWhatsApp()}
             sx={{
-              px: 4, py: 1.5, fontSize: '1rem',
-              bgcolor: '#10b981', color: '#fff',
+              px: 4,
+              py: 1.5,
+              fontSize: '1rem',
+              bgcolor: 'secondary.main',
+              color: '#fff',
               '&:hover': { bgcolor: '#059669' },
               boxShadow: '0 4px 24px rgba(16,185,129,0.35)',
             }}

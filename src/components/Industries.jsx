@@ -1,24 +1,7 @@
 import { Box, Container, Typography, Grid, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
 import {
-  Store,
-  Spa,
-  ContentCut,
-  PetsOutlined,
-  Build,
-  Hardware,
-  PhoneIphone,
-  Computer,
-  Tv,
-  DirectionsCar,
-  SportsSoccer,
-  Diamond,
-  Warehouse,
-  ShoppingCart,
-  Restaurant,
-  Coffee,
-  LocalMall,
-  Business
+  Store, Spa, ContentCut, PetsOutlined, Build, Hardware, PhoneIphone, Computer, Tv, DirectionsCar, SportsSoccer, Diamond, Warehouse, ShoppingCart, Restaurant, Coffee, LocalMall, Business
 } from '@mui/icons-material';
 import { sectionHeader, cardGridItem } from '../utils/animations';
 
@@ -26,19 +9,6 @@ const businessTypes = [
   { icon: <ShoppingCart />, title: 'Retail y Tiendas', desc: 'Negocios de venta al público que necesitan un punto de venta ágil y control de inventario en tiempo real.' },
   { icon: <Store />, title: 'Negocios Multi-tienda', desc: 'Cadenas de tiendas que requieren visibilidad y coordinación entre todas sus ubicaciones desde un panel central.' },
   { icon: <Warehouse />, title: 'Operaciones con Almacén', desc: 'Negocios que distribuyen productos desde almacenes centrales a sus puntos de venta con trazabilidad.' },
-];
-
-const industries = [
-  { icon: <ShoppingCart />, name: 'Abarrotes', desc: 'Control de productos de consumo diario' },
-  { icon: <Build />, name: 'Ferreterías', desc: 'Inventario de herramientas y materiales' },
-  { icon: <LocalMall />, name: 'Mini Súpers', desc: 'Gestión de inventario diversificado' },
-  { icon: <ContentCut />, name: 'Papelerías', desc: 'Control de artículos de papelería' },
-  { icon: <Spa />, name: 'Cosméticos', desc: 'Gestión de productos de belleza' },
-  { icon: <PetsOutlined />, name: 'Mascotas', desc: 'Control de productos y accesorios' },
-  { icon: <SportsSoccer />, name: 'Jugueterías', desc: 'Inventario de artículos para niños' },
-  { icon: <Diamond />, name: 'Joyerías', desc: 'Control de inventarios valiosos' },
-  { icon: <ContentCut />, name: 'Salones', desc: 'Gestión de servicios y productos' },
-  { icon: <Store />, name: 'Y más...', desc: 'Compatible con cualquier negocio' },
 ];
 
 const Industries = () => (

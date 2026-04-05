@@ -107,7 +107,7 @@ const Pricing = () => (
                   endIcon={<ArrowForward />}
                   onClick={() => openWhatsApp(`Hola, me interesa el plan ${plan.name} de SmartVenta`)}
                   sx={plan.popular ? {
-                    bgcolor: '#10b981', color: '#fff',
+                    bgcolor: 'secondary.main', color: '#fff',
                     '&:hover': { bgcolor: '#059669' },
                     boxShadow: '0 4px 20px rgba(16,185,129,0.3)',
                   } : {
