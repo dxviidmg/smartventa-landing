@@ -1,7 +1,7 @@
 import { Box, Container, Typography, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
 import { Settings, Storefront, PointOfSale, Insights } from '@mui/icons-material';
-import { sectionHeader, stepItem } from '../utils/animations';
+import { sectionHeader, stepItem } from '../constants/animations';
 
 const steps = [
   { icon: <Settings />, num: '01', title: 'Configura tu catálogo', desc: 'Agrega tus productos con precios, categorías y códigos de barras. Importa todos tus productos desde Excel en minutos.' },

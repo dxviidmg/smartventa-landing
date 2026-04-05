@@ -1,17 +1,19 @@
+import { lazy, Suspense } from 'react';
 import { ThemeProvider, CssBaseline, Box } from '@mui/material';
 import { lightTheme } from './theme';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Benefits from './components/Benefits';
-import Features from './components/Features';
-import HowItWorks from './components/HowItWorks';
-import DashboardPreview from './components/DashboardPreview';
 import Industries from './components/Industries';
-import Pricing from './components/Pricing';
-import FAQ from './components/FAQ';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
+
+const Features = lazy(() => import('./components/Features'));
+const HowItWorks = lazy(() => import('./components/HowItWorks'));
+const DashboardPreview = lazy(() => import('./components/DashboardPreview'));
+const Pricing = lazy(() => import('./components/Pricing'));
+const FAQ = lazy(() => import('./components/FAQ'));
 
 function App() {
   const sections = [
@@ -31,11 +33,13 @@ function App() {
       <CssBaseline />
       <Box sx={{ minHeight: '100vh' }}>
         <Navbar />
-        {sections.map((section, index) => (
-          <Box key={index} sx={{ bgcolor: section.bg }}>
-            {section.component}
-          </Box>
-        ))}
+        <main role="main">
+          {sections.map((section, index) => (
+            <Box key={index} sx={{ bgcolor: section.bg }}>
+              {section.component}
+            </Box>
+          ))}
+        </main>
         <WhatsAppButton />
         <Footer />
       </Box>

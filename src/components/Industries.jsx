@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import {
   Store, Spa, ContentCut, PetsOutlined, Build, Hardware, PhoneIphone, Computer, Tv, DirectionsCar, SportsSoccer, Diamond, Warehouse, ShoppingCart, Restaurant, Coffee, LocalMall, Business
 } from '@mui/icons-material';
-import { sectionHeader, cardGridItem } from '../utils/animations';
+import { sectionHeader, cardGridItem } from '../constants/animations';
 
 const businessTypes = [
   { icon: <ShoppingCart />, title: 'Retail y Tiendas', desc: 'Negocios de venta al público que necesitan un punto de venta ágil y control de inventario en tiempo real.' },

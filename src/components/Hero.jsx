@@ -2,7 +2,7 @@ import { Box, Container, Typography, Button, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
 import { ArrowForward, PlayArrow } from '@mui/icons-material';
 import { openWhatsApp } from '../utils/helpers';
-import { hero } from '../utils/animations';
+import { hero } from '../constants/animations';
 
 const Hero = () => (
   <Box

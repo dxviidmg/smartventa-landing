@@ -1,7 +1,7 @@
 import { Box, Container, Typography, Grid, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
 import { Speed, CheckCircle, TrendingUp, Store } from '@mui/icons-material';
-import { sectionHeader, cardGridItem } from '../utils/animations';
+import { sectionHeader, cardGridItem } from '../constants/animations';
 
 const benefits = [
   {

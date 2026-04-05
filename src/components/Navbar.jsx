@@ -1,116 +1,98 @@
 import { useState, useEffect } from 'react';
-import {
-  AppBar, Toolbar, Container, Button, Box, IconButton, Drawer,
-  List, ListItem, ListItemButton, ListItemText, Stack,
-} from '@mui/material';
-import { Menu as MenuIcon, Close } from '@mui/icons-material';
-import { scrollToSection, openWhatsApp } from '../utils/helpers';
-import { CONFIG } from '../config/constants';
-
-const NAV_ITEMS = [
-  { label: 'Características', id: 'features' },
-  { label: 'Beneficios', id: 'benefits' },
-  { label: 'Precios', id: 'pricing' },
-];
+import { Box, Container, Typography, Stack, Button, IconButton } from '@mui/material';
+import { Menu, Close } from '@mui/icons-material';
+import { openWhatsApp } from '../utils/helpers';
 
 const Navbar = () => {
-  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNav = (id) => { scrollToSection(id); setDrawerOpen(false); };
+  const navLinks = [
+    { name: 'Características', href: '#features' },
+    { name: 'Cómo funciona', href: '#how-it-works' },
+    { name: 'Precios', href: '#pricing' },
+    { name: 'FAQ', href: '#faq' },
+  ];
 
   return (
-    <>
-      <AppBar
-        position="fixed"
-        elevation={0}
-        sx={{
-          bgcolor: '#05346B',
-          backdropFilter: 'blur(20px)',
-          transition: 'all 0.3s ease',
-        }}
-      >
-        <Container maxWidth="lg">
-          <Toolbar disableGutters sx={{ justifyContent: 'space-between', minHeight: { xs: 64 } }}>
-            <Box
-              component="img"
-              src="/logo.jpg"
-              alt={CONFIG.company.name}
-              sx={{ height: 34, borderRadius: 0, cursor: 'pointer' }}
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              onError={(e) => { e.target.style.display = 'none'; }}
-            />
+    <Box
+      sx={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 1000,
+        py: 2,
+        transition: 'all 0.3s ease',
+        bgcolor: scrolled ? 'rgba(255,255,255,0.95)' : 'transparent',
+        backdropFilter: scrolled ? 'blur(10px)' : 'none',
+        boxShadow: scrolled ? '0 2px 10px rgba(0,0,0,0.1)' : 'none',
+      }}
+    >
+      <Container maxWidth="lg">
+        <Stack direction="row" justifyContent="space-between" alignItems="center">
+          <Typography
+            variant="h5"
+            sx={{
+              fontWeight: 800,
+              fontSize: '1.5rem',
+              color: scrolled ? 'primary.main' : 'white',
+              cursor: 'pointer',
+            }}
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          >
+            SmartVenta
+          </Typography>
 
-            <Stack direction="row" spacing={0.5} alignItems="center" sx={{ display: { xs: 'none', md: 'flex' } }}>
-              {NAV_ITEMS.map(({ label, id }) => (
-                <Button
-                  key={id}
-                  onClick={() => handleNav(id)}
-                  sx={{
-                    color: 'white',
-                    fontWeight: 500, fontSize: '0.88rem',
-                    '&:hover': { bgcolor: 'rgba(255,255,255,0.1)' },
-                  }}
-                >
-                  {label}
-                </Button>
-              ))}
-              <Button
-                onClick={() => window.open(CONFIG.urls.app, '_blank')}
+          <Stack direction={{ xs: 'column', md: 'row' }} spacing={{ xs: 1, md: 4 }} sx={{ display: { xs: isOpen ? 'flex' : 'none', md: 'flex' } }}>
+            {navLinks.map((link) => (
+              <Typography
+                key={link.name}
+                variant="body1"
                 sx={{
-                  ml: 1,
-                  bgcolor: '#10b981', color: '#fff',
-                  '&:hover': { bgcolor: '#059669' },
-                  boxShadow: '0 2px 12px rgba(16,185,129,0.3)',
+                  fontWeight: 500,
+                  color: scrolled ? 'text.primary' : 'rgba(255,255,255,0.9)',
+                  cursor: 'pointer',
+                  '&:hover': { color: 'primary.main' },
+                }}
+                onClick={() => {
+                  setIsOpen(false);
+                  window.location.href = link.href;
                 }}
               >
-                Iniciar Sesión
-              </Button>
-            </Stack>
-
-            <IconButton
-              onClick={() => setDrawerOpen(true)}
-              sx={{ display: { xs: 'flex', md: 'none' }, color: scrolled ? 'text.primary' : 'white' }}
-            >
-              <MenuIcon />
-            </IconButton>
-          </Toolbar>
-        </Container>
-      </AppBar>
-
-      <Drawer anchor="right" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
-        <Box sx={{ width: 280, pt: 1 }}>
-          <Box sx={{ display: 'flex', justifyContent: 'flex-end', px: 1 }}>
-            <IconButton onClick={() => setDrawerOpen(false)}><Close /></IconButton>
-          </Box>
-          <List>
-            {NAV_ITEMS.map(({ label, id }) => (
-              <ListItem key={id} disablePadding>
-                <ListItemButton onClick={() => handleNav(id)}>
-                  <ListItemText primary={label} />
-                </ListItemButton>
-              </ListItem>
+                {link.name}
+              </Typography>
             ))}
-            <ListItem disablePadding>
-              <ListItemButton onClick={() => window.open(CONFIG.urls.app, '_blank')}>
-                <ListItemText primary="Iniciar Sesión" />
-              </ListItemButton>
-            </ListItem>
-            <ListItem disablePadding>
-              <ListItemButton onClick={() => { openWhatsApp(); setDrawerOpen(false); }}>
-                <ListItemText primary="Solicitar Demo" primaryTypographyProps={{ color: 'secondary.main', fontWeight: 600 }} />
-              </ListItemButton>
-            </ListItem>
-          </List>
-        </Box>
-      </Drawer>
-    </>
+            <Button
+              variant="contained"
+              size="small"
+              onClick={() => openWhatsApp()}
+              sx={{
+                bgcolor: 'secondary.main',
+                color: '#fff',
+                '&:hover': { bgcolor: '#059669' },
+                display: { xs: 'none', md: 'inline-flex' },
+              }}
+            >
+              Probar el sistema
+            </Button>
+          </Stack>
+
+          <IconButton
+            sx={{ color: scrolled ? 'text.primary' : 'white' }}
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <Close /> : <Menu />}
+          </IconButton>
+        </Stack>
+      </Container>
+    </Box>
   );
 };
 

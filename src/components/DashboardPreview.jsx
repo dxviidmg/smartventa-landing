@@ -5,7 +5,7 @@ import tableroImg from '../assets/Tablero.png';
 import tiendasImg from '../assets/Tiendas.png';
 import corteImg from '../assets/Corte de caja.png';
 import carritoImg from '../assets/Carrito de venta.png';
-import { dashboardCarousel } from '../utils/animations';
+import { dashboardCarousel } from '../constants/animations';
 
 const features = [
   { img: tableroImg, title: 'Tablero', desc: 'KPIs y métricas en tiempo real' },

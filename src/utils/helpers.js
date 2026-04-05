@@ -1,10 +1,5 @@
-import { CONFIG } from '../config/constants';
-
-export const openWhatsApp = (customMessage) => {
-  const message = customMessage || CONFIG.contact.whatsappMessage;
-  window.open(`https://wa.me/${CONFIG.contact.phoneFormatted}?text=${encodeURIComponent(message)}`, '_blank');
-};
-
-export const scrollToSection = (sectionId) => {
-  document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+export const openWhatsApp = (message = '') => {
+  const phoneNumber = '525561652599';
+  const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  window.open(url, '_blank');
 };
