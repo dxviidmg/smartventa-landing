@@ -6,37 +6,41 @@ import {
   LocalOffer, Category, Image, AttachMoney,
   Keyboard, QrCodeScanner, History, TableChart,
   Security, Print, Payment,
-  Receipt, AccountBalance, Support, Layers,
+  AccountBalance, Support, Layers,
 } from '@mui/icons-material';
 
 const features = [
-  { icon: <Storefront />, title: 'Multi-sucursal', desc: 'Controla infinitas tiendas desde una sola cuenta.', color: '#3b82f6' },
-  { icon: <Warehouse />, title: 'Almacenes', desc: 'Gestiona múltiples almacenes y puntos de venta.', color: '#6366f1' },
+  { icon: <Warehouse />, title: 'Tiendas y Almacenes', desc: 'Gestiona múltiples tiendas y almacenes desde un solo lugar.', color: '#6366f1' },
+  // VENTA
   { icon: <Assessment />, title: 'Dashboard', desc: 'Gráficas y KPIs en tiempo real para tomar decisiones.', color: '#8b5cf6' },
-  { icon: <People />, title: 'Clientes y Descuentos', desc: 'Historial de compras y descuentos personalizados.', color: '#a855f7' },
-  { icon: <People />, title: 'Vendedores', desc: 'Control de comisiones y rendimiento por vendedor.', color: '#d946ef' },
-  { icon: <LocalOffer />, title: 'Marcas', desc: 'Organiza productos por marca y categorías.', color: '#ec4899' },
-  { icon: <Category />, title: 'Departamentos', desc: 'Clasificación por departamentos y subcategorías.', color: '#f43f5e' },
-  { icon: <Image />, title: 'Imágenes de Productos', desc: 'Galería de imágenes por producto.', color: '#f97316' },
-  { icon: <AttachMoney />, title: 'Costo de Productos', desc: 'Control de costos y márgenes de ganancia.', color: '#eab308' },
+  { icon: <PointOfSale />, title: 'Mayoreo y Menudeo', desc: 'Precios dinámicos según cantidad.', color: '#10b981' },
+  { icon: <PointOfSale />, title: 'Multiventa', desc: 'Múltiples ventas simultáneas en una pantalla.', color: '#d946ef' },
+  { icon: <Payment />, title: 'Pagos Mixtos', desc: 'Efectivo, transferencia y tarjeta en una venta.', color: '#f97316' },
   { icon: <Keyboard />, title: 'Atajos de Teclado', desc: 'Vende más rápido con atajos de teclado.', color: '#84cc16' },
   { icon: <QrCodeScanner />, title: 'Lector de Códigos', desc: 'Compatible con lectores de código de barras USB y BT.', color: '#22c55e' },
-  { icon: <PointOfSale />, title: 'Mayoreo y Menudeo', desc: 'Precios dinámicos según cantidad.', color: '#10b981' },
-  { icon: <History />, title: 'Historial de Precios', desc: 'Registro de cambios de precios por producto.', color: '#14b8a6' },
-  { icon: <SwapHoriz />, title: 'Reasignación', desc: 'Cambia marcas y departamentos masivamente.', color: '#06b6d4' },
-  { icon: <TableChart />, title: 'Importación Excel', desc: 'Carga productos masiva con plantillas Excel.', color: '#0ea5e9' },
-  { icon: <Security />, title: 'Auditoría', desc: 'Auditoría de productos, ventas e inventario.', color: '#3b82f6' },
   { icon: <Print />, title: 'Impresión', desc: 'Compatible con impresoras térmicas y tickets.', color: '#6366f1' },
-  { icon: <SwapHoriz />, title: 'Traspasos', desc: 'Traslados entre tiendas con trazabilidad.', color: '#8b5cf6' },
-  { icon: <Layers />, title: 'Distribución', desc: 'Distribución desde almacén a sucursales.', color: '#a855f7' },
-  { icon: <PointOfSale />, title: 'Multiventa', desc: 'Múltiples ventas simultáneas en una pantalla.', color: '#d946ef' },
+  
+  // INVENTARIO
+  { icon: <Image />, title: 'Productos', desc: 'Imágenes, costos, márgenes y control de inventario por producto.', color: '#f97316' },
+  { icon: <LocalOffer />, title: 'Marcas y Departamentos', desc: 'Organiza productos por marca y departamento.', color: '#ec4899' },
+  { icon: <History />, title: 'Historial', desc: 'Registro de cambios de precios y movimientos de inventario.', color: '#14b8a6' },
+  { icon: <SwapHoriz />, title: 'Reasignación', desc: 'Cambia marcas y departamentos masivamente.', color: '#06b6d4' },
+  
+  // CLIENTES Y EQUIPO
+  { icon: <People />, title: 'Clientes y Descuentos', desc: 'Historial de compras y descuentos personalizados.', color: '#a855f7' },
+  { icon: <People />, title: 'Personal', desc: 'Un usuario manager por tienda y múltiples vendedores con control de acceso.', color: '#d946ef' },
+  
+  // MOVIMIENTOS
+  { icon: <SwapHoriz />, title: 'Traspasos y Distribución', desc: 'Traslados y distribución entre tiendas y almacenes con trazabilidad.', color: '#8b5cf6' },
+  { icon: <SwapHoriz />, title: 'Devoluciones y cancelaciones', desc: 'Devoluciones y cancelaciones documentadas.', color: '#eab308' },
+  
+  // CAJA
   { icon: <AttachMoney />, title: 'Mayoreo Automático', desc: 'Aplica precios de mayoreo según cantidad.', color: '#f43f5e' },
-  { icon: <Payment />, title: 'Pagos Mixtos', desc: 'Efectivo, transferencia y tarjeta en una venta.', color: '#f97316' },
-  { icon: <SwapHoriz />, title: 'Cancelaciones', desc: 'Devoluciones y cancelaciones documentadas.', color: '#eab308' },
-  { icon: <Receipt />, title: 'Importar Ventas', desc: 'Importación de ventas desde Excel.', color: '#84cc16' },
-  { icon: <AccountBalance />, title: 'Flujo de Caja', desc: 'Entradas, salidas y movimientos de caja.', color: '#22c55e' },
-  { icon: <Assessment />, title: 'Corte de Caja', desc: 'Corte parcial y total con resumen por método.', color: '#14b8a6' },
-  { icon: <History />, title: 'Historial Stock', desc: 'Historial completo de movimientos de inventario.', color: '#06b6d4' },
+  { icon: <AccountBalance />, title: 'Caja', desc: 'Flujo de caja y corte parcial o total con resumen por método.', color: '#22c55e' },
+  
+  // ADMINISTRACIÓN
+  { icon: <TableChart />, title: 'Importación', desc: 'Carga productos y ventas masivamente con plantillas Excel.', color: '#0ea5e9' },
+  { icon: <Security />, title: 'Auditoría', desc: 'Auditoría de productos, ventas e inventario.', color: '#3b82f6' },
   { icon: <Support />, title: 'Soporte', desc: 'Soporte integrado vía WhatsApp.', color: '#0ea5e9' },
 ];
 
@@ -51,7 +55,7 @@ const Features = () => (
         </motion.div>
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
           <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' }, maxWidth: 650 }}>
-            Todo lo que necesitas, nada de lo que sobra
+            Todo lo que necesitas
           </Typography>
         </motion.div>
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }}>

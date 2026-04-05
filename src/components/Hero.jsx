@@ -83,10 +83,11 @@ const Hero = () => {
                   sx={{
                     color: 'white',
                     fontWeight: 500, fontSize: '0.95rem',
-                    '&:hover': { bgcolor: 'rgba(255,255,255,0.1)' },
+                    border: '1px solid rgba(255,255,255,0.3)',
+                    '&:hover': { bgcolor: 'rgba(255,255,255,0.1)', borderColor: 'rgba(255,255,255,0.5)' },
                   }}
                 >
-                  Ver demo
+                  Ver video
                 </Button>
               </Stack>
             </motion.div>

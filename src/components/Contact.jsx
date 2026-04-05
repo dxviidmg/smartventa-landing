@@ -51,7 +51,7 @@ const Contact = () => (
               boxShadow: '0 4px 24px rgba(16,185,129,0.35)',
             }}
           >
-            Crea tu cuenta en minutos
+            Contactanos
           </Button>
         </motion.div>
       </Stack>

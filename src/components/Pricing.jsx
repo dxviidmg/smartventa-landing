@@ -5,7 +5,7 @@ import { openWhatsApp } from '../utils/helpers';
 
 const plans = [
   {
-    name: 'Paquete Emprende',
+    name: 'Plan Emprendedor',
     price: '$500 MXN',
     period: '/mes',
     desc: 'Ideal para 1 tienda que necesita poner orden.',
@@ -14,7 +14,7 @@ const plans = [
     popular: false,
   },
   {
-    name: 'Empresarial',
+    name: 'Plan Empresarial',
     price: '$2500 MXN',
     period: '/mes',
     desc: 'Para negocios en expansión con múltiples locales.',
@@ -36,7 +36,7 @@ const Pricing = () => (
         </motion.div>
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
           <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' } }}>
-            Precios simples, sin sorpresas
+            Elige el plan perfecto
           </Typography>
         </motion.div>
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }}>

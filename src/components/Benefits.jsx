@@ -4,24 +4,24 @@ import { Speed, CheckCircle, TrendingUp, Store } from '@mui/icons-material';
 
 const benefits = [
   {
-    icon: <Speed />, title: 'Resultados desde el día 1',
-    desc: 'Configuración en minutos. Tu equipo vende desde el primer día sin curva de aprendizaje.',
-    metric: '30', metricLabel: 'minutos para empezar',
+    icon: <Store />, title: 'Multi-sucursal instantáneo',
+    desc: 'Administra todas tus tiendas desde un solo panel.',
+    metric: '∞', metricLabel: 'control total',
   },
   {
-    icon: <CheckCircle />, title: 'Cero errores de caja',
-    desc: 'Detecta inconsistencias automáticamente. Tu cuadre siempre cierra perfecto.',
-    metric: '100%', metricLabel: 'precisión garantizada',
+    icon: <Speed />, title: 'Empieza a usar hoy',
+    desc: 'Tu equipo aprende rápido con nuestra interfaz intuitiva.',
+    metric: '1', metricLabel: 'día para dominar',
+  },
+  {
+    icon: <CheckCircle />, title: 'Caja sin sorpresas',
+    desc: 'Detecta inconsistencias para que tu cuadre siempre cierre bien.',
+    metric: '0', metricLabel: 'misterios',
   },
   {
     icon: <TrendingUp />, title: 'Ventas en tiempo real',
     desc: 'Mira tus ingresos mientras ocurren. Sin esperar reportes de cierre.',
     metric: '0', metricLabel: 'retraso en datos',
-  },
-  {
-    icon: <Store />, title: 'Multi-sucursal instantáneo',
-    desc: 'Administra todas tus tiendas desde un solo panel. Sin costo extra por sucursal.',
-    metric: '∞', metricLabel: 'control total',
   },
 ];
 

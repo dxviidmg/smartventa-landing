@@ -1,51 +1,131 @@
-import { Box, Container, Typography, Stack, Card, Chip } from '@mui/material';
-import { motion } from 'framer-motion';
-import cartImg from '../assets/cart.png';
+import { useState, useEffect } from 'react';
+import { Box, Container, Typography, Stack, Card, Modal } from '@mui/material';
+import { motion, AnimatePresence } from 'framer-motion';
+import tableroImg from '../assets/Tablero.png';
+import tiendasImg from '../assets/Tiendas.png';
+import corteImg from '../assets/Corte de caja.png';
+import carritoImg from '../assets/Carrito de venta.png';
 
 const features = [
-  { img: cartImg, title: 'Ventas rápidas', desc: 'Caja intuitiva y eficiente' },
+  { img: tableroImg, title: 'Tablero', desc: 'KPIs y métricas en tiempo real' },
+  { img: tiendasImg, title: 'Tiendas', desc: 'Gestión multi-sucursal' },
+  { img: corteImg, title: 'Corte de Caja', desc: 'Resumen por método de pago' },
+  { img: carritoImg, title: 'Punto de Venta', desc: 'Caja rápida e intuitiva' },
 ];
 
-const DashboardPreview = () => (
-  <Box sx={{ py: 8, bgcolor: 'background.paper' }}>
-    <Container maxWidth="lg">
-      <Stack spacing={1} alignItems="center" textAlign="center" sx={{ mb: 6 }}>
-        <Chip label="Dashboard" size="small" sx={{ bgcolor: '#34d399', color: '#022347', fontWeight: 700 }} />
-        <Typography variant="h3" fontWeight={700}>Tu negocio, bajo control</Typography>
-        <Typography variant="h6" color="text.secondary" sx={{ maxWidth: 600 }}>
-          Interfaz intuitiva diseñada para que gestiones tu negocio sin complicaciones
-        </Typography>
-      </Stack>
+const DashboardPreview = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
-      <Box sx={{ display: 'flex', gap: 3, overflowX: 'auto', pb: 2, px: 1 }}>
-        {features.map((f, i) => (
-          <Card
-            key={i}
-            component={motion.div}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.1 }}
-            whileHover={{ y: -8, boxShadow: '0 20px 40px rgba(0,0,0,0.12)' }}
+  useEffect(() => {
+    if (isHovered || modalOpen) return;
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % features.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [isHovered, modalOpen]);
+
+  return (
+    <Box sx={{ py: 8, bgcolor: 'background.paper' }}>
+      <Container maxWidth="lg">
+        <Stack spacing={1} alignItems="center" textAlign="center" sx={{ mb: 6 }}>
+          <Typography variant="overline" sx={{ color: '#10b981', fontWeight: 700, letterSpacing: 2 }}>
+            Dashboard
+          </Typography>
+          <Typography variant="h3" fontWeight={700}>Tu negocio, bajo control</Typography>
+          <Typography variant="h6" color="text.secondary" sx={{ maxWidth: 600 }}>
+            Interfaz intuitiva diseñada para que gestiones tu negocio sin complicaciones
+          </Typography>
+        </Stack>
+
+        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+          <Box sx={{ position: 'relative', width: { xs: '100%', md: '70%' }, maxWidth: 900 }}>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeIndex}
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -50 }}
+                transition={{ duration: 0.4 }}
+              >
+                <Card
+                  onClick={() => setModalOpen(true)}
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
+                  sx={{
+                    overflow: 'hidden',
+                    boxShadow: '0 20px 60px rgba(0,0,0,0.15)',
+                    cursor: 'pointer',
+                  }}
+                >
+                  <Box sx={{ position: 'relative' }}>
+                    <Box
+                      component="img"
+                      src={features[activeIndex].img}
+                      alt={features[activeIndex].title}
+                      sx={{ width: '100%', height: 'auto', display: 'block' }}
+                    />
+                    <Box sx={{ position: 'absolute', bottom: 0, left: 0, right: 0, p: 3, background: 'linear-gradient(transparent, rgba(0,0,0,0.8))' }}>
+                      <Typography variant="h5" color="white" fontWeight={600}>
+                        {features[activeIndex].title}
+                      </Typography>
+                      <Typography variant="body1" color="rgba(255,255,255,0.8)">
+                        {features[activeIndex].desc}
+                      </Typography>
+                    </Box>
+                  </Box>
+                </Card>
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Dots */}
+            <Stack direction="row" spacing={1.5} justifyContent="center" sx={{ mt: 3 }}>
+              {features.map((_, i) => (
+                <Box
+                  key={i}
+                  onClick={() => setActiveIndex(i)}
+                  sx={{
+                    width: 10,
+                    height: 10,
+                    borderRadius: '50%',
+                    bgcolor: i === activeIndex ? '#10b981' : 'rgba(0,0,0,0.2)',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease',
+                    '&:hover': { bgcolor: '#10b981' },
+                  }}
+                />
+              ))}
+            </Stack>
+          </Box>
+        </Box>
+
+        {/* Modal */}
+        <Modal open={modalOpen} onClose={() => setModalOpen(false)}>
+          <Box
             sx={{
-              minWidth: '85%',
-              borderRadius: 4,
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              width: '90%',
+              maxWidth: 1200,
+              bgcolor: 'background.paper',
               overflow: 'hidden',
-              cursor: 'pointer',
-              transition: 'all 0.3s ease',
+              boxShadow: '0 20px 80px rgba(0,0,0,0.5)',
             }}
           >
-            <Box sx={{ position: 'relative' }}>
-              <Box component="img" src={f.img} alt={f.title} sx={{ width: '100%', height: 'auto', display: 'block' }} />
-              <Box sx={{ position: 'absolute', bottom: 0, left: 0, right: 0, p: 2, background: 'linear-gradient(transparent, rgba(0,0,0,0.8))' }}>
-                <Typography variant="h6" color="white" fontWeight={600}>{f.title}</Typography>
-                <Typography variant="body2" color="rgba(255,255,255,0.8)">{f.desc}</Typography>
-              </Box>
-            </Box>
-          </Card>
-        ))}
-      </Box>
-    </Container>
-  </Box>
-);
+            <Box
+              component="img"
+              src={features[activeIndex].img}
+              alt={features[activeIndex].title}
+              sx={{ width: '100%', height: 'auto', display: 'block' }}
+            />
+          </Box>
+        </Modal>
+      </Container>
+    </Box>
+  );
+};
 
 export default DashboardPreview;

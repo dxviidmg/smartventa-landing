@@ -21,11 +21,9 @@ const WhatsAppButton = () => {
         whileTap={{ scale: 0.95 }}
         animate={{
           y: [0, -8, 0],
-          boxShadow: ['0 4px 20px rgba(37, 211, 102, 0.4)', '0 8px 30px rgba(37, 211, 102, 0.6)', '0 4px 20px rgba(37, 211, 102, 0.4)'],
         }}
         transition={{
           y: { repeat: Infinity, duration: 2, ease: 'easeInOut' },
-          boxShadow: { repeat: Infinity, duration: 2 },
         }}
       >
         <Box

@@ -16,11 +16,11 @@ import WhatsAppButton from './components/WhatsAppButton';
 function App() {
   const sections = [
     { component: <Hero />, bg: 'linear-gradient(145deg, #022347 0%, #04346b 100%)' },
+    { component: <Industries />, bg: 'linear-gradient(145deg, #022347 0%, #04346b 100%)' },
     { component: <Benefits />, bg: '#CAD2DE' },
     { component: <Features />, bg: '#CAD2DE' },
     { component: <HowItWorks />, bg: 'white' },
     { component: <DashboardPreview />, bg: '#CAD2DE' },
-    { component: <Industries />, bg: 'linear-gradient(145deg, #022347 0%, #04346b 100%)' },
     { component: <Pricing />, bg: 'white' },
     { component: <FAQ />, bg: '#CAD2DE' },
     { component: <Contact />, bg: 'white' },
