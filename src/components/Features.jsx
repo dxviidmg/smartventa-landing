@@ -35,7 +35,7 @@ const features = [
 ];
 
 const Features = () => (
-  <Box id="features" sx={{ py: { xs: 8, md: 12 }, bgcolor: '#CAD2DE' }}>
+  <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: '#CAD2DE' }}>
     <Container maxWidth="lg">
       <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 8 }}>
         <motion.div {...sectionHeader.overline}>

@@ -26,7 +26,7 @@ const plans = [
 ];
 
 const Pricing = () => (
-  <Box id="pricing" sx={{ py: { xs: 6, md: 10 }, bgcolor: 'background.paper' }}>
+  <Box sx={{ py: { xs: 6, md: 10 }, bgcolor: 'background.paper' }}>
     <Container maxWidth="md">
       <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 6 }}>
         <motion.div {...sectionHeader.overline}>

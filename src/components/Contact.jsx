@@ -6,19 +6,12 @@ import { sectionHeader } from '../utils/animations';
 
 const Contact = () => (
   <Box
-    id="contact"
     sx={{
       py: { xs: 6, md: 10 },
       position: 'relative', overflow: 'hidden',
       background: 'linear-gradient(145deg, #022347 0%, #04346b 40%, #065a9e 100%)',
     }}
   >
-    <Box sx={{
-      position: 'absolute', inset: 0, opacity: 0.03,
-      backgroundImage: 'linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)',
-      backgroundSize: '60px 60px',
-    }} />
-
     <Container maxWidth="md" sx={{ position: 'relative', zIndex: 1 }}>
       <Stack spacing={4} alignItems="center" textAlign="center">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>

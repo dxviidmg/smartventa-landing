@@ -42,7 +42,7 @@ const industries = [
 ];
 
 const Industries = () => (
-  <Box sx={{ py: { xs: 6, md: 10 } }}>
+  <Box sx={{ py: { xs: 6, md: 10 }, bgcolor: '#CAD2DE' }}>
     <Container maxWidth="lg">
       <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 8 }}>
         <motion.div {...sectionHeader.overline}>

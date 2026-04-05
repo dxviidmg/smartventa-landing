@@ -11,7 +11,7 @@ const steps = [
 ];
 
 const HowItWorks = () => (
-  <Box id="how-it-works" sx={{ py: { xs: 8, md: 12 }, background: 'linear-gradient(145deg, #022347 0%, #04346b 100%)' }}>
+  <Box sx={{ py: { xs: 8, md: 12 }, background: 'linear-gradient(145deg, #022347 0%, #04346b 100%)' }}>
     <Container maxWidth="md">
       <Stack spacing={8}>
         <Stack spacing={2} alignItems="center" textAlign="center">

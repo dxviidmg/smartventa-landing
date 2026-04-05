@@ -15,7 +15,7 @@ const faqs = [
 ];
 
 const FAQ = () => (
-  <Box id="faq" sx={{ py: { xs: 6, md: 10 }, bgcolor: '#CAD2DE' }}>
+  <Box sx={{ py: { xs: 6, md: 10 }, bgcolor: '#CAD2DE' }}>
     <Container maxWidth="md">
       <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 6 }}>
         <motion.div {...sectionHeader.overline}>
