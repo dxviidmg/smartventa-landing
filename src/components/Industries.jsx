@@ -1,14 +1,19 @@
 import { Box, Container, Typography, Grid, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
 import {
-  Store, Spa, ContentCut, PetsOutlined, Build, Hardware, PhoneIphone, Computer, Tv, DirectionsCar, SportsSoccer, Diamond, Warehouse, ShoppingCart, Restaurant, Coffee, LocalMall, Business
+  LocalGroceryStore, Build, Store, AutoStories, Spa, PetsOutlined, SportsSoccer, Business
 } from '@mui/icons-material';
-import { sectionHeader, cardGridItem } from '../constants/animations';
+import { sectionHeader } from '../constants/animations';
 
-const businessTypes = [
-  { icon: <ShoppingCart />, title: 'Retail y Tiendas', desc: 'Negocios de venta al público que necesitan un punto de venta ágil y control de inventario en tiempo real.' },
-  { icon: <Store />, title: 'Negocios Multi-tienda', desc: 'Cadenas de tiendas que requieren visibilidad y coordinación entre todas sus ubicaciones desde un panel central.' },
-  { icon: <Warehouse />, title: 'Operaciones con Almacén', desc: 'Negocios que distribuyen productos desde almacenes centrales a sus puntos de venta con trazabilidad.' },
+const industries = [
+  { icon: <LocalGroceryStore />, title: 'Abarrotes' },
+  { icon: <Build />, title: 'Ferreterías' },
+  { icon: <Store />, title: 'Mini Súpers' },
+  { icon: <AutoStories />, title: 'Papelerías' },
+  { icon: <Spa />, title: 'Cosméticos' },
+  { icon: <PetsOutlined />, title: 'Mascotas' },
+  { icon: <SportsSoccer />, title: 'Jugueterías' },
+  { icon: <Business />, title: 'Y más...' },
 ];
 
 const Industries = () => (
@@ -27,47 +32,6 @@ const Industries = () => (
         </motion.div>
       </Stack>
 
-      <Grid container spacing={3} sx={{ mb: 10 }}>
-        {businessTypes.map((type, i) => (
-          <Grid size={{ xs: 12, md: 4 }} key={i}>
-            <motion.div
-              {...cardGridItem}
-              transition={{ delay: i * 0.1 }}
-              style={{ height: '100%' }}
-            >
-              <Box
-                sx={{
-                  p: 4, height: '100%', borderRadius: 4,
-                  bgcolor: 'background.paper',
-                  border: '1px solid', borderColor: 'divider',
-                  transition: 'all 0.3s ease',
-                  '&:hover': {
-                    borderColor: 'primary.main',
-                    boxShadow: '0 8px 30px rgba(4,52,107,0.1)',
-                    transform: 'translateY(-4px)',
-                  },
-                }}
-              >
-                <Box sx={{
-                  width: 56, height: 56, borderRadius: 3,
-                  bgcolor: 'rgba(4,52,107,0.1)', color: 'primary.main',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  mb: 2.5, '& svg': { fontSize: 28 },
-                }}>
-                  {type.icon}
-                </Box>
-                <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>
-                  {type.title}
-                </Typography>
-                <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                  {type.desc}
-                </Typography>
-              </Box>
-            </motion.div>
-          </Grid>
-        ))}
-      </Grid>
-
       <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 6 }}>
         <motion.div {...sectionHeader.overline}>
           <Typography variant="h3" sx={{ fontSize: { xs: '1.5rem', md: '2rem' }, fontWeight: 700 }}>
@@ -76,9 +40,9 @@ const Industries = () => (
         </motion.div>
       </Stack>
 
-      <Grid container spacing={2} justifyContent="center">
-        {['Abarrotes', 'Ferreterías', 'Mini Súpers', 'Papelerías', 'Cosméticos', 'Mascotas', 'Jugueterías', 'Y más...'].map((name, i) => (
-          <Grid size={{ xs: 6, sm: 4, md: 3 }} key={i}>
+      <Grid container spacing={2} justifyContent="center" sx={{ mb: 10 }}>
+        {industries.map((industry, i) => (
+          <Grid size={{ xs: 6, sm: 4, md: 2 }} key={i}>
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -100,8 +64,11 @@ const Industries = () => (
                   },
                 }}
               >
+                <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 1, '& svg': { fontSize: 24 } }}>
+                  {industry.icon}
+                </Box>
                 <Typography variant="body1" sx={{ fontWeight: 600 }}>
-                  {name}
+                  {industry.title}
                 </Typography>
               </Box>
             </motion.div>

@@ -12,12 +12,25 @@ const WhatsAppButton = () => (
     }}
   >
     <Fab
-      color="success"
-      size="medium"
-      onClick={() => openWhatsApp()}
       sx={{
-        boxShadow: '0 4px 12px rgba(16,185,129,0.4)',
-        '&:hover': { transform: 'scale(1.1)', boxShadow: '0 6px 16px rgba(16,185,129,0.5)' },
+        bgcolor: '#25D366',
+        color: 'white',
+        boxShadow: '0 4px 12px rgba(37,211,102,0.4)',
+        '&:hover': {
+          bgcolor: '#20BD5A',
+          transform: 'scale(1.1)',
+          boxShadow: '0 6px 16px rgba(37,211,102,0.5)',
+        },
+        '&::before': {
+          content: '""',
+          position: 'absolute',
+          width: '100%',
+          height: '100%',
+          borderRadius: '50%',
+          bgcolor: 'rgba(37,211,102,0.4)',
+          animation: 'ping 2s cubic-bezier(0, 0, 0.2, 1) infinite',
+          zIndex: -1,
+        },
       }}
     >
       <WhatsApp />
