@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import {
   LocalGroceryStore, Build, Store, AutoStories, Spa, PetsOutlined, SportsSoccer, Business
 } from '@mui/icons-material';
-import { sectionHeader } from '../config/constants';
+import { sectionHeader } from '../constants';
 
 const industries = [
   { icon: <LocalGroceryStore />, title: 'Abarrotes' },

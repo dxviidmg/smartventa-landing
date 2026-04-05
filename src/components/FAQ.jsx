@@ -1,7 +1,7 @@
 import { Box, Container, Typography, Stack, Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
 import { motion } from 'framer-motion';
 import { Add } from '@mui/icons-material';
-import { sectionHeader, faqItem } from '../config/constants';
+import { sectionHeader, faqItem } from '../constants';
 
 const faqs = [
   { q: '¿Necesito instalar algo?', a: 'No. SmartVenta funciona en la nube. Solo necesitas internet y un navegador.' },

@@ -2,7 +2,7 @@ import { Box, Container, Typography, Stack, Button } from '@mui/material';
 import { motion } from 'framer-motion';
 import { ArrowForward } from '@mui/icons-material';
 import { openWhatsApp } from '../utils/helpers';
-import { sectionHeader } from '../config/constants';
+import { sectionHeader } from '../constants';
 
 const Contact = () => (
   <Box
