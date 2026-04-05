@@ -2,7 +2,7 @@ import { Box, Container, Typography, Stack, Button, Grid, Chip } from '@mui/mate
 import { motion } from 'framer-motion';
 import { Check, ArrowForward, Star } from '@mui/icons-material';
 import { openWhatsApp } from '../utils/helpers';
-import { sectionHeader, cardGridItem } from '../constants/animations';
+import { sectionHeader, cardGridItem } from '../config/constants';
 
 const plans = [
   {

@@ -1,5 +1,5 @@
 // Google Analytics Configuration
-export const GA_TRACKING_ID = 'G-XXXXXXXXXX';
+export const GA_TRACKING_ID = import.meta.env.VITE_GA_TRACKING_ID;
 
 // Función para registrar page views
 export const pageview = (url) => {
