@@ -1,5 +1,4 @@
 import { Box, Container, Typography, Stack, Link } from '@mui/material';
-import { openWhatsApp } from '../utils/helpers';
 import { CONFIG } from '../config/constants';
 
 const Footer = () => (

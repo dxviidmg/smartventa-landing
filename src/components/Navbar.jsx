@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import {
   AppBar, Toolbar, Container, Button, Box, IconButton, Drawer,
   List, ListItem, ListItemButton, ListItemText, Stack,
 } from '@mui/material';
 import { Menu as MenuIcon, Close } from '@mui/icons-material';
-import { scrollToSection, openWhatsApp } from '../utils/helpers';
+import { useApp } from '../contexts/AppContext';
 import { CONFIG } from '../config/constants';
 
 const NAV_ITEMS = [
@@ -14,14 +14,13 @@ const NAV_ITEMS = [
 ];
 
 const Navbar = () => {
-  const [drawerOpen, setDrawerOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const { drawerOpen, setDrawerOpen, scrolled, scrollToSection, setScrolled } = useApp();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+  }, [setScrolled]);
 
   const handleNav = (id) => { scrollToSection(id); setDrawerOpen(false); };
 
@@ -103,7 +102,7 @@ const Navbar = () => {
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
-              <ListItemButton onClick={() => { openWhatsApp(); setDrawerOpen(false); }}>
+              <ListItemButton onClick={() => { setDrawerOpen(false); }}>
                 <ListItemText primary="Solicitar Demo" primaryTypographyProps={{ color: 'secondary.main', fontWeight: 600 }} />
               </ListItemButton>
             </ListItem>

@@ -1,6 +1,8 @@
 import { lazy, Suspense } from 'react';
 import { ThemeProvider, CssBaseline, Box } from '@mui/material';
 import { lightTheme } from './theme';
+import { AppProvider } from './contexts/AppContext';
+import { WhatsAppProvider } from './contexts/WhatsAppContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Benefits from './components/Benefits';
@@ -29,21 +31,25 @@ function App() {
   ];
 
   return (
-    <ThemeProvider theme={lightTheme}>
-      <CssBaseline />
-      <Box sx={{ minHeight: '100vh' }}>
-        <Navbar />
-        <main role="main">
-          {sections.map((section, index) => (
-            <Box key={index} sx={{ bgcolor: section.bg }}>
-              {section.component}
-            </Box>
-          ))}
-        </main>
-        <WhatsAppButton />
-        <Footer />
-      </Box>
-    </ThemeProvider>
+    <AppProvider>
+      <WhatsAppProvider>
+        <ThemeProvider theme={lightTheme}>
+          <CssBaseline />
+          <Box sx={{ minHeight: '100vh' }}>
+            <Navbar />
+            <main role="main">
+              {sections.map((section, index) => (
+                <Box key={index} sx={{ bgcolor: section.bg }}>
+                  {section.component}
+                </Box>
+              ))}
+            </main>
+            <WhatsAppButton />
+            <Footer />
+          </Box>
+        </ThemeProvider>
+      </WhatsAppProvider>
+    </AppProvider>
   );
 }
 
