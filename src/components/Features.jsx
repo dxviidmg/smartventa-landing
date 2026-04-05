@@ -4,6 +4,7 @@ import {
   PointOfSale, Assessment, People, SwapHoriz, Warehouse, LocalOffer, Image, AttachMoney, Keyboard, QrCodeScanner, History, TableChart, Security, Print, Payment, AccountBalance, Support
 } from '@mui/icons-material';
 import { sectionHeader, cardGridItem } from '../constants';
+import { Card } from '../components/ui';
 
 const features = [
   { icon: <Warehouse />, title: 'Tiendas y Almacenes', desc: 'Gestiona múltiples tiendas y almacenes desde un solo lugar.', color: '#6366f1' },
