@@ -2,6 +2,7 @@ import { Box, Container, Typography, Stack, Button } from '@mui/material';
 import { motion } from 'framer-motion';
 import { ArrowForward } from '@mui/icons-material';
 import { openWhatsApp } from '../utils/helpers';
+import { sectionHeader } from '../utils/animations';
 
 const Contact = () => (
   <Box
@@ -20,7 +21,7 @@ const Contact = () => (
 
     <Container maxWidth="md" sx={{ position: 'relative', zIndex: 1 }}>
       <Stack spacing={4} alignItems="center" textAlign="center">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+        <motion.div {...sectionHeader.title}>
           <Typography variant="h2" sx={{ color: 'white', fontSize: { xs: '2rem', md: '3rem' }, maxWidth: 600 }}>
             ¿Listo para retomar el{' '}
             <Box component="span" sx={{
@@ -32,7 +33,7 @@ const Contact = () => (
           </Typography>
         </motion.div>
 
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
+        <motion.div {...sectionHeader.subtitle}>
           <Typography sx={{ color: 'rgba(255,255,255,0.6)', fontSize: '1.1rem', maxWidth: 480 }}>
             Únete a cientos de negocios que ya optimizan sus operaciones diarias con SmartVenta.
           </Typography>

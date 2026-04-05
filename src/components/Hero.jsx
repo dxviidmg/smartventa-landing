@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { Box, Container, Typography, Button, Stack, Chip, Modal, IconButton } from '@mui/material';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ArrowForward, PlayArrow, Close } from '@mui/icons-material';
-import { openWhatsApp, scrollToSection } from '../utils/helpers';
+import { openWhatsApp } from '../utils/helpers';
+import { hero, modal } from '../utils/animations';
 
 const Hero = () => {
   const [videoOpen, setVideoOpen] = useState(false);
@@ -30,7 +31,7 @@ const Hero = () => {
 
         <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
           <Stack spacing={4} alignItems="center" textAlign="center">
-            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}>
+            <motion.div {...hero.title}>
               <Typography
                 variant="h1"
                 sx={{ fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4.5rem' }, color: 'white', maxWidth: '850px' }}
@@ -49,7 +50,7 @@ const Hero = () => {
               </Typography>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
+            <motion.div {...hero.subtitle}>
               <Typography
                 sx={{
                   color: 'rgba(255,255,255,0.65)', maxWidth: '600px',
@@ -60,7 +61,7 @@ const Hero = () => {
               </Typography>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.35 }}>
+            <motion.div {...hero.cta}>
               <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} alignItems="center">
                 <Button
                   variant="contained"
@@ -92,7 +93,7 @@ const Hero = () => {
               </Stack>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.6 }}>
+            <motion.div {...hero.badges}>
               <Stack direction="row" spacing={4} sx={{ mt: 4, opacity: 0.5 }} alignItems="center" justifyContent="center" flexWrap="wrap">
                 {['Sin instalación', 'Sin contratos', 'Soporte incluido'].map((t) => (
                   <Typography key={t} variant="caption" sx={{ color: 'white', fontSize: '0.8rem', letterSpacing: 1 }}>
@@ -105,36 +106,12 @@ const Hero = () => {
         </Container>
       </Box>
 
-      <Modal
-        open={videoOpen}
-        onClose={() => setVideoOpen(false)}
-        sx={{
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          bgcolor: 'rgba(0,0,0,0.8)', backdropFilter: 'blur(5px)',
-        }}
-      >
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.9 }}
-          transition={{ duration: 0.2 }}
-        >
-          <Box id="dashboard-video" sx={{
-            position: 'relative',
-            width: '100%',
-            maxWidth: '1000px',
-            aspectRatio: '16/9',
-            bgcolor: 'black',
-            borderRadius: 2,
-            overflow: 'hidden',
-          }}>
+      <Modal open={videoOpen} onClose={() => setVideoOpen(false)} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', bgcolor: 'rgba(0,0,0,0.8)', backdropFilter: 'blur(5px)' }}>
+        <motion.div {...modal}>
+          <Box id="dashboard-video" sx={{ position: 'relative', width: '100%', maxWidth: '1000px', aspectRatio: '16/9', bgcolor: 'black', borderRadius: 2, overflow: 'hidden' }}>
             <IconButton
               onClick={() => setVideoOpen(false)}
-              sx={{
-                position: 'absolute', top: 8, right: 8,
-                zIndex: 2, bgcolor: 'rgba(0,0,0,0.5)', color: 'white',
-                '&:hover': { bgcolor: 'rgba(0,0,0,0.7)' },
-              }}
+              sx={{ position: 'absolute', top: 8, right: 8, zIndex: 2, bgcolor: 'rgba(0,0,0,0.5)', color: 'white', '&:hover': { bgcolor: 'rgba(0,0,0,0.7)' } }}
             >
               <Close />
             </IconButton>

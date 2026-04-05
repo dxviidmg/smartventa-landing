@@ -2,6 +2,7 @@ import { Box, Container, Typography, Stack, Button, Grid, Chip } from '@mui/mate
 import { motion } from 'framer-motion';
 import { Check, ArrowForward, Star } from '@mui/icons-material';
 import { openWhatsApp } from '../utils/helpers';
+import { sectionHeader, cardGridItem } from '../utils/animations';
 
 const plans = [
   {
@@ -10,7 +11,7 @@ const plans = [
     period: '/mes',
     desc: 'Ideal para 1 tienda que necesita poner orden.',
     features: ['1 Sucursal incluida', 'Inventario básico'],
-    cta: 'Comenzar Básico',
+    cta: 'Comenzar',
     popular: false,
   },
   {
@@ -18,7 +19,7 @@ const plans = [
     price: '$2500 MXN',
     period: '/mes',
     desc: 'Para negocios en expansión con múltiples locales.',
-    features: ['8 Sucursales (tiendas o almacenes)', 'Inventario avanzado & transferencias', 'Soporte prioritario'],
+    features: ['8 Sucursales (tiendas o almacenes)', 'Inventario avanzado', 'Soporte prioritario'],
     cta: 'Comprar',
     popular: true,
   },
@@ -29,17 +30,17 @@ const Pricing = () => (
   <Box id="pricing" sx={{ py: { xs: 6, md: 10 }, bgcolor: 'background.paper' }}>
     <Container maxWidth="md">
       <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 6 }}>
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+        <motion.div {...sectionHeader.overline}>
           <Typography variant="overline" sx={{ color: 'secondary.main', fontWeight: 700, letterSpacing: 2 }}>
             Precios
           </Typography>
         </motion.div>
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
+        <motion.div {...sectionHeader.title}>
           <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' } }}>
             Elige el plan perfecto
           </Typography>
         </motion.div>
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }}>
+        <motion.div {...sectionHeader.subtitle}>
           <Typography sx={{ color: 'text.secondary', maxWidth: 450 }}>
             Elige el plan que mejor se adapte a tu etapa de crecimiento.
           </Typography>
@@ -50,9 +51,7 @@ const Pricing = () => (
         {plans.map((plan, i) => (
           <Grid size={{ xs: 12, sm: 6 }} key={i}>
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              {...cardGridItem}
               transition={{ delay: i * 0.1 }}
               style={{ height: '100%' }}
             >
@@ -62,8 +61,12 @@ const Pricing = () => (
                 borderColor: plan.popular ? 'primary.main' : 'divider',
                 position: 'relative', overflow: 'hidden',
                 display: 'flex', flexDirection: 'column',
-                transition: 'all 0.3s ease',
-                '&:hover': { boxShadow: plan.popular ? '0 12px 40px rgba(4,52,107,0.15)' : '0 8px 30px rgba(0,0,0,0.06)' },
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                '&:hover': {
+                  transform: 'translateY(-8px)',
+                  boxShadow: plan.popular ? '0 20px 50px rgba(4,52,107,0.2)' : '0 15px 40px rgba(0,0,0,0.08)',
+                  borderColor: plan.popular ? 'secondary.main' : 'primary.main',
+                },
               }}>
                 {plan.popular && (
                   <>

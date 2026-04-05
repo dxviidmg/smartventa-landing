@@ -5,6 +5,7 @@ import tableroImg from '../assets/Tablero.png';
 import tiendasImg from '../assets/Tiendas.png';
 import corteImg from '../assets/Corte de caja.png';
 import carritoImg from '../assets/Carrito de venta.png';
+import { dashboardCarousel } from '../utils/animations';
 
 const features = [
   { img: tableroImg, title: 'Tablero', desc: 'KPIs y métricas en tiempo real' },
@@ -44,10 +45,7 @@ const DashboardPreview = () => {
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeIndex}
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -50 }}
-                transition={{ duration: 0.4 }}
+                {...dashboardCarousel}
               >
                 <Card
                   onClick={() => setModalOpen(true)}

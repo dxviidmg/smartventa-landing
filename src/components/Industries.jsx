@@ -16,6 +16,7 @@ import {
   Warehouse,
   ShoppingCart
 } from '@mui/icons-material';
+import { sectionHeader, cardGridItem } from '../utils/animations';
 
 const businessTypes = [
   { icon: <ShoppingCart />, title: 'Tiendas retail', desc: 'Negocios de venta al público que necesitan un punto de venta ágil y control de inventario.' },
@@ -40,12 +41,12 @@ const Industries = () => (
   <Box sx={{ py: { xs: 6, md: 10 }, bgcolor: '#CAD2DE' }}>
     <Container maxWidth="lg">
       <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 8 }}>
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+        <motion.div {...sectionHeader.overline}>
           <Typography variant="overline" sx={{ color: 'secondary.main', fontWeight: 700, letterSpacing: 2 }}>
             ¿Para quién es?
           </Typography>
         </motion.div>
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
+        <motion.div {...sectionHeader.title}>
           <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' }, maxWidth: 650 }}>
             Hecho para negocios como el tuyo
           </Typography>
@@ -56,9 +57,7 @@ const Industries = () => (
         {businessTypes.map((type, i) => (
           <Grid size={{ xs: 12, md: 4 }} key={i}>
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              {...cardGridItem}
               transition={{ delay: i * 0.1 }}
               style={{ height: '100%' }}
             >
@@ -96,7 +95,7 @@ const Industries = () => (
       </Grid>
 
       <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 6 }}>
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+        <motion.div {...sectionHeader.overline}>
           <Typography variant="h3" sx={{ fontSize: { xs: '1.5rem', md: '2rem' }, fontWeight: 700 }}>
             Ideal para tu tipo de negocio
           </Typography>
@@ -118,11 +117,12 @@ const Industries = () => (
                   borderRadius: 3,
                   bgcolor: 'rgba(4,52,107,0.08)',
                   textAlign: 'center',
-                  transition: 'all 0.3s ease',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                   '&:hover': {
                     bgcolor: 'primary.main',
                     color: 'white',
-                    transform: 'translateY(-2px)',
+                    transform: 'translateY(-4px) scale(1.02)',
+                    boxShadow: '0 8px 30px rgba(4,52,107,0.25)',
                   },
                 }}
               >

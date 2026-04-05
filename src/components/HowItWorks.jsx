@@ -1,6 +1,7 @@
 import { Box, Container, Typography, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
 import { Settings, Storefront, PointOfSale, Insights } from '@mui/icons-material';
+import { sectionHeader, stepItem } from '../utils/animations';
 
 const steps = [
   { icon: <Settings />, num: '01', title: 'Configura tu catálogo', desc: 'Agrega tus productos con precios, categorías y códigos de barras. Importa todos tus productos desde Excel.' },
@@ -14,12 +15,12 @@ const HowItWorks = () => (
     <Container maxWidth="md">
       <Stack spacing={8}>
         <Stack spacing={2} alignItems="center" textAlign="center">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          <motion.div {...sectionHeader.overline}>
             <Typography variant="overline" sx={{ color: '#34d399', fontWeight: 700, letterSpacing: 2, fontSize: '0.75rem' }}>
               Cómo funciona
             </Typography>
           </motion.div>
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
+          <motion.div {...sectionHeader.title}>
             <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' }, color: 'white', fontWeight: 800 }}>
               Cuatro pasos para empezar
             </Typography>
@@ -30,10 +31,7 @@ const HowItWorks = () => (
           {steps.map((s, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              whileHover={{ x: 8 }}
-              viewport={{ once: true }}
+              {...stepItem}
               transition={{ delay: i * 0.15 }}
             >
               <Stack
