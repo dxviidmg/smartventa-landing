@@ -1,5 +1,6 @@
 import { Box, Container, Typography, Stack, Link } from '@mui/material';
 import { openWhatsApp } from '../utils/helpers';
+import { CONFIG } from '../config/constants';
 
 const Footer = () => (
   <Box sx={{ bgcolor: '#022347', color: 'white', py: 8 }}>
@@ -39,12 +40,12 @@ const Footer = () => (
             </Typography>
             <Stack direction="column" spacing={1}>
               <Link
-                href="https://wa.me/525561652599"
+                href={`https://wa.me/${CONFIG.contact.phoneFormatted}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 sx={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', '&:hover': { color: 'white' } }}
               >
-                WhatsApp: +52 55 6165 2599
+                WhatsApp: {CONFIG.contact.phone}
               </Link>
               <Link
                 href="mailto:contacto@smartventa.com"

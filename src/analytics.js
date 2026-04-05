@@ -1,7 +1,5 @@
 // Google Analytics Configuration
-// Reemplaza 'G-XXXXXXXXXX' con tu ID de medición de Google Analytics
-
-export const GA_TRACKING_ID = 'G-XXXXXXXXXX'; // TODO: Reemplazar con tu ID real
+export const GA_TRACKING_ID = 'G-XXXXXXXXXX';
 
 // Función para registrar page views
 export const pageview = (url) => {

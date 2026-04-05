@@ -1,16 +1,14 @@
 export const CONFIG = {
   contact: {
-    phone: '+52 55 6165 2599',
-    phoneFormatted: '525561652599',
-    whatsappMessage: 'Hola, me interesa solicitar una demo de SmartVenta',
+    phone: import.meta.env.VITE_WHATSAPP_PHONE_FORMATTED,
+    phoneFormatted: import.meta.env.VITE_WHATSAPP_PHONE,
   },
   company: {
     name: 'SmartVenta',
     tagline: 'El punto de venta inteligente para negocios multi-tienda',
   },
   urls: {
-    domain: 'https://smartventa.com',
-    app: 'https://app-smartventa.vercel.app',
+    app: import.meta.env.VITE_APP_URL,
   },
   pricing: {
     perStore: 500,
