@@ -14,62 +14,72 @@ const Footer = () => {
         title={CONFIG.company.name}
         description="El punto de venta inteligente para negocios multi-tienda."
       />
-      <Box sx={{ bgcolor: '#022347', color: 'white', py: 8 }}>
+      <Box sx={{ bgcolor: '#022347', color: 'white', py: 6 }}>
         <Container maxWidth="lg">
           <Stack spacing={4}>
-            <Stack direction={{ xs: 'column', md: 'row' }} spacing={{ xs: 4, md: 8 }}>
-              <Box sx={{ flex: '0 0 33.333%' }}>
-                <Typography variant="h6" sx={{ fontWeight: 800, mb: 2 }}>
+            <Stack direction={{ xs: 'column', md: 'row' }} spacing={{ xs: 4, md: 6 }}>
+              <Box sx={{ flex: { xs: '0 0 auto', md: 1 }, minWidth: { xs: '100%', md: '200px' } }}>
+                <Typography variant="h6" sx={{ fontWeight: 800, mb: 2, fontSize: '1.1rem' }}>
                   {CONFIG.company.name}
                 </Typography>
-                <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.7)' }}>
+                <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.6 }}>
                   El punto de venta inteligente para negocios multi-tienda.
                 </Typography>
               </Box>
-              <Stack spacing={2} sx={{ flex: '0 0 33.333%' }}>
-                <Typography variant="h6" sx={{ fontWeight: 800 }}>
+              <Stack spacing={2} sx={{ flex: { xs: '0 0 auto', md: 1 }, minWidth: { xs: '100%', md: '150px' } }}>
+                <Typography variant="h6" sx={{ fontWeight: 800, mb: 2, fontSize: '1.1rem' }}>
                   Enlaces
                 </Typography>
-                <Stack direction="column" spacing={1}>
-                  <Link href="#features" sx={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', '&:hover': { color: 'white' } }}>
+                <Stack direction="column" spacing={1.5}>
+                  <Link href="#features" sx={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', '&:hover': { color: 'white' }, transition: 'color 0.25s' }}>
                     Características
                   </Link>
-                  <Link href="#how-it-works" sx={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', '&:hover': { color: 'white' } }}>
+                  <Link href="#how-it-works" sx={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', '&:hover': { color: 'white' }, transition: 'color 0.25s' }}>
                     Cómo funciona
                   </Link>
-                  <Link href="#pricing" sx={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', '&:hover': { color: 'white' } }}>
+                  <Link href="#pricing" sx={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', '&:hover': { color: 'white' }, transition: 'color 0.25s' }}>
                     Precios
                   </Link>
-                  <Link href="#faq" sx={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', '&:hover': { color: 'white' } }}>
+                  <Link href="#faq" sx={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', '&:hover': { color: 'white' }, transition: 'color 0.25s' }}>
                     FAQ
                   </Link>
                 </Stack>
               </Stack>
-              <Stack spacing={2} sx={{ flex: '0 0 33.333%', alignItems: 'flex-start' }}>
-                <Typography variant="h6" sx={{ fontWeight: 800 }}>
+              <Stack spacing={2} sx={{ flex: { xs: '0 0 auto', md: 1 }, minWidth: { xs: '100%', md: '150px' }, alignItems: 'flex-start' }}>
+                <Typography variant="h6" sx={{ fontWeight: 800, mb: 2, fontSize: '1.1rem' }}>
                   Legal
                 </Typography>
-                <Stack direction="column" spacing={1}>
+                <Stack direction="column" spacing={1.5}>
                   <Link
                     component="button"
                     onClick={() => setOpenTerms(true)}
-                    sx={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', '&:hover': { color: 'white' } }}
+                    sx={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', '&:hover': { color: 'white' }, transition: 'color 0.25s', textAlign: 'left' }}
                   >
                     Términos y Condiciones
                   </Link>
                   <Link
                     component="button"
                     onClick={() => setOpenPrivacy(true)}
-                    sx={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', '&:hover': { color: 'white' } }}
+                    sx={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', '&:hover': { color: 'white' }, transition: 'color 0.25s', textAlign: 'left' }}
                   >
                     Política de Privacidad
                   </Link>
                 </Stack>
               </Stack>
+              <Stack spacing={2} sx={{ flex: { xs: '0 0 auto', md: 1 }, minWidth: { xs: '100%', md: '200px' } }}>
+                <Typography variant="h6" sx={{ fontWeight: 800, mb: 2, fontSize: '1.1rem' }}>
+                  Contacto
+                </Typography>
+                <Stack direction="column" spacing={1.5}>
+                  <Link href={`https://wa.me/${CONFIG.contact.phone.replace(/\D/g, '')}`} target="_blank" rel="noopener noreferrer" sx={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', '&:hover': { color: 'white' }, transition: 'color 0.25s' }}>
+                    WhatsApp
+                  </Link>
+                </Stack>
+              </Stack>
             </Stack>
-            <Box sx={{ borderTop: '1px solid rgba(255,255,255,0.1)', pt: 4 }}>
+            <Box sx={{ borderTop: '1px solid rgba(255,255,255,0.1)', pt: 3 }}>
               <Stack direction={{ xs: 'column', md: 'row' }} justifyContent="space-between" alignItems="center" spacing={2}>
-                <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.5)' }}>
+                <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.5)', textAlign: { xs: 'center', md: 'left' } }}>
                   © {new Date().getFullYear()} {CONFIG.company.name}. Todos los derechos reservados.
                 </Typography>
               </Stack>
