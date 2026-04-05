@@ -1,79 +1,199 @@
-import { Box, Container, Typography, Stack, Link } from '@mui/material';
+import { useState } from 'react';
+import { Box, Container, Typography, Stack, Link, Dialog, DialogTitle, DialogContent, IconButton } from '@mui/material';
+import { Close } from '@mui/icons-material';
 import { CONFIG } from '../config/constants';
 import SEO from '../components/SEO';
 
-const Footer = () => (
-  <>
-    <SEO
-      title={CONFIG.company.name}
-      description="El punto de venta inteligente para negocios multi-tienda."
-    />
-    <Box sx={{ bgcolor: '#022347', color: 'white', py: 8 }}>
-      <Container maxWidth="lg">
-        <Stack spacing={4}>
-          <Stack direction={{ xs: 'column', md: 'row' }} spacing={{ xs: 4, md: 8 }}>
+const Footer = () => {
+  const [openPrivacy, setOpenPrivacy] = useState(false);
+  const [openTerms, setOpenTerms] = useState(false);
+
+  return (
+    <>
+      <SEO
+        title={CONFIG.company.name}
+        description="El punto de venta inteligente para negocios multi-tienda."
+      />
+      <Box sx={{ bgcolor: '#022347', color: 'white', py: 8 }}>
+        <Container maxWidth="lg">
+          <Stack spacing={4}>
+            <Stack direction={{ xs: 'column', md: 'row' }} spacing={{ xs: 4, md: 8 }}>
+              <Box sx={{ flex: '0 0 33.333%' }}>
+                <Typography variant="h6" sx={{ fontWeight: 800, mb: 2 }}>
+                  {CONFIG.company.name}
+                </Typography>
+                <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.7)' }}>
+                  El punto de venta inteligente para negocios multi-tienda.
+                </Typography>
+              </Box>
+              <Stack spacing={2} sx={{ flex: '0 0 33.333%' }}>
+                <Typography variant="h6" sx={{ fontWeight: 800 }}>
+                  Enlaces
+                </Typography>
+                <Stack direction="column" spacing={1}>
+                  <Link href="#features" sx={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', '&:hover': { color: 'white' } }}>
+                    Características
+                  </Link>
+                  <Link href="#how-it-works" sx={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', '&:hover': { color: 'white' } }}>
+                    Cómo funciona
+                  </Link>
+                  <Link href="#pricing" sx={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', '&:hover': { color: 'white' } }}>
+                    Precios
+                  </Link>
+                  <Link href="#faq" sx={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', '&:hover': { color: 'white' } }}>
+                    FAQ
+                  </Link>
+                </Stack>
+              </Stack>
+              <Stack spacing={2} sx={{ flex: '0 0 33.333%', alignItems: 'flex-start' }}>
+                <Typography variant="h6" sx={{ fontWeight: 800 }}>
+                  Legal
+                </Typography>
+                <Stack direction="column" spacing={1}>
+                  <Link
+                    component="button"
+                    onClick={() => setOpenTerms(true)}
+                    sx={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', '&:hover': { color: 'white' } }}
+                  >
+                    Términos y Condiciones
+                  </Link>
+                  <Link
+                    component="button"
+                    onClick={() => setOpenPrivacy(true)}
+                    sx={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', '&:hover': { color: 'white' } }}
+                  >
+                    Política de Privacidad
+                  </Link>
+                </Stack>
+              </Stack>
+            </Stack>
+            <Box sx={{ borderTop: '1px solid rgba(255,255,255,0.1)', pt: 4 }}>
+              <Stack direction={{ xs: 'column', md: 'row' }} justifyContent="space-between" alignItems="center" spacing={2}>
+                <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.5)' }}>
+                  © {new Date().getFullYear()} {CONFIG.company.name}. Todos los derechos reservados.
+                </Typography>
+              </Stack>
+            </Box>
+          </Stack>
+        </Container>
+      </Box>
+
+      {/* Modal Términos y Condiciones */}
+      <Dialog open={openTerms} onClose={() => setOpenTerms(false)} maxWidth="md" fullWidth>
+        <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          Términos y Condiciones
+          <IconButton onClick={() => setOpenTerms(false)}>
+            <Close />
+          </IconButton>
+        </DialogTitle>
+        <DialogContent>
+          <Stack spacing={3}>
+            <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+              Última actualización: Marzo 2026
+            </Typography>
+
             <Box>
-              <Typography variant="h6" sx={{ fontWeight: 800, mb: 2 }}>
-                {CONFIG.company.name}
+              <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
+                1. Aceptación de términos
               </Typography>
-              <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.7)' }}>
-                El punto de venta inteligente para negocios multi-tienda.
+              <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
+                Al acceder y usar Smartventa, aceptas estar sujeto a estos términos y condiciones.
               </Typography>
             </Box>
-            <Stack spacing={2}>
-              <Typography variant="h6" sx={{ fontWeight: 800 }}>
-                Enlaces
+
+            <Box>
+              <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
+                2. Uso del servicio
               </Typography>
-              <Stack direction="column" spacing={1}>
-                <Link href="#features" sx={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', '&:hover': { color: 'white' } }}>
-                  Características
-                </Link>
-                <Link href="#how-it-works" sx={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', '&:hover': { color: 'white' } }}>
-                  Cómo funciona
-                </Link>
-                <Link href="#pricing" sx={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', '&:hover': { color: 'white' } }}>
-                  Precios
-                </Link>
-                <Link href="#faq" sx={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', '&:hover': { color: 'white' } }}>
-                  FAQ
-                </Link>
-              </Stack>
-            </Stack>
-            <Stack spacing={2}>
-              <Typography variant="h6" sx={{ fontWeight: 800 }}>
-                Contacto
+              <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
+                Smartventa es un sistema de punto de venta diseñado para negocios multi-tienda. Te comprometes a usar el servicio de manera legal y apropiada.
               </Typography>
-              <Stack direction="column" spacing={1}>
-                <Link
-                  href={`https://wa.me/${CONFIG.contact.phoneFormatted}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  sx={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', '&:hover': { color: 'white' } }}
-                >
-                  WhatsApp: {CONFIG.contact.phone}
-                </Link>
-              </Stack>
-            </Stack>
+            </Box>
+
+            <Box>
+              <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
+                3. Cuenta demo
+              </Typography>
+              <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
+                La cuenta demo es proporcionada únicamente con fines de evaluación. Los datos en la cuenta demo pueden ser reiniciados periódicamente.
+              </Typography>
+            </Box>
+
+            <Box>
+              <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
+                4. Limitación de responsabilidad
+              </Typography>
+              <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
+                Smartventa se proporciona "tal cual". No garantizamos que el servicio será ininterrumpido o libre de errores.
+              </Typography>
+            </Box>
+
+            <Box>
+              <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
+                5. Contacto
+              </Typography>
+              <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
+                Para preguntas sobre estos términos, contáctanos al: {CONFIG.contact.phone}
+              </Typography>
+            </Box>
           </Stack>
-          <Box sx={{ borderTop: '1px solid rgba(255,255,255,0.1)', pt: 4 }}>
-            <Stack direction={{ xs: 'column', md: 'row' }} justifyContent="space-between" alignItems="center" spacing={2}>
-              <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.5)' }}>
-                © {new Date().getFullYear()} {CONFIG.company.name}. Todos los derechos reservados.
+        </DialogContent>
+      </Dialog>
+
+      {/* Modal Política de Privacidad */}
+      <Dialog open={openPrivacy} onClose={() => setOpenPrivacy(false)} maxWidth="md" fullWidth>
+        <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          Política de Privacidad
+          <IconButton onClick={() => setOpenPrivacy(false)}>
+            <Close />
+          </IconButton>
+        </DialogTitle>
+        <DialogContent>
+          <Stack spacing={3}>
+            <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+              Última actualización: Marzo 2026
+            </Typography>
+
+            <Box>
+              <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
+                1. Información que recopilamos
               </Typography>
-              <Stack direction="row" spacing={3}>
-                <Link href="/privacy" sx={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none', '&:hover': { color: 'white' } }}>
-                  Privacidad
-                </Link>
-                <Link href="/terms" sx={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none', '&:hover': { color: 'white' } }}>
-                  Términos
-                </Link>
-              </Stack>
-            </Stack>
-          </Box>
-        </Stack>
-      </Container>
-    </Box>
-  </>
-);
+              <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
+                Recopilamos información que nos proporcionas directamente cuando solicitas una demo o te contactas con nosotros, incluyendo nombre, correo electrónico, teléfono y nombre de tu negocio.
+              </Typography>
+            </Box>
+
+            <Box>
+              <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
+                2. Uso de la información
+              </Typography>
+              <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
+                Utilizamos tu información para: contactarte sobre tu solicitud de demo, enviarte información sobre Smartventa, y mejorar nuestros servicios.
+              </Typography>
+            </Box>
+
+            <Box>
+              <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
+                3. Protección de datos
+              </Typography>
+              <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
+                Implementamos medidas de seguridad para proteger tu información personal. No compartimos tus datos con terceros sin tu consentimiento.
+              </Typography>
+            </Box>
+
+            <Box>
+              <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
+                4. Contacto
+              </Typography>
+              <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
+                Si tienes preguntas sobre esta política, contáctanos al: {CONFIG.contact.phone}
+              </Typography>
+            </Box>
+          </Stack>
+        </DialogContent>
+      </Dialog>
+    </>
+  );
+};
 
 export default Footer;

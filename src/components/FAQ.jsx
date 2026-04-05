@@ -21,7 +21,7 @@ const FAQ = () => (
       title="Preguntas Frecuentes"
       description="Respuestas a las preguntas más comunes sobre SmartVenta y sus servicios."
     />
-    <Box sx={{ py: { xs: 6, md: 10 }, bgcolor: '#CAD2DE' }}>
+    <Box id="faq" sx={{ py: { xs: 6, md: 10 }, bgcolor: '#CAD2DE' }}>
       <Container maxWidth="md">
         <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 6 }}>
           <motion.div {...sectionHeader.overline}>

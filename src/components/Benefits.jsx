@@ -33,7 +33,7 @@ const Benefits = () => (
       title="Beneficios de SmartVenta"
       description="Resultados desde el primer día. Reducción de errores, ahorro de tiempo y visibilidad total."
     />
-    <Box sx={{ py: { xs: 8, md: 12 }, background: 'linear-gradient(145deg, #022347 0%, #04346b 100%)' }}>
+    <Box id="benefits" sx={{ py: { xs: 8, md: 12 }, background: 'linear-gradient(145deg, #022347 0%, #04346b 100%)' }}>
       <Container maxWidth="lg">
         <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 8 }}>
           <motion.div {...sectionHeader.overline}>

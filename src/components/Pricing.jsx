@@ -35,7 +35,7 @@ const Pricing = () => {
         title="Planes y Precios"
         description="Elige el plan perfecto para tu negocio. Sin costos ocultos. Cancela cuando quieras."
       />
-      <Box sx={{ py: { xs: 6, md: 10 }, bgcolor: 'background.paper' }}>
+      <Box id="pricing" sx={{ py: { xs: 6, md: 10 }, bgcolor: 'background.paper' }}>
         <Container maxWidth="md">
           <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 6 }}>
             <motion.div {...sectionHeader.overline}>

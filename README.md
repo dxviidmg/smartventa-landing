@@ -19,10 +19,10 @@ Landing page moderna y profesional para **Smartventa**, el sistema de punto de v
 - **Primary**: `#04346b`
 - **Primary Light**: `#065a9e`
 - **Primary Dark**: `#022347`
-- **Background**: `rgba(4, 53, 107, 0.08)`
+- **Background**: `#f8fafc`
 - **Paper**: `#ffffff`
-- **Text Primary**: `#1e293b`
-- **Text Secondary**: `#4a5568`
+- **Text Primary**: `#0f172a`
+- **Text Secondary**: `#64748b`
 - **Success (CTA)**: `#10b981`
 
 ### Características de diseño
@@ -57,57 +57,81 @@ npm run build
 
 ## ⚙️ Configuración
 
+### Variables de entorno
+
+Crea un archivo `.env` basado en `.env.template` y actualiza los valores:
+
+```env
+VITE_WHATSAPP_PHONE=001234567890
+VITE_WHATSAPP_PHONE_FORMATTED=+00 12 3456 7890
+VITE_GA_TRACKING_ID=G-XXXXXXXXXX
+VITE_APP_URL=https://app-smartventa.vercel.app
+```
+
 ### Google Analytics
 
 1. Crea una cuenta en [Google Analytics](https://analytics.google.com/)
 2. Obtén tu ID de medición (formato: `G-XXXXXXXXXX`)
-3. Reemplaza `G-XXXXXXXXXX` en:
-   - `/index.html` (líneas 9 y 13)
-   - `/src/analytics.js` (línea 4)
-
-### Dominio
-
-Actualiza las URLs en:
-- `/index.html` - Meta tags Open Graph y canonical
-- `/public/sitemap.xml` - URL del sitemap
-- `/public/robots.txt` - URL del sitemap
+3. Reemplaza `G-XXXXXXXXXX` en `.env`
 
 ### Imagen Open Graph
 
 Crea una imagen de 1200x630px con tu logo y texto, guárdala como `/public/og-image.jpg`
 
-## 📄 Estructura
+## 📁 Estructura del Proyecto
 
 ```
 src/
-├── components/
-│   ├── Navbar.jsx           # Barra de navegación
-│   ├── Hero.jsx             # Sección hero principal
-│   ├── Industries.jsx       # Tipos de negocio
-│   ├── Features.jsx         # Características principales
-│   ├── HowItWorks.jsx       # Cómo funciona
-│   ├── Benefits.jsx         # Beneficios
-│   ├── Pricing.jsx          # Precios
-│   ├── FAQ.jsx              # Preguntas frecuentes
-│   ├── Contact.jsx          # Contacto
-│   ├── Footer.jsx           # Footer
-│   ├── WhatsAppButton.jsx   # Botón flotante de WhatsApp
-│   ├── Loading.jsx          # Pantalla de carga
-│   ├── NotFound.jsx         # Página 404
-│   ├── Privacy.jsx          # Política de privacidad
-│   └── Terms.jsx            # Términos y condiciones
-├── theme.js                 # Tema de Material UI
-├── analytics.js             # Configuración de Google Analytics
-├── App.jsx                  # Componente principal
-├── main.jsx                 # Entry point
-└── index.css                # Estilos globales
+├── components/              # Componentes de la aplicación
+│   ├── ui/                 # Componentes reutilizables
+│   │   ├── Card.jsx
+│   │   ├── CardGridItem.jsx
+│   │   └── SectionHeader.jsx
+│   ├── LazyImage.jsx       # Imágenes con lazy loading
+│   ├── Navbar.jsx
+│   ├── Hero.jsx
+│   ├── Industries.jsx
+│   ├── Features.jsx
+│   ├── HowItWorks.jsx
+│   ├── Benefits.jsx
+│   ├── Pricing.jsx
+│   ├── FAQ.jsx
+│   ├── Contact.jsx
+│   ├── Footer.jsx
+│   └── WhatsAppButton.jsx
+├── contexts/               # React Contexts
+│   ├── AppContext.jsx      # Estado global (drawer, scroll)
+│   ├── WhatsAppContext.jsx # Funciones de WhatsApp
+│   └── index.js
+├── hooks/                  # Hooks personalizados
+│   ├── useScroll.js
+│   ├── useActiveSection.js
+│   ├── useMemoized.js
+│   ├── useSEO.js
+│   └── index.js
+├── constants/              # Constantes y estilos
+│   ├── index.js
+│   ├── colors.js
+│   ├── animations.js
+│   └── styles.js
+├── config/                 # Configuración
+│   ├── index.js
+│   └── constants.js
+├── utils/                  # Utilidades
+│   ├── helpers.js
+│   └── animations.js
+├── App.jsx                 # Componente principal
+├── main.jsx                # Entry point
+├── theme.js                # Tema de Material UI
+├── analytics.js            # Configuración de Google Analytics
+└── index.css               # Estilos globales
 ```
 
 ## 🎯 Secciones
 
 1. **Hero** - Título principal con CTAs
 2. **Industries** - Tipos de negocio ideales
-3. **Features** - 37 características principales
+3. **Features** - Características principales
 4. **HowItWorks** - 4 pasos de cómo funciona
 5. **Benefits** - Lista de beneficios
 6. **Pricing** - Planes de precios
@@ -117,14 +141,18 @@ src/
 
 ## 📱 Funcionalidades
 
-- ✅ SEO optimizado (meta tags, sitemap, robots.txt)
+- ✅ SEO optimizado (meta tags, Open Graph, Twitter Cards)
 - ✅ Google Analytics integrado
 - ✅ Botón flotante de WhatsApp
-- ✅ Animaciones suaves
-- ✅ Responsive design
+- ✅ Animaciones suaves con Framer Motion
+- ✅ Responsive design (mobile-first)
+- ✅ Lazy loading de imágenes
+- ✅ React Context para estado global
+- ✅ Componentes reutilizables
+- ✅ Hooks personalizados
+- ✅ Optimización de performance (memoización)
 - ✅ Política de privacidad y términos
 - ✅ Página 404
-- ✅ Schema.org para SEO
 
 ## 📝 Objetivo
 
@@ -143,10 +171,6 @@ Dueños de negocios retail con 2 o más sucursales:
 - Tiendas de mascotas
 - Jugueterías
 
-## 📞 Contacto
-
-- **WhatsApp**: +52 55 6165 2599
-- **Email**: contacto@smartventa.com
 
 ## 🌟 Características del Sistema
 
