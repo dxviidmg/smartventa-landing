@@ -6,6 +6,7 @@ import {
 import { Menu as MenuIcon, Close } from '@mui/icons-material';
 import { useApp } from '../contexts/AppContext';
 import { CONFIG } from '../config/constants';
+import SEO from '../components/SEO';
 
 const NAV_ITEMS = [
   { label: 'Características', id: 'features' },
@@ -26,6 +27,10 @@ const Navbar = () => {
 
   return (
     <>
+      <SEO
+        title={CONFIG.company.name}
+        description="El punto de venta inteligente para negocios multi-tienda."
+      />
       <AppBar
         position="fixed"
         elevation={0}

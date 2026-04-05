@@ -2,6 +2,7 @@ import { Box, Container, Typography, Stack, Accordion, AccordionSummary, Accordi
 import { motion } from 'framer-motion';
 import { Add } from '@mui/icons-material';
 import { sectionHeader, faqItem } from '../constants';
+import SEO from '../components/SEO';
 
 const faqs = [
   { q: '¿Necesito instalar algo?', a: 'No. SmartVenta funciona en la nube. Solo necesitas internet y un navegador.' },
@@ -15,50 +16,56 @@ const faqs = [
 ];
 
 const FAQ = () => (
-  <Box sx={{ py: { xs: 6, md: 10 }, bgcolor: '#CAD2DE' }}>
-    <Container maxWidth="md">
-      <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 6 }}>
-        <motion.div {...sectionHeader.overline}>
-          <Typography variant="overline" sx={{ color: 'secondary.main', fontWeight: 700, letterSpacing: 2 }}>
-            FAQ
-          </Typography>
-        </motion.div>
-        <motion.div {...sectionHeader.title}>
-          <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' } }}>
-            Preguntas frecuentes
-          </Typography>
-        </motion.div>
-      </Stack>
-
-      <Stack spacing={1.5}>
-        {faqs.map((faq, i) => (
-          <motion.div key={i} {...faqItem} transition={{ delay: i * 0.04 }}>
-            <Accordion
-              elevation={0}
-              sx={{
-                bgcolor: 'background.paper',
-                border: '1px solid', borderColor: 'divider', borderRadius: '12px !important',
-                '&:before': { display: 'none' },
-                '&.Mui-expanded': { borderColor: 'primary.light', bgcolor: 'rgba(4,52,107,0.02)' },
-                transition: 'all 0.3s ease',
-                '&:hover': { borderColor: 'primary.main', bgcolor: 'rgba(4,52,107,0.02)' },
-              }}
-            >
-              <AccordionSummary
-                expandIcon={<Add sx={{ fontSize: 20, transition: 'transform 0.3s ease', '.Mui-expanded &': { transform: 'rotate(180deg)' } }} />}
-                sx={{ '&:hover': { bgcolor: 'rgba(4,52,107,0.02)' } }}
-              >
-                <Typography sx={{ fontWeight: 600, fontSize: '0.95rem' }}>{faq.q}</Typography>
-              </AccordionSummary>
-              <AccordionDetails sx={{ pt: 0 }}>
-                <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>{faq.a}</Typography>
-              </AccordionDetails>
-            </Accordion>
+  <>
+    <SEO
+      title="Preguntas Frecuentes"
+      description="Respuestas a las preguntas más comunes sobre SmartVenta y sus servicios."
+    />
+    <Box sx={{ py: { xs: 6, md: 10 }, bgcolor: '#CAD2DE' }}>
+      <Container maxWidth="md">
+        <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 6 }}>
+          <motion.div {...sectionHeader.overline}>
+            <Typography variant="overline" sx={{ color: 'secondary.main', fontWeight: 700, letterSpacing: 2 }}>
+              FAQ
+            </Typography>
           </motion.div>
-        ))}
-      </Stack>
-    </Container>
-  </Box>
+          <motion.div {...sectionHeader.title}>
+            <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' } }}>
+              Preguntas frecuentes
+            </Typography>
+          </motion.div>
+        </Stack>
+
+        <Stack spacing={1.5}>
+          {faqs.map((faq, i) => (
+            <motion.div key={i} {...faqItem} transition={{ delay: i * 0.04 }}>
+              <Accordion
+                elevation={0}
+                sx={{
+                  bgcolor: 'background.paper',
+                  border: '1px solid', borderColor: 'divider', borderRadius: '12px !important',
+                  '&:before': { display: 'none' },
+                  '&.Mui-expanded': { borderColor: 'primary.light', bgcolor: 'rgba(4,52,107,0.02)' },
+                  transition: 'all 0.3s ease',
+                  '&:hover': { borderColor: 'primary.main', bgcolor: 'rgba(4,52,107,0.02)' },
+                }}
+              >
+                <AccordionSummary
+                  expandIcon={<Add sx={{ fontSize: 20, transition: 'transform 0.3s ease', '.Mui-expanded &': { transform: 'rotate(180deg)' } }} />}
+                  sx={{ '&:hover': { bgcolor: 'rgba(4,52,107,0.02)' } }}
+                >
+                  <Typography sx={{ fontWeight: 600, fontSize: '0.95rem' }}>{faq.q}</Typography>
+                </AccordionSummary>
+                <AccordionDetails sx={{ pt: 0 }}>
+                  <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>{faq.a}</Typography>
+                </AccordionDetails>
+              </Accordion>
+            </motion.div>
+          ))}
+        </Stack>
+      </Container>
+    </Box>
+  </>
 );
 
 export default FAQ;

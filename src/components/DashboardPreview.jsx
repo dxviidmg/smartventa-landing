@@ -7,6 +7,7 @@ import corteImg from '../assets/Corte de caja.png';
 import carritoImg from '../assets/Carrito de venta.png';
 import { dashboardCarousel } from '../constants';
 import { LazyImage } from './LazyImage';
+import SEO from '../components/SEO';
 
 const features = [
   { img: tableroImg, title: 'Tablero', desc: 'KPIs y métricas en tiempo real' },
@@ -36,94 +37,100 @@ const DashboardPreview = () => {
   }), [activeIndex]);
 
   return (
-    <Box sx={{ py: 8, bgcolor: '#CAD2DE' }}>
-      <Container maxWidth="lg">
-        <Stack spacing={1} alignItems="center" textAlign="center" sx={{ mb: 6 }}>
-          <Typography variant="overline" sx={{ color: '#10b981', fontWeight: 700, letterSpacing: 2 }}>
-            Dashboard
-          </Typography>
-          <Typography variant="h3" fontWeight={700}>Tu negocio, bajo control</Typography>
-          <Typography variant="h6" color="text.secondary" sx={{ maxWidth: 600 }}>
-            Interfaz intuitiva diseñada para que gestiones tu negocio sin complicaciones
-          </Typography>
-        </Stack>
+    <>
+      <SEO
+        title="Dashboard"
+        description="Tu negocio, bajo control. Interfaz intuitiva diseñada para que gestiones tu negocio sin complicaciones."
+      />
+      <Box sx={{ py: 8, bgcolor: '#CAD2DE' }}>
+        <Container maxWidth="lg">
+          <Stack spacing={1} alignItems="center" textAlign="center" sx={{ mb: 6 }}>
+            <Typography variant="overline" sx={{ color: '#10b981', fontWeight: 700, letterSpacing: 2 }}>
+              Dashboard
+            </Typography>
+            <Typography variant="h3" fontWeight={700}>Tu negocio, bajo control</Typography>
+            <Typography variant="h6" color="text.secondary" sx={{ maxWidth: 600 }}>
+              Interfaz intuitiva diseñada para que gestiones tu negocio sin complicaciones
+            </Typography>
+          </Stack>
 
-        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-          <Box sx={{ position: 'relative', width: { xs: '100%', md: '70%' }, maxWidth: 900 }}>
-            <AnimatePresence mode="wait">
-              <motion.div key={activeIndex} {...carouselProps}>
-                <Card
-                  onClick={handleCardClick}
-                  onMouseEnter={() => handleHoverChange(true)}
-                  onMouseLeave={() => handleHoverChange(false)}
-                  sx={{
-                    overflow: 'hidden',
-                    boxShadow: '0 20px 60px rgba(0,0,0,0.15)',
-                    cursor: 'pointer',
-                  }}
-                >
-                  <Box sx={{ position: 'relative' }}>
-                    <LazyImage
-                      src={features[activeIndex].img}
-                      alt={features[activeIndex].title}
-                      sx={{ width: '100%', height: 'auto', display: 'block' }}
-                    />
-                    <Box sx={{ position: 'absolute', bottom: 0, left: 0, right: 0, p: 3, background: 'linear-gradient(transparent, rgba(0,0,0,0.8))' }}>
-                      <Typography variant="h5" color="white" fontWeight={600}>
-                        {features[activeIndex].title}
-                      </Typography>
-                      <Typography variant="body1" color="rgba(255,255,255,0.8)">
-                        {features[activeIndex].desc}
-                      </Typography>
+          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+            <Box sx={{ position: 'relative', width: { xs: '100%', md: '70%' }, maxWidth: 900 }}>
+              <AnimatePresence mode="wait">
+                <motion.div key={activeIndex} {...carouselProps}>
+                  <Card
+                    onClick={handleCardClick}
+                    onMouseEnter={() => handleHoverChange(true)}
+                    onMouseLeave={() => handleHoverChange(false)}
+                    sx={{
+                      overflow: 'hidden',
+                      boxShadow: '0 20px 60px rgba(0,0,0,0.15)',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    <Box sx={{ position: 'relative' }}>
+                      <LazyImage
+                        src={features[activeIndex].img}
+                        alt={features[activeIndex].title}
+                        sx={{ width: '100%', height: 'auto', display: 'block' }}
+                      />
+                      <Box sx={{ position: 'absolute', bottom: 0, left: 0, right: 0, p: 3, background: 'linear-gradient(transparent, rgba(0,0,0,0.8))' }}>
+                        <Typography variant="h5" color="white" fontWeight={600}>
+                          {features[activeIndex].title}
+                        </Typography>
+                        <Typography variant="body1" color="rgba(255,255,255,0.8)">
+                          {features[activeIndex].desc}
+                        </Typography>
+                      </Box>
                     </Box>
-                  </Box>
-                </Card>
-              </motion.div>
-            </AnimatePresence>
+                  </Card>
+                </motion.div>
+              </AnimatePresence>
 
-            <Stack direction="row" spacing={1.5} justifyContent="center" sx={{ mt: 3 }}>
-              {features.map((_, i) => (
-                <Box
-                  key={i}
-                  onClick={() => setActiveIndex(i)}
-                  sx={{
-                    width: 10,
-                    height: 10,
-                    borderRadius: '50%',
-                    bgcolor: i === activeIndex ? 'secondary.main' : 'rgba(0,0,0,0.2)',
-                    cursor: 'pointer',
-                    transition: 'all 0.3s ease',
-                    '&:hover': { bgcolor: 'secondary.main' },
-                  }}
-                />
-              ))}
-            </Stack>
+              <Stack direction="row" spacing={1.5} justifyContent="center" sx={{ mt: 3 }}>
+                {features.map((_, i) => (
+                  <Box
+                    key={i}
+                    onClick={() => setActiveIndex(i)}
+                    sx={{
+                      width: 10,
+                      height: 10,
+                      borderRadius: '50%',
+                      bgcolor: i === activeIndex ? 'secondary.main' : 'rgba(0,0,0,0.2)',
+                      cursor: 'pointer',
+                      transition: 'all 0.3s ease',
+                      '&:hover': { bgcolor: 'secondary.main' },
+                    }}
+                  />
+                ))}
+              </Stack>
+            </Box>
           </Box>
-        </Box>
 
-        <Modal open={modalOpen} onClose={() => setModalOpen(false)}>
-          <Box
-            sx={{
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              width: '90%',
-              maxWidth: 1200,
-              bgcolor: 'background.paper',
-              overflow: 'hidden',
-              boxShadow: '0 20px 80px rgba(0,0,0,0.5)',
-            }}
-          >
-            <LazyImage
-              src={features[activeIndex].img}
-              alt={features[activeIndex].title}
-              sx={{ width: '100%', height: 'auto', display: 'block' }}
-            />
-          </Box>
-        </Modal>
-      </Container>
-    </Box>
+          <Modal open={modalOpen} onClose={() => setModalOpen(false)}>
+            <Box
+              sx={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                width: '90%',
+                maxWidth: 1200,
+                bgcolor: 'background.paper',
+                overflow: 'hidden',
+                boxShadow: '0 20px 80px rgba(0,0,0,0.5)',
+              }}
+            >
+              <LazyImage
+                src={features[activeIndex].img}
+                alt={features[activeIndex].title}
+                sx={{ width: '100%', height: 'auto', display: 'block' }}
+              />
+            </Box>
+          </Modal>
+        </Container>
+      </Box>
+    </>
   );
 };
 
