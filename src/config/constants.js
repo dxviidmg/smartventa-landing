@@ -8,6 +8,9 @@ export const CONFIG = {
     name: 'SmartVenta',
   },
   urls: {
-    app: import.meta.env.VITE_APP_URL || 'https://app-smartventa.vercel.app',
+    app: import.meta.env.VITE_APP_URL,
+  },
+  gtm: {
+    id: import.meta.env.VITE_GTM_ID,
   },
 };
