@@ -52,12 +52,6 @@ const Footer = () => (
                 >
                   WhatsApp: {CONFIG.contact.phone}
                 </Link>
-                <Link
-                  href="mailto:contacto@smartventa.com"
-                  sx={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', '&:hover': { color: 'white' } }}
-                >
-                  contacto@smartventa.com
-                </Link>
               </Stack>
             </Stack>
           </Stack>
