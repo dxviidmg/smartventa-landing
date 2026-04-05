@@ -95,7 +95,7 @@ const Hero = () => {
 
             <motion.div {...hero.badges}>
               <Stack direction="row" spacing={4} sx={{ mt: 4, opacity: 0.5 }} alignItems="center" justifyContent="center" flexWrap="wrap">
-                {['Sin instalación', 'Sin contratos', 'Soporte incluido'].map((t) => (
+                {['Facil de usar', 'Soporte incluido'].map((t) => (
                   <Typography key={t} variant="caption" sx={{ color: 'white', fontSize: '0.8rem', letterSpacing: 1 }}>
                     ✓ {t}
                   </Typography>
