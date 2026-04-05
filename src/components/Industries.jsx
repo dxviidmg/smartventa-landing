@@ -18,7 +18,7 @@ const industries = [
 ];
 
 const Industries = () => (
-  <>
+  <div id="industries">
     <SEO
       title="Para qué sirve SmartVenta"
       description="El sistema que unifica tus tiendas y almacenes en un solo lugar. Ideal para tu negocio."
@@ -83,7 +83,7 @@ const Industries = () => (
         </Grid>
       </Container>
     </Box>
-  </>
+  </div>
 );
 
 export default Industries;

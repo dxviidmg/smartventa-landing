@@ -31,12 +31,12 @@ const features = [
 ];
 
 const Features = () => (
-  <>
+  <div id="features">
     <SEO
       title="Características del Sistema"
       description="Todo lo que necesitas para controlar mejor tu negocio. Centraliza tu información y toma decisiones informadas."
     />
-    <Box id="features" sx={{ py: { xs: 8, md: 12 }, bgcolor: '#CAD2DE' }}>
+    <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: '#CAD2DE' }}>
       <Container maxWidth="lg">
         <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 8 }}>
           <motion.div {...sectionHeader.overline}>
@@ -98,7 +98,7 @@ const Features = () => (
         </Grid>
       </Container>
     </Box>
-  </>
+  </div>
 );
 
 export default Features;

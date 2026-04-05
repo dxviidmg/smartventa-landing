@@ -9,9 +9,12 @@ import { CONFIG } from '../config/constants';
 import SEO from '../components/SEO';
 
 const NAV_ITEMS = [
-  { label: 'Características', id: 'features' },
+  { label: 'Industrias', id: 'industries' },
   { label: 'Beneficios', id: 'benefits' },
+  { label: 'Características', id: 'features' },
+  { label: 'Cómo funciona', id: 'how-it-works' },
   { label: 'Precios', id: 'pricing' },
+  { label: 'FAQ', id: 'faq' },
 ];
 
 const Navbar = () => {
