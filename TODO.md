@@ -4,7 +4,6 @@
 
 ### 1. Google Analytics
 - [ ] Crear cuenta en https://analytics.google.com/
-- [ ] Obtener ID de medición (G-XXXXXXXXXX)
 - [ ] Reemplazar en `/index.html` (líneas 9 y 13)
 - [ ] Reemplazar en `/src/analytics.js` (línea 4)
 

@@ -59,20 +59,6 @@ npm run build
 
 ### Variables de entorno
 
-Crea un archivo `.env` basado en `.env.template` y actualiza los valores:
-
-```env
-VITE_WHATSAPP_PHONE=001234567890
-VITE_WHATSAPP_PHONE_FORMATTED=+00 12 3456 7890
-VITE_GA_TRACKING_ID=G-XXXXXXXXXX
-VITE_APP_URL=https://app-smartventa.vercel.app
-```
-
-### Google Analytics
-
-1. Crea una cuenta en [Google Analytics](https://analytics.google.com/)
-2. Obtén tu ID de medición (formato: `G-XXXXXXXXXX`)
-3. Reemplaza `G-XXXXXXXXXX` en `.env`
 
 ### Imagen Open Graph
 
