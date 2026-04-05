@@ -21,7 +21,7 @@ const Contact = () => (
 
     <Container maxWidth="md" sx={{ position: 'relative', zIndex: 1 }}>
       <Stack spacing={4} alignItems="center" textAlign="center">
-        <motion.div {...sectionHeader.title}>
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
           <Typography variant="h2" sx={{ color: 'white', fontSize: { xs: '2rem', md: '3rem' }, maxWidth: 600 }}>
             ¿Listo para retomar el{' '}
             <Box component="span" sx={{
@@ -33,13 +33,13 @@ const Contact = () => (
           </Typography>
         </motion.div>
 
-        <motion.div {...sectionHeader.subtitle}>
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}>
           <Typography sx={{ color: 'rgba(255,255,255,0.6)', fontSize: '1.1rem', maxWidth: 480 }}>
-            Únete a cientos de negocios que ya optimizan sus operaciones diarias con SmartVenta.
+            Únete a cientos de negocios que ya optimizan sus operaciones diarias con SmartVenta. Solicita tu cuenta demo HOY.
           </Typography>
         </motion.div>
 
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }}>
           <Button
             variant="contained"
             size="large"
@@ -52,7 +52,7 @@ const Contact = () => (
               boxShadow: '0 4px 24px rgba(16,185,129,0.35)',
             }}
           >
-            Contactanos
+            Solicita tu Demo Gratis
           </Button>
         </motion.div>
       </Stack>

@@ -14,20 +14,24 @@ import {
   SportsSoccer,
   Diamond,
   Warehouse,
-  ShoppingCart
+  ShoppingCart,
+  Restaurant,
+  Coffee,
+  LocalMall,
+  Business
 } from '@mui/icons-material';
 import { sectionHeader, cardGridItem } from '../utils/animations';
 
 const businessTypes = [
-  { icon: <ShoppingCart />, title: 'Tiendas retail', desc: 'Negocios de venta al público que necesitan un punto de venta ágil y control de inventario.' },
-  { icon: <Store />, title: 'Negocios multi-sucursal', desc: 'Cadenas de tiendas que requieren visibilidad y coordinación entre todas sus ubicaciones.' },
-  { icon: <Warehouse />, title: 'Operaciones con almacén', desc: 'Negocios que distribuyen productos desde almacenes centrales a sus puntos de venta.' },
+  { icon: <ShoppingCart />, title: 'Retail y Tiendas', desc: 'Negocios de venta al público que necesitan un punto de venta ágil y control de inventario en tiempo real.' },
+  { icon: <Store />, title: 'Negocios Multi-tienda', desc: 'Cadenas de tiendas que requieren visibilidad y coordinación entre todas sus ubicaciones desde un panel central.' },
+  { icon: <Warehouse />, title: 'Operaciones con Almacén', desc: 'Negocios que distribuyen productos desde almacenes centrales a sus puntos de venta con trazabilidad.' },
 ];
 
 const industries = [
-  { icon: <Store />, name: 'Abarrotes', desc: 'Control de productos de consumo diario' },
+  { icon: <ShoppingCart />, name: 'Abarrotes', desc: 'Control de productos de consumo diario' },
   { icon: <Build />, name: 'Ferreterías', desc: 'Inventario de herramientas y materiales' },
-  { icon: <Store />, name: 'Mini Súpers', desc: 'Gestión de inventario diversificado' },
+  { icon: <LocalMall />, name: 'Mini Súpers', desc: 'Gestión de inventario diversificado' },
   { icon: <ContentCut />, name: 'Papelerías', desc: 'Control de artículos de papelería' },
   { icon: <Spa />, name: 'Cosméticos', desc: 'Gestión de productos de belleza' },
   { icon: <PetsOutlined />, name: 'Mascotas', desc: 'Control de productos y accesorios' },
@@ -43,12 +47,12 @@ const Industries = () => (
       <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 8 }}>
         <motion.div {...sectionHeader.overline}>
           <Typography variant="overline" sx={{ color: 'secondary.main', fontWeight: 700, letterSpacing: 2 }}>
-            ¿Para quién es?
+            Para qué sirve
           </Typography>
         </motion.div>
         <motion.div {...sectionHeader.title}>
           <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' }, maxWidth: 650 }}>
-            Hecho para negocios como el tuyo
+            Solución integral para negocios en expansión
           </Typography>
         </motion.div>
       </Stack>
@@ -97,7 +101,7 @@ const Industries = () => (
       <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 6 }}>
         <motion.div {...sectionHeader.overline}>
           <Typography variant="h3" sx={{ fontSize: { xs: '1.5rem', md: '2rem' }, fontWeight: 700 }}>
-            Ideal para tu tipo de negocio
+            Ideal para tu negocio
           </Typography>
         </motion.div>
       </Stack>

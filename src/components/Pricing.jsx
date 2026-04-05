@@ -9,8 +9,8 @@ const plans = [
     name: 'Plan Emprendedor',
     price: '$500 MXN',
     period: '/mes',
-    desc: 'Ideal para 1 tienda que necesita poner orden.',
-    features: ['1 Sucursal incluida', 'Inventario básico'],
+    desc: 'Ideal para 1 tienda que necesita poner orden desde hoy.',
+    features: ['1 Sucursal incluida', 'Inventario básico', 'Corte de caja', 'Soporte vía WhatsApp'],
     cta: 'Comenzar',
     popular: false,
   },
@@ -18,12 +18,11 @@ const plans = [
     name: 'Plan Empresarial',
     price: '$2500 MXN',
     period: '/mes',
-    desc: 'Para negocios en expansión con múltiples locales.',
-    features: ['8 Sucursales (tiendas o almacenes)', 'Inventario avanzado', 'Soporte prioritario'],
+    desc: 'Para negocios en expansión con múltiples locales y almacenes.',
+    features: ['8 Sucursales (tiendas o almacenes)', 'Inventario avanzado', 'Traspasos entre tiendas', 'Auditoría integrada', 'Soporte prioritario'],
     cta: 'Comprar',
     popular: true,
   },
-
 ];
 
 const Pricing = () => (
@@ -37,19 +36,19 @@ const Pricing = () => (
         </motion.div>
         <motion.div {...sectionHeader.title}>
           <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' } }}>
-            Elige el plan perfecto
+            Elige el plan perfecto para tu negocio
           </Typography>
         </motion.div>
         <motion.div {...sectionHeader.subtitle}>
-          <Typography sx={{ color: 'text.secondary', maxWidth: 450 }}>
-            Elige el plan que mejor se adapte a tu etapa de crecimiento.
+          <Typography sx={{ color: 'text.secondary', maxWidth: 500 }}>
+            Elige el plan que mejor se adapte a tu etapa de crecimiento. Sin costos ocultos. Cancela cuando quieras.
           </Typography>
         </motion.div>
       </Stack>
 
       <Grid container spacing={3} justifyContent="center">
         {plans.map((plan, i) => (
-          <Grid size={{ xs: 12, sm: 6 }} key={i}>
+          <Grid size={{ xs: 12, sm: 6, md: 6 }} key={i}>
             <motion.div
               {...cardGridItem}
               transition={{ delay: i * 0.1 }}

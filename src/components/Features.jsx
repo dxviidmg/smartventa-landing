@@ -45,12 +45,12 @@ const Features = () => (
         </motion.div>
         <motion.div {...sectionHeader.title}>
           <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' }, maxWidth: 650 }}>
-            Todo lo que necesitas
+            Todo lo que necesitas para escalar
           </Typography>
         </motion.div>
         <motion.div {...sectionHeader.subtitle}>
           <Typography sx={{ color: 'text.secondary', maxWidth: 550, fontSize: '1.05rem' }}>
-            Diseñado específicamente para resolver el caos operativo. Centraliza tu información y toma decisiones informadas.
+            Centraliza tu información y toma decisiones informadas. Diseñado específicamente para resolver el caos operativo en negocios multi-tienda.
           </Typography>
         </motion.div>
       </Stack>

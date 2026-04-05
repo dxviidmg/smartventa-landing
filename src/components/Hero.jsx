@@ -34,9 +34,9 @@ const Hero = () => {
             <motion.div {...hero.title}>
               <Typography
                 variant="h1"
-                sx={{ fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4.5rem' }, color: 'white', maxWidth: '850px' }}
+                sx={{ fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4rem' }, color: 'white', maxWidth: '850px' }}
               >
-                El punto de venta{' '}
+                El punto de venta inteligente{' '}
                 <Box
                   component="span"
                   sx={{
@@ -45,7 +45,7 @@ const Hero = () => {
                     WebkitTextFillColor: 'transparent',
                   }}
                 >
-                  inteligente.
+                  para negocios multi-tienda.
                 </Box>
               </Typography>
             </motion.div>
@@ -75,7 +75,7 @@ const Hero = () => {
                     boxShadow: '0 4px 24px rgba(16,185,129,0.35)',
                   }}
                 >
-                  Empieza hoy gratis
+                  Solicita tu cuenta demo gratis
                 </Button>
                 <Button
                   size="large"
@@ -93,15 +93,7 @@ const Hero = () => {
               </Stack>
             </motion.div>
 
-            <motion.div {...hero.badges}>
-              <Stack direction="row" spacing={4} sx={{ mt: 4, opacity: 0.5 }} alignItems="center" justifyContent="center" flexWrap="wrap">
-                {['Facil de usar', 'Soporte incluido'].map((t) => (
-                  <Typography key={t} variant="caption" sx={{ color: 'white', fontSize: '0.8rem', letterSpacing: 1 }}>
-                    ✓ {t}
-                  </Typography>
-                ))}
-              </Stack>
-            </motion.div>
+
           </Stack>
         </Container>
       </Box>

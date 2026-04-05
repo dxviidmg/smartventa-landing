@@ -4,10 +4,10 @@ import { Settings, Storefront, PointOfSale, Insights } from '@mui/icons-material
 import { sectionHeader, stepItem } from '../utils/animations';
 
 const steps = [
-  { icon: <Settings />, num: '01', title: 'Configura tu catálogo', desc: 'Agrega tus productos con precios, categorías y códigos de barras. Importa todos tus productos desde Excel.' },
-  { icon: <Storefront />, num: '02', title: 'Distribuye a tus tiendas', desc: 'Asigna inventario a cada sucursal y almacén. Realiza transferencias entre ubicaciones fácilmente.' },
-  { icon: <PointOfSale />, num: '03', title: 'Vende con agilidad', desc: 'Procesa ventas rápidamente con el punto de venta. El inventario se actualiza al instante.' },
-  { icon: <Insights />, num: '04', title: 'Analiza y optimiza', desc: 'Revisa reportes y métricas para tomar decisiones informadas y hacer crecer tu negocio.' },
+  { icon: <Settings />, num: '01', title: 'Configura tu catálogo', desc: 'Agrega tus productos con precios, categorías y códigos de barras. Importa todos tus productos desde Excel en minutos.' },
+  { icon: <Storefront />, num: '02', title: 'Distribuye a tus tiendas', desc: 'Asigna inventario a cada sucursal y almacén. Realiza transferencias entre ubicaciones fácilmente con trazabilidad.' },
+  { icon: <PointOfSale />, num: '03', title: 'Vende con agilidad', desc: 'Procesa ventas rápidamente con el punto de venta. El inventario se actualiza al instante en todas las tiendas.' },
+  { icon: <Insights />, num: '04', title: 'Analiza y optimiza', desc: 'Revisa reportes, métricas y KPIs en tiempo real para tomar decisiones informadas y hacer crecer tu negocio.' },
 ];
 
 const HowItWorks = () => (
@@ -22,7 +22,7 @@ const HowItWorks = () => (
           </motion.div>
           <motion.div {...sectionHeader.title}>
             <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' }, color: 'white', fontWeight: 800 }}>
-              Cuatro pasos para empezar
+              Cómo Empiezas en 4 Pasos
             </Typography>
           </motion.div>
         </Stack>

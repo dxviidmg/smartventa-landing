@@ -5,8 +5,8 @@ import { sectionHeader, cardGridItem } from '../utils/animations';
 
 const benefits = [
   {
-    icon: <Store />, title: 'Multi-sucursal instantáneo',
-    desc: 'Administra todas tus tiendas desde un solo panel.',
+    icon: <Store />, title: 'Multi-tienda instantáneo',
+    desc: 'Administra todas tus tiendas desde un solo panel en tiempo real.',
     metric: '∞', metricLabel: 'control total',
   },
   {
@@ -16,12 +16,12 @@ const benefits = [
   },
   {
     icon: <CheckCircle />, title: 'Caja sin sorpresas',
-    desc: 'Detecta inconsistencias para que tu cuadre siempre cierre bien.',
+    desc: 'Detecta inconsistencias automáticamente para que tu cuadre siempre cierre bien.',
     metric: '0', metricLabel: 'misterios',
   },
   {
     icon: <TrendingUp />, title: 'Ventas en tiempo real',
-    desc: 'Mira tus ingresos mientras ocurren. Sin esperar reportes de cierre.',
+    desc: 'Mira tus ingresos mientras ocurren. Sin esperar reportes de cierre o consolidados.',
     metric: '0', metricLabel: 'retraso en datos',
   },
 ];
@@ -32,7 +32,7 @@ const Benefits = () => (
       <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 8 }}>
         <motion.div {...sectionHeader.overline}>
           <Typography variant="overline" sx={{ color: '#34d399', fontWeight: 700, letterSpacing: 2, fontSize: '0.75rem' }}>
-            Beneficios
+            Lo que Ganarás
           </Typography>
         </motion.div>
         <motion.div {...sectionHeader.title}>
@@ -42,7 +42,7 @@ const Benefits = () => (
         </motion.div>
         <motion.div {...sectionHeader.subtitle}>
           <Typography variant="body1" sx={{ color: 'rgba(255,255,255,0.7)', maxWidth: 500, fontSize: '1.1rem', fontWeight: 500 }}>
-            Comienza a ver resultados inmediatos. Sin complicaciones, sin espera.
+            Comienza a ver resultados inmediatos. Sin complicaciones, sin espera. Reducción de errores, ahorro de tiempo y visibilidad total.
           </Typography>
         </motion.div>
       </Stack>
