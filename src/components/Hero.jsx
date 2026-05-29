@@ -129,7 +129,7 @@ const Hero = () => {
                   fontSize: { xs: '1.05rem', md: '1.25rem' }, fontWeight: 400, lineHeight: 1.6,
                 }}
               >
-                Gestiona inventario, ventas y operaciones de todas tus sucursales y almacenes en tiempo real. Sin instalación, desde cualquier dispositivo.
+                Gestiona inventario, ventas, traspasos y operaciones de todas tus tiendas y almacenes en tiempo real.
               </Typography>
             </motion.div>
 

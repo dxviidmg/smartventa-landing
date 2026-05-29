@@ -162,77 +162,92 @@ Dueños de negocios retail con 2 o más sucursales:
 
 ### 💰 Punto de Venta Rápido y Versátil
 - Búsqueda instantánea por código de barras o nombre de producto
+- Crear producto desde búsqueda — Si no se encuentra, puedes crearlo directamente con stock inicial
 - Múltiples carritos simultáneos
-- Precios dinámicos (unitario y mayoreo)
-- Atajos de teclado
-- Impresión de tickets
+- Precios dinámicos (unitario y mayoreo automático según cantidad)
+- Una pantalla para todo — Ventas, traspasos y distribuciones desde la misma interfaz
+- Atajos de teclado — Ctrl+Q/W para buscar, Ctrl+E/R/T/Y/U para tipo de operación, Ctrl+B para enfocar búsqueda
+- Impresión de tickets compatible con impresoras térmicas estándar
 
 ### 🏪 Control Total de Todas tus Tiendas
 - Panel centralizado
-- Cambio instantáneo entre tiendas
-- Indicador de catálogo
+- Cambio instantáneo entre tiendas sin cerrar sesión
+- Indicador de catálogo — Sabes qué tiendas tienen el catálogo completo
 
 ### 📦 Inventario en Tiempo Real
-- Stock unificado
-- Reservas inteligentes
-- Historial completo
+- Stock unificado en todas las tiendas
+- Reservas inteligentes entre carritos para evitar ventas duplicadas
+- Historial de stock (ventas, traspasos, ajustes)
+- Revisión de Stock — Modal para consultar stock en otras tiendas y agregar stock directamente
+- Agregar stock durante la venta — Acceso rápido para aumentar inventario
 
 ### 🚚 Traslados Entre Tiendas
-- Traspasos con trazabilidad
-- Distribuciones desde almacén
-- Confirmación obligatoria
+- Traspasos con trazabilidad completa
+- Distribuciones desde almacén a múltiples tiendas en una sola operación
+- Confirmación obligatoria por cada tienda receptora
+- Dashboard de pendientes separados por hoy y anteriores
+- Filtros por estado (pendientes o aplicados) con actualización automática
 
 ### 👥 Gestión de Clientes
-- Registro completo
-- Descuentos personalizados
-- Historial de compras
+- Registro completo con historial de compras
+- Descuentos personalizados por porcentaje
+- Historial de compras por cliente
 
 ### 📊 Corte de Caja Inteligente
-- Resumen diario por método de pago
-- Movimientos detallados
+- Resumen diario por método de pago (efectivo, tarjeta, transferencia)
+- Movimientos detallados (entradas y salidas de dinero)
 - Exportación a Excel
 - Corte parcial y total
 
 ### 🔄 Devoluciones y Cancelaciones
-- Cancelación total
+- Cancelación total con motivo registrado
 - Devolución parcial
 - Motivos documentados
 - Filtros rápidos
 
 ### 📈 Tableros de Análisis y Métricas
-- Tablero de ventas (KPIs)
+- Tablero de ventas (KPIs: mejor/peor tienda, mejor/peor día, hora pico, ticket promedio)
 - Heatmap de ventas
 - Análisis de cancelaciones
 - Top de marcas y productos
-- Gráficas de tendencia
+- Gráficas de tendencia (día, semana, mes)
 
 ### 🔍 Auditoría Integrada
-- Detección automática de problemas
-- Filtros rápidos
-- Acceso configurable
+- Detección automática de problemas:
+  - Ventas duplicadas
+  - Códigos de producto repetidos
+  - Productos sin precio de mayoreo
+  - Stock faltante en tiendas
+  - Productos sin movimiento
+  - Inconsistencias en registros
+- Auditoría de inventario dinámica — Modal interactivo para confirmar o modificar stock
+- Acceso configurable por horario
 
 ### 📋 Gestión de Productos
-- Importación masiva
+- Importación masiva desde Excel
 - Plantillas descargables
-- Validación previa
+- Validación previa antes de importar
 - Historial de precios
 - Imágenes de productos
 
 ### 🔐 Roles y Permisos
-- Tres niveles de acceso (Dueño, Administrador, Vendedor)
-- Vistas personalizadas
+- Tres niveles de acceso:
+  - **Dueño** — Acceso total a todo el sistema
+  - **Administrador** — Gestión de tienda con algunas restricciones
+  - **Vendedor** — Solo ventas y operaciones básicas
+- Vistas personalizadas por rol
 
 ### 🌙 Interfaz Adaptable
 - Modo oscuro/claro
 - Diseño intuitivo
 
 ### 📞 Soporte Integrado
-- WhatsApp directo
-- Ayuda contextual
+- WhatsApp directo con información de tienda prellenada
+- Ayuda contextual en cada página
 
 ### ⏰ Funcionalidades Operativas
-- Solicitudes de ajuste
-- Notificaciones en tiempo real
+- Solicitudes de ajuste — Vendedores piden cambios de stock; el dueño aprueba o rechaza
+- Notificaciones en tiempo real sobre traspasos, distribuciones y solicitudes
 - Indicador de ventas duplicadas
 
 ---

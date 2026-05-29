@@ -1,13 +1,15 @@
 import { Box, Container, Typography, Grid, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
 import {
-  LocalGroceryStore, Build, Store, AutoStories, Spa, PetsOutlined, SportsSoccer, Business
+  LocalGroceryStore, Build, Store, AutoStories, Spa, PetsOutlined, SportsSoccer, Business, Checkroom, LocalPharmacy
 } from '@mui/icons-material';
 import { sectionHeader } from '../constants';
 import SEO from '../components/SEO';
 
 const industries = [
+  { icon: <Checkroom />, title: 'Ropa' },
   { icon: <LocalGroceryStore />, title: 'Abarrotes' },
+  { icon: <LocalPharmacy />, title: 'Farmacias' },
   { icon: <Build />, title: 'Ferreterías' },
   { icon: <Store />, title: 'Mini Súpers' },
   { icon: <AutoStories />, title: 'Papelerías' },

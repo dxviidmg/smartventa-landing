@@ -5,14 +5,16 @@ import { sectionHeader, faqItem } from '../constants';
 import SEO from '../components/SEO';
 
 const faqs = [
-  { q: '¿Necesito instalar algo?', a: 'No. SmartVenta funciona en la nube. Solo necesitas internet y un navegador.' },
-  { q: '¿Puedo manejar varias sucursales?', a: 'Sí. Puedes administrar múltiples tiendas y almacenes desde una sola cuenta.' },
+  { q: '¿Necesito instalar algo?', a: 'No. SmartVenta funciona en la nube. Solo necesitas internet y un navegador. Funciona en cualquier dispositivo.' },
+  { q: '¿Puedo manejar varias sucursales?', a: 'Sí. Puedes administrar múltiples tiendas y almacenes desde una sola cuenta con cambio instantáneo entre ellas.' },
   { q: '¿Tiene costo mensual?', a: 'Sí. El costo es desde $500 MXN por sucursal al mes, sin contratos.' },
   { q: '¿Puedo acceder desde mi celular?', a: 'Sí. SmartVenta es totalmente responsive y funciona en cualquier dispositivo con navegador.' },
-  { q: '¿Cómo funciona el soporte?', a: 'Tienes soporte directo por WhatsApp y ayuda contextual dentro del sistema.' },
-  { q: '¿Puedo importar mis productos?', a: 'Sí. Puedes importar masivamente desde Excel con plantillas descargables.' },
-  { q: '¿Tiene reportes y estadísticas?', a: 'Sí. Incluye tableros de KPIs, heatmaps, análisis de ventas y más.' },
-  { q: '¿Puedo dar descuentos?', a: 'Sí. Puedes configurar descuentos personalizados por cliente o por producto.' },
+  { q: '¿Cómo funciona el soporte?', a: 'Tienes soporte directo por WhatsApp con información prellenada de tu tienda, y ayuda contextual dentro de cada página del sistema.' },
+  { q: '¿Puedo importar mis productos?', a: 'Sí. Puedes importar masivamente desde Excel con plantillas descargables. El sistema valida errores antes de importar.' },
+  { q: '¿Tiene reportes y estadísticas?', a: 'Sí. Incluye tableros de KPIs, heatmaps de ventas, análisis de cancelaciones, top de marcas/productos y gráficas de tendencia.' },
+  { q: '¿Cómo se manejan los traspasos entre tiendas?', a: 'Puedes hacer traspasos individuales o distribuciones masivas desde almacén. Cada tienda confirma lo que recibe y todo queda con trazabilidad completa.' },
+  { q: '¿Qué pasa si un producto no existe al vender?', a: 'Puedes crearlo directamente desde la búsqueda del punto de venta con stock inicial, sin salir de la pantalla.' },
+  { q: '¿Cómo controlo el acceso de mis empleados?', a: 'Hay tres niveles: Dueño (acceso total), Administrador (gestión de tienda) y Vendedor (solo ventas). Cada rol ve solo lo que necesita.' },
 ];
 
 const FAQ = () => (

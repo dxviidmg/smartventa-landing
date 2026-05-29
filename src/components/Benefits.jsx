@@ -1,29 +1,30 @@
 import { Box, Container, Typography, Grid, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
-import { Speed, CheckCircle, TrendingUp, Store } from '@mui/icons-material';
+import { Speed, CheckCircle, TrendingUp, Store, Notifications } from '@mui/icons-material';
 import { sectionHeader, cardGridItem } from '../constants';
 import SEO from '../components/SEO';
 
 const benefits = [
   {
     icon: <Store />, title: 'Multi-tienda instantáneo',
-    desc: 'Administra todas tus tiendas desde un solo panel en tiempo real.',
+    desc: 'Administra todas tus tiendas y almacenes desde un solo panel. Como dueño del negocio, cambia entre sucursales sin cerrar sesión.',
     metric: '∞', metricLabel: 'control total',
   },
   {
     icon: <Speed />, title: 'Empieza a usar hoy',
-    desc: 'Tu equipo aprende rápido con nuestra interfaz intuitiva.',
+    desc: 'Interfaz intuitiva con ayuda contextual en cada página. Tu equipo aprende rápido.',
     metric: '1', metricLabel: 'día para dominar',
   },
-  {
-    icon: <CheckCircle />, title: 'Caja sin sorpresas',
-    desc: 'Detecta inconsistencias automáticamente para que tu cuadre siempre cierre bien.',
-    metric: '0', metricLabel: 'misterios',
-  },
+
   {
     icon: <TrendingUp />, title: 'Ventas en tiempo real',
-    desc: 'Mira tus ingresos mientras ocurren. Sin esperar reportes de cierre o consolidados.',
+    desc: 'KPIs, heatmaps y gráficas de tendencia actualizados al instante. Sin esperar reportes de cierre.',
     metric: '0', metricLabel: 'retraso en datos',
+  },
+  {
+    icon: <Notifications />, title: 'Nada se te escapa',
+    desc: 'Notificaciones en tiempo real sobre traspasos, distribuciones y solicitudes de ajuste.',
+    metric: '24/7', metricLabel: 'alertas activas',
   },
 ];
 

@@ -5,10 +5,10 @@ import { sectionHeader, stepItem } from '../constants';
 import SEO from '../components/SEO';
 
 const steps = [
-  { icon: <Settings />, num: '01', title: 'Configura tu catálogo', desc: 'Agrega tus productos con precios, categorías y códigos de barras. Importa todos tus productos desde Excel en minutos.' },
-  { icon: <Storefront />, num: '02', title: 'Distribuye a tus tiendas', desc: 'Asigna inventario a cada sucursal y almacén. Realiza transferencias entre ubicaciones fácilmente con trazabilidad.' },
-  { icon: <PointOfSale />, num: '03', title: 'Vende con agilidad', desc: 'Procesa ventas rápidamente con el punto de venta. El inventario se actualiza al instante en todas las tiendas.' },
-  { icon: <Insights />, num: '04', title: 'Analiza y optimiza', desc: 'Revisa reportes, métricas y KPIs en tiempo real para tomar decisiones informadas y hacer crecer tu negocio.' },
+  { icon: <Settings />, num: '01', title: 'Configura tu catálogo', desc: 'Agrega tus productos con precios, categorías y códigos de barras. Importa miles de productos desde Excel en minutos con validación previa.' },
+  { icon: <Storefront />, num: '02', title: 'Distribuye a tus tiendas', desc: 'Asigna inventario a cada sucursal y almacén. Realiza distribuciones masivas o traspasos individuales con trazabilidad completa.' },
+  { icon: <PointOfSale />, num: '03', title: 'Vende con agilidad', desc: 'Procesa ventas con múltiples carritos simultáneos, atajos de teclado y precios de mayoreo automáticos. El inventario se actualiza al instante.' },
+  { icon: <Insights />, num: '04', title: 'Analiza y optimiza', desc: 'Revisa KPIs, heatmaps de ventas, top de productos y auditoría automática para tomar decisiones informadas.' },
 ];
 
 const HowItWorks = () => (
