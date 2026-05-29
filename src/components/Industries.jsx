@@ -35,15 +35,7 @@ const Industries = () => (
           </motion.div>
           <motion.div {...sectionHeader.title}>
             <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' }, maxWidth: 650 }}>
-              El sistema que unifica tus tiendas y almacenes en un solo lugar
-            </Typography>
-          </motion.div>
-        </Stack>
-
-        <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 6 }}>
-          <motion.div {...sectionHeader.overline}>
-            <Typography variant="h3" sx={{ fontSize: { xs: '1.5rem', md: '2rem' }, fontWeight: 700 }}>
-              Ideal para tu negocio
+            Ideal para tu negocio
             </Typography>
           </motion.div>
         </Stack>

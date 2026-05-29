@@ -81,7 +81,7 @@ const Hero = () => {
               <Typography
                 variant="h1"
                 sx={{
-                  fontSize: { xs: '2.8rem', sm: '3.5rem', md: '4.2rem' },
+                  fontSize: { xs: '2.4rem', sm: '3rem', md: '3.8rem' },
                   color: 'white', lineHeight: 1.1, maxWidth: '900px', letterSpacing: '-0.02em',
                 }}
               >
@@ -91,19 +91,13 @@ const Hero = () => {
                   transition={{ duration: 0.5, delay: 0.3 }}
                   style={{ display: 'inline-block' }}
                 >
-                  Controla todas tus tiendas
+                  Controla todas tus tiendas y almacenes
                 </motion.span>{' '}
                 <motion.span
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: 0.6 }}
-                  style={{
-                    display: 'inline-block',
-                    background: 'linear-gradient(90deg, #34d399, #10b981, #6ee7b7, #34d399)',
-                    backgroundSize: '200% 200%',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                  }}
+                  style={{ display: 'inline-block' }}
                 >
                   <motion.span
                     animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
@@ -129,7 +123,7 @@ const Hero = () => {
                   fontSize: { xs: '1.05rem', md: '1.25rem' }, fontWeight: 400, lineHeight: 1.6,
                 }}
               >
-                Gestiona inventario, ventas, traspasos y operaciones de todas tus tiendas y almacenes en tiempo real.
+                Gestiona ventas e inventario en tiempo real. Sin instalación, desde cualquier dispositivo.
               </Typography>
             </motion.div>
 

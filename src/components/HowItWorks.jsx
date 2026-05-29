@@ -5,10 +5,10 @@ import { sectionHeader, stepItem } from '../constants';
 import SEO from '../components/SEO';
 
 const steps = [
-  { icon: <Settings />, num: '01', title: 'Configura tu catálogo', desc: 'Agrega tus productos con precios, categorías y códigos de barras. Importa miles de productos desde Excel en minutos con validación previa.' },
-  { icon: <Storefront />, num: '02', title: 'Distribuye a tus tiendas', desc: 'Asigna inventario a cada sucursal y almacén. Realiza distribuciones masivas o traspasos individuales con trazabilidad completa.' },
-  { icon: <PointOfSale />, num: '03', title: 'Vende con agilidad', desc: 'Procesa ventas con múltiples carritos simultáneos, atajos de teclado y precios de mayoreo automáticos. El inventario se actualiza al instante.' },
-  { icon: <Insights />, num: '04', title: 'Analiza y optimiza', desc: 'Revisa KPIs, heatmaps de ventas, top de productos y auditoría automática para tomar decisiones informadas.' },
+  { icon: <Settings />, num: '01', title: 'Configura tu catálogo', desc: 'Sube tus productos desde Excel o agrégalos uno a uno. ¿No tienes catálogo? No importa, puedes crear productos sobre la marcha mientras vendes.' },
+  { icon: <Storefront />, num: '02', title: 'Actualiza stock en tus tiendas', desc: 'Decide qué productos van a cada sucursal o da de alta stock manualmente en cada sucursal. Tú controlas quién tiene qué.' },
+  { icon: <PointOfSale />, num: '03', title: 'Vende con agilidad', desc: 'Tu equipo atiende clientes sin fricciones. Tú ves las ventas de todas tus tiendas mientras ocurren.' },
+  { icon: <Insights />, num: '04', title: 'Analiza y optimiza', desc: 'Sabes cuánto dinero hay en cada tienda, qué movimientos hubo, cuánto tienes en caja y en tu cuenta bancaria. Vive más tranquilo, decide con datos.' },
 ];
 
 const HowItWorks = () => (

@@ -6,15 +6,12 @@ import SEO from '../components/SEO';
 
 const faqs = [
   { q: '¿Necesito instalar algo?', a: 'No. SmartVenta funciona en la nube. Solo necesitas internet y un navegador.' },
-  { q: '¿Puedo manejar varias sucursales?', a: 'Sí. Puedes administrar múltiples tiendas y almacenes desde una sola cuenta con cambio instantáneo entre ellas.' },
-  { q: '¿Tiene costo mensual?', a: 'Sí. El costo es desde $500 MXN por sucursal al mes, sin contratos.' },
-  { q: '¿Puedo acceder desde mi celular?', a: 'Sí. Es totalmente responsive y funciona en computadora, tablet o celular.' },
+  { q: '¿Hay contrato o permanencia?', a: 'No. Pagas mes a mes y puedes cancelar cuando quieras. Sin letras chiquitas.' },
+  { q: '¿Puedo acceder desde mi celular?', a: 'Sí, puedes consultar información desde cualquier dispositivo. Para la operación diaria (ventas, traspasos) se recomienda una computadora con conexión por cable para mayor estabilidad.' },
   { q: '¿Cómo funciona el soporte?', a: 'Tienes soporte directo por WhatsApp con información prellenada de tu tienda, y ayuda contextual dentro de cada página del sistema.' },
-  { q: '¿Puedo importar mis productos?', a: 'Sí. Puedes importar masivamente desde Excel con plantillas descargables. El sistema valida errores antes de importar.' },
-  { q: '¿Tiene reportes y estadísticas?', a: 'Sí. Incluye tableros de KPIs, heatmaps de ventas, análisis de cancelaciones, top de marcas/productos y gráficas de tendencia.' },
-  { q: '¿Cómo se manejan los traspasos entre tiendas?', a: 'Puedes hacer traspasos individuales o distribuciones masivas desde almacén. Cada tienda confirma lo que recibe y todo queda con trazabilidad completa.' },
-  { q: '¿Qué pasa si un producto no existe al vender?', a: 'Puedes crearlo directamente desde la búsqueda del punto de venta con stock inicial, sin salir de la pantalla.' },
-  { q: '¿Cómo controlo el acceso de mis empleados?', a: 'Hay tres niveles: Dueño (acceso total), Administrador (gestión de tienda) y Vendedor (solo ventas). Cada rol ve solo lo que necesita.' },
+  { q: '¿Puedo probarlo antes de pagar?', a: 'Sí. Solicita una demo y te damos acceso a una cuenta de prueba para que explores el sistema sin compromiso.' },
+  { q: '¿Funciona con mi impresora o lector de códigos?', a: 'Sí. Es compatible con impresoras térmicas estándar y lectores de código de barras USB o Bluetooth.' },
+  { q: '¿Qué pasa si se va el internet?', a: 'Al ser un sistema en la nube, necesitas conexión para operar. Pero cualquier conexión estable (incluso datos móviles) es suficiente.' },
 ];
 
 const FAQ = () => (

@@ -1,30 +1,29 @@
 import { Box, Container, Typography, Grid, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
-import { Speed, CheckCircle, TrendingUp, Store, Notifications } from '@mui/icons-material';
+import { Speed, CheckCircle, TrendingUp, Store } from '@mui/icons-material';
 import { sectionHeader, cardGridItem } from '../constants';
 import SEO from '../components/SEO';
 
 const benefits = [
   {
-    icon: <Store />, title: 'Multi-tienda instantáneo',
-    desc: 'Administra todas tus tiendas y almacenes desde un solo panel. Como dueño del negocio, cambia entre sucursales sin cerrar sesión.',
-    metric: '∞', metricLabel: 'control total',
+    icon: <Store />, title: 'Visibilidad total',
+    desc: 'Consulta ventas, inventario y operaciones de todas tus sucursales en tiempo real desde un solo panel.',
+    metric: '100%', metricLabel: 'visibilidad',
   },
   {
-    icon: <Speed />, title: 'Empieza a usar hoy',
-    desc: 'Interfaz intuitiva con ayuda contextual en cada página. Tu equipo aprende rápido.',
+    icon: <CheckCircle />, title: 'Caja siempre cuadrada',
+    desc: 'Corte de caja con resumen por método de pago y movimientos detallados.',
+    metric: '0', metricLabel: 'descuadres',
+  },
+  {
+    icon: <Speed />, title: 'Operación ágil',
+    desc: 'Traspasos, distribuciones e inventario actualizados al instante. Sin llamadas ni hojas de cálculo.',
+    metric: '0', metricLabel: 'retrasos',
+  },
+  {
+    icon: <TrendingUp />, title: 'Fácil de usar',
+    desc: 'Interfaz intuitiva con ayuda contextual. Tu equipo vende desde el primer día sin capacitación larga.',
     metric: '1', metricLabel: 'día para dominar',
-  },
-
-  {
-    icon: <TrendingUp />, title: 'Ventas en tiempo real',
-    desc: 'KPIs, heatmaps y gráficas de tendencia actualizados al instante. Sin esperar reportes de cierre.',
-    metric: '0', metricLabel: 'retraso en datos',
-  },
-  {
-    icon: <Notifications />, title: 'Nada se te escapa',
-    desc: 'Notificaciones en tiempo real sobre traspasos, distribuciones y solicitudes de ajuste.',
-    metric: '24/7', metricLabel: 'alertas activas',
   },
 ];
 

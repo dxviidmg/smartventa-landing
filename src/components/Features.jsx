@@ -1,29 +1,26 @@
 import { Box, Container, Typography, Grid, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
 import {
-  PointOfSale, Assessment, People, SwapHoriz, Warehouse, Image, AttachMoney, Keyboard, QrCodeScanner, History, TableChart, Security, Print, Payment, AccountBalance, Support
+  PointOfSale, Assessment, People, SwapHoriz, Image, AttachMoney, Keyboard, QrCodeScanner, History, TableChart, Security, Print, AccountBalance, Support
 } from '@mui/icons-material';
 import { sectionHeader, cardGridItem } from '../constants';
 import SEO from '../components/SEO';
 
 const features = [
-  { icon: <Warehouse />, title: 'Tiendas y Almacenes', desc: 'Gestiona múltiples tiendas y almacenes desde un solo lugar con cambio instantáneo entre sucursales.', color: '#6366f1' },
-  { icon: <Assessment />, title: 'Dashboard', desc: 'KPIs clave, heatmap de ventas, ticket promedio, mejor/peor tienda y gráficas de tendencia.', color: '#8b5cf6' },
-  { icon: <PointOfSale />, title: 'Una Pantalla para Todo', desc: 'Ventas, traspasos y distribuciones desde la misma interfaz con múltiples carritos simultáneos.', color: '#d946ef' },
-  { icon: <Payment />, title: 'Pagos Mixtos', desc: 'Efectivo, transferencia y tarjeta en una misma venta.', color: '#f97316' },
-  { icon: <Keyboard />, title: 'Atajos de Teclado', desc: 'Ctrl+Q/W para buscar, Ctrl+E/R/T/Y/U para tipo de operación, Ctrl+B para enfocar búsqueda.', color: '#84cc16' },
-  { icon: <QrCodeScanner />, title: 'Lector de Códigos', desc: 'Búsqueda instantánea por código de barras o nombre. Crea productos al vuelo si no existen.', color: '#22c55e' },
-  { icon: <Print />, title: 'Impresión de Tickets', desc: 'Compatible con impresoras térmicas estándar.', color: '#6366f1' },
-  { icon: <Image />, title: 'Catálogo de Productos', desc: 'Imágenes, costos, márgenes, historial de precios. Organiza por marca y departamento.', color: '#f97316' },
+  { icon: <PointOfSale />, title: 'Multiventa', desc: 'Atiende a varios clientes a la vez. Mientras uno paga o revisa su cambio, avanzas con el siguiente sin perder ninguna venta.', color: '#10b981' },
   { icon: <History />, title: 'Inventario en Tiempo Real', desc: 'Stock unificado en todas las tiendas, reservas inteligentes y revisión de stock entre sucursales.', color: '#14b8a6' },
-  { icon: <SwapHoriz />, title: 'Traspasos y Distribución', desc: 'Traspasos con trazabilidad, distribuciones desde almacén y dashboard de pendientes por día.', color: '#8b5cf6' },
-  { icon: <People />, title: 'Clientes y Descuentos', desc: 'Registro completo, historial de compras y descuentos personalizados por porcentaje.', color: '#a855f7' },
-  { icon: <Security />, title: 'Roles y Permisos', desc: 'Dueño, Administrador y Vendedor con vistas personalizadas según nivel de acceso.', color: '#d946ef' },
-  { icon: <SwapHoriz />, title: 'Devoluciones y Cancelaciones', desc: 'Cancelación total o devolución parcial con motivos documentados y filtros rápidos.', color: '#eab308' },
-  { icon: <AttachMoney />, title: 'Mayoreo Automático', desc: 'Precio de mayoreo automático según cantidad mínima configurada.', color: '#f43f5e' },
+  { icon: <SwapHoriz />, title: 'Traspasos y Distribución', desc: 'Mueve mercancía entre tiendas y almacenes con trazabilidad completa y confirmación obligatoria.', color: '#8b5cf6' },
+  { icon: <Assessment />, title: 'Dashboard', desc: 'KPIs clave, heatmap de ventas, ticket promedio, mejor/peor tienda y gráficas de tendencia.', color: '#8b5cf6' },
+  { icon: <AttachMoney />, title: 'Precios y Pagos Flexibles', desc: 'Mayoreo automático por cantidad, pagos mixtos (efectivo, tarjeta, transferencia) en una misma venta.', color: '#f97316' },
   { icon: <AccountBalance />, title: 'Corte de Caja', desc: 'Resumen por método de pago, movimientos detallados, corte parcial/total y exportación a Excel.', color: '#22c55e' },
+  { icon: <Image />, title: 'Catálogo de Productos', desc: 'Imágenes, costos, márgenes, historial de precios. Organiza por marca y departamento.', color: '#f97316' },
+  { icon: <QrCodeScanner />, title: 'Lector de Códigos', desc: 'Búsqueda instantánea por código de barras o nombre. Crea productos al vuelo si no existen.', color: '#22c55e' },
+  { icon: <People />, title: 'Clientes y Descuentos', desc: 'Registro completo, historial de compras y descuentos personalizados por porcentaje.', color: '#a855f7' },
+  { icon: <SwapHoriz />, title: 'Devoluciones y Cancelaciones', desc: 'Cancelación total o devolución parcial con motivos documentados y filtros rápidos.', color: '#eab308' },
+  { icon: <Security />, title: 'Roles y Permisos', desc: 'Dueño, Administrador y Vendedor con vistas personalizadas según nivel de acceso.', color: '#d946ef' },
   { icon: <TableChart />, title: 'Importación Masiva', desc: 'Carga miles de productos desde Excel con plantillas descargables y validación previa.', color: '#0ea5e9' },
-  { icon: <Security />, title: 'Auditoría Integrada', desc: 'Detecta ventas duplicadas, códigos repetidos, stock faltante y productos sin movimiento.', color: '#3b82f6' },
+  { icon: <Print />, title: 'Impresión de Tickets', desc: 'Compatible con impresoras térmicas estándar.', color: '#6366f1' },
+  { icon: <Keyboard />, title: 'Atajos de Teclado', desc: 'Vende más rápido con atajos configurados para cada operación.', color: '#84cc16' },
   { icon: <Support />, title: 'Soporte Integrado', desc: 'WhatsApp directo con info prellenada y ayuda contextual en cada página del sistema.', color: '#0ea5e9' },
 ];
 
