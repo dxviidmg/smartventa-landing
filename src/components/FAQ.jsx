@@ -5,10 +5,10 @@ import { sectionHeader, faqItem } from '../constants';
 import SEO from '../components/SEO';
 
 const faqs = [
-  { q: '¿Necesito instalar algo?', a: 'No. SmartVenta funciona en la nube. Solo necesitas internet y un navegador. Funciona en cualquier dispositivo.' },
+  { q: '¿Necesito instalar algo?', a: 'No. SmartVenta funciona en la nube. Solo necesitas internet y un navegador.' },
   { q: '¿Puedo manejar varias sucursales?', a: 'Sí. Puedes administrar múltiples tiendas y almacenes desde una sola cuenta con cambio instantáneo entre ellas.' },
   { q: '¿Tiene costo mensual?', a: 'Sí. El costo es desde $500 MXN por sucursal al mes, sin contratos.' },
-  { q: '¿Puedo acceder desde mi celular?', a: 'Sí. SmartVenta es totalmente responsive y funciona en cualquier dispositivo con navegador.' },
+  { q: '¿Puedo acceder desde mi celular?', a: 'Sí. Es totalmente responsive y funciona en computadora, tablet o celular.' },
   { q: '¿Cómo funciona el soporte?', a: 'Tienes soporte directo por WhatsApp con información prellenada de tu tienda, y ayuda contextual dentro de cada página del sistema.' },
   { q: '¿Puedo importar mis productos?', a: 'Sí. Puedes importar masivamente desde Excel con plantillas descargables. El sistema valida errores antes de importar.' },
   { q: '¿Tiene reportes y estadísticas?', a: 'Sí. Incluye tableros de KPIs, heatmaps de ventas, análisis de cancelaciones, top de marcas/productos y gráficas de tendencia.' },
