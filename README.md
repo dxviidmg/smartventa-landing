@@ -115,13 +115,13 @@ src/
 
 ## 🎯 Secciones
 
-1. **Hero** - Título principal con CTAs
-2. **Industries** - Tipos de negocio ideales
-3. **Features** - Características principales
-4. **HowItWorks** - 4 pasos de cómo funciona
-5. **Benefits** - Lista de beneficios
-6. **Pricing** - Planes de precios
-7. **FAQ** - Preguntas frecuentes
+1. **Hero** - "Punto de venta en la nube para múltiples sucursales" + "Controla todas tus tiendas y almacenes desde un solo lugar"
+2. **Industries** - Ropa, Abarrotes, Farmacias, Ferreterías, Mini Súpers, Papelerías, Cosméticos, Mascotas, Jugueterías
+3. **Features** - 16 características ordenadas por impacto (diferenciadores → importantes → básicos)
+4. **HowItWorks** - 4 pasos: Configura, Distribuye, Vende, Analiza
+5. **Benefits** - 4 beneficios enfocados en dolores del dueño: Visibilidad, Caja cuadrada, Operación ágil, Fácil de usar
+6. **Pricing** - 2 planes: Emprendedor ($500/mes, 1 tienda) y Empresarial ($2500/mes, hasta 8 sucursales)
+7. **FAQ** - 7 preguntas sobre instalación, contrato, dispositivos, soporte, demo, hardware, internet
 8. **Contact** - Botón de WhatsApp para solicitar demo
 9. **Footer** - Información de contacto y enlaces legales
 
