@@ -15,6 +15,7 @@ const WhatsAppButton = () => {
       }}
     >
       <Fab
+        aria-label="Contactar por WhatsApp"
         onClick={() => openWhatsApp()}
         sx={{
           bgcolor: '#25D366',
