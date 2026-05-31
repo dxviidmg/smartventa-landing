@@ -5,10 +5,10 @@ import { useWhatsApp } from '../contexts/WhatsAppContext';
 import { useMemoized } from '../hooks/useMemoized';
 import SEO from '../components/SEO';
 
-const floatingOrb = (top, left, size, color, duration) => ({
+const floatingOrb = (top, left, size, color) => ({
   position: 'absolute', top, left, width: size, height: size,
   borderRadius: '50%', background: `radial-gradient(circle, ${color} 0%, transparent 70%)`,
-  filter: 'blur(60px)',
+  filter: 'blur(60px)', willChange: 'transform',
 });
 
 const Hero = () => {
@@ -73,11 +73,7 @@ const Hero = () => {
               />
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: [0, -6, 0] }}
-              transition={{ duration: 0.6, delay: 0.1, y: { duration: 3, repeat: Infinity, ease: 'easeInOut', delay: 0.5 } }}
-            >
+            <div>
               <Typography
                 variant="h1"
                 sx={{
@@ -85,47 +81,33 @@ const Hero = () => {
                   color: 'white', lineHeight: 1.1, maxWidth: '900px', letterSpacing: '-0.02em',
                 }}
               >
-                <motion.span
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 0.3 }}
-                  style={{ display: 'inline-block' }}
+                Controla todas tus tiendas y almacenes{' '}
+                <span
+                  style={{
+                    background: 'linear-gradient(90deg, #34d399, #10b981, #6ee7b7, #34d399)',
+                    backgroundSize: '200% 200%',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    animation: 'gradient-shift 4s ease-in-out infinite',
+                  }}
                 >
-                  Controla todas tus tiendas y almacenes
-                </motion.span>{' '}
-                <motion.span
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 0.6 }}
-                  style={{ display: 'inline-block' }}
-                >
-                  <motion.span
-                    animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
-                    transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                    style={{
-                      background: 'linear-gradient(90deg, #34d399, #10b981, #6ee7b7, #34d399)',
-                      backgroundSize: '200% 200%',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                    }}
-                  >
-                    desde un solo lugar
-                  </motion.span>
-                </motion.span>
+                  desde un solo lugar
+                </span>
               </Typography>
-            </motion.div>
+            </div>
 
-            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
+            <div>
               <Typography
                 variant="h5"
+                component="p"
                 sx={{
-                  color: 'rgba(255,255,255,0.75)', maxWidth: '650px',
+                  color: 'rgba(255,255,255,0.85)', maxWidth: '650px',
                   fontSize: { xs: '1.05rem', md: '1.25rem' }, fontWeight: 400, lineHeight: 1.6,
                 }}
               >
                 Gestiona ventas e inventario en tiempo real. Sin instalación, desde cualquier dispositivo.
               </Typography>
-            </motion.div>
+            </div>
 
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -140,9 +122,9 @@ const Hero = () => {
                   onClick={() => openWhatsApp()}
                   sx={{
                     px: 4, py: 1.5, fontSize: '1rem',
-                    bgcolor: '#10b981', color: '#fff',
-                    '&:hover': { bgcolor: '#059669' },
-                    boxShadow: '0 4px 24px rgba(16,185,129,0.4)',
+                    bgcolor: '#047857', color: '#fff',
+                    '&:hover': { bgcolor: '#065f46' },
+                    boxShadow: '0 4px 24px rgba(4,120,87,0.4)',
                   }}
                 >
                   Solicitar demo

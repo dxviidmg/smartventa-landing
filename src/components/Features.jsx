@@ -79,7 +79,7 @@ const Features = () => (
                   }}>
                     {f.icon}
                   </Box>
-                  <Typography variant="h6" sx={{ fontWeight: 700, mb: 1, fontSize: '1.05rem' }}>
+                  <Typography variant="h6" component="h3" sx={{ fontWeight: 700, mb: 1, fontSize: '1.05rem' }}>
                     {f.title}
                   </Typography>
                   <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>

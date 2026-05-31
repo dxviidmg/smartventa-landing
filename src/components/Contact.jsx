@@ -38,7 +38,7 @@ const Contact = () => {
             </motion.div>
 
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}>
-              <Typography sx={{ color: 'rgba(255,255,255,0.6)', fontSize: '1.1rem', maxWidth: 480 }}>
+              <Typography sx={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.1rem', maxWidth: 480 }}>
                 Únete a negocios que ya optimizan sus operaciones diarias con SmartVenta. Solicita tu cuenta demo HOY.
               </Typography>
             </motion.div>
@@ -54,8 +54,8 @@ const Contact = () => {
                   fontSize: '1rem',
                   bgcolor: 'secondary.main',
                   color: '#fff',
-                  '&:hover': { bgcolor: '#059669' },
-                  boxShadow: '0 4px 24px rgba(16,185,129,0.35)',
+                  '&:hover': { bgcolor: '#065f46' },
+                  boxShadow: '0 4px 24px rgba(4,120,87,0.35)',
                 }}
               >
                 Probar el sistema

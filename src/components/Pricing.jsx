@@ -93,7 +93,7 @@ const Pricing = () => {
                       </>
                     )}
 
-                    <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>{plan.name}</Typography>
+                    <Typography variant="h6" component="h3" sx={{ fontWeight: 700, mb: 1 }}>{plan.name}</Typography>
                     <Stack direction="row" alignItems="baseline" spacing={0.5} sx={{ mb: 1 }}>
                       <Typography sx={{ fontWeight: 800, fontSize: '3rem', lineHeight: 1 }}>{plan.price}</Typography>
                       <Typography sx={{ color: 'text.secondary' }}>{plan.period}</Typography>
@@ -117,8 +117,8 @@ const Pricing = () => {
                       onClick={() => openWhatsApp(`Hola, me interesa el plan ${plan.name} de SmartVenta`)}
                       sx={plan.popular ? {
                         bgcolor: 'secondary.main', color: '#fff',
-                        '&:hover': { bgcolor: '#059669' },
-                        boxShadow: '0 4px 20px rgba(16,185,129,0.3)',
+                        '&:hover': { bgcolor: '#065f46' },
+                        boxShadow: '0 4px 20px rgba(4,120,87,0.3)',
                       } : {
                         borderColor: 'divider', color: 'text.primary',
                         '&:hover': { borderColor: 'primary.main', bgcolor: 'rgba(4,52,107,0.04)' },

@@ -19,7 +19,7 @@ const Footer = () => {
           <Stack spacing={4}>
             <Stack direction={{ xs: 'column', md: 'row' }} spacing={{ xs: 4, md: 6 }}>
               <Box sx={{ flex: { xs: '0 0 auto', md: 1 }, minWidth: { xs: '100%', md: '200px' } }}>
-                <Typography variant="h6" sx={{ fontWeight: 800, mb: 2, fontSize: '1.1rem' }}>
+                <Typography variant="h6" component="p" sx={{ fontWeight: 800, mb: 2, fontSize: '1.1rem' }}>
                   {CONFIG.company.name}
                 </Typography>
                 <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.6 }}>
@@ -27,7 +27,7 @@ const Footer = () => {
                 </Typography>
               </Box>
               <Stack spacing={2} sx={{ flex: { xs: '0 0 auto', md: 1 }, minWidth: { xs: '100%', md: '150px' } }}>
-                <Typography variant="h6" sx={{ fontWeight: 800, mb: 2, fontSize: '1.1rem' }}>
+                <Typography variant="h6" component="p" sx={{ fontWeight: 800, mb: 2, fontSize: '1.1rem' }}>
                   Enlaces
                 </Typography>
                 <Stack direction="column" spacing={1.5}>
@@ -46,7 +46,7 @@ const Footer = () => {
                 </Stack>
               </Stack>
               <Stack spacing={2} sx={{ flex: { xs: '0 0 auto', md: 1 }, minWidth: { xs: '100%', md: '150px' }, alignItems: 'flex-start' }}>
-                <Typography variant="h6" sx={{ fontWeight: 800, mb: 2, fontSize: '1.1rem' }}>
+                <Typography variant="h6" component="p" sx={{ fontWeight: 800, mb: 2, fontSize: '1.1rem' }}>
                   Legal
                 </Typography>
                 <Stack direction="column" spacing={1.5}>
@@ -67,7 +67,7 @@ const Footer = () => {
                 </Stack>
               </Stack>
               <Stack spacing={2} sx={{ flex: { xs: '0 0 auto', md: 1 }, minWidth: { xs: '100%', md: '200px' } }}>
-                <Typography variant="h6" sx={{ fontWeight: 800, mb: 2, fontSize: '1.1rem' }}>
+                <Typography variant="h6" component="p" sx={{ fontWeight: 800, mb: 2, fontSize: '1.1rem' }}>
                   Contacto
                 </Typography>
                 <Stack direction="column" spacing={1.5}>
@@ -103,7 +103,7 @@ const Footer = () => {
             </Typography>
 
             <Box>
-              <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
+              <Typography variant="h6" component="p" sx={{ fontWeight: 600, mb: 1 }}>
                 1. Aceptación de términos
               </Typography>
               <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
@@ -112,7 +112,7 @@ const Footer = () => {
             </Box>
 
             <Box>
-              <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
+              <Typography variant="h6" component="p" sx={{ fontWeight: 600, mb: 1 }}>
                 2. Uso del servicio
               </Typography>
               <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
@@ -121,7 +121,7 @@ const Footer = () => {
             </Box>
 
             <Box>
-              <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
+              <Typography variant="h6" component="p" sx={{ fontWeight: 600, mb: 1 }}>
                 3. Cuenta demo
               </Typography>
               <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
@@ -130,7 +130,7 @@ const Footer = () => {
             </Box>
 
             <Box>
-              <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
+              <Typography variant="h6" component="p" sx={{ fontWeight: 600, mb: 1 }}>
                 4. Limitación de responsabilidad
               </Typography>
               <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
@@ -139,7 +139,7 @@ const Footer = () => {
             </Box>
 
             <Box>
-              <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
+              <Typography variant="h6" component="p" sx={{ fontWeight: 600, mb: 1 }}>
                 5. Contacto
               </Typography>
               <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
@@ -165,7 +165,7 @@ const Footer = () => {
             </Typography>
 
             <Box>
-              <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
+              <Typography variant="h6" component="p" sx={{ fontWeight: 600, mb: 1 }}>
                 1. Información que recopilamos
               </Typography>
               <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
@@ -174,7 +174,7 @@ const Footer = () => {
             </Box>
 
             <Box>
-              <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
+              <Typography variant="h6" component="p" sx={{ fontWeight: 600, mb: 1 }}>
                 2. Uso de la información
               </Typography>
               <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
@@ -183,7 +183,7 @@ const Footer = () => {
             </Box>
 
             <Box>
-              <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
+              <Typography variant="h6" component="p" sx={{ fontWeight: 600, mb: 1 }}>
                 3. Protección de datos
               </Typography>
               <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
@@ -192,7 +192,7 @@ const Footer = () => {
             </Box>
 
             <Box>
-              <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
+              <Typography variant="h6" component="p" sx={{ fontWeight: 600, mb: 1 }}>
                 4. Contacto
               </Typography>
               <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>

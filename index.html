@@ -107,6 +107,11 @@
 
     <!-- App -->
     <script type="module" crossorigin src="/src/main.jsx"></script>
+
+    <!-- Critical CSS: Hero background renders before JS -->
+    <style>
+      #root { min-height: 100vh; }
+    </style>
     
     <!-- Prevent service worker interference from extensions -->
     <script>

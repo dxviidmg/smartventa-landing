@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useCallback, useMemo } from 'react';
+import { createContext, useContext, useState, useCallback, useMemo, useEffect, useRef } from 'react';
 
 const AppContext = createContext(null);
 
@@ -14,22 +14,28 @@ export const AppProvider = ({ children }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState(null);
+  const observerRef = useRef(null);
 
-  const handleScroll = useCallback(() => {
-    setScrolled(window.scrollY > 20);
-    
-    // Detect active section
+  // Use IntersectionObserver instead of getBoundingClientRect to avoid forced reflows
+  useEffect(() => {
     const sections = ['features', 'benefits', 'pricing', 'faq'];
-    for (const section of sections) {
-      const element = document.getElementById(section);
-      if (element) {
-        const rect = element.getBoundingClientRect();
-        if (rect.top >= 0 && rect.top <= 300) {
-          setActiveSection(section);
-          break;
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
         }
-      }
-    }
+      },
+      { rootMargin: '-20% 0px -80% 0px' }
+    );
+
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observerRef.current.observe(el);
+    });
+
+    return () => observerRef.current?.disconnect();
   }, []);
 
   const scrollToSection = useCallback((id) => {
@@ -49,11 +55,10 @@ export const AppProvider = ({ children }) => {
     scrolled,
     setScrolled,
     activeSection,
-    handleScroll,
     scrollToSection,
     openDrawer,
     closeDrawer,
-  }), [drawerOpen, scrolled, activeSection, handleScroll, scrollToSection]);
+  }), [drawerOpen, scrolled, activeSection, scrollToSection]);
 
   return (
     <AppContext.Provider value={value}>

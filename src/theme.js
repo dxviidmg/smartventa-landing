@@ -14,7 +14,7 @@ export const lightTheme = createTheme({
   shape: { borderRadius: 12 },
   palette: {
     primary: { main: '#04346b', dark: '#022347', light: '#065a9e' },
-    secondary: { main: '#10b981' },
+    secondary: { main: '#047857' },
     background: { default: '#f8fafc', paper: '#ffffff' },
     text: { primary: '#0f172a', secondary: '#64748b' },
     divider: '#e2e8f0',

@@ -49,7 +49,7 @@ const DashboardPreview = () => {
               Dashboard
             </Typography>
             <Typography variant="h3" fontWeight={700}>Tu negocio, bajo control</Typography>
-            <Typography variant="h6" color="text.secondary" sx={{ maxWidth: 600 }}>
+            <Typography variant="h6" component="p" color="text.secondary" sx={{ maxWidth: 600 }}>
               Interfaz intuitiva diseñada para que gestiones tu negocio sin complicaciones
             </Typography>
           </Stack>
@@ -75,7 +75,7 @@ const DashboardPreview = () => {
                         sx={{ width: '100%', height: 'auto', display: 'block' }}
                       />
                       <Box sx={{ position: 'absolute', bottom: 0, left: 0, right: 0, p: 3, background: 'linear-gradient(transparent, rgba(0,0,0,0.8))' }}>
-                        <Typography variant="h5" color="white" fontWeight={600}>
+                        <Typography variant="h5" component="h3" color="white" fontWeight={600}>
                           {features[activeIndex].title}
                         </Typography>
                         <Typography variant="body1" color="rgba(255,255,255,0.8)">

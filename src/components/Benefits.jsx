@@ -37,7 +37,7 @@ const Benefits = () => (
       <Container maxWidth="lg">
         <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 8 }}>
           <motion.div {...sectionHeader.overline}>
-            <Typography variant="overline" sx={{ color: '#34d399', fontWeight: 700, letterSpacing: 2, fontSize: '0.75rem' }}>
+            <Typography variant="overline" sx={{ color: '#6ee7b7', fontWeight: 700, letterSpacing: 2, fontSize: '0.75rem' }}>
               Lo que Ganarás
             </Typography>
           </motion.div>
@@ -47,7 +47,7 @@ const Benefits = () => (
             </Typography>
           </motion.div>
           <motion.div {...sectionHeader.subtitle}>
-            <Typography variant="body1" sx={{ color: 'rgba(255,255,255,0.7)', maxWidth: 500, fontSize: '1.1rem', fontWeight: 500 }}>
+            <Typography variant="body1" sx={{ color: 'rgba(255,255,255,0.85)', maxWidth: 500, fontSize: '1.1rem', fontWeight: 500 }}>
               Comienza a ver resultados inmediatos. Sin complicaciones, sin espera. Reducción de errores, ahorro de tiempo y visibilidad total.
             </Typography>
           </motion.div>
@@ -89,15 +89,15 @@ const Benefits = () => (
                       <Typography sx={{ color: '#34d399', fontWeight: 900, fontSize: '1.75rem', lineHeight: 1 }}>
                         {b.metric}
                       </Typography>
-                      <Typography sx={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase' }}>
+                      <Typography sx={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase' }}>
                         {b.metricLabel}
                       </Typography>
                     </Stack>
                   </Stack>
-                  <Typography variant="h6" sx={{ fontWeight: 700, mb: 1, color: 'white', fontSize: '1.1rem' }}>
+                  <Typography variant="h6" component="h3" sx={{ fontWeight: 700, mb: 1, color: 'white', fontSize: '1.1rem' }}>
                     {b.title}
                   </Typography>
-                  <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.6)', lineHeight: 1.7, fontWeight: 500 }}>
+                  <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.8)', lineHeight: 1.7, fontWeight: 500 }}>
                     {b.desc}
                   </Typography>
                 </Box>
