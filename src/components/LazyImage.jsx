@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Box } from '@mui/material';
 
-const LazyImage = ({ src, alt, sx, ...props }) => {
+const LazyImage = ({ src, alt, sx, width, height, ...props }) => {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -16,11 +16,12 @@ const LazyImage = ({ src, alt, sx, ...props }) => {
       component="img"
       src={src}
       alt={alt}
+      width={width}
+      height={height}
+      loading="lazy"
       sx={{
         opacity: loaded ? 1 : 0,
         transition: 'opacity 0.3s ease',
-        minHeight: loaded ? 0 : 400,
-        bgcolor: '#e0e0e0',
         ...sx,
       }}
       {...props}

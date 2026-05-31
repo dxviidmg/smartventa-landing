@@ -1,8 +1,19 @@
 import { Box, Container, Typography, Grid, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
-import {
-  PointOfSale, Assessment, People, SwapHoriz, Image, AttachMoney, Keyboard, QrCodeScanner, History, TableChart, Security, Print, AccountBalance, Support
-} from '@mui/icons-material';
+import PointOfSale from '@mui/icons-material/PointOfSale';
+import Assessment from '@mui/icons-material/Assessment';
+import People from '@mui/icons-material/People';
+import SwapHoriz from '@mui/icons-material/SwapHoriz';
+import Image from '@mui/icons-material/Image';
+import AttachMoney from '@mui/icons-material/AttachMoney';
+import Keyboard from '@mui/icons-material/Keyboard';
+import QrCodeScanner from '@mui/icons-material/QrCodeScanner';
+import History from '@mui/icons-material/History';
+import TableChart from '@mui/icons-material/TableChart';
+import Security from '@mui/icons-material/Security';
+import Print from '@mui/icons-material/Print';
+import AccountBalance from '@mui/icons-material/AccountBalance';
+import Support from '@mui/icons-material/Support';
 import { sectionHeader, cardGridItem } from '../constants';
 import SEO from '../components/SEO';
 

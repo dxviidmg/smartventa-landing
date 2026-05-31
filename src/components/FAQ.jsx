@@ -1,6 +1,6 @@
 import { Box, Container, Typography, Stack, Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
 import { motion } from 'framer-motion';
-import { Add } from '@mui/icons-material';
+import Add from '@mui/icons-material/Add';
 import { sectionHeader, faqItem } from '../constants';
 import SEO from '../components/SEO';
 

@@ -1,23 +1,10 @@
 import { Box, Container, Typography, Button, Stack, Chip } from '@mui/material';
-import { motion } from 'framer-motion';
-import { ArrowForward } from '@mui/icons-material';
+import ArrowForward from '@mui/icons-material/ArrowForward';
 import { useWhatsApp } from '../contexts/WhatsAppContext';
-import { useMemoized } from '../hooks/useMemoized';
 import SEO from '../components/SEO';
-
-const floatingOrb = (top, left, size, color) => ({
-  position: 'absolute', top, left, width: size, height: size,
-  borderRadius: '50%', background: `radial-gradient(circle, ${color} 0%, transparent 70%)`,
-  filter: 'blur(60px)', willChange: 'transform',
-});
 
 const Hero = () => {
   const { openWhatsApp } = useWhatsApp();
-
-  const orbStyles = useMemoized(() => ({
-    orb1: floatingOrb('-20%', '-10%', '500px', 'rgba(96,165,250,0.15)', 8),
-    orb2: floatingOrb('-10%', '60%', '600px', 'rgba(16,185,129,0.12)', 10),
-  }), []);
 
   return (
     <>
@@ -35,24 +22,20 @@ const Hero = () => {
           background: 'linear-gradient(135deg, #04346b 0%, #065a9e 100%)',
         }}
       >
-        <motion.div
-          animate={{ x: [0, 30, 0], y: [0, -20, 0] }}
-          transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-          style={orbStyles.orb1}
-        />
-        <motion.div
-          animate={{ x: [0, -20, 0], y: [0, 30, 0] }}
-          transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
-          style={orbStyles.orb2}
-        />
+        <Box sx={{
+          position: 'absolute', top: '-20%', left: '-10%', width: '500px', height: '500px',
+          borderRadius: '50%', background: 'radial-gradient(circle, rgba(96,165,250,0.15) 0%, transparent 70%)',
+          filter: 'blur(60px)', animation: 'float1 8s ease-in-out infinite', willChange: 'transform',
+        }} />
+        <Box sx={{
+          position: 'absolute', top: '-10%', left: '60%', width: '600px', height: '600px',
+          borderRadius: '50%', background: 'radial-gradient(circle, rgba(16,185,129,0.12) 0%, transparent 70%)',
+          filter: 'blur(60px)', animation: 'float2 10s ease-in-out infinite', willChange: 'transform',
+        }} />
 
         <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
           <Stack spacing={4} alignItems="center" textAlign="center">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1, y: [0, -6, 0] }}
-              transition={{ duration: 0.5, y: { duration: 3, repeat: Infinity, ease: 'easeInOut' } }}
-            >
+            <Box sx={{ animation: 'floatY 3s ease-in-out infinite' }}>
               <Chip
                 label="☁️ Punto de venta en la nube para múltiples sucursales"
                 sx={{
@@ -63,15 +46,14 @@ const Hero = () => {
                   py: 2.5, px: 1,
                   position: 'relative', overflow: 'hidden',
                   '&::before': {
-                    content: '"\"', position: 'absolute', top: 0, left: '-100%',
+                    content: '""', position: 'absolute', top: 0, left: 0,
                     width: '100%', height: '100%',
                     background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent)',
                     animation: 'shimmer 4s infinite',
-                    '@keyframes shimmer': { '0%': { left: '-100%' }, '100%': { left: '100%' } },
                   },
                 }}
               />
-            </motion.div>
+            </Box>
 
             <div>
               <Typography
@@ -109,28 +91,24 @@ const Hero = () => {
               </Typography>
             </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.35 }}
-            >
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button
-                  variant="contained"
-                  size="large"
-                  endIcon={<ArrowForward />}
-                  onClick={() => openWhatsApp()}
-                  sx={{
-                    px: 4, py: 1.5, fontSize: '1rem',
-                    bgcolor: '#047857', color: '#fff',
-                    '&:hover': { bgcolor: '#065f46' },
-                    boxShadow: '0 4px 24px rgba(4,120,87,0.4)',
-                  }}
-                >
-                  Solicitar demo
-                </Button>
-              </motion.div>
-            </motion.div>
+            <Box sx={{ animation: 'fadeInUp 0.6s 0.35s ease both' }}>
+              <Button
+                variant="contained"
+                size="large"
+                endIcon={<ArrowForward />}
+                onClick={() => openWhatsApp()}
+                sx={{
+                  px: 4, py: 1.5, fontSize: '1rem',
+                  bgcolor: '#047857', color: '#fff',
+                  '&:hover': { bgcolor: '#065f46', transform: 'scale(1.05)' },
+                  '&:active': { transform: 'scale(0.95)' },
+                  transition: 'all 0.2s ease',
+                  boxShadow: '0 4px 24px rgba(4,120,87,0.4)',
+                }}
+              >
+                Solicitar demo
+              </Button>
+            </Box>
 
           </Stack>
         </Container>

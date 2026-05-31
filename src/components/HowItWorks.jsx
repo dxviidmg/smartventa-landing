@@ -1,6 +1,9 @@
 import { Box, Container, Typography, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
-import { Settings, Storefront, PointOfSale, Insights } from '@mui/icons-material';
+import Settings from '@mui/icons-material/Settings';
+import Storefront from '@mui/icons-material/Storefront';
+import PointOfSale from '@mui/icons-material/PointOfSale';
+import Insights from '@mui/icons-material/Insights';
 import { sectionHeader, stepItem } from '../constants';
 import SEO from '../components/SEO';
 

@@ -1,6 +1,8 @@
 import { Box, Container, Typography, Stack, Button, Grid, Chip } from '@mui/material';
 import { motion } from 'framer-motion';
-import { Check, ArrowForward, Star } from '@mui/icons-material';
+import Check from '@mui/icons-material/Check';
+import ArrowForward from '@mui/icons-material/ArrowForward';
+import Star from '@mui/icons-material/Star';
 import { useWhatsApp } from '../contexts/WhatsAppContext';
 import { sectionHeader, cardGridItem } from '../constants';
 import SEO from '../components/SEO';

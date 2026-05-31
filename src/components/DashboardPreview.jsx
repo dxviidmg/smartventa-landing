@@ -72,6 +72,8 @@ const DashboardPreview = () => {
                       <LazyImage
                         src={features[activeIndex].img}
                         alt={features[activeIndex].title}
+                        width={900}
+                        height={506}
                         sx={{ width: '100%', height: 'auto', display: 'block' }}
                       />
                       <Box sx={{ position: 'absolute', bottom: 0, left: 0, right: 0, p: 3, background: 'linear-gradient(transparent, rgba(0,0,0,0.8))' }}>

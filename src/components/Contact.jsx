@@ -1,8 +1,6 @@
 import { Box, Container, Typography, Stack, Button } from '@mui/material';
-import { motion } from 'framer-motion';
-import { ArrowForward } from '@mui/icons-material';
+import ArrowForward from '@mui/icons-material/ArrowForward';
 import { useWhatsApp } from '../contexts/WhatsAppContext';
-import { sectionHeader } from '../constants';
 import SEO from '../components/SEO';
 
 const Contact = () => {
@@ -24,43 +22,37 @@ const Contact = () => {
       >
         <Container maxWidth="md" sx={{ position: 'relative', zIndex: 1 }}>
           <Stack spacing={4} alignItems="center" textAlign="center">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
-              <Typography variant="h2" sx={{ color: 'white', fontSize: { xs: '2rem', md: '3rem' }, maxWidth: 600 }}>
-                ¿Listo para retomar el{' '}
-                <Box component="span" sx={{
-                  background: 'linear-gradient(135deg, #34d399, #6ee7b7)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                }}>
-                  control?
-                </Box>
-              </Typography>
-            </motion.div>
+            <Typography variant="h2" sx={{ color: 'white', fontSize: { xs: '2rem', md: '3rem' }, maxWidth: 600, animation: 'fadeInUp 0.5s 0.2s ease both' }}>
+              ¿Listo para retomar el{' '}
+              <Box component="span" sx={{
+                background: 'linear-gradient(135deg, #34d399, #6ee7b7)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}>
+                control?
+              </Box>
+            </Typography>
 
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}>
-              <Typography sx={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.1rem', maxWidth: 480 }}>
-                Únete a negocios que ya optimizan sus operaciones diarias con SmartVenta. Solicita tu cuenta demo HOY.
-              </Typography>
-            </motion.div>
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }}>
+            <Typography sx={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.1rem', maxWidth: 480, animation: 'fadeInUp 0.5s 0.3s ease both' }}>
+              Únete a negocios que ya optimizan sus operaciones diarias con SmartVenta. Solicita tu cuenta demo HOY.
+            </Typography>
+
+            <Box sx={{ animation: 'fadeInUp 0.5s 0.4s ease both' }}>
               <Button
                 variant="contained"
                 size="large"
                 endIcon={<ArrowForward />}
                 onClick={() => openWhatsApp()}
                 sx={{
-                  px: 4,
-                  py: 1.5,
-                  fontSize: '1rem',
-                  bgcolor: 'secondary.main',
-                  color: '#fff',
+                  px: 4, py: 1.5, fontSize: '1rem',
+                  bgcolor: 'secondary.main', color: '#fff',
                   '&:hover': { bgcolor: '#065f46' },
                   boxShadow: '0 4px 24px rgba(4,120,87,0.35)',
                 }}
               >
                 Probar el sistema
               </Button>
-            </motion.div>
+            </Box>
           </Stack>
         </Container>
       </Box>

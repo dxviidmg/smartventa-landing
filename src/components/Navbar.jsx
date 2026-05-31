@@ -3,7 +3,8 @@ import {
   AppBar, Toolbar, Container, Button, Box, IconButton, Drawer,
   List, ListItem, ListItemButton, ListItemText, Stack,
 } from '@mui/material';
-import { Menu as MenuIcon, Close } from '@mui/icons-material';
+import MenuIcon from '@mui/icons-material/Menu';
+import Close from '@mui/icons-material/Close';
 import { useApp } from '../contexts/AppContext';
 import { CONFIG } from '../config/constants';
 import SEO from '../components/SEO';
