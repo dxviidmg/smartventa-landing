@@ -45,11 +45,11 @@ const DashboardPreview = () => {
       <Box sx={{ py: 8, bgcolor: '#CAD2DE' }}>
         <Container maxWidth="lg">
           <Stack spacing={1} alignItems="center" textAlign="center" sx={{ mb: 6 }}>
-            <Typography variant="overline" sx={{ color: '#10b981', fontWeight: 700, letterSpacing: 2 }}>
+            <Typography variant="overline" sx={{ color: '#047857', fontWeight: 700, letterSpacing: 2 }}>
               Dashboard
             </Typography>
             <Typography variant="h3" fontWeight={700}>Tu negocio, bajo control</Typography>
-            <Typography variant="h6" component="p" color="text.secondary" sx={{ maxWidth: 600 }}>
+            <Typography variant="h6" component="p" color="text.primary" sx={{ maxWidth: 600 }}>
               Interfaz intuitiva diseñada para que gestiones tu negocio sin complicaciones
             </Typography>
           </Stack>

@@ -1,48 +1,52 @@
 import { lazy, Suspense } from 'react';
-import { ThemeProvider, CssBaseline, Box } from '@mui/material';
+import { ThemeProvider, CssBaseline } from '@mui/material';
 import { lightTheme } from './theme';
 import { AppProvider } from './contexts/AppContext';
 import { WhatsAppProvider } from './contexts/WhatsAppContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Benefits from './components/Benefits';
-import Industries from './components/Industries';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import WhatsAppButton from './components/WhatsAppButton';
 
+const Industries = lazy(() => import('./components/Industries'));
+const Benefits = lazy(() => import('./components/Benefits'));
 const Features = lazy(() => import('./components/Features'));
 const HowItWorks = lazy(() => import('./components/HowItWorks'));
 const DashboardPreview = lazy(() => import('./components/DashboardPreview'));
 const Pricing = lazy(() => import('./components/Pricing'));
 const FAQ = lazy(() => import('./components/FAQ'));
+const Contact = lazy(() => import('./components/Contact'));
+const Footer = lazy(() => import('./components/Footer'));
+const WhatsAppButton = lazy(() => import('./components/WhatsAppButton'));
 
 function App() {
   return (
     <AppProvider>
-      <WhatsAppProvider>
-        <ThemeProvider theme={lightTheme}>
-          <CssBaseline />
-          <Box sx={{ minHeight: '100vh' }}>
-            <Navbar />
-            <main role="main">
-              <Hero />
-              <Box sx={{ bgcolor: '#CAD2DE' }}><Industries /></Box>
-              <Benefits />
-              <Suspense fallback={null}>
-                <Box sx={{ bgcolor: '#CAD2DE' }}><Features /></Box>
+      <ThemeProvider theme={lightTheme}>
+        <CssBaseline />
+        <div style={{ minHeight: '100vh' }}>
+          <Navbar />
+          <main role="main">
+            <Hero />
+            <Suspense fallback={null}>
+              <WhatsAppProvider>
+                <div style={{ backgroundColor: '#CAD2DE' }}><Industries /></div>
+                <Benefits />
+                <div style={{ backgroundColor: '#CAD2DE' }}><Features /></div>
                 <HowItWorks />
-                <Box sx={{ bgcolor: '#CAD2DE' }}><DashboardPreview /></Box>
+                <div style={{ backgroundColor: '#CAD2DE' }}><DashboardPreview /></div>
                 <Pricing />
-                <Box sx={{ bgcolor: '#CAD2DE' }}><FAQ /></Box>
-              </Suspense>
-              <Contact />
-            </main>
-            <WhatsAppButton />
+                <div style={{ backgroundColor: '#CAD2DE' }}><FAQ /></div>
+                <Contact />
+              </WhatsAppProvider>
+            </Suspense>
+          </main>
+          <Suspense fallback={null}>
+            <WhatsAppProvider>
+              <WhatsAppButton />
+            </WhatsAppProvider>
             <Footer />
-          </Box>
-        </ThemeProvider>
-      </WhatsAppProvider>
+          </Suspense>
+        </div>
+      </ThemeProvider>
     </AppProvider>
   );
 }

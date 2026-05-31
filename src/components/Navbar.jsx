@@ -1,13 +1,15 @@
-import { useEffect, useRef } from 'react';
-import {
-  AppBar, Toolbar, Container, Button, Box, IconButton, Drawer,
-  List, ListItem, ListItemButton, ListItemText, Stack,
-} from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
-import Close from '@mui/icons-material/Close';
+import { useEffect, useRef, useState, lazy, Suspense } from 'react';
+import { AppBar, Toolbar, Container, Button, IconButton, Stack } from '@mui/material';
 import { useApp } from '../contexts/AppContext';
 import { CONFIG } from '../config/constants';
-import SEO from '../components/SEO';
+
+const MenuIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M3 18h18v-2H3zm0-5h18v-2H3zm0-7v2h18V6z"/>
+  </svg>
+);
+
+const LazyDrawer = lazy(() => import('./NavDrawer'));
 
 const NAV_ITEMS = [
   { label: 'Industrias', id: 'industries' },
@@ -21,6 +23,7 @@ const NAV_ITEMS = [
 const Navbar = () => {
   const { drawerOpen, setDrawerOpen, scrolled, scrollToSection, setScrolled } = useApp();
   const rafId = useRef(0);
+  const [drawerLoaded, setDrawerLoaded] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
@@ -38,30 +41,26 @@ const Navbar = () => {
 
   const handleNav = (id) => { scrollToSection(id); setDrawerOpen(false); };
 
+  const handleOpenDrawer = () => {
+    setDrawerLoaded(true);
+    setDrawerOpen(true);
+  };
+
   return (
     <>
-      <SEO
-        title={CONFIG.company.name}
-        description="El punto de venta inteligente para negocios multi-tienda."
-      />
       <AppBar
         position="fixed"
         elevation={0}
-        sx={{
-          bgcolor: '#05346B',
-          backdropFilter: 'blur(20px)',
-          transition: 'all 0.3s ease',
-        }}
+        sx={{ bgcolor: '#05346B', backdropFilter: 'blur(20px)' }}
       >
         <Container maxWidth="lg">
           <Toolbar disableGutters sx={{ justifyContent: 'space-between', minHeight: { xs: 64 } }}>
-            <Box
-              component="img"
+            <img
               src="/logo.webp"
               alt={CONFIG.company.name}
               width={99}
               height={34}
-              sx={{ height: 34, borderRadius: 0, cursor: 'pointer' }}
+              style={{ height: 34, cursor: 'pointer' }}
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               onError={(e) => { e.target.src = '/logo.jpg'; }}
             />
@@ -95,7 +94,7 @@ const Navbar = () => {
 
             <IconButton
               aria-label="Abrir menú de navegación"
-              onClick={() => setDrawerOpen(true)}
+              onClick={handleOpenDrawer}
               sx={{ display: { xs: 'flex', md: 'none' }, color: scrolled ? 'text.primary' : 'white' }}
             >
               <MenuIcon />
@@ -104,32 +103,16 @@ const Navbar = () => {
         </Container>
       </AppBar>
 
-      <Drawer anchor="right" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
-        <Box sx={{ width: 280, pt: 1 }}>
-          <Box sx={{ display: 'flex', justifyContent: 'flex-end', px: 1 }}>
-            <IconButton onClick={() => setDrawerOpen(false)}><Close /></IconButton>
-          </Box>
-          <List>
-            {NAV_ITEMS.map(({ label, id }) => (
-              <ListItem key={id} disablePadding>
-                <ListItemButton onClick={() => handleNav(id)}>
-                  <ListItemText primary={label} />
-                </ListItemButton>
-              </ListItem>
-            ))}
-            <ListItem disablePadding>
-              <ListItemButton onClick={() => window.open(CONFIG.urls.app, '_blank')}>
-                <ListItemText primary="Iniciar Sesión" />
-              </ListItemButton>
-            </ListItem>
-            <ListItem disablePadding>
-              <ListItemButton onClick={() => { setDrawerOpen(false); }}>
-                <ListItemText primary="Solicitar Demo" primaryTypographyProps={{ color: 'secondary.main', fontWeight: 600 }} />
-              </ListItemButton>
-            </ListItem>
-          </List>
-        </Box>
-      </Drawer>
+      {drawerLoaded && (
+        <Suspense fallback={null}>
+          <LazyDrawer
+            open={drawerOpen}
+            onClose={() => setDrawerOpen(false)}
+            navItems={NAV_ITEMS}
+            onNav={handleNav}
+          />
+        </Suspense>
+      )}
     </>
   );
 };

@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Box } from '@mui/material';
 
 const LazyImage = ({ src, alt, sx, width, height, ...props }) => {
   const [loaded, setLoaded] = useState(false);
@@ -11,19 +10,20 @@ const LazyImage = ({ src, alt, sx, width, height, ...props }) => {
     img.onload = () => setLoaded(true);
   }, [src]);
 
+  const style = {
+    opacity: loaded ? 1 : 0,
+    transition: 'opacity 0.3s ease',
+    ...(sx || {}),
+  };
+
   return (
-    <Box
-      component="img"
+    <img
       src={src}
       alt={alt}
       width={width}
       height={height}
       loading="lazy"
-      sx={{
-        opacity: loaded ? 1 : 0,
-        transition: 'opacity 0.3s ease',
-        ...sx,
-      }}
+      style={style}
       {...props}
     />
   );

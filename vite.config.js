@@ -28,12 +28,13 @@ function inlineCssPlugin() {
 export default defineConfig({
   plugins: [react(), inlineCssPlugin()],
   build: {
-    cssCodeSplit: false,
+    cssCodeSplit: true,
     rollupOptions: {
       output: {
-        manualChunks: {
-          'framer-motion': ['framer-motion'],
-          'mui': ['@mui/material', '@emotion/react', '@emotion/styled'],
+        manualChunks(id) {
+          if (id.includes('@mui/icons-material')) return 'mui-icons';
+          if (id.includes('@mui/material') || id.includes('@emotion')) return 'mui';
+          if (id.includes('framer-motion')) return 'framer-motion';
         },
       },
     },

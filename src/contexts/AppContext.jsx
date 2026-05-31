@@ -16,26 +16,31 @@ export const AppProvider = ({ children }) => {
   const [activeSection, setActiveSection] = useState(null);
   const observerRef = useRef(null);
 
-  // Use IntersectionObserver instead of getBoundingClientRect to avoid forced reflows
+  // Defer observer until sections are rendered
   useEffect(() => {
-    const sections = ['features', 'benefits', 'pricing', 'faq'];
-    observerRef.current = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
+    const timeout = setTimeout(() => {
+      const sections = ['features', 'benefits', 'pricing', 'faq'];
+      observerRef.current = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              setActiveSection(entry.target.id);
+            }
           }
-        }
-      },
-      { rootMargin: '-20% 0px -80% 0px' }
-    );
+        },
+        { rootMargin: '-20% 0px -80% 0px' }
+      );
 
-    sections.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observerRef.current.observe(el);
-    });
+      sections.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) observerRef.current.observe(el);
+      });
+    }, 2000);
 
-    return () => observerRef.current?.disconnect();
+    return () => {
+      clearTimeout(timeout);
+      observerRef.current?.disconnect();
+    };
   }, []);
 
   const scrollToSection = useCallback((id) => {

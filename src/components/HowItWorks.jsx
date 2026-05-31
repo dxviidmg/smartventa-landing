@@ -63,7 +63,7 @@ const HowItWorks = () => (
                     {s.icon}
                   </Box>
                   <Box sx={{ flex: 1 }}>
-                    <Typography variant="overline" sx={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.7rem' }}>
+                    <Typography variant="overline" sx={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.7rem' }}>
                       Paso {s.num}
                     </Typography>
                     <Typography variant="h6" component="h3" sx={{ fontWeight: 600, mb: 0.5, color: 'white' }}>

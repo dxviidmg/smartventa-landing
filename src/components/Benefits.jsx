@@ -80,7 +80,7 @@ const Benefits = () => (
                     <Typography sx={{ color: '#34d399', fontWeight: 900, fontSize: '1.75rem', lineHeight: 1 }}>
                       {b.metric}
                     </Typography>
-                    <Typography sx={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase' }}>
+                    <Typography sx={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase' }}>
                       {b.metricLabel}
                     </Typography>
                   </Stack>
