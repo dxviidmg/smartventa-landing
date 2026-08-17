@@ -163,16 +163,19 @@ Dueños de negocios retail con 2 o más sucursales:
 ### 💰 Punto de Venta Rápido y Versátil
 - Búsqueda instantánea por código de barras o nombre de producto
 - Crear producto desde búsqueda — Si no se encuentra, puedes crearlo directamente con stock inicial
-- Múltiples carritos simultáneos
+- Múltiples carritos simultáneos — Atiende a varios clientes al mismo tiempo sin perder información
 - Precios dinámicos (unitario y mayoreo automático según cantidad)
 - Una pantalla para todo — Ventas, traspasos y distribuciones desde la misma interfaz
-- Atajos de teclado — Ctrl+Q/W para buscar, Ctrl+E/R/T/Y/U para tipo de operación, Ctrl+B para enfocar búsqueda
+- Atajos de teclado — Ctrl+Q/W para buscar, Ctrl+E/R/T/Y/U/I para tipo de operación, Ctrl+B para enfocar búsqueda, Ctrl+J para seleccionar cliente
 - Impresión de tickets compatible con impresoras térmicas estándar
+- Indicador de impresora — Ícono visual verde/rojo que muestra si la impresora está conectada o desconectada
 
 ### 🏪 Control Total de Todas tus Tiendas
-- Panel centralizado
+- Panel centralizado — Administra todas tus tiendas y almacenes desde un solo lugar
 - Cambio instantáneo entre tiendas sin cerrar sesión
-- Indicador de catálogo — Sabes qué tiendas tienen el catálogo completo
+- Indicador de catálogo — Sabes qué tiendas tienen el catálogo completo y cuáles les faltan productos
+- Límite por plan — El sistema valida automáticamente cuántas tiendas puedes crear según tu plan
+- Crear tienda rápido — Botón siempre visible para agregar tiendas o almacenes
 
 ### 📦 Inventario en Tiempo Real
 - Stock unificado en todas las tiendas
@@ -188,6 +191,13 @@ Dueños de negocios retail con 2 o más sucursales:
 - Dashboard de pendientes separados por hoy y anteriores
 - Filtros por estado (pendientes o aplicados) con actualización automática
 
+### 🔄 Conversiones de Producto
+- Desempaque automático — Convierte un producto en otro con un clic (ej: 1 Costal → 10 Kg)
+- Configuración única — Define la equivalencia una sola vez por par de productos
+- Múltiples unidades — Soporta Pieza, Kilogramo, Costal, Litro, Metro, Rollo y Caja
+- Trazabilidad — Cada conversión queda registrada en la bitácora de stock
+- Acceso rápido — Botón "Desempacar" directamente desde la tabla de conversiones
+
 ### 👥 Gestión de Clientes
 - Registro completo con historial de compras
 - Descuentos personalizados por porcentaje
@@ -198,6 +208,12 @@ Dueños de negocios retail con 2 o más sucursales:
 - Movimientos detallados (entradas y salidas de dinero)
 - Exportación a Excel
 - Corte parcial y total
+
+### 📋 Sistema de Apartados
+- Apartados desde el POS — Separa productos para un cliente sin cobrar el total
+- Reserva de stock — Los productos apartados se descuentan del inventario disponible
+- Listado de apartados — Consulta todos los apartados activos y su estado
+- Seguimiento por cliente — Vincula apartados a clientes para control personalizado
 
 ### 🔄 Devoluciones y Cancelaciones
 - Cancelación total con motivo registrado
@@ -220,7 +236,7 @@ Dueños de negocios retail con 2 o más sucursales:
   - Stock faltante en tiendas
   - Productos sin movimiento
   - Inconsistencias en registros
-- Auditoría de inventario dinámica — Modal interactivo para confirmar o modificar stock
+- Auditoría de inventario dinámica — Modal interactivo para confirmar o modificar stock con eliminación automática de productos revisados
 - Acceso configurable por horario
 
 ### 📋 Gestión de Productos
@@ -228,6 +244,7 @@ Dueños de negocios retail con 2 o más sucursales:
 - Plantillas descargables
 - Validación previa antes de importar
 - Historial de precios
+- Actualización masiva de precios — Actualiza costo, precio unitario y mayoreo de múltiples productos seleccionados a la vez
 - Imágenes de productos
 
 ### 🔐 Roles y Permisos
@@ -246,7 +263,7 @@ Dueños de negocios retail con 2 o más sucursales:
 - Ayuda contextual en cada página
 
 ### ⏰ Funcionalidades Operativas
-- Solicitudes de ajuste — Vendedores piden cambios de stock; el dueño aprueba o rechaza
+- Solicitudes de ajuste — Vendedores y admins pueden pedir cambios de stock; el dueño aprueba o rechaza
 - Notificaciones en tiempo real sobre traspasos, distribuciones y solicitudes
 - Indicador de ventas duplicadas
 
