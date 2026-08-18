@@ -84,7 +84,7 @@ const Hero = () => {
             Gestiona ventas e inventario en tiempo real. Sin instalación, desde cualquier dispositivo.
           </Typography>
 
-          <div style={{ animation: 'fadeInUp 0.6s 0.35s ease both' }}>
+          <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} style={{ animation: 'fadeInUp 0.6s 0.35s ease both' }}>
             <Button
               variant="contained"
               size="large"
@@ -101,7 +101,22 @@ const Hero = () => {
             >
               Solicitar demo
             </Button>
-          </div>
+            <Button
+              variant="outlined"
+              size="large"
+              onClick={() => window.open(`${CONFIG.urls.app}/registrarme`, '_blank')}
+              sx={{
+                px: 4, py: 1.5, fontSize: '1rem',
+                color: '#fff',
+                borderColor: 'rgba(255,255,255,0.5)',
+                '&:hover': { borderColor: '#fff', bgcolor: 'rgba(255,255,255,0.1)', transform: 'scale(1.05)' },
+                '&:active': { transform: 'scale(0.95)' },
+                transition: 'all 0.2s ease',
+              }}
+            >
+              Registrarme
+            </Button>
+          </Stack>
         </Stack>
       </Container>
     </section>

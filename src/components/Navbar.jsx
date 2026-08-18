@@ -80,9 +80,20 @@ const Navbar = () => {
                 </Button>
               ))}
               <Button
-                onClick={() => window.open(CONFIG.urls.app, '_blank')}
+                onClick={() => window.open(`${CONFIG.urls.app}/registrarme`, '_blank')}
                 sx={{
                   ml: 1,
+                  color: '#fff',
+                  borderColor: 'rgba(255,255,255,0.5)',
+                  '&:hover': { borderColor: '#fff', bgcolor: 'rgba(255,255,255,0.1)' },
+                }}
+                variant="outlined"
+              >
+                Registrarme
+              </Button>
+              <Button
+                onClick={() => window.open(CONFIG.urls.app, '_blank')}
+                sx={{
                   bgcolor: '#047857', color: '#fff',
                   '&:hover': { bgcolor: '#065f46' },
                   boxShadow: '0 2px 12px rgba(4,120,87,0.3)',

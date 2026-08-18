@@ -3,6 +3,7 @@ export const CONFIG = {
   contact: {
     phone: import.meta.env.VITE_WHATSAPP_PHONE_FORMATTED,
     phoneFormatted: import.meta.env.VITE_WHATSAPP_PHONE,
+    email: import.meta.env.VITE_CONTACT_EMAIL,
   },
   company: {
     name: 'SmartVenta',
