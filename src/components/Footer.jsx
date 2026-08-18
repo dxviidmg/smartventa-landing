@@ -4,6 +4,8 @@ import Close from '@mui/icons-material/Close';
 import { CONFIG } from '../config/constants';
 import SEO from '../components/SEO';
 
+const footerLinkSx = { color: 'rgba(255,255,255,0.7)', textDecoration: 'none', '&:hover': { color: 'white' }, transition: 'color 0.25s' };
+
 const Footer = () => {
   const [openPrivacy, setOpenPrivacy] = useState(false);
   const [openTerms, setOpenTerms] = useState(false);
@@ -31,16 +33,16 @@ const Footer = () => {
                   Enlaces
                 </Typography>
                 <Stack direction="column" spacing={1.5}>
-                  <Link href="#features" sx={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', '&:hover': { color: 'white' }, transition: 'color 0.25s' }}>
+                  <Link href="#features" sx={footerLinkSx}>
                     Características
                   </Link>
-                  <Link href="#how-it-works" sx={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', '&:hover': { color: 'white' }, transition: 'color 0.25s' }}>
+                  <Link href="#how-it-works" sx={footerLinkSx}>
                     Cómo funciona
                   </Link>
-                  <Link href="#pricing" sx={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', '&:hover': { color: 'white' }, transition: 'color 0.25s' }}>
+                  <Link href="#pricing" sx={footerLinkSx}>
                     Precios
                   </Link>
-                  <Link href="#faq" sx={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', '&:hover': { color: 'white' }, transition: 'color 0.25s' }}>
+                  <Link href="#faq" sx={footerLinkSx}>
                     FAQ
                   </Link>
                 </Stack>
@@ -53,14 +55,14 @@ const Footer = () => {
                   <Link
                     component="button"
                     onClick={() => setOpenTerms(true)}
-                    sx={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', '&:hover': { color: 'white' }, transition: 'color 0.25s', textAlign: 'left' }}
+                    sx={{ ...footerLinkSx, textAlign: 'left' }}
                   >
                     Términos y Condiciones
                   </Link>
                   <Link
                     component="button"
                     onClick={() => setOpenPrivacy(true)}
-                    sx={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', '&:hover': { color: 'white' }, transition: 'color 0.25s', textAlign: 'left' }}
+                    sx={{ ...footerLinkSx, textAlign: 'left' }}
                   >
                     Política de Privacidad
                   </Link>
@@ -71,7 +73,7 @@ const Footer = () => {
                   Contacto
                 </Typography>
                 <Stack direction="column" spacing={1.5}>
-                  <Link href={`https://wa.me/${CONFIG.contact.phone.replace(/\D/g, '')}`} target="_blank" rel="noopener noreferrer" sx={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', '&:hover': { color: 'white' }, transition: 'color 0.25s' }}>
+                  <Link href={`https://wa.me/${CONFIG.contact.phone.replace(/\D/g, '')}`} target="_blank" rel="noopener noreferrer" sx={footerLinkSx}>
                     WhatsApp
                   </Link>
                 </Stack>

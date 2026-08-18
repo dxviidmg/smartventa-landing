@@ -1,4 +1,4 @@
-import { Box, Container, Typography, Grid, Stack } from '@mui/material';
+import { Box, Container, Typography, Grid } from '@mui/material';
 import Checkroom from '@mui/icons-material/Checkroom';
 import LocalGroceryStore from '@mui/icons-material/LocalGroceryStore';
 import LocalPharmacy from '@mui/icons-material/LocalPharmacy';
@@ -9,6 +9,7 @@ import Spa from '@mui/icons-material/Spa';
 import PetsOutlined from '@mui/icons-material/PetsOutlined';
 import SportsSoccer from '@mui/icons-material/SportsSoccer';
 import Business from '@mui/icons-material/Business';
+import SectionHeader from './ui/SectionHeader';
 import SEO from '../components/SEO';
 
 const industries = [
@@ -32,14 +33,11 @@ const Industries = () => (
     />
     <Box sx={{ py: { xs: 6, md: 10 }, bgcolor: '#CAD2DE' }}>
       <Container maxWidth="lg">
-        <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 8 }}>
-          <Typography variant="overline" sx={{ color: 'secondary.main', fontWeight: 700, letterSpacing: 2, animation: 'fadeInUp 0.5s ease both' }}>
-            Para qué sirve
-          </Typography>
-          <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' }, maxWidth: 650, animation: 'fadeInUp 0.5s 0.1s ease both' }}>
-            Ideal para tu negocio
-          </Typography>
-        </Stack>
+        <SectionHeader
+          overline="Para qué sirve"
+          title="Ideal para tu negocio"
+          sx={{ mb: 8 }}
+        />
 
         <Grid container spacing={2} justifyContent="center" sx={{ mb: 10 }}>
           {industries.map((industry, i) => (

@@ -7,6 +7,7 @@ import corteImg from '../assets/Corte de caja.png';
 import carritoImg from '../assets/Carrito de venta.png';
 import { dashboardCarousel } from '../constants';
 import { LazyImage } from './LazyImage';
+import SectionHeader from './ui/SectionHeader';
 import SEO from '../components/SEO';
 
 const features = [
@@ -44,15 +45,13 @@ const DashboardPreview = () => {
       />
       <Box sx={{ py: 8, bgcolor: '#CAD2DE' }}>
         <Container maxWidth="lg">
-          <Stack spacing={1} alignItems="center" textAlign="center" sx={{ mb: 6 }}>
-            <Typography variant="overline" sx={{ color: '#047857', fontWeight: 700, letterSpacing: 2 }}>
-              Dashboard
-            </Typography>
-            <Typography variant="h3" fontWeight={700}>Tu negocio, bajo control</Typography>
-            <Typography variant="h6" component="p" color="text.primary" sx={{ maxWidth: 600 }}>
-              Interfaz intuitiva diseñada para que gestiones tu negocio sin complicaciones
-            </Typography>
-          </Stack>
+          <SectionHeader
+            overline="Dashboard"
+            title="Tu negocio, bajo control"
+            subtitle="Interfaz intuitiva diseñada para que gestiones tu negocio sin complicaciones"
+            overlineSx={{ color: '#047857' }}
+            sx={{ mb: 6 }}
+          />
 
           <Box sx={{ display: 'flex', justifyContent: 'center' }}>
             <Box sx={{ position: 'relative', width: { xs: '100%', md: '70%' }, maxWidth: 900 }}>

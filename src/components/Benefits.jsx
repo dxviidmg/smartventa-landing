@@ -3,6 +3,7 @@ import Speed from '@mui/icons-material/Speed';
 import CheckCircle from '@mui/icons-material/CheckCircle';
 import TrendingUp from '@mui/icons-material/TrendingUp';
 import Store from '@mui/icons-material/Store';
+import SectionHeader from './ui/SectionHeader';
 import SEO from '../components/SEO';
 
 const benefits = [
@@ -36,17 +37,15 @@ const Benefits = () => (
     />
     <Box id="benefits" sx={{ py: { xs: 8, md: 12 }, background: 'linear-gradient(145deg, #022347 0%, #04346b 100%)' }}>
       <Container maxWidth="lg">
-        <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 8 }}>
-          <Typography variant="overline" sx={{ color: '#6ee7b7', fontWeight: 700, letterSpacing: 2, fontSize: '0.75rem', animation: 'fadeInUp 0.5s ease both' }}>
-            Lo que Ganarás
-          </Typography>
-          <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '3rem' }, color: 'white', maxWidth: 600, fontWeight: 800, animation: 'fadeInUp 0.5s 0.1s ease both' }}>
-            Resultados desde el primer día
-          </Typography>
-          <Typography variant="body1" sx={{ color: 'rgba(255,255,255,0.85)', maxWidth: 500, fontSize: '1.1rem', fontWeight: 500, animation: 'fadeInUp 0.5s 0.2s ease both' }}>
-            Comienza a ver resultados inmediatos. Sin complicaciones, sin espera. Reducción de errores, ahorro de tiempo y visibilidad total.
-          </Typography>
-        </Stack>
+        <SectionHeader
+          overline="Lo que Ganarás"
+          title="Resultados desde el primer día"
+          subtitle="Comienza a ver resultados inmediatos. Sin complicaciones, sin espera. Reducción de errores, ahorro de tiempo y visibilidad total."
+          overlineSx={{ color: '#6ee7b7', fontSize: '0.75rem' }}
+          titleSx={{ color: 'white', fontWeight: 800, fontSize: { xs: '2rem', md: '3rem' }, maxWidth: 600 }}
+          subtitleSx={{ color: 'rgba(255,255,255,0.85)', maxWidth: 500, fontSize: '1.1rem', fontWeight: 500 }}
+          sx={{ mb: 8 }}
+        />
 
         <Grid container spacing={3}>
           {benefits.map((b, i) => (

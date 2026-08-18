@@ -1,6 +1,7 @@
 import { Container, Typography, Button, Stack, Chip } from '@mui/material';
 import { CONFIG } from '../config/constants';
 import { ctaButtonSx } from '../constants';
+import { useWhatsApp } from '../contexts/WhatsAppContext';
 
 const ArrowForward = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -9,10 +10,7 @@ const ArrowForward = () => (
 );
 
 const Hero = () => {
-  const handleClick = () => {
-    const url = `https://wa.me/${CONFIG.contact.phoneFormatted}?text=${encodeURIComponent('Hola, me interesa solicitar una demo de SmartVenta')}`;
-    window.open(url, '_blank');
-  };
+  const { openWhatsApp } = useWhatsApp();
 
   return (
     <section style={{
@@ -90,7 +88,7 @@ const Hero = () => {
               variant="contained"
               size="large"
               endIcon={<ArrowForward />}
-              onClick={handleClick}
+              onClick={() => openWhatsApp()}
               sx={{
                 ...ctaButtonSx,
                 px: 4, py: 1.5, fontSize: '1rem',
