@@ -1,4 +1,4 @@
-import { Box, Container, Typography, Grid, Stack } from '@mui/material';
+import { Box, Container, Typography, Grid } from '@mui/material';
 import { motion } from 'framer-motion';
 import PointOfSale from '@mui/icons-material/PointOfSale';
 import Assessment from '@mui/icons-material/Assessment';
@@ -17,7 +17,8 @@ import Support from '@mui/icons-material/Support';
 import Transform from '@mui/icons-material/Transform';
 import BookmarkAdded from '@mui/icons-material/BookmarkAdded';
 import FindInPage from '@mui/icons-material/FindInPage';
-import { sectionHeader, cardGridItem } from '../constants';
+import { cardGridItem } from '../constants';
+import SectionHeader from './ui/SectionHeader';
 import SEO from '../components/SEO';
 
 const features = [
@@ -49,23 +50,12 @@ const Features = () => (
     />
     <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: '#CAD2DE' }}>
       <Container maxWidth="lg">
-        <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 8 }}>
-          <motion.div {...sectionHeader.overline}>
-            <Typography variant="overline" sx={{ color: 'secondary.main', fontWeight: 700, letterSpacing: 2 }}>
-              Características
-            </Typography>
-          </motion.div>
-          <motion.div {...sectionHeader.title}>
-            <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' }, maxWidth: 650 }}>
-              Todo lo que necesitas para controlar mejor tu negocio
-            </Typography>
-          </motion.div>
-          <motion.div {...sectionHeader.subtitle}>
-            <Typography sx={{ color: 'text.secondary', maxWidth: 550, fontSize: '1.05rem' }}>
-              Centraliza tu información y toma decisiones informadas. Diseñado específicamente para resolver el caos operativo en negocios multi-tienda.
-            </Typography>
-          </motion.div>
-        </Stack>
+        <SectionHeader
+          overline="Características"
+          title="Todo lo que necesitas para controlar mejor tu negocio"
+          subtitle="Centraliza tu información y toma decisiones informadas. Diseñado específicamente para resolver el caos operativo en negocios multi-tienda."
+          sx={{ mb: 8 }}
+        />
 
         <Grid container spacing={3}>
           {features.map((f, i) => (

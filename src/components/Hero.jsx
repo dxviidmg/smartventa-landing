@@ -1,5 +1,6 @@
 import { Container, Typography, Button, Stack, Chip } from '@mui/material';
 import { CONFIG } from '../config/constants';
+import { ctaButtonSx } from '../constants';
 
 const ArrowForward = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -91,12 +92,11 @@ const Hero = () => {
               endIcon={<ArrowForward />}
               onClick={handleClick}
               sx={{
+                ...ctaButtonSx,
                 px: 4, py: 1.5, fontSize: '1rem',
-                bgcolor: '#047857', color: '#fff',
-                '&:hover': { bgcolor: '#065f46', transform: 'scale(1.05)' },
+                '&:hover': { ...ctaButtonSx['&:hover'], transform: 'scale(1.05)' },
                 '&:active': { transform: 'scale(0.95)' },
                 transition: 'all 0.2s ease',
-                boxShadow: '0 4px 24px rgba(4,120,87,0.4)',
               }}
             >
               Solicitar demo

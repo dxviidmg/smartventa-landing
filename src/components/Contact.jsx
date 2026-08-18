@@ -1,6 +1,7 @@
 import { Box, Container, Typography, Stack, Button } from '@mui/material';
 import ArrowForward from '@mui/icons-material/ArrowForward';
 import { useWhatsApp } from '../contexts/WhatsAppContext';
+import { ctaButtonSx } from '../constants';
 import SEO from '../components/SEO';
 
 const Contact = () => {
@@ -44,10 +45,8 @@ const Contact = () => {
                 endIcon={<ArrowForward />}
                 onClick={() => openWhatsApp()}
                 sx={{
+                  ...ctaButtonSx,
                   px: 4, py: 1.5, fontSize: '1rem',
-                  bgcolor: 'secondary.main', color: '#fff',
-                  '&:hover': { bgcolor: '#065f46' },
-                  boxShadow: '0 4px 24px rgba(4,120,87,0.35)',
                 }}
               >
                 Probar el sistema

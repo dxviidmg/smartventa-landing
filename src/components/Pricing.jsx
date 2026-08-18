@@ -4,7 +4,8 @@ import Check from '@mui/icons-material/Check';
 import ArrowForward from '@mui/icons-material/ArrowForward';
 import Star from '@mui/icons-material/Star';
 import { useWhatsApp } from '../contexts/WhatsAppContext';
-import { sectionHeader, cardGridItem } from '../constants';
+import { cardGridItem, ctaButtonSx } from '../constants';
+import SectionHeader from './ui/SectionHeader';
 import SEO from '../components/SEO';
 
 const plans = [
@@ -39,23 +40,12 @@ const Pricing = () => {
       />
       <Box id="pricing" sx={{ py: { xs: 6, md: 10 }, bgcolor: 'background.paper' }}>
         <Container maxWidth="md">
-          <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 6 }}>
-            <motion.div {...sectionHeader.overline}>
-              <Typography variant="overline" sx={{ color: 'secondary.main', fontWeight: 700, letterSpacing: 2 }}>
-                Precios
-              </Typography>
-            </motion.div>
-            <motion.div {...sectionHeader.title}>
-              <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' } }}>
-                Elige el plan perfecto para tu negocio
-              </Typography>
-            </motion.div>
-            <motion.div {...sectionHeader.subtitle}>
-              <Typography sx={{ color: 'text.secondary', maxWidth: 500 }}>
-                Elige el plan que mejor se adapte a tu etapa de crecimiento. Sin costos ocultos. Cancela cuando quieras.
-              </Typography>
-            </motion.div>
-          </Stack>
+          <SectionHeader
+            overline="Precios"
+            title="Elige el plan perfecto para tu negocio"
+            subtitle="Elige el plan que mejor se adapte a tu etapa de crecimiento. Sin costos ocultos. Cancela cuando quieras."
+            sx={{ mb: 6 }}
+          />
 
           <Grid container spacing={3} justifyContent="center">
             {plans.map((plan, i) => (
@@ -118,9 +108,7 @@ const Pricing = () => {
                       endIcon={<ArrowForward />}
                       onClick={() => openWhatsApp(`Hola, me interesa el plan ${plan.name} de SmartVenta`)}
                       sx={plan.popular ? {
-                        bgcolor: 'secondary.main', color: '#fff',
-                        '&:hover': { bgcolor: '#065f46' },
-                        boxShadow: '0 4px 20px rgba(4,120,87,0.3)',
+                        ...ctaButtonSx,
                       } : {
                         borderColor: 'divider', color: 'text.primary',
                         '&:hover': { borderColor: 'primary.main', bgcolor: 'rgba(4,52,107,0.04)' },

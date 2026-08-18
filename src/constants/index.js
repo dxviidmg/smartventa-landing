@@ -1,4 +1,4 @@
-// Constants module - centralized configuration and design tokens
+// Constants module
 
-export { cardStyles, cardHoverStyles, sectionHeader, cardGridItem, stepItem, faqItem, dashboardCarousel, hero, modal } from './animations';
+export { sectionHeader, cardGridItem, stepItem, faqItem, dashboardCarousel, ctaButtonSx } from './animations';
 export { CONFIG } from '../config/constants';

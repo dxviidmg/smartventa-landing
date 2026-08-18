@@ -1,7 +1,8 @@
 import { Box, Container, Typography, Stack, Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
 import { motion } from 'framer-motion';
 import Add from '@mui/icons-material/Add';
-import { sectionHeader, faqItem } from '../constants';
+import { faqItem } from '../constants';
+import SectionHeader from './ui/SectionHeader';
 import SEO from '../components/SEO';
 
 const faqs = [
@@ -22,18 +23,11 @@ const FAQ = () => (
     />
     <Box id="faq" sx={{ py: { xs: 6, md: 10 }, bgcolor: '#CAD2DE' }}>
       <Container maxWidth="md">
-        <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 6 }}>
-          <motion.div {...sectionHeader.overline}>
-            <Typography variant="overline" sx={{ color: 'secondary.main', fontWeight: 700, letterSpacing: 2 }}>
-              FAQ
-            </Typography>
-          </motion.div>
-          <motion.div {...sectionHeader.title}>
-            <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' } }}>
-              Preguntas frecuentes
-            </Typography>
-          </motion.div>
-        </Stack>
+        <SectionHeader
+          overline="FAQ"
+          title="Preguntas frecuentes"
+          sx={{ mb: 6 }}
+        />
 
         <Stack spacing={1.5}>
           {faqs.map((faq, i) => (

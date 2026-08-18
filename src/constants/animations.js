@@ -1,5 +1,4 @@
 // Animation variants grouped by component type
-// Best practices: use consistent naming, document variants, keep transitions predictable
 
 // Section headers (overline + title + subtitle)
 export const sectionHeader = {
@@ -20,25 +19,6 @@ export const sectionHeader = {
     whileInView: { opacity: 1, y: 0 },
     viewport: { once: true },
     transition: { delay: 0.3 },
-  },
-};
-
-// Hero section animations
-export const hero = {
-  title: {
-    initial: { opacity: 0, y: 30 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 },
-  },
-  subtitle: {
-    initial: { opacity: 0, y: 30 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6, delay: 0.2 },
-  },
-  cta: {
-    initial: { opacity: 0, y: 30 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6, delay: 0.4 },
   },
 };
 
@@ -63,14 +43,6 @@ export const faqItem = {
   viewport: { once: true },
 };
 
-// Modal animations
-export const modal = {
-  initial: { opacity: 0, scale: 0.9 },
-  animate: { opacity: 1, scale: 1 },
-  exit: { opacity: 0, scale: 0.9 },
-  transition: { duration: 0.2 },
-};
-
 // Dashboard preview carousel
 export const dashboardCarousel = {
   initial: { opacity: 0, scale: 0.95 },
@@ -79,21 +51,10 @@ export const dashboardCarousel = {
   transition: { duration: 0.3 },
 };
 
-// Card styles for MUI components
-export const cardStyles = {
-  p: 4,
-  height: '100%',
-  borderRadius: 4,
-  bgcolor: 'background.paper',
-  border: '1px solid',
-  borderColor: 'divider',
-  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-};
-
-export const cardHoverStyles = {
-  '&:hover': {
-    borderColor: 'primary.main',
-    boxShadow: '0 8px 30px rgba(4,52,107,0.1)',
-    transform: 'translateY(-4px)',
-  },
+// CTA button styles (green primary action)
+export const ctaButtonSx = {
+  bgcolor: '#047857',
+  color: '#fff',
+  '&:hover': { bgcolor: '#065f46' },
+  boxShadow: '0 4px 24px rgba(4,120,87,0.3)',
 };

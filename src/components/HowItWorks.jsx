@@ -4,7 +4,8 @@ import Settings from '@mui/icons-material/Settings';
 import Storefront from '@mui/icons-material/Storefront';
 import PointOfSale from '@mui/icons-material/PointOfSale';
 import Insights from '@mui/icons-material/Insights';
-import { sectionHeader, stepItem } from '../constants';
+import { stepItem } from '../constants';
+import SectionHeader from './ui/SectionHeader';
 import SEO from '../components/SEO';
 
 const steps = [
@@ -23,18 +24,13 @@ const HowItWorks = () => (
     <Box id="how-it-works" sx={{ py: { xs: 8, md: 12 }, background: 'linear-gradient(145deg, #022347 0%, #04346b 100%)' }}>
       <Container maxWidth="md">
         <Stack spacing={8}>
-          <Stack spacing={2} alignItems="center" textAlign="center">
-            <motion.div {...sectionHeader.overline}>
-              <Typography variant="overline" sx={{ color: '#6ee7b7', fontWeight: 700, letterSpacing: 2, fontSize: '0.75rem' }}>
-                Cómo funciona
-              </Typography>
-            </motion.div>
-            <motion.div {...sectionHeader.title}>
-              <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' }, color: 'white', fontWeight: 800 }}>
-                Cómo Empiezas en 4 Pasos
-              </Typography>
-            </motion.div>
-          </Stack>
+          <SectionHeader
+            overline="Cómo funciona"
+            title="Cómo Empiezas en 4 Pasos"
+            overlineSx={{ color: '#6ee7b7', fontSize: '0.75rem' }}
+            titleSx={{ color: 'white', fontWeight: 800 }}
+            sx={{ mb: 0 }}
+          />
 
           <Stack spacing={0}>
             {steps.map((s, i) => (
