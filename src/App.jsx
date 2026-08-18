@@ -20,14 +20,14 @@ const WhatsAppButton = lazy(() => import('./components/WhatsAppButton'));
 function App() {
   return (
     <AppProvider>
-      <ThemeProvider theme={lightTheme}>
-        <CssBaseline />
-        <div style={{ minHeight: '100vh' }}>
-          <Navbar />
-          <main role="main">
-            <Hero />
-            <Suspense fallback={null}>
-              <WhatsAppProvider>
+      <WhatsAppProvider>
+        <ThemeProvider theme={lightTheme}>
+          <CssBaseline />
+          <div style={{ minHeight: '100vh' }}>
+            <Navbar />
+            <main role="main">
+              <Hero />
+              <Suspense fallback={null}>
                 <div style={{ backgroundColor: '#CAD2DE' }}><Industries /></div>
                 <Benefits />
                 <div style={{ backgroundColor: '#CAD2DE' }}><Features /></div>
@@ -36,17 +36,15 @@ function App() {
                 <Pricing />
                 <div style={{ backgroundColor: '#CAD2DE' }}><FAQ /></div>
                 <Contact />
-              </WhatsAppProvider>
-            </Suspense>
-          </main>
-          <Suspense fallback={null}>
-            <WhatsAppProvider>
+              </Suspense>
+            </main>
+            <Suspense fallback={null}>
               <WhatsAppButton />
-            </WhatsAppProvider>
-            <Footer />
-          </Suspense>
-        </div>
-      </ThemeProvider>
+              <Footer />
+            </Suspense>
+          </div>
+        </ThemeProvider>
+      </WhatsAppProvider>
     </AppProvider>
   );
 }
