@@ -1,5 +1,5 @@
 import { Box, Drawer, IconButton, List, ListItem, ListItemButton, ListItemText } from '@mui/material';
-import { CONFIG } from '../config/constants';
+import { CONFIG } from '../../constants';
 
 const CloseIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -7,6 +7,14 @@ const CloseIcon = () => (
   </svg>
 );
 
+/**
+ * Mobile navigation drawer with section links and auth actions.
+ * @param {object} props
+ * @param {boolean} props.open - Whether the drawer is visible
+ * @param {function} props.onClose - Callback to close the drawer
+ * @param {Array<{label: string, id: string}>} props.navItems - Navigation items to render
+ * @param {function} props.onNav - Callback when a nav item is clicked, receives section id
+ */
 const NavDrawer = ({ open, onClose, navItems, onNav }) => (
   <Drawer anchor="right" open={open} onClose={onClose}>
     <Box sx={{ width: 280, pt: 1 }}>

@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState, lazy, Suspense } from 'react';
 import { AppBar, Toolbar, Container, Button, IconButton, Stack } from '@mui/material';
-import { useApp } from '../contexts/AppContext';
-import { CONFIG } from '../config/constants';
-import { ctaButtonSx } from '../constants';
+import { useApp } from '../../contexts/AppContext';
+import { CONFIG, ctaButtonSx } from '../../constants';
 
 const MenuIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">

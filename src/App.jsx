@@ -3,19 +3,20 @@ import { ThemeProvider, CssBaseline } from '@mui/material';
 import { lightTheme } from './theme';
 import { AppProvider } from './contexts/AppContext';
 import { WhatsAppProvider } from './contexts/WhatsAppContext';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
+import Navbar from './components/layout/Navbar';
+import Hero from './components/sections/Hero';
+import SEO from './components/layout/SEO';
 
-const Industries = lazy(() => import('./components/Industries'));
-const Benefits = lazy(() => import('./components/Benefits'));
-const Features = lazy(() => import('./components/Features'));
-const HowItWorks = lazy(() => import('./components/HowItWorks'));
-const DashboardPreview = lazy(() => import('./components/DashboardPreview'));
-const Pricing = lazy(() => import('./components/Pricing'));
-const FAQ = lazy(() => import('./components/FAQ'));
-const Contact = lazy(() => import('./components/Contact'));
-const Footer = lazy(() => import('./components/Footer'));
-const WhatsAppButton = lazy(() => import('./components/WhatsAppButton'));
+const Industries = lazy(() => import('./components/sections/Industries'));
+const Benefits = lazy(() => import('./components/sections/Benefits'));
+const Features = lazy(() => import('./components/sections/Features'));
+const HowItWorks = lazy(() => import('./components/sections/HowItWorks'));
+const DashboardPreview = lazy(() => import('./components/sections/DashboardPreview'));
+const Pricing = lazy(() => import('./components/sections/Pricing'));
+const FAQ = lazy(() => import('./components/sections/FAQ'));
+const Contact = lazy(() => import('./components/sections/Contact'));
+const Footer = lazy(() => import('./components/layout/Footer'));
+const WhatsAppButton = lazy(() => import('./components/ui/WhatsAppButton'));
 
 function App() {
   return (
@@ -24,17 +25,22 @@ function App() {
         <ThemeProvider theme={lightTheme}>
           <CssBaseline />
           <div style={{ minHeight: '100vh' }}>
+            <SEO
+              title="Punto de Venta en la Nube para Múltiples Sucursales"
+              description="Sistema punto de venta en la nube para negocios con múltiples sucursales en México. Controla inventario, ventas y transferencias en tiempo real. Sin instalación."
+              keywords="punto de venta, pos, multi-tienda, inventario, ventas, retail, smartventa, méxico, sucursales"
+            />
             <Navbar />
             <main role="main">
               <Hero />
               <Suspense fallback={null}>
-                <div style={{ backgroundColor: '#CAD2DE' }}><Industries /></div>
+                <div style={{ backgroundColor: lightTheme.palette.surface.alt }}><Industries /></div>
                 <Benefits />
-                <div style={{ backgroundColor: '#CAD2DE' }}><Features /></div>
+                <div style={{ backgroundColor: lightTheme.palette.surface.alt }}><Features /></div>
                 <HowItWorks />
-                <div style={{ backgroundColor: '#CAD2DE' }}><DashboardPreview /></div>
+                <div style={{ backgroundColor: lightTheme.palette.surface.alt }}><DashboardPreview /></div>
                 <Pricing />
-                <div style={{ backgroundColor: '#CAD2DE' }}><FAQ /></div>
+                <div style={{ backgroundColor: lightTheme.palette.surface.alt }}><FAQ /></div>
                 <Contact />
               </Suspense>
             </main>

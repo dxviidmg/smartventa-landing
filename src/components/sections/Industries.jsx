@@ -1,37 +1,11 @@
 import { Box, Container, Typography, Grid } from '@mui/material';
-import Checkroom from '@mui/icons-material/Checkroom';
-import LocalGroceryStore from '@mui/icons-material/LocalGroceryStore';
-import LocalPharmacy from '@mui/icons-material/LocalPharmacy';
-import Build from '@mui/icons-material/Build';
-import Store from '@mui/icons-material/Store';
-import AutoStories from '@mui/icons-material/AutoStories';
-import Spa from '@mui/icons-material/Spa';
-import PetsOutlined from '@mui/icons-material/PetsOutlined';
-import SportsSoccer from '@mui/icons-material/SportsSoccer';
-import Business from '@mui/icons-material/Business';
-import SectionHeader from './ui/SectionHeader';
-import SEO from '../components/SEO';
-
-const industries = [
-  { icon: <Checkroom />, title: 'Ropa' },
-  { icon: <LocalGroceryStore />, title: 'Abarrotes' },
-  { icon: <LocalPharmacy />, title: 'Farmacias' },
-  { icon: <Build />, title: 'Ferreterías' },
-  { icon: <Store />, title: 'Mini Súpers' },
-  { icon: <AutoStories />, title: 'Papelerías' },
-  { icon: <Spa />, title: 'Cosméticos' },
-  { icon: <PetsOutlined />, title: 'Mascotas' },
-  { icon: <SportsSoccer />, title: 'Jugueterías' },
-  { icon: <Business />, title: 'Y más...' },
-];
+import SectionHeader from '../ui/SectionHeader';
+import { industries } from '../../data/industries';
+import { sectionPadding } from '../../constants';
 
 const Industries = () => (
   <div id="industries">
-    <SEO
-      title="Para qué sirve SmartVenta"
-      description="El sistema que unifica tus tiendas y almacenes en un solo lugar. Ideal para tu negocio."
-    />
-    <Box sx={{ py: { xs: 6, md: 10 }, bgcolor: '#CAD2DE' }}>
+    <Box sx={{ ...sectionPadding, bgcolor: 'surface.alt' }}>
       <Container maxWidth="lg">
         <SectionHeader
           overline="Para qué sirve"
@@ -49,7 +23,7 @@ const Industries = () => (
                   bgcolor: 'rgba(4,52,107,0.08)',
                   textAlign: 'center',
                   animation: `fadeInUp 0.4s ${i * 0.05}s ease both`,
-                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  transition: 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease, color 0.3s ease',
                   '&:hover': {
                     bgcolor: 'primary.main',
                     color: 'white',

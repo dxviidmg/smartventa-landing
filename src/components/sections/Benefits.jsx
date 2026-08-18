@@ -1,41 +1,11 @@
 import { Box, Container, Typography, Grid, Stack } from '@mui/material';
-import Speed from '@mui/icons-material/Speed';
-import CheckCircle from '@mui/icons-material/CheckCircle';
-import TrendingUp from '@mui/icons-material/TrendingUp';
-import Store from '@mui/icons-material/Store';
-import SectionHeader from './ui/SectionHeader';
-import SEO from '../components/SEO';
-
-const benefits = [
-  {
-    icon: <Store />, title: 'Visibilidad total',
-    desc: 'Consulta ventas, inventario y operaciones de todas tus sucursales en tiempo real desde un solo panel.',
-    metric: '100%', metricLabel: 'visibilidad',
-  },
-  {
-    icon: <CheckCircle />, title: 'Caja siempre cuadrada',
-    desc: 'Corte de caja con resumen por método de pago y movimientos detallados.',
-    metric: '0', metricLabel: 'descuadres',
-  },
-  {
-    icon: <Speed />, title: 'Operación ágil',
-    desc: 'Traspasos, distribuciones e inventario actualizados al instante. Sin llamadas ni hojas de cálculo.',
-    metric: '0', metricLabel: 'retrasos',
-  },
-  {
-    icon: <TrendingUp />, title: 'Fácil de usar',
-    desc: 'Interfaz intuitiva con ayuda contextual. Tu equipo vende desde el primer día sin capacitación larga.',
-    metric: '1', metricLabel: 'día para dominar',
-  },
-];
+import SectionHeader from '../ui/SectionHeader';
+import { benefits } from '../../data/benefits';
+import { sectionPadding } from '../../constants';
 
 const Benefits = () => (
   <>
-    <SEO
-      title="Beneficios de SmartVenta"
-      description="Resultados desde el primer día. Reducción de errores, ahorro de tiempo y visibilidad total."
-    />
-    <Box id="benefits" sx={{ py: { xs: 8, md: 12 }, background: 'linear-gradient(145deg, #022347 0%, #04346b 100%)' }}>
+    <Box id="benefits" sx={{ ...sectionPadding, background: 'linear-gradient(145deg, #022347 0%, #04346b 100%)' }}>
       <Container maxWidth="lg">
         <SectionHeader
           overline="Lo que Ganarás"
@@ -55,7 +25,7 @@ const Benefits = () => (
                 bgcolor: 'rgba(255,255,255,0.04)',
                 border: '1px solid rgba(255,255,255,0.08)',
                 animation: `fadeInUp 0.4s ${i * 0.1}s ease both`,
-                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                transition: 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease, border-color 0.3s ease',
                 '&:hover': {
                   bgcolor: 'rgba(255,255,255,0.08)',
                   transform: 'translateY(-8px) scale(1.02)',
@@ -69,7 +39,7 @@ const Benefits = () => (
                     bgcolor: 'rgba(52,211,153,0.12)', color: '#34d399',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     boxShadow: '0 4px 12px rgba(52,211,153,0.2)',
-                    transition: 'all 0.3s ease',
+                    transition: 'transform 0.3s ease',
                     '& svg': { fontSize: 28, transition: 'transform 0.3s ease' },
                     '&:hover svg': { transform: 'scale(1.2) rotate(5deg)' },
                   }}>

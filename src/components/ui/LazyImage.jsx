@@ -1,5 +1,14 @@
 import { useState, useEffect } from 'react';
 
+/**
+ * Image component with fade-in transition on load.
+ * @param {object} props
+ * @param {string} props.src - Image source URL
+ * @param {string} props.alt - Alt text for accessibility
+ * @param {object} [props.sx] - Inline style overrides (applied as style, not MUI sx)
+ * @param {number} [props.width] - Intrinsic width for layout shift prevention
+ * @param {number} [props.height] - Intrinsic height for layout shift prevention
+ */
 const LazyImage = ({ src, alt, sx, width, height, ...props }) => {
   const [loaded, setLoaded] = useState(false);
 

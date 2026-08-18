@@ -1,21 +1,16 @@
 import { Box, Container, Typography, Stack, Button } from '@mui/material';
 import ArrowForward from '@mui/icons-material/ArrowForward';
-import { useWhatsApp } from '../contexts/WhatsAppContext';
-import { ctaButtonSx } from '../constants';
-import SEO from '../components/SEO';
+import { useWhatsApp } from '../../contexts/WhatsAppContext';
+import { ctaButtonSx, sectionPadding } from '../../constants';
 
 const Contact = () => {
   const { openWhatsApp } = useWhatsApp();
 
   return (
     <>
-      <SEO
-        title="Solicitar Demo"
-        description="Pide una demo gratuita de SmartVenta y descubre cómo podemos ayudarte a optimizar tu negocio."
-      />
       <Box
         sx={{
-          py: { xs: 6, md: 10 },
+          py: sectionPadding.py,
           position: 'relative',
           overflow: 'hidden',
           background: 'linear-gradient(145deg, #022347 0%, #04346b 40%, #065a9e 100%)',

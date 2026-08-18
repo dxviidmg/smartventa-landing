@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { Box, Container, Typography, Stack, Link, Dialog, DialogTitle, DialogContent, IconButton } from '@mui/material';
 import Close from '@mui/icons-material/Close';
-import { CONFIG } from '../config/constants';
-import SEO from '../components/SEO';
+import { CONFIG } from '../../constants';
 
 const footerLinkSx = { color: 'rgba(255,255,255,0.7)', textDecoration: 'none', '&:hover': { color: 'white' }, transition: 'color 0.25s' };
 
@@ -12,10 +11,6 @@ const Footer = () => {
 
   return (
     <>
-      <SEO
-        title={CONFIG.company.name}
-        description="El punto de venta inteligente para negocios multi-tienda."
-      />
       <Box sx={{ bgcolor: '#022347', color: 'white', py: 6 }}>
         <Container maxWidth="lg">
           <Stack spacing={4}>

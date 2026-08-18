@@ -1,27 +1,12 @@
 import { Box, Container, Typography, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
-import Settings from '@mui/icons-material/Settings';
-import Storefront from '@mui/icons-material/Storefront';
-import PointOfSale from '@mui/icons-material/PointOfSale';
-import Insights from '@mui/icons-material/Insights';
-import { stepItem } from '../constants';
-import SectionHeader from './ui/SectionHeader';
-import SEO from '../components/SEO';
-
-const steps = [
-  { icon: <Settings />, num: '01', title: 'Configura tu catálogo', desc: 'Sube tus productos desde Excel o agrégalos uno a uno. ¿No tienes catálogo? No importa, puedes crear productos sobre la marcha mientras vendes.' },
-  { icon: <Storefront />, num: '02', title: 'Actualiza stock en tus tiendas', desc: 'Decide qué productos van a cada sucursal o da de alta stock manualmente en cada sucursal. Tú controlas quién tiene qué.' },
-  { icon: <PointOfSale />, num: '03', title: 'Vende con agilidad', desc: 'Tu equipo atiende clientes sin fricciones. Tú ves las ventas de todas tus tiendas mientras ocurren.' },
-  { icon: <Insights />, num: '04', title: 'Analiza y optimiza', desc: 'Sabes cuánto dinero hay en cada tienda, qué movimientos hubo, cuánto tienes en caja y en tu cuenta bancaria. Vive más tranquilo, decide con datos.' },
-];
+import { stepItem, sectionPadding } from '../../constants';
+import SectionHeader from '../ui/SectionHeader';
+import { steps } from '../../data/steps';
 
 const HowItWorks = () => (
   <>
-    <SEO
-      title="Cómo Funciona"
-      description="Empieza en 4 pasos sencillos. Configura, distribuye, vende y analiza con SmartVenta."
-    />
-    <Box id="how-it-works" sx={{ py: { xs: 8, md: 12 }, background: 'linear-gradient(145deg, #022347 0%, #04346b 100%)' }}>
+    <Box id="how-it-works" sx={{ ...sectionPadding, background: 'linear-gradient(145deg, #022347 0%, #04346b 100%)' }}>
       <Container maxWidth="md">
         <Stack spacing={8}>
           <SectionHeader

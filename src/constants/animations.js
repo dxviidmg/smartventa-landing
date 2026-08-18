@@ -58,3 +58,6 @@ export const ctaButtonSx = {
   '&:hover': { bgcolor: '#065f46' },
   boxShadow: '0 4px 24px rgba(4,120,87,0.3)',
 };
+
+// Consistent section padding
+export const sectionPadding = { py: { xs: 8, md: 12 } };

@@ -1,5 +1,5 @@
 import { createContext, useContext, useCallback, useMemo } from 'react';
-import { CONFIG } from '../config/constants';
+import { CONFIG } from '../constants';
 
 const WhatsAppContext = createContext(null);
 

@@ -1,6 +1,6 @@
 import { Box, Fab } from '@mui/material';
 import WhatsApp from '@mui/icons-material/WhatsApp';
-import { useWhatsApp } from '../contexts/WhatsAppContext';
+import { useWhatsApp } from '../../contexts/WhatsAppContext';
 
 const WhatsAppButton = () => {
   const { openWhatsApp } = useWhatsApp();

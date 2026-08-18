@@ -15,6 +15,7 @@ export const lightTheme = createTheme({
   palette: {
     primary: { main: '#04346b', dark: '#022347', light: '#065a9e' },
     secondary: { main: '#047857' },
+    surface: { alt: '#CAD2DE' },
     background: { default: '#f8fafc', paper: '#ffffff' },
     text: { primary: '#0f172a', secondary: '#64748b' },
     divider: '#e2e8f0',
@@ -32,7 +33,7 @@ export const lightTheme = createTheme({
       },
     },
     MuiCard: {
-      styleOverrides: { root: { borderRadius: 16, transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)' } },
+      styleOverrides: { root: { borderRadius: 16, transition: 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1)' } },
     },
     MuiContainer: {
       styleOverrides: { root: { paddingLeft: 0, paddingRight: 0 } },

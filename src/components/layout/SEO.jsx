@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { CONFIG } from '../config/constants';
+import { CONFIG } from '../../constants';
 
 const SEO = ({ title, description, keywords, image, url }) => {
   useEffect(() => {

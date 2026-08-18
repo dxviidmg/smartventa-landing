@@ -2,6 +2,17 @@ import { Typography, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
 import { sectionHeader } from '../../constants';
 
+/**
+ * Animated section header with overline, title, and optional subtitle.
+ * @param {object} props
+ * @param {string} props.overline - Small text above the title
+ * @param {string} props.title - Main heading text
+ * @param {string} [props.subtitle] - Optional description below the title
+ * @param {object} [props.sx] - MUI sx overrides for the container Stack
+ * @param {object} [props.overlineSx] - MUI sx overrides for the overline Typography
+ * @param {object} [props.titleSx] - MUI sx overrides for the title Typography
+ * @param {object} [props.subtitleSx] - MUI sx overrides for the subtitle Typography
+ */
 const SectionHeader = ({ overline, title, subtitle, sx, overlineSx, titleSx, subtitleSx }) => (
   <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 8, ...sx }}>
     <motion.div {...sectionHeader.overline}>

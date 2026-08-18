@@ -1,14 +1,13 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { Box, Container, Typography, Stack, Card, Modal } from '@mui/material';
 import { motion, AnimatePresence } from 'framer-motion';
-import tableroImg from '../assets/Tablero.png';
-import tiendasImg from '../assets/Tiendas.png';
-import corteImg from '../assets/Corte de caja.png';
-import carritoImg from '../assets/Carrito de venta.png';
-import { dashboardCarousel } from '../constants';
-import { LazyImage } from './LazyImage';
-import SectionHeader from './ui/SectionHeader';
-import SEO from '../components/SEO';
+import tableroImg from '../../assets/Tablero.png';
+import tiendasImg from '../../assets/Tiendas.png';
+import corteImg from '../../assets/Corte de caja.png';
+import carritoImg from '../../assets/Carrito de venta.png';
+import { dashboardCarousel } from '../../constants';
+import { LazyImage } from '../ui/LazyImage';
+import SectionHeader from '../ui/SectionHeader';
 
 const features = [
   { img: tableroImg, title: 'Tablero', desc: 'KPIs y métricas en tiempo real' },
@@ -39,11 +38,7 @@ const DashboardPreview = () => {
 
   return (
     <>
-      <SEO
-        title="Dashboard"
-        description="Tu negocio, bajo control. Interfaz intuitiva diseñada para que gestiones tu negocio sin complicaciones."
-      />
-      <Box sx={{ py: 8, bgcolor: '#CAD2DE' }}>
+      <Box sx={{ py: 8, bgcolor: 'surface.alt' }}>
         <Container maxWidth="lg">
           <SectionHeader
             overline="Dashboard"
@@ -99,7 +94,7 @@ const DashboardPreview = () => {
                       borderRadius: '50%',
                       bgcolor: i === activeIndex ? 'secondary.main' : 'rgba(0,0,0,0.2)',
                       cursor: 'pointer',
-                      transition: 'all 0.3s ease',
+                      transition: 'background-color 0.3s ease',
                       '&:hover': { bgcolor: 'secondary.main' },
                     }}
                   />

@@ -3,42 +3,17 @@ import { motion } from 'framer-motion';
 import Check from '@mui/icons-material/Check';
 import ArrowForward from '@mui/icons-material/ArrowForward';
 import Star from '@mui/icons-material/Star';
-import { useWhatsApp } from '../contexts/WhatsAppContext';
-import { cardGridItem, ctaButtonSx } from '../constants';
-import SectionHeader from './ui/SectionHeader';
-import SEO from '../components/SEO';
-
-const plans = [
-  {
-    name: 'Plan Emprendedor',
-    price: '$500 MXN',
-    period: '/mes',
-    desc: 'Para negocios con una sola tienda.',
-    features: ['1 Tienda', 'Todas las funcionalidades', 'Soporte vía WhatsApp'],
-    cta: 'Comenzar',
-    popular: false,
-  },
-  {
-    name: 'Plan Empresarial',
-    price: '$2500 MXN',
-    period: '/mes',
-    desc: 'Para negocios con múltiples tiendas y almacenes.',
-    features: ['Hasta 8 sucursales (tiendas o almacenes)', 'Todas las funcionalidades', 'Soporte prioritario'],
-    cta: 'Comprar',
-    popular: true,
-  },
-];
+import { useWhatsApp } from '../../contexts/WhatsAppContext';
+import { cardGridItem, ctaButtonSx, sectionPadding } from '../../constants';
+import SectionHeader from '../ui/SectionHeader';
+import { plans } from '../../data/plans';
 
 const Pricing = () => {
   const { openWhatsApp } = useWhatsApp();
 
   return (
     <>
-      <SEO
-        title="Planes y Precios"
-        description="Elige el plan perfecto para tu negocio. Sin costos ocultos. Cancela cuando quieras."
-      />
-      <Box id="pricing" sx={{ py: { xs: 6, md: 10 }, bgcolor: 'background.paper' }}>
+      <Box id="pricing" sx={{ ...sectionPadding, bgcolor: 'background.paper' }}>
         <Container maxWidth="md">
           <SectionHeader
             overline="Precios"
@@ -61,7 +36,7 @@ const Pricing = () => {
                     borderColor: plan.popular ? 'primary.main' : 'divider',
                     position: 'relative', overflow: 'hidden',
                     display: 'flex', flexDirection: 'column',
-                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                    transition: 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease',
                     '&:hover': {
                       transform: 'translateY(-8px)',
                       boxShadow: plan.popular ? '0 20px 50px rgba(4,52,107,0.2)' : '0 15px 40px rgba(0,0,0,0.08)',

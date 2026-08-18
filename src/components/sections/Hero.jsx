@@ -1,7 +1,6 @@
 import { Container, Typography, Button, Stack, Chip } from '@mui/material';
-import { CONFIG } from '../config/constants';
-import { ctaButtonSx } from '../constants';
-import { useWhatsApp } from '../contexts/WhatsAppContext';
+import { CONFIG, ctaButtonSx } from '../../constants';
+import { useWhatsApp } from '../../contexts/WhatsAppContext';
 
 const ArrowForward = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -94,7 +93,7 @@ const Hero = () => {
                 px: 4, py: 1.5, fontSize: '1rem',
                 '&:hover': { ...ctaButtonSx['&:hover'], transform: 'scale(1.05)' },
                 '&:active': { transform: 'scale(0.95)' },
-                transition: 'all 0.2s ease',
+                transition: 'transform 0.2s ease, background-color 0.2s ease',
               }}
             >
               Solicitar demo
@@ -109,7 +108,7 @@ const Hero = () => {
                 borderColor: 'rgba(255,255,255,0.5)',
                 '&:hover': { borderColor: '#fff', bgcolor: 'rgba(255,255,255,0.1)', transform: 'scale(1.05)' },
                 '&:active': { transform: 'scale(0.95)' },
-                transition: 'all 0.2s ease',
+                transition: 'transform 0.2s ease, background-color 0.2s ease',
               }}
             >
               Registrarme

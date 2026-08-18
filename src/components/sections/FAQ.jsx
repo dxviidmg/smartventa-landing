@@ -1,27 +1,13 @@
 import { Box, Container, Typography, Stack, Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
 import { motion } from 'framer-motion';
 import Add from '@mui/icons-material/Add';
-import { faqItem } from '../constants';
-import SectionHeader from './ui/SectionHeader';
-import SEO from '../components/SEO';
-
-const faqs = [
-  { q: '¿Necesito instalar algo?', a: 'No. SmartVenta funciona en la nube. Solo necesitas internet y un navegador.' },
-  { q: '¿Hay contrato o permanencia?', a: 'No. Pagas mes a mes y puedes cancelar cuando quieras. Sin letras chiquitas.' },
-  { q: '¿Puedo acceder desde mi celular?', a: 'Sí, puedes consultar información desde cualquier dispositivo. Para la operación diaria (ventas, traspasos) se recomienda una computadora con conexión por cable para mayor estabilidad.' },
-  { q: '¿Cómo funciona el soporte?', a: 'Tienes soporte directo por WhatsApp con información prellenada de tu tienda, y ayuda contextual dentro de cada página del sistema.' },
-  { q: '¿Puedo probarlo antes de pagar?', a: 'Sí. Solicita una demo y te damos acceso a una cuenta de prueba para que explores el sistema sin compromiso.' },
-  { q: '¿Funciona con mi impresora o lector de códigos?', a: 'Sí. Es compatible con impresoras térmicas estándar y lectores de código de barras USB o Bluetooth.' },
-  { q: '¿Qué pasa si se va el internet?', a: 'Al ser un sistema en la nube, necesitas conexión para operar. Pero cualquier conexión estable (incluso datos móviles) es suficiente.' },
-];
+import { faqItem, sectionPadding } from '../../constants';
+import SectionHeader from '../ui/SectionHeader';
+import { faqs } from '../../data/faqs';
 
 const FAQ = () => (
   <>
-    <SEO
-      title="Preguntas Frecuentes"
-      description="Respuestas a las preguntas más comunes sobre SmartVenta y sus servicios."
-    />
-    <Box id="faq" sx={{ py: { xs: 6, md: 10 }, bgcolor: '#CAD2DE' }}>
+    <Box id="faq" sx={{ ...sectionPadding, bgcolor: 'surface.alt' }}>
       <Container maxWidth="md">
         <SectionHeader
           overline="FAQ"
@@ -39,7 +25,7 @@ const FAQ = () => (
                   border: '1px solid', borderColor: 'divider', borderRadius: '12px !important',
                   '&:before': { display: 'none' },
                   '&.Mui-expanded': { borderColor: 'primary.light', bgcolor: 'rgba(4,52,107,0.02)' },
-                  transition: 'all 0.3s ease',
+                  transition: 'border-color 0.3s ease, background-color 0.3s ease',
                   '&:hover': { borderColor: 'primary.main', bgcolor: 'rgba(4,52,107,0.02)' },
                 }}
               >
