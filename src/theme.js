@@ -36,7 +36,16 @@ export const lightTheme = createTheme({
       styleOverrides: { root: { borderRadius: 16, transition: 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1)' } },
     },
     MuiContainer: {
-      styleOverrides: { root: { paddingLeft: 0, paddingRight: 0 } },
+      styleOverrides: {
+        root: {
+          paddingLeft: 20,
+          paddingRight: 20,
+          '@media (min-width: 600px)': {
+            paddingLeft: 32,
+            paddingRight: 32,
+          },
+        },
+      },
     },
   },
 });

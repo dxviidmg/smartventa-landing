@@ -10,8 +10,8 @@ import { useWhatsApp } from '../../contexts/WhatsAppContext';
 import { cardGridItem, ctaButtonSx, sectionPadding } from '../../constants';
 import SectionHeader from '../ui/SectionHeader';
 
-const PRICE_TABLE = { 1: 400, 2: 800, 3: 1200, 4: 1500, 5: 1800, 6: 2150, 7: 2500 };
-const MAX_UNITS_WITH_PRICE = 7;
+const PRICE_TABLE = { 1: 400, 2: 800, 3: 1200, 4: 1500, 5: 1800, 6: 2150, 7: 2500, 8: 2800, 9: 3100, 10: 3400 };
+const MAX_UNITS_WITH_PRICE = 10;
 const MIN_TOTAL_UNITS = 1;
 
 const formatPrice = (amount) => `$${amount.toLocaleString('es-MX')} MXN`;
