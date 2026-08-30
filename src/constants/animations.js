@@ -1,4 +1,9 @@
-// Animation variants grouped by component type
+// Animation presets for framer-motion
+
+const EASE = [0.25, 0.1, 0.25, 1];
+
+// Shared viewport config
+const once = { once: true, margin: '-40px' };
 
 // Section headers (overline + title + subtitle)
 export const sectionHeader = {
@@ -6,34 +11,27 @@ export const sectionHeader = {
     initial: { opacity: 0, y: 20 },
     whileInView: { opacity: 1, y: 0 },
     viewport: { once: true, margin: '-50px' },
-    transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] },
+    transition: { duration: 0.5, ease: EASE },
   },
   title: {
     initial: { opacity: 0, y: 20 },
     whileInView: { opacity: 1, y: 0 },
     viewport: { once: true, margin: '-50px' },
-    transition: { delay: 0.1, duration: 0.5, ease: [0.25, 0.1, 0.25, 1] },
+    transition: { delay: 0.1, duration: 0.5, ease: EASE },
   },
   subtitle: {
     initial: { opacity: 0, y: 20 },
     whileInView: { opacity: 1, y: 0 },
     viewport: { once: true, margin: '-50px' },
-    transition: { delay: 0.2, duration: 0.5, ease: [0.25, 0.1, 0.25, 1] },
+    transition: { delay: 0.2, duration: 0.5, ease: EASE },
   },
 };
 
-// Card grid items (Features, Benefits, Pricing)
+// Card grid items (Features, Benefits, Pricing, ProductShowcase)
 export const cardGridItem = {
   initial: { opacity: 0, y: 24 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: '-40px' },
-};
-
-// Step-by-step items (HowItWorks)
-export const stepItem = {
-  initial: { opacity: 0, x: -24 },
-  whileInView: { opacity: 1, x: 0 },
-  viewport: { once: true, margin: '-40px' },
+  viewport: once,
 };
 
 // FAQ items
@@ -43,7 +41,7 @@ export const faqItem = {
   viewport: { once: true, margin: '-30px' },
 };
 
-// Hero stagger — for children entering in sequence
+// Hero stagger
 export const heroContainer = {
   initial: {},
   animate: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
@@ -51,43 +49,28 @@ export const heroContainer = {
 
 export const heroItem = {
   initial: { opacity: 0, y: 30 },
-  animate: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] } },
+  animate: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE } },
 };
 
-// Hero image — slides in from right with scale
+// Hero image
 export const heroImage = {
   initial: { opacity: 0, x: 40, scale: 0.96 },
-  animate: { opacity: 1, x: 0, scale: 1, transition: { duration: 0.7, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] } },
+  animate: { opacity: 1, x: 0, scale: 1, transition: { duration: 0.7, delay: 0.3, ease: EASE } },
 };
 
-// Fade up for generic elements
+// Generic fade up
 export const fadeUp = {
   initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: '-40px' },
-  transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] },
-};
-
-// Pill/tag items (Industries)
-export const pillItem = {
-  initial: { opacity: 0, scale: 0.9 },
-  whileInView: { opacity: 1, scale: 1 },
-  viewport: { once: true, margin: '-30px' },
+  viewport: once,
+  transition: { duration: 0.5, ease: EASE },
 };
 
 // Contact CTA
 export const contactItem = {
   initial: { opacity: 0, y: 24 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: '-40px' },
-};
-
-// Dashboard preview carousel
-export const dashboardCarousel = {
-  initial: { opacity: 0, scale: 0.95 },
-  animate: { opacity: 1, scale: 1 },
-  exit: { opacity: 0, scale: 0.95 },
-  transition: { duration: 0.3 },
+  viewport: once,
 };
 
 // CTA button styles (green primary action)

@@ -1,4 +1,2 @@
-// Constants module
-
-export { sectionHeader, cardGridItem, stepItem, faqItem, dashboardCarousel, ctaButtonSx, sectionPadding, heroContainer, heroItem, heroImage, fadeUp, pillItem, contactItem } from './animations';
+export { sectionHeader, cardGridItem, faqItem, ctaButtonSx, sectionPadding, heroContainer, heroItem, heroImage, fadeUp, contactItem } from './animations';
 export { CONFIG } from './config';

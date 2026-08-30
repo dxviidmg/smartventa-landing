@@ -1,69 +1,32 @@
-import { createContext, useContext, useState, useCallback, useMemo, useEffect, useRef } from 'react';
+import { createContext, useContext, useState, useCallback, useMemo } from 'react';
 
 const AppContext = createContext(null);
 
 export const useApp = () => {
   const context = useContext(AppContext);
-  if (!context) {
-    throw new Error('useApp must be used within an AppProvider');
-  }
+  if (!context) throw new Error('useApp must be used within an AppProvider');
   return context;
 };
 
 export const AppProvider = ({ children }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState(null);
-  const observerRef = useRef(null);
-
-  // Defer observer until sections are rendered
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      const sections = ['product', 'features', 'pricing', 'faq'];
-      observerRef.current = new IntersectionObserver(
-        (entries) => {
-          for (const entry of entries) {
-            if (entry.isIntersecting) {
-              setActiveSection(entry.target.id);
-            }
-          }
-        },
-        { rootMargin: '-20% 0px -80% 0px' }
-      );
-
-      sections.forEach((id) => {
-        const el = document.getElementById(id);
-        if (el) observerRef.current.observe(el);
-      });
-    }, 2000);
-
-    return () => {
-      clearTimeout(timeout);
-      observerRef.current?.disconnect();
-    };
-  }, []);
 
   const scrollToSection = useCallback((id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
       setDrawerOpen(false);
     }
   }, []);
-
-  const openDrawer = useCallback(() => setDrawerOpen(true), []);
-  const closeDrawer = useCallback(() => setDrawerOpen(false), []);
 
   const value = useMemo(() => ({
     drawerOpen,
     setDrawerOpen,
     scrolled,
     setScrolled,
-    activeSection,
     scrollToSection,
-    openDrawer,
-    closeDrawer,
-  }), [drawerOpen, scrolled, activeSection, scrollToSection]);
+  }), [drawerOpen, scrolled, scrollToSection]);
 
   return (
     <AppContext.Provider value={value}>
