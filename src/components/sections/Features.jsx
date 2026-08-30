@@ -1,188 +1,213 @@
-import { Box, Container, Typography, Grid, Stack } from '@mui/material';
+import { useRef, useState, useCallback, useEffect } from 'react';
+import { Box, Container, Typography, Stack, IconButton } from '@mui/material';
 import { motion } from 'framer-motion';
-import { cardGridItem, sectionPadding } from '../../constants';
-import SectionHeader from '../ui/SectionHeader';
+import { sectionPadding, fadeUp } from '../../constants';
+import ChevronLeft from '@mui/icons-material/ChevronLeft';
+import ChevronRight from '@mui/icons-material/ChevronRight';
 
+import Storefront from '@mui/icons-material/Storefront';
 import SwapHoriz from '@mui/icons-material/SwapHoriz';
+import LocalShipping from '@mui/icons-material/LocalShipping';
 import Transform from '@mui/icons-material/Transform';
 import Scale from '@mui/icons-material/Scale';
-import AttachMoney from '@mui/icons-material/AttachMoney';
 import PointOfSale from '@mui/icons-material/PointOfSale';
-import QrCodeScanner from '@mui/icons-material/QrCodeScanner';
+import AttachMoney from '@mui/icons-material/AttachMoney';
+import Payment from '@mui/icons-material/Payment';
 import AccountBalance from '@mui/icons-material/AccountBalance';
+import AccountBalanceWallet from '@mui/icons-material/AccountBalanceWallet';
+import QrCodeScanner from '@mui/icons-material/QrCodeScanner';
 import UploadFile from '@mui/icons-material/UploadFile';
 import Assessment from '@mui/icons-material/Assessment';
+import TrendingUp from '@mui/icons-material/TrendingUp';
 import BookmarkAdded from '@mui/icons-material/BookmarkAdded';
-import Security from '@mui/icons-material/Security';
 import People from '@mui/icons-material/People';
+import Badge from '@mui/icons-material/Badge';
+import Security from '@mui/icons-material/Security';
+import History from '@mui/icons-material/History';
+import Keyboard from '@mui/icons-material/Keyboard';
+import Notifications from '@mui/icons-material/Notifications';
+import Print from '@mui/icons-material/Print';
 
-const bentoItems = [
-  // Large cards — differentiators
-  {
-    icon: <SwapHoriz />,
-    title: 'Traspasos entre tiendas',
-    desc: 'Mueve mercancía entre sucursales con trazabilidad completa. Queda registrado quién mandó qué, cuándo y a dónde.',
-    size: { xs: 12, sm: 6 },
-    accent: '#8b5cf6',
-    featured: true,
-  },
-  {
-    icon: <Transform />,
-    title: 'Conversión de unidades',
-    desc: 'Cajas a piezas, costales a kilos. Configura una vez y convierte con un clic.',
-    size: { xs: 12, sm: 6 },
-    accent: '#ec4899',
-    featured: true,
-  },
-  // Standard cards
-  {
-    icon: <Scale />,
-    title: 'Venta a granel',
-    desc: '"20 pesos de…" y el sistema calcula lo proporcional.',
-    size: { xs: 12, sm: 6, md: 4 },
-    accent: '#f97316',
-  },
-  {
-    icon: <PointOfSale />,
-    title: 'Crear productos al vender',
-    desc: 'Si no existe en el catálogo, lo creas directo desde la venta.',
-    size: { xs: 12, sm: 6, md: 4 },
-    accent: '#22c55e',
-  },
-  {
-    icon: <AttachMoney />,
-    title: 'Cambio masivo de precios',
-    desc: 'Actualiza costo y precios de varios productos a la vez.',
-    size: { xs: 12, sm: 6, md: 4 },
-    accent: '#eab308',
-  },
-  {
-    icon: <QrCodeScanner />,
-    title: 'Código de barras',
-    desc: 'Compatible con lectores USB y Bluetooth.',
-    size: { xs: 12, sm: 6, md: 4 },
-    accent: '#22c55e',
-  },
-  {
-    icon: <AccountBalance />,
-    title: 'Corte de caja',
-    desc: 'Resumen por método de pago con exportación a Excel.',
-    size: { xs: 12, sm: 6, md: 4 },
-    accent: '#10b981',
-  },
-  {
-    icon: <UploadFile />,
-    title: 'Importación desde Excel',
-    desc: 'Sube tu catálogo con plantillas y validación previa.',
-    size: { xs: 12, sm: 6, md: 4 },
-    accent: '#0ea5e9',
-  },
-  {
-    icon: <Assessment />,
-    title: 'Dashboard de ventas',
-    desc: 'KPIs, productos destacados y rendimiento por tienda.',
-    size: { xs: 12, sm: 6, md: 4 },
-    accent: '#8b5cf6',
-  },
-  {
-    icon: <BookmarkAdded />,
-    title: 'Apartados',
-    desc: 'Reserva productos sin cobrar el total.',
-    size: { xs: 12, sm: 6, md: 4 },
-    accent: '#0891b2',
-  },
-  {
-    icon: <People />,
-    title: 'Clientes y descuentos',
-    desc: 'Historial de compras y descuentos personalizados.',
-    size: { xs: 12, sm: 6, md: 4 },
-    accent: '#a855f7',
-  },
-  {
-    icon: <Security />,
-    title: 'Roles y permisos',
-    desc: 'Dueño, administrador y vendedor — cada quien ve lo suyo.',
-    size: { xs: 12, sm: 6, md: 4 },
-    accent: '#d946ef',
-  },
+const features = [
+  // Diferenciadores multi-tienda
+  { icon: <Storefront />, title: 'Panel central de tiendas', desc: 'Vista consolidada para administrar todas tus sucursales y almacenes. Catálogo de productos centralizado y compartido.', accent: '#10b981' },
+  { icon: <SwapHoriz />, title: 'Traspasos entre tiendas', desc: 'Mueve mercancía entre sucursales mientras vendes. Trazabilidad completa: quién mandó qué, cuándo y a dónde.', accent: '#8b5cf6' },
+  { icon: <LocalShipping />, title: 'Distribución desde almacén', desc: 'Envía mercancía a una o varias tiendas en una sola operación, sin que ellas la soliciten.', accent: '#0891b2' },
+  { icon: <Transform />, title: 'Conversión de unidades', desc: 'Cajas a piezas, costales a kilos. Configura la equivalencia una vez y convierte con un clic.', accent: '#ec4899' },
+  // Diferenciadores operativos
+  { icon: <Scale />, title: 'Venta a granel', desc: 'Vende por kilo, fracción o "20 pesos de…" y el sistema calcula lo proporcional.', accent: '#f97316' },
+  { icon: <PointOfSale />, title: 'Crear productos al vender', desc: 'Si no existe en el catálogo, lo creas directo desde la venta sin interrumpir al cliente.', accent: '#22c55e' },
+  { icon: <AttachMoney />, title: 'Cambio masivo de precios', desc: 'Actualiza costo, precio unitario y mayoreo de múltiples productos. Se aplica en todas las tiendas.', accent: '#eab308' },
+  { icon: <BookmarkAdded />, title: 'Apartados', desc: 'Reserva productos para un cliente sin cobrar el total. El stock se descuenta automáticamente.', accent: '#0891b2' },
+  // Caja y pagos
+  { icon: <Payment />, title: 'Pagos mixtos', desc: 'Una misma venta puede pagarse con efectivo, tarjeta y transferencia combinados.', accent: '#6366f1' },
+  { icon: <AccountBalance />, title: 'Corte de caja', desc: 'Resumen por método de pago, movimientos de entrada/salida y exportación a Excel.', accent: '#10b981' },
+  { icon: <AccountBalanceWallet />, title: 'Movimientos de caja', desc: 'Registra entradas y salidas de efectivo no relacionadas con ventas.', accent: '#047857' },
+  // Rentabilidad
+  { icon: <Assessment />, title: 'Dashboard de ventas', desc: 'KPIs, productos destacados, rendimiento por tienda y vendedor.', accent: '#8b5cf6' },
+  { icon: <TrendingUp />, title: 'Rentabilidad y utilidad', desc: 'Consulta la utilidad de tus operaciones y cuánto capital tienes invertido en mercancía por sucursal.', accent: '#f59e0b' },
+  { icon: <History />, title: 'Kardex de inventario', desc: 'Historial completo de cada producto: ventas, traspasos, distribuciones y ajustes.', accent: '#14b8a6' },
+  // Gestión
+  { icon: <People />, title: 'Clientes y descuentos', desc: 'Base de clientes con historial de compras y descuentos personalizados por porcentaje.', accent: '#a855f7' },
+  { icon: <Badge />, title: 'Vendedores', desc: 'Asigna vendedores a tiendas y consulta sus ventas individuales.', accent: '#f97316' },
+  { icon: <UploadFile />, title: 'Importación desde Excel', desc: 'Sube tu catálogo completo con plantillas descargables y validación antes de importar.', accent: '#0ea5e9' },
+  { icon: <Security />, title: 'Roles y permisos', desc: 'Dueño, administrador y vendedor — cada rol ve solo lo que necesita.', accent: '#d946ef' },
+  // Hardware y operación
+  { icon: <QrCodeScanner />, title: 'Código de barras', desc: 'Busca productos por código, nombre o SKU. Compatible con lectores USB y Bluetooth.', accent: '#22c55e' },
+  { icon: <Keyboard />, title: 'Atajos de teclado', desc: 'Opera el punto de venta sin tocar el mouse. Buscar, cambiar operación, cobrar — todo con teclado.', accent: '#84cc16' },
+  { icon: <Print />, title: 'Tickets e impresión', desc: 'Compatible con impresoras térmicas estándar. Indicador visual de conexión en pantalla.', accent: '#6366f1' },
+  { icon: <Notifications />, title: 'Notificaciones', desc: 'Alertas en tiempo real sobre traspasos, distribuciones y solicitudes de ajuste.', accent: '#ef4444' },
 ];
 
-const FeatureCard = ({ item, index }) => (
-  <motion.div
-    {...cardGridItem}
-    transition={{ delay: index * 0.04, duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-    style={{ height: '100%' }}
-  >
-    <Stack
-      spacing={item.featured ? 2 : 1.5}
-      sx={{
-        p: item.featured ? 3.5 : 3,
-        height: '100%',
-        borderRadius: 3,
-        bgcolor: 'background.paper',
-        border: '1px solid',
-        borderColor: 'divider',
-        transition: 'border-color 0.25s ease, box-shadow 0.25s ease',
-        '&:hover': {
-          borderColor: item.accent,
-          boxShadow: `0 4px 20px ${item.accent}12`,
-        },
-      }}
-    >
-      <Box sx={{
-        width: item.featured ? 48 : 40,
-        height: item.featured ? 48 : 40,
-        borderRadius: 2.5,
-        bgcolor: `${item.accent}10`,
-        color: item.accent,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        '& svg': { fontSize: item.featured ? 24 : 20 },
-      }}>
-        {item.icon}
-      </Box>
-      <Box>
-        <Typography sx={{
-          fontWeight: 600,
-          mb: 0.5,
-          fontSize: item.featured ? '1.1rem' : '0.95rem',
-        }}>
-          {item.title}
-        </Typography>
-        <Typography variant="body2" sx={{
-          color: 'text.secondary',
-          lineHeight: 1.65,
-          fontSize: item.featured ? '0.9rem' : '0.85rem',
-        }}>
-          {item.desc}
-        </Typography>
-      </Box>
-    </Stack>
-  </motion.div>
-);
+const CARD_GAP = 16;
 
-const Features = () => (
-  <div id="features">
-    <Box sx={{ ...sectionPadding, bgcolor: 'background.default' }}>
-      <Container maxWidth="lg">
-        <SectionHeader
-          overline="Características"
-          title="Todo incluido, sin módulos extra"
-          subtitle="No hay funciones bloqueadas. Todo está disponible desde el primer día."
-          sx={{ mb: 8 }}
-        />
+const Features = () => {
+  const scrollRef = useRef(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
 
-        <Grid container spacing={2.5}>
-          {bentoItems.map((item, i) => (
-            <Grid size={item.size} key={i}>
-              <FeatureCard item={item} index={i} />
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
-    </Box>
-  </div>
-);
+  const checkScroll = useCallback(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    setCanScrollLeft(el.scrollLeft > 4);
+    setCanScrollRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 4);
+  }, []);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    checkScroll();
+    el.addEventListener('scroll', checkScroll, { passive: true });
+    window.addEventListener('resize', checkScroll);
+    return () => {
+      el.removeEventListener('scroll', checkScroll);
+      window.removeEventListener('resize', checkScroll);
+    };
+  }, [checkScroll]);
+
+  const scroll = (dir) => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const cardEl = el.querySelector('[data-card]');
+    if (!cardEl) return;
+    el.scrollBy({ left: dir * (cardEl.offsetWidth + CARD_GAP), behavior: 'smooth' });
+  };
+
+  return (
+    <div id="features">
+      <Box sx={{ ...sectionPadding, bgcolor: 'background.default' }}>
+        <Container maxWidth="lg">
+          {/* Header */}
+          <Stack direction={{ xs: 'column', sm: 'row' }} justifyContent="space-between" alignItems={{ xs: 'flex-start', sm: 'flex-end' }} sx={{ mb: 5 }}>
+            <motion.div {...fadeUp}>
+              <Stack spacing={1}>
+                <Typography variant="overline" sx={{ color: 'secondary.main', fontWeight: 700, letterSpacing: 2 }}>
+                  Características
+                </Typography>
+                <Typography variant="h2" sx={{ fontSize: { xs: '1.8rem', md: '2.4rem' } }}>
+                  ¿Qué más incluye?
+                </Typography>
+                <Typography sx={{ color: 'text.secondary', fontSize: '1rem', maxWidth: 480 }}>
+                  Además del punto de venta, inventario y control multi-tienda:
+                </Typography>
+              </Stack>
+            </motion.div>
+
+            <Stack direction="row" spacing={1} sx={{ display: { xs: 'none', sm: 'flex' }, mt: { xs: 2, sm: 0 } }}>
+              <IconButton
+                onClick={() => scroll(-1)}
+                disabled={!canScrollLeft}
+                aria-label="Anterior"
+                sx={{
+                  width: 44, height: 44,
+                  border: '1.5px solid',
+                  borderColor: canScrollLeft ? 'primary.light' : 'divider',
+                  color: canScrollLeft ? 'primary.main' : 'text.disabled',
+                  '&:hover:not(:disabled)': { bgcolor: 'rgba(4,52,107,0.06)' },
+                }}
+              >
+                <ChevronLeft />
+              </IconButton>
+              <IconButton
+                onClick={() => scroll(1)}
+                disabled={!canScrollRight}
+                aria-label="Siguiente"
+                sx={{
+                  width: 44, height: 44,
+                  border: '1.5px solid',
+                  borderColor: canScrollRight ? 'primary.light' : 'divider',
+                  color: canScrollRight ? 'primary.main' : 'text.disabled',
+                  '&:hover:not(:disabled)': { bgcolor: 'rgba(4,52,107,0.06)' },
+                }}
+              >
+                <ChevronRight />
+              </IconButton>
+            </Stack>
+          </Stack>
+
+          {/* Carousel inside Container */}
+          <Box
+            ref={scrollRef}
+            sx={{
+              display: 'flex',
+              gap: `${CARD_GAP}px`,
+              overflowX: 'auto',
+              scrollSnapType: 'x mandatory',
+              scrollBehavior: 'smooth',
+              pb: 1,
+              scrollbarWidth: 'none',
+              '&::-webkit-scrollbar': { display: 'none' },
+            }}
+          >
+            {features.map((f, i) => (
+              <Box
+                key={i}
+                data-card
+                sx={{
+                  minWidth: { xs: '80vw', sm: `calc((100% - ${CARD_GAP * 2}px) / 3)` },
+                  maxWidth: { xs: '80vw', sm: `calc((100% - ${CARD_GAP * 2}px) / 3)` },
+                  scrollSnapAlign: 'start',
+                  flexShrink: 0,
+                }}
+              >
+                <Stack
+                  spacing={1.5}
+                  sx={{
+                    p: 3,
+                    height: '100%',
+                    borderRadius: 3,
+                    bgcolor: 'background.paper',
+                    border: '1px solid',
+                    borderColor: 'divider',
+                    transition: 'border-color 0.25s ease, box-shadow 0.25s ease',
+                    '&:hover': {
+                      borderColor: f.accent,
+                      boxShadow: `0 4px 20px ${f.accent}12`,
+                    },
+                  }}
+                >
+                  <Box sx={{
+                    width: 40, height: 40, borderRadius: 2.5,
+                    bgcolor: `${f.accent}10`, color: f.accent,
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    '& svg': { fontSize: 20 },
+                  }}>
+                    {f.icon}
+                  </Box>
+                  <Typography sx={{ fontWeight: 600, fontSize: '0.95rem' }}>
+                    {f.title}
+                  </Typography>
+                  <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.65, fontSize: '0.85rem' }}>
+                    {f.desc}
+                  </Typography>
+                </Stack>
+              </Box>
+            ))}
+          </Box>
+        </Container>
+      </Box>
+    </div>
+  );
+};
 
 export default Features;
