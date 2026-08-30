@@ -12,6 +12,9 @@ const WhatsAppButton = () => {
         bottom: 32,
         right: 32,
         zIndex: 1000,
+        '@keyframes ping': {
+          '75%, 100%': { transform: 'scale(2)', opacity: 0 },
+        },
       }}
     >
       <Fab
@@ -34,7 +37,6 @@ const WhatsAppButton = () => {
             borderRadius: '50%',
             bgcolor: 'rgba(37,211,102,0.4)',
             animation: 'ping 2s cubic-bezier(0, 0, 0.2, 1) infinite',
-            willChange: 'transform, opacity',
             zIndex: -1,
           },
         }}

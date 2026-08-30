@@ -34,13 +34,13 @@ function App() {
             <main role="main">
               <Hero />
               <Suspense fallback={null}>
-                <div style={{ backgroundColor: lightTheme.palette.surface.alt }}><Industries /></div>
+                <Industries />
                 <Benefits />
-                <div style={{ backgroundColor: lightTheme.palette.surface.alt }}><Features /></div>
+                <Features />
                 <HowItWorks />
-                <div style={{ backgroundColor: lightTheme.palette.surface.alt }}><DashboardPreview /></div>
+                <DashboardPreview />
                 <Pricing />
-                <div style={{ backgroundColor: lightTheme.palette.surface.alt }}><FAQ /></div>
+                <FAQ />
                 <Contact />
               </Suspense>
             </main>

@@ -38,7 +38,7 @@ const DashboardPreview = () => {
 
   return (
     <>
-      <Box sx={{ py: 8, bgcolor: 'surface.alt' }}>
+      <Box sx={{ py: { xs: 8, md: 10 }, bgcolor: 'background.paper' }}>
         <Container maxWidth="lg">
           <SectionHeader
             overline="Dashboard"
