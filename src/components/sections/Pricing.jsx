@@ -14,10 +14,10 @@ const PRICE_TABLE = { 1: 400, 2: 800, 3: 1200, 4: 1500, 5: 1800, 6: 2150, 7: 250
 const MAX_UNITS_WITH_PRICE = 10;
 const MIN_TOTAL_UNITS = 1;
 
-const formatPrice = (amount) => `$${amount.toLocaleString('es-MX')} MXN`;
+const formatPrice = (amount) => `$${amount.toLocaleString('es-MX')}`;
 
 const CounterControl = ({ label, icon: Icon, value, onIncrement, onDecrement, min = 0 }) => (
-  <Stack direction="row" spacing={1.5} alignItems="center" sx={{ flex: 1, justifyContent: 'center' }}>
+  <Stack direction="row" spacing={1.5} alignItems="center" sx={{ justifyContent: 'center' }}>
     <Icon sx={{ color: 'primary.main', fontSize: 20 }} />
     <Typography sx={{ fontWeight: 600, fontSize: '0.9rem', color: 'text.primary', minWidth: 75 }}>
       {label}
@@ -64,6 +64,9 @@ const Pricing = () => {
   const needsQuote = totalUnits > MAX_UNITS_WITH_PRICE;
   const price = useMemo(() => PRICE_TABLE[totalUnits] ?? null, [totalUnits]);
 
+  const pricePerUnit = price && totalUnits > 0 ? Math.round(price / totalUnits) : null;
+  const hasDiscount = pricePerUnit && pricePerUnit < 400;
+
   const handleDecrementStore = () => {
     if (stores > 0 && (stores - 1 + warehouses) >= MIN_TOTAL_UNITS) setStores(stores - 1);
   };
@@ -76,32 +79,32 @@ const Pricing = () => {
     : `Hola, me interesa SmartVenta para ${stores} tienda${stores !== 1 ? 's' : ''} y ${warehouses} almacén${warehouses !== 1 ? 'es' : ''}. Quiero comenzar.`;
 
   return (
-    <Box id="pricing" sx={{ ...sectionPadding, bgcolor: 'background.default', minHeight: '100vh', display: 'flex', alignItems: 'center' }}>
+    <Box id="pricing" sx={{ ...sectionPadding, bgcolor: 'background.paper' }}>
       <Container maxWidth="sm">
         <SectionHeader
           overline="Precios"
-          title="Desde $400 al mes"
-          subtitle="El precio se adapta al número de ubicaciones de tu negocio."
+          title="Sencillo y transparente"
+          subtitle="El precio se adapta al número de ubicaciones de tu negocio. Sin costos ocultos."
           sx={{ mb: 5 }}
         />
 
         <motion.div {...cardGridItem} transition={{ delay: 0.15 }}>
           <Box sx={{
-            p: { xs: 3, sm: 3.5 },
+            p: { xs: 3, sm: 4 },
             borderRadius: 3,
-            bgcolor: 'background.paper',
+            bgcolor: 'background.default',
             border: '1px solid', borderColor: 'divider',
             maxWidth: 480,
             mx: 'auto',
           }}>
             {/* Counters */}
-            <Stack spacing={2} sx={{ mb: 2.5 }}>
+            <Stack spacing={2} sx={{ mb: 3 }}>
               <CounterControl label="Tiendas" icon={StorefrontOutlined} value={stores} onIncrement={() => setStores(stores + 1)} onDecrement={handleDecrementStore} min={0} />
               <CounterControl label="Almacenes" icon={WarehouseOutlined} value={warehouses} onIncrement={() => setWarehouses(warehouses + 1)} onDecrement={handleDecrementWarehouse} min={0} />
             </Stack>
 
             {/* Price display */}
-            <Box sx={{ textAlign: 'center', py: 2, mb: 2.5, bgcolor: 'rgba(4,52,107,0.03)', borderRadius: 2 }}>
+            <Box sx={{ textAlign: 'center', py: 2.5, mb: 3, bgcolor: 'background.paper', borderRadius: 2.5, border: '1px solid', borderColor: 'divider' }}>
               {needsQuote ? (
                 <>
                   <Typography sx={{ fontWeight: 700, fontSize: '1.1rem', color: 'primary.main' }}>
@@ -113,18 +116,35 @@ const Pricing = () => {
                 </>
               ) : (
                 <>
-                  <Typography variant="body2" sx={{ color: 'text.secondary', mb: 0.5 }}>
-                    {totalUnits} {totalUnits === 1 ? 'ubicación' : 'ubicaciones'} · Tu precio mensual
+                  <Typography variant="body2" sx={{ color: 'text.secondary', mb: 1 }}>
+                    {totalUnits} {totalUnits === 1 ? 'ubicación' : 'ubicaciones'}
                   </Typography>
                   <Stack direction="row" alignItems="baseline" justifyContent="center" spacing={0.5}>
-                    <Typography sx={{ fontWeight: 800, fontSize: { xs: '2rem', sm: '2.4rem' }, lineHeight: 1, color: 'primary.main' }}>
+                    <Typography sx={{ fontWeight: 800, fontSize: { xs: '2.2rem', sm: '2.8rem' }, lineHeight: 1, color: 'primary.main' }}>
                       {formatPrice(price)}
                     </Typography>
-                    <Typography sx={{ color: 'text.secondary', fontSize: '0.95rem' }}>/mes</Typography>
+                    <Typography sx={{ color: 'text.secondary', fontSize: '1rem', fontWeight: 500 }}>/mes</Typography>
                   </Stack>
+                  {hasDiscount && (
+                    <Typography sx={{ color: '#047857', fontSize: '0.85rem', fontWeight: 600, mt: 1 }}>
+                      {formatPrice(pricePerUnit)} por ubicación · Ahorro por volumen
+                    </Typography>
+                  )}
                 </>
               )}
             </Box>
+
+            {/* Includes */}
+            <Stack spacing={1} sx={{ mb: 3 }}>
+              {['Todo incluido, sin módulos extra', 'Sin contrato, cancela cuando quieras', 'Soporte por WhatsApp'].map((text) => (
+                <Stack key={text} direction="row" spacing={1} alignItems="center">
+                  <Box sx={{ width: 5, height: 5, borderRadius: '50%', bgcolor: '#047857', flexShrink: 0 }} />
+                  <Typography sx={{ fontSize: '0.85rem', color: 'text.secondary' }}>
+                    {text}
+                  </Typography>
+                </Stack>
+              ))}
+            </Stack>
 
             {/* CTA */}
             <Button

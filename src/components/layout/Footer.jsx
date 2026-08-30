@@ -28,6 +28,9 @@ const Footer = () => {
                   Enlaces
                 </Typography>
                 <Stack direction="column" spacing={1.5}>
+                  <Link href="#product" sx={footerLinkSx}>
+                    Producto
+                  </Link>
                   <Link href="#features" sx={footerLinkSx}>
                     Características
                   </Link>

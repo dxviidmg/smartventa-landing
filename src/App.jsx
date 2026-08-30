@@ -7,11 +7,10 @@ import Navbar from './components/layout/Navbar';
 import Hero from './components/sections/Hero';
 import SEO from './components/layout/SEO';
 
-const Industries = lazy(() => import('./components/sections/Industries'));
-const Benefits = lazy(() => import('./components/sections/Benefits'));
+const PainPoints = lazy(() => import('./components/sections/PainPoints'));
+const ProductShowcase = lazy(() => import('./components/sections/ProductShowcase'));
 const Features = lazy(() => import('./components/sections/Features'));
 const HowItWorks = lazy(() => import('./components/sections/HowItWorks'));
-const DashboardPreview = lazy(() => import('./components/sections/DashboardPreview'));
 const Pricing = lazy(() => import('./components/sections/Pricing'));
 const FAQ = lazy(() => import('./components/sections/FAQ'));
 const Contact = lazy(() => import('./components/sections/Contact'));
@@ -34,11 +33,10 @@ function App() {
             <main role="main">
               <Hero />
               <Suspense fallback={null}>
-                <Industries />
-                <Benefits />
+                <PainPoints />
+                <ProductShowcase />
                 <Features />
                 <HowItWorks />
-                <DashboardPreview />
                 <Pricing />
                 <FAQ />
                 <Contact />

@@ -12,8 +12,7 @@ const MenuIcon = () => (
 const LazyDrawer = lazy(() => import('./NavDrawer'));
 
 const NAV_ITEMS = [
-  { label: 'Industrias', id: 'industries' },
-  { label: 'Beneficios', id: 'benefits' },
+  { label: 'Producto', id: 'product' },
   { label: 'Características', id: 'features' },
   { label: 'Cómo funciona', id: 'how-it-works' },
   { label: 'Precios', id: 'pricing' },

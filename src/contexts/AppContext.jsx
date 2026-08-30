@@ -19,7 +19,7 @@ export const AppProvider = ({ children }) => {
   // Defer observer until sections are rendered
   useEffect(() => {
     const timeout = setTimeout(() => {
-      const sections = ['features', 'benefits', 'pricing', 'faq'];
+      const sections = ['product', 'features', 'pricing', 'faq'];
       observerRef.current = new IntersectionObserver(
         (entries) => {
           for (const entry of entries) {

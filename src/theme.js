@@ -2,21 +2,22 @@ import { createTheme } from '@mui/material/styles';
 
 export const lightTheme = createTheme({
   typography: {
-    fontFamily: '"Inter", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif',
+    fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif',
     h1: { fontWeight: 800, letterSpacing: '-0.03em', lineHeight: 1.1 },
     h2: { fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.15 },
-    h3: { fontWeight: 700 },
+    h3: { fontWeight: 700, letterSpacing: '-0.01em', lineHeight: 1.2 },
     h4: { fontWeight: 600 },
     h5: { fontWeight: 600 },
     h6: { fontWeight: 600 },
-    body1: { fontWeight: 400 },
+    body1: { fontWeight: 400, lineHeight: 1.7 },
+    body2: { fontWeight: 400, lineHeight: 1.7 },
   },
   shape: { borderRadius: 12 },
   palette: {
     primary: { main: '#04346b', dark: '#022347', light: '#065a9e' },
     secondary: { main: '#047857' },
     surface: { alt: '#CAD2DE' },
-    background: { default: '#f1f5f9', paper: '#ffffff' },
+    background: { default: '#f8fafb', paper: '#ffffff' },
     text: { primary: '#0f172a', secondary: '#64748b' },
     divider: '#e2e8f0',
   },
