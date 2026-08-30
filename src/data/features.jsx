@@ -2,37 +2,46 @@ import PointOfSale from '@mui/icons-material/PointOfSale';
 import Assessment from '@mui/icons-material/Assessment';
 import People from '@mui/icons-material/People';
 import SwapHoriz from '@mui/icons-material/SwapHoriz';
-import Image from '@mui/icons-material/Image';
 import AttachMoney from '@mui/icons-material/AttachMoney';
 import Keyboard from '@mui/icons-material/Keyboard';
 import QrCodeScanner from '@mui/icons-material/QrCodeScanner';
 import History from '@mui/icons-material/History';
-import TableChart from '@mui/icons-material/TableChart';
 import Security from '@mui/icons-material/Security';
 import Print from '@mui/icons-material/Print';
 import AccountBalance from '@mui/icons-material/AccountBalance';
-import Support from '@mui/icons-material/Support';
 import Transform from '@mui/icons-material/Transform';
 import BookmarkAdded from '@mui/icons-material/BookmarkAdded';
-import FindInPage from '@mui/icons-material/FindInPage';
+import Storefront from '@mui/icons-material/Storefront';
+import Inventory from '@mui/icons-material/Inventory';
+import LocalShipping from '@mui/icons-material/LocalShipping';
+import Scale from '@mui/icons-material/Scale';
+import UploadFile from '@mui/icons-material/UploadFile';
+import TrendingUp from '@mui/icons-material/TrendingUp';
+import Badge from '@mui/icons-material/Badge';
 
 export const features = [
-  { icon: <PointOfSale />, title: 'Multiventa', desc: 'Atiende a varios clientes a la vez con múltiples carritos simultáneos. Mientras uno paga, avanzas con el siguiente sin perder información.', color: '#10b981' },
-  { icon: <History />, title: 'Inventario en Tiempo Real', desc: 'Stock unificado en todas las tiendas, reservas inteligentes entre carritos y revisión de stock entre sucursales con acceso rápido para agregar inventario.', color: '#14b8a6' },
-  { icon: <SwapHoriz />, title: 'Traspasos y Distribución', desc: 'Mueve mercancía entre tiendas y almacenes con trazabilidad completa, confirmación obligatoria y dashboard de pendientes.', color: '#8b5cf6' },
-  { icon: <Transform />, title: 'Conversiones de Producto', desc: 'Desempaque automático con un clic (ej: 1 Costal → 10 Kg). Soporta Pieza, Kilogramo, Costal, Litro, Metro, Rollo y Caja.', color: '#ec4899' },
-  { icon: <Assessment />, title: 'Dashboard', desc: 'KPIs clave, heatmap de ventas, ticket promedio, mejor/peor tienda, top de marcas y gráficas de tendencia por día, semana o mes.', color: '#8b5cf6' },
-  { icon: <AttachMoney />, title: 'Precios y Pagos Flexibles', desc: 'Mayoreo automático por cantidad, pagos mixtos (efectivo, tarjeta, transferencia) y actualización masiva de precios.', color: '#f97316' },
-  { icon: <AccountBalance />, title: 'Corte de Caja', desc: 'Resumen por método de pago, movimientos detallados, corte parcial/total y exportación a Excel.', color: '#22c55e' },
-  { icon: <BookmarkAdded />, title: 'Sistema de Apartados', desc: 'Separa productos para un cliente sin cobrar el total. El stock se reserva automáticamente con seguimiento por cliente.', color: '#0891b2' },
-  { icon: <Image />, title: 'Catálogo de Productos', desc: 'Imágenes, costos, márgenes, historial de precios. Organiza por marca y departamento.', color: '#f97316' },
-  { icon: <QrCodeScanner />, title: 'Lector de Códigos', desc: 'Búsqueda instantánea por código de barras o nombre. Crea productos al vuelo si no existen.', color: '#22c55e' },
-  { icon: <People />, title: 'Clientes y Descuentos', desc: 'Registro completo, historial de compras y descuentos personalizados por porcentaje.', color: '#a855f7' },
-  { icon: <SwapHoriz />, title: 'Devoluciones y Cancelaciones', desc: 'Cancelación total o devolución parcial con motivos documentados y filtros rápidos.', color: '#eab308' },
-  { icon: <FindInPage />, title: 'Auditoría Integrada', desc: 'Detecta automáticamente ventas duplicadas, códigos repetidos, stock faltante y productos sin movimiento.', color: '#ef4444' },
-  { icon: <Security />, title: 'Roles y Permisos', desc: 'Dueño, Administrador y Vendedor con vistas personalizadas según nivel de acceso.', color: '#d946ef' },
-  { icon: <TableChart />, title: 'Importación Masiva', desc: 'Carga miles de productos desde Excel con plantillas descargables y validación previa.', color: '#0ea5e9' },
-  { icon: <Print />, title: 'Impresión de Tickets', desc: 'Compatible con impresoras térmicas estándar. Indicador visual de conexión verde/rojo en pantalla.', color: '#6366f1' },
-  { icon: <Keyboard />, title: 'Atajos de Teclado', desc: 'Vende más rápido con atajos para buscar, cambiar operación, enfocar búsqueda y seleccionar cliente.', color: '#84cc16' },
-  { icon: <Support />, title: 'Soporte Integrado', desc: 'WhatsApp directo con info prellenada y ayuda contextual en cada página del sistema.', color: '#0ea5e9' },
+  // Diferenciadores — lo que nos separa
+  { icon: <Storefront />, title: 'Multi-tienda', desc: 'Administra todas tus tiendas y almacenes desde una sola cuenta. Un catálogo, un precio, una plataforma.', color: '#10b981' },
+  { icon: <SwapHoriz />, title: 'Traspasos entre tiendas', desc: 'Mueve mercancía entre sucursales mientras vendes. Queda registrado quién mandó qué, cuándo y a dónde.', color: '#8b5cf6' },
+  { icon: <LocalShipping />, title: 'Distribución desde almacén', desc: 'El almacén envía mercancía a una o varias tiendas en una sola operación, sin que ellas la soliciten.', color: '#0891b2' },
+  { icon: <Transform />, title: 'Conversión de unidades', desc: 'Convierte productos automáticamente: cajas a piezas, costales a kilos. Una sola configuración y listo.', color: '#ec4899' },
+  { icon: <Scale />, title: 'Venta a granel', desc: 'Vende medio kilo de algo o "20 pesos de" y el sistema calcula lo proporcional. Ideal para abarrotes y productos sueltos.', color: '#f97316' },
+  { icon: <PointOfSale />, title: 'Crear productos al vender', desc: 'Si un producto no existe en tu catálogo, lo creas directo desde la venta sin interrumpir al cliente.', color: '#22c55e' },
+  { icon: <AttachMoney />, title: 'Cambio masivo de precios', desc: 'Actualiza costo, precio unitario y mayoreo de varios productos a la vez. Se aplica en todas las tiendas.', color: '#eab308' },
+  { icon: <TrendingUp />, title: 'Rentabilidad por tienda', desc: 'Consulta la utilidad de tus operaciones y cuánto capital tienes invertido en mercancía por sucursal.', color: '#8b5cf6' },
+  { icon: <BookmarkAdded />, title: 'Apartados', desc: 'Reserva productos para un cliente sin cobrar el total. El stock se descuenta automáticamente.', color: '#0891b2' },
+
+  // Estándar POS — lo que se espera
+  { icon: <PointOfSale />, title: 'Múltiples carritos', desc: 'Mantén varias ventas abiertas al mismo tiempo. Mientras uno paga, avanzas con el siguiente.', color: '#10b981' },
+  { icon: <AccountBalance />, title: 'Corte de caja', desc: 'Resumen por método de pago, movimientos de entrada/salida y exportación a Excel.', color: '#22c55e' },
+  { icon: <People />, title: 'Clientes y descuentos', desc: 'Base de clientes con historial de compras y descuentos personalizados por porcentaje.', color: '#a855f7' },
+  { icon: <Badge />, title: 'Vendedores', desc: 'Asigna vendedores a tiendas y consulta sus ventas individuales. Cada quien con su reporte.', color: '#f97316' },
+  { icon: <History />, title: 'Kardex de inventario', desc: 'Historial completo de cada producto: ventas, traspasos, distribuciones y ajustes.', color: '#14b8a6' },
+  { icon: <SwapHoriz />, title: 'Devoluciones', desc: 'Cancelación total o devolución parcial con motivo registrado.', color: '#ef4444' },
+  { icon: <QrCodeScanner />, title: 'Código de barras', desc: 'Busca productos por código, nombre o SKU. Compatible con lectores USB y Bluetooth.', color: '#22c55e' },
+  { icon: <Print />, title: 'Tickets', desc: 'Impresión en impresoras térmicas estándar. Indicador visual de conexión en pantalla.', color: '#6366f1' },
+  { icon: <UploadFile />, title: 'Importación desde Excel', desc: 'Sube tu catálogo completo con plantillas descargables y validación antes de importar.', color: '#0ea5e9' },
+  { icon: <Assessment />, title: 'Dashboard de ventas', desc: 'KPIs, productos destacados y rendimiento por tienda. Todo en una vista.', color: '#8b5cf6' },
+  { icon: <Keyboard />, title: 'Atajos de teclado', desc: 'Opera el punto de venta sin tocar el mouse. Buscar, cambiar operación, seleccionar cliente — todo con teclado.', color: '#84cc16' },
+  { icon: <Security />, title: 'Roles y permisos', desc: 'Dueño, administrador y vendedor. Cada rol ve solo lo que necesita.', color: '#d946ef' },
 ];
