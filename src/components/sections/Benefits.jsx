@@ -9,8 +9,8 @@ const Benefits = () => (
       <Container maxWidth="lg">
         <SectionHeader
           overline="¿Por qué SmartVenta?"
-          title="Hecho para dueños que manejan más de una tienda"
-          subtitle="Cada función está pensada para resolver un problema real: saber qué pasa en tus sucursales sin tener que estar ahí."
+          title="Lo que cambia cuando dejas de usar varias herramientas"
+          subtitle="Tus clientes tenían el mismo problema: información regada en Excel, WhatsApp y sistemas que no se hablan entre sí."
           sx={{ mb: 8 }}
         />
 

@@ -10,7 +10,7 @@ const FAQ = () => (
     <Container maxWidth="md">
       <SectionHeader
         overline="Preguntas frecuentes"
-        title="Lo que nos preguntan seguido"
+        title="Dudas comunes"
         sx={{ mb: 6 }}
       />
 

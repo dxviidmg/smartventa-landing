@@ -9,7 +9,7 @@ const HowItWorks = () => (
     <Container maxWidth="md">
       <SectionHeader
         overline="Cómo empezar"
-        title="Estás vendiendo en 4 pasos"
+        title="Arranca en minutos"
         sx={{ mb: 6 }}
       />
 

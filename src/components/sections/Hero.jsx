@@ -9,9 +9,6 @@ const ArrowForward = () => (
   </svg>
 );
 
-/**
- * Browser-style window frame around the dashboard screenshot.
- */
 const BrowserFrame = () => (
   <Box
     sx={{
@@ -26,7 +23,6 @@ const BrowserFrame = () => (
       },
     }}
   >
-    {/* Browser top bar */}
     <Stack
       direction="row"
       alignItems="center"
@@ -46,14 +42,13 @@ const BrowserFrame = () => (
         </Typography>
       </Box>
     </Stack>
-    {/* Screenshot */}
     <img
       src={tableroImg}
       alt="Dashboard de SmartVenta — tablero de ventas y métricas"
-      width={900}
-      height={506}
+      width={1296}
+      height={618}
       loading="eager"
-      style={{ width: '100%', height: 'auto', display: 'block' }}
+      style={{ width: '100%', maxWidth: 1296, height: 'auto', display: 'block' }}
     />
   </Box>
 );
@@ -68,7 +63,6 @@ const Hero = () => {
       position: 'relative', overflow: 'hidden',
       background: '#04346b',
     }}>
-      {/* Subtle background gradients */}
       <Box sx={{
         position: 'absolute', inset: 0,
         background: 'radial-gradient(ellipse at 30% 20%, rgba(6,90,158,0.4) 0%, transparent 60%), radial-gradient(ellipse at 70% 80%, rgba(4,120,87,0.15) 0%, transparent 50%)',
@@ -77,15 +71,11 @@ const Hero = () => {
 
       <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1, py: { xs: 12, md: 0 } }}>
         <Grid container spacing={{ xs: 6, md: 8 }} alignItems="center">
-          {/* Left: Copy */}
           <Grid size={{ xs: 12, md: 5 }}>
             <Stack spacing={3}>
               <Typography
                 variant="overline"
-                sx={{
-                  color: '#34d399', fontWeight: 600, letterSpacing: 3,
-                  fontSize: '0.8rem',
-                }}
+                sx={{ color: '#34d399', fontWeight: 600, letterSpacing: 3, fontSize: '0.8rem' }}
               >
                 Punto de venta en la nube
               </Typography>
@@ -97,7 +87,7 @@ const Hero = () => {
                   color: 'white', lineHeight: 1.08, letterSpacing: '-0.03em',
                 }}
               >
-                Deja de adivinar qué pasa en tus tiendas
+                Tus tiendas venden. Tú no sabes cuánto.
               </Typography>
 
               <Typography
@@ -106,8 +96,8 @@ const Hero = () => {
                   fontSize: { xs: '1.05rem', md: '1.15rem' }, fontWeight: 400, lineHeight: 1.7,
                 }}
               >
-                Ventas, inventario y traspasos de todas tus sucursales en una sola pantalla.
-                Sin instalar nada, desde cualquier computadora.
+                Un solo sistema para todas tus sucursales. Ventas, inventario, traspasos y corte de caja — 
+                todo en una pantalla, sin instalar nada.
               </Typography>
 
               <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ pt: 1 }}>
@@ -115,13 +105,10 @@ const Hero = () => {
                   variant="contained"
                   size="large"
                   endIcon={<ArrowForward />}
-                  onClick={() => openWhatsApp()}
-                  sx={{
-                    ...ctaButtonSx,
-                    px: 4, py: 1.5, fontSize: '1rem',
-                  }}
+                  onClick={() => openWhatsApp('Hola, quiero agendar una llamada para conocer SmartVenta')}
+                  sx={{ ...ctaButtonSx, px: 4, py: 1.5, fontSize: '1rem' }}
                 >
-                  Solicitar demo gratis
+                  Agendar llamada
                 </Button>
                 <Button
                   variant="outlined"
@@ -139,7 +126,7 @@ const Hero = () => {
               </Stack>
 
               <Stack direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 1, sm: 3 }} sx={{ pt: 2 }}>
-                {['Sin instalación', 'Sin contrato', 'Soporte por WhatsApp'].map((text) => (
+                {['Sin instalación', 'Sin contrato', 'Listo en segundos'].map((text) => (
                   <Stack key={text} direction="row" spacing={0.75} alignItems="center">
                     <Box sx={{ width: 6, height: 6, borderRadius: '50%', bgcolor: '#34d399', flexShrink: 0 }} />
                     <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.85rem' }}>
@@ -151,7 +138,6 @@ const Hero = () => {
             </Stack>
           </Grid>
 
-          {/* Right: Dashboard mockup */}
           <Grid size={{ xs: 12, md: 7 }}>
             <BrowserFrame />
           </Grid>

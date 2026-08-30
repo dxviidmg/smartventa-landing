@@ -1,23 +1,23 @@
 import Speed from '@mui/icons-material/Speed';
 import CheckCircle from '@mui/icons-material/CheckCircle';
-import TrendingUp from '@mui/icons-material/TrendingUp';
+import Sync from '@mui/icons-material/Sync';
 import Store from '@mui/icons-material/Store';
 
 export const benefits = [
   {
-    icon: <Store />, title: 'Visibilidad total',
-    desc: 'Consulta ventas, inventario y operaciones de todas tus sucursales en tiempo real desde un solo panel. Sin llamadas, sin esperar reportes.',
+    icon: <Store />, title: 'Todo en un solo lugar',
+    desc: 'Antes necesitabas varias herramientas o ir tienda por tienda. Ahora abres SmartVenta y ves ventas, inventario y caja de todas tus sucursales al mismo tiempo.',
   },
   {
-    icon: <CheckCircle />, title: 'Caja siempre cuadrada',
-    desc: 'Corte de caja con resumen por método de pago y movimientos detallados. Sabes exactamente cuánto dinero hay y por qué.',
+    icon: <Sync />, title: 'Información que cuadra',
+    desc: 'Cambias un precio una sola vez y se actualiza en todas las tiendas. Sin duplicados, sin errores de dedo, sin versiones distintas del mismo catálogo.',
   },
   {
-    icon: <Speed />, title: 'Operación ágil',
-    desc: 'Traspasos, distribuciones e inventario actualizados al instante. Tu equipo opera sin fricciones y tú supervisas desde donde estés.',
+    icon: <CheckCircle />, title: 'Sabes a dónde va tu mercancía',
+    desc: 'Cada traspaso queda registrado con fecha, origen y destino. Si algo falta, lo rastreas en segundos. No más "quién se llevó eso".',
   },
   {
-    icon: <TrendingUp />, title: 'Fácil de usar',
-    desc: 'Interfaz intuitiva con ayuda contextual. Tu equipo vende desde el primer día sin capacitación larga.',
+    icon: <Speed />, title: 'Tu equipo lo usa desde el día uno',
+    desc: 'Interfaz clara, ayuda en cada pantalla y soporte directo por WhatsApp. No necesitas semanas de capacitación para arrancar.',
   },
 ];

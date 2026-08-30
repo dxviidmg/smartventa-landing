@@ -1,11 +1,11 @@
-import Settings from '@mui/icons-material/Settings';
 import Storefront from '@mui/icons-material/Storefront';
 import PointOfSale from '@mui/icons-material/PointOfSale';
 import Insights from '@mui/icons-material/Insights';
+import PersonAdd from '@mui/icons-material/PersonAdd';
 
 export const steps = [
-  { icon: <Settings />, num: '01', title: 'Configura tu catálogo', desc: 'Sube tus productos desde Excel o agrégalos uno a uno. ¿No tienes catálogo? No importa, puedes crear productos sobre la marcha mientras vendes.' },
-  { icon: <Storefront />, num: '02', title: 'Actualiza stock en tus tiendas', desc: 'Decide qué productos van a cada sucursal o da de alta stock manualmente en cada sucursal. Tú controlas quién tiene qué.' },
-  { icon: <PointOfSale />, num: '03', title: 'Vende con agilidad', desc: 'Tu equipo atiende clientes sin fricciones. Tú ves las ventas de todas tus tiendas mientras ocurren.' },
-  { icon: <Insights />, num: '04', title: 'Analiza y optimiza', desc: 'Sabes cuánto dinero hay en cada tienda, qué movimientos hubo, cuánto tienes en caja y en tu cuenta bancaria. Vive más tranquilo, decide con datos.' },
+  { icon: <PersonAdd />, num: '01', title: 'Crea tu cuenta', desc: 'Regístrate en línea o agenda una llamada y lo hacemos juntos. Si ya tienes un catálogo en Excel, lo subimos ahí mismo.' },
+  { icon: <Storefront />, num: '02', title: 'Agrega tus tiendas e inventario', desc: 'Crea cada sucursal o almacén y decide qué productos van a cada uno. Tú controlas quién tiene qué.' },
+  { icon: <PointOfSale />, num: '03', title: 'Tu equipo empieza a vender', desc: 'La interfaz es directa — buscar producto, agregar al carrito, cobrar. Sin capacitación larga.' },
+  { icon: <Insights />, num: '04', title: 'Tú ves todo desde donde estés', desc: 'Cuánto vendió cada tienda, qué hay en caja, qué traspasos hubo. Sin llamar a nadie.' },
 ];
