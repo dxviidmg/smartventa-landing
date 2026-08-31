@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useRef, useState, lazy, Suspense } from 'react';
 import { AppBar, Toolbar, Container, Button, IconButton, Stack } from '@mui/material';
 import { useApp } from '../../contexts/AppContext';

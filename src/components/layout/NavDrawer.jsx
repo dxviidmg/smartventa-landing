@@ -1,3 +1,5 @@
+'use client';
+
 import { Box, Drawer, IconButton, List, ListItem, ListItemButton, ListItemText } from '@mui/material';
 import { CONFIG } from '../../constants';
 

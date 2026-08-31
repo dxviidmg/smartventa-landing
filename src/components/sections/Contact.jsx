@@ -1,3 +1,5 @@
+'use client';
+
 import { Box, Container, Typography, Stack, Button } from '@mui/material';
 import { motion } from 'framer-motion';
 import ArrowForward from '@mui/icons-material/ArrowForward';

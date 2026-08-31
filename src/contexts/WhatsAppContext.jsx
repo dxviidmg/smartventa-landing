@@ -1,3 +1,5 @@
+'use client';
+
 import { createContext, useContext, useCallback, useMemo } from 'react';
 import { CONFIG } from '../constants';
 

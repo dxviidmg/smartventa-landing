@@ -1,3 +1,5 @@
+'use client';
+
 import { Container, Typography, Button, Stack, Box, Grid } from '@mui/material';
 import { motion } from 'framer-motion';
 import { CONFIG, ctaButtonSx, heroContainer, heroItem, heroImage } from '../../constants';

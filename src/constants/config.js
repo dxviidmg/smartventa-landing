@@ -1,9 +1,9 @@
 export const CONFIG = {
   contact: {
-    phone: import.meta.env.VITE_WHATSAPP_PHONE_FORMATTED,
-    phoneFormatted: import.meta.env.VITE_WHATSAPP_PHONE,
-    email: import.meta.env.VITE_CONTACT_EMAIL,
+    phone: process.env.NEXT_PUBLIC_WHATSAPP_PHONE_FORMATTED,
+    phoneFormatted: process.env.NEXT_PUBLIC_WHATSAPP_PHONE,
+    email: process.env.NEXT_PUBLIC_CONTACT_EMAIL,
   },
   company: { name: 'SmartVenta' },
-  urls: { app: import.meta.env.VITE_APP_URL },
+  urls: { app: process.env.NEXT_PUBLIC_APP_URL },
 };

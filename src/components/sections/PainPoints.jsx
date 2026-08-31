@@ -1,3 +1,5 @@
+'use client';
+
 import { Box, Container, Typography, Grid, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
 import { sectionPadding, cardGridItem } from '../../constants';

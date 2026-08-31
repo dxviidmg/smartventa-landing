@@ -1,3 +1,5 @@
+'use client';
+
 import { Box, Container, Typography, Stack, Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
 import { motion } from 'framer-motion';
 import Add from '@mui/icons-material/Add';

@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useMemo } from 'react';
 import { Box, Container, Typography, Stack, Button, IconButton } from '@mui/material';
 import { motion } from 'framer-motion';

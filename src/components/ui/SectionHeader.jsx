@@ -1,3 +1,5 @@
+'use client';
+
 import { Typography, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
 import { sectionHeader } from '../../constants';
