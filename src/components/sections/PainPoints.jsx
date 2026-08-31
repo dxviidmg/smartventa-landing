@@ -60,7 +60,7 @@ const PainPoints = () => (
                   height: '100%',
                   transition: 'border-color 0.25s ease',
                   '&:hover': {
-                    borderColor: '#ef4444',
+                    borderColor: 'primary.light',
                   },
                 }}
               >

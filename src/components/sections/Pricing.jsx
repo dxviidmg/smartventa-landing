@@ -10,7 +10,7 @@ import { useWhatsApp } from '../../contexts/WhatsAppContext';
 import { cardGridItem, ctaButtonSx, sectionPadding } from '../../constants';
 import SectionHeader from '../ui/SectionHeader';
 
-const PRICE_TABLE = { 1: 400, 2: 800, 3: 1200, 4: 1500, 5: 1800, 6: 2150, 7: 2500, 8: 2800, 9: 3100, 10: 3400 };
+const PRICE_TABLE = { 1: 399, 2: 799, 3: 1199, 4: 1499, 5: 1799, 6: 2199, 7: 2499, 8: 2799, 9: 3099, 10: 3399 };
 const MAX_UNITS_WITH_PRICE = 10;
 const MIN_TOTAL_UNITS = 1;
 
@@ -65,7 +65,7 @@ const Pricing = () => {
   const price = useMemo(() => PRICE_TABLE[totalUnits] ?? null, [totalUnits]);
 
   const pricePerUnit = price && totalUnits > 0 ? Math.round(price / totalUnits) : null;
-  const hasDiscount = pricePerUnit && pricePerUnit < 400;
+  const hasDiscount = totalUnits > 3 && pricePerUnit;
 
   const handleDecrementStore = () => {
     if (stores > 0 && (stores - 1 + warehouses) >= MIN_TOTAL_UNITS) setStores(stores - 1);
