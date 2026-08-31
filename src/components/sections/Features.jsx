@@ -7,16 +7,12 @@ import { sectionPadding, fadeUp } from '../../constants';
 import ChevronLeft from '@mui/icons-material/ChevronLeft';
 import ChevronRight from '@mui/icons-material/ChevronRight';
 
-import Storefront from '@mui/icons-material/Storefront';
-import SwapHoriz from '@mui/icons-material/SwapHoriz';
-import LocalShipping from '@mui/icons-material/LocalShipping';
 import Transform from '@mui/icons-material/Transform';
 import Scale from '@mui/icons-material/Scale';
 import PointOfSale from '@mui/icons-material/PointOfSale';
 import AttachMoney from '@mui/icons-material/AttachMoney';
 import Payment from '@mui/icons-material/Payment';
 import AccountBalance from '@mui/icons-material/AccountBalance';
-import AccountBalanceWallet from '@mui/icons-material/AccountBalanceWallet';
 import QrCodeScanner from '@mui/icons-material/QrCodeScanner';
 import UploadFile from '@mui/icons-material/UploadFile';
 import Assessment from '@mui/icons-material/Assessment';
@@ -26,39 +22,25 @@ import People from '@mui/icons-material/People';
 import Badge from '@mui/icons-material/Badge';
 import Security from '@mui/icons-material/Security';
 import History from '@mui/icons-material/History';
-import Keyboard from '@mui/icons-material/Keyboard';
-import Notifications from '@mui/icons-material/Notifications';
 import Print from '@mui/icons-material/Print';
 
 const features = [
-  // Diferenciadores multi-tienda
-  { icon: <Storefront />, title: 'Panel central de tiendas', desc: 'Vista consolidada para administrar todas tus sucursales y almacenes. Catálogo de productos centralizado y compartido.', accent: '#10b981' },
-  { icon: <SwapHoriz />, title: 'Traspasos entre tiendas', desc: 'Mueve mercancía entre sucursales mientras vendes. Trazabilidad completa: quién mandó qué, cuándo y a dónde.', accent: '#8b5cf6' },
-  { icon: <LocalShipping />, title: 'Distribución desde almacén', desc: 'Envía mercancía a una o varias tiendas en una sola operación, sin que ellas la soliciten.', accent: '#0891b2' },
   { icon: <Transform />, title: 'Conversión de unidades', desc: 'Cajas a piezas, costales a kilos. Configura la equivalencia una vez y convierte con un clic.', accent: '#ec4899' },
-  // Diferenciadores operativos
   { icon: <Scale />, title: 'Venta a granel', desc: 'Vende por kilo, fracción o "20 pesos de…" y el sistema calcula lo proporcional.', accent: '#f97316' },
   { icon: <PointOfSale />, title: 'Crear productos al vender', desc: 'Si no existe en el catálogo, lo creas directo desde la venta sin interrumpir al cliente.', accent: '#22c55e' },
-  { icon: <AttachMoney />, title: 'Cambio masivo de precios', desc: 'Actualiza costo, precio unitario y mayoreo de múltiples productos. Se aplica en todas las tiendas.', accent: '#eab308' },
+  { icon: <AttachMoney />, title: 'Cambio masivo de precios', desc: 'Actualiza costo, precio unitario y mayoreo de múltiples productos a la vez.', accent: '#eab308' },
   { icon: <BookmarkAdded />, title: 'Apartados', desc: 'Reserva productos para un cliente sin cobrar el total. El stock se descuenta automáticamente.', accent: '#0891b2' },
-  // Caja y pagos
   { icon: <Payment />, title: 'Pagos mixtos', desc: 'Una misma venta puede pagarse con efectivo, tarjeta y transferencia combinados.', accent: '#6366f1' },
   { icon: <AccountBalance />, title: 'Corte de caja', desc: 'Resumen por método de pago, movimientos de entrada/salida y exportación a Excel.', accent: '#10b981' },
-  { icon: <AccountBalanceWallet />, title: 'Movimientos de caja', desc: 'Registra entradas y salidas de efectivo no relacionadas con ventas.', accent: '#047857' },
-  // Rentabilidad
   { icon: <Assessment />, title: 'Dashboard de ventas', desc: 'KPIs, productos destacados, rendimiento por tienda y vendedor.', accent: '#8b5cf6' },
-  { icon: <TrendingUp />, title: 'Rentabilidad y utilidad', desc: 'Consulta la utilidad de tus operaciones y cuánto capital tienes invertido en mercancía por sucursal.', accent: '#f59e0b' },
+  { icon: <TrendingUp />, title: 'Rentabilidad', desc: 'Consulta la utilidad de tus operaciones y cuánto tienes invertido en mercancía.', accent: '#f59e0b' },
   { icon: <History />, title: 'Kardex de inventario', desc: 'Historial completo de cada producto: ventas, traspasos, distribuciones y ajustes.', accent: '#14b8a6' },
-  // Gestión
-  { icon: <People />, title: 'Clientes y descuentos', desc: 'Base de clientes con historial de compras y descuentos personalizados por porcentaje.', accent: '#a855f7' },
+  { icon: <People />, title: 'Clientes y descuentos', desc: 'Historial de compras y descuentos personalizados por cliente.', accent: '#a855f7' },
   { icon: <Badge />, title: 'Vendedores', desc: 'Asigna vendedores a tiendas y consulta sus ventas individuales.', accent: '#f97316' },
-  { icon: <UploadFile />, title: 'Importación desde Excel', desc: 'Sube tu catálogo completo con plantillas descargables y validación antes de importar.', accent: '#0ea5e9' },
-  { icon: <Security />, title: 'Roles y permisos', desc: 'Dueño, administrador y vendedor — cada rol ve solo lo que necesita.', accent: '#d946ef' },
-  // Hardware y operación
-  { icon: <QrCodeScanner />, title: 'Código de barras', desc: 'Busca productos por código, nombre o SKU. Compatible con lectores USB y Bluetooth.', accent: '#22c55e' },
-  { icon: <Keyboard />, title: 'Atajos de teclado', desc: 'Opera el punto de venta sin tocar el mouse. Buscar, cambiar operación, cobrar — todo con teclado.', accent: '#84cc16' },
-  { icon: <Print />, title: 'Tickets e impresión', desc: 'Compatible con impresoras térmicas estándar. Indicador visual de conexión en pantalla.', accent: '#6366f1' },
-  { icon: <Notifications />, title: 'Notificaciones', desc: 'Alertas en tiempo real sobre traspasos, distribuciones y solicitudes de ajuste.', accent: '#ef4444' },
+  { icon: <UploadFile />, title: 'Importación desde Excel', desc: 'Sube tu catálogo completo con plantillas y validación previa.', accent: '#0ea5e9' },
+  { icon: <Security />, title: 'Roles y permisos', desc: 'Dueño, administrador y vendedor — cada quien ve lo que necesita.', accent: '#d946ef' },
+  { icon: <QrCodeScanner />, title: 'Código de barras', desc: 'Compatible con lectores USB y Bluetooth.', accent: '#22c55e' },
+  { icon: <Print />, title: 'Tickets e impresión', desc: 'Compatible con impresoras térmicas estándar.', accent: '#6366f1' },
 ];
 
 const CARD_GAP = 16;
@@ -104,13 +86,13 @@ const Features = () => {
             <motion.div {...fadeUp}>
               <Stack spacing={1}>
                 <Typography variant="overline" sx={{ color: 'secondary.main', fontWeight: 700, letterSpacing: 2 }}>
-                  Características
+                  Funcionalidades
                 </Typography>
                 <Typography variant="h2" sx={{ fontSize: { xs: '1.8rem', md: '2.4rem' } }}>
-                  ¿Qué más incluye?
+                  Todo incluido desde el primer día
                 </Typography>
                 <Typography sx={{ color: 'text.secondary', fontSize: '1rem', maxWidth: 480 }}>
-                  Además del punto de venta, inventario y control multi-tienda:
+                  Sin módulos extra ni funciones bloqueadas.
                 </Typography>
               </Stack>
             </motion.div>

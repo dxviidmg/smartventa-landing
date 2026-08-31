@@ -17,7 +17,7 @@ export const lightTheme = createTheme({
     primary: { main: '#04346b', dark: '#022347', light: '#065a9e' },
     secondary: { main: '#047857' },
     surface: { alt: '#CAD2DE' },
-    background: { default: '#e2ebf5', paper: '#ffffff' },
+    background: { default: '#f0f4f8', paper: '#ffffff' },
     text: { primary: '#0f172a', secondary: '#64748b' },
     divider: '#e2e8f0',
   },

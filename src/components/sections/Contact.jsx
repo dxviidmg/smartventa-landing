@@ -37,10 +37,10 @@ const Contact = () => {
                 letterSpacing: '-0.02em',
               }}
             >
-              Empieza a tener el control
+              Empieza con una tienda.
               <br />
               <Box component="span" sx={{ color: '#34d399' }}>
-                de tu negocio.
+                Crece sin cambiar de sistema.
               </Box>
             </Typography>
           </motion.div>

@@ -7,18 +7,18 @@ import Close from '@mui/icons-material/Close';
 import Check from '@mui/icons-material/Check';
 
 const before = [
-  'Información dispersa entre hojas de cálculo y WhatsApp',
-  'Traspasos de mercancía sin registro',
-  'Inventario poco claro entre sucursales',
-  'Ir físicamente a cada tienda para saber qué hay',
-  'No sabes cuánto vendió cada sucursal',
+  'Preguntas por WhatsApp qué pasó en otra tienda',
+  'Mueves mercancía sin que quede registro',
+  'No sabes cuánto hay en cada sucursal',
+  'Vas físicamente a cada tienda para revisar',
+  'Al final del día no sabes cuánto se vendió',
 ];
 
 const after = [
-  'Toda la operación centralizada en un solo sistema',
-  'Traspasos con trazabilidad completa',
+  'Consultas cualquier tienda desde donde estés',
+  'Cada traspaso queda registrado automáticamente',
   'Inventario en tiempo real de cada ubicación',
-  'Consulta cualquier tienda desde donde estés',
+  'Todo desde una sola pantalla, sin moverte',
   'Ventas, corte de caja y métricas al instante',
 ];
 
@@ -28,7 +28,7 @@ const Comparison = () => (
       <motion.div {...fadeUp}>
         <Stack spacing={1.5} alignItems="center" textAlign="center" sx={{ mb: 6 }}>
           <Typography variant="h2" sx={{ fontSize: { xs: '1.8rem', md: '2.4rem' } }}>
-            Antes vs con SmartVenta
+            ¿Cómo cambia tu operación?
           </Typography>
         </Stack>
       </motion.div>
