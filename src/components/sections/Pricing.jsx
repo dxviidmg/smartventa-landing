@@ -136,7 +136,7 @@ const Pricing = () => {
 
             {/* Includes */}
             <Stack spacing={1} sx={{ mb: 3 }}>
-              {['Todo incluido, sin módulos extra', 'Sin contrato, cancela cuando quieras', 'Soporte por WhatsApp'].map((text) => (
+              {['Todos los módulos incluidos', 'Soporte por WhatsApp'].map((text) => (
                 <Stack key={text} direction="row" spacing={1} alignItems="center">
                   <Box sx={{ width: 5, height: 5, borderRadius: '50%', bgcolor: '#047857', flexShrink: 0 }} />
                   <Typography sx={{ fontSize: '0.85rem', color: 'text.secondary' }}>
