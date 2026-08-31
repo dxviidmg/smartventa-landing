@@ -5,7 +5,6 @@ import { AppProvider } from './contexts/AppContext';
 import { WhatsAppProvider } from './contexts/WhatsAppContext';
 import Navbar from './components/layout/Navbar';
 import Hero from './components/sections/Hero';
-import SEO from './components/layout/SEO';
 
 const PainPoints = lazy(() => import('./components/sections/PainPoints'));
 const ProductShowcase = lazy(() => import('./components/sections/ProductShowcase'));
@@ -24,11 +23,6 @@ function App() {
         <ThemeProvider theme={lightTheme}>
           <CssBaseline />
           <div style={{ minHeight: '100vh' }}>
-            <SEO
-              title="Punto de Venta en la Nube para Múltiples Sucursales"
-              description="Sistema punto de venta en la nube para negocios con múltiples sucursales en México. Controla inventario, ventas y transferencias en tiempo real. Sin instalación."
-              keywords="punto de venta, pos, multi-tienda, inventario, ventas, retail, smartventa, méxico, sucursales"
-            />
             <Navbar />
             <main role="main">
               <Hero />
