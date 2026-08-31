@@ -33,6 +33,9 @@ const Footer = () => {
                   <Link href="#product" sx={footerLinkSx}>
                     Producto
                   </Link>
+                  <Link href="#multi-store" sx={footerLinkSx}>
+                    Multi-sucursal
+                  </Link>
                   <Link href="#features" sx={footerLinkSx}>
                     Funcionalidades
                   </Link>

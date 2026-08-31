@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import { sectionPadding, cardGridItem } from '../../constants';
 import carritoImg from '../../assets/Carrito de venta.png';
 import tableroImg from '../../assets/Tablero.png';
-import tiendasImg from '../../assets/Tiendas.png';
 import { LazyImage } from '../ui/LazyImage';
 
 const BrowserFrame = ({ src, alt }) => (
@@ -55,22 +54,13 @@ const showcaseBlocks = [
     highlights: ['Múltiples carritos', 'Código de barras', 'Precios de mayoreo', 'Crea productos al vender'],
   },
   {
-    overline: 'Control total',
+    overline: 'Inventario y operación',
     title: 'Siempre sabes qué tienes',
     desc: 'Stock en tiempo real de todas tus tiendas. Historial completo de cada producto: ventas, traspasos, ajustes. Importa tu catálogo desde Excel en minutos.',
     img: tableroImg,
     imgAlt: 'Dashboard SmartVenta — tablero de ventas y métricas por tienda',
     reverse: true,
     highlights: ['Inventario unificado', 'Kardex por producto', 'Importación masiva', 'Corte de caja'],
-  },
-  {
-    overline: 'Multi-tienda',
-    title: 'Una cuenta, todas tus sucursales',
-    desc: 'Administra tiendas y almacenes desde un solo lugar. Mueve mercancía con trazabilidad completa. Distribuye inventario desde el almacén a varias tiendas en una operación.',
-    img: tiendasImg,
-    imgAlt: 'Gestión de tiendas SmartVenta — panel multi-sucursal',
-    reverse: false,
-    highlights: ['Panel centralizado', 'Traspasos con trazabilidad', 'Distribución a múltiples tiendas', 'Cambio instantáneo entre tiendas'],
   },
 ];
 
@@ -90,7 +80,6 @@ const ProductShowcase = () => (
               alignItems="center"
               direction={block.reverse ? 'row-reverse' : 'row'}
             >
-              {/* Text */}
               <Grid size={{ xs: 12, md: 5 }}>
                 <Stack spacing={2.5}>
                   <Typography
@@ -128,7 +117,6 @@ const ProductShowcase = () => (
                 </Stack>
               </Grid>
 
-              {/* Screenshot */}
               <Grid size={{ xs: 12, md: 7 }}>
                 <BrowserFrame src={block.img} alt={block.imgAlt} />
               </Grid>
