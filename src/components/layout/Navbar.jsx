@@ -81,19 +81,19 @@ const Navbar = () => {
                 </Button>
               ))}
               <Button
-                onClick={() => window.open(CONFIG.urls.app, '_blank')}
+                onClick={() => window.open(`${CONFIG.urls.app}/registrarme`, '_blank')}
                 sx={{
                   ...ctaButtonSx,
                 }}
               >
-                Iniciar Sesión
+                Probar SmartVenta
               </Button>
             </Stack>
 
             <IconButton
               aria-label="Abrir menú de navegación"
               onClick={handleOpenDrawer}
-              sx={{ display: { xs: 'flex', md: 'none' }, color: scrolled ? 'text.primary' : 'white' }}
+              sx={{ display: { xs: 'flex', md: 'none' }, color: 'white' }}
             >
               <MenuIcon />
             </IconButton>

@@ -10,7 +10,7 @@ const capabilities = [
   { title: 'Un catálogo centralizado', desc: 'Productos compartidos entre todas las tiendas. Cambias un precio y se actualiza en todas.' },
   { title: 'Traspasos con trazabilidad', desc: 'Mueve mercancía entre sucursales. Queda registrado quién mandó qué, cuándo y a dónde.' },
   { title: 'Distribución desde almacén', desc: 'Envía inventario a varias tiendas en una sola operación.' },
-  { title: 'Control desde un solo lugar', desc: 'Consulta ventas, inventario y caja de cualquier sucursal sin moverte.' },
+  { title: 'Control desde un solo lugar', desc: 'Ventas, inventario y caja de cualquier sucursal — sin moverte de donde estés.' },
 ];
 
 const BrowserFrame = () => (

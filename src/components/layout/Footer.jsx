@@ -27,9 +27,9 @@ const Footer = () => {
               </Box>
               <Stack spacing={2} sx={{ flex: { xs: '0 0 auto', md: 1 }, minWidth: { xs: '100%', md: '150px' } }}>
                 <Typography variant="h6" component="p" sx={{ fontWeight: 800, mb: 2, fontSize: '1.1rem' }}>
-                  Enlaces
+                  Producto
                 </Typography>
-                <Stack direction="column" spacing={1.5}>
+                <Stack direction="column" spacing={1.5} component="nav" aria-label="Enlaces del sitio">
                   <Link href="#product" sx={footerLinkSx}>
                     Producto
                   </Link>

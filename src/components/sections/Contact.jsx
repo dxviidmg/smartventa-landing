@@ -79,7 +79,7 @@ const Contact = () => {
           </motion.div>
 
           <motion.div {...contactItem} transition={{ delay: 0.3, duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}>
-            <Stack direction="row" spacing={3} sx={{ pt: 2 }}>
+            <Stack direction="row" flexWrap="wrap" justifyContent="center" gap={{ xs: 1.5, sm: 3 }} sx={{ pt: 2 }}>
               {['Sin instalación', 'Sin contrato', 'Soporte directo'].map((text) => (
                 <Stack key={text} direction="row" spacing={0.75} alignItems="center">
                   <Box sx={{ width: 5, height: 5, borderRadius: '50%', bgcolor: '#34d399', flexShrink: 0 }} />

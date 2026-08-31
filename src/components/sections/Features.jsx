@@ -86,7 +86,7 @@ const Features = () => {
             <motion.div {...fadeUp}>
               <Stack spacing={1}>
                 <Typography variant="overline" sx={{ color: 'secondary.main', fontWeight: 700, letterSpacing: 2 }}>
-                  Funcionalidades
+                  Todo incluido
                 </Typography>
                 <Typography variant="h2" sx={{ fontSize: { xs: '1.8rem', md: '2.4rem' } }}>
                   Todo incluido desde el primer día
@@ -132,6 +132,9 @@ const Features = () => {
           {/* Carousel inside Container */}
           <Box
             ref={scrollRef}
+            role="region"
+            aria-label="Funcionalidades de SmartVenta"
+            tabIndex={0}
             sx={{
               display: 'flex',
               gap: `${CARD_GAP}px`,

@@ -21,7 +21,7 @@ const Audience = () => (
       <motion.div {...fadeUp}>
         <Stack spacing={2.5} alignItems="center" textAlign="center">
           <Typography sx={{ fontWeight: 700, fontSize: '1.05rem', color: 'text.primary' }}>
-            Usado por tiendas de
+            Diseñado para negocios como
           </Typography>
           <Stack direction="row" flexWrap="wrap" justifyContent="center" gap={1.5}>
             {audiences.map((name) => (

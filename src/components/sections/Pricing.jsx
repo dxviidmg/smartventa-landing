@@ -86,7 +86,7 @@ const Pricing = () => {
         <SectionHeader
           overline="Precios"
           title="Sencillo y transparente"
-          subtitle="El precio se adapta al número de ubicaciones de tu negocio. Sin costos ocultos."
+          subtitle="Desde $399/mes con una tienda. El precio crece con tu negocio."
           sx={{ mb: 5 }}
         />
 

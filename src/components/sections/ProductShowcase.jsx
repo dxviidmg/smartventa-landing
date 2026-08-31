@@ -67,7 +67,7 @@ const showcaseBlocks = [
 const ProductShowcase = () => (
   <Box sx={{ ...sectionPadding, bgcolor: 'background.paper' }} id="product">
     <Container maxWidth="lg">
-      <Stack spacing={{ xs: 10, md: 14 }}>
+      <Stack spacing={{ xs: 8, md: 10 }}>
         {showcaseBlocks.map((block, i) => (
           <motion.div
             key={i}
