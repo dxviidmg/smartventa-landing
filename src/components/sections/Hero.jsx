@@ -46,7 +46,7 @@ const BrowserFrame = () => (
       </Box>
     </Stack>
     <img
-      src={tableroImg}
+      src={typeof tableroImg === 'string' ? tableroImg : tableroImg.src}
       alt="Dashboard de SmartVenta — tablero de ventas y métricas"
       width={1296}
       height={618}
@@ -116,15 +116,18 @@ const Hero = () => {
                       variant="contained"
                       size="large"
                       endIcon={<ArrowForward />}
-                      onClick={() => openWhatsApp('Hola, quiero agendar una llamada para conocer SmartVenta')}
+                      onClick={() => window.open(`${CONFIG.urls.app}/registrarme`, '_blank')}
                       sx={{ ...ctaButtonSx, px: 4, py: 1.5, fontSize: '1rem' }}
                     >
-                      Agendar llamada
+                      Probar SmartVenta
                     </Button>
                     <Button
                       variant="outlined"
                       size="large"
-                      onClick={() => window.open(`${CONFIG.urls.app}/registrarme`, '_blank')}
+                      onClick={() => {
+                        const el = document.getElementById('product');
+                        if (el) el.scrollIntoView({ behavior: 'smooth' });
+                      }}
                       sx={{
                         px: 4, py: 1.5, fontSize: '1rem',
                         color: 'rgba(255,255,255,0.85)',
@@ -132,7 +135,7 @@ const Hero = () => {
                         '&:hover': { borderColor: 'rgba(255,255,255,0.6)', bgcolor: 'rgba(255,255,255,0.05)' },
                       }}
                     >
-                      Crear cuenta
+                      Ver cómo funciona
                     </Button>
                   </Stack>
                 </motion.div>

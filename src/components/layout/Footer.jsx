@@ -34,16 +34,13 @@ const Footer = () => {
                     Producto
                   </Link>
                   <Link href="#features" sx={footerLinkSx}>
-                    Características
-                  </Link>
-                  <Link href="#how-it-works" sx={footerLinkSx}>
-                    Cómo funciona
+                    Funcionalidades
                   </Link>
                   <Link href="#pricing" sx={footerLinkSx}>
                     Precios
                   </Link>
                   <Link href="#faq" sx={footerLinkSx}>
-                    FAQ
+                    Preguntas frecuentes
                   </Link>
                 </Stack>
               </Stack>

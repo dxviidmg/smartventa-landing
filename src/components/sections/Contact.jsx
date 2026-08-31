@@ -37,17 +37,17 @@ const Contact = () => {
                 letterSpacing: '-0.02em',
               }}
             >
-              Tu negocio ya está creciendo.
+              Empieza a tener el control
               <br />
               <Box component="span" sx={{ color: '#34d399' }}>
-                Ahora ten el control.
+                de tu negocio.
               </Box>
             </Typography>
           </motion.div>
 
           <motion.div {...contactItem} transition={{ delay: 0.1, duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}>
             <Typography sx={{ color: 'rgba(255,255,255,0.65)', fontSize: '1.05rem', maxWidth: 440, lineHeight: 1.7 }}>
-              Agenda una llamada de 15 minutos. Te mostramos el sistema y, si te convence, arrancas el mismo día.
+              Ventas, inventario y sucursales en un solo lugar. Crea tu cuenta y empieza hoy.
             </Typography>
           </motion.div>
 
@@ -57,15 +57,15 @@ const Contact = () => {
                 variant="contained"
                 size="large"
                 endIcon={<ArrowForward />}
-                onClick={() => openWhatsApp('Hola, quiero agendar una llamada para conocer SmartVenta')}
+                onClick={() => window.open(`${CONFIG.urls.app}/registrarme`, '_blank')}
                 sx={{ ...ctaButtonSx, px: 4, py: 1.5, fontSize: '1rem' }}
               >
-                Agendar llamada
+                Probar SmartVenta
               </Button>
               <Button
                 variant="outlined"
                 size="large"
-                onClick={() => window.open(`${CONFIG.urls.app}/registrarme`, '_blank')}
+                onClick={() => openWhatsApp('Hola, quiero agendar una llamada para conocer SmartVenta')}
                 sx={{
                   px: 4, py: 1.5, fontSize: '1rem',
                   color: 'rgba(255,255,255,0.85)',
@@ -73,7 +73,7 @@ const Contact = () => {
                   '&:hover': { borderColor: 'rgba(255,255,255,0.6)', bgcolor: 'rgba(255,255,255,0.05)' },
                 }}
               >
-                Crear cuenta gratis
+                Agendar llamada
               </Button>
             </Stack>
           </motion.div>

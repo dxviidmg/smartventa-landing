@@ -2,10 +2,13 @@ import dynamic from 'next/dynamic';
 import Navbar from '@/components/layout/Navbar';
 import Hero from '@/components/sections/Hero';
 
-const PainPoints = dynamic(() => import('@/components/sections/PainPoints'));
+const ValueProp = dynamic(() => import('@/components/sections/ValueProp'));
 const ProductShowcase = dynamic(() => import('@/components/sections/ProductShowcase'));
+const Comparison = dynamic(() => import('@/components/sections/Comparison'));
+const MultiStore = dynamic(() => import('@/components/sections/MultiStore'));
 const Features = dynamic(() => import('@/components/sections/Features'));
-const HowItWorks = dynamic(() => import('@/components/sections/HowItWorks'));
+const Audience = dynamic(() => import('@/components/sections/Audience'));
+const Trust = dynamic(() => import('@/components/sections/Trust'));
 const Pricing = dynamic(() => import('@/components/sections/Pricing'));
 const FAQ = dynamic(() => import('@/components/sections/FAQ'));
 const Contact = dynamic(() => import('@/components/sections/Contact'));
@@ -18,10 +21,13 @@ export default function Home() {
       <Navbar />
       <main role="main">
         <Hero />
-        <PainPoints />
+        <ValueProp />
         <ProductShowcase />
+        <Comparison />
+        <MultiStore />
         <Features />
-        <HowItWorks />
+        <Audience />
+        <Trust />
         <Pricing />
         <FAQ />
         <Contact />

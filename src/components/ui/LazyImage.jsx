@@ -11,12 +11,13 @@ import { useState, useEffect } from 'react';
  * @param {number} [props.width] - Intrinsic width for layout shift prevention
  * @param {number} [props.height] - Intrinsic height for layout shift prevention
  */
-const LazyImage = ({ src, alt, sx, width, height, ...props }) => {
+const LazyImage = ({ src: srcProp, alt, sx, width, height, ...props }) => {
+  const src = typeof srcProp === 'string' ? srcProp : srcProp?.src || '';
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     setLoaded(false);
-    const img = new Image();
+    const img = document.createElement('img');
     img.src = src;
     img.onload = () => setLoaded(true);
   }, [src]);

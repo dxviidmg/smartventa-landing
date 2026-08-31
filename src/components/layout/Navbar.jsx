@@ -15,8 +15,7 @@ const LazyDrawer = lazy(() => import('./NavDrawer'));
 
 const NAV_ITEMS = [
   { label: 'Producto', id: 'product' },
-  { label: 'Características', id: 'features' },
-  { label: 'Cómo funciona', id: 'how-it-works' },
+  { label: 'Funcionalidades', id: 'features' },
   { label: 'Precios', id: 'pricing' },
   { label: 'FAQ', id: 'faq' },
 ];
