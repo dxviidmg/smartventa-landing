@@ -147,14 +147,10 @@ Captar leads para demos del sistema POS multi-tienda Smartventa, ofreciendo acce
 ## 🎯 Público objetivo
 
 Dueños de negocios retail con 2 o más sucursales:
-- Tiendas de ropa
 - Abarrotes
-- Farmacias
 - Ferreterías
-- Mini supermercados
 - Papelerías
 - Cosméticos
-- Tiendas de mascotas
 - Jugueterías
 
 

@@ -7,6 +7,8 @@ import { CONFIG } from '../../constants';
 
 const footerLinkSx = { color: 'rgba(255,255,255,0.7)', textDecoration: 'none', '&:hover': { color: 'white' }, transition: 'color 0.25s' };
 
+const CURRENT_YEAR = new Date().getFullYear();
+
 const Footer = () => {
   const [openPrivacy, setOpenPrivacy] = useState(false);
   const [openTerms, setOpenTerms] = useState(false);
@@ -82,7 +84,7 @@ const Footer = () => {
             <Box sx={{ borderTop: '1px solid rgba(255,255,255,0.1)', pt: 3 }}>
               <Stack direction={{ xs: 'column', md: 'row' }} justifyContent="space-between" alignItems="center" spacing={2}>
                 <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.5)', textAlign: { xs: 'center', md: 'left' } }}>
-                  © {new Date().getFullYear()} {CONFIG.company.name}. Todos los derechos reservados.
+                  © {CURRENT_YEAR} {CONFIG.company.name}. Todos los derechos reservados.
                 </Typography>
               </Stack>
             </Box>

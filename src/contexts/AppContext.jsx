@@ -17,7 +17,7 @@ export const AppProvider = ({ children }) => {
   const scrollToSection = useCallback((id) => {
     const el = document.getElementById(id);
     if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+      el.scrollIntoView({ behavior: 'smooth'});
       setDrawerOpen(false);
     }
   }, []);

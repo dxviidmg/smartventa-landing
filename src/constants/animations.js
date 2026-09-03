@@ -82,4 +82,4 @@ export const ctaButtonSx = {
 };
 
 // Consistent section padding
-export const sectionPadding = { py: { xs: 8, md: 12 } };
+export const sectionPadding = { pt: { xs: 4, md: 6 }, pb: { xs: 6, md: 8 }, scrollMarginTop: '50px' };

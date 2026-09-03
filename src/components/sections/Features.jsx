@@ -44,11 +44,13 @@ const features = [
 ];
 
 const CARD_GAP = 16;
+const AUTOPLAY_MS = 10000;
 
 const Features = () => {
   const scrollRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+  const [isPaused, setIsPaused] = useState(false);
 
   const checkScroll = useCallback(() => {
     const el = scrollRef.current;
@@ -69,16 +71,32 @@ const Features = () => {
     };
   }, [checkScroll]);
 
-  const scroll = (dir) => {
+  const scroll = useCallback((dir) => {
     const el = scrollRef.current;
     if (!el) return;
     const cardEl = el.querySelector('[data-card]');
     if (!cardEl) return;
     el.scrollBy({ left: dir * (cardEl.offsetWidth + CARD_GAP), behavior: 'smooth' });
-  };
+  }, []);
+
+  // Auto-avance cada 10s; vuelve al inicio al llegar al final. Se pausa al pasar el cursor.
+  useEffect(() => {
+    if (isPaused) return;
+    const interval = setInterval(() => {
+      const el = scrollRef.current;
+      if (!el) return;
+      const atEnd = el.scrollLeft >= el.scrollWidth - el.clientWidth - 4;
+      if (atEnd) {
+        el.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        scroll(1);
+      }
+    }, AUTOPLAY_MS);
+    return () => clearInterval(interval);
+  }, [isPaused, scroll]);
 
   return (
-    <div id="features">
+    <div id="features" style={{ scrollMarginTop: '80px' }}>
       <Box sx={{ ...sectionPadding, bgcolor: 'background.default' }}>
         <Container maxWidth="lg">
           {/* Header */}
@@ -135,6 +153,8 @@ const Features = () => {
             role="region"
             aria-label="Funcionalidades de SmartVenta"
             tabIndex={0}
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
             sx={{
               display: 'flex',
               gap: `${CARD_GAP}px`,
