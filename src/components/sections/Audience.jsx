@@ -5,13 +5,19 @@ import { motion } from 'framer-motion';
 import { fadeUp } from '../../constants';
 
 const audiences = [
-  'Abarrotes',
-  'Ferreterías',
-  'Jugueterias',
-  'Refraccionarias',
+  'Abarrotes y minisúpers',
+  'Cremerías',
+  'Carnicerías',
+  'Dulcerías',
+  'Ferreterías y tlapalerías',
+  'Refaccionarias',
   'Papelerías',
-  'Cosméticos',
-  'Y más',
+  'Jugueterías',
+  'Cosméticos y cuidado personal',
+  'Tiendas de regalos',
+  'Granos y semillas',
+  'Productos de limpieza',
+  'Y otros comercios de productos físicos',
 ];
 
 const Audience = () => (
@@ -20,7 +26,7 @@ const Audience = () => (
       <motion.div {...fadeUp}>
         <Stack spacing={2.5} alignItems="center" textAlign="center">
           <Typography sx={{ fontWeight: 700, fontSize: '1.05rem', color: 'white' }}>
-            Diseñado para negocios como
+            SmartVenta funciona para comercios como
           </Typography>
           <Stack direction="row" flexWrap="wrap" justifyContent="center" gap={1.5}>
             {audiences.map((name) => (

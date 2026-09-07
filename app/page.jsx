@@ -2,10 +2,13 @@ import dynamic from 'next/dynamic';
 import Navbar from '@/components/layout/Navbar';
 import Hero from '@/components/sections/Hero';
 
-const ProductShowcase = dynamic(() => import('@/components/sections/ProductShowcase'));
 const MultiStore = dynamic(() => import('@/components/sections/MultiStore'));
 const Comparison = dynamic(() => import('@/components/sections/Comparison'));
+const ProductShowcase = dynamic(() => import('@/components/sections/ProductShowcase'));
+const CashControl = dynamic(() => import('@/components/sections/CashControl'));
+const WeightSale = dynamic(() => import('@/components/sections/WeightSale'));
 const Features = dynamic(() => import('@/components/sections/Features'));
+const OnboardingSupport = dynamic(() => import('@/components/sections/OnboardingSupport'));
 const Audience = dynamic(() => import('@/components/sections/Audience'));
 const Pricing = dynamic(() => import('@/components/sections/Pricing'));
 const FAQ = dynamic(() => import('@/components/sections/FAQ'));
@@ -19,10 +22,13 @@ export default function Home() {
       <Navbar />
       <main role="main">
         <Hero />
-        <ProductShowcase />
         <MultiStore />
         <Comparison />
+        <ProductShowcase />
+        <CashControl />
+        <WeightSale />
         <Features />
+        <OnboardingSupport />
         <Audience />
         <Pricing />
         <FAQ />

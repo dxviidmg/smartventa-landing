@@ -13,8 +13,8 @@ import { useWhatsApp } from '../../contexts/WhatsAppContext';
 import { cardGridItem, ctaButtonSx, sectionPadding, CONFIG } from '../../constants';
 import SectionHeader from '../ui/SectionHeader';
 
-const PRICE_TABLE = { 1: 399, 2: 799, 3: 1149, 4: 1499, 5: 1849, 6: 2199, 7: 2499, 8: 2799, 9: 3099, 10: 3399 };
-const MAX_UNITS_WITH_PRICE = 10;
+const PRICE_TABLE = { 1: 399, 2: 789, 3: 1149, 4: 1499, 5: 1849, 6: 2199, 7: 2499 };
+const MAX_UNITS_WITH_PRICE = 7;
 const MIN_TOTAL_UNITS = 1;
 
 const addThousands = (intStr) => intStr.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -91,7 +91,8 @@ const Pricing = () => {
       <Container maxWidth="md">
         <SectionHeader
           overline="Precios"
-          title="Sencillo y transparente"
+          title="Desde $399/mes por sucursal"
+          subtitle="Mientras más sucursales tienes, menor es el precio por sucursal."
           sx={{ mb: 3 }}
         />
 

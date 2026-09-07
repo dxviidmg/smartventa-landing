@@ -7,10 +7,12 @@ import tiendasImg from '../../assets/Tiendas.png';
 import { LazyImage } from '../ui/LazyImage';
 
 const capabilities = [
-  { title: 'Un catálogo centralizado', desc: 'Productos compartidos entre todas las tiendas. Cambias un precio y se actualiza en todas.' },
-  { title: 'Traspasos con trazabilidad', desc: 'Mueve mercancía entre sucursales. Queda registrado quién mandó qué, cuándo y a dónde.' },
-  { title: 'Distribución desde almacén', desc: 'Envía inventario a varias tiendas en una sola operación.' },
-  { title: 'Control desde un solo lugar', desc: 'Ventas, inventario y caja de cualquier sucursal — sin moverte de donde estés.' },
+  { title: 'Ventas por sucursal', desc: 'Consulta qué se vendió en cada tienda sin llamar ni ir a revisar.' },
+  { title: 'Inventario por sucursal', desc: 'Mira cuánto tienes disponible en cada tienda desde donde estés.' },
+  { title: 'Inventario total', desc: 'La suma de toda tu mercancía entre tiendas y almacenes, en una vista.' },
+  { title: 'Traspasos', desc: 'Registra la mercancía que se mueve entre sucursales y quién la mandó.' },
+  { title: 'Vendedores', desc: 'Sabe quién vendió qué en cada tienda.' },
+  { title: 'Caja', desc: 'Revisa el corte y los movimientos de dinero de cada sucursal.' },
 ];
 
 const BrowserFrame = () => (
@@ -38,30 +40,39 @@ const MultiStore = () => (
                 Multi-sucursal
               </Typography>
               <Typography variant="h2" sx={{ color: 'white', fontSize: { xs: '1.8rem', md: '2.4rem' }, lineHeight: 1.15 }}>
-                Crece sin perder el control
+                ¿Tienes varias tiendas? Deja de perseguir la información
               </Typography>
               <Typography sx={{ color: 'rgba(255,255,255,0.65)', fontSize: '1.05rem', lineHeight: 1.75, maxWidth: 480 }}>
-                Administra varias sucursales y almacenes desde una misma plataforma. Un catálogo, un sistema, una vista de todo tu negocio.
+                Consulta las ventas, el inventario y la caja de cada sucursal desde cualquier lugar.
+                Sabe qué se vendió, qué tienes disponible y qué mercancía se movió sin tener que ir
+                físicamente a cada tienda.
               </Typography>
 
-              <Stack spacing={2.5} sx={{ pt: 1 }}>
+              <Grid container spacing={1.5} sx={{ pt: 1 }}>
                 {capabilities.map((c, i) => (
-                  <motion.div
-                    key={i}
-                    {...cardGridItem}
-                    transition={{ delay: i * 0.08, duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-                  >
-                    <Box>
-                      <Typography sx={{ fontWeight: 600, color: 'white', fontSize: '0.95rem', mb: 0.25 }}>
-                        {c.title}
-                      </Typography>
-                      <Typography sx={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.88rem', lineHeight: 1.6 }}>
-                        {c.desc}
-                      </Typography>
-                    </Box>
-                  </motion.div>
+                  <Grid key={i} size={{ xs: 12, sm: 6 }}>
+                    <motion.div
+                      {...cardGridItem}
+                      transition={{ delay: i * 0.06, duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+                    >
+                      <Box sx={{
+                        height: '100%',
+                        p: 2,
+                        borderRadius: 2.5,
+                        bgcolor: 'rgba(255,255,255,0.06)',
+                        border: '1px solid rgba(255,255,255,0.1)',
+                      }}>
+                        <Typography sx={{ fontWeight: 600, color: 'white', fontSize: '0.95rem', mb: 0.5 }}>
+                          {c.title}
+                        </Typography>
+                        <Typography sx={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.85rem', lineHeight: 1.6 }}>
+                          {c.desc}
+                        </Typography>
+                      </Box>
+                    </motion.div>
+                  </Grid>
                 ))}
-              </Stack>
+              </Grid>
             </Stack>
           </motion.div>
         </Grid>

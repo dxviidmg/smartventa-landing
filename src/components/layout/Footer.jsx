@@ -32,11 +32,11 @@ const Footer = () => {
                   Producto
                 </Typography>
                 <Stack direction="column" spacing={1.5} component="nav" aria-label="Enlaces del sitio">
-                  <Link href="#product" sx={footerLinkSx}>
-                    Producto
-                  </Link>
                   <Link href="#multi-store" sx={footerLinkSx}>
                     Multi-sucursal
+                  </Link>
+                  <Link href="#product" sx={footerLinkSx}>
+                    Producto
                   </Link>
                   <Link href="#features" sx={footerLinkSx}>
                     Funcionalidades

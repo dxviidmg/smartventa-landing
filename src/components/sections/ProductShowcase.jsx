@@ -47,7 +47,7 @@ const showcaseBlocks = [
   {
     overline: 'Punto de venta',
     title: 'Vende sin complicarte',
-    desc: 'Busca por código de barras o nombre, agrega al carrito y cobra. Múltiples carritos simultáneos, precios de mayoreo automáticos y atajos de teclado para operar sin mouse.',
+    desc: 'Busca por código de barras o nombre, agrega al carrito y cobra. ¿Tienes muchos productos sin registrar y hacer el inventario físico es imposible? Activa "crear producto al vender": cuando escaneas un código que no existe, das de alta el producto y su stock desde la misma venta. Múltiples carritos simultáneos, precios de mayoreo automáticos y atajos de teclado para operar sin mouse.',
     img: carritoImg,
     imgAlt: 'Punto de venta SmartVenta — carrito de venta con búsqueda de productos',
     reverse: false,
@@ -56,7 +56,7 @@ const showcaseBlocks = [
   {
     overline: 'Inventario y operación',
     title: 'Siempre sabes qué tienes',
-    desc: 'Stock en tiempo real de todas tus tiendas. Historial completo de cada producto: ventas, traspasos, ajustes. Importa tu catálogo desde Excel en minutos.',
+    desc: 'Consulta el stock de todas tus tiendas desde un solo lugar. Historial completo de cada producto: ventas, traspasos, ajustes. Importa tu catálogo desde Excel en minutos.',
     img: tableroImg,
     imgAlt: 'Dashboard SmartVenta — tablero de ventas y métricas por tienda',
     reverse: true,

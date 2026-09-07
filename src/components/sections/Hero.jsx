@@ -74,7 +74,7 @@ const Hero = () => {
 
       <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1, py: { xs: 12, md: 0 } }}>
         <Grid container spacing={{ xs: 6, md: 8 }} alignItems="center">
-          <Grid size={{ xs: 12, md: 5 }}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <motion.div {...heroContainer} initial="initial" animate="animate">
               <Stack spacing={3}>
                 <motion.div variants={heroItem}>
@@ -105,8 +105,19 @@ const Hero = () => {
                       fontSize: { xs: '1.05rem', md: '1.15rem' }, fontWeight: 400, lineHeight: 1.7,
                     }}
                   >
-                    Un solo sistema para todas tus sucursales. Ventas, inventario, traspasos y corte de caja —
-                    todo en una pantalla, sin instalar nada.
+                    Controla ventas, inventario, caja y traspasos de todas tus sucursales
+                    desde cualquier lugar. Sin instalar nada.
+                  </Typography>
+                </motion.div>
+
+                <motion.div variants={heroItem}>
+                  <Typography
+                    sx={{
+                      color: 'rgba(255,255,255,0.55)', maxWidth: 480,
+                      fontSize: { xs: '0.95rem', md: '1rem' }, fontWeight: 400, lineHeight: 1.6,
+                    }}
+                  >
+                    Ideal para negocios que están creciendo y ya no pueden estar en todas sus tiendas.
                   </Typography>
                 </motion.div>
 
@@ -142,7 +153,7 @@ const Hero = () => {
 
                 <motion.div variants={heroItem}>
                   <Stack direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 1, sm: 3 }} sx={{ pt: 2 }}>
-                    {['Sin instalación', 'Sin contrato', 'Listo en segundos'].map((text) => (
+                    {['Sin instalación', 'Sin contrato', 'Desde $399/mes por sucursal'].map((text) => (
                       <Stack key={text} direction="row" spacing={0.75} alignItems="center">
                         <Box sx={{ width: 6, height: 6, borderRadius: '50%', bgcolor: '#34d399', flexShrink: 0 }} />
                         <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.85rem' }}>
@@ -156,7 +167,7 @@ const Hero = () => {
             </motion.div>
           </Grid>
 
-          <Grid size={{ xs: 12, md: 7 }}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <motion.div
               {...heroImage}
               initial="initial"

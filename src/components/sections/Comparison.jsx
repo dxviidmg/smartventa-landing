@@ -7,19 +7,19 @@ import Close from '@mui/icons-material/Close';
 import Check from '@mui/icons-material/Check';
 
 const before = [
-  'Preguntas por WhatsApp qué pasó en otra tienda',
-  'Mueves mercancía sin que quede registro',
-  'No sabes cuánto hay en cada sucursal',
-  'Vas físicamente a cada tienda para revisar',
-  'Al final del día no sabes cuánto se vendió',
+  'No sabes el status de cada tienda',
+  'Tienes que ir físicamente a revisar',
+  'No sabes cuánto inventario hay realmente',
+  'Los traspasos pueden quedar sin registrar',
+  'Imposible saber cómo va el negocio sin ti',
 ];
 
 const after = [
-  'Consultas cualquier tienda desde donde estés',
-  'Cada traspaso queda registrado automáticamente',
-  'Inventario en tiempo real de cada ubicación',
-  'Todo desde una sola pantalla, sin moverte',
-  'Ventas, corte de caja y métricas al instante',
+  'Ves las ventas de cada sucursal',
+  'Consultas el inventario desde cualquier lugar',
+  'Cada traspaso queda registrado',
+  'Sabes quién vendió',
+  'Controlas la caja y los métodos de pago',
 ];
 
 const Comparison = () => (
@@ -28,7 +28,10 @@ const Comparison = () => (
       <motion.div {...fadeUp}>
         <Stack spacing={1.5} alignItems="center" textAlign="center" sx={{ mb: 6 }}>
           <Typography variant="h2" sx={{ fontSize: { xs: '1.8rem', md: '2.4rem' } }}>
-            ¿Cómo cambia tu operación?
+            Tu negocio no debería depender de que estés en cada tienda
+          </Typography>
+          <Typography sx={{ color: 'text.secondary', fontSize: '1.05rem', maxWidth: 520 }}>
+            Cuando el negocio crece, ya no puedes estar en todas partes. Así cambia tu día a día.
           </Typography>
         </Stack>
       </motion.div>
