@@ -25,9 +25,15 @@ const Audience = () => (
     <Container maxWidth="md">
       <motion.div {...fadeUp}>
         <Stack spacing={2.5} alignItems="center" textAlign="center">
-          <Typography sx={{ fontWeight: 700, fontSize: '1.05rem', color: 'white' }}>
-            SmartVenta funciona para comercios como
-          </Typography>
+          <Stack spacing={1} alignItems="center" sx={{ maxWidth: 620 }}>
+            <Typography sx={{ fontWeight: 800, fontSize: { xs: '1.5rem', md: '1.9rem' }, color: 'white', lineHeight: 1.2 }}>
+              Ideal para comercios de productos físicos
+            </Typography>
+            <Typography sx={{ color: 'rgba(255,255,255,0.65)', fontSize: '1rem', lineHeight: 1.6 }}>
+              SmartVenta funciona especialmente bien para negocios que necesitan controlar productos,
+              inventario y ventas, con una o varias sucursales.
+            </Typography>
+          </Stack>
           <Stack direction="row" flexWrap="wrap" justifyContent="center" gap={1.5}>
             {audiences.map((name) => (
               <Typography

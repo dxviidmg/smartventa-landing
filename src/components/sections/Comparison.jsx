@@ -7,19 +7,21 @@ import Close from '@mui/icons-material/Close';
 import Check from '@mui/icons-material/Check';
 
 const before = [
-  'No sabes el status de cada tienda',
-  'Tienes que ir físicamente a revisar',
-  'No sabes cuánto inventario hay realmente',
-  'Los traspasos pueden quedar sin registrar',
-  'Imposible saber cómo va el negocio sin ti',
+  'Información dispersa',
+  'Inventarios difíciles de controlar',
+  'Cambios de precio tienda por tienda',
+  'Traspasos difíciles de rastrear',
+  'Necesitas preguntar qué pasa en cada tienda',
+  'Dependes de estar físicamente ahí',
 ];
 
 const after = [
-  'Ves las ventas de cada sucursal',
-  'Consultas el inventario desde cualquier lugar',
-  'Cada traspaso queda registrado',
-  'Sabes quién vendió',
-  'Controlas la caja y los métodos de pago',
+  'Información centralizada',
+  'Inventario por sucursal',
+  'Cambios de precio centralizados',
+  'Traspasos registrados y trazables',
+  'Ventas visibles desde cualquier lugar',
+  'Mayor control sin estar en cada tienda',
 ];
 
 const Comparison = () => (

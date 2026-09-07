@@ -94,7 +94,7 @@ const Hero = () => {
                       color: 'white', lineHeight: 1.08, letterSpacing: '-0.03em',
                     }}
                   >
-                    Todas tus tiendas en un solo lugar
+                    Controla tu negocio estés donde estés
                   </Typography>
                 </motion.div>
 
@@ -105,8 +105,8 @@ const Hero = () => {
                       fontSize: { xs: '1.05rem', md: '1.15rem' }, fontWeight: 400, lineHeight: 1.7,
                     }}
                   >
-                    Controla ventas, inventario, caja y traspasos de todas tus sucursales
-                    desde cualquier lugar. Sin instalar nada.
+                    Un punto de venta en la nube para controlar ventas, inventario y caja
+                    desde un solo lugar, tengas una o varias sucursales.
                   </Typography>
                 </motion.div>
 
@@ -117,7 +117,7 @@ const Hero = () => {
                       fontSize: { xs: '0.95rem', md: '1rem' }, fontWeight: 400, lineHeight: 1.6,
                     }}
                   >
-                    Ideal para negocios que están creciendo y ya no pueden estar en todas sus tiendas.
+                    Tu negocio no debería depender de que estés físicamente en cada tienda.
                   </Typography>
                 </motion.div>
 
@@ -135,10 +135,7 @@ const Hero = () => {
                     <Button
                       variant="outlined"
                       size="large"
-                      onClick={() => {
-                        const el = document.getElementById('product');
-                        if (el) el.scrollIntoView({ behavior: 'smooth' });
-                      }}
+                      onClick={() => openWhatsApp('Hola, quiero conocer más sobre SmartVenta')}
                       sx={{
                         px: 4, py: 1.5, fontSize: '1rem',
                         color: 'rgba(255,255,255,0.85)',
@@ -146,14 +143,14 @@ const Hero = () => {
                         '&:hover': { borderColor: 'rgba(255,255,255,0.6)', bgcolor: 'rgba(255,255,255,0.05)' },
                       }}
                     >
-                      Ver cómo funciona
+                      Hablar con nosotros
                     </Button>
                   </Stack>
                 </motion.div>
 
                 <motion.div variants={heroItem}>
                   <Stack direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 1, sm: 3 }} sx={{ pt: 2 }}>
-                    {['Sin instalación', 'Sin contrato', 'Desde $399/mes por sucursal'].map((text) => (
+                    {['Sin instalación', 'Sin contrato', 'Listo para comenzar'].map((text) => (
                       <Stack key={text} direction="row" spacing={0.75} alignItems="center">
                         <Box sx={{ width: 6, height: 6, borderRadius: '50%', bgcolor: '#34d399', flexShrink: 0 }} />
                         <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.85rem' }}>

@@ -7,14 +7,13 @@ import ArrowForward from '@mui/icons-material/ArrowForward';
 import Add from '@mui/icons-material/Add';
 import Remove from '@mui/icons-material/Remove';
 import StorefrontOutlined from '@mui/icons-material/StorefrontOutlined';
-import WarehouseOutlined from '@mui/icons-material/WarehouseOutlined';
 import CheckCircle from '@mui/icons-material/CheckCircle';
 import { useWhatsApp } from '../../contexts/WhatsAppContext';
 import { cardGridItem, ctaButtonSx, sectionPadding, CONFIG } from '../../constants';
 import SectionHeader from '../ui/SectionHeader';
 
-const PRICE_TABLE = { 1: 399, 2: 789, 3: 1149, 4: 1499, 5: 1849, 6: 2199, 7: 2499 };
-const MAX_UNITS_WITH_PRICE = 7;
+const PRICE_TABLE = { 1: 399, 2: 789, 3: 1149, 4: 1499, 5: 1799, 6: 2199, 7: 2499, 8: 2799, 9: 3099, 10: 3399 };
+const MAX_UNITS_WITH_PRICE = 10;
 const MIN_TOTAL_UNITS = 1;
 
 const addThousands = (intStr) => intStr.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -66,33 +65,29 @@ const CounterControl = ({ label, icon: Icon, value, onIncrement, onDecrement, mi
 const Pricing = () => {
   const { openWhatsApp } = useWhatsApp();
   const [stores, setStores] = useState(1);
-  const [warehouses, setWarehouses] = useState(0);
 
-  const totalUnits = stores + warehouses;
-  const needsQuote = totalUnits > MAX_UNITS_WITH_PRICE;
-  const price = useMemo(() => PRICE_TABLE[totalUnits] ?? null, [totalUnits]);
+  const needsQuote = stores > MAX_UNITS_WITH_PRICE;
+  const price = useMemo(() => PRICE_TABLE[stores] ?? null, [stores]);
 
-  const pricePerUnit = price && totalUnits > 0 ? price / totalUnits : null;
-  const hasDiscount = totalUnits >= 3 && pricePerUnit;
+  const pricePerUnit = price && stores > 0 ? price / stores : null;
+  const hasDiscount = stores >= 2 && pricePerUnit;
 
-  const handleDecrementStore = () => {
-    if (stores > 0 && (stores - 1 + warehouses) >= MIN_TOTAL_UNITS) setStores(stores - 1);
+  const handleDecrement = () => {
+    if (stores > MIN_TOTAL_UNITS) setStores(stores - 1);
   };
-  const handleDecrementWarehouse = () => {
-    if (warehouses > 0) setWarehouses(warehouses - 1);
-  };
+  const handleIncrement = () => setStores(stores + 1);
 
   const ctaMessage = needsQuote
-    ? `Hola, me interesa SmartVenta para ${stores} tienda${stores !== 1 ? 's' : ''} y ${warehouses} almacén${warehouses !== 1 ? 'es' : ''} (${totalUnits} ubicaciones). Quisiera una cotización.`
-    : `Hola, me interesa SmartVenta para ${stores} tienda${stores !== 1 ? 's' : ''} y ${warehouses} almacén${warehouses !== 1 ? 'es' : ''}. Quiero comenzar.`;
+    ? `Hola, tengo ${stores} sucursales y me interesa SmartVenta. Quisiera un precio personalizado.`
+    : `Hola, me interesa SmartVenta para ${stores} sucursal${stores !== 1 ? 'es' : ''}. Quiero comenzar.`;
 
   return (
     <Box id="pricing" sx={{ ...sectionPadding, bgcolor: 'background.paper' }}>
       <Container maxWidth="md">
         <SectionHeader
           overline="Precios"
-          title="Desde $399/mes por sucursal"
-          subtitle="Mientras más sucursales tienes, menor es el precio por sucursal."
+          title="Paga según las sucursales que tengas"
+          subtitle="Empieza con una sucursal y obtén un mejor precio por sucursal conforme crece tu negocio."
           sx={{ mb: 3 }}
         />
 
@@ -116,28 +111,34 @@ const Pricing = () => {
               {/* Calculator intro */}
               <Box sx={{ textAlign: 'center', mb: 3 }}>
                 <Typography sx={{ fontWeight: 700, fontSize: '1.05rem', color: 'text.primary' }}>
-                  Calcula tu precio
+                  ¿Cuántas sucursales tienes?
                 </Typography>
                 <Typography variant="body2" sx={{ color: 'text.secondary', mt: 0.5 }}>
-                  Ajusta tiendas y almacenes para ver tu precio.
+                  Ajusta el número para ver tu precio.
                 </Typography>
               </Box>
 
-              {/* Counters */}
-              <Stack spacing={2} sx={{ mb: 2 }}>
-                <CounterControl label="Tiendas" icon={StorefrontOutlined} value={stores} onIncrement={() => setStores(stores + 1)} onDecrement={handleDecrementStore} min={0} />
-                <CounterControl label="Almacenes" icon={WarehouseOutlined} value={warehouses} onIncrement={() => setWarehouses(warehouses + 1)} onDecrement={handleDecrementWarehouse} min={0} />
+              {/* Counter */}
+              <Stack sx={{ mb: 2 }}>
+                <CounterControl
+                  label="Sucursales"
+                  icon={StorefrontOutlined}
+                  value={stores}
+                  onIncrement={handleIncrement}
+                  onDecrement={handleDecrement}
+                  min={MIN_TOTAL_UNITS}
+                />
               </Stack>
 
               {/* Price display */}
               <Box sx={{ textAlign: 'center', py: 1.75, mb: 2, bgcolor: 'background.paper', borderRadius: 2.5, border: '1px solid', borderColor: 'divider' }}>
                 {needsQuote ? (
                   <>
-                    <Typography sx={{ fontWeight: 700, fontSize: '1.1rem', color: 'primary.main' }}>
-                      Precio especial por volumen
+                    <Typography sx={{ fontWeight: 700, fontSize: '1.05rem', color: 'primary.main', px: 2, lineHeight: 1.4 }}>
+                      ¿Tienes más de 10 sucursales?
                     </Typography>
-                    <Typography variant="body2" sx={{ color: 'text.secondary', mt: 0.25 }}>
-                      Contáctanos para tu cotización
+                    <Typography variant="body2" sx={{ color: 'text.secondary', mt: 0.5, px: 2 }}>
+                      Contáctanos para obtener un precio personalizado.
                     </Typography>
                   </>
                 ) : (
@@ -150,7 +151,7 @@ const Pricing = () => {
                     </Stack>
                     {hasDiscount && (
                       <Typography sx={{ color: '#047857', fontSize: '0.85rem', fontWeight: 600, mt: 0.5 }}>
-                        {formatPriceDecimals(pricePerUnit)} por ubicación · Ahorro por volumen
+                        {formatPriceDecimals(pricePerUnit)} por sucursal
                       </Typography>
                     )}
                   </>
@@ -166,7 +167,7 @@ const Pricing = () => {
                 onClick={() => needsQuote ? openWhatsApp(ctaMessage) : window.open(`${CONFIG.urls.app}/registrarme`, '_blank')}
                 sx={ctaButtonSx}
               >
-                {needsQuote ? 'Solicitar cotización' : 'Comenzar ahora'}
+                {needsQuote ? 'Contáctanos' : 'Probar SmartVenta'}
               </Button>
             </Box>
 
@@ -185,9 +186,9 @@ const Pricing = () => {
               <Stack spacing={2}>
                 {[
                   'Todos los módulos incluidos',
-                  'Sin contrato, cancela cuando quieras',
-                  'Soporte por WhatsApp',
+                  'Sin contrato',
                   'Actualizaciones sin costo',
+                  'Soporte por WhatsApp',
                   'Configuración inicial guiada',
                 ].map((text) => (
                   <Stack key={text} direction="row" spacing={1.25} alignItems="flex-start">

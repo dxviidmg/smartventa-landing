@@ -80,7 +80,7 @@ const CashControl = () => (
                 Control de caja
               </Typography>
               <Typography variant="h2" sx={{ fontSize: { xs: '1.8rem', md: '2.4rem' }, lineHeight: 1.15 }}>
-                Separa lo que vendiste de lo que realmente tienes en caja
+                Sabe cuánto vendiste y cuánto debería haber en caja
               </Typography>
               <Typography sx={{ color: 'text.secondary', fontSize: '1.05rem', lineHeight: 1.75, maxWidth: 460 }}>
                 No todo lo que vendes queda en efectivo. SmartVenta separa cada método de pago y

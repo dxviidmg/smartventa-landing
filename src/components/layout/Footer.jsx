@@ -24,7 +24,7 @@ const Footer = () => {
                   {CONFIG.company.name}
                 </Typography>
                 <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.6 }}>
-                  El punto de venta inteligente para negocios multi-tienda.
+                  Punto de venta en la nube para controlar tu negocio estés donde estés, con una o varias sucursales.
                 </Typography>
               </Box>
               <Stack spacing={2} sx={{ flex: { xs: '0 0 auto', md: 1 }, minWidth: { xs: '100%', md: '150px' } }}>
@@ -35,8 +35,11 @@ const Footer = () => {
                   <Link href="#multi-store" sx={footerLinkSx}>
                     Multi-sucursal
                   </Link>
+                  <Link href="#inventory" sx={footerLinkSx}>
+                    Inventario
+                  </Link>
                   <Link href="#product" sx={footerLinkSx}>
-                    Producto
+                    Punto de venta
                   </Link>
                   <Link href="#features" sx={footerLinkSx}>
                     Funcionalidades

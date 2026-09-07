@@ -54,14 +54,14 @@ const WeightSale = () => (
           <motion.div {...fadeUp}>
             <Stack spacing={2.5}>
               <Typography variant="overline" sx={{ color: '#047857', fontWeight: 700, letterSpacing: 2, fontSize: '0.78rem' }}>
-                Venta a granel
+                Venta por peso y granel
               </Typography>
               <Typography variant="h2" sx={{ fontSize: { xs: '1.8rem', md: '2.4rem' }, lineHeight: 1.15 }}>
-                Vende por peso o por cantidad
+                Vende por pieza, peso o cantidad
               </Typography>
               <Typography sx={{ color: 'text.secondary', fontSize: '1.05rem', lineHeight: 1.75, maxWidth: 460 }}>
                 ¿Tu cliente quiere $20 de jamón, 250 gramos de queso o medio kilo de producto?
-                SmartVenta calcula automáticamente la cantidad correspondiente al precio.
+                Vende exactamente lo que necesita tu cliente y deja que SmartVenta haga el cálculo.
               </Typography>
               <Typography sx={{ color: 'text.secondary', fontSize: '0.95rem', lineHeight: 1.7, maxWidth: 460 }}>
                 Maneja unidades como pieza, kilogramo, costal, litro y más. Tú capturas el precio o

@@ -2,8 +2,10 @@ import dynamic from 'next/dynamic';
 import Navbar from '@/components/layout/Navbar';
 import Hero from '@/components/sections/Hero';
 
+const ControlAnywhere = dynamic(() => import('@/components/sections/ControlAnywhere'));
 const MultiStore = dynamic(() => import('@/components/sections/MultiStore'));
 const Comparison = dynamic(() => import('@/components/sections/Comparison'));
+const Inventory = dynamic(() => import('@/components/sections/Inventory'));
 const ProductShowcase = dynamic(() => import('@/components/sections/ProductShowcase'));
 const CashControl = dynamic(() => import('@/components/sections/CashControl'));
 const WeightSale = dynamic(() => import('@/components/sections/WeightSale'));
@@ -22,15 +24,17 @@ export default function Home() {
       <Navbar />
       <main role="main">
         <Hero />
+        <ControlAnywhere />
         <MultiStore />
         <Comparison />
+        <Inventory />
         <ProductShowcase />
         <CashControl />
         <WeightSale />
         <Features />
-        <OnboardingSupport />
         <Audience />
         <Pricing />
+        <OnboardingSupport />
         <FAQ />
         <Contact />
       </main>

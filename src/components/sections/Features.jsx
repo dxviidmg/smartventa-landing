@@ -26,17 +26,22 @@ import SwapHoriz from '@mui/icons-material/SwapHoriz';
 import ShoppingCart from '@mui/icons-material/ShoppingCart';
 import Sell from '@mui/icons-material/Sell';
 import Discount from '@mui/icons-material/Discount';
+import SupportAgent from '@mui/icons-material/SupportAgent';
 
 const groups = [
   {
-    category: 'Control del negocio',
-    desc: 'Mira cómo va tu negocio sin estar en cada tienda.',
+    category: 'Ventas',
+    desc: 'Cobra rápido y como tu negocio lo necesita.',
     features: [
-      { icon: <Assessment />, title: 'Dashboard de ventas', desc: 'KPIs, productos destacados y rendimiento general.', accent: '#8b5cf6' },
-      { icon: <Storefront />, title: 'Ventas por sucursal', desc: 'Consulta qué se vendió en cada tienda.', accent: '#0ea5e9' },
-      { icon: <Badge />, title: 'Ventas por vendedor', desc: 'Sabe quién vendió qué en cada tienda.', accent: '#f97316' },
-      { icon: <TrendingUp />, title: 'Rentabilidad', desc: 'Consulta la utilidad y cuánto tienes invertido en mercancía.', accent: '#f59e0b' },
-      { icon: <AccountBalance />, title: 'Control de caja', desc: 'Resumen por método de pago, movimientos y cortes.', accent: '#10b981' },
+      { icon: <PointOfSale />, title: 'Punto de venta', desc: 'Vende y cobra desde una sola pantalla.', accent: '#22c55e' },
+      { icon: <ShoppingCart />, title: 'Múltiples carritos', desc: 'Atiende a varios clientes al mismo tiempo sin perder la venta.', accent: '#0891b2' },
+      { icon: <QrCodeScanner />, title: 'Código de barras', desc: 'Compatible con lectores USB y Bluetooth. También buscas por nombre.', accent: '#22c55e' },
+      { icon: <Scale />, title: 'Venta por peso y granel', desc: 'Vende por kilo, fracción o "20 pesos de…" y el sistema calcula lo proporcional.', accent: '#f97316' },
+      { icon: <AttachMoney />, title: 'Precios dinámicos', desc: 'Precio unitario y de mayoreo según la cantidad vendida.', accent: '#eab308' },
+      { icon: <Sell />, title: 'Precio de mayoreo', desc: 'Precios de mayoreo automáticos según la cantidad.', accent: '#eab308' },
+      { icon: <BookmarkAdded />, title: 'Apartados', desc: 'Reserva productos para un cliente sin cobrar el total.', accent: '#0891b2' },
+      { icon: <People />, title: 'Clientes', desc: 'Historial de compras por cliente.', accent: '#a855f7' },
+      { icon: <Discount />, title: 'Descuentos', desc: 'Descuentos personalizados por cliente.', accent: '#a855f7' },
     ],
   },
   {
@@ -44,36 +49,43 @@ const groups = [
     desc: 'Tu mercancía bajo control en todas las ubicaciones.',
     features: [
       { icon: <Inventory2 />, title: 'Inventario por sucursal', desc: 'Consulta el stock disponible en cada tienda.', accent: '#0891b2' },
-      { icon: <Inventory2 />, title: 'Inventario total', desc: 'La suma de tu mercancía entre tiendas y almacenes.', accent: '#14b8a6' },
-      { icon: <History />, title: 'Kardex de inventario', desc: 'Historial de cada producto: ventas, traspasos y ajustes.', accent: '#14b8a6' },
+      { icon: <History />, title: 'Kardex', desc: 'Historial de cada producto: ventas, traspasos y ajustes.', accent: '#14b8a6' },
       { icon: <SwapHoriz />, title: 'Traspasos', desc: 'Mueve mercancía entre sucursales con registro de quién y cuándo.', accent: '#6366f1' },
-      { icon: <AttachMoney />, title: 'Cambio masivo de precios', desc: 'Actualiza costo, precio unitario y mayoreo de varios productos a la vez.', accent: '#eab308' },
-      { icon: <UploadFile />, title: 'Importación desde Excel', desc: 'Sube tu catálogo completo con plantillas y validación previa.', accent: '#0ea5e9' },
+      { icon: <Storefront />, title: 'Distribución', desc: 'Reparte producto a varias tiendas en una sola operación.', accent: '#0ea5e9' },
+      { icon: <Transform />, title: 'Conversión de unidades', desc: 'Cajas a piezas, costales a kilos. Configúralo una vez y convierte con un clic.', accent: '#ec4899' },
+      { icon: <Inventory2 />, title: 'Ajustes de inventario', desc: 'Corrige el stock cuando lo necesites, con registro del movimiento.', accent: '#14b8a6' },
+      { icon: <UploadFile />, title: 'Catálogo centralizado', desc: 'Un catálogo para todas tus tiendas; impórtalo desde Excel.', accent: '#0ea5e9' },
     ],
   },
   {
-    category: 'Venta',
-    desc: 'Cobra rápido y como tu negocio lo necesita.',
+    category: 'Caja',
+    desc: 'Cuadra tu caja sin dolores de cabeza.',
     features: [
-      { icon: <QrCodeScanner />, title: 'Código de barras', desc: 'Compatible con lectores USB y Bluetooth. También buscas por nombre.', accent: '#22c55e' },
-      { icon: <Scale />, title: 'Venta por peso', desc: 'Vende por kilo, fracción o "20 pesos de…" y el sistema calcula lo proporcional.', accent: '#f97316' },
+      { icon: <AccountBalance />, title: 'Movimientos de caja', desc: 'Registra entradas y salidas de dinero.', accent: '#10b981' },
+      { icon: <AccountBalance />, title: 'Corte de caja', desc: 'Cortes parciales o totales, exportables a Excel.', accent: '#10b981' },
       { icon: <Payment />, title: 'Pagos mixtos', desc: 'Una misma venta puede pagarse con efectivo, tarjeta y transferencia.', accent: '#6366f1' },
-      { icon: <Sell />, title: 'Precios de mayoreo', desc: 'Precios de mayoreo automáticos según la cantidad.', accent: '#eab308' },
-      { icon: <ShoppingCart />, title: 'Múltiples carritos', desc: 'Atiende a varios clientes al mismo tiempo sin perder la venta.', accent: '#0891b2' },
-      { icon: <BookmarkAdded />, title: 'Apartados', desc: 'Reserva productos para un cliente sin cobrar el total.', accent: '#0891b2' },
-      { icon: <Transform />, title: 'Conversión de unidades', desc: 'Cajas a piezas, costales a kilos. Configúralo una vez y convierte con un clic.', accent: '#ec4899' },
-      { icon: <PointOfSale />, title: 'Crear productos al vender', desc: 'Ideal si tienes muchos productos sin registrar. Activa la opción y, si escaneas un código que no existe, aparece un modal para crear el producto con su stock y se agrega al carrito al instante.', accent: '#22c55e' },
+      { icon: <Payment />, title: 'Control por método de pago', desc: 'Separa efectivo, tarjeta y transferencia en cada corte.', accent: '#6366f1' },
+    ],
+  },
+  {
+    category: 'Administración',
+    desc: 'Mira cómo va tu negocio sin estar en cada tienda.',
+    features: [
+      { icon: <Assessment />, title: 'Dashboard', desc: 'KPIs, productos destacados y rendimiento general.', accent: '#8b5cf6' },
+      { icon: <Badge />, title: 'Vendedores', desc: 'Asigna vendedores a tiendas y consulta sus ventas individuales.', accent: '#f97316' },
+      { icon: <Security />, title: 'Roles', desc: 'Dueño, administrador y vendedor — cada quien ve lo que necesita.', accent: '#d946ef' },
+      { icon: <UploadFile />, title: 'Excel', desc: 'Importa tu catálogo con plantillas y validación previa.', accent: '#0ea5e9' },
+      { icon: <AttachMoney />, title: 'Cambios masivos de precios', desc: 'Actualiza costo, precio unitario y mayoreo de varios productos a la vez.', accent: '#eab308' },
+      { icon: <TrendingUp />, title: 'Rentabilidad', desc: 'Consulta la utilidad y cuánto tienes invertido en mercancía.', accent: '#f59e0b' },
     ],
   },
   {
     category: 'Operación',
-    desc: 'Ordena a tu equipo y a tus clientes.',
+    desc: 'Todo listo para empezar a trabajar.',
     features: [
-      { icon: <Badge />, title: 'Vendedores', desc: 'Asigna vendedores a tiendas y consulta sus ventas individuales.', accent: '#f97316' },
-      { icon: <Security />, title: 'Roles y permisos', desc: 'Dueño, administrador y vendedor — cada quien ve lo que necesita.', accent: '#d946ef' },
-      { icon: <People />, title: 'Clientes', desc: 'Historial de compras por cliente.', accent: '#a855f7' },
-      { icon: <Discount />, title: 'Descuentos', desc: 'Descuentos personalizados por cliente.', accent: '#a855f7' },
-      { icon: <Print />, title: 'Tickets e impresión', desc: 'Compatible con impresoras térmicas estándar.', accent: '#6366f1' },
+      { icon: <Print />, title: 'Tickets', desc: 'Compatible con impresoras térmicas estándar.', accent: '#6366f1' },
+      { icon: <SupportAgent />, title: 'Configuración inicial', desc: 'Te ayudamos a dejar tu negocio listo para vender.', accent: '#0891b2' },
+      { icon: <SupportAgent />, title: 'Soporte por WhatsApp', desc: 'Ayuda directa cuando la necesites.', accent: '#22c55e' },
     ],
   },
 ];

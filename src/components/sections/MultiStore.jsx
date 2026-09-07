@@ -7,12 +7,14 @@ import tiendasImg from '../../assets/Tiendas.png';
 import { LazyImage } from '../ui/LazyImage';
 
 const capabilities = [
-  { title: 'Ventas por sucursal', desc: 'Consulta qué se vendió en cada tienda sin llamar ni ir a revisar.' },
-  { title: 'Inventario por sucursal', desc: 'Mira cuánto tienes disponible en cada tienda desde donde estés.' },
-  { title: 'Inventario total', desc: 'La suma de toda tu mercancía entre tiendas y almacenes, en una vista.' },
-  { title: 'Traspasos', desc: 'Registra la mercancía que se mueve entre sucursales y quién la mandó.' },
-  { title: 'Vendedores', desc: 'Sabe quién vendió qué en cada tienda.' },
-  { title: 'Caja', desc: 'Revisa el corte y los movimientos de dinero de cada sucursal.' },
+  { title: 'Catálogo centralizado', desc: 'Un solo catálogo para todas tus tiendas.' },
+  { title: 'Precios centralizados', desc: 'Cambia un precio una vez y aplica en todas.' },
+  { title: 'Costos centralizados', desc: 'Administra los costos desde un solo lugar.' },
+  { title: 'Inventario por sucursal', desc: 'Mira cuánto tienes disponible en cada tienda.' },
+  { title: 'Traspasos entre sucursales', desc: 'Mueve mercancía y registra quién la mandó.' },
+  { title: 'Distribución de mercancía', desc: 'Reparte producto a varias tiendas a la vez.' },
+  { title: 'Ventas por sucursal', desc: 'Consulta qué se vendió en cada tienda.' },
+  { title: 'Información consolidada', desc: 'Todo tu negocio en una sola vista.' },
 ];
 
 const BrowserFrame = () => (
@@ -40,12 +42,12 @@ const MultiStore = () => (
                 Multi-sucursal
               </Typography>
               <Typography variant="h2" sx={{ color: 'white', fontSize: { xs: '1.8rem', md: '2.4rem' }, lineHeight: 1.15 }}>
-                ¿Tienes varias tiendas? Deja de perseguir la información
+                Todas tus sucursales en un solo lugar
               </Typography>
               <Typography sx={{ color: 'rgba(255,255,255,0.65)', fontSize: '1.05rem', lineHeight: 1.75, maxWidth: 480 }}>
-                Consulta las ventas, el inventario y la caja de cada sucursal desde cualquier lugar.
-                Sabe qué se vendió, qué tienes disponible y qué mercancía se movió sin tener que ir
-                físicamente a cada tienda.
+                Si tienes varias tiendas, no necesitas administrar cada una como si fuera un negocio
+                diferente. Un catálogo, precios y costos centralizados, con el inventario y las
+                ventas de cada sucursal a la vista.
               </Typography>
 
               <Grid container spacing={1.5} sx={{ pt: 1 }}>
@@ -73,6 +75,21 @@ const MultiStore = () => (
                   </Grid>
                 ))}
               </Grid>
+
+              <Stack spacing={1.5} sx={{ pt: 1 }}>
+                <Box sx={{
+                  p: 2, borderRadius: 2.5,
+                  bgcolor: 'rgba(52,211,153,0.1)',
+                  border: '1px solid rgba(52,211,153,0.25)',
+                }}>
+                  <Typography sx={{ color: 'white', fontWeight: 600, fontSize: '0.95rem', lineHeight: 1.5 }}>
+                    Mueve mercancía entre sucursales y mantén el control desde un solo lugar.
+                  </Typography>
+                </Box>
+                <Typography sx={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.95rem', lineHeight: 1.6 }}>
+                  Empieza con una sucursal. Cuando crezcas, SmartVenta crece contigo.
+                </Typography>
+              </Stack>
             </Stack>
           </motion.div>
         </Grid>

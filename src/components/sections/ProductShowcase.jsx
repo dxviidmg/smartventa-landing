@@ -4,7 +4,6 @@ import { Box, Container, Typography, Grid, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
 import { sectionPadding, cardGridItem } from '../../constants';
 import carritoImg from '../../assets/Carrito de venta.png';
-import tableroImg from '../../assets/Tablero.png';
 import { LazyImage } from '../ui/LazyImage';
 
 const BrowserFrame = ({ src, alt }) => (
@@ -35,95 +34,65 @@ const BrowserFrame = ({ src, alt }) => (
         </Typography>
       </Box>
     </Stack>
-    <LazyImage
-      src={src}
-      alt={alt}
-      sx={{ width: '100%', height: 'auto', display: 'block' }}
-    />
+    <LazyImage src={src} alt={alt} sx={{ width: '100%', height: 'auto', display: 'block' }} />
   </Box>
 );
 
-const showcaseBlocks = [
-  {
-    overline: 'Punto de venta',
-    title: 'Vende sin complicarte',
-    desc: 'Busca por código de barras o nombre, agrega al carrito y cobra. ¿Tienes muchos productos sin registrar y hacer el inventario físico es imposible? Activa "crear producto al vender": cuando escaneas un código que no existe, das de alta el producto y su stock desde la misma venta. Múltiples carritos simultáneos, precios de mayoreo automáticos y atajos de teclado para operar sin mouse.',
-    img: carritoImg,
-    imgAlt: 'Punto de venta SmartVenta — carrito de venta con búsqueda de productos',
-    reverse: false,
-    highlights: ['Múltiples carritos', 'Código de barras', 'Precios de mayoreo', 'Crea productos al vender'],
-  },
-  {
-    overline: 'Inventario y operación',
-    title: 'Siempre sabes qué tienes',
-    desc: 'Consulta el stock de todas tus tiendas desde un solo lugar. Historial completo de cada producto: ventas, traspasos, ajustes. Importa tu catálogo desde Excel en minutos.',
-    img: tableroImg,
-    imgAlt: 'Dashboard SmartVenta — tablero de ventas y métricas por tienda',
-    reverse: true,
-    highlights: ['Inventario unificado', 'Kardex por producto', 'Importación masiva', 'Corte de caja'],
-  },
+const capabilities = [
+  'Búsqueda de productos',
+  'Código de barras',
+  'Múltiples carritos',
+  'Crear producto desde la venta',
+  'Precios dinámicos',
+  'Precio de mayoreo',
+  'Apartados',
+  'Clientes',
+  'Descuentos',
+  'Cancelaciones',
+  'Devoluciones',
+  'Pagos mixtos',
 ];
 
 const ProductShowcase = () => (
   <Box sx={{ ...sectionPadding, bgcolor: 'background.paper' }} id="product">
     <Container maxWidth="lg">
-      <Stack spacing={{ xs: 8, md: 10 }}>
-        {showcaseBlocks.map((block, i) => (
-          <motion.div
-            key={i}
-            {...cardGridItem}
-            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-          >
-            <Grid
-              container
-              spacing={{ xs: 4, md: 6 }}
-              alignItems="center"
-              direction={block.reverse ? 'row-reverse' : 'row'}
-            >
-              <Grid size={{ xs: 12, md: 5 }}>
-                <Stack spacing={2.5}>
-                  <Typography
-                    variant="overline"
-                    sx={{ color: '#047857', fontWeight: 700, letterSpacing: 2, fontSize: '0.78rem' }}
-                  >
-                    {block.overline}
-                  </Typography>
-                  <Typography
-                    variant="h3"
-                    sx={{ fontSize: { xs: '1.75rem', md: '2.2rem' }, letterSpacing: '-0.02em' }}
-                  >
-                    {block.title}
-                  </Typography>
-                  <Typography sx={{ color: 'text.secondary', fontSize: '1rem', lineHeight: 1.75 }}>
-                    {block.desc}
-                  </Typography>
-                  <Stack direction="row" flexWrap="wrap" gap={1} sx={{ pt: 0.5 }}>
-                    {block.highlights.map((h) => (
-                      <Box
-                        key={h}
-                        sx={{
-                          py: 0.5, px: 1.5,
-                          borderRadius: 2,
-                          bgcolor: 'rgba(4,120,87,0.06)',
-                          border: '1px solid rgba(4,120,87,0.12)',
-                        }}
-                      >
-                        <Typography sx={{ fontSize: '0.8rem', fontWeight: 600, color: '#047857' }}>
-                          {h}
-                        </Typography>
-                      </Box>
-                    ))}
-                  </Stack>
-                </Stack>
-              </Grid>
+      <motion.div {...cardGridItem} transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}>
+        <Grid container spacing={{ xs: 4, md: 6 }} alignItems="center" direction="row-reverse">
+          <Grid size={{ xs: 12, md: 6 }}>
+            <BrowserFrame src={carritoImg} alt="Punto de venta SmartVenta — carrito de venta con búsqueda de productos" />
+          </Grid>
 
-              <Grid size={{ xs: 12, md: 7 }}>
-                <BrowserFrame src={block.img} alt={block.imgAlt} />
+          <Grid size={{ xs: 12, md: 6 }}>
+            <Stack spacing={2.5}>
+              <Typography variant="overline" sx={{ color: '#047857', fontWeight: 700, letterSpacing: 2, fontSize: '0.78rem' }}>
+                Punto de venta
+              </Typography>
+              <Typography variant="h3" sx={{ fontSize: { xs: '1.75rem', md: '2.2rem' }, letterSpacing: '-0.02em' }}>
+                Vende sin complicarte
+              </Typography>
+              <Typography sx={{ color: 'text.secondary', fontSize: '1rem', lineHeight: 1.75 }}>
+                Busca por código de barras o nombre, agrega al carrito y cobra. Si un producto no
+                existe todavía, lo creas desde la misma venta con su stock inicial. Atiende a varios
+                clientes a la vez y cobra con efectivo, tarjeta y transferencia.
+              </Typography>
+              <Grid container spacing={1}>
+                {capabilities.map((c) => (
+                  <Grid key={c} size={{ xs: 6 }}>
+                    <Box sx={{
+                      py: 0.75, px: 1.5, borderRadius: 2,
+                      bgcolor: 'rgba(4,120,87,0.06)',
+                      border: '1px solid rgba(4,120,87,0.12)',
+                      height: '100%',
+                    }}>
+                      <Typography sx={{ fontSize: '0.82rem', fontWeight: 600, color: '#047857' }}>{c}</Typography>
+                    </Box>
+                  </Grid>
+                ))}
               </Grid>
-            </Grid>
-          </motion.div>
-        ))}
-      </Stack>
+            </Stack>
+          </Grid>
+        </Grid>
+      </motion.div>
     </Container>
   </Box>
 );

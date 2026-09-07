@@ -37,17 +37,17 @@ const Contact = () => {
                 letterSpacing: '-0.02em',
               }}
             >
-              Empieza con una tienda.
+              Controla tu negocio
               <br />
               <Box component="span" sx={{ color: '#34d399' }}>
-                Crece sin cambiar de sistema.
+                estés donde estés.
               </Box>
             </Typography>
           </motion.div>
 
           <motion.div {...contactItem} transition={{ delay: 0.1, duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}>
             <Typography sx={{ color: 'rgba(255,255,255,0.65)', fontSize: '1.05rem', maxWidth: 440, lineHeight: 1.7 }}>
-              Ventas, inventario y sucursales en un solo lugar. Crea tu cuenta y empieza hoy.
+              Empieza con una sucursal y lleva el control de tu negocio desde cualquier lugar.
             </Typography>
           </motion.div>
 
@@ -65,7 +65,7 @@ const Contact = () => {
               <Button
                 variant="outlined"
                 size="large"
-                onClick={() => openWhatsApp('Hola, quiero agendar una llamada para conocer SmartVenta')}
+                onClick={() => openWhatsApp('Hola, quiero conocer más sobre SmartVenta')}
                 sx={{
                   px: 4, py: 1.5, fontSize: '1rem',
                   color: 'rgba(255,255,255,0.85)',
@@ -73,7 +73,7 @@ const Contact = () => {
                   '&:hover': { borderColor: 'rgba(255,255,255,0.6)', bgcolor: 'rgba(255,255,255,0.05)' },
                 }}
               >
-                Agendar llamada
+                Hablar con nosotros
               </Button>
             </Stack>
           </motion.div>
