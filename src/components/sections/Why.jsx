@@ -34,8 +34,7 @@ const Why = () => (
             Pensado específicamente para negocios con varias sucursales
           </Typography>
           <Typography sx={{ color: 'text.secondary', fontSize: '1rem', maxWidth: 520 }}>
-            No es un POS genérico con módulo de sucursales. SmartVenta nació de un problema real:
-            un negocio que quería controlar 4 tiendas y 3 almacenes sin fricciones.
+            No es un POS genérico. Fue construido para resolver el caos real de administrar múltiples sucursales sin fragmentar información.
           </Typography>
         </Stack>
       </motion.div>

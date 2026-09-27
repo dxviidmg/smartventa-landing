@@ -94,7 +94,7 @@ const Hero = () => {
                       color: 'white', lineHeight: 1.08, letterSpacing: '-0.03em',
                     }}
                   >
-                    Tenía 4 tiendas y era un caos.
+                    Cuando crecí a varias tiendas, fue un caos.
                     <br />
                     Hoy tengo el control.
                   </Typography>
