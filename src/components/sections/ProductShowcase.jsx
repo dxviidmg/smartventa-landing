@@ -264,7 +264,7 @@ const ProductShowcase = () => {
             <Typography variant="overline" sx={{ color: '#93c5fd', fontWeight: 700, letterSpacing: 2, fontSize: '0.78rem' }}>
               Punto de venta
             </Typography>
-            <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '3rem' }, fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.2, color: '#ffffff' }}>
+            <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' }, color: '#ffffff' }}>
               Punto de venta poderoso
             </Typography>
             <Typography sx={{ color: '#e5e7eb', fontSize: '1.05rem', lineHeight: 1.6, maxWidth: 700 }}>

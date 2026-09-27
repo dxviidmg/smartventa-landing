@@ -47,7 +47,7 @@ const Industries = () => (
         <motion.div {...fadeUp}>
           <Stack spacing={4} alignItems="center">
             <Stack spacing={1.5} alignItems="center" textAlign="center" sx={{ maxWidth: 520, mx: 'auto' }}>
-              <Typography variant="h2" sx={{ fontSize: { xs: '1.8rem', md: '2.4rem' }, lineHeight: 1.15 }}>
+              <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' } }}>
                 Diseñado para miles de negocios
               </Typography>
               <Typography sx={{ color: 'text.secondary', fontSize: '1rem' }}>

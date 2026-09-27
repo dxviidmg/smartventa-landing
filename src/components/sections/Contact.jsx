@@ -33,8 +33,6 @@ const Contact = () => {
               sx={{
                 color: 'white',
                 fontSize: { xs: '2rem', sm: '2.4rem', md: '2.8rem' },
-                lineHeight: 1.15,
-                letterSpacing: '-0.02em',
               }}
             >
               Deja de administrar tu negocio a ciegas.

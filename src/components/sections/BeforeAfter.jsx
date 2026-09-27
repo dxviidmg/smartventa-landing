@@ -109,7 +109,7 @@ const BeforeAfter = () => {
       <Container maxWidth="lg">
         <motion.div {...fadeUp}>
           <Stack spacing={1} alignItems="center" textAlign="center" sx={{ mb: 6 }}>
-            <Typography variant="h2" sx={{ fontSize: { xs: '1.9rem', md: '2.6rem' }, lineHeight: 1.15 }}>
+            <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' } }}>
               Tu situación
             </Typography>
             <Typography sx={{ color: 'text.secondary', fontSize: '1rem', maxWidth: 520 }}>

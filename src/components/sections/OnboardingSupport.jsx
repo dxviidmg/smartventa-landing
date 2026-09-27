@@ -29,7 +29,7 @@ const OnboardingSupport = () => {
       <Container maxWidth="lg">
         <motion.div {...fadeUp}>
           <Stack spacing={1.5} alignItems="center" textAlign="center" sx={{ mb: 5, maxWidth: 620, mx: 'auto' }}>
-            <Typography variant="h2" sx={{ fontSize: { xs: '1.8rem', md: '2.4rem' }, lineHeight: 1.15, color: '#ffffff' }}>
+            <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' }, color: '#ffffff' }}>
               Comienza en minutos. Soporte por WhatsApp.
             </Typography>
             <Typography sx={{ color: '#e5e7eb', fontSize: '1rem', lineHeight: 1.7 }}>

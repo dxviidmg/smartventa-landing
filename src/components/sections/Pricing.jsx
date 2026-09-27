@@ -144,7 +144,7 @@ const Pricing = () => {
                 ) : (
                   <>
                     <Stack direction="row" alignItems="baseline" justifyContent="center" spacing={0.5}>
-                      <Typography sx={{ fontWeight: 800, fontSize: { xs: '2.2rem', sm: '2.8rem' }, lineHeight: 1, color: 'primary.main' }}>
+                      <Typography sx={{ fontFamily: '"Plus Jakarta Sans", "Inter", sans-serif', fontWeight: 800, fontSize: { xs: '2.2rem', sm: '2.8rem' }, lineHeight: 1, letterSpacing: '-0.03em', color: 'primary.main', fontVariantNumeric: 'tabular-nums' }}>
                         {formatPrice(price)}
                       </Typography>
                       <Typography sx={{ color: 'text.secondary', fontSize: '1rem', fontWeight: 500 }}>/mes MXN</Typography>
