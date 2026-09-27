@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Box, Container, Typography, Stack, IconButton } from '@mui/material';
 import { motion } from 'framer-motion';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
@@ -56,6 +56,11 @@ const ProductShowcase = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const cardsPerSlide = 3;
   const totalSlides = Math.ceil(features.length / cardsPerSlide);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setCurrentIndex((prev) => (prev + 1) % totalSlides), 10000);
+    return () => clearTimeout(timer);
+  }, [currentIndex]);
 
   const handlePrev = () => {
     setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
