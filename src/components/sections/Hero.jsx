@@ -5,6 +5,66 @@ import { motion } from 'framer-motion';
 import { CONFIG, ctaButtonSx, heroContainer, heroItem, heroImage } from '../../constants';
 import { useWhatsApp } from '../../contexts/WhatsAppContext';
 import tableroImg from '../../assets/Tablero.png';
+import StorefrontOutlined from '@mui/icons-material/StorefrontOutlined';
+import CheckCircle from '@mui/icons-material/CheckCircle';
+import Inventory2Outlined from '@mui/icons-material/Inventory2Outlined';
+
+const floatingCards = [
+  {
+    icon: StorefrontOutlined, label: 'Tienda Centro', value: '+$3,450 hoy', color: '#047857', bg: 'rgba(4,120,87,0.1)',
+    pos: { top: { sm: -28, md: -32 }, left: { sm: -8, md: -40 } }, delay: 0.9, float: 5,
+  },
+  {
+    icon: CheckCircle, label: 'Traspaso confirmado', value: 'Sur → Centro · 24 pzas', color: '#047857', bg: 'rgba(4,120,87,0.1)',
+    pos: { top: '42%', right: { sm: -8, md: -36 } }, delay: 1.2, float: 6,
+  },
+  {
+    icon: Inventory2Outlined, label: 'Almacén Principal', value: '1,240 productos', color: '#065a9e', bg: 'rgba(6,90,158,0.1)',
+    pos: { bottom: { sm: -28, md: -36 }, left: { sm: '8%', md: '6%' } }, delay: 1.5, float: 4.5,
+  },
+];
+
+const FloatingCard = ({ icon: Icon, label, value, color, bg, pos, delay, float }) => (
+  <Box sx={{ position: 'absolute', zIndex: 2, display: { xs: 'none', sm: 'block' }, ...pos }}>
+    <motion.div
+      initial={{ opacity: 0, y: 16, scale: 0.95 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ delay, duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+    >
+      <motion.div
+        animate={{ y: [0, -8, 0] }}
+        transition={{ duration: float, repeat: Infinity, ease: 'easeInOut', delay }}
+      >
+        <Stack
+          direction="row"
+          spacing={1.25}
+          alignItems="center"
+          sx={{
+            px: 1.75, py: 1.25, borderRadius: 2.5,
+            bgcolor: '#ffffff',
+            boxShadow: '0 12px 32px rgba(2,35,71,0.35)',
+            whiteSpace: 'nowrap',
+          }}
+        >
+          <Box sx={{
+            width: 34, height: 34, borderRadius: 2, bgcolor: bg,
+            display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+          }}>
+            <Icon sx={{ fontSize: 20, color }} />
+          </Box>
+          <Box>
+            <Typography sx={{ fontSize: '0.7rem', color: '#64748b', fontWeight: 600, lineHeight: 1.2 }}>
+              {label}
+            </Typography>
+            <Typography sx={{ fontSize: '0.9rem', color: '#0f172a', fontWeight: 700, lineHeight: 1.3 }}>
+              {value}
+            </Typography>
+          </Box>
+        </Stack>
+      </motion.div>
+    </motion.div>
+  </Box>
+);
 
 const ArrowForward = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -76,33 +136,35 @@ const Hero = () => {
         <Grid container spacing={{ xs: 6, md: 8 }} alignItems="center">
           <Grid size={{ xs: 12, md: 6 }}>
             <motion.div {...heroContainer} initial="initial" animate="animate">
-              <Stack spacing={3} sx={{ textAlign: 'center', alignItems: 'center' }}>
-                <motion.div variants={heroItem}>
-                  <Typography
-                    variant="overline"
-                    sx={{ color: '#34d399', fontWeight: 600, letterSpacing: 3, fontSize: '0.8rem', textAlign: 'center' }}
-                  >
-                    POS en la nube
-                  </Typography>
-                </motion.div>
-
+              <Stack spacing={3} sx={{ textAlign: { xs: 'center', md: 'left' }, alignItems: { xs: 'center', md: 'flex-start' } }}>
                 <motion.div variants={heroItem}>
                   <Typography
                     variant="h1"
                     sx={{
-                      fontSize: { xs: '1.9rem', sm: '2.4rem', md: '2.9rem' },
-                      color: 'white', lineHeight: 1.08, letterSpacing: '-0.03em', textAlign: 'center',
+                      fontSize: { xs: '2.2rem', sm: '2.8rem', md: '3.6rem' },
+                      color: 'white', lineHeight: 1.05, letterSpacing: '-0.035em', fontWeight: 800,
                     }}
                   >
-                    Punto de venta para negocios con varias sucursales.
+                    Punto de venta para negocios con{' '}
+                    <Box
+                      component="span"
+                      sx={{
+                        background: 'linear-gradient(90deg, #34d399 0%, #10b981 100%)',
+                        WebkitBackgroundClip: 'text',
+                        backgroundClip: 'text',
+                        color: 'transparent',
+                      }}
+                    >
+                      varias sucursales.
+                    </Box>
                   </Typography>
                 </motion.div>
 
                 <motion.div variants={heroItem}>
                   <Typography
                     sx={{
-                      color: 'rgba(255,255,255,0.7)', maxWidth: 520, mx: 'auto',
-                      fontSize: { xs: '1.05rem', md: '1.15rem' }, fontWeight: 400, lineHeight: 1.7, textAlign: 'center',
+                      color: 'rgba(255,255,255,0.75)', maxWidth: 520, mx: { xs: 'auto', md: 0 },
+                      fontSize: { xs: '1.05rem', md: '1.2rem' }, fontWeight: 400, lineHeight: 1.7,
                     }}
                   >
                     Ventas sincronizadas. Inventario centralizado. Precios actualizados al instante.
@@ -159,12 +221,12 @@ const Hero = () => {
               initial="initial"
               animate="animate"
             >
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-              >
+              <Box sx={{ position: 'relative' }}>
                 <BrowserFrame />
-              </motion.div>
+                {floatingCards.map((card) => (
+                  <FloatingCard key={card.label} {...card} />
+                ))}
+              </Box>
             </motion.div>
           </Grid>
         </Grid>
