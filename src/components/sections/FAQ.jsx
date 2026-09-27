@@ -7,17 +7,11 @@ import { faqItem, sectionPadding } from '../../constants';
 import SectionHeader from '../ui/SectionHeader';
 
 const faqs = [
-  { q: '¿Cuánto cuesta?', a: 'Desde $399 MXN/mes por 1 sucursal. El precio disminuye por sucursal conforme creces: 3 tiendas = $1,149/mes ($383 por tienda), 5 tiendas = $1,799/mes ($360 por tienda). Sin instalación, sin contrato, sin sorpresas.' },
-  { q: '¿Qué está incluido en el precio?', a: 'Todos los módulos: punto de venta, inventario, traspasos, distribuciones, caja, vendedores, clientes, descuentos, apartados, dashboard con métricas, cambios masivos de precios, importación de Excel, auditoría, soporte por WhatsApp y actualizaciones sin costo.' },
-  { q: '¿Necesito instalar algo?', a: 'No. SmartVenta funciona en la nube. Solo necesitas internet y navegador. No hay instalación, no hay mantenimiento, funciona igual en tu escritorio o en un celular.' },
-  { q: '¿Puedo usar SmartVenta con una sola sucursal?', a: 'Sí, funciona perfectamente. Y si creces a 2, 3 o más tiendas, no necesitas cambiar de sistema. Simplemente agrega sucursales.' },
-  { q: '¿Cómo cambio los precios en varias tiendas?', a: 'Seleccionas los productos y cambias el precio de una vez en todas las sucursales. Antes tenías que hacerlo tienda por tienda. Ahora es masivo y al instante.' },
-  { q: '¿Puedo ver el stock de otras tiendas?', a: 'Sí. Consultas qué hay disponible en cada sucursal, almacén o el total de tu negocio. Sin llamadas telefónicas. Sin esperas.' },
-  { q: '¿Cómo funcionan los traspasos entre tiendas?', a: 'Un almacén o tienda envía productos a otra con registro completo: qué se mandó, cuándo, quién lo mandó. La tienda que recibe confirma. Trazabilidad total, sin "productos perdidos".' },
-  { q: '¿Funciona si vendo por peso o cantidad?', a: 'Sí. Vendes por piezas, kilogramos, litros, costales, etc. El cliente pide "250 gramos" o "$20 de queso" y SmartVenta calcula automáticamente.' },
-  { q: '¿Tiene contrato?', a: 'No. Sin contrato. Pagas mensualmente. Si en algún momento quieres dejar de usar SmartVenta, simplemente cancelas.' },
-  { q: '¿Qué tipo de soporte tienen?', a: 'Soporte personalizado por WhatsApp. Desde David (el creador) hasta los equipos del producto. Empezamos desde enero 2025 con negocios como el tuyo y preferimos soporte directo.' },
-  { q: '¿Puedo importar mis productos desde Excel?', a: 'Sí. Plantillas descargables, validación antes de importar, y si hay errores te los mostramos por página para corregir fácilmente.' },
+  { q: '¿Cuánto cuesta?', a: 'Desde $399/mes (1 sucursal). El precio baja por sucursal conforme creces. 3 tiendas: $1,149/mes. 5 tiendas: $1,799/mes. Sin contrato, sin sorpresas.' },
+  { q: '¿Qué está incluido?', a: 'Todo: POS, inventario, traspasos, distribuciones, caja, dashboard, cambios masivos de precios, Excel, auditoría, soporte WhatsApp, actualizaciones.' },
+  { q: '¿Necesito instalar algo?', a: 'No. Cloud. Navegador + internet. Funciona igual en PC, tablet o celular.' },
+  { q: '¿Puedo empezar con una sola tienda?', a: 'Sí. Y cuando crezcas a 4 o 10, no cambias de sistema. Simplemente agregas.' },
+  { q: '¿Cómo funciona el soporte?', a: 'WhatsApp directo. No es formulario. Alguien te ayuda a configurar, resolver dudas, empezar a vender. Desde enero 2025.' },
 ];
 
 const FAQ = () => (
