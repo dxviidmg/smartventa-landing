@@ -37,17 +37,19 @@ const Contact = () => {
                 letterSpacing: '-0.02em',
               }}
             >
-              Deja de fragmentar información.
+              ¿Listo para tener el control?
               <br />
               <Box component="span" sx={{ color: '#34d399' }}>
-                Controla todo en un lugar.
+                Prueba SmartVenta hoy.
               </Box>
             </Typography>
           </motion.div>
 
           <motion.div {...contactItem} transition={{ delay: 0.1, duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}>
             <Typography sx={{ color: 'rgba(255,255,255,0.65)', fontSize: '1.05rem', maxWidth: 440, lineHeight: 1.7 }}>
-              Desde $399/mes. Sin instalación. Sin contrato. Cientos de cambios de precio con un clic. Stock visible en todas tus tiendas. Traspasos con trazabilidad.
+              Desde $399/mes.  Sin sorpresas. Sin contrato.
+              <br />
+              O habla con nosotros ahora si tienes preguntas.
             </Typography>
           </motion.div>
 

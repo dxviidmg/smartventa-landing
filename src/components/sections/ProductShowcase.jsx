@@ -68,12 +68,14 @@ const ProductShowcase = () => (
                 Punto de venta
               </Typography>
               <Typography variant="h3" sx={{ fontSize: { xs: '1.75rem', md: '2.2rem' }, letterSpacing: '-0.02em' }}>
-                El punto de venta que entiende tu negocio
+                Vender debería ser rápido
               </Typography>
               <Typography sx={{ color: 'text.secondary', fontSize: '1rem', lineHeight: 1.75 }}>
-                Búsqueda instantánea por código o nombre. Vende por pieza, peso, cantidad o dinero directo ("dame $20 de queso").
-                Múltiples carritos simultáneos. Escanea código de barras desde tu celular. Crea productos al vender.
-                Todo pensado para vendedores reales.
+                Búsqueda en milisegundos. Escanea desde la cámara del celular.
+                Vende por pieza, peso, o dinero directo ("dame $20 de queso").
+                <br />
+                <br />
+                Múltiples carritos. Crea productos al instante. Sin complicaciones.
               </Typography>
               <Grid container spacing={1}>
                 {capabilities.map((c) => (

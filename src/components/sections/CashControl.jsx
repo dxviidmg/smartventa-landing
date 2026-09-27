@@ -80,11 +80,14 @@ const CashControl = () => (
                 Control de caja
               </Typography>
               <Typography variant="h2" sx={{ fontSize: { xs: '1.8rem', md: '2.4rem' }, lineHeight: 1.15 }}>
-                Cierra caja en minutos, no en horas
+                Cierre en 2 minutos
               </Typography>
               <Typography sx={{ color: 'text.secondary', fontSize: '1.05rem', lineHeight: 1.75, maxWidth: 460 }}>
-                Registro automático de efectivo, tarjeta y transferencia. SmartVenta te dice exactamente cuánto debería haber
-                en caja. Sin sorpresas. Cortes parciales o totales, exportables a Excel para análisis.
+                Efectivo, tarjeta, transferencia automático.
+                SmartVenta te dice cuánto debería haber.
+                <br />
+                <br />
+                Sin sorpresas. Exporta a Excel.
               </Typography>
               <Stack spacing={1.5} sx={{ pt: 0.5 }}>
                 {points.map((p) => (

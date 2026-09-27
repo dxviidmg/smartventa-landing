@@ -2,7 +2,7 @@ import dynamic from 'next/dynamic';
 import Navbar from '@/components/layout/Navbar';
 import Hero from '@/components/sections/Hero';
 
-const Problem = dynamic(() => import('@/components/sections/Problem'));
+const BeforeAfter = dynamic(() => import('@/components/sections/BeforeAfter'));
 const MultiStore = dynamic(() => import('@/components/sections/MultiStore'));
 const ProductShowcase = dynamic(() => import('@/components/sections/ProductShowcase'));
 const Inventory = dynamic(() => import('@/components/sections/Inventory'));
@@ -22,7 +22,7 @@ export default function Home() {
       <Navbar />
       <main role="main">
         <Hero />
-        <Problem />
+        <BeforeAfter />
         <MultiStore />
         <ProductShowcase />
         <Inventory />

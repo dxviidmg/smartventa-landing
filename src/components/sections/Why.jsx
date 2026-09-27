@@ -26,8 +26,8 @@ const reasons = [
     accent: '#f59e0b',
   },
   {
-    title: 'Búsqueda ultrarrápida',
-    desc: 'Encuentra productos en milisegundos incluso con miles de SKUs. Escanea desde cámara de celular. Autocompletado inteligente mientras escribes.',
+    title: 'Los vendedores no usan calculadora',
+    desc: 'Cliente pide $20 de queso, 250 gramos, o un costal. SmartVenta calcula automáticamente. Tus vendedores venden más rápido y sin errores.',
     accent: '#10b981',
   },
   {

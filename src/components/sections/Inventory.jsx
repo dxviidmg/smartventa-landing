@@ -51,12 +51,14 @@ const Inventory = () => (
                 Inventario y traspasos
               </Typography>
               <Typography variant="h3" sx={{ fontSize: { xs: '1.75rem', md: '2.2rem' }, letterSpacing: '-0.02em' }}>
-                Stock visible en todas tus sucursales
+                Tu stock al instante
               </Typography>
               <Typography sx={{ color: 'text.secondary', fontSize: '1rem', lineHeight: 1.75 }}>
-                Consulta qué hay en cada tienda y almacén sin hacer llamadas. Traspasa productos con trazabilidad completa.
-                Distribuye desde almacén a varias tiendas en una operación. Historial de cada movimiento documentado.
-                Un catálogo — cambias información una vez y aplica en todas tus sucursales al instante.
+                Ve qué hay en cada tienda y almacén. Sin llamadas.
+                Traspasa productos con trazabilidad. Distribuye a varias tiendas en una operación.
+                <br />
+                <br />
+                Un catálogo. Cambias una vez. Se aplica en todas.
               </Typography>
               <Box sx={{
                 p: 2, borderRadius: 2.5,
