@@ -82,7 +82,7 @@ const Hero = () => {
                     variant="overline"
                     sx={{ color: '#34d399', fontWeight: 600, letterSpacing: 3, fontSize: '0.8rem' }}
                   >
-                    Mi historia
+                    Punto de venta para negocios con varias sucursales
                   </Typography>
                 </motion.div>
 
@@ -96,7 +96,7 @@ const Hero = () => {
                   >
                     Tenía 4 tiendas y era un caos.
                     <br />
-                    Hoy es mi superpoder.
+                    Hoy tengo el control.
                   </Typography>
                 </motion.div>
 
@@ -107,20 +107,9 @@ const Hero = () => {
                       fontSize: { xs: '1.05rem', md: '1.15rem' }, fontWeight: 400, lineHeight: 1.7,
                     }}
                   >
-                    Creé SmartVenta porque necesitaba control real.
+                    Ventas, inventario, precios y traspasos.
                     <br />
-                    4 tiendas, 3 almacenes. Un solo lugar.
-                  </Typography>
-                </motion.div>
-
-                <motion.div variants={heroItem}>
-                  <Typography
-                    sx={{
-                      color: 'rgba(255,255,255,0.55)', maxWidth: 480,
-                      fontSize: { xs: '0.95rem', md: '1rem' }, fontWeight: 400, lineHeight: 1.6,
-                    }}
-                  >
-                    Si tienes 1 o varias sucursales, esto es para ti.
+                    Todo en un solo lugar.
                   </Typography>
                 </motion.div>
 

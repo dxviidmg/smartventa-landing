@@ -11,13 +11,13 @@ import { CONFIG, sectionPadding, fadeUp, cardGridItem, ctaButtonSx } from '../..
 const blocks = [
   {
     icon: <UploadFile />,
-    title: 'Importa tu catálogo actual',
-    desc: '¿Tienes productos en Excel? Carga tu catálogo en minutos sin capturar uno por uno. Plantillas descargables, validación previa, errores paginados. Empieza con datos reales.',
+    title: 'Excel a SmartVenta',
+    desc: 'Tienes Excel con tus productos. Nosotros los importamos. Plantillas, validación, correcciones. Empieza con datos reales.',
   },
   {
     icon: <SupportAgent />,
-    title: 'Soporte personalizado',
-    desc: 'No es un formulario de soporte. Es WhatsApp directo. Te ayudamos a configurar tu negocio, resolver dudas y empezar a vender desde el primer día. Desde enero 2025 acompañamos negocios como el tuyo.',
+    title: 'Persona, no chatbot',
+    desc: 'Soporte por WhatsApp directo. Alguien te ayuda a configurar, resolver dudas y empezar a vender. Desde enero 2025 acompañamos negocios reales.',
   },
 ];
 
@@ -30,14 +30,13 @@ const OnboardingSupport = () => {
         <motion.div {...fadeUp}>
           <Stack spacing={1.5} alignItems="center" textAlign="center" sx={{ mb: 5, maxWidth: 620, mx: 'auto' }}>
             <Typography variant="overline" sx={{ color: 'secondary.main', fontWeight: 700, letterSpacing: 2 }}>
-              Comienza hoy, sin complicaciones
+              Empieza ahora
             </Typography>
             <Typography variant="h2" sx={{ fontSize: { xs: '1.8rem', md: '2.4rem' } }}>
-              Empieza a usar SmartVenta en minutos
+              Sin instalación. Sin contrato.
             </Typography>
             <Typography sx={{ color: 'text.secondary', fontSize: '1.05rem', lineHeight: 1.7 }}>
-              Sin instalación. Sin contrato. Si tienes preguntas, estamos aquí.
-              Desde enero 2025 ayudamos a negocios como el tuyo.
+              Importamos tu catálogo. Configuramos en minutos. Soporte por WhatsApp.
             </Typography>
           </Stack>
         </motion.div>

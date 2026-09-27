@@ -7,14 +7,10 @@ import tiendasImg from '../../assets/Tiendas.png';
 import { LazyImage } from '../ui/LazyImage';
 
 const capabilities = [
-  { title: 'Un solo catálogo', desc: 'Todos tus productos en un lugar. Cambios aplican a todas las sucursales.' },
-  { title: 'Cambio masivo de precios', desc: 'Selecciona productos y cambia precio en todas las tiendas al instante.' },
-  { title: 'Costos centralizados', desc: 'Define costo una vez. Se usa para calcular ganancias en todas las sucursales.' },
-  { title: 'Stock por sucursal', desc: 'Ve cuánto tienes en cada tienda, almacén o total de tu negocio.' },
-  { title: 'Traspasos con trazabilidad', desc: 'Envía producto de una tienda a otra. Confirmación obligatoria. Historial completo.' },
-  { title: 'Distribuciones masivas', desc: 'Un almacén abastece varias tiendas en una sola operación.' },
-  { title: 'Ventas por tienda', desc: 'Consulta qué vende cada sucursal, ticket promedio, productos top.' },
-  { title: 'Dashboard consolidado', desc: 'KPIs de tu operación completa: mejor/peor tienda, heatmap de ventas, tendencias.' },
+  { title: 'Un catálogo para todas', desc: 'Cambios de precio, costo o información aplican en todas las sucursales al instante.' },
+  { title: 'Stock centralizado', desc: 'Ve qué hay en cada tienda y almacén sin hacer llamadas. Traspasos con trazabilidad.' },
+  { title: 'Ventas por sucursal', desc: 'Sabe cuánto vende cada tienda, cuál es el ticket promedio, qué se mueve.' },
+  { title: 'Distribuye desde almacén', desc: 'Abastece varias tiendas en una operación. Cada una confirma lo que recibe.' },
 ];
 
 const BrowserFrame = () => (

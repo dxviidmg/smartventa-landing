@@ -6,34 +6,19 @@ import { sectionPadding, fadeUp, cardGridItem } from '../../constants';
 
 const reasons = [
   {
-    title: 'Diseñado para multi-sucursal desde el inicio',
-    desc: 'No es un POS básico con módulo de sucursales. SmartVenta nació porque alguien con 4 tiendas y 3 almacenes necesitaba control real. Cada característica está pensada para eso.',
+    title: 'Crece contigo sin cambiar de sistema',
+    desc: 'Empiezas con una tienda. Después tienes 4, 10 o 20. SmartVenta creció así. Cada feature existe porque alguien tuvo ese problema real.',
     accent: '#0ea5e9',
   },
   {
-    title: 'Almacenes integrados, no separados',
-    desc: 'Distribuye a varias tiendas en una operación. Consulta stock total o por ubicación. Traspasos con confirmación obligatoria y trazabilidad automática.',
+    title: 'Controlas todo desde un lugar',
+    desc: 'No persigues información. No cambias precio tienda por tienda. No llamadas para saber cuánto hay. Un dashboard. Una verdad.',
     accent: '#8b5cf6',
   },
   {
-    title: 'Cambios masivos de precios en segundos',
-    desc: 'Selecciona cientos de productos y cambia precio en todas las tiendas de una vez. Sin ir tienda por tienda. Sin errores por olvidarse una sucursal.',
-    accent: '#ec4899',
-  },
-  {
-    title: 'Historial completo de movimientos',
-    desc: 'Cada producto que se vende, traspasa o ajusta queda registrado con usuario, hora y detalle. Auditoría automática detecta duplicados y inconsistencias.',
-    accent: '#f59e0b',
-  },
-  {
-    title: 'Los vendedores no usan calculadora',
-    desc: 'Cliente pide $20 de queso, 250 gramos, o un costal. SmartVenta calcula automáticamente. Tus vendedores venden más rápido y sin errores.',
+    title: 'Hecho por alguien que entiende el negocio',
+    desc: 'Fue construido para resolver el caos real de múltiples sucursales. Soporte por WhatsApp directo. Persona, no chatbot. Desde enero 2025.',
     accent: '#10b981',
-  },
-  {
-    title: 'Soporte WhatsApp directo',
-    desc: 'Desde enero 2025 acompañamos negocios reales. No es ticket automático. Es respuesta directa cuando la necesitas, en la plataforma que ya usas.',
-    accent: '#06b6d4',
   },
 ];
 
@@ -57,7 +42,7 @@ const Why = () => (
 
       <Grid container spacing={3}>
         {reasons.map((r, i) => (
-          <Grid key={i} size={{ xs: 12, sm: 6, md: 4 }}>
+          <Grid key={i} size={{ xs: 12, md: 4 }}>
             <motion.div
               {...cardGridItem}
               transition={{ delay: i * 0.06, duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
