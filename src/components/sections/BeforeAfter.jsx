@@ -20,14 +20,14 @@ const scenarios = {
     ],
   },
   multi: {
-    title: 'Varias tiendas',
+    title: '2 o más tiendas',
     problems: [
       'No puedes estar en dos lugares a la vez: una tienda siempre está sin supervisión',
       'Cliente busca un producto que tienes en otra tienda, pero verificar tarda y se va',
       'Cambiar precios tienda por tienda es lento, cansado y genera errores constantemente',
     ],
     solutions: [
-      'Todas tus tiendas en la palma de tu mano: ves qué pasa sin estar en ningún lado',
+      'Todas tus tiendas en tu computadora: ves qué pasa sin estar en ningún lado',
       'Ves stock de todas tus tiendas al instante, haces traspasos y garantizas cada venta',
       'Un cambio de precio en un lugar y automáticamente aplica igual en todas las tiendas',
     ],
@@ -48,14 +48,14 @@ const scenarios = {
   multiWarehouse: {
     title: 'Varias tiendas + varios almacenes',
     problems: [
-      'Cliente busca un producto que sabes que tienes pero no puedes verificar dónde exacto',
-      'Tus almacenes son una caja negra: algunos dicen que hay stock, otros no, nadie sabe',
-      'Cambias precio en una tienda y almacén no se entera: stock desaparece sin control',
+      'No puedes estar en varios lugares a la vez: pierdes control de qué pasa en cada ubicación',
+      'Traspasos entre tiendas y surtido de mercancía desde almacenes son complejos sin trazabilidad clara',
+      'No sabes exactamente qué producto y cuánto hay en cada ubicación: es difícil rastrear todo',
     ],
     solutions: [
-      'Tu computadora te muestra dónde está cada producto en tiempo real sin confusión ninguna',
-      'Un solo lugar central donde ves todo: qué hay en tiendas y almacenes simultáneamente',
-      'Un cambio de precio y todos ven lo mismo: mercancía con registro y control total',
+      'Tu computadora te da visibilidad total: ves qué pasa en todas tus ubicaciones sin estar ahí',
+      'Traspasos entre tiendas y surtido desde almacenes quedan registrados con trazabilidad completa siempre',
+      'Sabes exactamente qué producto hay en cada tienda y almacén: cantidad, ubicación, todo en tiempo real',
     ],
   },
 };
@@ -102,10 +102,10 @@ const BeforeAfter = () => {
                   fontSize: { xs: '0.8rem', md: '0.95rem' },
                   textTransform: 'none',
                   fontWeight: 600,
-                  bgcolor: activeScenario === key ? '#22c55e' : 'transparent',
+                  bgcolor: activeScenario === key ? '#047857' : 'transparent',
                   color: activeScenario === key ? 'white' : 'text.primary',
                   '&:hover': {
-                    bgcolor: activeScenario === key ? '#16a34a' : 'rgba(0,0,0,0.04)',
+                    bgcolor: activeScenario === key ? '#065f46' : 'rgba(0,0,0,0.04)',
                   },
                   transition: 'all 0.3s ease',
                   whiteSpace: 'nowrap',
