@@ -2,13 +2,42 @@
 
 import { Box, Container, Typography, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
+import BuildIcon from '@mui/icons-material/Build';
+import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
+import DescriptionIcon from '@mui/icons-material/Description';
+import SmileIcon from '@mui/icons-material/EmojiEmotions';
+import SpaIcon from '@mui/icons-material/Spa';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
+import DiamondIcon from '@mui/icons-material/Diamond';
+import DesktopMacIcon from '@mui/icons-material/DesktopMac';
+import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+import PetsIcon from '@mui/icons-material/Pets';
+import ChairIcon from '@mui/icons-material/Chair';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import { fadeUp } from '../../constants';
 
 const industries = [
-  'Ferreterías', 'Refaccionarias', 'Papelerías', 'Jugueterías',
-  'Cosméticos', 'Librerías', 'Joyerías', 'Electrónica',
-  'Accesorios', 'Ópticas', 'Tiendas de mascotas', 'Mueblerías',
-  'y más',
+  { name: 'Ferreterías', icon: BuildIcon },
+  { name: 'Refaccionarias', icon: DirectionsCarIcon },
+  { name: 'Papelerías', icon: DescriptionIcon },
+  { name: 'Jugueterías', icon: SmileIcon },
+  { name: 'Cosméticos', icon: SpaIcon },
+  { name: 'Dulcerías', icon: SmileIcon },
+  { name: 'Tiendas de regalos', icon: ShoppingBagIcon },
+  { name: 'Productos de limpieza', icon: BuildIcon },
+  { name: 'Joyerías', icon: DiamondIcon },
+  { name: 'Tiendas de celulares', icon: DesktopMacIcon },
+  { name: 'Electrónica', icon: DesktopMacIcon },
+  { name: 'Accesorios', icon: ShoppingBagIcon },
+  { name: 'Mercerías', icon: DescriptionIcon },
+  { name: 'Librerías', icon: MenuBookIcon },
+  { name: 'Mueblerías', icon: ChairIcon },
+  { name: 'Tiendas de artículos para fiesta', icon: SmileIcon },
+  { name: 'Tiendas de mascotas', icon: PetsIcon },
+  { name: 'Ópticas', icon: RemoveRedEyeIcon },
+  { name: 'Estéticas', icon: SpaIcon },
+  { name: 'y más', icon: MoreHorizIcon },
 ];
 
 const Industries = () => (
@@ -33,38 +62,42 @@ const Industries = () => (
               alignItems="center"
               sx={{ gap: { xs: 1.5, sm: 2 } }}
             >
-              {industries.map((name, i) => (
-                <Stack
-                  key={name}
-                  direction="row"
-                  alignItems="center"
-                  sx={{ px: { xs: 1, sm: 0 } }}
-                >
-                  <Typography
-                    sx={{
-                      color: 'text.primary',
-                      fontSize: { xs: '0.9rem', sm: '1rem' },
-                      fontWeight: 500,
-                      px: { xs: 0.5, sm: 2 },
-                      whiteSpace: 'nowrap',
-                    }}
+              {industries.map((industry, i) => {
+                const IconComponent = industry.icon;
+                return (
+                  <Stack
+                    key={industry.name}
+                    direction="row"
+                    alignItems="center"
+                    spacing={0.75}
+                    sx={{ px: { xs: 1, sm: 0 } }}
                   >
-                    {name}
-                  </Typography>
-                  {i < industries.length - 1 && (
-                    <Box
+                    <IconComponent sx={{ fontSize: '1.25rem', color: 'text.secondary' }} />
+                    <Typography
                       sx={{
-                        width: 3,
-                        height: 3,
-                        borderRadius: '50%',
-                        bgcolor: 'divider',
-                        display: { xs: 'none', sm: 'block' },
-                        flexShrink: 0,
+                        color: 'text.primary',
+                        fontSize: { xs: '0.9rem', sm: '1rem' },
+                        fontWeight: 500,
+                        whiteSpace: 'nowrap',
                       }}
-                    />
-                  )}
-                </Stack>
-              ))}
+                    >
+                      {industry.name}
+                    </Typography>
+                    {i < industries.length - 1 && (
+                      <Box
+                        sx={{
+                          width: 3,
+                          height: 3,
+                          borderRadius: '50%',
+                          bgcolor: 'divider',
+                          display: { xs: 'none', sm: 'block' },
+                          flexShrink: 0,
+                        }}
+                      />
+                    )}
+                  </Stack>
+                );
+              })}
             </Stack>
           </Stack>
         </motion.div>
