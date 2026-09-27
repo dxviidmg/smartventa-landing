@@ -2,17 +2,15 @@ import dynamic from 'next/dynamic';
 import Navbar from '@/components/layout/Navbar';
 import Hero from '@/components/sections/Hero';
 
-const ControlAnywhere = dynamic(() => import('@/components/sections/ControlAnywhere'));
+const Problem = dynamic(() => import('@/components/sections/Problem'));
 const MultiStore = dynamic(() => import('@/components/sections/MultiStore'));
-const Comparison = dynamic(() => import('@/components/sections/Comparison'));
-const Inventory = dynamic(() => import('@/components/sections/Inventory'));
 const ProductShowcase = dynamic(() => import('@/components/sections/ProductShowcase'));
+const Inventory = dynamic(() => import('@/components/sections/Inventory'));
 const CashControl = dynamic(() => import('@/components/sections/CashControl'));
 const WeightSale = dynamic(() => import('@/components/sections/WeightSale'));
-const Features = dynamic(() => import('@/components/sections/Features'));
-const OnboardingSupport = dynamic(() => import('@/components/sections/OnboardingSupport'));
-const Audience = dynamic(() => import('@/components/sections/Audience'));
+const Why = dynamic(() => import('@/components/sections/Why'));
 const Pricing = dynamic(() => import('@/components/sections/Pricing'));
+const OnboardingSupport = dynamic(() => import('@/components/sections/OnboardingSupport'));
 const FAQ = dynamic(() => import('@/components/sections/FAQ'));
 const Contact = dynamic(() => import('@/components/sections/Contact'));
 const Footer = dynamic(() => import('@/components/layout/Footer'));
@@ -24,15 +22,13 @@ export default function Home() {
       <Navbar />
       <main role="main">
         <Hero />
-        <ControlAnywhere />
+        <Problem />
         <MultiStore />
-        <Comparison />
-        <Inventory />
         <ProductShowcase />
+        <Inventory />
         <CashControl />
         <WeightSale />
-        <Features />
-        <Audience />
+        <Why />
         <Pricing />
         <OnboardingSupport />
         <FAQ />

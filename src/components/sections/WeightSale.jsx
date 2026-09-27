@@ -5,9 +5,9 @@ import { motion } from 'framer-motion';
 import { sectionPadding, fadeUp } from '../../constants';
 
 const examples = [
-  { price: '$200/kg', ask: 'Cliente pide $20', result: '100 g' },
-  { price: '$120/kg', ask: 'Cliente pide 250 g', result: '$30' },
-  { price: '$20/pz', ask: 'Cliente pide medio kilo', result: '$40' },
+  { price: '$200/kg', ask: 'Cliente: "Dame $20"', result: '100 gramos' },
+  { price: '$120/kg', ask: 'Cliente: "Quiero 250g"', result: '$30' },
+  { price: '$24/kg', ask: 'Cliente: "Medio kilo"', result: '$12' },
 ];
 
 const CalcCard = () => (
@@ -57,15 +57,15 @@ const WeightSale = () => (
                 Venta por peso y granel
               </Typography>
               <Typography variant="h2" sx={{ fontSize: { xs: '1.8rem', md: '2.4rem' }, lineHeight: 1.15 }}>
-                Vende por pieza, peso o cantidad
+                Vende exactamente como vende tu negocio
               </Typography>
               <Typography sx={{ color: 'text.secondary', fontSize: '1.05rem', lineHeight: 1.75, maxWidth: 460 }}>
-                ¿Tu cliente quiere $20 de jamón, 250 gramos de queso o medio kilo de producto?
-                Vende exactamente lo que necesita tu cliente y deja que SmartVenta haga el cálculo.
+                El cliente pide "250 gramos" o "$20 de jamón". SmartVenta entiende y calcula automáticamente.
+                Sin confusiones. Sin retrasos.
               </Typography>
               <Typography sx={{ color: 'text.secondary', fontSize: '0.95rem', lineHeight: 1.7, maxWidth: 460 }}>
-                Maneja unidades como pieza, kilogramo, costal, litro y más. Tú capturas el precio o
-                el monto, y el sistema hace la conversión.
+                Soporta piezas, kilogramos, costales, litros, metros y más. Tú dices la cantidad o el dinero.
+                El sistema convierte y ajusta el inventario.
               </Typography>
             </Stack>
           </motion.div>

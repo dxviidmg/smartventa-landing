@@ -85,9 +85,9 @@ const Pricing = () => {
     <Box id="pricing" sx={{ ...sectionPadding, bgcolor: 'background.paper' }}>
       <Container maxWidth="md">
         <SectionHeader
-          overline="Precios"
-          title="Paga según las sucursales que tengas"
-          subtitle="Empieza con una sucursal y obtén un mejor precio por sucursal conforme crece tu negocio."
+          overline="Precios transparentes"
+          title="Paga solo por lo que usas"
+          subtitle="Sin instalación, sin configuración, sin sorpresas. El precio disminuye por sucursal conforme creces."
           sx={{ mb: 3 }}
         />
 
@@ -181,15 +181,15 @@ const Pricing = () => {
               borderColor: { xs: 'divider', md: 'divider' },
             }}>
               <Typography sx={{ fontWeight: 700, fontSize: '1.05rem', color: 'text.primary', mb: 2.5 }}>
-                Todo incluido en cada plan
+                Qué incluye cada plan
               </Typography>
               <Stack spacing={2}>
                 {[
-                  'Todos los módulos incluidos',
-                  'Sin contrato',
-                  'Actualizaciones sin costo',
+                  'Punto de venta, inventario, traspasos',
+                  'Distribuciones entre sucursales',
+                  'Cambios masivos de precios',
                   'Soporte por WhatsApp',
-                  'Configuración inicial guiada',
+                  'Sin contrato ni instalación',
                 ].map((text) => (
                   <Stack key={text} direction="row" spacing={1.25} alignItems="flex-start">
                     <CheckCircle sx={{ color: '#047857', fontSize: 20, flexShrink: 0, mt: '1px' }} />

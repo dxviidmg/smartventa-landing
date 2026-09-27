@@ -7,14 +7,14 @@ import tiendasImg from '../../assets/Tiendas.png';
 import { LazyImage } from '../ui/LazyImage';
 
 const capabilities = [
-  { title: 'Catálogo centralizado', desc: 'Un solo catálogo para todas tus tiendas.' },
-  { title: 'Precios centralizados', desc: 'Cambia un precio una vez y aplica en todas.' },
-  { title: 'Costos centralizados', desc: 'Administra los costos desde un solo lugar.' },
-  { title: 'Inventario por sucursal', desc: 'Mira cuánto tienes disponible en cada tienda.' },
-  { title: 'Traspasos entre sucursales', desc: 'Mueve mercancía y registra quién la mandó.' },
-  { title: 'Distribución de mercancía', desc: 'Reparte producto a varias tiendas a la vez.' },
-  { title: 'Ventas por sucursal', desc: 'Consulta qué se vendió en cada tienda.' },
-  { title: 'Información consolidada', desc: 'Todo tu negocio en una sola vista.' },
+  { title: 'Un solo catálogo', desc: 'Todos tus productos en un lugar. Cambios aplican a todas las sucursales.' },
+  { title: 'Cambio masivo de precios', desc: 'Selecciona productos y cambia precio en todas las tiendas al instante.' },
+  { title: 'Costos centralizados', desc: 'Define costo una vez. Se usa para calcular ganancias en todas las sucursales.' },
+  { title: 'Stock por sucursal', desc: 'Ve cuánto tienes en cada tienda, almacén o total de tu negocio.' },
+  { title: 'Traspasos con trazabilidad', desc: 'Envía producto de una tienda a otra. Confirmación obligatoria. Historial completo.' },
+  { title: 'Distribuciones masivas', desc: 'Un almacén abastece varias tiendas en una sola operación.' },
+  { title: 'Ventas por tienda', desc: 'Consulta qué vende cada sucursal, ticket promedio, productos top.' },
+  { title: 'Dashboard consolidado', desc: 'KPIs de tu operación completa: mejor/peor tienda, heatmap de ventas, tendencias.' },
 ];
 
 const BrowserFrame = () => (
@@ -42,12 +42,10 @@ const MultiStore = () => (
                 Multi-sucursal
               </Typography>
               <Typography variant="h2" sx={{ color: 'white', fontSize: { xs: '1.8rem', md: '2.4rem' }, lineHeight: 1.15 }}>
-                Todas tus sucursales en un solo lugar
+                Todas tus sucursales y almacenes bajo control
               </Typography>
               <Typography sx={{ color: 'rgba(255,255,255,0.65)', fontSize: '1.05rem', lineHeight: 1.75, maxWidth: 480 }}>
-                Si tienes varias tiendas, no necesitas administrar cada una como si fuera un negocio
-                diferente. Un catálogo, precios y costos centralizados, con el inventario y las
-                ventas de cada sucursal a la vista.
+                Un catálogo centralizado. Precios que cambias de una vez en todas las tiendas. Inventario visible en cada sucursal y almacén. Traspasos con trazabilidad en tiempo real. Sin fragmentación.
               </Typography>
 
               <Grid container spacing={1.5} sx={{ pt: 1 }}>

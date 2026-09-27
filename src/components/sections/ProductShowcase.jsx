@@ -39,18 +39,18 @@ const BrowserFrame = ({ src, alt }) => (
 );
 
 const capabilities = [
-  'Búsqueda de productos',
-  'Código de barras',
-  'Múltiples carritos',
-  'Crear producto desde la venta',
-  'Precios dinámicos',
-  'Precio de mayoreo',
-  'Apartados',
-  'Clientes',
-  'Descuentos',
-  'Cancelaciones',
-  'Devoluciones',
-  'Pagos mixtos',
+  'Búsqueda en milisegundos',
+  'Escáner desde cámara del celular',
+  'Múltiples carritos simultáneos',
+  'Crear producto al instante',
+  'Vender por pieza, peso o monto',
+  'Precios dinámicos automáticos',
+  'Apartados sin cobrar',
+  'Historial de compras por cliente',
+  'Descuentos personalizados',
+  'Devolver y cancelar',
+  'Pagos mixtos (efectivo + tarjeta)',
+  'Impresoras térmicas integradas',
 ];
 
 const ProductShowcase = () => (
@@ -68,12 +68,12 @@ const ProductShowcase = () => (
                 Punto de venta
               </Typography>
               <Typography variant="h3" sx={{ fontSize: { xs: '1.75rem', md: '2.2rem' }, letterSpacing: '-0.02em' }}>
-                Vende sin complicarte
+                El punto de venta que entiende tu negocio
               </Typography>
               <Typography sx={{ color: 'text.secondary', fontSize: '1rem', lineHeight: 1.75 }}>
-                Busca por código de barras o nombre, agrega al carrito y cobra. Si un producto no
-                existe todavía, lo creas desde la misma venta con su stock inicial. Atiende a varios
-                clientes a la vez y cobra con efectivo, tarjeta y transferencia.
+                Búsqueda instantánea por código o nombre. Vende por pieza, peso, cantidad o dinero directo ("dame $20 de queso").
+                Múltiples carritos simultáneos. Escanea código de barras desde tu celular. Crea productos al vender.
+                Todo pensado para vendedores reales.
               </Typography>
               <Grid container spacing={1}>
                 {capabilities.map((c) => (

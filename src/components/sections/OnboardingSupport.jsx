@@ -11,13 +11,13 @@ import { CONFIG, sectionPadding, fadeUp, cardGridItem, ctaButtonSx } from '../..
 const blocks = [
   {
     icon: <UploadFile />,
-    title: 'Empieza con tu catálogo actual',
-    desc: '¿Ya tienes tus productos en Excel? No tienes que capturarlos uno por uno. Te ayudamos a importarlos con plantillas y validación antes de subirlos, para que empieces a trabajar rápido.',
+    title: 'Importa tu catálogo actual',
+    desc: '¿Tienes productos en Excel? Carga tu catálogo en minutos sin capturar uno por uno. Plantillas descargables, validación previa, errores paginados. Empieza con datos reales.',
   },
   {
     icon: <SupportAgent />,
-    title: 'No estás solo al comenzar',
-    desc: 'Te ayudamos a configurar tu negocio, importar tu catálogo y comenzar a trabajar con SmartVenta. Cuentas con soporte y acompañamiento personal por WhatsApp.',
+    title: 'Soporte personalizado',
+    desc: 'No es un formulario de soporte. Es WhatsApp directo. Te ayudamos a configurar tu negocio, resolver dudas y empezar a vender desde el primer día. Desde enero 2025 acompañamos negocios como el tuyo.',
   },
 ];
 
@@ -30,14 +30,14 @@ const OnboardingSupport = () => {
         <motion.div {...fadeUp}>
           <Stack spacing={1.5} alignItems="center" textAlign="center" sx={{ mb: 5, maxWidth: 620, mx: 'auto' }}>
             <Typography variant="overline" sx={{ color: 'secondary.main', fontWeight: 700, letterSpacing: 2 }}>
-              Puesta en marcha
+              Comienza hoy, sin complicaciones
             </Typography>
             <Typography variant="h2" sx={{ fontSize: { xs: '1.8rem', md: '2.4rem' } }}>
-              Empieza cuando quieras
+              Empieza a usar SmartVenta en minutos
             </Typography>
             <Typography sx={{ color: 'text.secondary', fontSize: '1.05rem', lineHeight: 1.7 }}>
-              Puedes crear tu cuenta y comenzar por tu cuenta. Si prefieres que te ayudemos,
-              también puedes hablar con nosotros.
+              Sin instalación. Sin contrato. Si tienes preguntas, estamos aquí.
+              Desde enero 2025 ayudamos a negocios como el tuyo.
             </Typography>
           </Stack>
         </motion.div>

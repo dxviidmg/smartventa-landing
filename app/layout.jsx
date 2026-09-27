@@ -41,7 +41,7 @@ const jsonLdSoftware = {
   name: 'SmartVenta',
   applicationCategory: 'BusinessApplication',
   operatingSystem: 'Web',
-  description: 'Sistema punto de venta en la nube para múltiples sucursales en México.',
+  description: 'Punto de venta en la nube (POS) para negocios minoristas y mayoristas con múltiples sucursales. Controla ventas, inventario, traspasos, caja y métricas desde un solo lugar. Sin instalar nada, acceso desde cualquier dispositivo.',
   offers: {
     '@type': 'Offer',
     price: '399',
@@ -55,7 +55,7 @@ const jsonLdFaq = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: [
-    { '@type': 'Question', name: '¿Qué es SmartVenta?', acceptedAnswer: { '@type': 'Answer', text: 'Es un punto de venta en la nube para negocios que quieren controlar sus ventas, inventario y caja desde un solo lugar, tengan una o varias sucursales. Funciona desde el navegador, sin instalar nada.' } },
+    { '@type': 'Question', name: '¿Qué es SmartVenta?', acceptedAnswer: { '@type': 'Answer', text: 'Es un punto de venta (POS) en la nube para negocios minoristas y mayoristas con una o varias sucursales. Controla ventas, inventario, traspasos, caja y métricas desde un solo lugar. Búsqueda ultrarrápida, venta por peso, múltiples carritos, auditoría automática y más, todo sin instalar nada.' } },
     { '@type': 'Question', name: '¿SmartVenta funciona desde cualquier lugar?', acceptedAnswer: { '@type': 'Answer', text: 'Sí. Es un sistema en la nube, así que puedes consultar tus ventas, inventario y caja desde cualquier lugar con conexión a internet, sin necesidad de estar físicamente en la tienda.' } },
     { '@type': 'Question', name: '¿Puedo usar SmartVenta con una sola sucursal?', acceptedAnswer: { '@type': 'Answer', text: 'Sí. SmartVenta funciona perfectamente con una sola tienda. Y si más adelante creces, puedes agregar más sucursales sin cambiar de sistema.' } },
     { '@type': 'Question', name: '¿Puedo manejar varias sucursales?', acceptedAnswer: { '@type': 'Answer', text: 'Sí. Puedes administrar varias tiendas y almacenes dentro de la misma cuenta, con un catálogo, precios e inventario centralizados.' } },
@@ -64,7 +64,7 @@ const jsonLdFaq = {
     { '@type': 'Question', name: '¿Puedo importar mis productos desde Excel?', acceptedAnswer: { '@type': 'Answer', text: 'Sí. Puedes subir tu catálogo completo desde un archivo de Excel con plantillas descargables y validación antes de importar.' } },
     { '@type': 'Question', name: '¿Necesito instalar algo?', acceptedAnswer: { '@type': 'Answer', text: 'No. SmartVenta funciona en la nube. Solo necesitas internet y un navegador. Abres la página, inicias sesión y listo.' } },
     { '@type': 'Question', name: '¿Tiene contrato?', acceptedAnswer: { '@type': 'Answer', text: 'No. SmartVenta no requiere contrato.' } },
-    { '@type': 'Question', name: '¿Qué incluye el precio?', acceptedAnswer: { '@type': 'Answer', text: 'Todos los módulos están incluidos: ventas, inventario, traspasos, caja, vendedores, clientes, descuentos, apartados, dashboard y más. Además, actualizaciones sin costo, soporte por WhatsApp y configuración inicial guiada.' } },
+    { '@type': 'Question', name: '¿Qué incluye el precio?', acceptedAnswer: { '@type': 'Answer', text: 'Todos los módulos: punto de venta rápido con código de barras/cámara, venta por peso, precios dinámicos, múltiples carritos, inventario por sucursal, traspasos y distribuciones, conversiones de unidades, corte de caja, dashboard con KPIs, importación de Excel, auditoría automática, roles y permisos. Más soporte por WhatsApp y configuración inicial guiada. Actualizaciones incluidas, sin costo extra.' } },
     { '@type': 'Question', name: '¿Puedo hablar con alguien si necesito ayuda?', acceptedAnswer: { '@type': 'Answer', text: 'Sí. Cuentas con soporte y acompañamiento por WhatsApp cuando lo necesites.' } },
   ],
 };

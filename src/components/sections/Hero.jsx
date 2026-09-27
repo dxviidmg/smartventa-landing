@@ -94,7 +94,7 @@ const Hero = () => {
                       color: 'white', lineHeight: 1.08, letterSpacing: '-0.03em',
                     }}
                   >
-                    Controla tu negocio estés donde estés
+                    Una sola plataforma para todas tus sucursales
                   </Typography>
                 </motion.div>
 
@@ -105,8 +105,8 @@ const Hero = () => {
                       fontSize: { xs: '1.05rem', md: '1.15rem' }, fontWeight: 400, lineHeight: 1.7,
                     }}
                   >
-                    Un punto de venta en la nube para controlar ventas, inventario y caja
-                    desde un solo lugar, tengas una o varias sucursales.
+                    SmartVenta centraliza tu operación: ventas, inventario, precios, almacenes y traspasos.
+                    Deja de fragmentar información entre sucursales. Controla todo desde un lugar.
                   </Typography>
                 </motion.div>
 
@@ -117,7 +117,7 @@ const Hero = () => {
                       fontSize: { xs: '0.95rem', md: '1rem' }, fontWeight: 400, lineHeight: 1.6,
                     }}
                   >
-                    Tu negocio no debería depender de que estés físicamente en cada tienda.
+                    Especialmente diseñado para negocios con 1 o varias tiendas que necesitan visibilidad en tiempo real.
                   </Typography>
                 </motion.div>
 

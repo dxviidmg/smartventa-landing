@@ -7,17 +7,17 @@ import { faqItem, sectionPadding } from '../../constants';
 import SectionHeader from '../ui/SectionHeader';
 
 const faqs = [
-  { q: '¿Qué es SmartVenta?', a: 'Es un punto de venta en la nube para negocios que quieren controlar sus ventas, inventario y caja desde un solo lugar, tengan una o varias sucursales. Funciona desde el navegador, sin instalar nada.' },
-  { q: '¿SmartVenta funciona desde cualquier lugar?', a: 'Sí. Es un sistema en la nube, así que puedes consultar tus ventas, inventario y caja desde cualquier lugar con conexión a internet, sin necesidad de estar físicamente en la tienda.' },
-  { q: '¿Puedo usar SmartVenta con una sola sucursal?', a: 'Sí. SmartVenta funciona perfectamente con una sola tienda. Y si más adelante creces, puedes agregar más sucursales sin cambiar de sistema.' },
-  { q: '¿Puedo manejar varias sucursales?', a: 'Sí. Puedes administrar varias tiendas y almacenes dentro de la misma cuenta, con un catálogo, precios e inventario centralizados.' },
-  { q: '¿Cómo funcionan los traspasos?', a: 'Los traspasos te permiten mover mercancía entre sucursales dejando registro de quién la mandó, cuándo y a dónde, para que siempre tengas trazabilidad del inventario.' },
-  { q: '¿Puedo vender productos por peso?', a: 'Sí. Puedes vender por pieza, por peso (kilo o fracción) o por monto ("$20 de…"), y el sistema calcula automáticamente la cantidad correspondiente.' },
-  { q: '¿Puedo importar mis productos desde Excel?', a: 'Sí. Puedes subir tu catálogo completo desde un archivo de Excel con plantillas descargables y validación antes de importar.' },
-  { q: '¿Necesito instalar algo?', a: 'No. SmartVenta funciona en la nube. Solo necesitas internet y un navegador. Abres la página, inicias sesión y listo.' },
-  { q: '¿Tiene contrato?', a: 'No. SmartVenta no requiere contrato.' },
-  { q: '¿Qué incluye el precio?', a: 'Todos los módulos están incluidos: ventas, inventario, traspasos, caja, vendedores, clientes, descuentos, apartados, dashboard y más. Además, actualizaciones sin costo, soporte por WhatsApp y configuración inicial guiada.' },
-  { q: '¿Puedo hablar con alguien si necesito ayuda?', a: 'Sí. Cuentas con soporte y acompañamiento por WhatsApp cuando lo necesites.' },
+  { q: '¿Cuánto cuesta?', a: 'Desde $399 MXN/mes por 1 sucursal. El precio disminuye por sucursal conforme creces: 3 tiendas = $1,149/mes ($383 por tienda), 5 tiendas = $1,799/mes ($360 por tienda). Sin instalación, sin contrato, sin sorpresas.' },
+  { q: '¿Qué está incluido en el precio?', a: 'Todos los módulos: punto de venta, inventario, traspasos, distribuciones, caja, vendedores, clientes, descuentos, apartados, dashboard con métricas, cambios masivos de precios, importación de Excel, auditoría, soporte por WhatsApp y actualizaciones sin costo.' },
+  { q: '¿Necesito instalar algo?', a: 'No. SmartVenta funciona en la nube. Solo necesitas internet y navegador. No hay instalación, no hay mantenimiento, funciona igual en tu escritorio o en un celular.' },
+  { q: '¿Puedo usar SmartVenta con una sola sucursal?', a: 'Sí, funciona perfectamente. Y si creces a 2, 3 o más tiendas, no necesitas cambiar de sistema. Simplemente agrega sucursales.' },
+  { q: '¿Cómo cambio los precios en varias tiendas?', a: 'Seleccionas los productos y cambias el precio de una vez en todas las sucursales. Antes tenías que hacerlo tienda por tienda. Ahora es masivo y al instante.' },
+  { q: '¿Puedo ver el stock de otras tiendas?', a: 'Sí. Consultas qué hay disponible en cada sucursal, almacén o el total de tu negocio. Sin llamadas telefónicas. Sin esperas.' },
+  { q: '¿Cómo funcionan los traspasos entre tiendas?', a: 'Un almacén o tienda envía productos a otra con registro completo: qué se mandó, cuándo, quién lo mandó. La tienda que recibe confirma. Trazabilidad total, sin "productos perdidos".' },
+  { q: '¿Funciona si vendo por peso o cantidad?', a: 'Sí. Vendes por piezas, kilogramos, litros, costales, etc. El cliente pide "250 gramos" o "$20 de queso" y SmartVenta calcula automáticamente.' },
+  { q: '¿Tiene contrato?', a: 'No. Sin contrato. Pagas mensualmente. Si en algún momento quieres dejar de usar SmartVenta, simplemente cancelas.' },
+  { q: '¿Qué tipo de soporte tienen?', a: 'Soporte personalizado por WhatsApp. Desde David (el creador) hasta los equipos del producto. Empezamos desde enero 2025 con negocios como el tuyo y preferimos soporte directo.' },
+  { q: '¿Puedo importar mis productos desde Excel?', a: 'Sí. Plantillas descargables, validación antes de importar, y si hay errores te los mostramos por página para corregir fácilmente.' },
 ];
 
 const FAQ = () => (
