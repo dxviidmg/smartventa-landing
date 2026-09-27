@@ -29,10 +29,10 @@ const OnboardingSupport = () => {
       <Container maxWidth="lg">
         <motion.div {...fadeUp}>
           <Stack spacing={1.5} alignItems="center" textAlign="center" sx={{ mb: 5, maxWidth: 620, mx: 'auto' }}>
-            <Typography variant="h2" sx={{ fontSize: { xs: '1.8rem', md: '2.4rem' }, lineHeight: 1.15 }}>
+            <Typography variant="h2" sx={{ fontSize: { xs: '1.8rem', md: '2.4rem' }, lineHeight: 1.15, color: '#ffffff' }}>
               Comienza en minutos. Soporte por WhatsApp.
             </Typography>
-            <Typography sx={{ color: 'text.secondary', fontSize: '1rem', lineHeight: 1.7 }}>
+            <Typography sx={{ color: '#e5e7eb', fontSize: '1rem', lineHeight: 1.7 }}>
               Sin instalación. Sin contrato. Importamos tu catálogo de Excel.
               Una persona te ayuda a configurar y a empezar a vender.
             </Typography>
@@ -53,20 +53,20 @@ const OnboardingSupport = () => {
                     height: '100%',
                     p: { xs: 3, md: 4 },
                     borderRadius: 3,
-                    bgcolor: 'background.default',
-                    border: '1px solid', borderColor: 'divider',
+                    bgcolor: 'rgba(255,255,255,0.08)',
+                    border: '1px solid rgba(255,255,255,0.12)',
                   }}
                 >
                   <Box sx={{
                     width: 44, height: 44, borderRadius: 2.5,
-                    bgcolor: 'rgba(4,120,87,0.08)', color: '#047857',
+                    bgcolor: 'rgba(134, 239, 172, 0.15)', color: '#86efac',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     '& svg': { fontSize: 24 },
                   }}>
                     {b.icon}
                   </Box>
-                  <Typography sx={{ fontWeight: 700, fontSize: '1.15rem' }}>{b.title}</Typography>
-                  <Typography sx={{ color: 'text.secondary', fontSize: '0.95rem', lineHeight: 1.7 }}>
+                  <Typography sx={{ fontWeight: 700, fontSize: '1.15rem', color: '#ffffff' }}>{b.title}</Typography>
+                  <Typography sx={{ color: '#e5e7eb', fontSize: '0.95rem', lineHeight: 1.7 }}>
                     {b.desc}
                   </Typography>
                 </Stack>
@@ -91,9 +91,9 @@ const OnboardingSupport = () => {
             onClick={() => openWhatsApp('Hola, quiero que me ayuden a comenzar con SmartVenta')}
             sx={{
               px: 4, py: 1.5, fontSize: '1rem',
-              color: 'primary.main',
-              borderColor: 'primary.light',
-              '&:hover': { borderColor: 'primary.main', bgcolor: 'rgba(4,52,107,0.04)' },
+              color: '#ffffff',
+              borderColor: 'rgba(255,255,255,0.5)',
+              '&:hover': { borderColor: '#ffffff', bgcolor: 'rgba(255,255,255,0.08)' },
             }}
           >
             Hablar con nosotros

@@ -30,12 +30,12 @@ const BrowserFrame = ({ src, alt }) => (
 );
 
 const highlights = [
-  'Historial completo: sabe quién movió qué, cuándo y por qué',
-  'Reservas automáticas: el sistema evita vender dos veces lo mismo',
-  'Conversión de unidades: vende costal, kg o gramo del mismo producto',
-  'Catálogo importable: trae tu lista de Excel en minutos',
-  'Alertas de bajo stock: avisa automáticamente cuándo reponer',
-  'Auditoría completa: rastrea cada cambio para evitar pérdidas',
+  'Ajustes con aprobación: solo el dueño autoriza cambios de stock',
+  'Revisión guiada: lista de productos por verificar en cada tienda',
+  'Traspasos al stock real: no puedes enviar más de lo que hay',
+  'Movimientos marcados: el historial señala lo que no cuadra',
+  'Auditoría automática: detecta ventas duplicadas, códigos repetidos y productos sin movimiento',
+  'Precios protegidos: el costo y el mayoreo nunca quedan arriba del precio de venta',
 ];
 
 const Inventory = () => (
@@ -52,21 +52,9 @@ const Inventory = () => (
                 Detalles que evitan pérdidas
               </Typography>
               <Typography sx={{ color: 'text.secondary', fontSize: '1rem', lineHeight: 1.75 }}>
-                Historial completo de cada producto: quién lo movió, cuándo, por qué. Reservas automáticas para evitar vender dos veces.
-                Conversión de unidades (vende por costal, kg o pieza del mismo item).
-                <br />
-                <br />
-                Importa tu catálogo desde Excel. Alertas automáticas cuando algo baja de stock.
+                Si alguien quiere ajustar el stock, lo pide y el dueño decide. Una revisión guiada te dice qué productos contar, y el historial marca los movimientos que no cuadran.
               </Typography>
-              <Box sx={{
-                p: 2, borderRadius: 2.5,
-                bgcolor: 'rgba(4,120,87,0.06)',
-                border: '1px solid rgba(4,120,87,0.15)',
-              }}>
-                <Typography sx={{ fontWeight: 600, fontSize: '0.95rem', color: '#047857', lineHeight: 1.5 }}>
-                  Cada movimiento queda auditado. Cero pérdidas por error o confusión.
-                </Typography>
-              </Box>
+              
               <Stack direction="row" flexWrap="wrap" gap={1} sx={{ pt: 0.5 }}>
                 {highlights.map((h) => (
                   <Box key={h} sx={{
