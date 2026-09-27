@@ -150,11 +150,11 @@ const BeforeAfter = () => {
                   fontSize: '0.8rem',
                   textTransform: 'none',
                   fontWeight: activeScenario === key ? 600 : 500,
-                  bgcolor: activeScenario === key ? '#047857' : 'transparent',
+                  bgcolor: activeScenario === key ? '#04346b' : 'transparent',
                   color: activeScenario === key ? 'white' : 'text.primary',
                   borderRadius: 1,
                   '&:hover': {
-                    bgcolor: activeScenario === key ? '#065f46' : 'rgba(0,0,0,0.04)',
+                    bgcolor: activeScenario === key ? '#022347' : 'rgba(0,0,0,0.04)',
                   },
                   transition: 'all 0.25s ease',
                   whiteSpace: 'normal',

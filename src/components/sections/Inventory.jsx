@@ -32,9 +32,9 @@ const cardsPerSlide = 3;
 const totalSlides = Math.ceil(mechanisms.length / cardsPerSlide);
 
 const navButtonSx = {
-  color: '#047857',
-  border: '1px solid rgba(4, 120, 87, 0.3)',
-  '&:hover': { bgcolor: 'rgba(4, 120, 87, 0.08)' },
+  color: '#065a9e',
+  border: '1px solid rgba(6, 90, 158, 0.3)',
+  '&:hover': { bgcolor: 'rgba(6, 90, 158, 0.08)' },
 };
 
 const Inventory = () => {
@@ -52,7 +52,7 @@ const Inventory = () => {
     <Container maxWidth="lg">
       <motion.div {...fadeUp}>
         <Stack spacing={1.5} alignItems="center" textAlign="center" sx={{ mb: 6, maxWidth: 640, mx: 'auto' }}>
-          <Typography variant="overline" sx={{ color: '#047857', fontWeight: 700, letterSpacing: 2, fontSize: '0.78rem' }}>
+          <Typography variant="overline" sx={{ color: '#065a9e', fontWeight: 700, letterSpacing: 2, fontSize: '0.78rem' }}>
             Inventario y traspasos
           </Typography>
           <Typography variant="h3" sx={{ fontSize: { xs: '1.75rem', md: '2.2rem' }, letterSpacing: '-0.02em' }}>
@@ -83,17 +83,17 @@ const Inventory = () => {
               border: '1px solid #e5e7eb',
               transition: 'all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1)',
               '&:hover': {
-                borderColor: '#047857',
+                borderColor: '#065a9e',
                 transform: 'translateY(-4px)',
-                boxShadow: '0 12px 24px rgba(4, 120, 87, 0.12)',
+                boxShadow: '0 12px 24px rgba(6, 90, 158, 0.12)',
               },
             }}>
               <Box sx={{
                 width: 40, height: 40, borderRadius: 2, mb: 1.5,
-                bgcolor: 'rgba(4, 120, 87, 0.1)',
+                bgcolor: '#e8f1fb',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
               }}>
-                <m.icon sx={{ fontSize: 22, color: '#047857' }} />
+                <m.icon sx={{ fontSize: 22, color: '#065a9e' }} />
               </Box>
               <Typography sx={{ fontWeight: 700, fontSize: '1rem', color: 'text.primary', mb: 0.75 }}>
                 {m.title}
@@ -117,9 +117,9 @@ const Inventory = () => {
               onClick={() => setCurrentIndex(i)}
               sx={{
                 width: 8, height: 8, borderRadius: '50%', cursor: 'pointer',
-                bgcolor: i === currentIndex ? '#047857' : 'rgba(4, 120, 87, 0.25)',
+                bgcolor: i === currentIndex ? '#065a9e' : 'rgba(6, 90, 158, 0.25)',
                 transition: 'all 0.3s ease',
-                '&:hover': { bgcolor: '#047857' },
+                '&:hover': { bgcolor: '#065a9e' },
               }}
             />
           ))}

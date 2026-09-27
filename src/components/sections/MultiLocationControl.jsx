@@ -76,16 +76,16 @@ const MultiLocationControl = () => (
                 textAlign: 'center',
                 transition: 'all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1)',
                 '&:hover': {
-                  borderColor: '#047857',
+                  borderColor: '#065a9e',
                   transform: 'translateY(-6px)',
-                  boxShadow: '0 12px 24px rgba(4, 120, 87, 0.15)',
+                  boxShadow: '0 12px 24px rgba(6, 90, 158, 0.15)',
                 },
               }}>
                 <Box sx={{
                   width: 48,
                   height: 48,
                   borderRadius: 2,
-                  bgcolor: loc.type === 'Tienda' ? 'rgba(4, 120, 87, 0.1)' : 'rgba(59, 130, 246, 0.1)',
+                  bgcolor: loc.type === 'Tienda' ? '#e8f1fb' : 'rgba(59, 130, 246, 0.1)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -93,7 +93,7 @@ const MultiLocationControl = () => (
                 }}>
                   <loc.icon sx={{
                     fontSize: 28,
-                    color: loc.type === 'Tienda' ? '#047857' : '#3b82f6',
+                    color: loc.type === 'Tienda' ? '#04346b' : '#3b82f6',
                   }} />
                 </Box>
                 <Typography sx={{ fontSize: '0.75rem', color: 'text.secondary', fontWeight: 600, mb: 0.5, textTransform: 'uppercase', letterSpacing: 0.5 }}>

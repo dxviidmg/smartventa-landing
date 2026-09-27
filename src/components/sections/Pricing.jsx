@@ -192,7 +192,7 @@ const Pricing = () => {
                   'Sin contrato ni instalación',
                 ].map((text) => (
                   <Stack key={text} direction="row" spacing={1.25} alignItems="flex-start">
-                    <CheckCircle sx={{ color: '#047857', fontSize: 20, flexShrink: 0, mt: '1px' }} />
+                    <CheckCircle sx={{ color: '#065a9e', fontSize: 20, flexShrink: 0, mt: '1px' }} />
                     <Typography sx={{ fontSize: '0.9rem', color: 'text.secondary' }}>
                       {text}
                     </Typography>

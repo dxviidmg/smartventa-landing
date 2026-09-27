@@ -25,7 +25,7 @@ const OnboardingSupport = () => {
   const { openWhatsApp } = useWhatsApp();
 
   return (
-    <Box sx={{ ...sectionPadding, background: 'linear-gradient(145deg, #022347 0%, #04346b 50%, #065a9e 100%)' }} id="start">
+    <Box sx={{ ...sectionPadding, background: 'radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px) 0 0 / 22px 22px, linear-gradient(145deg, #022347 0%, #04346b 50%, #065a9e 100%)' }} id="start">
       <Container maxWidth="lg">
         <motion.div {...fadeUp}>
           <Stack spacing={1.5} alignItems="center" textAlign="center" sx={{ mb: 5, maxWidth: 620, mx: 'auto' }}>
@@ -59,7 +59,7 @@ const OnboardingSupport = () => {
                 >
                   <Box sx={{
                     width: 44, height: 44, borderRadius: 2.5,
-                    bgcolor: 'rgba(134, 239, 172, 0.15)', color: '#86efac',
+                    bgcolor: 'rgba(255,255,255,0.12)', color: '#ffffff',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     '& svg': { fontSize: 24 },
                   }}>

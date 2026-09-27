@@ -257,11 +257,11 @@ const ProductShowcase = () => {
   }, [active]);
 
   return (
-    <Box sx={{ ...sectionPadding, background: 'linear-gradient(145deg, #022347 0%, #04346b 50%, #065a9e 100%)' }} id="product">
+    <Box sx={{ ...sectionPadding, background: 'radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px) 0 0 / 22px 22px, linear-gradient(145deg, #022347 0%, #04346b 50%, #065a9e 100%)' }} id="product">
       <Container maxWidth="lg">
         <motion.div {...cardGridItem} transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}>
           <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 5 }}>
-            <Typography variant="overline" sx={{ color: '#86efac', fontWeight: 700, letterSpacing: 2, fontSize: '0.78rem' }}>
+            <Typography variant="overline" sx={{ color: '#93c5fd', fontWeight: 700, letterSpacing: 2, fontSize: '0.78rem' }}>
               Punto de venta
             </Typography>
             <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '3rem' }, fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.2, color: '#ffffff' }}>
@@ -317,10 +317,10 @@ const ProductShowcase = () => {
                       <Stack key={f.title} direction="row" spacing={1.75} alignItems="flex-start">
                         <Box sx={{
                           width: 36, height: 36, borderRadius: 2, flexShrink: 0,
-                          bgcolor: 'rgba(134, 239, 172, 0.15)',
+                          bgcolor: 'rgba(255,255,255,0.12)',
                           display: 'flex', alignItems: 'center', justifyContent: 'center',
                         }}>
-                          <f.icon sx={{ fontSize: 20, color: '#86efac' }} />
+                          <f.icon sx={{ fontSize: 20, color: '#ffffff' }} />
                         </Box>
                         <Box>
                           <Typography sx={{ fontWeight: 700, fontSize: '0.98rem', color: '#ffffff', mb: 0.25 }}>{f.title}</Typography>

@@ -13,7 +13,7 @@ const Contact = () => {
     <Box
       sx={{
         py: { xs: 10, md: 14 },
-        background: 'linear-gradient(145deg, #022347 0%, #04346b 50%, #065a9e 100%)',
+        background: 'radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px) 0 0 / 22px 22px, linear-gradient(145deg, #022347 0%, #04346b 50%, #065a9e 100%)',
         position: 'relative',
         overflow: 'hidden',
       }}
