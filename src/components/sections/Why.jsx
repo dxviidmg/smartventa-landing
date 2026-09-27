@@ -23,7 +23,7 @@ const reasons = [
 ];
 
 const Why = () => (
-  <Box id="why" sx={{ ...sectionPadding, bgcolor: 'background.default' }}>
+  <Box id="why" sx={{ ...sectionPadding, bgcolor: 'background.paper' }}>
     <Container maxWidth="lg">
       <motion.div {...fadeUp}>
         <Stack spacing={1.5} alignItems="center" textAlign="center" sx={{ mb: 6, maxWidth: 640, mx: 'auto' }}>

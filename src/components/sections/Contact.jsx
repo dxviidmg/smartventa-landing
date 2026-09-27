@@ -37,10 +37,10 @@ const Contact = () => {
                 letterSpacing: '-0.02em',
               }}
             >
-              ¿Listo para tener el control?
+              Deja de administrar tu negocio a ciegas.
               <br />
               <Box component="span" sx={{ color: '#34d399' }}>
-                Prueba SmartVenta hoy.
+                Controla todo desde un solo lugar.
               </Box>
             </Typography>
           </motion.div>

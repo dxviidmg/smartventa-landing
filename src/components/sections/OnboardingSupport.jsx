@@ -25,18 +25,16 @@ const OnboardingSupport = () => {
   const { openWhatsApp } = useWhatsApp();
 
   return (
-    <Box sx={{ ...sectionPadding, bgcolor: 'background.paper' }} id="start">
+    <Box sx={{ ...sectionPadding, background: 'linear-gradient(145deg, #022347 0%, #04346b 50%, #065a9e 100%)' }} id="start">
       <Container maxWidth="lg">
         <motion.div {...fadeUp}>
           <Stack spacing={1.5} alignItems="center" textAlign="center" sx={{ mb: 5, maxWidth: 620, mx: 'auto' }}>
-            <Typography variant="overline" sx={{ color: 'secondary.main', fontWeight: 700, letterSpacing: 2 }}>
-              Empieza ahora
+            <Typography variant="h2" sx={{ fontSize: { xs: '1.8rem', md: '2.4rem' }, lineHeight: 1.15 }}>
+              Comienza en minutos. Soporte por WhatsApp.
             </Typography>
-            <Typography variant="h2" sx={{ fontSize: { xs: '1.8rem', md: '2.4rem' } }}>
-              Sin instalación. Sin contrato.
-            </Typography>
-            <Typography sx={{ color: 'text.secondary', fontSize: '1.05rem', lineHeight: 1.7 }}>
-              Importamos tu catálogo. Configuramos en minutos. Soporte por WhatsApp.
+            <Typography sx={{ color: 'text.secondary', fontSize: '1rem', lineHeight: 1.7 }}>
+              Sin instalación. Sin contrato. Importamos tu catálogo de Excel.
+              Una persona te ayuda a configurar y a empezar a vender.
             </Typography>
           </Stack>
         </motion.div>

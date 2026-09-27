@@ -82,7 +82,7 @@ const Pricing = () => {
     : `Hola, me interesa SmartVenta para ${stores} sucursal${stores !== 1 ? 'es' : ''}. Quiero comenzar.`;
 
   return (
-    <Box id="pricing" sx={{ ...sectionPadding, bgcolor: 'background.paper' }}>
+    <Box id="pricing" sx={{ ...sectionPadding, bgcolor: 'background.default' }}>
       <Container maxWidth="md">
         <SectionHeader
           overline="Precios transparentes"

@@ -82,7 +82,7 @@ const Hero = () => {
                     variant="overline"
                     sx={{ color: '#34d399', fontWeight: 600, letterSpacing: 3, fontSize: '0.8rem', textAlign: 'center' }}
                   >
-                    Punto de venta en la nube
+                    POS en la nube
                   </Typography>
                 </motion.div>
 
@@ -94,22 +94,19 @@ const Hero = () => {
                       color: 'white', lineHeight: 1.08, letterSpacing: '-0.03em', textAlign: 'center',
                     }}
                   >
-                    Cuando crecí a varias tiendas, perdí el control.
-                    <br />
-                    Hoy lo tengo de vuelta.
+                    Punto de venta para negocios con varias sucursales.
                   </Typography>
                 </motion.div>
 
                 <motion.div variants={heroItem}>
                   <Typography
                     sx={{
-                      color: 'rgba(255,255,255,0.7)', maxWidth: 480, mx: 'auto',
+                      color: 'rgba(255,255,255,0.7)', maxWidth: 520, mx: 'auto',
                       fontSize: { xs: '1.05rem', md: '1.15rem' }, fontWeight: 400, lineHeight: 1.7, textAlign: 'center',
                     }}
                   >
-                    Ventas, inventario, precios y traspasos.
-                    <br />
-                    Todo en un solo lugar.
+                    Ventas sincronizadas. Inventario centralizado. Precios actualizados al instante.
+                    Sin revisar tienda por tienda.
                   </Typography>
                 </motion.div>
 

@@ -1,9 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Box, Container, Typography, Grid, Stack, Button } from '@mui/material';
 import { motion, AnimatePresence } from 'framer-motion';
+import Check from '@mui/icons-material/Check';
 import { sectionPadding, fadeUp } from '../../constants';
+
+const scenarioKeys = ['single', 'multi', 'singleWarehouse', 'multiWarehouse'];
 
 const scenarios = {
   single: {
@@ -62,142 +65,208 @@ const scenarios = {
 
 const BeforeAfter = () => {
   const [activeScenario, setActiveScenario] = useState('single');
+  const [autoPlay, setAutoPlay] = useState(true);
+  const timerRef = useRef(null);
   const current = scenarios[activeScenario];
 
+  const getAutoplayInterval = (scenario) => {
+    const index = scenarioKeys.indexOf(scenario);
+    return index < 2 ? 5000 : 10000;
+  };
+
+  const getManualRestartDelay = (scenario) => {
+    const index = scenarioKeys.indexOf(scenario);
+    return index < 2 ? 10000 : 20000;
+  };
+
+  useEffect(() => {
+    if (!autoPlay) return;
+
+    const interval = setInterval(() => {
+      setActiveScenario((prev) => {
+        const currentIndex = scenarioKeys.indexOf(prev);
+        const nextIndex = (currentIndex + 1) % scenarioKeys.length;
+        return scenarioKeys[nextIndex];
+      });
+    }, getAutoplayInterval(activeScenario));
+
+    return () => clearInterval(interval);
+  }, [autoPlay, activeScenario]);
+
+  const handleManualClick = (key) => {
+    setActiveScenario(key);
+    setAutoPlay(false);
+
+    if (timerRef.current) clearTimeout(timerRef.current);
+
+    timerRef.current = setTimeout(() => {
+      setAutoPlay(true);
+    }, getManualRestartDelay(key));
+  };
+
   return (
-    <Box sx={{ ...sectionPadding, bgcolor: 'background.default' }}>
+    <Box sx={{ ...sectionPadding, bgcolor: '#ffffff' }}>
       <Container maxWidth="lg">
         <motion.div {...fadeUp}>
           <Stack spacing={1} alignItems="center" textAlign="center" sx={{ mb: 6 }}>
             <Typography variant="h2" sx={{ fontSize: { xs: '1.9rem', md: '2.6rem' }, lineHeight: 1.15 }}>
-              {current.title}
+              Tu situación
+            </Typography>
+            <Typography sx={{ color: 'text.secondary', fontSize: '1rem', maxWidth: 520 }}>
+              Selecciona tu configuración de negocio para ver cómo SmartVenta resuelve tus problemas específicos.
             </Typography>
           </Stack>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          sx={{ display: 'flex', justifyContent: 'center', mb: 8 }}
-        >
+        <Box sx={{
+          bgcolor: 'background.default',
+          borderRadius: 3,
+          overflow: 'hidden',
+        }}>
+          {/* BOTONES - TOP ROW */}
           <Box sx={{
-            display: 'flex',
-            gap: 2,
-            bgcolor: 'rgba(0,0,0,0.02)',
-            p: 1,
-            borderRadius: 2,
-            flexWrap: 'wrap',
-            justifyContent: 'center',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(4, 1fr)',
+            gap: 0.75,
+            p: 2,
+            borderBottom: '1px solid',
+            borderColor: 'divider',
+            alignItems: 'center',
+            '@media (max-width: 768px)': {
+              gridTemplateColumns: 'repeat(2, 1fr)',
+            },
+            '@media (max-width: 480px)': {
+              gridTemplateColumns: '1fr',
+            },
           }}>
             {Object.entries(scenarios).map(([key, scenario]) => (
               <Button
                 key={key}
-                onClick={() => setActiveScenario(key)}
+                onClick={() => handleManualClick(key)}
                 variant={activeScenario === key ? 'contained' : 'text'}
                 sx={{
-                  px: { xs: 2.5, md: 3 },
-                  py: 1.25,
-                  fontSize: { xs: '0.8rem', md: '0.95rem' },
+                  px: 1.5,
+                  py: 0.75,
+                  fontSize: '0.8rem',
                   textTransform: 'none',
-                  fontWeight: 600,
+                  fontWeight: activeScenario === key ? 600 : 500,
                   bgcolor: activeScenario === key ? '#047857' : 'transparent',
                   color: activeScenario === key ? 'white' : 'text.primary',
+                  borderRadius: 1,
                   '&:hover': {
                     bgcolor: activeScenario === key ? '#065f46' : 'rgba(0,0,0,0.04)',
                   },
-                  transition: 'all 0.3s ease',
-                  whiteSpace: 'nowrap',
+                  transition: 'all 0.25s ease',
+                  whiteSpace: 'normal',
+                  lineHeight: 1.2,
                 }}
               >
                 {scenario.title}
               </Button>
             ))}
           </Box>
-        </motion.div>
 
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeScenario}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.4 }}
-          >
-            <Grid container spacing={6} alignItems="stretch">
-              {/* PROBLEMA */}
-              <Grid size={{ xs: 12, md: 6 }}>
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <Stack spacing={3} sx={{ height: '100%' }}>
-                    <Typography sx={{ fontSize: '1.1rem', fontWeight: 700, color: '#ef4444' }}>
+          {/* CONTENIDO - Problema | Solución */}
+          <Grid container spacing={0} sx={{ height: 'auto' }}>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeScenario}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                style={{ display: 'contents', width: '100%' }}
+              >
+                {/* PROBLEMA */}
+                <Grid size={{ xs: 12, md: 6 }} sx={{ p: 3, pr: { md: 2.5 }, display: 'flex', flexDirection: 'column' }}>
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                    style={{ display: 'flex', flexDirection: 'column', height: '100%' }}
+                  >
+                    <Typography sx={{ fontSize: '1rem', fontWeight: 700, color: '#ef4444', mb: 2 }}>
                       El problema
                     </Typography>
 
-                    <Stack spacing={2}>
+                    <Stack spacing={1.5}>
                       {current.problems.map((item, i) => (
-                        <Typography
-                          key={i}
-                          sx={{
-                            fontSize: '0.95rem',
-                            color: '#ef4444',
-                            lineHeight: 1.6,
-                            py: 1.5,
-                            px: 2,
-                            borderRadius: 2,
-                            bgcolor: 'rgba(239, 68, 68, 0.05)',
-                            borderLeft: '3px solid #ef4444',
-                          }}
-                        >
-                          {item}
-                        </Typography>
+                        <Stack key={i} direction="row" spacing={1.25} alignItems="flex-start">
+                          <Box sx={{
+                            width: 18,
+                            height: 18,
+                            borderRadius: '50%',
+                            bgcolor: '#fecaca',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            flexShrink: 0,
+                            mt: 0.25,
+                          }}>
+                            <Typography sx={{ color: '#ef4444', fontSize: '0.7rem', fontWeight: 900 }}>✕</Typography>
+                          </Box>
+                          <Typography
+                            sx={{
+                              fontSize: '0.9rem',
+                              color: 'text.primary',
+                              lineHeight: 1.5,
+                            }}
+                          >
+                            {item}
+                          </Typography>
+                        </Stack>
                       ))}
                     </Stack>
-                  </Stack>
-                </motion.div>
-              </Grid>
+                  </motion.div>
+                </Grid>
 
-              {/* SOLUCIÓN */}
-              <Grid size={{ xs: 12, md: 6 }}>
-                <motion.div
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 0.1 }}
-                >
-                  <Stack spacing={3} sx={{ height: '100%' }}>
-                    <Typography sx={{ fontSize: '1.1rem', fontWeight: 700, color: '#10b981' }}>
+                {/* SOLUCIÓN */}
+                <Grid size={{ xs: 12, md: 6 }} sx={{
+                  p: 3,
+                  pl: { md: 2.5 },
+                  display: 'flex',
+                  flexDirection: 'column',
+                  borderLeft: { xs: 'none', md: '1px solid' },
+                  borderColor: { md: 'divider' },
+                  borderTop: { xs: '1px solid', md: 'none' },
+                }}>
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.3, delay: 0.05 }}
+                    style={{ display: 'flex', flexDirection: 'column', height: '100%' }}
+                  >
+                    <Typography sx={{ fontSize: '1rem', fontWeight: 700, color: '#10b981', mb: 2 }}>
                       La solución
                     </Typography>
 
-                    <Stack spacing={2}>
+                    <Stack spacing={1.5}>
                       {current.solutions.map((item, i) => (
-                        <Typography
-                          key={i}
-                          sx={{
-                            fontSize: '0.95rem',
+                        <Stack key={i} direction="row" spacing={1.25} alignItems="flex-start">
+                          <Check sx={{
                             color: '#10b981',
-                            lineHeight: 1.6,
-                            py: 1.5,
-                            px: 2,
-                            borderRadius: 2,
-                            bgcolor: 'rgba(16, 185, 129, 0.05)',
-                            borderLeft: '3px solid #10b981',
-                          }}
-                        >
-                          {item}
-                        </Typography>
+                            fontSize: '1.2rem',
+                            flexShrink: 0,
+                            mt: 0.15,
+                          }} />
+                          <Typography
+                            sx={{
+                              fontSize: '0.9rem',
+                              color: 'text.primary',
+                              lineHeight: 1.5,
+                            }}
+                          >
+                            {item}
+                          </Typography>
+                        </Stack>
                       ))}
                     </Stack>
-                  </Stack>
-                </motion.div>
-              </Grid>
-            </Grid>
-          </motion.div>
-        </AnimatePresence>
+                  </motion.div>
+                </Grid>
+              </motion.div>
+            </AnimatePresence>
+          </Grid>
+        </Box>
       </Container>
     </Box>
   );

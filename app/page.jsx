@@ -1,14 +1,12 @@
 import dynamic from 'next/dynamic';
 import Navbar from '@/components/layout/Navbar';
 import Hero from '@/components/sections/Hero';
+import Industries from '@/components/sections/Industries';
 
+const MultiLocationControl = dynamic(() => import('@/components/sections/MultiLocationControl'));
 const BeforeAfter = dynamic(() => import('@/components/sections/BeforeAfter'));
-const MultiStore = dynamic(() => import('@/components/sections/MultiStore'));
 const ProductShowcase = dynamic(() => import('@/components/sections/ProductShowcase'));
 const Inventory = dynamic(() => import('@/components/sections/Inventory'));
-const CashControl = dynamic(() => import('@/components/sections/CashControl'));
-const WeightSale = dynamic(() => import('@/components/sections/WeightSale'));
-const Why = dynamic(() => import('@/components/sections/Why'));
 const Pricing = dynamic(() => import('@/components/sections/Pricing'));
 const OnboardingSupport = dynamic(() => import('@/components/sections/OnboardingSupport'));
 const FAQ = dynamic(() => import('@/components/sections/FAQ'));
@@ -22,13 +20,11 @@ export default function Home() {
       <Navbar />
       <main role="main">
         <Hero />
+        <Industries />
         <BeforeAfter />
-        <MultiStore />
+        <MultiLocationControl />
         <ProductShowcase />
         <Inventory />
-        <CashControl />
-        <WeightSale />
-        <Why />
         <Pricing />
         <OnboardingSupport />
         <FAQ />

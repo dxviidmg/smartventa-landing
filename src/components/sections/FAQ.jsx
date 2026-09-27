@@ -15,7 +15,7 @@ const faqs = [
 ];
 
 const FAQ = () => (
-  <Box id="faq" sx={{ ...sectionPadding, bgcolor: 'background.default' }}>
+  <Box id="faq" sx={{ ...sectionPadding, bgcolor: '#ffffff' }}>
     <Container maxWidth="md">
       <SectionHeader
         overline="Preguntas frecuentes"

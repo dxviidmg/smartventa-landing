@@ -30,18 +30,16 @@ const BrowserFrame = ({ src, alt }) => (
 );
 
 const highlights = [
-  'Stock en tiempo real por sucursal',
-  'Total consolidado de tu negocio',
-  'Historial completo (Kardex)',
-  'Reservas automáticas (sin duplicados)',
-  'Traspasos con confirmación',
-  'Distribuciones a varias tiendas',
-  'Conversión de unidades (Costal → Kg)',
-  'Catálogo centralizado e importable',
+  'Historial completo: sabe quién movió qué, cuándo y por qué',
+  'Reservas automáticas: el sistema evita vender dos veces lo mismo',
+  'Conversión de unidades: vende costal, kg o gramo del mismo producto',
+  'Catálogo importable: trae tu lista de Excel en minutos',
+  'Alertas de bajo stock: avisa automáticamente cuándo reponer',
+  'Auditoría completa: rastrea cada cambio para evitar pérdidas',
 ];
 
 const Inventory = () => (
-  <Box sx={{ ...sectionPadding, bgcolor: 'background.default' }} id="inventory">
+  <Box sx={{ ...sectionPadding, bgcolor: '#ffffff' }} id="inventory">
     <Container maxWidth="lg">
       <motion.div {...cardGridItem} transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}>
         <Grid container spacing={{ xs: 4, md: 6 }} alignItems="center">
@@ -51,14 +49,14 @@ const Inventory = () => (
                 Inventario y traspasos
               </Typography>
               <Typography variant="h3" sx={{ fontSize: { xs: '1.75rem', md: '2.2rem' }, letterSpacing: '-0.02em' }}>
-                Tu stock al instante
+                Detalles que evitan pérdidas
               </Typography>
               <Typography sx={{ color: 'text.secondary', fontSize: '1rem', lineHeight: 1.75 }}>
-                Ve qué hay en cada tienda y almacén. Sin llamadas.
-                Traspasa productos con trazabilidad. Distribuye a varias tiendas en una operación.
+                Historial completo de cada producto: quién lo movió, cuándo, por qué. Reservas automáticas para evitar vender dos veces.
+                Conversión de unidades (vende por costal, kg o pieza del mismo item).
                 <br />
                 <br />
-                Un catálogo. Cambias una vez. Se aplica en todas.
+                Importa tu catálogo desde Excel. Alertas automáticas cuando algo baja de stock.
               </Typography>
               <Box sx={{
                 p: 2, borderRadius: 2.5,
@@ -66,7 +64,7 @@ const Inventory = () => (
                 border: '1px solid rgba(4,120,87,0.15)',
               }}>
                 <Typography sx={{ fontWeight: 600, fontSize: '0.95rem', color: '#047857', lineHeight: 1.5 }}>
-                  Mueve productos entre sucursales sin perder el rastro.
+                  Cada movimiento queda auditado. Cero pérdidas por error o confusión.
                 </Typography>
               </Box>
               <Stack direction="row" flexWrap="wrap" gap={1} sx={{ pt: 0.5 }}>

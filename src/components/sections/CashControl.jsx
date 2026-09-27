@@ -70,48 +70,24 @@ const CashReceipt = () => (
 );
 
 const CashControl = () => (
-  <Box sx={{ ...sectionPadding, bgcolor: 'background.paper' }}>
-    <Container maxWidth="lg">
-      <Grid container spacing={{ xs: 5, md: 8 }} alignItems="center">
-        <Grid size={{ xs: 12, md: 6 }}>
-          <motion.div {...fadeUp}>
-            <Stack spacing={2.5}>
-              <Typography variant="overline" sx={{ color: '#047857', fontWeight: 700, letterSpacing: 2, fontSize: '0.78rem' }}>
-                Control de caja
-              </Typography>
-              <Typography variant="h2" sx={{ fontSize: { xs: '1.8rem', md: '2.4rem' }, lineHeight: 1.15 }}>
-                Cierre en 2 minutos
-              </Typography>
-              <Typography sx={{ color: 'text.secondary', fontSize: '1.05rem', lineHeight: 1.75, maxWidth: 460 }}>
-                Efectivo, tarjeta, transferencia automático.
-                SmartVenta te dice cuánto debería haber.
-                <br />
-                <br />
-                Sin sorpresas. Exporta a Excel.
-              </Typography>
-              <Stack spacing={1.5} sx={{ pt: 0.5 }}>
-                {points.map((p) => (
-                  <Stack key={p} direction="row" spacing={1.25} alignItems="flex-start">
-                    <Box sx={{ width: 6, height: 6, borderRadius: '50%', bgcolor: '#047857', mt: '7px', flexShrink: 0 }} />
-                    <Typography sx={{ fontSize: '0.95rem', color: 'text.secondary', lineHeight: 1.6 }}>{p}</Typography>
-                  </Stack>
-                ))}
-              </Stack>
-            </Stack>
-          </motion.div>
-        </Grid>
+  <Box sx={{ ...sectionPadding, bgcolor: 'background.paper', py: { xs: 4, md: 5 } }}>
+    <Container maxWidth="md">
+      <motion.div {...fadeUp}>
+        <Stack spacing={3} alignItems="center" textAlign="center">
+          <Stack spacing={1.5}>
+            <Typography variant="h3" sx={{ fontSize: { xs: '1.5rem', md: '2rem' }, letterSpacing: '-0.02em' }}>
+              Cierre de caja en segundos
+            </Typography>
+            <Typography sx={{ color: 'text.secondary', fontSize: '0.95rem', maxWidth: 480, mx: 'auto', lineHeight: 1.6 }}>
+              Efectivo, tarjeta y transferencias separadas automáticamente. SmartVenta verifica que todo coincida. Sin errores. Sin sorpresas.
+            </Typography>
+          </Stack>
 
-        <Grid size={{ xs: 12, md: 6 }}>
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-40px' }}
-            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-          >
+          <Box sx={{ width: '100%', maxWidth: 400 }}>
             <CashReceipt />
-          </motion.div>
-        </Grid>
-      </Grid>
+          </Box>
+        </Stack>
+      </motion.div>
     </Container>
   </Box>
 );
