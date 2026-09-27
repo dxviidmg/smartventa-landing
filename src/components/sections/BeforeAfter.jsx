@@ -14,7 +14,7 @@ const scenarios = {
       'Cada decisión requiere tu presencia física: precios, descuentos, reorden dependen solo de ti',
     ],
     solutions: [
-      'Operas remotamente desde cualquier lugar con control total en tu laptop',
+      'Operas remotamente desde cualquier lugar con control total en tu computadora',
       'Información segura en la nube: si algo falla, está protegido y tienes paz mental',
       'Delega y autoriza cambios: corre el negocio desde donde quieras estar siempre',
     ],
@@ -40,8 +40,8 @@ const scenarios = {
       'Sacas productos sin registro: desorden, pérdida y confusión que no se resuelven',
     ],
     solutions: [
-      'Tu laptop controla ambos lugares: ves qué pasa en tienda y almacén sin estar ahí',
-      'Abre tu laptop y ve exactamente qué hay y cuándo reponer según lo que se vende',
+      'Tu computadora controla ambos lugares: ves qué pasa en tienda y almacén sin estar ahí',
+      'Abre tu computadora y ve exactamente qué hay y cuándo reponer según lo que se vende',
       'Cada movimiento queda registrado: quién sacó qué, cuándo y dónde en todo momento',
     ],
   },
@@ -53,7 +53,7 @@ const scenarios = {
       'Cambias precio en una tienda y almacén no se entera: stock desaparece sin control',
     ],
     solutions: [
-      'Tu laptop te muestra dónde está cada producto en tiempo real sin confusión ninguna',
+      'Tu computadora te muestra dónde está cada producto en tiempo real sin confusión ninguna',
       'Un solo lugar central donde ves todo: qué hay en tiendas y almacenes simultáneamente',
       'Un cambio de precio y todos ven lo mismo: mercancía con registro y control total',
     ],
