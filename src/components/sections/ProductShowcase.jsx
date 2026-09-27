@@ -40,17 +40,17 @@ const BrowserFrame = ({ src, alt }) => (
 
 const capabilities = [
   'Búsqueda en milisegundos',
-  'Escáner desde cámara del celular',
+  'Escanea con lectora o desde celular',
+  'Imprime tickets (impresoras térmicas)',
   'Múltiples carritos simultáneos',
+  'Vender por pieza, peso o dinero',
   'Crear producto al instante',
-  'Vender por pieza, peso o monto',
   'Precios dinámicos automáticos',
   'Apartados sin cobrar',
   'Historial de compras por cliente',
   'Descuentos personalizados',
   'Devolver y cancelar',
   'Pagos mixtos (efectivo + tarjeta)',
-  'Impresoras térmicas integradas',
 ];
 
 const ProductShowcase = () => (
@@ -71,11 +71,11 @@ const ProductShowcase = () => (
                 Vender debería ser rápido
               </Typography>
               <Typography sx={{ color: 'text.secondary', fontSize: '1rem', lineHeight: 1.75 }}>
-                Búsqueda en milisegundos. Escanea desde la cámara del celular.
+                Búsqueda en milisegundos. Escanea con lectora física o desde la cámara del celular.
                 Vende por pieza, peso, o dinero directo ("dame $20 de queso").
                 <br />
                 <br />
-                Múltiples carritos. Crea productos al instante. Sin complicaciones.
+                Múltiples carritos. Impresoras térmicas integradas. Crea productos al instante.
               </Typography>
               <Grid container spacing={1}>
                 {capabilities.map((c) => (

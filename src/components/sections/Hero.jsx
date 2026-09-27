@@ -76,13 +76,13 @@ const Hero = () => {
         <Grid container spacing={{ xs: 6, md: 8 }} alignItems="center">
           <Grid size={{ xs: 12, md: 6 }}>
             <motion.div {...heroContainer} initial="initial" animate="animate">
-              <Stack spacing={3}>
+              <Stack spacing={3} sx={{ textAlign: 'center', alignItems: 'center' }}>
                 <motion.div variants={heroItem}>
                   <Typography
                     variant="overline"
-                    sx={{ color: '#34d399', fontWeight: 600, letterSpacing: 3, fontSize: '0.8rem' }}
+                    sx={{ color: '#34d399', fontWeight: 600, letterSpacing: 3, fontSize: '0.8rem', textAlign: 'center' }}
                   >
-                    Punto de venta para negocios con varias sucursales
+                    Punto de venta en la nube
                   </Typography>
                 </motion.div>
 
@@ -90,21 +90,21 @@ const Hero = () => {
                   <Typography
                     variant="h1"
                     sx={{
-                      fontSize: { xs: '2.2rem', sm: '2.8rem', md: '3.2rem' },
-                      color: 'white', lineHeight: 1.08, letterSpacing: '-0.03em',
+                      fontSize: { xs: '1.9rem', sm: '2.4rem', md: '2.9rem' },
+                      color: 'white', lineHeight: 1.08, letterSpacing: '-0.03em', textAlign: 'center',
                     }}
                   >
-                    Cuando crecí a varias tiendas, fue un caos.
+                    Cuando crecí a varias tiendas, perdí el control.
                     <br />
-                    Hoy tengo el control.
+                    Hoy lo tengo de vuelta.
                   </Typography>
                 </motion.div>
 
                 <motion.div variants={heroItem}>
                   <Typography
                     sx={{
-                      color: 'rgba(255,255,255,0.7)', maxWidth: 480,
-                      fontSize: { xs: '1.05rem', md: '1.15rem' }, fontWeight: 400, lineHeight: 1.7,
+                      color: 'rgba(255,255,255,0.7)', maxWidth: 480, mx: 'auto',
+                      fontSize: { xs: '1.05rem', md: '1.15rem' }, fontWeight: 400, lineHeight: 1.7, textAlign: 'center',
                     }}
                   >
                     Ventas, inventario, precios y traspasos.
