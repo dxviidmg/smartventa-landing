@@ -40,52 +40,52 @@ const BrowserFrame = ({ src, alt }) => (
 
 const features = [
   {
-    title: 'Múltiples Carritos Simultáneos',
-    desc: 'Un vendedor atiende 5 clientes sin mezclar nada. Cambia de cliente con un clic. Cada carrito mantiene su estado completo.',
+    title: 'Varias tiendas, varios vendedores, varios clientes a la vez',
+    desc: 'Abre una pestaña por cliente: cada una guarda sus productos y su cliente. Un vendedor atiende a 5 clientes en hora pico sin mezclar nada. Todas tus sucursales en un solo acceso. Cree cuentas de vendedor ilimitadas. Consulta cuánto vendió cada vendedor.',
   },
   {
-    title: 'Stock Unificado + Reservas Automáticas',
-    desc: 'Ves inventario de todas las tiendas al instante. El sistema evita que dos vendedores vendan lo mismo. Cero sobreventa.',
+    title: 'Stock que no se vende dos veces',
+    desc: 'Lo que está en un carrito se descuenta del disponible en los demás carritos abiertos. Traspasos limitados al stock real. Si algo está en el anaquel pero el sistema dice cero, lo agregas y lo vendes en el mismo paso. Stock de otras sucursales al instante.',
   },
   {
-    title: 'Trazabilidad Completa de Productos',
-    desc: 'Rastrea cada producto: dónde está, quién lo movió, cuándo, por qué. Auditoría perfecta. Cero pérdidas.',
+    title: 'Trazabilidad completa de cada producto',
+    desc: 'Cada movimiento guarda quién lo hizo, cuándo, qué stock había antes, la diferencia y qué hay ahora. Abre cualquier producto y revisa su vida de 12 meses. Historial diario de toda la tienda filtrable. Cada diferencia tiene un responsable y una fecha.',
   },
   {
-    title: 'Cambio de Precios Fácil y Masivo',
-    desc: 'Actualiza 1,000 productos en 2 clicks. Cambios al instante en todas las tiendas. Sin errores manuales.',
+    title: 'Cambio de precios fácil y masivo',
+    desc: 'Selecciona varios productos y cambia a la vez costo, precio unitario, precio de mayoreo y cantidad mínima. Actualiza 1,000 productos en 2 clicks. Historial de cada cambio con valor anterior, nuevo, fecha y quién lo hizo. Solo el dueño edita.',
   },
   {
-    title: 'Búsqueda Visual con Imágenes',
-    desc: 'Ves fotos de productos. Identifica rápido. Menos errores. Venta más rápida y mejor experiencia.',
+    title: 'Tu catálogo con fotos',
+    desc: 'Toma foto desde celular con un botón y se optimiza automáticamente. Búsqueda visual en carrusel con foto, precio y stock. Foto en el carrito para confirmar visualmente que es el producto correcto. Nuevos vendedores venden desde el primer día.',
   },
   {
-    title: 'Traspaso de Productos entre Tiendas',
-    desc: 'Mueve mercancía entre sucursales con un registro completo. Sabe quién envía, quién recibe, qué, cuándo. Cero pérdidas.',
+    title: 'Traspasos Pendientes y Confirmación',
+    desc: 'Tienda pide, almacén ve el stock de todas para armar el envío. Traspaso se confirma escaneando productos. Tablero con lo pendiente por tienda, separado entre hoy y días anteriores. Notificaciones al momento.',
   },
   {
-    title: 'Compatibilidad con Lectores de Código de Barras',
-    desc: 'Escanea productos al instante. Sin digitación. Más rápido. Menos errores. Compatible con cualquier lector USB.',
+    title: 'Búsqueda por Código de Barras y Celular',
+    desc: 'Escanea con lector USB o con la cámara del celular. Sugerencias al escribir desde la tercera letra por nombre o marca. Crear producto desde la venta si el código no existe. Sin demoras.',
   },
   {
-    title: 'Tableros y Reportes en Tiempo Real',
-    desc: 'Ve ventas, inventario y desempeño de todas tus tiendas en un dashboard. Datos actualizados cada segundo. Decisiones informadas.',
+    title: 'Tableros de Ventas y Desempeño',
+    desc: 'Ventas, ganancias, margen y ticket promedio. Mejor y peor tienda, día del mes, día de la semana, hora. Mapa de calor de cuándo vende cada sucursal. Comparativo por sucursal.',
   },
   {
-    title: 'Pagos Mixtos en una Sola Transacción',
-    desc: 'Un cliente paga con efectivo + tarjeta + transferencia en la misma venta. El sistema suma automáticamente. Sin confusiones.',
+    title: 'Cobro Flexible: Efectivo, Tarjeta, Mixto',
+    desc: 'Efectivo, tarjeta, transferencia o cualquier combinación en la misma venta. Cálculo de cambio y referencia para pagos electrónicos. Totales redondeados para facilitar cambio.',
   },
   {
-    title: 'Corte de Caja Automático y Auditado',
-    desc: 'Cierra caja en segundos con balance automático. Historial completo de efectivo movido. Conciliación perfecta cada día.',
+    title: 'Corte de Caja Automático',
+    desc: 'Ventas y apartados por forma de pago. Entradas y salidas de dinero. Movimientos de caja con concepto y monto. Alerta de ventas duplicadas. Descarga a Excel con un clic.',
   },
   {
-    title: 'Precio Mayoreo y Precio Menudeo',
-    desc: 'Configura precios diferentes según la cantidad. Cliente compra 10 a mayor, 1 a menor. El sistema calcula automáticamente.',
+    title: 'Mayoreo: Precio y Cantidad Mínima',
+    desc: 'Configura precio mayoreo y cantidad mínima una vez. Al llegar a la cantidad en el carrito, el sistema aplica el precio de mayoreo automáticamente. Mayoreo se combina con descuento de cliente.',
   },
   {
-    title: 'Importación de Productos vía Excel',
-    desc: 'Carga 5,000 productos desde tu Excel en minutos. Validamos, detectamos errores, tu equipo lo revisa, listo para vender.',
+    title: 'Importación de Catálogo Validado',
+    desc: 'Sube Excel, configura columnas, valida errores por página, importa. Crea marcas y departamentos que falten automáticamente. Carga 5,000 productos en minutos sin problemas.',
   },
 ];
 
