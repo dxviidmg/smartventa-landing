@@ -1,81 +1,131 @@
 'use client';
 
-import { Box, Container, Typography, Grid, Stack } from '@mui/material';
+import { useState } from 'react';
+import { Box, Container, Typography, Stack, IconButton } from '@mui/material';
 import { motion } from 'framer-motion';
-import { sectionPadding, cardGridItem, fadeUp } from '../../constants';
-import tableroImg from '../../assets/Tablero.png';
-import { LazyImage } from '../ui/LazyImage';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import HowToReg from '@mui/icons-material/HowToReg';
+import Flag from '@mui/icons-material/Flag';
+import QrCodeScanner from '@mui/icons-material/QrCodeScanner';
+import FactCheck from '@mui/icons-material/FactCheck';
+import EditNote from '@mui/icons-material/EditNote';
+import PriceCheck from '@mui/icons-material/PriceCheck';
+import Lock from '@mui/icons-material/Lock';
+import Inventory2 from '@mui/icons-material/Inventory2';
+import ManageSearch from '@mui/icons-material/ManageSearch';
+import { sectionPadding, fadeUp } from '../../constants';
 
-const BrowserFrame = ({ src, alt }) => (
-  <Box sx={{
-    borderRadius: 2.5, overflow: 'hidden', bgcolor: '#1e293b',
-    boxShadow: '0 16px 48px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.04)',
-  }}>
-    <Stack direction="row" alignItems="center" spacing={0.75} sx={{ px: 1.5, py: 0.8, bgcolor: '#1e293b' }}>
-      <Box sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: '#ef4444' }} />
-      <Box sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: '#eab308' }} />
-      <Box sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: '#22c55e' }} />
-      <Box sx={{
-        flex: 1, mx: 1.5, py: 0.3, px: 1.5,
-        borderRadius: 1, bgcolor: 'rgba(255,255,255,0.06)',
-        display: 'flex', alignItems: 'center',
-      }}>
-        <Typography sx={{ fontSize: '0.6rem', color: 'rgba(255,255,255,0.35)', fontFamily: 'monospace' }}>
-          app.smartventa.com
-        </Typography>
-      </Box>
-    </Stack>
-    <LazyImage src={src} alt={alt} sx={{ width: '100%', height: 'auto', display: 'block' }} />
-  </Box>
-);
-
-const highlights = [
-  'Ajustes con aprobación: solo el dueño autoriza cambios de stock',
-  'Revisión guiada: lista de productos por verificar en cada tienda',
-  'Traspasos al stock real: no puedes enviar más de lo que hay',
-  'Movimientos marcados: el historial señala lo que no cuadra',
-  'Auditoría automática: detecta ventas duplicadas, códigos repetidos y productos sin movimiento',
-  'Precios protegidos: el costo y el mayoreo nunca quedan arriba del precio de venta',
+const mechanisms = [
+  { icon: ManageSearch, title: 'Auditoría interna', desc: 'Detecta diferencias de stock, movimientos que no cuadran, códigos repetidos, errores de costo o mayoreo y productos sin movimiento. Descarga cada revisión a Excel.' },
+  { icon: Flag, title: 'Historial de cambios de stock', desc: 'El historial señala los registros que no cuadran con el anterior.' },
+  { icon: Inventory2, title: 'Stock bajo control', desc: 'Solo el dueño puede cambiar el stock directamente.' },
+  { icon: HowToReg, title: 'Ajustes con aprobación', desc: 'Vendedores y administradores piden el ajuste con la cantidad real. Solo el dueño lo aprueba.' },
+  { icon: QrCodeScanner, title: 'Traspasos seguros', desc: 'No puedes enviar más de lo que hay. La tienda confirma escaneando lo que recibe, y un producto sin traspaso pendiente se rechaza.' },
+  { icon: Lock, title: 'Caja protegida', desc: 'Solo el dueño edita o elimina entradas y salidas de dinero.' },
+  { icon: PriceCheck, title: 'Precios protegidos', desc: 'El costo y el mayoreo no pueden quedar arriba del precio de venta. Solo el dueño edita precios.' },
+  { icon: FactCheck, title: 'Distribución revisada', desc: 'Cada tienda revisa los productos antes de confirmar. El dueño puede corregir cantidades.' },
+  { icon: EditNote, title: 'Motivo obligatorio', desc: 'Toda cancelación o devolución guarda por qué se hizo.' },
 ];
 
-const Inventory = () => (
+const cardsPerSlide = 3;
+const totalSlides = Math.ceil(mechanisms.length / cardsPerSlide);
+
+const navButtonSx = {
+  color: '#047857',
+  border: '1px solid rgba(4, 120, 87, 0.3)',
+  '&:hover': { bgcolor: 'rgba(4, 120, 87, 0.08)' },
+};
+
+const Inventory = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const handlePrev = () => setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
+  const handleNext = () => setCurrentIndex((prev) => (prev + 1) % totalSlides);
+
+  return (
   <Box sx={{ ...sectionPadding, bgcolor: '#ffffff' }} id="inventory">
     <Container maxWidth="lg">
-      <motion.div {...cardGridItem} transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}>
-        <Grid container spacing={{ xs: 4, md: 6 }} alignItems="center">
-          <Grid size={{ xs: 12, md: 5 }}>
-            <Stack spacing={2.5}>
-              <Typography variant="overline" sx={{ color: '#047857', fontWeight: 700, letterSpacing: 2, fontSize: '0.78rem' }}>
-                Inventario y traspasos
-              </Typography>
-              <Typography variant="h3" sx={{ fontSize: { xs: '1.75rem', md: '2.2rem' }, letterSpacing: '-0.02em' }}>
-                Detalles que evitan pérdidas
-              </Typography>
-              <Typography sx={{ color: 'text.secondary', fontSize: '1rem', lineHeight: 1.75 }}>
-                Si alguien quiere ajustar el stock, lo pide y el dueño decide. Una revisión guiada te dice qué productos contar, y el historial marca los movimientos que no cuadran.
-              </Typography>
-              
-              <Stack direction="row" flexWrap="wrap" gap={1} sx={{ pt: 0.5 }}>
-                {highlights.map((h) => (
-                  <Box key={h} sx={{
-                    py: 0.5, px: 1.5, borderRadius: 2,
-                    bgcolor: 'rgba(4,120,87,0.06)',
-                    border: '1px solid rgba(4,120,87,0.12)',
-                  }}>
-                    <Typography sx={{ fontSize: '0.8rem', fontWeight: 600, color: '#047857' }}>{h}</Typography>
-                  </Box>
-                ))}
-              </Stack>
-            </Stack>
-          </Grid>
-
-          <Grid size={{ xs: 12, md: 7 }}>
-            <BrowserFrame src={tableroImg} alt="Inventario por sucursal en SmartVenta — stock y traspasos" />
-          </Grid>
-        </Grid>
+      <motion.div {...fadeUp}>
+        <Stack spacing={1.5} alignItems="center" textAlign="center" sx={{ mb: 6, maxWidth: 640, mx: 'auto' }}>
+          <Typography variant="overline" sx={{ color: '#047857', fontWeight: 700, letterSpacing: 2, fontSize: '0.78rem' }}>
+            Inventario y traspasos
+          </Typography>
+          <Typography variant="h3" sx={{ fontSize: { xs: '1.75rem', md: '2.2rem' }, letterSpacing: '-0.02em' }}>
+            Detalles que evitan pérdidas
+          </Typography>
+          <Typography sx={{ color: 'text.secondary', fontSize: '1rem', lineHeight: 1.7 }}>
+            Controles que protegen tu inventario, tu caja y tus precios.
+          </Typography>
+        </Stack>
       </motion.div>
+
+      <Box sx={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+        gap: 2.5,
+      }}>
+        {mechanisms.slice(currentIndex * cardsPerSlide, (currentIndex + 1) * cardsPerSlide).map((m) => (
+          <motion.div
+            key={m.title}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.4 }}
+            style={{ height: '100%' }}
+          >
+            <Box sx={{
+              p: 2.5, height: '100%', borderRadius: 2.5,
+              bgcolor: 'background.default',
+              border: '1px solid #e5e7eb',
+              transition: 'all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1)',
+              '&:hover': {
+                borderColor: '#047857',
+                transform: 'translateY(-4px)',
+                boxShadow: '0 12px 24px rgba(4, 120, 87, 0.12)',
+              },
+            }}>
+              <Box sx={{
+                width: 40, height: 40, borderRadius: 2, mb: 1.5,
+                bgcolor: 'rgba(4, 120, 87, 0.1)',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+              }}>
+                <m.icon sx={{ fontSize: 22, color: '#047857' }} />
+              </Box>
+              <Typography sx={{ fontWeight: 700, fontSize: '1rem', color: 'text.primary', mb: 0.75 }}>
+                {m.title}
+              </Typography>
+              <Typography sx={{ fontSize: '0.92rem', color: 'text.secondary', lineHeight: 1.6 }}>
+                {m.desc}
+              </Typography>
+            </Box>
+          </motion.div>
+        ))}
+      </Box>
+
+      <Stack direction="row" spacing={2} justifyContent="center" alignItems="center" sx={{ mt: 4 }}>
+        <IconButton onClick={handlePrev} sx={navButtonSx}>
+          <ChevronLeftIcon />
+        </IconButton>
+        <Stack direction="row" spacing={1}>
+          {Array.from({ length: totalSlides }).map((_, i) => (
+            <Box
+              key={i}
+              onClick={() => setCurrentIndex(i)}
+              sx={{
+                width: 8, height: 8, borderRadius: '50%', cursor: 'pointer',
+                bgcolor: i === currentIndex ? '#047857' : 'rgba(4, 120, 87, 0.25)',
+                transition: 'all 0.3s ease',
+                '&:hover': { bgcolor: '#047857' },
+              }}
+            />
+          ))}
+        </Stack>
+        <IconButton onClick={handleNext} sx={navButtonSx}>
+          <ChevronRightIcon />
+        </IconButton>
+      </Stack>
     </Container>
   </Box>
-);
+  );
+};
 
 export default Inventory;
