@@ -16,8 +16,8 @@ const blocks = [
   },
   {
     icon: <SupportAgent />,
-    title: 'Persona, no chatbot',
-    desc: 'Soporte por WhatsApp directo. Alguien te ayuda a configurar, resolver dudas y empezar a vender. Desde enero 2025 acompañamos negocios reales.',
+    title: 'Soporte directo',
+    desc: 'Soporte por WhatsApp. Te ayudamos a configurar, resolver dudas y empezar a vender.',
   },
 ];
 

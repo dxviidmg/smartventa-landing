@@ -32,7 +32,7 @@ const Footer = () => {
                   Producto
                 </Typography>
                 <Stack direction="column" spacing={1.5} component="nav" aria-label="Enlaces del sitio">
-                  <Link href="#multi-store" sx={footerLinkSx}>
+                  <Link href="#multilocal" sx={footerLinkSx}>
                     Multi-sucursal
                   </Link>
                   <Link href="#inventory" sx={footerLinkSx}>
@@ -41,7 +41,7 @@ const Footer = () => {
                   <Link href="#product" sx={footerLinkSx}>
                     Punto de venta
                   </Link>
-                  <Link href="#features" sx={footerLinkSx}>
+                  <Link href="#product" sx={footerLinkSx}>
                     Funcionalidades
                   </Link>
                   <Link href="#pricing" sx={footerLinkSx}>
@@ -114,7 +114,7 @@ const Footer = () => {
                 1. Aceptación de términos
               </Typography>
               <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
-                Al acceder y usar Smartventa, aceptas estar sujeto a estos términos y condiciones.
+                Al acceder y usar SmartVenta, aceptas estar sujeto a estos términos y condiciones.
               </Typography>
             </Box>
 
@@ -123,7 +123,7 @@ const Footer = () => {
                 2. Uso del servicio
               </Typography>
               <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
-                Smartventa es un sistema de punto de venta diseñado para negocios multi-tienda. Te comprometes a usar el servicio de manera legal y apropiada.
+                SmartVenta es un sistema de punto de venta diseñado para negocios multi-tienda. Te comprometes a usar el servicio de manera legal y apropiada.
               </Typography>
             </Box>
 
@@ -141,7 +141,7 @@ const Footer = () => {
                 4. Limitación de responsabilidad
               </Typography>
               <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
-                Smartventa se proporciona "tal cual". No garantizamos que el servicio será ininterrumpido o libre de errores.
+                SmartVenta se proporciona "tal cual". No garantizamos que el servicio será ininterrumpido o libre de errores.
               </Typography>
             </Box>
 
@@ -185,7 +185,7 @@ const Footer = () => {
                 2. Uso de la información
               </Typography>
               <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
-                Utilizamos tu información para: contactarte sobre tu solicitud de demo, enviarte información sobre Smartventa, y mejorar nuestros servicios.
+                Utilizamos tu información para: contactarte sobre tu solicitud de demo, enviarte información sobre SmartVenta, y mejorar nuestros servicios.
               </Typography>
             </Box>
 

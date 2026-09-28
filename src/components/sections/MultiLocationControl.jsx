@@ -1,8 +1,7 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import { Box, Container, Typography, Stack, Grid } from '@mui/material';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import StorefrontOutlined from '@mui/icons-material/StorefrontOutlined';
 import InventoryIcon from '@mui/icons-material/Inventory';
 import CountUp from '../ui/CountUp';
@@ -33,7 +32,7 @@ const locations = [
   },
   {
     type: 'Almacén', name: 'Almacén Principal', icon: InventoryIcon,
-    pending: '2 envíos por confirmar',
+    pending: '1 distribución completada',
     metrics: [
       { label: 'Inversión', value: 125800, prefix: '$' },
       { label: 'Productos', value: 1240 },
@@ -42,7 +41,7 @@ const locations = [
   },
   {
     type: 'Almacén', name: 'Almacén Sur', icon: InventoryIcon,
-    pending: '1 envío por confirmar',
+    pending: '1 distribución en proceso',
     metrics: [
       { label: 'Inversión', value: 97500, prefix: '$' },
       { label: 'Productos', value: 860 },
@@ -117,45 +116,6 @@ const LiveDot = () => (
   </Box>
 );
 
-const ActivityFeed = () => {
-  const [offset, setOffset] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => setOffset((prev) => (prev + 1) % activity.length), 3500);
-    return () => clearInterval(timer);
-  }, []);
-
-  const visible = [0, 1, 2].map((i) => activity[(offset - i + activity.length) % activity.length]);
-
-  return (
-    <Box sx={{ mt: 4, p: { xs: 2, md: 2.5 }, borderRadius: 3, bgcolor: '#ffffff', border: '1px solid #e5e7eb', maxWidth: 720, mx: 'auto' }}>
-      <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 1.5 }}>
-        <LiveDot />
-        <Typography sx={{ fontSize: '0.85rem', fontWeight: 700, color: 'text.primary' }}>Actividad reciente</Typography>
-      </Stack>
-      <Box sx={{ position: 'relative' }}>
-        <AnimatePresence initial={false}>
-          {visible.map((text, i) => (
-            <motion.div
-              key={text}
-              layout
-              initial={{ opacity: 0, y: -12 }}
-              animate={{ opacity: 1 - i * 0.25, y: 0 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-            >
-              <Stack direction="row" justifyContent="space-between" alignItems="center" spacing={2} sx={{ py: 0.9, borderTop: i ? '1px solid #eef2f7' : 'none' }}>
-                <Typography sx={{ fontSize: '0.88rem', color: 'text.primary' }}>{text}</Typography>
-                <Typography sx={{ fontSize: '0.75rem', color: 'text.secondary', whiteSpace: 'nowrap' }}>{timeLabels[i]}</Typography>
-              </Stack>
-            </motion.div>
-          ))}
-        </AnimatePresence>
-      </Box>
-    </Box>
-  );
-};
-
 const MultiLocationControl = () => (
   <Box sx={{ ...sectionPadding, bgcolor: 'background.default' }} id="multilocal">
     <Container maxWidth="lg">
@@ -215,7 +175,7 @@ const MultiLocationControl = () => (
                     </Box>
                   </Stack>
 
-                  <Box sx={{ height: 44, mb: 2, display: 'flex', alignItems: 'center' }}>
+                  <Box sx={{ height: 44, mb: 2, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     {isStore ? (
                       <Sparkline points={loc.trend} id={`spark-${i}`} />
                     ) : (
@@ -242,7 +202,6 @@ const MultiLocationControl = () => (
         })}
       </Grid>
 
-      <ActivityFeed />
     </Container>
   </Box>
 );

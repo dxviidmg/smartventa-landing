@@ -45,9 +45,9 @@ const Contact = () => {
 
           <motion.div {...contactItem} transition={{ delay: 0.1, duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}>
             <Typography sx={{ color: 'rgba(255,255,255,0.65)', fontSize: '1.05rem', maxWidth: 440, lineHeight: 1.7 }}>
-              Desde $399/mes.  Sin sorpresas. Sin contrato.
+              Crea tu cuenta y empieza a vender hoy.
               <br />
-              O habla con nosotros ahora si tienes preguntas.
+              O habla con nosotros si tienes preguntas.
             </Typography>
           </motion.div>
 

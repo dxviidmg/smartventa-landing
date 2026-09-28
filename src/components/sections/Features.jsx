@@ -64,7 +64,7 @@ const groups = [
       { icon: <AccountBalance />, title: 'Movimientos de caja', desc: 'Registra entradas y salidas de dinero. Separa cada método de pago (efectivo, tarjeta, transferencia).', accent: '#10b981' },
       { icon: <AccountBalance />, title: 'Corte de caja', desc: 'Resumen diario de ventas y movimientos. Cortes parciales o totales, exportables a Excel.', accent: '#10b981' },
       { icon: <Payment />, title: 'Pagos mixtos', desc: 'Una misma venta se puede pagar con efectivo, tarjeta y transferencia combinados.', accent: '#6366f1' },
-      { icon: <Payment />, title: 'Control por método', desc: 'Sabe cuánto vendiste en efectivo, tarjeta y transferencia. El sistema te calcula cuánto debería haber en caja.', accent: '#6366f1' },
+      { icon: <Payment />, title: 'Control por método', desc: 'Consulta cuánto vendiste en efectivo, tarjeta y transferencia. El sistema te calcula cuánto debería haber en caja.', accent: '#6366f1' },
     ],
   },
   {

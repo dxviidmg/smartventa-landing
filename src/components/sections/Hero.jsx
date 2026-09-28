@@ -11,59 +11,78 @@ import Inventory2Outlined from '@mui/icons-material/Inventory2Outlined';
 
 const floatingCards = [
   {
-    icon: StorefrontOutlined, label: 'Tienda Centro', value: '+$3,450 hoy', color: '#047857', bg: 'rgba(4,120,87,0.1)',
-    pos: { top: { sm: -28, md: -32 }, left: { sm: -8, md: -40 } }, delay: 0.9, float: 5,
+    icon: StorefrontOutlined, label: 'Tienda Norte', value: '$3,450.00',
+    color: '#047857', bg: 'rgba(4,120,87,0.1)', delay: 0.9, float: 5,
   },
   {
-    icon: CheckCircle, label: 'Traspaso confirmado', value: 'Sur → Centro · 24 pzas', color: '#047857', bg: 'rgba(4,120,87,0.1)',
-    pos: { top: '42%', right: { sm: -8, md: -36 } }, delay: 1.2, float: 6,
+    icon: StorefrontOutlined, label: 'Tienda Centro', value: '$5,630.50',
+    color: '#37857', bg: 'rgba(4,120,87,0.1)', delay: 1.1, float: 6,
   },
   {
-    icon: Inventory2Outlined, label: 'Almacén Principal', value: '1,240 productos', color: '#065a9e', bg: 'rgba(6,90,158,0.1)',
-    pos: { bottom: { sm: -28, md: -36 }, left: { sm: '8%', md: '6%' } }, delay: 1.5, float: 4.5,
+    icon: StorefrontOutlined, label: 'Tienda Sur', value: '$2,240.00',
+    color: '#065a9e', bg: 'rgba(6,90,158,0.1)', delay: 1.3, float: 4.5,
   },
 ];
 
-const FloatingCard = ({ icon: Icon, label, value, color, bg, pos, delay, float }) => (
-  <Box sx={{ position: 'absolute', zIndex: 2, display: { xs: 'none', sm: 'block' }, ...pos }}>
+const FloatingCard = ({ icon: Icon, label, value, color, bg, meta, live, delay, float }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 12, scale: 0.96 }}
+    animate={{ opacity: 1, y: 0, scale: 1 }}
+    transition={{ delay, duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+  >
     <motion.div
-      initial={{ opacity: 0, y: 16, scale: 0.95 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
-      transition={{ delay, duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+      animate={{ y: [0, -6, 0] }}
+      transition={{ duration: float, repeat: Infinity, ease: 'easeInOut', delay }}
     >
-      <motion.div
-        animate={{ y: [0, -8, 0] }}
-        transition={{ duration: float, repeat: Infinity, ease: 'easeInOut', delay }}
+      <Stack
+        direction="row"
+        spacing={1}
+        alignItems="center"
+        sx={{
+          px: { sm: 1.25, md: 1.5 }, py: 1, borderRadius: 2.5,
+          whiteSpace: 'nowrap',
+          bgcolor: '#ffffff',
+          border: '1px solid rgba(15,23,42,0.06)',
+          boxShadow: '0 12px 32px rgba(2,35,71,0.35)',
+        }}
       >
-        <Stack
-          direction="row"
-          spacing={1.25}
-          alignItems="center"
-          sx={{
-            px: 1.75, py: 1.25, borderRadius: 2.5,
-            bgcolor: '#ffffff',
-            boxShadow: '0 12px 32px rgba(2,35,71,0.35)',
-            whiteSpace: 'nowrap',
-          }}
-        >
-          <Box sx={{
-            width: 34, height: 34, borderRadius: 2, bgcolor: bg,
-            display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
-          }}>
-            <Icon sx={{ fontSize: 20, color }} />
-          </Box>
-          <Box>
-            <Typography sx={{ fontSize: '0.7rem', color: '#64748b', fontWeight: 600, lineHeight: 1.2 }}>
+        <Box sx={{
+          width: 30, height: 30, borderRadius: 1.75, bgcolor: bg,
+          display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+        }}>
+          <Icon sx={{ fontSize: 20, color }} />
+        </Box>
+        <Box sx={{ minWidth: 0 }}>
+          <Stack direction="row" spacing={0.75} alignItems="center">
+            <Typography sx={{ fontSize: '0.68rem', color: '#64748b', fontWeight: 600, lineHeight: 1.2 }}>
               {label}
             </Typography>
-            <Typography sx={{ fontSize: '0.9rem', color: '#0f172a', fontWeight: 700, lineHeight: 1.3 }}>
-              {value}
-            </Typography>
-          </Box>
-        </Stack>
-      </motion.div>
+            {meta && (
+              <Stack direction="row" spacing={0.4} alignItems="center" sx={{ flexShrink: 0 }}>
+                {live && (
+                  <Box
+                    component={motion.span}
+                    animate={{ opacity: [1, 0.25, 1] }}
+                    transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
+                    sx={{ width: 5, height: 5, borderRadius: '50%', bgcolor: '#10b981', display: 'block' }}
+                  />
+                )}
+                <Typography sx={{ fontSize: '0.62rem', color: '#94a3b8', fontWeight: 600, lineHeight: 1.2 }}>
+                  {meta}
+                </Typography>
+              </Stack>
+            )}
+          </Stack>
+          <Typography
+            noWrap
+            sx={{ fontSize: { sm: '0.8rem', md: '0.875rem' }, color: '#0f172a', fontWeight: 700, lineHeight: 1.35 }}
+          >
+            {value}
+          </Typography>
+        </Box>
+      </Stack>
     </motion.div>
-  </Box>
+  </motion.div>
 );
 
 const ArrowForward = () => (
@@ -221,11 +240,24 @@ const Hero = () => {
               initial="initial"
               animate="animate"
             >
-              <Box sx={{ position: 'relative' }}>
+              <Box>
+                <Stack
+                  direction="row"
+                  spacing={1.25}
+                  alignItems="center"
+                  justifyContent="center"
+                  useFlexGap
+                  flexWrap="wrap"
+                  sx={{
+                    display: { xs: 'none', sm: 'flex' },
+                    mx: { md: -4 }, mb: 2.5,
+                  }}
+                >
+                  {floatingCards.map((card) => (
+                    <FloatingCard key={card.label} {...card} />
+                  ))}
+                </Stack>
                 <BrowserFrame />
-                {floatingCards.map((card) => (
-                  <FloatingCard key={card.label} {...card} />
-                ))}
               </Box>
             </motion.div>
           </Grid>

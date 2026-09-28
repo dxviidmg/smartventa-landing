@@ -218,7 +218,7 @@ const tabs = [
     key: 'caja', label: 'Caja y clientes', mockup: CashMockup,
     features: [
       { icon: PointOfSale, title: 'Corte de caja con entradas y salidas', desc: 'Ventas por forma de pago y cada entrada y salida de dinero con concepto y monto, todo en un solo resumen.' },
-      { icon: Savings, title: 'Ganancia del día o del periodo', desc: 'Conoce el costo y la ganancia de tus ventas. Sabe cuánto ganaste hoy o en cualquier periodo.' },
+      { icon: Savings, title: 'Ganancia del día o del periodo', desc: 'Conoce el costo y la ganancia de tus ventas. Consulta cuánto ganaste hoy o en cualquier periodo.' },
       { icon: LocalOffer, title: 'Clientes y descuentos', desc: 'Guarda a tus clientes con su descuento. Al venderles, el descuento se aplica solo al cobrar.' },
       { icon: BookmarkAdded, title: 'Apartados con abonos', desc: 'Aparta con anticipo y registra abonos hasta liquidar. Lo apartado ya no se le vende a otro cliente.' },
       { icon: AssignmentReturn, title: 'Devoluciones y cancelaciones', desc: 'Devuelve parte de una venta o cancélala completa. Siempre queda registrado el motivo.' },

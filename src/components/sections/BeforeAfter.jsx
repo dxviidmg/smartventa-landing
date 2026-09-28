@@ -14,12 +14,12 @@ const scenarios = {
     problems: [
       'Estás encadenado físicamente al negocio sin libertad, flexibilidad ni horarios propios',
       'Tu información está en una computadora: si falla, se la roban o la pierdes, desaparece todo',
-      'Cada decisión requiere tu presencia física: precios, descuentos, reorden dependen solo de ti',
+      'Todo lo tienes en libreta o excel, cada día tienes que hacer tu corte manual, es un proceso tedioso y propenso a errores',
     ],
     solutions: [
       'Operas remotamente desde cualquier lugar con control total en tu computadora',
       'Información segura en la nube: si algo falla, está protegido y tienes paz mental',
-      'Delega y autoriza cambios: corre el negocio desde donde quieras estar siempre',
+      'Obtén tu corte de caja y entérate de tus ganancias de manera automática',
     ],
   },
   multi: {
@@ -123,47 +123,35 @@ const BeforeAfter = () => {
           borderRadius: 3,
           overflow: 'hidden',
         }}>
-          {/* BOTONES - TOP ROW */}
+          {/* BOTONES - PILL ROW */}
           <Box sx={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(4, 1fr)',
-            gap: 0.75,
+            display: 'flex',
+            justifyContent: { xs: 'flex-start', md: 'center' },
+            overflowX: 'auto',
             p: 2,
             borderBottom: '1px solid',
             borderColor: 'divider',
-            alignItems: 'center',
-            '@media (max-width: 768px)': {
-              gridTemplateColumns: 'repeat(2, 1fr)',
-            },
-            '@media (max-width: 480px)': {
-              gridTemplateColumns: '1fr',
-            },
           }}>
-            {Object.entries(scenarios).map(([key, scenario]) => (
-              <Button
-                key={key}
-                onClick={() => handleManualClick(key)}
-                variant={activeScenario === key ? 'contained' : 'text'}
-                sx={{
-                  px: 1.5,
-                  py: 0.75,
-                  fontSize: '0.8rem',
-                  textTransform: 'none',
-                  fontWeight: activeScenario === key ? 600 : 500,
-                  bgcolor: activeScenario === key ? '#04346b' : 'transparent',
-                  color: activeScenario === key ? 'white' : 'text.primary',
-                  borderRadius: 1,
-                  '&:hover': {
-                    bgcolor: activeScenario === key ? '#022347' : 'rgba(0,0,0,0.04)',
-                  },
-                  transition: 'all 0.25s ease',
-                  whiteSpace: 'normal',
-                  lineHeight: 1.2,
-                }}
-              >
-                {scenario.title}
-              </Button>
-            ))}
+            <Stack direction="row" spacing={1} sx={{ p: 0.75, borderRadius: 999, bgcolor: 'rgba(0,0,0,0.04)', border: '1px solid', borderColor: 'divider', flexShrink: 0 }}>
+              {Object.entries(scenarios).map(([key, scenario]) => (
+                <Box
+                  component="button"
+                  key={key}
+                  onClick={() => handleManualClick(key)}
+                  sx={{
+                    position: 'relative', border: 0, cursor: 'pointer', font: 'inherit',
+                    px: { xs: 1.75, md: 2.5 }, py: 1, borderRadius: 999, whiteSpace: 'nowrap',
+                    fontSize: '0.9rem', fontWeight: 600,
+                    bgcolor: activeScenario === key ? '#04346b' : 'transparent',
+                    color: activeScenario === key ? '#ffffff' : 'text.secondary',
+                    transition: 'all 0.25s ease',
+                    '&:hover': { color: activeScenario === key ? '#ffffff' : 'text.primary' },
+                  }}
+                >
+                  {scenario.title}
+                </Box>
+              ))}
+            </Stack>
           </Box>
 
           {/* CONTENIDO - Problema | Solución */}

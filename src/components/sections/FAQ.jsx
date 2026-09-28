@@ -9,9 +9,9 @@ import SectionHeader from '../ui/SectionHeader';
 const faqs = [
   { q: '¿Cuánto cuesta?', a: 'Desde $399/mes (1 sucursal). El precio baja por sucursal conforme creces. 3 tiendas: $1,149/mes. 5 tiendas: $1,799/mes. Sin contrato, sin sorpresas.' },
   { q: '¿Qué está incluido?', a: 'Todo: POS, inventario, traspasos, distribuciones, caja, dashboard, cambios masivos de precios, Excel, auditoría, soporte WhatsApp, actualizaciones.' },
-  { q: '¿Necesito instalar algo?', a: 'No. Solo necesitas navegador e internet, y funciona igual en computadora, tableta o celular. Si usas impresora de tickets, nuestro equipo de soporte te ayuda a instalarla.' },
+  { q: '¿Necesito instalar algo?', a: 'No. Solo necesitas navegador e internet. Funciona en computadora, tableta y celular. Si usas impresora de tickets, te ayudamos a configurarla.' },
   { q: '¿Puedo empezar con una sola tienda?', a: 'Sí. Y cuando crezcas a 4 o 10, no cambias de sistema. Simplemente agregas.' },
-  { q: '¿Cómo funciona el soporte?', a: 'WhatsApp directo. No es formulario. Alguien te ayuda a configurar, resolver dudas, empezar a vender. Desde enero 2025.' },
+  { q: '¿Cómo funciona el soporte?', a: 'WhatsApp directo. Te ayudamos a configurar, resolver dudas y empezar a vender.' },
 ];
 
 const FAQ = () => (

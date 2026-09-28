@@ -14,9 +14,9 @@ const MenuIcon = () => (
 const LazyDrawer = lazy(() => import('./NavDrawer'));
 
 const NAV_ITEMS = [
-  { label: 'Solución', id: 'multi-store' },
+  { label: 'Solución', id: 'multilocal' },
   { label: 'Precios', id: 'pricing' },
-  { label: 'Por qué SmartVenta', id: 'why' },
+  { label: 'Por qué SmartVenta', id: 'inventory' },
   { label: 'FAQ', id: 'faq' },
 ];
 
