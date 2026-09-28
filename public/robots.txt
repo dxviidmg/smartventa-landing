@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://smartventa-pos.vercel.app/sitemap.xml
