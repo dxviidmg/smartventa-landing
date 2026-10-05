@@ -16,12 +16,12 @@ export const lightTheme = createTheme({
   },
   shape: { borderRadius: 12 },
   palette: {
-    primary: { main: '#04346b', dark: '#022347', light: '#065a9e' },
-    secondary: { main: '#047857' },
-    surface: { alt: '#CAD2DE' },
-    background: { default: '#f0f4f8', paper: '#ffffff' },
-    text: { primary: '#0f172a', secondary: '#475569' },
-    divider: '#e2e8f0',
+    primary: { main: '#2563EB', dark: '#1D4ED8', light: '#3B82F6' },
+    secondary: { main: '#059669' },
+    surface: { alt: '#E9EFF8' },
+    background: { default: '#F8FAFC', paper: '#ffffff' },
+    text: { primary: '#1E293B', secondary: '#475569' },
+    divider: '#E2E8F0',
   },
   components: {
     MuiButton: {
@@ -36,7 +36,13 @@ export const lightTheme = createTheme({
       },
     },
     MuiCard: {
-      styleOverrides: { root: { borderRadius: 16, transition: 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1)' } },
+      styleOverrides: {
+        root: {
+          borderRadius: 12,
+          boxShadow: '0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06)',
+          transition: 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+        },
+      },
     },
     MuiContainer: {
       styleOverrides: {
