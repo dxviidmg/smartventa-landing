@@ -1,8 +1,8 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import { Box, Container, Typography, Stack, Grid } from '@mui/material';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import AddShoppingCart from '@mui/icons-material/AddShoppingCart';
 import Badge from '@mui/icons-material/Badge';
 import LocalOffer from '@mui/icons-material/LocalOffer';
@@ -26,11 +26,12 @@ import BookmarkAdded from '@mui/icons-material/BookmarkAdded';
 import AssignmentReturn from '@mui/icons-material/AssignmentReturn';
 
 import { sectionPadding, cardGridItem } from '../../constants';
+import useAutoAdvance, { tabKeyHandler } from '../../hooks/useAutoAdvance';
 
 const NAVY = '#1e3a6b';
 
 const Window = ({ title, children }) => (
-  <Box sx={{
+  <Box aria-hidden="true" sx={{
     borderRadius: 3, overflow: 'hidden', bgcolor: '#ffffff',
     boxShadow: '0 24px 60px rgba(2,35,71,0.45), 0 0 0 1px rgba(255,255,255,0.08)',
   }}>
@@ -101,7 +102,7 @@ const SaleMockup = () => {
         </Stack>
         <Stack direction="row" spacing={1.5} alignItems="center" justifyContent="flex-end">
           <Typography sx={{ fontSize: '1.1rem', fontWeight: 800, color: '#0f172a', fontVariantNumeric: 'tabular-nums' }}>$481.50</Typography>
-          <Box sx={{ px: 2, py: 0.75, borderRadius: 1.5, bgcolor: '#10b981', color: '#ffffff', fontSize: '0.8rem', fontWeight: 700 }}>Cobrar</Box>
+          <Box sx={{ px: 2, py: 0.75, borderRadius: 1.5, bgcolor: '#047857', color: '#ffffff', fontSize: '0.8rem', fontWeight: 700 }}>Cobrar</Box>
         </Stack>
       </Stack>
     </Window>
@@ -248,13 +249,18 @@ const tabs = [
 
 const ProductShowcase = () => {
   const [active, setActive] = useState(0);
-  const tab = tabs[active];
-  const Mockup = tab.mockup;
+  const containerRef = useRef(null);
 
-  useEffect(() => {
-    const timer = setTimeout(() => setActive((prev) => (prev + 1) % tabs.length), 10000);
-    return () => clearTimeout(timer);
-  }, [active]);
+  const { stop, pauseProps } = useAutoAdvance(containerRef, {
+    delay: 12000,
+    onAdvance: () => setActive((prev) => (prev + 1) % tabs.length),
+    step: active,
+  });
+
+  const select = (index) => {
+    setActive(index);
+    stop();
+  };
 
   return (
     <Box sx={{ ...sectionPadding, background: 'radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px) 0 0 / 22px 22px, linear-gradient(145deg, #022347 0%, #04346b 50%, #065a9e 100%)' }} id="product">
@@ -272,70 +278,103 @@ const ProductShowcase = () => {
             </Typography>
           </Stack>
 
-          <Box sx={{ display: 'flex', justifyContent: { xs: 'flex-start', md: 'center' }, overflowX: 'auto', mb: 5, pb: 0.5 }}>
-            <Stack direction="row" spacing={1} sx={{ p: 0.75, borderRadius: 999, bgcolor: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)', flexShrink: 0 }}>
-              {tabs.map((t, i) => (
-                <Box
-                  key={t.key}
-                  component="button"
-                  onClick={() => setActive(i)}
-                  sx={{
-                    position: 'relative', border: 0, cursor: 'pointer', font: 'inherit',
-                    px: { xs: 1.75, md: 2.5 }, py: 1, borderRadius: 999, whiteSpace: 'nowrap',
-                    fontSize: '0.9rem', fontWeight: 600,
-                    bgcolor: 'transparent',
-                    color: i === active ? '#04346b' : 'rgba(255,255,255,0.75)',
-                    transition: 'color 0.25s ease',
-                    '&:hover': { color: i === active ? '#04346b' : '#ffffff' },
-                  }}
-                >
-                  {i === active && (
-                    <motion.div
-                      layoutId="showcase-tab"
-                      transition={{ type: 'spring', stiffness: 400, damping: 32 }}
-                      style={{ position: 'absolute', inset: 0, borderRadius: 999, background: '#ffffff' }}
-                    />
-                  )}
-                  <Box component="span" sx={{ position: 'relative' }}>{t.label}</Box>
-                </Box>
-              ))}
-            </Stack>
-          </Box>
+          <Box ref={containerRef} {...pauseProps}>
+            <Box sx={{ display: 'flex', justifyContent: { xs: 'flex-start', md: 'center' }, overflowX: 'auto', mb: 5, pb: 0.5 }}>
+              <Stack
+                direction="row"
+                spacing={1}
+                role="tablist"
+                aria-label="Funciones del punto de venta"
+                sx={{ p: 0.75, borderRadius: 999, bgcolor: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)', flexShrink: 0 }}
+              >
+                {tabs.map((t, i) => {
+                  const selected = i === active;
+                  return (
+                    <Box
+                      key={t.key}
+                      component="button"
+                      role="tab"
+                      id={`showcase-tab-${t.key}`}
+                      aria-selected={selected}
+                      aria-controls={`showcase-panel-${t.key}`}
+                      tabIndex={selected ? 0 : -1}
+                      onClick={() => select(i)}
+                      onKeyDown={tabKeyHandler(tabs.length, i, select)}
+                      sx={{
+                        position: 'relative', border: 0, cursor: 'pointer', font: 'inherit',
+                        px: { xs: 1.75, md: 2.5 }, minHeight: 44, borderRadius: 999, whiteSpace: 'nowrap',
+                        fontSize: '0.9rem', fontWeight: 600,
+                        bgcolor: 'transparent',
+                        color: selected ? '#04346b' : 'rgba(255,255,255,0.85)',
+                        transition: 'color 0.25s ease',
+                        '&:hover': { color: selected ? '#04346b' : '#ffffff' },
+                        '&:focus-visible': { outline: '2px solid #ffffff', outlineOffset: 2 },
+                      }}
+                    >
+                      {selected && (
+                        <motion.div
+                          layoutId="showcase-tab"
+                          transition={{ type: 'spring', stiffness: 400, damping: 32 }}
+                          style={{ position: 'absolute', inset: 0, borderRadius: 999, background: '#ffffff' }}
+                        />
+                      )}
+                      <Box component="span" sx={{ position: 'relative' }}>{t.label}</Box>
+                    </Box>
+                  );
+                })}
+              </Stack>
+            </Box>
 
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={tab.key}
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -12 }}
-              transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
-            >
-              <Grid container spacing={{ xs: 4, md: 6 }} alignItems="center">
-                <Grid size={{ xs: 12, md: 5 }}>
-                  <Stack spacing={2.25}>
-                    {tab.features.map((f) => (
-                      <Stack key={f.title} direction="row" spacing={1.75} alignItems="flex-start">
-                        <Box sx={{
-                          width: 36, height: 36, borderRadius: 2, flexShrink: 0,
-                          bgcolor: 'rgba(255,255,255,0.12)',
-                          display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        }}>
-                          <f.icon sx={{ fontSize: 20, color: '#ffffff' }} />
-                        </Box>
-                        <Box>
-                          <Typography sx={{ fontWeight: 700, fontSize: '0.98rem', color: '#ffffff', mb: 0.25 }}>{f.title}</Typography>
-                          <Typography sx={{ fontSize: '0.88rem', color: '#cbd5e1', lineHeight: 1.55 }}>{f.desc}</Typography>
-                        </Box>
-                      </Stack>
-                    ))}
-                  </Stack>
-                </Grid>
-                <Grid size={{ xs: 12, md: 7 }}>
-                  <Mockup />
-                </Grid>
-              </Grid>
-            </motion.div>
-          </AnimatePresence>
+            {/* All panels share one grid cell so the section keeps the tallest height and never jumps */}
+            <Box sx={{ display: 'grid' }}>
+              {tabs.map((t, i) => {
+                const selected = i === active;
+                const Mockup = t.mockup;
+                return (
+                  <Box
+                    // Remount on activation so the mockup rows replay their entrance
+                    key={`${t.key}-${selected}`}
+                    role="tabpanel"
+                    id={`showcase-panel-${t.key}`}
+                    aria-labelledby={`showcase-tab-${t.key}`}
+                    aria-hidden={!selected}
+                    sx={{ gridArea: '1 / 1', visibility: selected ? 'visible' : 'hidden' }}
+                  >
+                    <motion.div
+                      initial={selected ? { opacity: 0, y: 12 } : false}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
+                    >
+                      <Grid container spacing={{ xs: 4, md: 6 }} alignItems="center">
+                        <Grid size={{ xs: 12, md: 5 }}>
+                          <Stack spacing={2.25}>
+                            {t.features.map((f) => (
+                              <Stack key={f.title} direction="row" spacing={1.75} alignItems="flex-start">
+                                <Box sx={{
+                                  width: 36, height: 36, borderRadius: 2, flexShrink: 0,
+                                  bgcolor: 'rgba(255,255,255,0.12)',
+                                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                }}>
+                                  <f.icon sx={{ fontSize: 20, color: '#ffffff' }} />
+                                </Box>
+                                <Box>
+                                  <Typography component="h3" sx={{ fontWeight: 700, fontSize: '1rem', color: '#ffffff', mb: 0.25 }}>{f.title}</Typography>
+                                  <Typography sx={{ fontSize: '0.95rem', color: '#cbd5e1', lineHeight: 1.55 }}>{f.desc}</Typography>
+                                </Box>
+                              </Stack>
+                            ))}
+                          </Stack>
+                        </Grid>
+                        <Grid size={{ xs: 12, md: 7 }}>
+                          <Mockup />
+                        </Grid>
+                      </Grid>
+                    </motion.div>
+                  </Box>
+                );
+              })}
+            </Box>
+          </Box>
         </motion.div>
       </Container>
     </Box>

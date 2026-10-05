@@ -44,7 +44,7 @@ const Contact = () => {
           </motion.div>
 
           <motion.div {...contactItem} transition={{ delay: 0.1, duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}>
-            <Typography sx={{ color: 'rgba(255,255,255,0.65)', fontSize: '1.05rem', maxWidth: 440, lineHeight: 1.7 }}>
+            <Typography sx={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.05rem', maxWidth: 440, lineHeight: 1.7 }}>
               Crea tu cuenta y empieza a vender hoy.
               <br />
               O habla con nosotros si tienes preguntas.
@@ -83,7 +83,7 @@ const Contact = () => {
               {['Desde $399/mes', 'Sin contrato', 'Soporte por WhatsApp'].map((text) => (
                 <Stack key={text} direction="row" spacing={0.75} alignItems="center">
                   <Box sx={{ width: 5, height: 5, borderRadius: '50%', bgcolor: '#34d399', flexShrink: 0 }} />
-                  <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.82rem' }}>
+                  <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.9rem' }}>
                     {text}
                   </Typography>
                 </Stack>

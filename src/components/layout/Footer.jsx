@@ -41,9 +41,6 @@ const Footer = () => {
                   <Link href="#product" sx={footerLinkSx}>
                     Punto de venta
                   </Link>
-                  <Link href="#product" sx={footerLinkSx}>
-                    Funcionalidades
-                  </Link>
                   <Link href="#pricing" sx={footerLinkSx}>
                     Precios
                   </Link>
@@ -99,7 +96,7 @@ const Footer = () => {
       <Dialog open={openTerms} onClose={() => setOpenTerms(false)} maxWidth="md" fullWidth>
         <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           Términos y Condiciones
-          <IconButton onClick={() => setOpenTerms(false)}>
+          <IconButton aria-label="Cerrar términos y condiciones" onClick={() => setOpenTerms(false)}>
             <Close />
           </IconButton>
         </DialogTitle>
@@ -161,7 +158,7 @@ const Footer = () => {
       <Dialog open={openPrivacy} onClose={() => setOpenPrivacy(false)} maxWidth="md" fullWidth>
         <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           Política de Privacidad
-          <IconButton onClick={() => setOpenPrivacy(false)}>
+          <IconButton aria-label="Cerrar política de privacidad" onClick={() => setOpenPrivacy(false)}>
             <Close />
           </IconButton>
         </DialogTitle>

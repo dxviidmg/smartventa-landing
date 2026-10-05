@@ -2,6 +2,7 @@
 
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import { ThemeProvider, CssBaseline } from '@mui/material';
+import { MotionConfig } from 'framer-motion';
 import { lightTheme } from '@/theme';
 import { AppProvider } from '@/contexts/AppContext';
 import { WhatsAppProvider } from '@/contexts/WhatsAppContext';
@@ -13,7 +14,7 @@ export default function Providers({ children }) {
         <WhatsAppProvider>
           <ThemeProvider theme={lightTheme}>
             <CssBaseline />
-            {children}
+            <MotionConfig reducedMotion="user">{children}</MotionConfig>
           </ThemeProvider>
         </WhatsAppProvider>
       </AppProvider>

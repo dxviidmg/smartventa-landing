@@ -5,7 +5,12 @@ import { motion } from 'framer-motion';
 import BuildIcon from '@mui/icons-material/Build';
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 import DescriptionIcon from '@mui/icons-material/Description';
-import SmileIcon from '@mui/icons-material/EmojiEmotions';
+import ToysIcon from '@mui/icons-material/Toys';
+import CakeIcon from '@mui/icons-material/Cake';
+import CelebrationIcon from '@mui/icons-material/Celebration';
+import CleaningServicesIcon from '@mui/icons-material/CleaningServices';
+import ContentCutIcon from '@mui/icons-material/ContentCut';
+import SmartphoneIcon from '@mui/icons-material/Smartphone';
 import SpaIcon from '@mui/icons-material/Spa';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import DiamondIcon from '@mui/icons-material/Diamond';
@@ -21,19 +26,19 @@ const industries = [
   { name: 'Ferreterías', icon: BuildIcon },
   { name: 'Refaccionarias', icon: DirectionsCarIcon },
   { name: 'Papelerías', icon: DescriptionIcon },
-  { name: 'Jugueterías', icon: SmileIcon },
+  { name: 'Jugueterías', icon: ToysIcon },
   { name: 'Cosméticos', icon: SpaIcon },
-  { name: 'Dulcerías', icon: SmileIcon },
+  { name: 'Dulcerías', icon: CakeIcon },
   { name: 'Tiendas de regalos', icon: ShoppingBagIcon },
-  { name: 'Productos de limpieza', icon: BuildIcon },
+  { name: 'Productos de limpieza', icon: CleaningServicesIcon },
   { name: 'Joyerías', icon: DiamondIcon },
-  { name: 'Tiendas de celulares', icon: DesktopMacIcon },
+  { name: 'Tiendas de celulares', icon: SmartphoneIcon },
   { name: 'Electrónica', icon: DesktopMacIcon },
   { name: 'Accesorios', icon: ShoppingBagIcon },
-  { name: 'Mercerías', icon: DescriptionIcon },
+  { name: 'Mercerías', icon: ContentCutIcon },
   { name: 'Librerías', icon: MenuBookIcon },
   { name: 'Mueblerías', icon: ChairIcon },
-  { name: 'Tiendas de artículos para fiesta', icon: SmileIcon },
+  { name: 'Tiendas de artículos para fiesta', icon: CelebrationIcon },
   { name: 'Tiendas de mascotas', icon: PetsIcon },
   { name: 'Ópticas', icon: RemoveRedEyeIcon },
   { name: 'Estéticas', icon: SpaIcon },
@@ -48,10 +53,10 @@ const Industries = () => (
           <Stack spacing={4} alignItems="center">
             <Stack spacing={1.5} alignItems="center" textAlign="center" sx={{ maxWidth: 520, mx: 'auto' }}>
               <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' } }}>
-                Diseñado para miles de negocios
+                Hecho para negocios con inventario
               </Typography>
               <Typography sx={{ color: 'text.secondary', fontSize: '1rem' }}>
-                Desde pequeñas tiendas hasta redes con múltiples sucursales
+                Desde una tienda hasta varias sucursales y almacenes
               </Typography>
             </Stack>
 

@@ -27,7 +27,7 @@ export const sectionHeader = {
   },
 };
 
-// Card grid items (Features, Benefits, Pricing, ProductShowcase)
+// Card grid items (Pricing, ProductShowcase, OnboardingSupport)
 export const cardGridItem = {
   initial: { opacity: 0, y: 24 },
   whileInView: { opacity: 1, y: 0 },
@@ -82,4 +82,4 @@ export const ctaButtonSx = {
 };
 
 // Consistent section padding
-export const sectionPadding = { pt: { xs: 4, md: 6 }, pb: { xs: 6, md: 8 }, scrollMarginTop: '50px' };
+export const sectionPadding = { pt: { xs: 4, md: 6 }, pb: { xs: 6, md: 8 }, scrollMarginTop: '80px' };

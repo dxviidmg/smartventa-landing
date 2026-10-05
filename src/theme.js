@@ -20,7 +20,7 @@ export const lightTheme = createTheme({
     secondary: { main: '#047857' },
     surface: { alt: '#CAD2DE' },
     background: { default: '#f0f4f8', paper: '#ffffff' },
-    text: { primary: '#0f172a', secondary: '#64748b' },
+    text: { primary: '#0f172a', secondary: '#475569' },
     divider: '#e2e8f0',
   },
   components: {

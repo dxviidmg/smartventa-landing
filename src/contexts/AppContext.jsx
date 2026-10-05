@@ -12,7 +12,6 @@ export const useApp = () => {
 
 export const AppProvider = ({ children }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
 
   const scrollToSection = useCallback((id) => {
     const el = document.getElementById(id);
@@ -25,10 +24,8 @@ export const AppProvider = ({ children }) => {
   const value = useMemo(() => ({
     drawerOpen,
     setDrawerOpen,
-    scrolled,
-    setScrolled,
     scrollToSection,
-  }), [drawerOpen, scrolled, scrollToSection]);
+  }), [drawerOpen, scrollToSection]);
 
   return (
     <AppContext.Provider value={value}>

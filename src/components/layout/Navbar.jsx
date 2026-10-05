@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState, lazy, Suspense } from 'react';
+import { useState, lazy, Suspense } from 'react';
 import { AppBar, Toolbar, Container, Button, IconButton, Stack } from '@mui/material';
 import { useApp } from '../../contexts/AppContext';
 import { CONFIG, ctaButtonSx } from '../../constants';
@@ -14,30 +14,16 @@ const MenuIcon = () => (
 const LazyDrawer = lazy(() => import('./NavDrawer'));
 
 const NAV_ITEMS = [
-  { label: 'Solución', id: 'multilocal' },
+  { label: 'Sucursales', id: 'multilocal' },
+  { label: 'Funciones', id: 'product' },
+  { label: 'Inventario', id: 'inventory' },
   { label: 'Precios', id: 'pricing' },
-  { label: 'Por qué SmartVenta', id: 'inventory' },
   { label: 'FAQ', id: 'faq' },
 ];
 
 const Navbar = () => {
-  const { drawerOpen, setDrawerOpen, scrolled, scrollToSection, setScrolled } = useApp();
-  const rafId = useRef(0);
+  const { drawerOpen, setDrawerOpen, scrollToSection } = useApp();
   const [drawerLoaded, setDrawerLoaded] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => {
-      cancelAnimationFrame(rafId.current);
-      rafId.current = requestAnimationFrame(() => {
-        setScrolled(window.scrollY > 20);
-      });
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => {
-      window.removeEventListener('scroll', onScroll);
-      cancelAnimationFrame(rafId.current);
-    };
-  }, [setScrolled]);
 
   const handleNav = (id) => { scrollToSection(id); setDrawerOpen(false); };
 
@@ -55,15 +41,21 @@ const Navbar = () => {
       >
         <Container maxWidth="lg">
           <Toolbar disableGutters sx={{ justifyContent: 'space-between', minHeight: { xs: 64 } }}>
-            <img
-              src="/logo.webp"
-              alt={CONFIG.company.name}
-              width={99}
-              height={34}
-              style={{ height: 34, cursor: 'pointer' }}
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              onError={(e) => { e.target.src = '/logo.jpg'; }}
-            />
+            <a
+              href="/"
+              aria-label={`${CONFIG.company.name} — ir al inicio`}
+              onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+              style={{ display: 'flex' }}
+            >
+              <img
+                src="/logo.webp"
+                alt={CONFIG.company.name}
+                width={99}
+                height={34}
+                style={{ height: 34 }}
+                onError={(e) => { e.target.src = '/logo.jpg'; }}
+              />
+            </a>
 
             <Stack direction="row" spacing={0.5} alignItems="center" sx={{ display: { xs: 'none', md: 'flex' } }}>
               {NAV_ITEMS.map(({ label, id }) => (

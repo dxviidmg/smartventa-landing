@@ -26,6 +26,7 @@ const WhatsAppButton = () => {
           bgcolor: '#25D366',
           color: 'white',
           boxShadow: '0 4px 12px rgba(37,211,102,0.4)',
+          transition: 'transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease',
           '&:hover': {
             bgcolor: '#20BD5A',
             transform: 'scale(1.1)',
@@ -40,6 +41,10 @@ const WhatsAppButton = () => {
             bgcolor: 'rgba(37,211,102,0.4)',
             animation: 'ping 2s cubic-bezier(0, 0, 0.2, 1) infinite',
             zIndex: -1,
+          },
+          '@media (prefers-reduced-motion: reduce)': {
+            '&::before': { animation: 'none', display: 'none' },
+            '&:hover': { transform: 'none' },
           },
         }}
       >

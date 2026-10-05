@@ -20,7 +20,7 @@ const BLUE = '#065a9e';
 const BLUE_BG = '#e8f1fb';
 
 const Panel = ({ children }) => (
-  <Box sx={{ mt: 2.5, p: 2, borderRadius: 2, bgcolor: '#ffffff', border: '1px solid #e5e7eb' }}>
+  <Box aria-hidden="true" sx={{ mt: 2.5, p: 2, borderRadius: 2, bgcolor: '#ffffff', border: '1px solid #e5e7eb' }}>
     {children}
   </Box>
 );
@@ -105,7 +105,7 @@ const HistoryVisual = () => {
 };
 
 const ApprovalVisual = () => (
-  <Stack direction="row" alignItems="center" spacing={1} sx={{ mt: 2 }}>
+  <Stack aria-hidden="true" direction="row" alignItems="center" spacing={1} sx={{ mt: 2 }}>
     <Box sx={{ flex: 1, px: 1.25, py: 1, borderRadius: 1.5, bgcolor: '#ffffff', border: '1px solid #e5e7eb' }}>
       <Typography sx={{ fontSize: '0.7rem', color: '#64748b', fontWeight: 600 }}>Vendedor pide</Typography>
       <Typography sx={{ fontSize: '0.82rem', fontWeight: 700, color: '#0f172a' }}>21 → 19</Typography>

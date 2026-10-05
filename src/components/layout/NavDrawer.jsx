@@ -21,7 +21,7 @@ const NavDrawer = ({ open, onClose, navItems, onNav }) => (
   <Drawer anchor="right" open={open} onClose={onClose}>
     <Box sx={{ width: 280, pt: 1 }}>
       <Box sx={{ display: 'flex', justifyContent: 'flex-end', px: 1 }}>
-        <IconButton onClick={onClose}><CloseIcon /></IconButton>
+        <IconButton aria-label="Cerrar menú" onClick={onClose}><CloseIcon /></IconButton>
       </Box>
       <List>
         {navItems.map(({ label, id }) => (

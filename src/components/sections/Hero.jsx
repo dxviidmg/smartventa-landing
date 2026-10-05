@@ -16,7 +16,7 @@ const floatingCards = [
   },
   {
     icon: StorefrontOutlined, label: 'Tienda Centro', value: '$5,630.50',
-    color: '#37857', bg: 'rgba(4,120,87,0.1)', delay: 1.1, float: 6,
+    color: '#047857', bg: 'rgba(4,120,87,0.1)', delay: 1.1, float: 6,
   },
   {
     icon: StorefrontOutlined, label: 'Tienda Sur', value: '$2,240.00',
@@ -140,7 +140,7 @@ const Hero = () => {
 
   return (
     <section style={{
-      minHeight: '100vh',
+      minHeight: '100svh',
       display: 'flex', alignItems: 'center',
       position: 'relative', overflow: 'hidden',
       background: 'radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px) 0 0 / 22px 22px, linear-gradient(145deg, #022347 0%, #04346b 50%, #065a9e 100%)',
@@ -182,7 +182,7 @@ const Hero = () => {
                 <motion.div variants={heroItem}>
                   <Typography
                     sx={{
-                      color: 'rgba(255,255,255,0.75)', maxWidth: 520, mx: { xs: 'auto', md: 0 },
+                      color: 'rgba(255,255,255,0.85)', maxWidth: 520, mx: { xs: 'auto', md: 0 },
                       fontSize: { xs: '1.05rem', md: '1.2rem' }, fontWeight: 400, lineHeight: 1.7,
                     }}
                   >
@@ -223,7 +223,7 @@ const Hero = () => {
                     {['Sin instalación', 'Sin contrato', 'Listo para comenzar'].map((text) => (
                       <Stack key={text} direction="row" spacing={0.75} alignItems="center">
                         <Box sx={{ width: 6, height: 6, borderRadius: '50%', bgcolor: '#34d399', flexShrink: 0 }} />
-                        <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.85rem' }}>
+                        <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.9rem' }}>
                           {text}
                         </Typography>
                       </Stack>
@@ -242,6 +242,7 @@ const Hero = () => {
             >
               <Box>
                 <Stack
+                  aria-hidden="true"
                   direction="row"
                   spacing={1.25}
                   alignItems="center"

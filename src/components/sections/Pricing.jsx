@@ -34,7 +34,7 @@ const CounterControl = ({ label, icon: Icon, value, onIncrement, onDecrement, mi
       disabled={value <= min}
       aria-label={`Reducir ${label.toLowerCase()}`}
       sx={{
-        width: 36, height: 36,
+        width: 44, height: 44,
         border: '1.5px solid',
         borderColor: value <= min ? 'divider' : 'primary.light',
         color: value <= min ? 'text.disabled' : 'primary.main',
@@ -50,7 +50,7 @@ const CounterControl = ({ label, icon: Icon, value, onIncrement, onDecrement, mi
       onClick={onIncrement}
       aria-label={`Agregar ${label.toLowerCase()}`}
       sx={{
-        width: 36, height: 36,
+        width: 44, height: 44,
         border: '1.5px solid',
         borderColor: 'primary.light',
         color: 'primary.main',
