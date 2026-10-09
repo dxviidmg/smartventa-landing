@@ -18,7 +18,7 @@ const CloseIcon = () => (
  * @param {function} props.onNav - Callback when a nav item is clicked, receives section id
  */
 const NavDrawer = ({ open, onClose, navItems, onNav }) => (
-  <Drawer anchor="right" open={open} onClose={onClose} PaperProps={{ sx: { background: 'linear-gradient(80deg, rgb(0,48,204) 0%, rgb(0,164,219) 100%)', color: '#fff' } }}>
+  <Drawer anchor="right" open={open} onClose={onClose} PaperProps={{ sx: { backgroundColor: 'rgb(67,56,202)', color: '#fff' } }}>
     <Box sx={{ width: 280, pt: 1 }}>
       <Box sx={{ display: 'flex', justifyContent: 'flex-end', px: 1 }}>
         <IconButton aria-label="Cerrar menú" onClick={onClose} sx={{ color: '#fff' }}><CloseIcon /></IconButton>

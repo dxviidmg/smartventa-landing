@@ -11,7 +11,9 @@ const MenuIcon = () => (
   </svg>
 );
 
-const GRADIENT = 'linear-gradient(80deg, rgb(0,48,204) 0%, rgb(0,164,219) 100%)';
+// Indigo (blue with a violet touch): clearly different from the cyan-to-blue sections once the bar is solid
+const NAV_SOLID = 'rgba(67,56,202,0.96)';
+const NAV_CLEAR = 'rgba(67,56,202,0)';
 const ACCENT = '#00E0D8';
 const POPPINS = '"Poppins", sans-serif';
 
@@ -49,9 +51,15 @@ const Navbar = () => {
         position="fixed"
         elevation={0}
         sx={{
-          background: { xs: GRADIENT, md: scrolled ? GRADIENT : 'transparent' },
-          py: { xs: '15px', md: scrolled ? '15px' : '45px' },
-          transition: 'padding 0.3s ease, background 0.3s ease',
+          backgroundColor: { xs: NAV_SOLID, md: scrolled ? NAV_SOLID : NAV_CLEAR },
+          backgroundImage: 'none',
+          backdropFilter: { xs: 'blur(10px)', md: scrolled ? 'blur(10px)' : 'blur(0px)' },
+          boxShadow: { xs: '0 6px 24px rgba(30,20,110,0.30)', md: scrolled ? '0 6px 24px rgba(30,20,110,0.30)' : 'none' },
+          borderBottom: '1px solid',
+          borderColor: { xs: 'rgba(255,255,255,0.12)', md: scrolled ? 'rgba(255,255,255,0.12)' : 'rgba(255,255,255,0)' },
+          py: '15px',
+          transition: 'background-color 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease',
+          '@media (prefers-reduced-motion: reduce)': { transition: 'none' },
         }}
       >
         <Container maxWidth="lg">
@@ -60,7 +68,7 @@ const Navbar = () => {
               href="/"
               aria-label={`${CONFIG.company.name} — ir al inicio`}
               onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-              style={{ display: 'flex' }}
+              style={{ display: 'flex', alignItems: 'center', minHeight: 44 }}
             >
               <img
                 src="/logo-transparent.png"
@@ -114,7 +122,7 @@ const Navbar = () => {
             <IconButton
               aria-label="Abrir menú de navegación"
               onClick={handleOpenDrawer}
-              sx={{ display: { xs: 'flex', md: 'none' }, color: 'white', ml: 'auto' }}
+              sx={{ display: { xs: 'flex', md: 'none' }, color: 'white', ml: 'auto', width: 44, height: 44 }}
             >
               <MenuIcon />
             </IconButton>
