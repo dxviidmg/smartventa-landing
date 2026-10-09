@@ -1,50 +1,11 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Box, Container, Typography, Stack } from '@mui/material';
+import { Box, Container } from '@mui/material';
 import { motion, AnimatePresence } from 'framer-motion';
-import BuildIcon from '@mui/icons-material/Build';
-import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
-import DescriptionIcon from '@mui/icons-material/Description';
-import ToysIcon from '@mui/icons-material/Toys';
-import CakeIcon from '@mui/icons-material/Cake';
-import CelebrationIcon from '@mui/icons-material/Celebration';
-import CleaningServicesIcon from '@mui/icons-material/CleaningServices';
-import ContentCutIcon from '@mui/icons-material/ContentCut';
-import SmartphoneIcon from '@mui/icons-material/Smartphone';
-import SpaIcon from '@mui/icons-material/Spa';
-import MenuBookIcon from '@mui/icons-material/MenuBook';
-import DiamondIcon from '@mui/icons-material/Diamond';
-import DesktopMacIcon from '@mui/icons-material/DesktopMac';
-import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
-import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
-import PetsIcon from '@mui/icons-material/Pets';
-import ChairIcon from '@mui/icons-material/Chair';
-import { fadeUp } from '../../constants';
-
-const industries = [
-  { name: 'Ferreterías', color: '#EA580C', icon: BuildIcon },
-  { name: 'Refaccionarias', color: '#B91C1C', icon: DirectionsCarIcon },
-  { name: 'Papelerías', color: '#0284C7', icon: DescriptionIcon },
-  { name: 'Jugueterías', color: '#D97706', icon: ToysIcon },
-  { name: 'Cosméticos', color: '#C026D3', icon: SpaIcon },
-  { name: 'Dulcerías', color: '#DB2777', icon: CakeIcon },
-  { name: 'Tiendas de regalos', color: '#9333EA', icon: ShoppingBagIcon },
-  { name: 'Productos de limpieza', color: '#0891B2', icon: CleaningServicesIcon },
-  { name: 'Joyerías', color: '#0F766E', icon: DiamondIcon },
-  { name: 'Tiendas de celulares', color: '#334155', icon: SmartphoneIcon },
-  { name: 'Electrónica', color: '#4F46E5', icon: DesktopMacIcon },
-  { name: 'Accesorios', color: '#16A34A', icon: ShoppingBagIcon },
-  { name: 'Mercerías', color: '#9D174D', icon: ContentCutIcon },
-  { name: 'Librerías', color: '#1E3A8A', icon: MenuBookIcon },
-  { name: 'Mueblerías', color: '#854D0E', icon: ChairIcon },
-  { name: 'Tiendas de artículos para fiesta', color: '#E11D48', icon: CelebrationIcon },
-  { name: 'Tiendas de mascotas', color: '#4D7C0F', icon: PetsIcon },
-  { name: 'Ópticas', color: '#1D4ED8', icon: RemoveRedEyeIcon },
-  { name: 'Estéticas', color: '#A21CAF', icon: SpaIcon },
-];
-
-const POPPINS = '"Poppins", sans-serif';
+import { POPPINS } from '../../constants';
+import SectionHeading from '../ui/SectionHeading';
+import { industries } from '../../data/industries';
 
 const Slot = ({ item, delay }) => (
   <Box sx={{ position: 'relative', minHeight: { xs: 112, sm: 104, lg: 84 }, overflow: 'hidden' }}>
@@ -90,17 +51,13 @@ const Industries = () => {
   return (
     <Box component="section" id="industries" aria-labelledby="industries-title" sx={{ py: { xs: 6, md: 8 }, bgcolor: '#fff', scrollMarginTop: '80px' }}>
       <Container maxWidth="lg">
-        <Stack spacing={1.5} alignItems="center" textAlign="center" sx={{ maxWidth: 760, mx: 'auto', mb: { xs: 3, md: 4 } }}>
-          <motion.div {...fadeUp}>
-            <Typography
-              id="industries-title"
-              variant="h2"
-              sx={{ fontFamily: POPPINS, fontWeight: 500, letterSpacing: 0, fontSize: { xs: 26, md: 40 }, lineHeight: 1.2, color: '#242F3E' }}
-            >
-              Hecho para tu negocio
-            </Typography>
-          </motion.div>
-        </Stack>
+        <SectionHeading
+          id="industries-title"
+          title="Hecho para tu negocio"
+          maxWidth={760}
+          mb={{ xs: 3, md: 4 }}
+          titleSx={{ fontSize: { xs: 26, md: 40 } }}
+        />
 
         <Box aria-hidden="true" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} sx={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', alignItems: 'center', columnGap: { xs: 1, md: 3 }, position: 'relative' }}>
           {Array.from({ length: COLS }, (_, j) => (
