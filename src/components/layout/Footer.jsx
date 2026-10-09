@@ -8,7 +8,7 @@ import { CONFIG } from '../../constants';
 const POPPINS = '"Poppins", sans-serif';
 const ACCENT = '#00E0D8';
 const footerLinkSx = {
-  color: 'rgba(255,255,255,0.82)', textDecoration: 'none', font: 'inherit', fontSize: 15, cursor: 'pointer', background: 'none', border: 0, p: 0,
+  color: 'rgba(255,255,255,0.82)', textDecoration: 'none', font: 'inherit', fontSize: 15, cursor: 'pointer', background: 'none', border: 0, p: 0, display: 'inline-flex', alignItems: 'center', minHeight: 44,
   '&:hover': { color: ACCENT }, '&:focus-visible': { outline: '2px solid #fff', outlineOffset: 3, borderRadius: '4px' }, transition: 'color 0.25s',
 };
 const columnTitleSx = { fontFamily: POPPINS, fontWeight: 500, mb: 2, fontSize: '1.05rem', color: '#fff' };
@@ -27,18 +27,18 @@ const Footer = () => {
       <Box component="footer" sx={{ background: 'linear-gradient(134deg, #00269E 0%, #00103F 100%)', color: 'white', pt: { xs: 7, md: 9 }, pb: 4 }}>
         <Container maxWidth="lg">
           <Stack spacing={4}>
-            <Stack direction={{ xs: 'column', md: 'row' }} spacing={{ xs: 4, md: 6 }}>
-              <Box sx={{ flex: { xs: '0 0 auto', md: 1 }, minWidth: { xs: '100%', md: '200px' } }}>
+            <Box sx={{ display: 'grid', gap: { xs: 3, md: 6 }, gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', md: '1.4fr 1fr 1fr 1fr' } }}>
+              <Box sx={{ gridColumn: { sm: '1 / -1', md: 'auto' } }}>
                 <Box component="img" src="/logo-transparent.png" alt={CONFIG.company.name} width={120} height={41} sx={{ display: 'block', height: 41, width: 'auto', mb: 2 }} />
                 <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.82)', lineHeight: 1.7, fontSize: 15, maxWidth: 300 }}>
                   Punto de venta en la nube para controlar tu negocio estés donde estés, con una o varias sucursales.
                 </Typography>
               </Box>
-              <Stack spacing={2} sx={{ flex: { xs: '0 0 auto', md: 1 }, minWidth: { xs: '100%', md: '150px' } }}>
+              <Stack spacing={1}>
                 <Typography variant="h6" component="p" sx={columnTitleSx}>
                   Producto
                 </Typography>
-                <Stack direction="column" spacing={1.5} component="nav" aria-label="Enlaces del sitio">
+                <Stack direction="column" spacing={0} component="nav" aria-label="Enlaces del sitio">
                   <Link href="#product" sx={footerLinkSx}>
                     Funciones
                   </Link>
@@ -50,11 +50,11 @@ const Footer = () => {
                   </Link>
                 </Stack>
               </Stack>
-              <Stack spacing={2} sx={{ flex: { xs: '0 0 auto', md: 1 }, minWidth: { xs: '100%', md: '150px' }, alignItems: 'flex-start' }}>
+              <Stack spacing={1} sx={{ alignItems: 'flex-start' }}>
                 <Typography variant="h6" component="p" sx={columnTitleSx}>
                   Legal
                 </Typography>
-                <Stack direction="column" spacing={1.5}>
+                <Stack direction="column" spacing={0}>
                   <Link
                     component="button"
                     onClick={() => setOpenTerms(true)}
@@ -71,17 +71,17 @@ const Footer = () => {
                   </Link>
                 </Stack>
               </Stack>
-              <Stack spacing={2} sx={{ flex: { xs: '0 0 auto', md: 1 }, minWidth: { xs: '100%', md: '200px' } }}>
+              <Stack spacing={1}>
                 <Typography variant="h6" component="p" sx={columnTitleSx}>
                   Contacto
                 </Typography>
-                <Stack direction="column" spacing={1.5}>
+                <Stack direction="column" spacing={0}>
                   <Link href={`https://wa.me/${CONFIG.contact.phone.replace(/\D/g, '')}`} target="_blank" rel="noopener noreferrer" sx={footerLinkSx}>
                     WhatsApp
                   </Link>
                 </Stack>
               </Stack>
-            </Stack>
+            </Box>
             <Box sx={{ borderTop: '1px solid rgba(255,255,255,0.2)', pt: 3 }}>
               <Stack direction={{ xs: 'column', md: 'row' }} justifyContent="space-between" alignItems="center" spacing={2}>
                 <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.75)', textAlign: { xs: 'center', md: 'left' } }}>

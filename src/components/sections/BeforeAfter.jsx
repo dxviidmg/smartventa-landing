@@ -192,7 +192,7 @@ const BeforeAfter = () => {
           sx={{ display: 'grid', gap: 3, alignItems: 'stretch', gridTemplateColumns: { xs: '1fr', md: 'repeat(12, 1fr)' } }}
         >
           <Box sx={{ gridColumn: { md: 'span 4' }, bgcolor: '#EFF6FF', borderRadius: '24px', p: { xs: 2, md: 2 }, display: 'grid', placeItems: 'center', border: '1px solid #DBEAFE' }}>
-            <svg viewBox="0 0 420 330" role="img" aria-label={`Ilustración del caso: ${sc.title}`} style={{ width: '100%', height: 'auto', display: 'block' }}>
+            <svg viewBox="0 0 420 330" role="img" aria-label={`Ilustración del caso: ${sc.title}`} style={{ width: '100%', maxWidth: 420, height: 'auto', display: 'block', margin: '0 auto' }}>
               <Arrows />
               {scenes[key]}
             </svg>

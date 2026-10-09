@@ -32,7 +32,7 @@ const Stats = () => (
           >
             <Box
               sx={{
-                display: 'flex', alignItems: 'center', justifyContent: 'center', gap: { xs: 2, md: 3 }, px: 2,
+                display: 'flex', alignItems: 'center', justifyContent: { xs: 'flex-start', md: 'center' }, gap: { xs: 2, md: 3 }, px: { xs: 3, md: 2 },
                 borderLeft: { md: i ? '1px solid rgba(255,255,255,0.3)' : 'none' },
               }}
             >

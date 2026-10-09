@@ -52,7 +52,7 @@ const TableHead = ({ cols, template }) => (
     px: 1.5, py: 0.9, bgcolor: NAVY, borderRadius: '8px 8px 0 0',
   }}>
     {cols.map((c, i) => (
-      <Typography key={c} sx={{ fontSize: '0.7rem', fontWeight: 700, color: '#ffffff', textAlign: i === 0 ? 'left' : 'right' }}>{c}</Typography>
+      <Typography key={c} sx={{ fontSize: '0.75rem', fontWeight: 700, color: '#ffffff', textAlign: i === 0 ? 'left' : 'right' }}>{c}</Typography>
     ))}
   </Box>
 );
@@ -71,7 +71,7 @@ const Row = ({ cells, template, delay = 0 }) => (
 );
 
 const Chip = ({ children, color, bg }) => (
-  <Box component="span" sx={{ px: 0.9, py: 0.2, borderRadius: 1, fontSize: '0.65rem', fontWeight: 700, color, bgcolor: bg, whiteSpace: 'nowrap' }}>
+  <Box component="span" sx={{ px: 0.9, py: 0.2, borderRadius: 1, fontSize: '0.75rem', fontWeight: 700, color, bgcolor: bg, whiteSpace: 'nowrap' }}>
     {children}
   </Box>
 );
