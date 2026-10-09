@@ -1,27 +1,13 @@
 'use client';
 
-import { useState } from 'react';
 import { Box, Container, Typography, Stack, Button } from '@mui/material';
-import { motion } from 'framer-motion';
 import ArrowForward from '@mui/icons-material/ArrowForward';
 import CheckCircle from '@mui/icons-material/CheckCircle';
-import { useWhatsApp } from '../../contexts/WhatsAppContext';
-import { fadeUp, CONFIG } from '../../constants';
 
-const PRICE_TABLE = { 1: 399, 2: 789, 3: 1149, 4: 1499, 5: 1799, 6: 2199, 7: 2499, 8: 2799, 9: 3099, 10: 3399 };
-const MAX_UNITS_WITH_PRICE = 10;
-const MIN_TOTAL_UNITS = 1;
+import { POPPINS, GRADIENT, BLUE_BG, pillSx, amberSx } from '../../constants';
+import SectionHeading from '../ui/SectionHeading';
+import { usePricing, formatPrice, formatPriceDecimals, MAX_UNITS_WITH_PRICE } from '../../hooks/usePricing';
 
-const addThousands = (intStr) => intStr.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-const formatPrice = (amount) => `$${addThousands(String(amount))}`;
-const formatPriceDecimals = (amount) => {
-  const [intPart, decPart] = amount.toFixed(2).split('.');
-  return `$${addThousands(intPart)}.${decPart}`;
-};
-
-const POPPINS = '"Poppins", sans-serif';
-const GRADIENT = 'linear-gradient(80deg, rgb(0,48,204) 0%, rgb(0,164,219) 100%)';
-const BLUE_BG = 'linear-gradient(134deg, #0079BE 0%, #00269E 100%)';
 const INCLUDED = [
   'Punto de venta, inventario y traspasos',
   'Distribuciones entre sucursales',
@@ -30,43 +16,7 @@ const INCLUDED = [
   'Mes a mes, listo para usar desde el navegador',
 ];
 
-/** Shared calculator state: same prices and rules for every layout. */
-const usePricing = () => {
-  const { openWhatsApp } = useWhatsApp();
-  const [stores, setStores] = useState(1);
-  const needsQuote = stores > MAX_UNITS_WITH_PRICE;
-  const price = PRICE_TABLE[stores] ?? null;
-  const pricePerUnit = price && stores > 0 ? price / stores : null;
-  const hasDiscount = stores >= 2 && pricePerUnit;
-  const ctaMessage = needsQuote
-    ? `Hola, tengo ${stores} sucursales y me interesa SmartVenta. Quisiera un precio personalizado.`
-    : `Hola, me interesa SmartVenta para ${stores} sucursal${stores !== 1 ? 'es' : ''}. Quiero comenzar.`;
-  const cta = () => (needsQuote ? openWhatsApp(ctaMessage) : window.open(`${CONFIG.urls.app}/registrarme`, '_blank'));
-  return {
-    stores, setStores, needsQuote, price, pricePerUnit, hasDiscount, cta,
-    ctaLabel: needsQuote ? 'Contáctanos' : 'Probar SmartVenta',
-  };
-};
-
-const pillBtn = () => ({
-  px: '40px', py: '13px', fontFamily: POPPINS, fontWeight: 500, fontSize: 16, borderRadius: '45px', whiteSpace: 'nowrap',
-  bgcolor: '#FFB020', color: '#0B1B4D', boxShadow: '0 8px 24px rgba(255,176,32,0.35)',
-  '&:hover': { bgcolor: '#F59E0B' },
-});
-
-const Heading = ({ dark }) => (
-  <Stack spacing={1.5} alignItems="center" textAlign="center" sx={{ mb: { xs: 4, md: 6 }, maxWidth: 680, mx: 'auto' }}>
-    <Typography sx={{ fontFamily: POPPINS, fontWeight: 500, fontSize: 14, letterSpacing: 0.5, color: dark ? '#BAE6FD' : '#0030AB' }}>Precios transparentes</Typography>
-    <motion.div {...fadeUp}>
-      <Typography id="pricing-title" variant="h2" sx={{ fontFamily: POPPINS, fontWeight: 500, letterSpacing: 0, fontSize: { xs: 30, md: 40 }, lineHeight: 1.2, color: dark ? '#fff' : '#242F3E' }}>
-        Paga solo por lo que usas
-      </Typography>
-    </motion.div>
-    <Typography sx={{ color: dark ? 'rgba(255,255,255,0.92)' : '#5B6472', fontSize: { xs: 15, md: 16 }, lineHeight: 1.7 }}>
-      Un precio claro que baja por sucursal conforme creces.
-    </Typography>
-  </Stack>
-);
+const pillBtn = () => ({ ...pillSx, ...amberSx, px: '40px', py: '13px' });
 
 const PriceBlock = ({ p, dark, size = 56 }) =>
   p.needsQuote ? (
@@ -106,7 +56,7 @@ const Pricing = () => {
   return (
     <Box component="section" id="pricing" aria-labelledby="pricing-title" sx={{ py: { xs: 7, md: 10 }, bgcolor: '#fff', scrollMarginTop: '80px' }}>
       <Container maxWidth="md">
-        <Heading />
+        <SectionHeading id="pricing-title" eyebrow="Precios transparentes" title="Paga solo por lo que usas" subtitle="Un precio claro que baja por sucursal conforme creces." maxWidth={680} />
         <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, borderRadius: '28px', border: '1px solid #DBEAFE', overflow: 'hidden', boxShadow: '0 20px 44px rgba(0,60,180,0.10)', maxWidth: 880, mx: 'auto' }}>
           <Box sx={{ p: { xs: 3, sm: 4.5 }, bgcolor: '#fff' }}>
             <Box sx={{ textAlign: 'center', mb: 2 }}>
