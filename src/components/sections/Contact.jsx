@@ -4,6 +4,7 @@ import { Box, Container, Typography, Stack, Button } from '@mui/material';
 import { motion } from 'framer-motion';
 import ArrowForward from '@mui/icons-material/ArrowForward';
 import { useWhatsApp } from '../../contexts/WhatsAppContext';
+import OwnerPhoneIllustration from '../ui/OwnerPhoneIllustration';
 import { CONFIG, fadeUp } from '../../constants';
 
 const POPPINS = '"Poppins", sans-serif';
@@ -51,45 +52,55 @@ const Contact = () => {
           </Stack>
         </motion.div>
 
-        <Box component="ol" sx={{ listStyle: 'none', m: 0, p: 0, mb: { xs: 5, md: 6 }, display: 'grid', gap: 3, gridTemplateColumns: { xs: '1fr', md: 'repeat(3, 1fr)' } }}>
-          {steps.map((st, i) => (
-            <motion.li
-              key={st.title}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-30px' }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
-            >
-              <Box sx={{ height: '100%', p: 3.5, borderRadius: '24px', bgcolor: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.28)', backdropFilter: 'blur(6px)' }}>
-                <Box aria-hidden="true" sx={{ width: 44, height: 44, mb: 2, borderRadius: '50%', bgcolor: '#fff', color: '#00269E', display: 'grid', placeItems: 'center', fontFamily: POPPINS, fontWeight: 600, fontSize: 20 }}>
-                  {i + 1}
-                </Box>
-                <Typography component="h3" sx={{ fontFamily: POPPINS, fontWeight: 500, fontSize: 19, color: '#fff', mb: 1 }}>{st.title}</Typography>
-                <Typography sx={{ fontSize: 15, lineHeight: 1.7, color: 'rgba(255,255,255,0.92)' }}>{st.desc}</Typography>
-              </Box>
-            </motion.li>
-          ))}
-        </Box>
+        <Box sx={{ display: 'grid', gap: { xs: 4, md: 6 }, gridTemplateColumns: { xs: '1fr', md: '5fr 7fr' }, alignItems: 'center' }}>
+          <Box sx={{ maxWidth: { xs: 320, md: 'none' }, mx: 'auto', width: '100%' }}>
+            <OwnerPhoneIllustration label="El dueño revisa una venta desde su celular, con el catálogo ya cargado" />
+          </Box>
 
-        <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} justifyContent="center" alignItems="center">
-          <Button
-            variant="contained"
-            endIcon={<ArrowForward />}
-            href={`${CONFIG.urls.app}/registrarme`}
-            target="_blank"
-            rel="noopener noreferrer"
-            sx={{ ...pill, bgcolor: '#fff', color: '#00269E', '&:hover': { bgcolor: '#E0F2FE' } }}
-          >
-            Probar SmartVenta
-          </Button>
-          <Button
-            variant="outlined"
-            onClick={() => openWhatsApp('Hola, quiero conocer más sobre SmartVenta')}
-            sx={{ ...pill, color: '#fff', borderColor: 'rgba(255,255,255,0.7)', borderWidth: 2, '&:hover': { borderColor: '#fff', borderWidth: 2, bgcolor: 'rgba(255,255,255,0.1)' } }}
-          >
-            Hablar con nosotros
-          </Button>
-        </Stack>
+          <Box>
+            <Box component="ol" sx={{ listStyle: 'none', m: 0, p: 0, mb: 4, display: 'grid', gap: 2 }}>
+              {steps.map((st, i) => (
+                <motion.li
+                  key={st.title}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-30px' }}
+                  transition={{ delay: i * 0.1, duration: 0.5 }}
+                >
+                  <Stack direction="row" spacing={2.5} alignItems="flex-start" sx={{ p: 3, borderRadius: '24px', bgcolor: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.28)', backdropFilter: 'blur(6px)' }}>
+                    <Box aria-hidden="true" sx={{ width: 44, height: 44, flexShrink: 0, borderRadius: '50%', bgcolor: i === 0 ? '#FFB020' : '#fff', color: i === 0 ? '#0B1B4D' : '#00269E', display: 'grid', placeItems: 'center', fontFamily: POPPINS, fontWeight: 600, fontSize: 20 }}>
+                      {i + 1}
+                    </Box>
+                    <Box>
+                      <Typography component="h3" sx={{ fontFamily: POPPINS, fontWeight: 500, fontSize: 19, color: '#fff', mb: 0.5 }}>{st.title}</Typography>
+                      <Typography sx={{ fontSize: 15, lineHeight: 1.7, color: 'rgba(255,255,255,0.92)' }}>{st.desc}</Typography>
+                    </Box>
+                  </Stack>
+                </motion.li>
+              ))}
+            </Box>
+
+            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} alignItems={{ xs: 'stretch', sm: 'center' }}>
+              <Button
+                variant="contained"
+                endIcon={<ArrowForward />}
+                href={`${CONFIG.urls.app}/registrarme`}
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{ ...pill, bgcolor: '#FFB020', color: '#0B1B4D', boxShadow: '0 8px 24px rgba(255,176,32,0.35)', '&:hover': { bgcolor: '#F59E0B' } }}
+              >
+                Probar SmartVenta
+              </Button>
+              <Button
+                variant="outlined"
+                onClick={() => openWhatsApp('Hola, quiero conocer más sobre SmartVenta')}
+                sx={{ ...pill, color: '#fff', borderColor: 'rgba(255,255,255,0.7)', borderWidth: 2, '&:hover': { borderColor: '#fff', borderWidth: 2, bgcolor: 'rgba(255,255,255,0.1)' } }}
+              >
+                Hablar con nosotros
+              </Button>
+            </Stack>
+          </Box>
+        </Box>
       </Container>
     </Box>
   );
