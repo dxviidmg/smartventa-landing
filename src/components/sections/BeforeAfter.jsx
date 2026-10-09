@@ -40,8 +40,12 @@ const BeforeAfter = () => {
       <Container maxWidth="lg">
         <SectionHeading id="situation-title" title="Una solución para cada tipo de negocio" mb={{ xs: 3.5, md: 5 }} />
 
-        <Box sx={{ display: 'flex', justifyContent: { xs: 'flex-start', md: 'center' }, overflowX: 'auto', pb: 0.5, mb: 3.5 }}>
-          <Stack direction="row" spacing={1} role="tablist" aria-label="Configuración de tu negocio" sx={{ flexShrink: 0 }}>
+        <Box sx={{ display: 'flex', justifyContent: 'center', mb: 3.5 }}>
+          <Box
+            role="tablist"
+            aria-label="Configuración de tu negocio"
+            sx={{ display: 'grid', gap: 1, width: { xs: '100%', md: 'auto' }, gridTemplateColumns: { xs: 'repeat(2, 1fr)', md: 'repeat(4, auto)' }, gridAutoRows: { xs: '1fr', md: 'auto' } }}
+          >
             {scenarioKeys.map((k, i) => {
               const selected = i === v;
               return (
@@ -57,7 +61,7 @@ const BeforeAfter = () => {
                   onKeyDown={tabKeys(scenarioKeys.length, i, setV)}
                   sx={{
                     border: 0, cursor: 'pointer', font: 'inherit', fontFamily: POPPINS, fontWeight: 500,
-                    px: 2.5, minHeight: 44, borderRadius: '45px', whiteSpace: 'nowrap', fontSize: 14, transition: 'background-color .2s',
+                    px: { xs: 1.5, md: 2.5 }, py: 0.75, minHeight: 44, borderRadius: '45px', whiteSpace: { xs: 'normal', md: 'nowrap' }, textAlign: 'center', lineHeight: 1.25, fontSize: 14, transition: 'background-color .2s',
                     bgcolor: selected ? NAVY : '#FBFCFE', border: '1px solid', borderColor: selected ? NAVY : '#DDE3EC', color: selected ? '#fff' : '#475569',
                     '&:hover': { bgcolor: selected ? NAVY : '#F1F4F9' },
                     '&:focus-visible': { outline: `3px solid ${NAVY}`, outlineOffset: 2 },
@@ -67,7 +71,7 @@ const BeforeAfter = () => {
                 </Box>
               );
             })}
-          </Stack>
+          </Box>
         </Box>
 
         <Box
