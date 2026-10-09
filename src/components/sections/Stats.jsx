@@ -11,8 +11,8 @@ const POPPINS = '"Poppins", sans-serif';
 const BLUE_BG = 'linear-gradient(134deg, #0079BE 0%, #00269E 100%)';
 
 const stats = [
-  { value: 163475, label: 'ventas procesadas', icon: ReceiptLong },
-  { value: 2025, label: 'operando desde enero', plain: true, icon: CalendarMonth },
+  { value: 163475, label: 'ventas procesadas con SmartVenta', icon: ReceiptLong },
+  { value: 'Enero 2025', label: 'inicio de operaciones', plain: true, icon: CalendarMonth },
 ];
 
 const Stats = () => (

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Box, Container, Typography, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
 import Check from '@mui/icons-material/Check';
-import Close from '@mui/icons-material/Close';
+import Flag from '@mui/icons-material/Flag';
 import { fadeUp } from '../../constants';
 import { Store, Warehouse } from '../ui/HeroIllustration';
 
@@ -18,53 +18,53 @@ const scenarios = {
   single: {
     title: '1 tienda',
     problems: [
-      'Estás atado al negocio: sin ti, nadie sabe cuánto se vendió.',
-      'Tu información vive en una sola computadora. Si falla, la pierdes.',
-      'El corte de caja es manual, lento y propenso a errores.',
+      'Saber cuánto vendes aunque no estés en la tienda.',
+      'Mantener tu información protegida y disponible.',
+      'Cerrar tu caja de forma rápida y precisa.',
     ],
     solutions: [
-      'Revisa tus ventas desde cualquier lugar.',
-      'Tus datos están seguros en la nube.',
-      'El corte de caja y tu ganancia se calculan solos.',
+      'Consulta tus ventas desde cualquier lugar, en tiempo real.',
+      'Tus datos quedan respaldados en la nube, siempre contigo.',
+      'Tu corte de caja y tu ganancia se calculan automáticamente.',
     ],
   },
   multi: {
     title: '2 o más tiendas',
     problems: [
-      'Siempre hay una tienda sin supervisión.',
-      'El cliente busca un producto que está en otra tienda y se va.',
-      'Cambiar precios tienda por tienda es lento y genera errores.',
+      'Supervisar todas tus tiendas al mismo tiempo.',
+      'Ofrecer al cliente el producto que busca, esté en la sucursal que esté.',
+      'Actualizar precios en todas tus tiendas sin esfuerzo.',
     ],
     solutions: [
-      'Ves lo que pasa en todas tus tiendas desde un solo lugar.',
-      'Consultas el stock de cada sucursal y haces traspasos al instante.',
-      'Cambias un precio una vez y se aplica en todas.',
+      'Ve todas tus tiendas en una sola pantalla.',
+      'Consulta el stock de cada sucursal y haz traspasos al instante.',
+      'Cambia un precio una vez y se aplica en todas.',
     ],
   },
   singleWarehouse: {
     title: '1 tienda + 1 almacén',
     problems: [
-      'Tienda o almacén siempre queda desatendido.',
-      'Supones cuánto hay en el almacén, pero nunca lo sabes.',
-      'Sale mercancía sin registro y nadie responde por ella.',
+      'Tener tienda y almacén siempre bajo supervisión.',
+      'Saber con certeza cuánto hay en tu almacén.',
+      'Registrar cada salida de mercancía.',
     ],
     solutions: [
-      'Ves tienda y almacén sin estar presente.',
-      'Sabes qué hay y cuándo reponer según lo que vendes.',
-      'Cada movimiento registra quién, qué, cuándo y dónde.',
+      'Controla tienda y almacén aunque no estés presente.',
+      'Conoce tu stock real y cuándo reponer según lo que vendes.',
+      'Cada movimiento queda registrado: quién, qué, cuándo y dónde.',
     ],
   },
   multiWarehouse: {
     title: 'Varias tiendas + almacenes',
     problems: [
-      'Pierdes el control de lo que pasa en cada ubicación.',
-      'Sin trazabilidad, los traspasos y el surtido se complican.',
-      'No sabes qué producto hay en cada lugar ni cuánto.',
+      'Tener el control de cada ubicación.',
+      'Mover mercancía entre tiendas y almacenes con orden.',
+      'Conocer el stock exacto de cada lugar.',
     ],
     solutions: [
-      'Ves todas tus ubicaciones en una sola pantalla.',
-      'Traspasos y surtido quedan registrados de principio a fin.',
-      'Conoces el stock exacto de cada tienda y almacén, en tiempo real.',
+      'Todas tus ubicaciones en una sola pantalla.',
+      'Traspasos y surtido registrados de principio a fin.',
+      'Stock exacto por tienda y almacén, en tiempo real.',
     ],
   },
 };
@@ -79,9 +79,9 @@ const tabKeys = (count, index, select) => (e) => {
   e.currentTarget.parentElement?.querySelectorAll('[role="tab"]')[next]?.focus();
 };
 
-const BadIcon = ({ light }) => (
-  <Box aria-hidden="true" sx={{ width: 26, height: 26, flexShrink: 0, borderRadius: '50%', bgcolor: light ? 'rgba(254,202,202,0.25)' : '#FEE2E2', color: light ? '#FECACA' : '#B91C1C', display: 'grid', placeItems: 'center' }}>
-    <Close sx={{ fontSize: 16 }} />
+const BadIcon = () => (
+  <Box aria-hidden="true" sx={{ width: 26, height: 26, flexShrink: 0, borderRadius: '50%', bgcolor: '#DBEAFE', color: '#0030AB', display: 'grid', placeItems: 'center' }}>
+    <Flag sx={{ fontSize: 15 }} />
   </Box>
 );
 const GoodIcon = ({ onDark }) => (
@@ -150,12 +150,9 @@ const BeforeAfter = () => {
               variant="h2"
               sx={{ fontFamily: POPPINS, fontWeight: 500, letterSpacing: 0, fontSize: { xs: 30, md: 40 }, lineHeight: 1.2, color: '#242F3E' }}
             >
-              Tu situación
+              Una solución para cada tipo de negocio
             </Typography>
           </motion.div>
-          <Typography sx={{ color: '#5B6472', fontSize: { xs: 15, md: 16 } }}>
-            Elige tu caso y ve cómo SmartVenta lo resuelve.
-          </Typography>
         </Stack>
 
         <Box sx={{ display: 'flex', justifyContent: { xs: 'flex-start', md: 'center' }, overflowX: 'auto', pb: 0.5, mb: 3.5 }}>
@@ -202,7 +199,7 @@ const BeforeAfter = () => {
           </Box>
 
             <Box sx={{ gridColumn: { md: 'span 4' }, p: { xs: 3, md: 3.5 }, borderRadius: '24px', bgcolor: '#F8FAFC', border: '1px solid #E6EDF5' }}>
-              <Typography sx={{ fontFamily: POPPINS, fontWeight: 500, fontSize: 18, color: '#B91C1C', mb: 2 }}>Hoy</Typography>
+              <Typography sx={{ fontFamily: POPPINS, fontWeight: 500, fontSize: 18, color: '#0030AB', mb: 2 }}>Lo que buscas</Typography>
               <Stack spacing={1.75}>
                 {sc.problems.map((p) => (
                   <Stack key={p} direction="row" spacing={1.5} alignItems="flex-start">
@@ -213,7 +210,7 @@ const BeforeAfter = () => {
               </Stack>
             </Box>
             <Box sx={{ gridColumn: { md: 'span 4' }, p: { xs: 3, md: 3.5 }, borderRadius: '24px', background: BLUE_BG, boxShadow: '0 16px 36px rgba(0,60,180,0.22)' }}>
-              <Typography sx={{ fontFamily: POPPINS, fontWeight: 500, fontSize: 18, color: '#fff', mb: 2 }}>Con SmartVenta</Typography>
+              <Typography sx={{ fontFamily: POPPINS, fontWeight: 500, fontSize: 18, color: '#fff', mb: 2 }}>Lo que logras con SmartVenta</Typography>
               <Stack spacing={1.75}>
                 {sc.solutions.map((p) => (
                   <Stack key={p} direction="row" spacing={1.5} alignItems="flex-start">
