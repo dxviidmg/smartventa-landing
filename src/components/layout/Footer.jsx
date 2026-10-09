@@ -32,9 +32,6 @@ const Footer = () => {
                   Producto
                 </Typography>
                 <Stack direction="column" spacing={1.5} component="nav" aria-label="Enlaces del sitio">
-                  <Link href="#multilocal" sx={footerLinkSx}>
-                    Multi-sucursal
-                  </Link>
                   <Link href="#inventory" sx={footerLinkSx}>
                     Inventario
                   </Link>

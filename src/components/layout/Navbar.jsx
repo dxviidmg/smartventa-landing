@@ -18,7 +18,6 @@ const POPPINS = '"Poppins", sans-serif';
 const LazyDrawer = lazy(() => import('./NavDrawer'));
 
 const NAV_ITEMS = [
-  { label: 'Sucursales', id: 'multilocal' },
   { label: 'Funciones', id: 'product' },
   { label: 'Inventario', id: 'inventory' },
   { label: 'Precios', id: 'pricing' },

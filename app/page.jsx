@@ -3,7 +3,6 @@ import Navbar from '@/components/layout/Navbar';
 import Hero from '@/components/sections/Hero';
 import Industries from '@/components/sections/Industries';
 
-const MultiLocationControl = dynamic(() => import('@/components/sections/MultiLocationControl'));
 const BeforeAfter = dynamic(() => import('@/components/sections/BeforeAfter'));
 const ProductShowcase = dynamic(() => import('@/components/sections/ProductShowcase'));
 const Inventory = dynamic(() => import('@/components/sections/Inventory'));
@@ -23,7 +22,6 @@ export default function Home() {
         <Hero />
         <Industries />
         <BeforeAfter />
-        <MultiLocationControl />
         <ProductShowcase />
         <Inventory />
         <Stats />
