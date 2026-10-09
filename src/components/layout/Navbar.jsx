@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, lazy, Suspense } from 'react';
-import { AppBar, Toolbar, Container, Button, IconButton, Stack } from '@mui/material';
+import { AppBar, Box, Toolbar, Container, Button, IconButton, Stack } from '@mui/material';
 import { useApp } from '../../contexts/AppContext';
 import { CONFIG } from '../../constants';
 
@@ -11,9 +11,8 @@ const MenuIcon = () => (
   </svg>
 );
 
-// Indigo (blue with a violet touch): clearly different from the cyan-to-blue sections once the bar is solid
-const NAV_SOLID = 'rgba(67,56,202,0.96)';
-const NAV_CLEAR = 'rgba(67,56,202,0)';
+// Original brand blue gradient, shown once the page scrolls
+const BLUE_BAR = 'linear-gradient(80deg, rgb(0,48,204) 0%, rgb(0,164,219) 100%)';
 const ACCENT = '#00E0D8';
 const POPPINS = '"Poppins", sans-serif';
 
@@ -29,6 +28,7 @@ const NAV_ITEMS = [
 const Navbar = () => {
   const { drawerOpen, setDrawerOpen, scrollToSection } = useApp();
   const [drawerLoaded, setDrawerLoaded] = useState(false);
+  // Transparent at the very top, solid blue once the page scrolls
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -51,18 +51,17 @@ const Navbar = () => {
         position="fixed"
         elevation={0}
         sx={{
-          backgroundColor: { xs: NAV_SOLID, md: scrolled ? NAV_SOLID : NAV_CLEAR },
+          backgroundColor: 'transparent',
           backgroundImage: 'none',
-          backdropFilter: { xs: 'blur(10px)', md: scrolled ? 'blur(10px)' : 'blur(0px)' },
-          boxShadow: { xs: '0 6px 24px rgba(30,20,110,0.30)', md: scrolled ? '0 6px 24px rgba(30,20,110,0.30)' : 'none' },
-          borderBottom: '1px solid',
-          borderColor: { xs: 'rgba(255,255,255,0.12)', md: scrolled ? 'rgba(255,255,255,0.12)' : 'rgba(255,255,255,0)' },
+          boxShadow: scrolled ? '0 6px 24px rgba(0,10,50,0.28)' : 'none',
           py: '15px',
-          transition: 'background-color 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease',
+          transition: 'box-shadow 0.4s ease',
           '@media (prefers-reduced-motion: reduce)': { transition: 'none' },
         }}
       >
-        <Container maxWidth="lg">
+        {/* The gradient sits on its own layer so its opacity can fade in (a gradient cannot be transitioned directly) */}
+        <Box aria-hidden="true" sx={{ position: 'absolute', inset: 0, background: BLUE_BAR, opacity: scrolled ? 1 : 0, transition: 'opacity 0.4s ease', '@media (prefers-reduced-motion: reduce)': { transition: 'none' } }} />
+        <Container maxWidth="lg" sx={{ position: 'relative' }}>
           <Toolbar disableGutters sx={{ minHeight: 'auto !important' }}>
             <a
               href="/"
