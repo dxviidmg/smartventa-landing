@@ -1,7 +1,8 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { Box, Container, Typography, Stack } from '@mui/material';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import BuildIcon from '@mui/icons-material/Build';
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 import DescriptionIcon from '@mui/icons-material/Description';
@@ -19,7 +20,6 @@ import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import PetsIcon from '@mui/icons-material/Pets';
 import ChairIcon from '@mui/icons-material/Chair';
-import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import { fadeUp } from '../../constants';
 
 const industries = [
@@ -42,73 +42,82 @@ const industries = [
   { name: 'Tiendas de mascotas', icon: PetsIcon },
   { name: 'Ópticas', icon: RemoveRedEyeIcon },
   { name: 'Estéticas', icon: SpaIcon },
-  { name: 'y más', icon: MoreHorizIcon },
 ];
 
-const Industries = () => (
-  <div id="industries">
-    <Box sx={{ py: { xs: 6, md: 8 }, bgcolor: 'background.default' }}>
-      <Container maxWidth="lg">
-        <motion.div {...fadeUp}>
-          <Stack spacing={4} alignItems="center">
-            <Stack spacing={1.5} alignItems="center" textAlign="center" sx={{ maxWidth: 520, mx: 'auto' }}>
-              <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' } }}>
-                Hecho para negocios con inventario
-              </Typography>
-              <Typography sx={{ color: 'text.secondary', fontSize: '1rem' }}>
-                Desde una tienda hasta varias sucursales y almacenes
-              </Typography>
-            </Stack>
+const POPPINS = '"Poppins", sans-serif';
+const GRADIENT = 'linear-gradient(80deg, rgb(0,48,204) 0%, rgb(0,164,219) 100%)';
 
-            <Stack
-              direction="row"
-              flexWrap="wrap"
-              justifyContent="center"
-              alignItems="center"
-              sx={{ gap: { xs: 1.5, sm: 2 } }}
+const Slot = ({ item, delay }) => (
+  <Box sx={{ position: 'relative', minHeight: { xs: 112, sm: 104, lg: 84 }, overflow: 'hidden' }}>
+    <AnimatePresence mode="wait" initial={false}>
+      <motion.div
+        key={item.name}
+        initial={{ y: 36, opacity: 0 }}
+        animate={{ y: 0, opacity: 1, transition: { duration: 0.35, delay } }}
+        exit={{ y: -36, opacity: 0, transition: { duration: 0.25 } }}
+        style={{ position: 'absolute', inset: 0 }}
+      >
+        <Box sx={{ height: '100%', display: 'flex', flexDirection: { xs: 'column', lg: 'row' }, alignItems: 'center', justifyContent: 'center', gap: { xs: 1, md: 1.5 }, textAlign: 'center' }}>
+        <Box sx={{ width: { xs: 36, md: 48 }, height: { xs: 36, md: 48 }, flexShrink: 0, borderRadius: '50%', background: GRADIENT, color: '#fff', display: 'grid', placeItems: 'center' }}>
+          <item.icon aria-hidden="true" sx={{ fontSize: { xs: 20, md: 26 } }} />
+        </Box>
+        <Box
+          component="span"
+          sx={{
+            fontFamily: POPPINS, fontWeight: 600, fontSize: { xs: 15, sm: 20, lg: 26 }, lineHeight: 1.25,
+            background: GRADIENT, WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent',
+          }}
+        >
+          {item.name}
+        </Box>
+        </Box>
+      </motion.div>
+    </AnimatePresence>
+  </Box>
+);
+
+const Industries = () => {
+  const [step, setStep] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const COLS = 3;
+
+  useEffect(() => {
+    if (paused) return undefined;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined;
+    const id = setInterval(() => setStep((v) => (v + 1) % industries.length), 2500);
+    return () => clearInterval(id);
+  }, [paused]);
+
+  return (
+    <Box component="section" id="industries" aria-labelledby="industries-title" sx={{ py: { xs: 6, md: 8 }, bgcolor: '#fff', scrollMarginTop: '80px' }}>
+      <Container maxWidth="lg">
+        <Stack spacing={1.5} alignItems="center" textAlign="center" sx={{ maxWidth: 760, mx: 'auto', mb: { xs: 3, md: 4 } }}>
+          <motion.div {...fadeUp}>
+            <Typography
+              id="industries-title"
+              variant="h2"
+              sx={{ fontFamily: POPPINS, fontWeight: 500, letterSpacing: 0, fontSize: { xs: 26, md: 40 }, lineHeight: 1.2, color: '#242F3E' }}
             >
-              {industries.map((industry, i) => {
-                const IconComponent = industry.icon;
-                return (
-                  <Stack
-                    key={industry.name}
-                    direction="row"
-                    alignItems="center"
-                    spacing={0.75}
-                    sx={{ px: { xs: 1, sm: 0 } }}
-                  >
-                    <IconComponent sx={{ fontSize: '1.25rem', color: 'text.secondary' }} />
-                    <Typography
-                      sx={{
-                        color: 'text.primary',
-                        fontSize: { xs: '0.9rem', sm: '1rem' },
-                        fontWeight: 500,
-                        whiteSpace: 'nowrap',
-                      }}
-                    >
-                      {industry.name}
-                    </Typography>
-                    {i < industries.length - 1 && (
-                      <Box
-                        sx={{
-                          width: 3,
-                          height: 3,
-                          borderRadius: '50%',
-                          bgcolor: 'divider',
-                          display: { xs: 'none', sm: 'block' },
-                          flexShrink: 0,
-                        }}
-                      />
-                    )}
-                  </Stack>
-                );
-              })}
-            </Stack>
-          </Stack>
-        </motion.div>
+              Hecho para negocios de
+            </Typography>
+          </motion.div>
+        </Stack>
+
+        <Box aria-hidden="true" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} sx={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', alignItems: 'center', columnGap: { xs: 1, md: 3 }, position: 'relative' }}>
+          {Array.from({ length: COLS }, (_, j) => (
+            <Slot key={j} item={industries[(step * COLS + j) % industries.length]} delay={j * 0.12} />
+          ))}
+          {[33.333, 66.666].map((left) => (
+            <Box key={left} sx={{ position: 'absolute', left: `${left}%`, top: '18%', bottom: '18%', width: '1px', bgcolor: '#E2E8F0' }} />
+          ))}
+        </Box>
+
+        <Box component="span" sx={{ position: 'absolute', width: 1, height: 1, overflow: 'hidden', clip: 'rect(0 0 0 0)' }}>
+          Industrias: {industries.map((x) => x.name).join(', ')}
+        </Box>
       </Container>
     </Box>
-  </div>
-);
+  );
+};
 
 export default Industries;
