@@ -5,9 +5,8 @@ import { motion } from 'framer-motion';
 import ArrowForward from '@mui/icons-material/ArrowForward';
 import { useWhatsApp } from '../../contexts/WhatsAppContext';
 import OwnerPhoneIllustration from '../ui/OwnerPhoneIllustration';
-import { CONFIG, fadeUp } from '../../constants';
-
-const POPPINS = '"Poppins", sans-serif';
+import { CONFIG, POPPINS, CTA_BG, AMBER, pillSx, amberSx } from '../../constants';
+import SectionHeading from '../ui/SectionHeading';
 
 const steps = [
   { title: 'Crea tu cuenta', desc: 'Regístrate y entra desde el navegador, en computadora, tableta o celular.' },
@@ -15,7 +14,7 @@ const steps = [
   { title: 'Vende con acompañamiento', desc: 'Te ayudamos por WhatsApp a configurar todo, resolver dudas y empezar a vender.' },
 ];
 
-const pill = { px: '45px', py: '14px', fontFamily: POPPINS, fontWeight: 500, fontSize: 16, borderRadius: '45px', whiteSpace: 'nowrap' };
+const pill = { ...pillSx, px: '45px', py: '14px' };
 
 const Contact = () => {
   const { openWhatsApp } = useWhatsApp();
@@ -25,7 +24,7 @@ const Contact = () => {
       component="section"
       id="start"
       aria-labelledby="start-title"
-      sx={{ py: { xs: 9, md: 13 }, background: 'linear-gradient(134deg, #00A4DB 0%, #00269E 100%)', position: 'relative', overflow: 'hidden', scrollMarginTop: '80px' }}
+      sx={{ py: { xs: 9, md: 13 }, background: CTA_BG, position: 'relative', overflow: 'hidden', scrollMarginTop: '80px' }}
     >
       {/* Decorative translucent triangles, top-left and bottom-right */}
       {[{ top: 0, left: 0, transform: 'none' }, { bottom: 0, right: 0, transform: 'rotate(180deg)' }].map((pos, i) => (
@@ -37,20 +36,17 @@ const Contact = () => {
       ))}
 
       <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
-        <motion.div {...fadeUp}>
-          <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: { xs: 5, md: 7 }, maxWidth: 960, mx: 'auto' }}>
-            <Typography
-              id="start-title"
-              variant="h2"
-              sx={{ color: '#fff', fontFamily: POPPINS, fontWeight: 500, letterSpacing: 0, lineHeight: 1.25, fontSize: { xs: '1.9rem', sm: '2.2rem', md: '2.6rem' } }}
-            >
-              Empieza hoy y toma el control de tu negocio
-            </Typography>
-            <Typography sx={{ color: 'rgba(255,255,255,0.92)', fontSize: { xs: 15, md: 17 }, lineHeight: 1.7, maxWidth: 560 }}>
-              Tu cuenta lista en minutos, con tu catálogo cargado y soporte directo por WhatsApp.
-            </Typography>
-          </Stack>
-        </motion.div>
+        <SectionHeading
+          id="start-title"
+          title="Empieza hoy y toma el control de tu negocio"
+          subtitle="Tu cuenta lista en minutos, con tu catálogo cargado y soporte directo por WhatsApp."
+          dark
+          spacing={2}
+          maxWidth={960}
+          mb={{ xs: 5, md: 7 }}
+          titleSx={{ lineHeight: 1.25, fontSize: { xs: '1.9rem', sm: '2.2rem', md: '2.6rem' } }}
+          subtitleSx={{ fontSize: { xs: 15, md: 17 }, maxWidth: 560 }}
+        />
 
         <Box sx={{ display: 'grid', gap: { xs: 4, md: 6 }, gridTemplateColumns: { xs: '1fr', md: '5fr 7fr' }, alignItems: 'center' }}>
           <Box sx={{ maxWidth: { xs: 320, md: 'none' }, mx: 'auto', width: '100%' }}>
@@ -68,7 +64,7 @@ const Contact = () => {
                   transition={{ delay: i * 0.1, duration: 0.5 }}
                 >
                   <Stack direction="row" spacing={2.5} alignItems="flex-start" sx={{ p: 3, borderRadius: '24px', bgcolor: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.28)', backdropFilter: 'blur(6px)' }}>
-                    <Box aria-hidden="true" sx={{ width: 44, height: 44, flexShrink: 0, borderRadius: '50%', bgcolor: i === 0 ? '#FFB020' : '#fff', color: i === 0 ? '#0B1B4D' : '#00269E', display: 'grid', placeItems: 'center', fontFamily: POPPINS, fontWeight: 600, fontSize: 20 }}>
+                    <Box aria-hidden="true" sx={{ width: 44, height: 44, flexShrink: 0, borderRadius: '50%', bgcolor: i === 0 ? AMBER : '#fff', color: i === 0 ? '#0B1B4D' : '#00269E', display: 'grid', placeItems: 'center', fontFamily: POPPINS, fontWeight: 600, fontSize: 20 }}>
                       {i + 1}
                     </Box>
                     <Box>
@@ -87,7 +83,7 @@ const Contact = () => {
                 href={`${CONFIG.urls.app}/registrarme`}
                 target="_blank"
                 rel="noopener noreferrer"
-                sx={{ ...pill, bgcolor: '#FFB020', color: '#0B1B4D', boxShadow: '0 8px 24px rgba(255,176,32,0.35)', '&:hover': { bgcolor: '#F59E0B' } }}
+                sx={{ ...pill, ...amberSx }}
               >
                 Probar SmartVenta
               </Button>

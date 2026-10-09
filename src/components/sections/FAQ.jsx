@@ -4,7 +4,8 @@ import { Box, Container, Typography, Stack, Accordion, AccordionSummary, Accordi
 import { motion } from 'framer-motion';
 import Add from '@mui/icons-material/Add';
 import SupportChatIllustration from '../ui/SupportChatIllustration';
-import { faqItem, fadeUp } from '../../constants';
+import { faqItem, POPPINS, GRADIENT } from '../../constants';
+import SectionHeading from '../ui/SectionHeading';
 
 const faqs = [
   { q: '¿Qué necesito para empezar?', a: 'Solo un navegador e internet. Funciona en computadora, tableta y celular, y te ayudamos a configurar tu impresora de tickets.' },
@@ -15,26 +16,10 @@ const faqs = [
   { q: '¿Cómo funciona el soporte?', a: 'Directo por WhatsApp. Te ayudamos a configurar, resolver dudas y empezar a vender.' },
 ];
 
-const POPPINS = '"Poppins", sans-serif';
-const GRADIENT = 'linear-gradient(80deg, rgb(0,48,204) 0%, rgb(0,164,219) 100%)';
-
 const FAQ = () => (
   <Box component="section" id="faq" aria-labelledby="faq-title" sx={{ py: { xs: 7, md: 10 }, bgcolor: '#fff', scrollMarginTop: '80px' }}>
     <Container maxWidth="lg">
-      <motion.div {...fadeUp}>
-        <Stack spacing={1.5} alignItems="center" textAlign="center" sx={{ mb: { xs: 4, md: 6 } }}>
-          <Typography sx={{ fontFamily: POPPINS, fontWeight: 500, fontSize: 14, color: '#0030AB', letterSpacing: 0.5 }}>
-            Preguntas frecuentes
-          </Typography>
-          <Typography
-            id="faq-title"
-            variant="h2"
-            sx={{ fontFamily: POPPINS, fontWeight: 500, letterSpacing: 0, fontSize: { xs: 30, md: 40 }, lineHeight: 1.2, color: '#242F3E' }}
-          >
-            Dudas comunes
-          </Typography>
-        </Stack>
-      </motion.div>
+      <SectionHeading id="faq-title" eyebrow="Preguntas frecuentes" title="Dudas comunes" />
 
       <Box sx={{ display: 'grid', gap: { xs: 4, md: 6 }, gridTemplateColumns: { xs: '1fr', md: '4fr 8fr' }, alignItems: 'center' }}>
       <Box sx={{ maxWidth: { xs: 260, md: 'none' }, mx: 'auto', width: '100%', p: 2, borderRadius: '28px', bgcolor: '#EFF6FF', border: '1px solid #DBEAFE' }}>
