@@ -6,7 +6,7 @@ import { AMBER } from '../../constants';
 const SupportChatIllustration = ({ label }) => (
   <svg viewBox="0 0 320 380" role="img" aria-label={label} style={{ width: '100%', height: 'auto', display: 'block' }}>
     <circle cx="160" cy="190" r="150" fill="#fff" opacity="0.7" />
-    <ellipse cx="160" cy="356" rx="90" ry="10" fill="#0030AB" opacity="0.12" />
+    <ellipse cx="160" cy="356" rx="90" ry="10" fill="#1D4ED8" opacity="0.12" />
 
     {/* phone */}
     <rect x="70" y="24" width="180" height="326" rx="30" fill="#0F172A" />
@@ -14,8 +14,8 @@ const SupportChatIllustration = ({ label }) => (
     {/* header */}
     <path d="M78 58 a24 24 0 0 1 24 -24 h116 a24 24 0 0 1 24 24 v26 h-164 z" fill="#25D366" />
     <circle cx="104" cy="66" r="14" fill="#fff" />
-    <circle cx="104" cy="62" r="5" fill="#00269E" />
-    <path d="M94 76 a10 8 0 0 1 20 0 z" fill="#00269E" />
+    <circle cx="104" cy="62" r="5" fill="#0B1B4D" />
+    <path d="M94 76 a10 8 0 0 1 20 0 z" fill="#0B1B4D" />
     <text x="126" y="64" fontSize="12" fontWeight="600" fill="#fff" fontFamily="Poppins, sans-serif">SmartVenta</text>
     <circle cx="131" cy="75" r="3" fill="#BBF7D0" />
     <text x="139" y="78" fontSize="9" fill="#fff" fontFamily="Poppins, sans-serif">en línea</text>

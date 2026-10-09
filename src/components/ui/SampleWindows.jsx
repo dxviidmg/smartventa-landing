@@ -4,14 +4,14 @@ import { Box, Typography, Stack, Grid } from '@mui/material';
 import { motion } from 'framer-motion';
 
 /** Illustrative app windows (sample data, aria-hidden) shown next to each feature group. */
-const NAVY = '#1e3a6b';
+const NAVY = '#0B1B4D';
 
 const Window = ({ title, children }) => (
   <Box aria-hidden="true" sx={{
-    borderRadius: 3, overflow: 'hidden', bgcolor: '#ffffff',
+    borderRadius: 3, overflow: 'hidden', bgcolor: '#FBFCFE',
     boxShadow: '0 24px 60px rgba(0,20,90,0.40), 0 0 0 1px rgba(255,255,255,0.10)',
   }}>
-    <Stack direction="row" alignItems="center" spacing={0.75} sx={{ px: 2, py: 1.25, background: 'linear-gradient(90deg, #00269E 0%, #0030CC 100%)' }}>
+    <Stack direction="row" alignItems="center" spacing={0.75} sx={{ px: 2, py: 1.25, background: 'linear-gradient(90deg, #0B1B4D 0%, #1E40AF 100%)' }}>
       <Box sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: 'rgba(255,255,255,0.3)' }} />
       <Box sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: 'rgba(255,255,255,0.3)' }} />
       <Box sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: 'rgba(255,255,255,0.3)' }} />
@@ -59,7 +59,7 @@ export const SaleMockup = () => {
         {['Venta 1 (3)', 'Venta 2 (1)', 'Venta 3 (2)'].map((t, i) => (
           <Box key={t} sx={{
             px: 1.25, py: 0.5, borderRadius: 1.5, fontSize: '0.72rem', fontWeight: 600,
-            color: i === 0 ? '#ffffff' : '#475569', bgcolor: i === 0 ? '#04346b' : '#f1f5f9',
+            color: i === 0 ? '#ffffff' : '#475569', bgcolor: i === 0 ? '#0B1B4D' : '#f1f5f9',
           }}>{t}</Box>
         ))}
         <Box sx={{ px: 1, py: 0.5, fontSize: '0.8rem', fontWeight: 700, color: '#475569' }}>+</Box>
@@ -73,8 +73,8 @@ export const SaleMockup = () => {
       ]} />
       <Stack direction={{ xs: 'column', sm: 'row' }} justifyContent="space-between" alignItems={{ xs: 'stretch', sm: 'center' }} spacing={1.5} sx={{ mt: 2 }}>
         <Stack direction="row" spacing={1}>
-          <Chip color="#04346b" bg="#e8f1fb">Efectivo $300.00</Chip>
-          <Chip color="#04346b" bg="#e8f1fb">Tarjeta $181.50</Chip>
+          <Chip color="#0B1B4D" bg="#E8EEF6">Efectivo $300.00</Chip>
+          <Chip color="#0B1B4D" bg="#E8EEF6">Tarjeta $181.50</Chip>
         </Stack>
         <Stack direction="row" spacing={1.5} alignItems="center" justifyContent="flex-end">
           <Typography sx={{ fontSize: '1.1rem', fontWeight: 800, color: '#0f172a', fontVariantNumeric: 'tabular-nums' }}>$481.50</Typography>
@@ -116,7 +116,7 @@ export const CashMockup = () => {
 export const InventoryMockup = () => {
   const template = '1.1fr 1fr 0.7fr 0.7fr';
   const rows = [
-    { type: 'Venta', color: '#04346b', bg: '#e8f1fb', user: 'Luis', before: 18, after: 16 },
+    { type: 'Venta', color: '#0B1B4D', bg: '#E8EEF6', user: 'Luis', before: 18, after: 16 },
     { type: 'Traspaso', color: '#7c3aed', bg: 'rgba(124,58,237,0.1)', user: 'Ana', before: 16, after: 22 },
     { type: 'Desempaque', color: '#b45309', bg: 'rgba(245,158,11,0.12)', user: 'Ana', before: 22, after: 42 },
     { type: 'Ajuste', color: '#dc2626', bg: 'rgba(220,38,38,0.1)', user: 'Dueño', before: 42, after: 41 },
@@ -165,14 +165,14 @@ export const BranchesMockup = () => {
                 initial={{ width: 0 }}
                 animate={{ width: `${st.pct}%` }}
                 transition={{ delay: 0.15 + i * 0.12, duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-                style={{ height: '100%', borderRadius: 5, background: 'linear-gradient(90deg, #04346b 0%, #065a9e 100%)' }}
+                style={{ height: '100%', borderRadius: 5, background: 'linear-gradient(90deg, #0B1B4D 0%, #1D4ED8 100%)' }}
               />
             </Box>
           </Box>
         ))}
         <Stack direction="row" spacing={1} sx={{ pt: 0.5 }} flexWrap="wrap" useFlexGap>
           <Chip color="#7c3aed" bg="rgba(124,58,237,0.1)">2 traspasos pendientes</Chip>
-          <Chip color="#04346b" bg="#e8f1fb">1 distribución en camino</Chip>
+          <Chip color="#0B1B4D" bg="#E8EEF6">1 distribución en camino</Chip>
         </Stack>
       </Stack>
     </Window>

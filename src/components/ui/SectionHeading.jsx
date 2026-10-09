@@ -2,7 +2,7 @@
 
 import { Typography, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
-import { fadeUp, POPPINS } from '../../constants';
+import { fadeUp, POPPINS, PRIMARY } from '../../constants';
 
 /**
  * Centered section heading: optional eyebrow, h2 title and optional subtitle.
@@ -23,19 +23,19 @@ const SectionHeading = ({ id, eyebrow, title, subtitle, dark = false, spacing = 
   <motion.div {...fadeUp}>
     <Stack spacing={spacing} alignItems="center" textAlign="center" sx={{ mb, ...(maxWidth && { maxWidth, mx: 'auto' }) }}>
       {eyebrow && (
-        <Typography sx={{ fontFamily: POPPINS, fontWeight: 500, fontSize: 14, letterSpacing: 0.5, color: dark ? '#BAE6FD' : '#0030AB' }}>
+        <Typography sx={{ fontFamily: POPPINS, fontWeight: 500, fontSize: 14, letterSpacing: 0.5, color: dark ? '#BAE6FD' : PRIMARY }}>
           {eyebrow}
         </Typography>
       )}
       <Typography
         id={id}
         variant="h2"
-        sx={{ fontFamily: POPPINS, fontWeight: 500, letterSpacing: 0, fontSize: { xs: 30, md: 40 }, lineHeight: 1.2, color: dark ? '#fff' : '#242F3E', ...titleSx }}
+        sx={{ fontFamily: POPPINS, fontWeight: 500, letterSpacing: 0, fontSize: { xs: 30, md: 40 }, lineHeight: 1.2, color: dark ? '#fff' : '#0F172A', ...titleSx }}
       >
         {title}
       </Typography>
       {subtitle && (
-        <Typography sx={{ color: dark ? 'rgba(255,255,255,0.92)' : '#5B6472', fontSize: { xs: 15, md: 16 }, lineHeight: 1.7, ...subtitleSx }}>
+        <Typography sx={{ color: dark ? 'rgba(255,255,255,0.92)' : '#475569', fontSize: { xs: 15, md: 16 }, lineHeight: 1.7, ...subtitleSx }}>
           {subtitle}
         </Typography>
       )}

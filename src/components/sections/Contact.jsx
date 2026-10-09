@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import ArrowForward from '@mui/icons-material/ArrowForward';
 import { useWhatsApp } from '../../contexts/WhatsAppContext';
 import OwnerPhoneIllustration from '../ui/OwnerPhoneIllustration';
-import { CONFIG, POPPINS, CTA_BG, AMBER, pillSx, amberSx } from '../../constants';
+import { CONFIG, POPPINS, CTA_BG, AMBER, pillSx, amberSx, NAVY } from '../../constants';
 import SectionHeading from '../ui/SectionHeading';
 
 const steps = [
@@ -64,7 +64,7 @@ const Contact = () => {
                   transition={{ delay: i * 0.1, duration: 0.5 }}
                 >
                   <Stack direction="row" spacing={2.5} alignItems="flex-start" sx={{ p: 3, borderRadius: '24px', bgcolor: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.28)', backdropFilter: 'blur(6px)' }}>
-                    <Box aria-hidden="true" sx={{ width: 44, height: 44, flexShrink: 0, borderRadius: '50%', bgcolor: i === 0 ? AMBER : '#fff', color: i === 0 ? '#0B1B4D' : '#00269E', display: 'grid', placeItems: 'center', fontFamily: POPPINS, fontWeight: 600, fontSize: 20 }}>
+                    <Box aria-hidden="true" sx={{ width: 44, height: 44, flexShrink: 0, borderRadius: '50%', bgcolor: i === 0 ? AMBER : '#fff', color: NAVY, display: 'grid', placeItems: 'center', fontFamily: POPPINS, fontWeight: 600, fontSize: 20 }}>
                       {i + 1}
                     </Box>
                     <Box>

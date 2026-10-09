@@ -4,7 +4,7 @@ import { Box, Container, Typography, Stack, Accordion, AccordionSummary, Accordi
 import { motion } from 'framer-motion';
 import Add from '@mui/icons-material/Add';
 import SupportChatIllustration from '../ui/SupportChatIllustration';
-import { faqItem, POPPINS, GRADIENT } from '../../constants';
+import { faqItem, POPPINS, GRADIENT, NAVY, SURFACE_MUTED, SURFACE, BORDER, SHADOW_CARD } from '../../constants';
 import SectionHeading from '../ui/SectionHeading';
 
 const faqs = [
@@ -17,12 +17,12 @@ const faqs = [
 ];
 
 const FAQ = () => (
-  <Box component="section" id="faq" aria-labelledby="faq-title" sx={{ py: { xs: 7, md: 10 }, bgcolor: '#fff', scrollMarginTop: '80px' }}>
+  <Box component="section" id="faq" aria-labelledby="faq-title" sx={{ py: { xs: 7, md: 10 }, bgcolor: SURFACE_MUTED, scrollMarginTop: '80px' }}>
     <Container maxWidth="lg">
       <SectionHeading id="faq-title" eyebrow="Preguntas frecuentes" title="Dudas comunes" />
 
       <Box sx={{ display: 'grid', gap: { xs: 4, md: 6 }, gridTemplateColumns: { xs: '1fr', md: '4fr 8fr' }, alignItems: 'center' }}>
-      <Box sx={{ maxWidth: { xs: 260, md: 'none' }, mx: 'auto', width: '100%', p: 2, borderRadius: '28px', bgcolor: '#EFF6FF', border: '1px solid #DBEAFE' }}>
+      <Box sx={{ maxWidth: { xs: 260, md: 'none' }, mx: 'auto', width: '100%', p: 2, borderRadius: '28px', bgcolor: SURFACE, border: `1px solid ${BORDER}` }}>
         <SupportChatIllustration label="Una conversación de soporte por WhatsApp con el equipo de SmartVenta" />
       </Box>
       <Stack spacing={2}>
@@ -32,26 +32,26 @@ const FAQ = () => (
               elevation={0}
               disableGutters
               sx={{
-                bgcolor: '#fff', borderRadius: '20px !important', border: '1px solid #E6EDF5', overflow: 'hidden',
-                boxShadow: '0 8px 24px rgba(0,141,236,0.06)',
+                bgcolor: SURFACE, borderRadius: '20px !important', border: `1px solid ${BORDER}`, overflow: 'hidden',
+                boxShadow: SHADOW_CARD,
                 '&:before': { display: 'none' },
-                '&.Mui-expanded': { borderColor: '#93C5FD', boxShadow: '0 12px 30px rgba(0,60,180,0.12)' },
+                '&.Mui-expanded': { borderColor: '#CFD6E2', boxShadow: '0 12px 30px rgba(15,23,42,0.16)' },
                 transition: 'border-color 0.25s ease, box-shadow 0.25s ease',
-                '&:hover': { borderColor: '#93C5FD' },
+                '&:hover': { borderColor: '#CFD6E2' },
               }}
             >
               <AccordionSummary
-                sx={{ px: 3, py: 0.75, minHeight: 64, '&:focus-visible': { outline: '3px solid #0030AB', outlineOffset: -3 } }}
+                sx={{ px: 3, py: 0.75, minHeight: 64, '&:focus-visible': { outline: `3px solid ${NAVY}`, outlineOffset: -3 } }}
                 expandIcon={
                   <Box sx={{ width: 32, height: 32, borderRadius: '50%', background: GRADIENT, color: '#fff', display: 'grid', placeItems: 'center' }}>
                     <Add sx={{ fontSize: 20, transition: 'transform 0.3s ease', '.Mui-expanded &': { transform: 'rotate(45deg)' } }} />
                   </Box>
                 }
               >
-                <Typography sx={{ fontFamily: POPPINS, fontWeight: 500, fontSize: { xs: 15, md: 16 }, color: '#242F3E' }}>{faq.q}</Typography>
+                <Typography sx={{ fontFamily: POPPINS, fontWeight: 500, fontSize: { xs: 15, md: 16 }, color: '#0F172A' }}>{faq.q}</Typography>
               </AccordionSummary>
               <AccordionDetails sx={{ px: 3, pt: 0, pb: 3 }}>
-                <Typography sx={{ color: '#5B6472', fontSize: 15, lineHeight: 1.8 }}>{faq.a}</Typography>
+                <Typography sx={{ color: '#475569', fontSize: 15, lineHeight: 1.8 }}>{faq.a}</Typography>
               </AccordionDetails>
             </Accordion>
           </motion.div>

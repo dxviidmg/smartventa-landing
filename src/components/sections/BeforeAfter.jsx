@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Box, Container, Typography, Stack } from '@mui/material';
 import Check from '@mui/icons-material/Check';
 import Flag from '@mui/icons-material/Flag';
-import { POPPINS, CTA_BG } from '../../constants';
+import { POPPINS, CTA_BG, SURFACE_MUTED, NAVY, PRIMARY, SURFACE, BORDER, SHADOW_CARD } from '../../constants';
 import { Arrows, scenes } from '../ui/ScenarioScenes';
 import { scenarioKeys, scenarios } from '../../data/scenarios';
 import SectionHeading from '../ui/SectionHeading';
@@ -20,7 +20,7 @@ const tabKeys = (count, index, select) => (e) => {
 };
 
 const BadIcon = () => (
-  <Box aria-hidden="true" sx={{ width: 26, height: 26, flexShrink: 0, borderRadius: '50%', bgcolor: '#DBEAFE', color: '#0030AB', display: 'grid', placeItems: 'center' }}>
+  <Box aria-hidden="true" sx={{ width: 26, height: 26, flexShrink: 0, borderRadius: '50%', bgcolor: '#DDE3EC', color: PRIMARY, display: 'grid', placeItems: 'center' }}>
     <Flag sx={{ fontSize: 15 }} />
   </Box>
 );
@@ -58,9 +58,9 @@ const BeforeAfter = () => {
                   sx={{
                     border: 0, cursor: 'pointer', font: 'inherit', fontFamily: POPPINS, fontWeight: 500,
                     px: 2.5, minHeight: 44, borderRadius: '45px', whiteSpace: 'nowrap', fontSize: 14, transition: 'background-color .2s',
-                    bgcolor: selected ? '#0030AB' : '#EEF2F8', color: selected ? '#fff' : '#334155',
-                    '&:hover': { bgcolor: selected ? '#0030AB' : '#E2E8F0' },
-                    '&:focus-visible': { outline: '3px solid #0030AB', outlineOffset: 2 },
+                    bgcolor: selected ? NAVY : '#FBFCFE', border: '1px solid', borderColor: selected ? NAVY : '#DDE3EC', color: selected ? '#fff' : '#475569',
+                    '&:hover': { bgcolor: selected ? NAVY : '#F1F4F9' },
+                    '&:focus-visible': { outline: `3px solid ${NAVY}`, outlineOffset: 2 },
                   }}
                 >
                   {scenarios[k].title}
@@ -76,15 +76,15 @@ const BeforeAfter = () => {
           aria-labelledby={`situation-tab-${key}`}
           sx={{ display: 'grid', gap: 3, alignItems: 'stretch', gridTemplateColumns: { xs: '1fr', md: 'repeat(12, 1fr)' } }}
         >
-          <Box sx={{ gridColumn: { md: 'span 4' }, bgcolor: '#EFF6FF', borderRadius: '24px', p: { xs: 2, md: 2 }, display: 'grid', placeItems: 'center', border: '1px solid #DBEAFE' }}>
+          <Box sx={{ gridColumn: { md: 'span 4' }, bgcolor: '#D5DFEE', borderRadius: '24px', p: { xs: 2, md: 2 }, display: 'grid', placeItems: 'center', border: `1px solid ${BORDER}`, boxShadow: SHADOW_CARD }}>
             <svg viewBox="0 0 420 330" role="img" aria-label={`Ilustración del caso: ${sc.title}`} style={{ width: '100%', maxWidth: 420, height: 'auto', display: 'block', margin: '0 auto' }}>
               <Arrows />
               {scenes[key]}
             </svg>
           </Box>
 
-            <Box sx={{ gridColumn: { md: 'span 4' }, p: { xs: 3, md: 3.5 }, borderRadius: '24px', bgcolor: '#F8FAFC', border: '1px solid #E6EDF5' }}>
-              <Typography sx={{ fontFamily: POPPINS, fontWeight: 500, fontSize: 18, color: '#0030AB', mb: 2 }}>Lo que buscas</Typography>
+            <Box sx={{ gridColumn: { md: 'span 4' }, p: { xs: 3, md: 3.5 }, borderRadius: '24px', bgcolor: SURFACE, border: `1px solid ${BORDER}`, boxShadow: SHADOW_CARD }}>
+              <Typography sx={{ fontFamily: POPPINS, fontWeight: 500, fontSize: 18, color: PRIMARY, mb: 2 }}>Lo que buscas</Typography>
               <Stack spacing={1.75}>
                 {sc.problems.map((p) => (
                   <Stack key={p} direction="row" spacing={1.5} alignItems="flex-start">

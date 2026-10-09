@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Box, Container } from '@mui/material';
 import { motion, AnimatePresence } from 'framer-motion';
-import { POPPINS } from '../../constants';
+import { POPPINS, SURFACE_MUTED } from '../../constants';
 import SectionHeading from '../ui/SectionHeading';
 import { industries } from '../../data/industries';
 
@@ -49,7 +49,7 @@ const Industries = () => {
   }, [paused]);
 
   return (
-    <Box component="section" id="industries" aria-labelledby="industries-title" sx={{ py: { xs: 6, md: 8 }, bgcolor: '#fff', scrollMarginTop: '80px' }}>
+    <Box component="section" id="industries" aria-labelledby="industries-title" sx={{ py: { xs: 6, md: 8 }, bgcolor: SURFACE_MUTED, scrollMarginTop: '80px' }}>
       <Container maxWidth="lg">
         <SectionHeading
           id="industries-title"

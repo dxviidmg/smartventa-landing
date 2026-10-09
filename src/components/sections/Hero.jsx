@@ -16,7 +16,7 @@ const Hero = () => (
     aria-labelledby="hero-title"
     style={{
       position: 'relative', overflow: 'hidden',
-      background: '#0030AB url(/hero-bg.png) center bottom / cover no-repeat',
+      background: '#0B1B4D url(/hero-bg.png) center bottom / cover no-repeat',
     }}
   >
     <Container maxWidth="lg" sx={{ position: 'relative', pt: { xs: '150px', xl: '200px' }, pb: { xs: '100px', md: '260px' } }}>
