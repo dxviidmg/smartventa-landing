@@ -5,35 +5,6 @@ const EASE = [0.25, 0.1, 0.25, 1];
 // Shared viewport config
 const once = { once: true, margin: '-40px' };
 
-// Section headers (overline + title + subtitle)
-export const sectionHeader = {
-  overline: {
-    initial: { opacity: 0, y: 20 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, margin: '-50px' },
-    transition: { duration: 0.5, ease: EASE },
-  },
-  title: {
-    initial: { opacity: 0, y: 20 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, margin: '-50px' },
-    transition: { delay: 0.1, duration: 0.5, ease: EASE },
-  },
-  subtitle: {
-    initial: { opacity: 0, y: 20 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, margin: '-50px' },
-    transition: { delay: 0.2, duration: 0.5, ease: EASE },
-  },
-};
-
-// Card grid items (Pricing, ProductShowcase, OnboardingSupport)
-export const cardGridItem = {
-  initial: { opacity: 0, y: 24 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: once,
-};
-
 // FAQ items
 export const faqItem = {
   initial: { opacity: 0, y: 12 },
@@ -65,21 +36,3 @@ export const fadeUp = {
   viewport: once,
   transition: { duration: 0.5, ease: EASE },
 };
-
-// Contact CTA
-export const contactItem = {
-  initial: { opacity: 0, y: 24 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: once,
-};
-
-// CTA button styles (green primary action)
-export const ctaButtonSx = {
-  bgcolor: '#2563EB',
-  color: '#fff',
-  '&:hover': { bgcolor: '#1D4ED8' },
-  boxShadow: '0 8px 24px rgba(37,99,235,0.30)',
-};
-
-// Consistent section padding
-export const sectionPadding = { pt: { xs: 4, md: 6 }, pb: { xs: 6, md: 8 }, scrollMarginTop: '80px' };

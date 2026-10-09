@@ -15,11 +15,8 @@
 ## 🟡 Media prioridad
 
 ### 3. Convertir PNGs a WebP
-- [ ] `src/assets/Tablero.png` (117KB)
-- [ ] `src/assets/Tiendas.png` (121KB)
-- [ ] `src/assets/Corte de caja.png` (103KB)
-- [ ] `src/assets/Carrito de venta.png` (98KB)
-- [ ] Ahorro estimado: ~400KB → ~120KB total
+- [x] Obsoleto: las capturas de `src/assets` ya no se usan y se eliminaron
+- [ ] Pendiente opcional: convertir `public/hero-bg.png` y `public/triangle-double.png` a WebP
 
 ### 4. Mover `fadeInUp` a critical.css
 - [x] Está en `deferred.css` pero se usa above-the-fold (Hero, Industries)
