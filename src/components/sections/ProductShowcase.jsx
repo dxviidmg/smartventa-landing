@@ -1,6 +1,5 @@
 'use client';
 
-import { useState, useRef } from 'react';
 import { Box, Container, Typography, Stack, Grid } from '@mui/material';
 import { motion } from 'framer-motion';
 import AddShoppingCart from '@mui/icons-material/AddShoppingCart';
@@ -25,17 +24,16 @@ import Scale from '@mui/icons-material/Scale';
 import BookmarkAdded from '@mui/icons-material/BookmarkAdded';
 import AssignmentReturn from '@mui/icons-material/AssignmentReturn';
 
-import { sectionPadding, cardGridItem } from '../../constants';
-import useAutoAdvance, { tabKeyHandler } from '../../hooks/useAutoAdvance';
+import { fadeUp } from '../../constants';
 
 const NAVY = '#1e3a6b';
 
 const Window = ({ title, children }) => (
   <Box aria-hidden="true" sx={{
     borderRadius: 3, overflow: 'hidden', bgcolor: '#ffffff',
-    boxShadow: '0 24px 60px rgba(2,35,71,0.45), 0 0 0 1px rgba(255,255,255,0.08)',
+    boxShadow: '0 24px 60px rgba(0,20,90,0.40), 0 0 0 1px rgba(255,255,255,0.10)',
   }}>
-    <Stack direction="row" alignItems="center" spacing={0.75} sx={{ px: 2, py: 1.25, background: 'linear-gradient(90deg, #022347 0%, #04346b 100%)' }}>
+    <Stack direction="row" alignItems="center" spacing={0.75} sx={{ px: 2, py: 1.25, background: 'linear-gradient(90deg, #00269E 0%, #0030CC 100%)' }}>
       <Box sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: 'rgba(255,255,255,0.3)' }} />
       <Box sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: 'rgba(255,255,255,0.3)' }} />
       <Box sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: 'rgba(255,255,255,0.3)' }} />
@@ -247,138 +245,68 @@ const tabs = [
   },
 ];
 
-const ProductShowcase = () => {
-  const [active, setActive] = useState(0);
-  const containerRef = useRef(null);
+const POPPINS = '"Poppins", sans-serif';
+// Same blue as the other gradient blocks, with a darker start so white text keeps at least 4.5:1 contrast
+const BLUE_BG = 'linear-gradient(134deg, #0079BE 0%, #00269E 100%)';
 
-  const { stop, pauseProps } = useAutoAdvance(containerRef, {
-    delay: 12000,
-    onAdvance: () => setActive((prev) => (prev + 1) % tabs.length),
-    step: active,
-  });
+const IconBadge = ({ icon: Icon, size = 36 }) => (
+  <Box sx={{ width: size, height: size, flexShrink: 0, borderRadius: '50%', display: 'grid', placeItems: 'center', bgcolor: 'rgba(255,255,255,0.18)', color: '#fff' }}>
+    <Icon aria-hidden="true" sx={{ fontSize: size * 0.5 }} />
+  </Box>
+);
 
-  const select = (index) => {
-    setActive(index);
-    stop();
-  };
-
-  return (
-    <Box sx={{ ...sectionPadding, background: 'radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px) 0 0 / 22px 22px, linear-gradient(145deg, #022347 0%, #04346b 50%, #065a9e 100%)' }} id="product">
-      <Container maxWidth="lg">
-        <motion.div {...cardGridItem} transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}>
-          <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 5 }}>
-            <Typography variant="overline" sx={{ color: '#93c5fd', fontWeight: 700, letterSpacing: 2, fontSize: '0.78rem' }}>
-              Punto de venta
-            </Typography>
-            <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.8rem' }, color: '#ffffff' }}>
-              Punto de venta poderoso
-            </Typography>
-            <Typography sx={{ color: '#e5e7eb', fontSize: '1.05rem', lineHeight: 1.6, maxWidth: 700 }}>
-              Diseñado para vender más rápido, sin errores, y con control total del inventario.
-            </Typography>
-          </Stack>
-
-          <Box ref={containerRef} {...pauseProps}>
-            <Box sx={{ display: 'flex', justifyContent: { xs: 'flex-start', md: 'center' }, overflowX: 'auto', mb: 5, pb: 0.5 }}>
-              <Stack
-                direction="row"
-                spacing={1}
-                role="tablist"
-                aria-label="Funciones del punto de venta"
-                sx={{ p: 0.75, borderRadius: 999, bgcolor: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)', flexShrink: 0 }}
-              >
-                {tabs.map((t, i) => {
-                  const selected = i === active;
-                  return (
-                    <Box
-                      key={t.key}
-                      component="button"
-                      role="tab"
-                      id={`showcase-tab-${t.key}`}
-                      aria-selected={selected}
-                      aria-controls={`showcase-panel-${t.key}`}
-                      tabIndex={selected ? 0 : -1}
-                      onClick={() => select(i)}
-                      onKeyDown={tabKeyHandler(tabs.length, i, select)}
-                      sx={{
-                        position: 'relative', border: 0, cursor: 'pointer', font: 'inherit',
-                        px: { xs: 1.75, md: 2.5 }, minHeight: 44, borderRadius: 999, whiteSpace: 'nowrap',
-                        fontSize: '0.9rem', fontWeight: 600,
-                        bgcolor: 'transparent',
-                        color: selected ? '#04346b' : 'rgba(255,255,255,0.85)',
-                        transition: 'color 0.25s ease',
-                        '&:hover': { color: selected ? '#04346b' : '#ffffff' },
-                        '&:focus-visible': { outline: '2px solid #ffffff', outlineOffset: 2 },
-                      }}
-                    >
-                      {selected && (
-                        <motion.div
-                          layoutId="showcase-tab"
-                          transition={{ type: 'spring', stiffness: 400, damping: 32 }}
-                          style={{ position: 'absolute', inset: 0, borderRadius: 999, background: '#ffffff' }}
-                        />
-                      )}
-                      <Box component="span" sx={{ position: 'relative' }}>{t.label}</Box>
-                    </Box>
-                  );
-                })}
-              </Stack>
-            </Box>
-
-            {/* All panels share one grid cell so the section keeps the tallest height and never jumps */}
-            <Box sx={{ display: 'grid' }}>
-              {tabs.map((t, i) => {
-                const selected = i === active;
-                const Mockup = t.mockup;
-                return (
-                  <Box
-                    // Remount on activation so the mockup rows replay their entrance
-                    key={`${t.key}-${selected}`}
-                    role="tabpanel"
-                    id={`showcase-panel-${t.key}`}
-                    aria-labelledby={`showcase-tab-${t.key}`}
-                    aria-hidden={!selected}
-                    sx={{ gridArea: '1 / 1', visibility: selected ? 'visible' : 'hidden' }}
-                  >
-                    <motion.div
-                      initial={selected ? { opacity: 0, y: 12 } : false}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
-                    >
-                      <Grid container spacing={{ xs: 4, md: 6 }} alignItems="center">
-                        <Grid size={{ xs: 12, md: 5 }}>
-                          <Stack spacing={2.25}>
-                            {t.features.map((f) => (
-                              <Stack key={f.title} direction="row" spacing={1.75} alignItems="flex-start">
-                                <Box sx={{
-                                  width: 36, height: 36, borderRadius: 2, flexShrink: 0,
-                                  bgcolor: 'rgba(255,255,255,0.12)',
-                                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                }}>
-                                  <f.icon sx={{ fontSize: 20, color: '#ffffff' }} />
-                                </Box>
-                                <Box>
-                                  <Typography component="h3" sx={{ fontWeight: 700, fontSize: '1rem', color: '#ffffff', mb: 0.25 }}>{f.title}</Typography>
-                                  <Typography sx={{ fontSize: '0.95rem', color: '#cbd5e1', lineHeight: 1.55 }}>{f.desc}</Typography>
-                                </Box>
-                              </Stack>
-                            ))}
-                          </Stack>
-                        </Grid>
-                        <Grid size={{ xs: 12, md: 7 }}>
-                          <Mockup />
-                        </Grid>
-                      </Grid>
-                    </motion.div>
-                  </Box>
-                );
-              })}
-            </Box>
-          </Box>
+const ProductShowcase = () => (
+  <Box component="section" id="product" aria-labelledby="product-title" sx={{ py: { xs: 7, md: 10 }, background: BLUE_BG, scrollMarginTop: '80px' }}>
+    <Container maxWidth="lg">
+      <Stack spacing={1.5} alignItems="center" textAlign="center" sx={{ mb: { xs: 5, md: 8 } }}>
+        <motion.div {...fadeUp}>
+          <Typography
+            id="product-title"
+            variant="h2"
+            sx={{ fontFamily: POPPINS, fontWeight: 500, letterSpacing: 0, fontSize: { xs: 30, md: 40 }, lineHeight: 1.2, color: '#fff' }}
+          >
+            Punto de venta poderoso
+          </Typography>
         </motion.div>
-      </Container>
-    </Box>
-  );
-};
+        <Typography sx={{ color: 'rgba(255,255,255,0.92)', fontSize: { xs: 15, md: 16 }, lineHeight: 1.7, maxWidth: 700 }}>
+          Diseñado para vender más rápido, sin errores, y con control total del inventario.
+        </Typography>
+      </Stack>
+
+      <Stack spacing={{ xs: 7, md: 10 }}>
+        {tabs.map((t, i) => {
+          const Mockup = t.mockup;
+          const flip = i % 2 === 1;
+          return (
+            <Box
+              key={t.key}
+              component="article"
+              aria-labelledby={`product-${t.key}`}
+              sx={{ display: 'grid', gap: { xs: 3, md: 6 }, gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, alignItems: 'center' }}
+            >
+              <Box sx={{ order: { md: flip ? 2 : 1 } }}><Mockup /></Box>
+              <Box sx={{ order: { md: flip ? 1 : 2 } }}>
+                <Typography id={`product-${t.key}`} component="h3" sx={{ fontFamily: POPPINS, fontWeight: 500, fontSize: { xs: 24, md: 30 }, color: '#fff', mb: 2.5 }}>
+                  {t.label}
+                </Typography>
+                <Stack spacing={2}>
+                  {t.features.map((f) => (
+                    <Stack key={f.title} direction="row" spacing={1.5} alignItems="flex-start">
+                      <IconBadge icon={f.icon} />
+                      <Box>
+                        <Typography component="h4" sx={{ fontFamily: POPPINS, fontWeight: 500, fontSize: 15, color: '#fff' }}>{f.title}</Typography>
+                        <Typography sx={{ fontSize: 14, color: 'rgba(255,255,255,0.92)', lineHeight: 1.6 }}>{f.desc}</Typography>
+                      </Box>
+                    </Stack>
+                  ))}
+                </Stack>
+              </Box>
+            </Box>
+          );
+        })}
+      </Stack>
+    </Container>
+  </Box>
+);
 
 export default ProductShowcase;
