@@ -5,17 +5,19 @@
  */
 export const YELLOW = '#FDE047';
 export const GREEN = '#6EE7B7';
+// Outline shared by stores and warehouses so they stay readable on both dark and light backgrounds
+const OUTLINE = { stroke: '#0B1B4D', strokeWidth: 2.5, strokeLinejoin: 'round' };
 const LABEL = { fontSize: 12, fontWeight: 600, fill: '#fff', fontFamily: 'Poppins, sans-serif', textAnchor: 'middle' };
 
 export const Store = ({ x, y, color, label, chip, labelColor = '#fff' }) => (
   <g transform={`translate(${x} ${y})`}>
-    <rect x="0" y="34" width="104" height="76" rx="6" fill="#fff" />
+    <rect x="0" y="34" width="104" height="76" rx="6" fill="#fff" {...OUTLINE} />
     {[0, 1, 2, 3, 4].map((i) => (
-      <path key={i} d={`M${i * 20.8} 12 h20.8 v26 a10.4 10.4 0 0 1 -20.8 0 z`} fill={i % 2 ? '#fff' : color} />
+      <path key={i} d={`M${i * 20.8} 12 h20.8 v26 a10.4 10.4 0 0 1 -20.8 0 z`} fill={i % 2 ? '#fff' : color} {...OUTLINE} />
     ))}
-    <rect x="0" y="4" width="104" height="10" rx="4" fill={color} />
-    <rect x="14" y="64" width="32" height="46" rx="3" fill="#CBD5E1" />
-    <rect x="58" y="62" width="32" height="26" rx="3" fill="#BFDBFE" />
+    <rect x="0" y="4" width="104" height="10" rx="4" fill={color} {...OUTLINE} />
+    <rect x="14" y="64" width="32" height="46" rx="3" fill="#CBD5E1" {...OUTLINE} />
+    <rect x="58" y="62" width="32" height="26" rx="3" fill="#BFDBFE" {...OUTLINE} />
     {chip && (
       <g transform="translate(52 -26)">
         <rect x="-36" y="-4" width="72" height="26" rx="13" fill="#fff" />
@@ -34,14 +36,14 @@ export const Warehouse = ({ x, y, w, h, label, labelColor = '#fff' }) => {
   const crate = Math.max(14, h * 0.2);
   return (
     <g transform={`translate(${x} ${y})`}>
-      <path d={`M-8 28 L${w / 2} 0 L${w + 8} 28 Z`} fill="#1E3A8A" />
-      <rect x="0" y="26" width={w} height={h} fill="#fff" />
-      <rect x={(w - doorW) / 2} y={26 + h - doorH} width={doorW} height={doorH} rx="3" fill="#CBD5E1" />
+      <path d={`M-8 28 L${w / 2} 0 L${w + 8} 28 Z`} fill="#1E3A8A" {...OUTLINE} />
+      <rect x="0" y="26" width={w} height={h} fill="#fff" {...OUTLINE} />
+      <rect x={(w - doorW) / 2} y={26 + h - doorH} width={doorW} height={doorH} rx="3" fill="#CBD5E1" {...OUTLINE} />
       {[1, 2, 3, 4].map((i) => (
         <line key={i} x1={(w - doorW) / 2} x2={(w + doorW) / 2} y1={26 + h - doorH + (doorH / 5) * i} y2={26 + h - doorH + (doorH / 5) * i} stroke="#94A3B8" strokeWidth="2" />
       ))}
-      <rect x="8" y={26 + h - crate} width={crate} height={crate} rx="2" fill="#F59E0B" />
-      <rect x={w - crate - 8} y={26 + h - crate} width={crate} height={crate} rx="2" fill="#FBBF24" />
+      <rect x="8" y={26 + h - crate} width={crate} height={crate} rx="2" fill="#F59E0B" {...OUTLINE} strokeWidth={2} />
+      <rect x={w - crate - 8} y={26 + h - crate} width={crate} height={crate} rx="2" fill="#FBBF24" {...OUTLINE} strokeWidth={2} />
       <text x={w / 2} y={26 + h + 18} {...LABEL} fill={labelColor}>{label}</text>
     </g>
   );
