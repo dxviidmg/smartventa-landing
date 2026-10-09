@@ -1,20 +1,17 @@
 'use client';
 
 import { useState } from 'react';
-import { Box, Container, Typography, Stack, Link, Dialog, DialogTitle, DialogContent, IconButton } from '@mui/material';
+import { Box, Container, Typography, Stack, Link } from '@mui/material';
 import Close from '@mui/icons-material/Close';
-import { CONFIG } from '../../constants';
+import { CONFIG, POPPINS, ACCENT } from '../../constants';
+import LegalDialog from './LegalDialog';
+import { legalDocuments } from '../../data/legal';
 
-const POPPINS = '"Poppins", sans-serif';
-const ACCENT = '#00E0D8';
 const footerLinkSx = {
   color: 'rgba(255,255,255,0.82)', textDecoration: 'none', font: 'inherit', fontSize: 15, cursor: 'pointer', background: 'none', border: 0, p: 0, display: 'inline-flex', alignItems: 'center', minHeight: 44,
   '&:hover': { color: ACCENT }, '&:focus-visible': { outline: '2px solid #fff', outlineOffset: 3, borderRadius: '4px' }, transition: 'color 0.25s',
 };
 const columnTitleSx = { fontFamily: POPPINS, fontWeight: 500, mb: 2, fontSize: '1.05rem', color: '#fff' };
-const dialogPaper = { sx: { borderRadius: '24px' } };
-const dialogTitleSx = { display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontFamily: POPPINS, fontWeight: 500, color: '#242F3E' };
-const sectionTitleSx = { fontFamily: POPPINS, fontWeight: 500, mb: 1, fontSize: '1rem', color: '#242F3E' };
 
 const CURRENT_YEAR = new Date().getFullYear();
 
@@ -93,120 +90,8 @@ const Footer = () => {
         </Container>
       </Box>
 
-      {/* Modal Términos y Condiciones */}
-      <Dialog open={openTerms} onClose={() => setOpenTerms(false)} maxWidth="md" fullWidth PaperProps={dialogPaper}>
-        <DialogTitle sx={dialogTitleSx}>
-          Términos y Condiciones
-          <IconButton aria-label="Cerrar términos y condiciones" onClick={() => setOpenTerms(false)}>
-            <Close />
-          </IconButton>
-        </DialogTitle>
-        <DialogContent>
-          <Stack spacing={3}>
-            <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-              Última actualización: Marzo 2026
-            </Typography>
-
-            <Box>
-              <Typography variant="h6" component="p" sx={sectionTitleSx}>
-                1. Aceptación de términos
-              </Typography>
-              <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
-                Al acceder y usar SmartVenta, aceptas estar sujeto a estos términos y condiciones.
-              </Typography>
-            </Box>
-
-            <Box>
-              <Typography variant="h6" component="p" sx={sectionTitleSx}>
-                2. Uso del servicio
-              </Typography>
-              <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
-                SmartVenta es un sistema de punto de venta diseñado para negocios multi-tienda. Te comprometes a usar el servicio de manera legal y apropiada.
-              </Typography>
-            </Box>
-
-            <Box>
-              <Typography variant="h6" component="p" sx={sectionTitleSx}>
-                3. Cuenta demo
-              </Typography>
-              <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
-                La cuenta demo es proporcionada únicamente con fines de evaluación. Los datos en la cuenta demo pueden ser reiniciados periódicamente.
-              </Typography>
-            </Box>
-
-            <Box>
-              <Typography variant="h6" component="p" sx={sectionTitleSx}>
-                4. Limitación de responsabilidad
-              </Typography>
-              <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
-                SmartVenta se proporciona "tal cual". No garantizamos que el servicio será ininterrumpido o libre de errores.
-              </Typography>
-            </Box>
-
-            <Box>
-              <Typography variant="h6" component="p" sx={sectionTitleSx}>
-                5. Contacto
-              </Typography>
-              <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
-                Para preguntas sobre estos términos, contáctanos al: {CONFIG.contact.phone}
-              </Typography>
-            </Box>
-          </Stack>
-        </DialogContent>
-      </Dialog>
-
-      {/* Modal Política de Privacidad */}
-      <Dialog open={openPrivacy} onClose={() => setOpenPrivacy(false)} maxWidth="md" fullWidth PaperProps={dialogPaper}>
-        <DialogTitle sx={dialogTitleSx}>
-          Política de Privacidad
-          <IconButton aria-label="Cerrar política de privacidad" onClick={() => setOpenPrivacy(false)}>
-            <Close />
-          </IconButton>
-        </DialogTitle>
-        <DialogContent>
-          <Stack spacing={3}>
-            <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-              Última actualización: Marzo 2026
-            </Typography>
-
-            <Box>
-              <Typography variant="h6" component="p" sx={sectionTitleSx}>
-                1. Información que recopilamos
-              </Typography>
-              <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
-                Recopilamos información que nos proporcionas directamente cuando solicitas una demo o te contactas con nosotros, incluyendo nombre, correo electrónico, teléfono y nombre de tu negocio.
-              </Typography>
-            </Box>
-
-            <Box>
-              <Typography variant="h6" component="p" sx={sectionTitleSx}>
-                2. Uso de la información
-              </Typography>
-              <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
-                Utilizamos tu información para: contactarte sobre tu solicitud de demo, enviarte información sobre SmartVenta, y mejorar nuestros servicios.
-              </Typography>
-            </Box>
-
-            <Box>
-              <Typography variant="h6" component="p" sx={sectionTitleSx}>
-                3. Protección de datos
-              </Typography>
-              <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
-                Implementamos medidas de seguridad para proteger tu información personal. No compartimos tus datos con terceros sin tu consentimiento.
-              </Typography>
-            </Box>
-
-            <Box>
-              <Typography variant="h6" component="p" sx={sectionTitleSx}>
-                4. Contacto
-              </Typography>
-              <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
-                Si tienes preguntas sobre esta política, contáctanos al: {CONFIG.contact.phone}
-              </Typography>
-            </Box>
-          </Stack>
-        </DialogContent>
-      </Dialog>
+      <LegalDialog open={openTerms} onClose={() => setOpenTerms(false)} document={legalDocuments.terms} />
+      <LegalDialog open={openPrivacy} onClose={() => setOpenPrivacy(false)} document={legalDocuments.privacy} />
     </>
   );
 };
