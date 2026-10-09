@@ -6,11 +6,12 @@ import Add from '@mui/icons-material/Add';
 import { faqItem, fadeUp } from '../../constants';
 
 const faqs = [
-  { q: '¿Cuánto cuesta?', a: 'Desde $399/mes (1 sucursal). El precio baja por sucursal conforme creces. 3 tiendas: $1,149/mes. 5 tiendas: $1,799/mes. Sin contrato, sin sorpresas.' },
-  { q: '¿Qué está incluido?', a: 'Todo: POS, inventario, traspasos, distribuciones, caja, dashboard, cambios masivos de precios, Excel, auditoría, soporte WhatsApp, actualizaciones.' },
-  { q: '¿Necesito instalar algo?', a: 'No. Solo necesitas navegador e internet. Funciona en computadora, tableta y celular. Si usas impresora de tickets, te ayudamos a configurarla.' },
-  { q: '¿Puedo empezar con una sola tienda?', a: 'Sí. Y cuando crezcas a 4 o 10, no cambias de sistema. Simplemente agregas.' },
-  { q: '¿Cómo funciona el soporte?', a: 'WhatsApp directo. Te ayudamos a configurar, resolver dudas y empezar a vender.' },
+  { q: '¿Qué necesito para empezar?', a: 'Solo un navegador e internet. Funciona en computadora, tableta y celular, y te ayudamos a configurar tu impresora de tickets.' },
+  { q: '¿Puedo empezar con una sola tienda?', a: 'Sí. Y cuando crezcas no cambias de sistema: agregas sucursales y el precio por cada una baja.' },
+  { q: '¿Puedo traer mi catálogo actual?', a: 'Sí. Si lo tienes en Excel, lo importamos por ti con plantillas y validación, para que empieces con datos reales.' },
+  { q: '¿Quién puede cambiar precios, stock y caja?', a: 'Solo el dueño. Vendedores y administradores solicitan los ajustes de stock y el dueño los aprueba. Todo movimiento queda registrado.' },
+  { q: '¿Mi información está segura?', a: 'Sí. Vive en la nube y queda respaldada, así que tus datos están protegidos aunque tu computadora falle o se pierda.' },
+  { q: '¿Cómo funciona el soporte?', a: 'Directo por WhatsApp. Te ayudamos a configurar, resolver dudas y empezar a vender.' },
 ];
 
 const POPPINS = '"Poppins", sans-serif';

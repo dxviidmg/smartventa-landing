@@ -23,11 +23,11 @@ const POPPINS = '"Poppins", sans-serif';
 const GRADIENT = 'linear-gradient(80deg, rgb(0,48,204) 0%, rgb(0,164,219) 100%)';
 const BLUE_BG = 'linear-gradient(134deg, #0079BE 0%, #00269E 100%)';
 const INCLUDED = [
-  'Punto de venta, inventario, traspasos',
+  'Punto de venta, inventario y traspasos',
   'Distribuciones entre sucursales',
   'Cambios masivos de precios',
-  'Soporte por WhatsApp',
-  'Sin contrato ni instalación',
+  'Soporte directo por WhatsApp',
+  'Mes a mes, listo para usar desde el navegador',
 ];
 
 /** Shared calculator state: same prices and rules for every layout. */
@@ -64,7 +64,7 @@ const Heading = ({ dark }) => (
       </Typography>
     </motion.div>
     <Typography sx={{ color: dark ? 'rgba(255,255,255,0.92)' : '#5B6472', fontSize: { xs: 15, md: 16 }, lineHeight: 1.7 }}>
-      Sin instalación, sin configuración, sin sorpresas. El precio disminuye por sucursal conforme creces.
+      Un precio claro que baja por sucursal conforme creces.
     </Typography>
   </Stack>
 );
@@ -114,7 +114,6 @@ const Pricing = () => {
               <Typography component="label" htmlFor="pricing-range" sx={{ display: 'block', fontFamily: POPPINS, fontWeight: 500, fontSize: 18, color: '#242F3E' }}>
                 ¿Cuántas sucursales tienes?
               </Typography>
-              <Typography sx={{ fontSize: 14, color: '#5B6472', mt: 0.5 }}>Mueve el control para ver tu precio.</Typography>
             </Box>
             <Box
               component="input"
