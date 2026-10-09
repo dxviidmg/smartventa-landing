@@ -3,6 +3,7 @@
 import { Box, Container, Typography, Stack, Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
 import { motion } from 'framer-motion';
 import Add from '@mui/icons-material/Add';
+import SupportChatIllustration from '../ui/SupportChatIllustration';
 import { faqItem, fadeUp } from '../../constants';
 
 const faqs = [
@@ -19,7 +20,7 @@ const GRADIENT = 'linear-gradient(80deg, rgb(0,48,204) 0%, rgb(0,164,219) 100%)'
 
 const FAQ = () => (
   <Box component="section" id="faq" aria-labelledby="faq-title" sx={{ py: { xs: 7, md: 10 }, bgcolor: '#fff', scrollMarginTop: '80px' }}>
-    <Container maxWidth="md">
+    <Container maxWidth="lg">
       <motion.div {...fadeUp}>
         <Stack spacing={1.5} alignItems="center" textAlign="center" sx={{ mb: { xs: 4, md: 6 } }}>
           <Typography sx={{ fontFamily: POPPINS, fontWeight: 500, fontSize: 14, color: '#0030AB', letterSpacing: 0.5 }}>
@@ -35,7 +36,11 @@ const FAQ = () => (
         </Stack>
       </motion.div>
 
-      <Stack spacing={2} sx={{ maxWidth: 800, mx: 'auto' }}>
+      <Box sx={{ display: 'grid', gap: { xs: 4, md: 6 }, gridTemplateColumns: { xs: '1fr', md: '4fr 8fr' }, alignItems: 'center' }}>
+      <Box sx={{ maxWidth: { xs: 260, md: 'none' }, mx: 'auto', width: '100%', p: 2, borderRadius: '28px', bgcolor: '#EFF6FF', border: '1px solid #DBEAFE' }}>
+        <SupportChatIllustration label="Una conversación de soporte por WhatsApp con el equipo de SmartVenta" />
+      </Box>
+      <Stack spacing={2}>
         {faqs.map((faq, i) => (
           <motion.div key={faq.q} {...faqItem} transition={{ delay: i * 0.05 }}>
             <Accordion
@@ -67,6 +72,7 @@ const FAQ = () => (
           </motion.div>
         ))}
       </Stack>
+      </Box>
     </Container>
   </Box>
 );
