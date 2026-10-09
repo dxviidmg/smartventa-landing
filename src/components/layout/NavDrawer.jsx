@@ -18,22 +18,22 @@ const CloseIcon = () => (
  * @param {function} props.onNav - Callback when a nav item is clicked, receives section id
  */
 const NavDrawer = ({ open, onClose, navItems, onNav }) => (
-  <Drawer anchor="right" open={open} onClose={onClose}>
+  <Drawer anchor="right" open={open} onClose={onClose} PaperProps={{ sx: { background: 'linear-gradient(80deg, rgb(0,48,204) 0%, rgb(0,164,219) 100%)', color: '#fff' } }}>
     <Box sx={{ width: 280, pt: 1 }}>
       <Box sx={{ display: 'flex', justifyContent: 'flex-end', px: 1 }}>
-        <IconButton aria-label="Cerrar menú" onClick={onClose}><CloseIcon /></IconButton>
+        <IconButton aria-label="Cerrar menú" onClick={onClose} sx={{ color: '#fff' }}><CloseIcon /></IconButton>
       </Box>
       <List>
         {navItems.map(({ label, id }) => (
           <ListItem key={id} disablePadding>
             <ListItemButton onClick={() => onNav(id)}>
-              <ListItemText primary={label} />
+              <ListItemText primary={label} primaryTypographyProps={{ fontFamily: '"Poppins", sans-serif', fontWeight: 500 }} />
             </ListItemButton>
           </ListItem>
         ))}
         <ListItem disablePadding>
           <ListItemButton onClick={() => window.open(`${CONFIG.urls.app}/registrarme`, '_blank')}>
-            <ListItemText primary="Probar SmartVenta" primaryTypographyProps={{ color: 'secondary.main', fontWeight: 600 }} />
+            <ListItemText primary="Probar SmartVenta" primaryTypographyProps={{ color: '#00E0D8', fontFamily: '"Poppins", sans-serif', fontWeight: 500 }} />
           </ListItemButton>
         </ListItem>
       </List>

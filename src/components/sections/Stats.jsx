@@ -29,7 +29,7 @@ const Stats = () => (
                 borderLeft: { sm: i ? '1px solid rgba(255,255,255,0.12)' : 'none' },
               }}>
                 <Typography sx={{
-                  fontFamily: '"Plus Jakarta Sans", "Inter", sans-serif',
+                  fontFamily: '"Rubik", sans-serif',
                   fontWeight: 800, letterSpacing: '-0.03em', lineHeight: 1,
                   fontSize: { xs: '2.2rem', md: '3rem' },
                   color: '#ffffff', fontVariantNumeric: 'tabular-nums', mb: 1,

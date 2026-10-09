@@ -75,10 +75,10 @@ export const contactItem = {
 
 // CTA button styles (green primary action)
 export const ctaButtonSx = {
-  bgcolor: '#047857',
+  bgcolor: '#2563EB',
   color: '#fff',
-  '&:hover': { bgcolor: '#065f46' },
-  boxShadow: '0 4px 24px rgba(4,120,87,0.3)',
+  '&:hover': { bgcolor: '#1D4ED8' },
+  boxShadow: '0 8px 24px rgba(37,99,235,0.30)',
 };
 
 // Consistent section padding
