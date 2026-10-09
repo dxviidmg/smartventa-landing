@@ -5,10 +5,8 @@ import Industries from '@/components/sections/Industries';
 
 const BeforeAfter = dynamic(() => import('@/components/sections/BeforeAfter'));
 const ProductShowcase = dynamic(() => import('@/components/sections/ProductShowcase'));
-const Inventory = dynamic(() => import('@/components/sections/Inventory'));
 const Stats = dynamic(() => import('@/components/sections/Stats'));
 const Pricing = dynamic(() => import('@/components/sections/Pricing'));
-const OnboardingSupport = dynamic(() => import('@/components/sections/OnboardingSupport'));
 const FAQ = dynamic(() => import('@/components/sections/FAQ'));
 const Contact = dynamic(() => import('@/components/sections/Contact'));
 const Footer = dynamic(() => import('@/components/layout/Footer'));
@@ -21,12 +19,10 @@ export default function Home() {
       <main role="main">
         <Hero />
         <Industries />
+        <Stats />
         <BeforeAfter />
         <ProductShowcase />
-        <Inventory />
-        <Stats />
         <Pricing />
-        <OnboardingSupport />
         <FAQ />
         <Contact />
       </main>

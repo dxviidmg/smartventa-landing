@@ -9,7 +9,10 @@ import History from '@mui/icons-material/History';
 import PriceChange from '@mui/icons-material/PriceChange';
 import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import SyncAlt from '@mui/icons-material/SyncAlt';
-import Smartphone from '@mui/icons-material/Smartphone';
+import ManageSearch from '@mui/icons-material/ManageSearch';
+import HowToReg from '@mui/icons-material/HowToReg';
+import Lock from '@mui/icons-material/Lock';
+import QrCodeScanner from '@mui/icons-material/QrCodeScanner';
 import Print from '@mui/icons-material/Print';
 import Savings from '@mui/icons-material/Savings';
 import Insights from '@mui/icons-material/Insights';
@@ -205,42 +208,50 @@ const tabs = [
   {
     key: 'vender', label: 'Vender', mockup: SaleMockup,
     features: [
-      { icon: AddShoppingCart, title: 'Multiventa', desc: 'Abre una pestaña por cliente. Atiende a varios a la vez en hora pico sin mezclar sus productos.' },
-      { icon: Payments, title: 'Cobro flexible', desc: 'Efectivo, tarjeta, transferencia o combinados en una misma venta. El cambio se calcula solo.' },
-      { icon: Sell, title: 'Precio de mayoreo', desc: 'Define el precio de mayoreo y la cantidad mínima. Al llegar a esa cantidad, el precio cambia solo.' },
-      { icon: Scale, title: 'Productos por unidad y a granel', desc: 'Cada producto tiene marca, departamento y unidad: pieza, kilo, costal, litro, metro o bote. En kilo o litro vende también por monto: "dame $20 de queso".' },
-      { icon: Print, title: 'Compatible con escáner e impresora', desc: 'En computadora usa tu lector de código de barras e imprime tickets en impresora térmica.' },
-      { icon: Smartphone, title: 'Compatible con celular', desc: 'Vende desde el celular o la tableta. Escanea códigos de barras con la cámara, sin necesidad de lector.' },
+      { icon: AddShoppingCart, title: 'Multiventa', desc: 'Atiende a varios clientes a la vez en hora pico, cada uno con su propia venta.' },
+      { icon: Payments, title: 'Cobro flexible', desc: 'Efectivo, tarjeta, transferencia o pagos combinados en una misma venta.' },
+      { icon: Sell, title: 'Precio de mayoreo', desc: 'Define el precio y la cantidad mínima: se aplica solo al llegar a ella.' },
+      { icon: Scale, title: 'Venta por unidad y a granel', desc: 'Vende por pieza, kilo, litro, metro, costal o bote, incluso por monto: "dame $20 de queso".' },
+      { icon: Print, title: 'Compatible con tu equipo', desc: 'Usa lector de código de barras e impresora térmica en computadora, o vende desde celular y tableta escaneando con la cámara.' },
     ],
   },
   {
     key: 'caja', label: 'Caja y clientes', mockup: CashMockup,
     features: [
-      { icon: PointOfSale, title: 'Corte de caja con entradas y salidas', desc: 'Ventas por forma de pago y cada entrada y salida de dinero con concepto y monto, todo en un solo resumen.' },
-      { icon: Savings, title: 'Ganancia del día o del periodo', desc: 'Conoce el costo y la ganancia de tus ventas. Consulta cuánto ganaste hoy o en cualquier periodo.' },
-      { icon: LocalOffer, title: 'Clientes y descuentos', desc: 'Guarda a tus clientes con su descuento. Al venderles, el descuento se aplica solo al cobrar.' },
-      { icon: BookmarkAdded, title: 'Apartados con abonos', desc: 'Aparta con anticipo y registra abonos hasta liquidar. Lo apartado ya no se le vende a otro cliente.' },
-      { icon: AssignmentReturn, title: 'Devoluciones y cancelaciones', desc: 'Devuelve parte de una venta o cancélala completa. Siempre queda registrado el motivo.' },
+      { icon: PointOfSale, title: 'Corte de caja automático', desc: 'Ventas por forma de pago, entradas y salidas con concepto y monto, todo en un solo resumen.' },
+      { icon: Savings, title: 'Ganancia al instante', desc: 'Conoce el costo y la ganancia de tus ventas del día o de cualquier periodo.' },
+      { icon: LocalOffer, title: 'Clientes y descuentos', desc: 'Guarda a tus clientes con su descuento: se aplica solo al cobrar.' },
+      { icon: BookmarkAdded, title: 'Apartados con abonos', desc: 'Aparta con anticipo y registra abonos hasta liquidar. Lo apartado queda reservado para ese cliente.' },
+      { icon: AssignmentReturn, title: 'Devoluciones y cancelaciones', desc: 'Devuelve parte de una venta o cancélala completa, con el motivo siempre registrado.' },
     ],
   },
   {
     key: 'inventario', label: 'Inventario y catálogo', mockup: InventoryMockup,
     features: [
-      { icon: History, title: 'Historial de cambio de stock', desc: 'Cada movimiento registra quién lo hizo, cuándo y cuánto cambió. Revisa hasta 12 meses de cada producto.' },
-      { icon: PriceChange, title: 'Cambio de precios masivo con historial', desc: 'Cambia costo, precio y mayoreo de varios productos a la vez, en 2 clics. Cada cambio queda registrado: antes, después, fecha y quién lo hizo.' },
-      { icon: PhotoCamera, title: 'Catálogo con fotos', desc: 'Toma la foto con el celular. Al vender ves foto, precio y stock, y no confundes productos parecidos.' },
-      { icon: Inventory2, title: 'Desempaque', desc: 'Un costal de 20 kg de comida para perro se convierte en 20 kg para vender a granel. Con un clic.' },
-      { icon: UploadFile, title: 'Importa tu catálogo desde Excel', desc: 'El sistema revisa los errores antes de importar. Carga hasta 5,000 productos en segundos.' },
+      { icon: History, title: 'Historial de stock', desc: 'Cada movimiento registra quién, cuándo y cuánto cambió.' },
+      { icon: PriceChange, title: 'Cambio masivo de precios', desc: 'Actualiza costo, precio y mayoreo de varios productos en 2 clics, con registro de antes, después, fecha y responsable.' },
+      { icon: PhotoCamera, title: 'Catálogo con fotos', desc: 'Toma la foto con tu celular y distingue al instante productos parecidos al vender.' },
+      { icon: Inventory2, title: 'Desempaque', desc: 'Convierte un costal de 20 kg en kilos listos para vender a granel, con un clic.' },
+      { icon: UploadFile, title: 'Importación desde Excel', desc: 'Sube tu catálogo y el sistema revisa los datos antes de importarlos.' },
     ],
   },
   {
     key: 'sucursales', label: 'Sucursales y análisis', mockup: BranchesMockup,
     features: [
-      { icon: SyncAlt, title: 'Traspaso entre tiendas', desc: 'Ve el stock de otras tiendas y pide mercancía con un botón. El traspaso se confirma al escanear los productos.' },
-      { icon: LocalShipping, title: 'Distribución desde almacén', desc: 'El almacén arma los envíos viendo el stock de todas las tiendas. Cada tienda revisa y confirma lo que recibe.' },
-      { icon: Insights, title: 'Tableros de ventas', desc: 'Gráficas de ventas, ganancia y ticket promedio. Descubre tu mejor tienda, día y hora, y compara tus sucursales.' },
-      { icon: TrendingDown, title: 'Gráficas de cancelaciones y devoluciones', desc: 'Cuánto se cancela o devuelve, en qué tienda, qué días y horas, y por qué motivo.' },
-      { icon: Badge, title: 'Vendedores y permisos', desc: 'Crea vendedores ilimitados en cada tienda y consulta cuánto vendió cada uno. Tres roles: dueño, administrador y vendedor.' },
+      { icon: SyncAlt, title: 'Traspasos entre tiendas', desc: 'Consulta el stock de otras tiendas y pide mercancía con un botón. El traspaso se confirma al escanear.' },
+      { icon: LocalShipping, title: 'Distribución desde almacén', desc: 'El almacén arma los envíos viendo el stock de todas las tiendas, y cada tienda confirma lo que recibe.' },
+      { icon: Insights, title: 'Tableros de ventas', desc: 'Ventas, ganancia y ticket promedio: descubre tu mejor tienda, día y hora.' },
+      { icon: TrendingDown, title: 'Cancelaciones y devoluciones', desc: 'Mide cuánto se cancela o devuelve, en qué tienda, cuándo y por qué.' },
+      { icon: Badge, title: 'Vendedores y permisos', desc: 'Vendedores ilimitados por tienda con tres roles (dueño, administrador y vendedor) y ventas por vendedor.' },
+    ],
+  },
+  {
+    key: 'control', label: 'Control total del inventario', mockup: null,
+    features: [
+      { icon: ManageSearch, title: 'Auditoría interna', desc: 'Detecta diferencias de stock, movimientos que no cuadran, códigos repetidos, errores de costo o mayoreo y productos sin movimiento.' },
+      { icon: HowToReg, title: 'Ajustes con aprobación', desc: 'Vendedores y administradores piden el ajuste con la cantidad real y el dueño lo aprueba.' },
+      { icon: Lock, title: 'Stock, caja y precios protegidos', desc: 'Solo el dueño cambia el stock, edita entradas y salidas de dinero y modifica precios. El costo y el mayoreo nunca superan el precio de venta.' },
+      { icon: QrCodeScanner, title: 'Traspasos verificados', desc: 'Solo se envía lo que hay en stock, la tienda confirma escaneando lo que recibe y el dueño puede corregir cantidades.' },
     ],
   },
 ];
@@ -265,11 +276,11 @@ const ProductShowcase = () => (
             variant="h2"
             sx={{ fontFamily: POPPINS, fontWeight: 500, letterSpacing: 0, fontSize: { xs: 30, md: 40 }, lineHeight: 1.2, color: '#fff' }}
           >
-            Punto de venta poderoso
+            Todo para vender y controlar tu negocio
           </Typography>
         </motion.div>
         <Typography sx={{ color: 'rgba(255,255,255,0.92)', fontSize: { xs: 15, md: 16 }, lineHeight: 1.7, maxWidth: 700 }}>
-          Diseñado para vender más rápido, sin errores, y con control total del inventario.
+          Vende con rapidez, cobra con precisión y mantén tu inventario siempre bajo control.
         </Typography>
       </Stack>
 
@@ -284,12 +295,12 @@ const ProductShowcase = () => (
               aria-labelledby={`product-${t.key}`}
               sx={{ display: 'grid', gap: { xs: 3, md: 6 }, gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, alignItems: 'center' }}
             >
-              <Box sx={{ order: { md: flip ? 2 : 1 } }}><Mockup /></Box>
-              <Box sx={{ order: { md: flip ? 1 : 2 } }}>
+              {Mockup && <Box sx={{ order: { md: flip ? 2 : 1 } }}><Mockup /></Box>}
+              <Box sx={{ order: { md: flip ? 1 : 2 }, gridColumn: Mockup ? 'auto' : { md: '1 / -1' } }}>
                 <Typography id={`product-${t.key}`} component="h3" sx={{ fontFamily: POPPINS, fontWeight: 500, fontSize: { xs: 24, md: 30 }, color: '#fff', mb: 2.5 }}>
                   {t.label}
                 </Typography>
-                <Stack spacing={2}>
+                <Stack spacing={Mockup ? 2 : 0} sx={Mockup ? undefined : { display: 'grid', gap: 3, gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)' }, '& > *': { m: 0 } }}>
                   {t.features.map((f) => (
                     <Stack key={f.title} direction="row" spacing={1.5} alignItems="flex-start">
                       <IconBadge icon={f.icon} />

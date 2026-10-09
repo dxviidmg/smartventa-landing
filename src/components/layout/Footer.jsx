@@ -5,7 +5,16 @@ import { Box, Container, Typography, Stack, Link, Dialog, DialogTitle, DialogCon
 import Close from '@mui/icons-material/Close';
 import { CONFIG } from '../../constants';
 
-const footerLinkSx = { color: 'rgba(255,255,255,0.7)', textDecoration: 'none', '&:hover': { color: 'white' }, transition: 'color 0.25s' };
+const POPPINS = '"Poppins", sans-serif';
+const ACCENT = '#00E0D8';
+const footerLinkSx = {
+  color: 'rgba(255,255,255,0.82)', textDecoration: 'none', font: 'inherit', fontSize: 15, cursor: 'pointer', background: 'none', border: 0, p: 0,
+  '&:hover': { color: ACCENT }, '&:focus-visible': { outline: '2px solid #fff', outlineOffset: 3, borderRadius: '4px' }, transition: 'color 0.25s',
+};
+const columnTitleSx = { fontFamily: POPPINS, fontWeight: 500, mb: 2, fontSize: '1.05rem', color: '#fff' };
+const dialogPaper = { sx: { borderRadius: '24px' } };
+const dialogTitleSx = { display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontFamily: POPPINS, fontWeight: 500, color: '#242F3E' };
+const sectionTitleSx = { fontFamily: POPPINS, fontWeight: 500, mb: 1, fontSize: '1rem', color: '#242F3E' };
 
 const CURRENT_YEAR = new Date().getFullYear();
 
@@ -15,28 +24,23 @@ const Footer = () => {
 
   return (
     <>
-      <Box sx={{ bgcolor: '#022347', color: 'white', py: 6 }}>
+      <Box component="footer" sx={{ background: 'linear-gradient(134deg, #00269E 0%, #00103F 100%)', color: 'white', pt: { xs: 7, md: 9 }, pb: 4 }}>
         <Container maxWidth="lg">
           <Stack spacing={4}>
             <Stack direction={{ xs: 'column', md: 'row' }} spacing={{ xs: 4, md: 6 }}>
               <Box sx={{ flex: { xs: '0 0 auto', md: 1 }, minWidth: { xs: '100%', md: '200px' } }}>
-                <Typography variant="h6" component="p" sx={{ fontWeight: 800, mb: 2, fontSize: '1.1rem' }}>
-                  {CONFIG.company.name}
-                </Typography>
-                <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.6 }}>
+                <Box component="img" src="/logo-transparent.png" alt={CONFIG.company.name} width={120} height={41} sx={{ display: 'block', height: 41, width: 'auto', mb: 2 }} />
+                <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.82)', lineHeight: 1.7, fontSize: 15, maxWidth: 300 }}>
                   Punto de venta en la nube para controlar tu negocio estés donde estés, con una o varias sucursales.
                 </Typography>
               </Box>
               <Stack spacing={2} sx={{ flex: { xs: '0 0 auto', md: 1 }, minWidth: { xs: '100%', md: '150px' } }}>
-                <Typography variant="h6" component="p" sx={{ fontWeight: 800, mb: 2, fontSize: '1.1rem' }}>
+                <Typography variant="h6" component="p" sx={columnTitleSx}>
                   Producto
                 </Typography>
                 <Stack direction="column" spacing={1.5} component="nav" aria-label="Enlaces del sitio">
-                  <Link href="#inventory" sx={footerLinkSx}>
-                    Inventario
-                  </Link>
                   <Link href="#product" sx={footerLinkSx}>
-                    Punto de venta
+                    Funciones
                   </Link>
                   <Link href="#pricing" sx={footerLinkSx}>
                     Precios
@@ -47,7 +51,7 @@ const Footer = () => {
                 </Stack>
               </Stack>
               <Stack spacing={2} sx={{ flex: { xs: '0 0 auto', md: 1 }, minWidth: { xs: '100%', md: '150px' }, alignItems: 'flex-start' }}>
-                <Typography variant="h6" component="p" sx={{ fontWeight: 800, mb: 2, fontSize: '1.1rem' }}>
+                <Typography variant="h6" component="p" sx={columnTitleSx}>
                   Legal
                 </Typography>
                 <Stack direction="column" spacing={1.5}>
@@ -68,7 +72,7 @@ const Footer = () => {
                 </Stack>
               </Stack>
               <Stack spacing={2} sx={{ flex: { xs: '0 0 auto', md: 1 }, minWidth: { xs: '100%', md: '200px' } }}>
-                <Typography variant="h6" component="p" sx={{ fontWeight: 800, mb: 2, fontSize: '1.1rem' }}>
+                <Typography variant="h6" component="p" sx={columnTitleSx}>
                   Contacto
                 </Typography>
                 <Stack direction="column" spacing={1.5}>
@@ -78,9 +82,9 @@ const Footer = () => {
                 </Stack>
               </Stack>
             </Stack>
-            <Box sx={{ borderTop: '1px solid rgba(255,255,255,0.1)', pt: 3 }}>
+            <Box sx={{ borderTop: '1px solid rgba(255,255,255,0.2)', pt: 3 }}>
               <Stack direction={{ xs: 'column', md: 'row' }} justifyContent="space-between" alignItems="center" spacing={2}>
-                <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.5)', textAlign: { xs: 'center', md: 'left' } }}>
+                <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.75)', textAlign: { xs: 'center', md: 'left' } }}>
                   © {CURRENT_YEAR} {CONFIG.company.name}. Todos los derechos reservados.
                 </Typography>
               </Stack>
@@ -90,8 +94,8 @@ const Footer = () => {
       </Box>
 
       {/* Modal Términos y Condiciones */}
-      <Dialog open={openTerms} onClose={() => setOpenTerms(false)} maxWidth="md" fullWidth>
-        <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <Dialog open={openTerms} onClose={() => setOpenTerms(false)} maxWidth="md" fullWidth PaperProps={dialogPaper}>
+        <DialogTitle sx={dialogTitleSx}>
           Términos y Condiciones
           <IconButton aria-label="Cerrar términos y condiciones" onClick={() => setOpenTerms(false)}>
             <Close />
@@ -104,7 +108,7 @@ const Footer = () => {
             </Typography>
 
             <Box>
-              <Typography variant="h6" component="p" sx={{ fontWeight: 600, mb: 1 }}>
+              <Typography variant="h6" component="p" sx={sectionTitleSx}>
                 1. Aceptación de términos
               </Typography>
               <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
@@ -113,7 +117,7 @@ const Footer = () => {
             </Box>
 
             <Box>
-              <Typography variant="h6" component="p" sx={{ fontWeight: 600, mb: 1 }}>
+              <Typography variant="h6" component="p" sx={sectionTitleSx}>
                 2. Uso del servicio
               </Typography>
               <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
@@ -122,7 +126,7 @@ const Footer = () => {
             </Box>
 
             <Box>
-              <Typography variant="h6" component="p" sx={{ fontWeight: 600, mb: 1 }}>
+              <Typography variant="h6" component="p" sx={sectionTitleSx}>
                 3. Cuenta demo
               </Typography>
               <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
@@ -131,7 +135,7 @@ const Footer = () => {
             </Box>
 
             <Box>
-              <Typography variant="h6" component="p" sx={{ fontWeight: 600, mb: 1 }}>
+              <Typography variant="h6" component="p" sx={sectionTitleSx}>
                 4. Limitación de responsabilidad
               </Typography>
               <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
@@ -140,7 +144,7 @@ const Footer = () => {
             </Box>
 
             <Box>
-              <Typography variant="h6" component="p" sx={{ fontWeight: 600, mb: 1 }}>
+              <Typography variant="h6" component="p" sx={sectionTitleSx}>
                 5. Contacto
               </Typography>
               <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
@@ -152,8 +156,8 @@ const Footer = () => {
       </Dialog>
 
       {/* Modal Política de Privacidad */}
-      <Dialog open={openPrivacy} onClose={() => setOpenPrivacy(false)} maxWidth="md" fullWidth>
-        <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <Dialog open={openPrivacy} onClose={() => setOpenPrivacy(false)} maxWidth="md" fullWidth PaperProps={dialogPaper}>
+        <DialogTitle sx={dialogTitleSx}>
           Política de Privacidad
           <IconButton aria-label="Cerrar política de privacidad" onClick={() => setOpenPrivacy(false)}>
             <Close />
@@ -166,7 +170,7 @@ const Footer = () => {
             </Typography>
 
             <Box>
-              <Typography variant="h6" component="p" sx={{ fontWeight: 600, mb: 1 }}>
+              <Typography variant="h6" component="p" sx={sectionTitleSx}>
                 1. Información que recopilamos
               </Typography>
               <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
@@ -175,7 +179,7 @@ const Footer = () => {
             </Box>
 
             <Box>
-              <Typography variant="h6" component="p" sx={{ fontWeight: 600, mb: 1 }}>
+              <Typography variant="h6" component="p" sx={sectionTitleSx}>
                 2. Uso de la información
               </Typography>
               <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
@@ -184,7 +188,7 @@ const Footer = () => {
             </Box>
 
             <Box>
-              <Typography variant="h6" component="p" sx={{ fontWeight: 600, mb: 1 }}>
+              <Typography variant="h6" component="p" sx={sectionTitleSx}>
                 3. Protección de datos
               </Typography>
               <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
@@ -193,7 +197,7 @@ const Footer = () => {
             </Box>
 
             <Box>
-              <Typography variant="h6" component="p" sx={{ fontWeight: 600, mb: 1 }}>
+              <Typography variant="h6" component="p" sx={sectionTitleSx}>
                 4. Contacto
               </Typography>
               <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
