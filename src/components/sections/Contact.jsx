@@ -4,7 +4,7 @@ import { Box, Container, Typography, Stack, Button } from '@mui/material';
 import { motion } from 'framer-motion';
 import ArrowForward from '@mui/icons-material/ArrowForward';
 import { useWhatsApp } from '../../contexts/WhatsAppContext';
-import { CONFIG, ctaButtonSx, contactItem } from '../../constants';
+import { CONFIG, contactItem } from '../../constants';
 
 const Contact = () => {
   const { openWhatsApp } = useWhatsApp();
@@ -13,31 +13,33 @@ const Contact = () => {
     <Box
       sx={{
         py: { xs: 10, md: 14 },
-        background: 'radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px) 0 0 / 22px 22px, linear-gradient(145deg, #022347 0%, #04346b 50%, #065a9e 100%)',
+        background: 'linear-gradient(134deg, #00A4DB 0%, #00269E 100%)',
         position: 'relative',
         overflow: 'hidden',
       }}
     >
-      {/* Subtle background glow */}
-      <Box sx={{
-        position: 'absolute', inset: 0,
-        background: 'radial-gradient(ellipse at 50% 50%, rgba(4,120,87,0.12) 0%, transparent 60%)',
-        pointerEvents: 'none',
-      }} />
+      {/* Decorative translucent triangles, top-left and bottom-right */}
+      {[{ top: 0, left: 0, transform: 'none' }, { bottom: 0, right: 0, transform: 'rotate(180deg)' }].map((pos, i) => (
+        <Box
+          key={i}
+          aria-hidden="true"
+          sx={{ position: 'absolute', height: 230, width: '25%', background: 'url(/triangle-double.png) no-repeat', backgroundSize: 'contain', pointerEvents: 'none', ...pos }}
+        />
+      ))}
 
-      <Container maxWidth="sm" sx={{ position: 'relative', zIndex: 1 }}>
+      <Container maxWidth="md" sx={{ position: 'relative', zIndex: 1 }}>
         <Stack spacing={3} alignItems="center" textAlign="center">
           <motion.div {...contactItem} transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}>
             <Typography
               variant="h2"
               sx={{
-                color: 'white',
-                fontSize: { xs: '2rem', sm: '2.4rem', md: '2.8rem' },
+                color: 'white', fontFamily: '"Poppins", sans-serif', fontWeight: 500, letterSpacing: 0, lineHeight: 1.25,
+                fontSize: { xs: '1.9rem', sm: '2.2rem', md: '2.5rem' },
               }}
             >
               Deja de administrar tu negocio a ciegas.
               <br />
-              <Box component="span" sx={{ color: '#34d399' }}>
+              <Box component="span" sx={{ color: '#BAE6FD' }}>
                 Controla todo desde un solo lugar.
               </Box>
             </Typography>
@@ -58,7 +60,7 @@ const Contact = () => {
                 size="large"
                 endIcon={<ArrowForward />}
                 onClick={() => window.open(`${CONFIG.urls.app}/registrarme`, '_blank')}
-                sx={{ ...ctaButtonSx, px: 4, py: 1.5, fontSize: '1rem' }}
+                sx={{ px: '45px', py: '14px', fontFamily: '"Poppins", sans-serif', fontWeight: 500, fontSize: 16, borderRadius: '45px', whiteSpace: 'nowrap', bgcolor: '#fff', color: '#00269E', '&:hover': { bgcolor: '#E0F2FE' } }}
               >
                 Probar SmartVenta
               </Button>
@@ -67,10 +69,9 @@ const Contact = () => {
                 size="large"
                 onClick={() => openWhatsApp('Hola, quiero conocer más sobre SmartVenta')}
                 sx={{
-                  px: 4, py: 1.5, fontSize: '1rem',
-                  color: 'rgba(255,255,255,0.85)',
-                  borderColor: 'rgba(255,255,255,0.25)',
-                  '&:hover': { borderColor: 'rgba(255,255,255,0.6)', bgcolor: 'rgba(255,255,255,0.05)' },
+                  px: '45px', py: '14px', fontFamily: '"Poppins", sans-serif', fontWeight: 500, fontSize: 16, borderRadius: '45px', whiteSpace: 'nowrap',
+                  color: '#fff', borderColor: 'rgba(255,255,255,0.7)', borderWidth: 2,
+                  '&:hover': { borderColor: '#fff', borderWidth: 2, bgcolor: 'rgba(255,255,255,0.1)' },
                 }}
               >
                 Hablar con nosotros
@@ -82,8 +83,8 @@ const Contact = () => {
             <Stack direction="row" flexWrap="wrap" justifyContent="center" gap={{ xs: 1.5, sm: 3 }} sx={{ pt: 2 }}>
               {['Desde $399/mes', 'Sin contrato', 'Soporte por WhatsApp'].map((text) => (
                 <Stack key={text} direction="row" spacing={0.75} alignItems="center">
-                  <Box sx={{ width: 5, height: 5, borderRadius: '50%', bgcolor: '#34d399', flexShrink: 0 }} />
-                  <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.9rem' }}>
+                  <Box sx={{ width: 5, height: 5, borderRadius: '50%', bgcolor: '#BAE6FD', flexShrink: 0 }} />
+                  <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.9)', fontSize: '0.9rem' }}>
                     {text}
                   </Typography>
                 </Stack>

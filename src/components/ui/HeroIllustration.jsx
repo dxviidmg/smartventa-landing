@@ -3,11 +3,11 @@
  * with arrows for transfers (warehouse to store, big warehouse to small, store to store).
  * Inline SVG, no external assets or licences.
  */
-const YELLOW = '#FDE047';
-const GREEN = '#6EE7B7';
+export const YELLOW = '#FDE047';
+export const GREEN = '#6EE7B7';
 const LABEL = { fontSize: 12, fontWeight: 600, fill: '#fff', fontFamily: 'Poppins, sans-serif', textAnchor: 'middle' };
 
-const Store = ({ x, y, color, label, chip }) => (
+export const Store = ({ x, y, color, label, chip, labelColor = '#fff' }) => (
   <g transform={`translate(${x} ${y})`}>
     <rect x="0" y="34" width="104" height="76" rx="6" fill="#fff" />
     {[0, 1, 2, 3, 4].map((i) => (
@@ -24,11 +24,11 @@ const Store = ({ x, y, color, label, chip }) => (
         <text x="-10" y="13" fontSize="11" fontWeight="600" fill="#0F172A" fontFamily="Poppins, sans-serif">{chip}</text>
       </g>
     )}
-    <text x="52" y="128" {...LABEL}>{label}</text>
+    <text x="52" y="128" {...LABEL} fill={labelColor}>{label}</text>
   </g>
 );
 
-const Warehouse = ({ x, y, w, h, label }) => {
+export const Warehouse = ({ x, y, w, h, label, labelColor = '#fff' }) => {
   const doorW = w * 0.46;
   const doorH = h * 0.7;
   const crate = Math.max(14, h * 0.2);
@@ -42,7 +42,7 @@ const Warehouse = ({ x, y, w, h, label }) => {
       ))}
       <rect x="8" y={26 + h - crate} width={crate} height={crate} rx="2" fill="#F59E0B" />
       <rect x={w - crate - 8} y={26 + h - crate} width={crate} height={crate} rx="2" fill="#FBBF24" />
-      <text x={w / 2} y={26 + h + 18} {...LABEL}>{label}</text>
+      <text x={w / 2} y={26 + h + 18} {...LABEL} fill={labelColor}>{label}</text>
     </g>
   );
 };
