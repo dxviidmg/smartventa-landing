@@ -2,7 +2,7 @@
  * Original flat illustration: the owner checks a sale on a phone while the catalog is already loaded.
  * Inline SVG, no external assets or licences.
  */
-const AMBER = '#FFB020';
+import { AMBER } from '../../constants';
 
 const Chip = ({ x, y, w, color, children }) => (
   <g transform={`translate(${x} ${y})`}>

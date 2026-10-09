@@ -1,7 +1,7 @@
 /**
  * Original flat illustration: a support chat on a phone. Inline SVG, no external assets or licences.
  */
-const AMBER = '#FFB020';
+import { AMBER } from '../../constants';
 
 const SupportChatIllustration = ({ label }) => (
   <svg viewBox="0 0 320 380" role="img" aria-label={label} style={{ width: '100%', height: 'auto', display: 'block' }}>

@@ -3,18 +3,13 @@
 import { useState, useEffect, lazy, Suspense } from 'react';
 import { AppBar, Box, Toolbar, Container, Button, IconButton, Stack } from '@mui/material';
 import { useApp } from '../../contexts/AppContext';
-import { CONFIG } from '../../constants';
+import { CONFIG, ACCENT, POPPINS, GRADIENT } from '../../constants';
 
 const MenuIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
     <path d="M3 18h18v-2H3zm0-5h18v-2H3zm0-7v2h18V6z"/>
   </svg>
 );
-
-// Original brand blue gradient, shown once the page scrolls
-const BLUE_BAR = 'linear-gradient(80deg, rgb(0,48,204) 0%, rgb(0,164,219) 100%)';
-const ACCENT = '#00E0D8';
-const POPPINS = '"Poppins", sans-serif';
 
 const LazyDrawer = lazy(() => import('./NavDrawer'));
 
@@ -60,7 +55,7 @@ const Navbar = () => {
         }}
       >
         {/* The gradient sits on its own layer so its opacity can fade in (a gradient cannot be transitioned directly) */}
-        <Box aria-hidden="true" sx={{ position: 'absolute', inset: 0, background: BLUE_BAR, opacity: scrolled ? 1 : 0, transition: 'opacity 0.4s ease', '@media (prefers-reduced-motion: reduce)': { transition: 'none' } }} />
+        <Box aria-hidden="true" sx={{ position: 'absolute', inset: 0, background: GRADIENT, opacity: scrolled ? 1 : 0, transition: 'opacity 0.4s ease', '@media (prefers-reduced-motion: reduce)': { transition: 'none' } }} />
         <Container maxWidth="lg" sx={{ position: 'relative' }}>
           <Toolbar disableGutters sx={{ minHeight: 'auto !important' }}>
             <a

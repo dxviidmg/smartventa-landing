@@ -5,10 +5,9 @@ import { motion } from 'framer-motion';
 import ReceiptLong from '@mui/icons-material/ReceiptLong';
 import CalendarMonth from '@mui/icons-material/CalendarMonth';
 import CountUp from '../ui/CountUp';
+import { POPPINS, BLUE_BG } from '../../constants';
 
-const POPPINS = '"Poppins", sans-serif';
 // Same blue as the other gradient blocks, with a darker start so white text keeps good contrast
-const BLUE_BG = 'linear-gradient(134deg, #0079BE 0%, #00269E 100%)';
 
 const stats = [
   { value: 163475, label: 'ventas procesadas con SmartVenta', icon: ReceiptLong },

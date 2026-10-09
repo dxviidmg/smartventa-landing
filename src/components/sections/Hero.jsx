@@ -2,7 +2,7 @@
 
 import { Container, Typography, Button, Stack, Box, Grid } from '@mui/material';
 import { motion } from 'framer-motion';
-import { CONFIG, heroContainer, heroItem, heroImage } from '../../constants';
+import { CONFIG, POPPINS, AMBER, pillSx, amberSx, heroContainer, heroItem, heroImage } from '../../constants';
 import HeroIllustration from '../ui/HeroIllustration';
 
 const ArrowForward = () => (
@@ -28,9 +28,9 @@ const Hero = () => (
                 <Typography
                   id="hero-title"
                   variant="h1"
-                  sx={{ fontFamily: '"Poppins", sans-serif', fontWeight: 500, letterSpacing: 0, fontSize: { xs: 38, sm: 44, md: 60 }, lineHeight: { xs: '50px', md: '68px' }, color: '#fff' }}
+                  sx={{ fontFamily: POPPINS, fontWeight: 500, letterSpacing: 0, fontSize: { xs: 38, sm: 44, md: 60 }, lineHeight: { xs: '50px', md: '68px' }, color: '#fff' }}
                 >
-                  Todo tu negocio, <Box component="span" sx={{ color: '#FFB020' }}>bajo control</Box>
+                  Todo tu negocio, <Box component="span" sx={{ color: AMBER }}>bajo control</Box>
                 </Typography>
               </motion.div>
 
@@ -48,7 +48,7 @@ const Hero = () => (
                   href={`${CONFIG.urls.app}/registrarme`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  sx={{ mt: 1, px: '45px', py: '14px', fontFamily: '"Poppins", sans-serif', fontWeight: 500, fontSize: 16, borderRadius: '45px', bgcolor: '#FFB020', color: '#0B1B4D', boxShadow: '0 8px 24px rgba(255,176,32,0.35)', '&:hover': { bgcolor: '#F59E0B' } }}
+                  sx={{ ...pillSx, ...amberSx, mt: 1, px: '45px', py: '14px' }}
                 >
                   Probar SmartVenta
                 </Button>

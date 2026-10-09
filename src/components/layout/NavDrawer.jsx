@@ -1,7 +1,7 @@
 'use client';
 
 import { Box, Drawer, IconButton, List, ListItem, ListItemButton, ListItemText } from '@mui/material';
-import { CONFIG } from '../../constants';
+import { CONFIG, POPPINS, GRADIENT, ACCENT } from '../../constants';
 
 const CloseIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -18,7 +18,7 @@ const CloseIcon = () => (
  * @param {function} props.onNav - Callback when a nav item is clicked, receives section id
  */
 const NavDrawer = ({ open, onClose, navItems, onNav }) => (
-  <Drawer anchor="right" open={open} onClose={onClose} PaperProps={{ sx: { background: 'linear-gradient(80deg, rgb(0,48,204) 0%, rgb(0,164,219) 100%)', color: '#fff' } }}>
+  <Drawer anchor="right" open={open} onClose={onClose} PaperProps={{ sx: { background: GRADIENT, color: '#fff' } }}>
     <Box sx={{ width: 280, pt: 1 }}>
       <Box sx={{ display: 'flex', justifyContent: 'flex-end', px: 1 }}>
         <IconButton aria-label="Cerrar menú" onClick={onClose} sx={{ color: '#fff' }}><CloseIcon /></IconButton>
@@ -27,13 +27,13 @@ const NavDrawer = ({ open, onClose, navItems, onNav }) => (
         {navItems.map(({ label, id }) => (
           <ListItem key={id} disablePadding>
             <ListItemButton onClick={() => onNav(id)}>
-              <ListItemText primary={label} primaryTypographyProps={{ fontFamily: '"Poppins", sans-serif', fontWeight: 500 }} />
+              <ListItemText primary={label} primaryTypographyProps={{ fontFamily: POPPINS, fontWeight: 500 }} />
             </ListItemButton>
           </ListItem>
         ))}
         <ListItem disablePadding>
           <ListItemButton onClick={() => window.open(`${CONFIG.urls.app}/registrarme`, '_blank')}>
-            <ListItemText primary="Probar SmartVenta" primaryTypographyProps={{ color: '#00E0D8', fontFamily: '"Poppins", sans-serif', fontWeight: 500 }} />
+            <ListItemText primary="Probar SmartVenta" primaryTypographyProps={{ color: ACCENT, fontFamily: POPPINS, fontWeight: 500 }} />
           </ListItemButton>
         </ListItem>
       </List>
