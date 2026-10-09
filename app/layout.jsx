@@ -5,13 +5,13 @@ const BASE = 'https://smartventa-pos.vercel.app';
 
 export const metadata = {
   title: {
-    default: 'SmartVenta — Punto de Venta en la Nube para Negocios con Sucursales | México',
+    default: 'SmartVenta — Punto de Venta en la Nube para tu Negocio | México',
     template: '%s | SmartVenta',
   },
   description:
-    'Sistema punto de venta (POS) en la nube para negocios con una o varias sucursales. ' +
+    'Punto de venta en la nube para negocios con inventario, de una tienda a varias sucursales. ' +
     'Controla ventas, inventario, traspasos, caja y precios desde un solo lugar. ' +
-    'Sin instalación, sin contrato. Desde $399/mes MXN.',
+    'Listo para usar desde el navegador, mes a mes. Desde $399/mes MXN.',
   keywords: [
     'punto de venta', 'POS', 'punto de venta en la nube', 'sistema de ventas',
     'inventario', 'multi-sucursal', 'traspasos', 'control de inventario',
@@ -28,9 +28,9 @@ export const metadata = {
   openGraph: {
     type: 'website',
     url: '/',
-    title: 'SmartVenta — Punto de Venta en la Nube para Negocios con Sucursales',
+    title: 'SmartVenta — Punto de Venta en la Nube para tu Negocio',
     description:
-      'Controla ventas, inventario, traspasos y caja de todas tus sucursales desde un solo lugar. Sin instalación. Desde $399/mes.',
+      'Controla ventas, inventario, traspasos y caja de tu negocio desde un solo lugar. Listo para usar desde el navegador, mes a mes. Desde $399/mes.',
     images: [
       {
         url: '/og-image.jpg',
@@ -45,9 +45,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'SmartVenta — Punto de Venta en la Nube para Negocios con Sucursales',
+    title: 'SmartVenta — Punto de Venta en la Nube para tu Negocio',
     description:
-      'Controla ventas, inventario, traspasos y caja de todas tus sucursales desde un solo lugar. Sin instalación. Desde $399/mes.',
+      'Controla ventas, inventario, traspasos y caja de tu negocio desde un solo lugar. Listo para usar desde el navegador, mes a mes. Desde $399/mes.',
     images: ['/og-image.jpg'],
   },
   other: {
@@ -87,9 +87,9 @@ const jsonLdSoftware = {
   applicationCategory: 'BusinessApplication',
   operatingSystem: 'Web',
   description:
-    'Sistema punto de venta (POS) en la nube para negocios minoristas y mayoristas con múltiples sucursales. ' +
+    'Punto de venta en la nube para negocios minoristas y mayoristas, de una tienda a varias sucursales y almacenes. ' +
     'Controla ventas, inventario, traspasos, caja y precios desde un solo lugar. ' +
-    'Sin instalación, sin contrato.',
+    'Listo para usar desde el navegador, mes a mes.',
   offers: {
     '@type': 'Offer',
     price: '399',
@@ -101,84 +101,22 @@ const jsonLdSoftware = {
   screenshot: `${BASE}/og-image.jpg`,
 };
 
-// Synced with the actual FAQ component
+// Synced with the actual FAQ component (same questions and answers)
 const jsonLdFaq = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: [
-    {
-      '@type': 'Question',
-      name: '¿Cuánto cuesta SmartVenta?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Desde $399/mes (1 sucursal). El precio baja por sucursal conforme creces. 3 tiendas: $1,149/mes. 5 tiendas: $1,799/mes. Sin contrato, sin sorpresas.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '¿Qué incluye SmartVenta?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Todo: punto de venta, inventario, traspasos, distribuciones, caja, dashboard, cambios masivos de precios, importación desde Excel, auditoría, soporte por WhatsApp y actualizaciones.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '¿Necesito instalar algo para usar SmartVenta?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'No. Solo necesitas navegador e internet. Funciona en computadora, tableta y celular. Si usas impresora de tickets, te ayudamos a configurarla.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '¿Puedo empezar con una sola tienda?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Sí. Y cuando crezcas a 4 o 10 sucursales, no cambias de sistema. Simplemente agregas.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '¿Cómo funciona el soporte de SmartVenta?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'WhatsApp directo. Te ayudamos a configurar, resolver dudas y empezar a vender.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '¿SmartVenta funciona desde cualquier lugar?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Sí. Es un sistema en la nube. Puedes consultar tus ventas, inventario y caja desde cualquier lugar con conexión a internet, sin necesidad de estar físicamente en la tienda.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '¿Puedo manejar varias sucursales con SmartVenta?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Sí. Puedes administrar varias tiendas y almacenes dentro de la misma cuenta, con catálogo, precios e inventario centralizados.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '¿Puedo vender productos por peso?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Sí. Puedes vender por pieza, por peso (kilo o fracción) o por monto ("dame $20 de queso"), y el sistema calcula automáticamente la cantidad correspondiente.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '¿Puedo importar mis productos desde Excel?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Sí. Puedes subir tu catálogo completo desde un archivo de Excel con plantillas descargables y validación previa de errores.',
-      },
-    },
-  ],
+    ['¿Qué necesito para empezar?', 'Solo un navegador e internet. Funciona en computadora, tableta y celular, y te ayudamos a configurar tu impresora de tickets.'],
+    ['¿Puedo empezar con una sola tienda?', 'Sí. Y cuando crezcas no cambias de sistema: agregas sucursales y el precio por cada una baja.'],
+    ['¿Puedo traer mi catálogo actual?', 'Sí. Si lo tienes en Excel, lo importamos por ti con plantillas y validación, para que empieces con datos reales.'],
+    ['¿Quién puede cambiar precios, stock y caja?', 'Solo el dueño. Vendedores y administradores solicitan los ajustes de stock y el dueño los aprueba. Todo movimiento queda registrado.'],
+    ['¿Mi información está segura?', 'Sí. Vive en la nube y queda respaldada, así que tus datos están protegidos aunque tu computadora falle o se pierda.'],
+    ['¿Cómo funciona el soporte?', 'Directo por WhatsApp. Te ayudamos a configurar, resolver dudas y empezar a vender.'],
+  ].map(([name, text]) => ({
+    '@type': 'Question',
+    name,
+    acceptedAnswer: { '@type': 'Answer', text },
+  })),
 };
 
 /* ── Layout ───────────────────────────────────────────────── */
