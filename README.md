@@ -44,7 +44,7 @@ app/
 src/
   theme.js              Tema MUI base (tipografía de cuerpo, paleta, botones)
   constants/
-    design.js           TOKENS DE DISEÑO (fuentes, degradados, ámbar, botones)  <- empieza aquí
+    design.js           TOKENS DE DISEÑO (fuentes, azules del SaaS, ámbar, botones)  <- empieza aquí
     animations.js       Presets de Framer Motion
     config.js           Datos de contacto y empresa (leen las variables de entorno)
     index.js            Reexporta todo lo anterior
@@ -66,7 +66,7 @@ public/                 hero-bg.png, triangle-double.png, og-image.jpg, favicon 
 
 | # | Sección | Archivo | Fondo |
 | --- | --- | --- | --- |
-| 1 | Hero | `sections/Hero.jsx` | Imagen `hero-bg.png` (azul con curva) |
+| 1 | Hero | `sections/Hero.jsx` | Imagen `hero-bg.png` (escala del marino, con curva) |
 | 2 | Industrias (rotativo de 3) | `sections/Industries.jsx` | Blanco |
 | 3 | Cifras | `sections/Stats.jsx` | `BLUE_BG` |
 | 4 | Una solución para cada tipo de negocio | `sections/BeforeAfter.jsx` | Blanco |
@@ -74,7 +74,7 @@ public/                 hero-bg.png, triangle-double.png, og-image.jpg, favicon 
 | 6 | Precios (deslizador) | `sections/Pricing.jsx` | Blanco |
 | 7 | Preguntas frecuentes | `sections/FAQ.jsx` | Blanco |
 | 8 | Empieza hoy (3 pasos y botones) | `sections/Contact.jsx` | `CTA_BG` con triángulos |
-| 9 | Pie de página | `layout/Footer.jsx` | Degradado azul profundo |
+| 9 | Pie de página | `layout/Footer.jsx` | `FOOTER_BG` (marino) |
 
 Se alternan fondos blancos y azules. Las anclas del menú son `#industries`, `#product`, `#pricing` y `#faq`; el cierre es `#start`.
 
@@ -99,9 +99,9 @@ Escala usada:
 | Elemento | Tamaño (móvil / escritorio) | Detalle |
 | --- | --- | --- |
 | Título del Hero | 38 / 60 px (44 en tablet) | Poppins 500, interlineado 50 / 68 px |
-| Título de sección (h2) | 30 / 40 px | Poppins 500, `letterSpacing: 0`, interlineado 1.2, color `#242F3E` |
-| Etiqueta sobre el título (eyebrow) | 14 px | Poppins 500, color `#0030AB` |
-| Subtítulo de sección | 15 / 16 px | Interlineado 1.7, color `#5B6472` |
+| Título de sección (h2) | 30 / 40 px | Poppins 500, `letterSpacing: 0`, interlineado 1.2, color `#0F172A` |
+| Etiqueta sobre el título (eyebrow) | 14 px | Poppins 500, color `PRIMARY` (`#1D4ED8`) |
+| Subtítulo de sección | 15 / 16 px | Interlineado 1.7, color `#475569` |
 | Título de tarjeta (h3) | 16 a 20 px | Poppins 500 |
 | Texto de tarjeta | 14 a 15 px | Interlineado 1.6 a 1.7 |
 
@@ -111,26 +111,35 @@ Los títulos de sección **no se escriben a mano**: usa `components/ui/SectionHe
 
 ### Marca y degradados (`constants/design.js`)
 
+Todo parte del marino `#0B1B4D` del SaaS (`pos-multi-store`, `AGENTS.md`), para que landing y aplicación se vean como una sola marca. Los degradados son tonos de ese marino hasta `#1E3A8A`; no se usan celestes ni otros azules.
+
 | Token | Valor | Uso |
 | --- | --- | --- |
-| `GRADIENT` | `linear-gradient(80deg, #0030CC 0%, #00A4DB 100%)` | Iconos en círculo, barra del menú, tarjeta destacada, bordes de acento |
-| `BLUE_BG` | `linear-gradient(134deg, #0079BE 0%, #00269E 100%)` | Secciones azules de contenido (Cifras, Funciones, Precios). El inicio está oscurecido para que el texto blanco mantenga 4.5:1 |
-| `CTA_BG` | `linear-gradient(134deg, #00A4DB 0%, #00269E 100%)` | Cierre "Empieza hoy" y tarjeta "Lo que logras" |
-| `ACCENT` | `#00E0D8` | Hover de enlaces del menú y del pie, borde del botón del menú |
+| `NAVY` | `#0B1B4D` | **Color base de toda la interfaz** (igual que el sidebar y los botones de acción de la app): pestañas activas, deslizador, tablas, texto sobre ámbar |
+| `PRIMARY` | `#0B1B4D` | Énfasis sobre fondo claro (etiquetas, enlaces): el mismo marino |
+| `GRADIENT` | `linear-gradient(135deg, #0B1B4D 0%, #1E3A8A 100%)` | Iconos en círculo y acentos |
+| `NAV_BG` | `#0B1B4D` | Barra del menú al hacer scroll y panel móvil (marino sólido) |
+| `BLUE_BG` | `linear-gradient(135deg, #0B1B4D 0%, #1E3A8A 100%)` | Secciones oscuras de contenido (Cifras, Funciones) |
+| `CTA_BG` | `linear-gradient(135deg, #1E3A8A 0%, #0B1B4D 100%)` | Cierre "Empieza hoy" y tarjeta "Lo que logras con SmartVenta" |
+| `FOOTER_BG` | `linear-gradient(180deg, #0B1B4D 0%, #08143A 100%)` | Pie de página (mismo degradado del sidebar de la app) |
+| `SURFACE_MUTED` | `#E8EEF6` | Fondo apagado de las secciones claras (igual que el fondo general de la app) |
+| `ACCENT` | `#00E0D8` | Hover de enlaces del menú y del pie (mismo turquesa del sidebar activo de la app) |
 | `AMBER` | `#FFB020` | **Único color cálido**: botones principales (Hero, Precios, cierre) y palabras destacadas |
 
-### Neutros y texto
+El fondo del Hero (`public/hero-bg.png`) es la imagen de la plantilla de referencia **recoloreada** con la escala `#08143A` a `#0B1B4D` a `#14307F` a `#2A4BAE`; si se cambia la paleta hay que volver a generarla (mapeo de luminosidad con ImageMagick).
 
-| Valor | Uso |
+### Neutros y texto (mismos valores que la aplicación)
+
+| Token / valor | Uso |
 | --- | --- |
-| `#242F3E` | Títulos sobre fondo claro |
-| `#0F172A` | Texto principal del tema |
-| `#5B6472` / `#475569` | Texto secundario |
+| `SURFACE_MUTED` `#E8EEF6` | Fondo de las secciones claras (`background.default` de la app) |
+| `SURFACE` `#FBFCFE` | Tarjetas, paneles y entradas (`background.paper`) |
+| `BORDER` `#DDE3EC` | Bordes finos de tarjetas (`border`) |
+| `SHADOW_CARD` | `0 8px 24px rgba(15,23,42,0.12)`: sombra neutra de tarjetas |
+| `#0F172A` | Títulos y texto principal sobre fondo claro (`text.primary`) |
+| `#475569` | Texto secundario (`text.secondary`) |
 | `#FFFFFF` y `rgba(255,255,255,0.92)` | Texto sobre fondos azules |
 | `#0B1B4D` | Texto **sobre ámbar** (contraste 9:1; nunca usar blanco sobre ámbar) |
-| `#0030AB` | Azul de énfasis sobre fondo claro (etiquetas, pestañas activas, enlaces) |
-| `#F5F9FF`, `#EFF6FF` | Fondos celestes muy claros de paneles |
-| `#E6EDF5`, `#DBEAFE`, `#E2E8F0` | Bordes finos de tarjetas |
 | `#047857`, `#10B981` | Positivo (confirmaciones, ganancia) |
 | `#25D366` | Verde de WhatsApp (botón flotante), solo ahí |
 
@@ -146,9 +155,9 @@ El ámbar se usa en pocos lugares a propósito. Si agregas otro uso, que sea un 
 | --- | --- |
 | Botones y pestañas (píldora) | `borderRadius: 45px`, Poppins 500 de 16 px, altura mínima 44 px |
 | Padding de botón | `13-14px` vertical, `40-45px` horizontal |
-| Tarjetas y paneles | Radio `20-28px`, borde de 1 px (`#E6EDF5` o `#DBEAFE`) |
-| Sombra de tarjeta clara | `0 10-12px 30px rgba(0,141,236,0.08)` |
-| Sombra de tarjeta destacada | `0 16-24px 36-50px rgba(0,60,180,0.12 a 0.25)` |
+| Tarjetas y paneles | Radio `20-28px`, fondo `SURFACE`, borde de 1 px `BORDER` |
+| Sombra de tarjeta clara | `SHADOW_CARD` |
+| Sombra de tarjeta destacada | `0 20px 44px rgba(15,23,42,0.14)` |
 | Sombra del botón ámbar | `0 8px 24px rgba(255,176,32,0.35)` |
 | Padding vertical de sección | `py: { xs: 7, md: 10 }` (también 6/8, 7/9 y 9/13 en bloques puntuales) |
 | Contenedor | `Container maxWidth="lg"` (1200 px); `md` para Precios |
@@ -159,10 +168,10 @@ Breakpoints de MUI: `xs` 0, `sm` 600, `md` 900, `lg` 1200, `xl` 1536. El diseño
 ## Componentes y patrones
 
 - **Botón principal:** `{ ...pillSx, ...amberSx }` más padding. Contiene "Probar SmartVenta".
-- **Botón secundario:** píldora con borde (blanco sobre azul, `#0030AB` sobre blanco).
+- **Botón secundario:** píldora con borde (blanco sobre azul, `NAVY` sobre claro).
 - **Icono en círculo:** círculo de `GRADIENT` (o translúcido blanco sobre azul), icono blanco de MUI.
-- **Menú (`Navbar`):** fijo y transparente arriba; al pasar los 40 px de scroll aparece una capa con `GRADIENT` mediante un fade de 0.4 s. Altura constante. Enlaces en Poppins 500 de 16 px. El menú móvil (`NavDrawer`) usa el mismo degradado.
-- **Pie (`Footer`):** degradado `#00269E` a `#00103F`, logo transparente, enlaces con hover `ACCENT`, ventanas legales con `LegalDialog`.
+- **Menú (`Navbar`):** fijo y transparente arriba; al pasar los 40 px de scroll aparece una capa con `NAV_BG` mediante un fade de 0.4 s. Altura constante. Enlaces en Poppins 500 de 16 px. El menú móvil (`NavDrawer`) usa el mismo degradado.
+- **Pie (`Footer`):** `FOOTER_BG`, logo blanco, enlaces con hover `ACCENT`, ventanas legales con `LegalDialog`.
 - **Ilustraciones:** SVG propios en `components/ui` (`HeroIllustration`, `OwnerPhoneIllustration`, `SupportChatIllustration`, `ScenarioScenes`). Estilo plano, sin licencias externas. Usan `AMBER` para los acentos cálidos.
 - **Ventanas de ejemplo** (`SampleWindows`): maquetas con datos ilustrativos, ocultas a lectores de pantalla (`aria-hidden`). Los datos son inventados; reemplázalos por capturas reales cuando existan.
 
@@ -187,7 +196,7 @@ Breakpoints de MUI: `xs` 0, `sm` 600, `md` 900, `lg` 1200, `xl` 1536. El diseño
 
 | Quiero cambiar | Dónde |
 | --- | --- |
-| El azul de marca o el ámbar | `src/constants/design.js` (`GRADIENT`, `BLUE_BG`, `CTA_BG`, `AMBER`) |
+| El azul de marca o el ámbar | `src/constants/design.js` (`PRIMARY`, `NAVY`, `GRADIENT`, `NAV_BG`, `BLUE_BG`, `CTA_BG`, `FOOTER_BG`, `AMBER`) |
 | La fuente de títulos | `POPPINS` en `design.js` y el `<link>` de fuentes en `app/layout.jsx` |
 | La fuente del cuerpo | `src/theme.js` (`typography.fontFamily`) y `app/layout.jsx` |
 | El tamaño o color de los títulos de sección | `components/ui/SectionHeading.jsx` |
