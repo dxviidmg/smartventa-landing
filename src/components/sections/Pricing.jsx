@@ -48,11 +48,10 @@ const usePricing = () => {
   };
 };
 
-const pillBtn = (light) => ({
+const pillBtn = () => ({
   px: '40px', py: '13px', fontFamily: POPPINS, fontWeight: 500, fontSize: 16, borderRadius: '45px', whiteSpace: 'nowrap',
-  bgcolor: light ? '#fff' : '#2563EB', color: light ? '#00269E' : '#fff',
-  boxShadow: light ? '0 8px 24px rgba(0,20,90,0.25)' : '0 8px 24px rgba(37,99,235,0.30)',
-  '&:hover': { bgcolor: light ? '#E0F2FE' : '#1D4ED8' },
+  bgcolor: '#FFB020', color: '#0B1B4D', boxShadow: '0 8px 24px rgba(255,176,32,0.35)',
+  '&:hover': { bgcolor: '#F59E0B' },
 });
 
 const Heading = ({ dark }) => (

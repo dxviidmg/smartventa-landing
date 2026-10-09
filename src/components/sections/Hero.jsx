@@ -30,7 +30,7 @@ const Hero = () => (
                   variant="h1"
                   sx={{ fontFamily: '"Poppins", sans-serif', fontWeight: 500, letterSpacing: 0, fontSize: { xs: 38, sm: 44, md: 60 }, lineHeight: { xs: '50px', md: '68px' }, color: '#fff' }}
                 >
-                  Todo tu negocio, bajo control
+                  Todo tu negocio, <Box component="span" sx={{ color: '#FFB020' }}>bajo control</Box>
                 </Typography>
               </motion.div>
 
@@ -48,7 +48,7 @@ const Hero = () => (
                   href={`${CONFIG.urls.app}/registrarme`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  sx={{ mt: 1, px: '45px', py: '14px', fontFamily: '"Poppins", sans-serif', fontWeight: 500, fontSize: 16, borderRadius: '45px', bgcolor: '#2563EB', color: '#fff', border: '2px solid #fff', boxShadow: '0 8px 24px rgba(0,20,90,0.25)', '&:hover': { bgcolor: '#1D4ED8' } }}
+                  sx={{ mt: 1, px: '45px', py: '14px', fontFamily: '"Poppins", sans-serif', fontWeight: 500, fontSize: 16, borderRadius: '45px', bgcolor: '#FFB020', color: '#0B1B4D', boxShadow: '0 8px 24px rgba(255,176,32,0.35)', '&:hover': { bgcolor: '#F59E0B' } }}
                 >
                   Probar SmartVenta
                 </Button>
