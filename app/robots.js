@@ -1,8 +1,8 @@
-const BASE = 'https://smartventa-pos.vercel.app';
+import { BASE_URL } from './site';
 
 export default function robots() {
   return {
     rules: { userAgent: '*', allow: '/' },
-    sitemap: `${BASE}/sitemap.xml`,
+    sitemap: `${BASE_URL}/sitemap.xml`,
   };
 }
