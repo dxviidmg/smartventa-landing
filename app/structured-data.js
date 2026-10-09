@@ -8,7 +8,7 @@ export const jsonLdOrganization = {
   '@type': 'Organization',
   name: 'SmartVenta',
   url: BASE_URL,
-  logo: `${BASE_URL}/logo.jpg`,
+  logo: `${BASE_URL}/icon-512.png`,
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'customer service',

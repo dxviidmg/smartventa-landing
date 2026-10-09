@@ -58,7 +58,7 @@ export const metadata = {
 };
 
 export const viewport = {
-  themeColor: '#05346B',
+  themeColor: '#0030AB',
   width: 'device-width',
   initialScale: 1,
 };
@@ -76,6 +76,8 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Poppins:wght@500&family=Open+Sans:wght@400&display=swap"
         />
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdOrganization) }}
