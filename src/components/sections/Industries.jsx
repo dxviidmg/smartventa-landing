@@ -23,29 +23,28 @@ import ChairIcon from '@mui/icons-material/Chair';
 import { fadeUp } from '../../constants';
 
 const industries = [
-  { name: 'Ferreterías', icon: BuildIcon },
-  { name: 'Refaccionarias', icon: DirectionsCarIcon },
-  { name: 'Papelerías', icon: DescriptionIcon },
-  { name: 'Jugueterías', icon: ToysIcon },
-  { name: 'Cosméticos', icon: SpaIcon },
-  { name: 'Dulcerías', icon: CakeIcon },
-  { name: 'Tiendas de regalos', icon: ShoppingBagIcon },
-  { name: 'Productos de limpieza', icon: CleaningServicesIcon },
-  { name: 'Joyerías', icon: DiamondIcon },
-  { name: 'Tiendas de celulares', icon: SmartphoneIcon },
-  { name: 'Electrónica', icon: DesktopMacIcon },
-  { name: 'Accesorios', icon: ShoppingBagIcon },
-  { name: 'Mercerías', icon: ContentCutIcon },
-  { name: 'Librerías', icon: MenuBookIcon },
-  { name: 'Mueblerías', icon: ChairIcon },
-  { name: 'Tiendas de artículos para fiesta', icon: CelebrationIcon },
-  { name: 'Tiendas de mascotas', icon: PetsIcon },
-  { name: 'Ópticas', icon: RemoveRedEyeIcon },
-  { name: 'Estéticas', icon: SpaIcon },
+  { name: 'Ferreterías', color: '#EA580C', icon: BuildIcon },
+  { name: 'Refaccionarias', color: '#B91C1C', icon: DirectionsCarIcon },
+  { name: 'Papelerías', color: '#0284C7', icon: DescriptionIcon },
+  { name: 'Jugueterías', color: '#D97706', icon: ToysIcon },
+  { name: 'Cosméticos', color: '#C026D3', icon: SpaIcon },
+  { name: 'Dulcerías', color: '#DB2777', icon: CakeIcon },
+  { name: 'Tiendas de regalos', color: '#9333EA', icon: ShoppingBagIcon },
+  { name: 'Productos de limpieza', color: '#0891B2', icon: CleaningServicesIcon },
+  { name: 'Joyerías', color: '#0F766E', icon: DiamondIcon },
+  { name: 'Tiendas de celulares', color: '#334155', icon: SmartphoneIcon },
+  { name: 'Electrónica', color: '#4F46E5', icon: DesktopMacIcon },
+  { name: 'Accesorios', color: '#16A34A', icon: ShoppingBagIcon },
+  { name: 'Mercerías', color: '#9D174D', icon: ContentCutIcon },
+  { name: 'Librerías', color: '#1E3A8A', icon: MenuBookIcon },
+  { name: 'Mueblerías', color: '#854D0E', icon: ChairIcon },
+  { name: 'Tiendas de artículos para fiesta', color: '#E11D48', icon: CelebrationIcon },
+  { name: 'Tiendas de mascotas', color: '#4D7C0F', icon: PetsIcon },
+  { name: 'Ópticas', color: '#1D4ED8', icon: RemoveRedEyeIcon },
+  { name: 'Estéticas', color: '#A21CAF', icon: SpaIcon },
 ];
 
 const POPPINS = '"Poppins", sans-serif';
-const GRADIENT = 'linear-gradient(80deg, rgb(0,48,204) 0%, rgb(0,164,219) 100%)';
 
 const Slot = ({ item, delay }) => (
   <Box sx={{ position: 'relative', minHeight: { xs: 112, sm: 104, lg: 84 }, overflow: 'hidden' }}>
@@ -58,14 +57,14 @@ const Slot = ({ item, delay }) => (
         style={{ position: 'absolute', inset: 0 }}
       >
         <Box sx={{ height: '100%', display: 'flex', flexDirection: { xs: 'column', lg: 'row' }, alignItems: 'center', justifyContent: 'center', gap: { xs: 1, md: 1.5 }, textAlign: 'center' }}>
-        <Box sx={{ width: { xs: 36, md: 48 }, height: { xs: 36, md: 48 }, flexShrink: 0, borderRadius: '50%', background: GRADIENT, color: '#fff', display: 'grid', placeItems: 'center' }}>
+        <Box sx={{ width: { xs: 36, md: 48 }, height: { xs: 36, md: 48 }, flexShrink: 0, borderRadius: '50%', bgcolor: item.color, color: '#fff', display: 'grid', placeItems: 'center' }}>
           <item.icon aria-hidden="true" sx={{ fontSize: { xs: 20, md: 26 } }} />
         </Box>
         <Box
           component="span"
           sx={{
             fontFamily: POPPINS, fontWeight: 600, fontSize: { xs: 15, sm: 20, lg: 26 }, lineHeight: 1.25,
-            background: GRADIENT, WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent',
+            color: item.color,
           }}
         >
           {item.name}
@@ -98,7 +97,7 @@ const Industries = () => {
               variant="h2"
               sx={{ fontFamily: POPPINS, fontWeight: 500, letterSpacing: 0, fontSize: { xs: 26, md: 40 }, lineHeight: 1.2, color: '#242F3E' }}
             >
-              Hecho para negocios de
+              Hecho para tu negocio
             </Typography>
           </motion.div>
         </Stack>
@@ -112,7 +111,7 @@ const Industries = () => {
           ))}
         </Box>
 
-        <Box component="span" sx={{ position: 'absolute', width: 1, height: 1, overflow: 'hidden', clip: 'rect(0 0 0 0)' }}>
+        <Box component="span" sx={{ position: 'absolute', width: '1px', height: '1px', m: '-1px', p: 0, overflow: 'hidden', clip: 'rect(0 0 0 0)', whiteSpace: 'nowrap' }}>
           Industrias: {industries.map((x) => x.name).join(', ')}
         </Box>
       </Container>
