@@ -26,7 +26,7 @@ const Footer = () => {
           <Stack spacing={4}>
             <Box sx={{ display: 'grid', gap: { xs: 3, md: 6 }, gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', md: '1.4fr 1fr 1fr 1fr' } }}>
               <Box sx={{ gridColumn: { sm: '1 / -1', md: 'auto' } }}>
-                <Box component="img" src="/logo-transparent.png" alt={CONFIG.company.name} width={120} height={41} sx={{ display: 'block', height: 41, width: 'auto', mb: 2 }} />
+                <Box component="img" src="/logo-white.svg" alt={CONFIG.company.name} width={190} height={40} sx={{ display: 'block', height: 40, width: 'auto', mb: 2 }} />
                 <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.82)', lineHeight: 1.7, fontSize: 15, maxWidth: 300 }}>
                   Punto de venta en la nube para controlar tu negocio estés donde estés, con una o varias sucursales.
                 </Typography>

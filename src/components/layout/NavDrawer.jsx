@@ -20,7 +20,8 @@ const CloseIcon = () => (
 const NavDrawer = ({ open, onClose, navItems, onNav }) => (
   <Drawer anchor="right" open={open} onClose={onClose} PaperProps={{ sx: { background: GRADIENT, color: '#fff' } }}>
     <Box sx={{ width: 280, pt: 1 }}>
-      <Box sx={{ display: 'flex', justifyContent: 'flex-end', px: 1 }}>
+      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', pl: 2, pr: 1 }}>
+        <Box component="img" src="/logo-white.svg" alt={CONFIG.company.name} width={143} height={30} sx={{ height: 30, width: 'auto' }} />
         <IconButton aria-label="Cerrar menú" onClick={onClose} sx={{ color: '#fff' }}><CloseIcon /></IconButton>
       </Box>
       <List>

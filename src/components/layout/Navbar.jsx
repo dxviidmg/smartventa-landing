@@ -64,13 +64,22 @@ const Navbar = () => {
               onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
               style={{ display: 'flex', alignItems: 'center', minHeight: 44 }}
             >
-              <img
-                src="/logo-transparent.png"
+              {/* Icono + letra desde sm; solo el icono en celulares angostos */}
+              <Box
+                component="img"
+                src="/logo-white.svg"
                 alt={CONFIG.company.name}
-                width={105}
+                width={171}
                 height={36}
-                style={{ height: 36, width: 'auto' }}
-                onError={(e) => { e.target.src = '/logo.webp'; }}
+                sx={{ display: { xs: 'none', sm: 'block' }, height: 36, width: 'auto' }}
+              />
+              <Box
+                component="img"
+                src="/icon-white.svg"
+                alt={CONFIG.company.name}
+                width={40}
+                height={40}
+                sx={{ display: { xs: 'block', sm: 'none' }, height: 40, width: 40 }}
               />
             </a>
 
