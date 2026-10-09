@@ -16,8 +16,9 @@ export const lightTheme = createTheme({
   },
   shape: { borderRadius: 16 },
   palette: {
-    primary: { main: '#2563EB', dark: '#1D4ED8', light: '#3B82F6', contrastText: '#ffffff' },
-    secondary: { main: '#7C3AED' },
+    // Aligned with the pos-multi-store app palette (AGENTS.md > Paleta)
+    primary: { main: '#0B1B4D', dark: '#08143A', light: '#1E3A8A', contrastText: '#ffffff' },
+    secondary: { main: '#00A4DB', contrastText: '#ffffff' },
     background: { default: '#ffffff', paper: '#ffffff' },
     text: { primary: '#0F172A', secondary: '#475569' },
     divider: '#E2E8F0',
@@ -39,7 +40,8 @@ export const lightTheme = createTheme({
       styleOverrides: {
         root: {
           borderRadius: 20,
-          boxShadow: '0 10px 30px rgba(37,99,235,0.08)',
+          // Blue-tinted shadow matching the app (rgba of the primary blue)
+          boxShadow: '0 10px 30px rgba(29,78,216,0.10)',
           transition: 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
         },
       },
