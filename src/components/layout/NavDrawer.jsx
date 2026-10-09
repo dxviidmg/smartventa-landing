@@ -1,7 +1,7 @@
 'use client';
 
 import { Box, Drawer, IconButton, List, ListItem, ListItemButton, ListItemText } from '@mui/material';
-import { CONFIG, POPPINS, GRADIENT, ACCENT } from '../../constants';
+import { CONFIG, POPPINS, NAV_BG, ACCENT } from '../../constants';
 
 const CloseIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -18,7 +18,7 @@ const CloseIcon = () => (
  * @param {function} props.onNav - Callback when a nav item is clicked, receives section id
  */
 const NavDrawer = ({ open, onClose, navItems, onNav }) => (
-  <Drawer anchor="right" open={open} onClose={onClose} PaperProps={{ sx: { background: GRADIENT, color: '#fff' } }}>
+  <Drawer anchor="right" open={open} onClose={onClose} PaperProps={{ sx: { background: NAV_BG, color: '#fff' } }}>
     <Box sx={{ width: 280, pt: 1 }}>
       <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', pl: 2, pr: 1 }}>
         <Box component="img" src="/logo-white.svg" alt={CONFIG.company.name} width={143} height={30} sx={{ height: 30, width: 'auto' }} />

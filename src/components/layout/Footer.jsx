@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Box, Container, Typography, Stack, Link } from '@mui/material';
 import Close from '@mui/icons-material/Close';
-import { CONFIG, POPPINS, ACCENT } from '../../constants';
+import { CONFIG, POPPINS, ACCENT, FOOTER_BG } from '../../constants';
 import LegalDialog from './LegalDialog';
 import { legalDocuments } from '../../data/legal';
 
@@ -21,7 +21,7 @@ const Footer = () => {
 
   return (
     <>
-      <Box component="footer" sx={{ background: 'linear-gradient(134deg, #00269E 0%, #00103F 100%)', color: 'white', pt: { xs: 7, md: 9 }, pb: 4 }}>
+      <Box component="footer" sx={{ background: FOOTER_BG, borderTop: '1px solid rgba(255,255,255,0.14)', color: 'white', pt: { xs: 7, md: 9 }, pb: 4 }}>
         <Container maxWidth="lg">
           <Stack spacing={4}>
             <Box sx={{ display: 'grid', gap: { xs: 3, md: 6 }, gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', md: '1.4fr 1fr 1fr 1fr' } }}>

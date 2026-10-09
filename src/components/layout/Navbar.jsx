@@ -3,7 +3,7 @@
 import { useState, useEffect, lazy, Suspense } from 'react';
 import { AppBar, Box, Toolbar, Container, Button, IconButton, Stack } from '@mui/material';
 import { useApp } from '../../contexts/AppContext';
-import { CONFIG, ACCENT, POPPINS, GRADIENT } from '../../constants';
+import { CONFIG, ACCENT, POPPINS, NAV_BG } from '../../constants';
 
 const MenuIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -55,7 +55,7 @@ const Navbar = () => {
         }}
       >
         {/* The gradient sits on its own layer so its opacity can fade in (a gradient cannot be transitioned directly) */}
-        <Box aria-hidden="true" sx={{ position: 'absolute', inset: 0, background: GRADIENT, opacity: scrolled ? 1 : 0, transition: 'opacity 0.4s ease', '@media (prefers-reduced-motion: reduce)': { transition: 'none' } }} />
+        <Box aria-hidden="true" sx={{ position: 'absolute', inset: 0, background: NAV_BG, opacity: scrolled ? 1 : 0, transition: 'opacity 0.4s ease', '@media (prefers-reduced-motion: reduce)': { transition: 'none' } }} />
         <Container maxWidth="lg" sx={{ position: 'relative' }}>
           <Toolbar disableGutters sx={{ minHeight: 'auto !important' }}>
             <a

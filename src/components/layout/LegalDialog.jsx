@@ -5,8 +5,8 @@ import Close from '@mui/icons-material/Close';
 import { POPPINS, CONFIG } from '../../constants';
 
 const paper = { sx: { borderRadius: '24px' } };
-const titleSx = { display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontFamily: POPPINS, fontWeight: 500, color: '#242F3E' };
-const sectionTitleSx = { fontFamily: POPPINS, fontWeight: 500, mb: 1, fontSize: '1rem', color: '#242F3E' };
+const titleSx = { display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontFamily: POPPINS, fontWeight: 500, color: '#0F172A' };
+const sectionTitleSx = { fontFamily: POPPINS, fontWeight: 500, mb: 1, fontSize: '1rem', color: '#0F172A' };
 
 /** Modal with one legal document: a list of titled sections. */
 const LegalDialog = ({ open, onClose, document }) => (
