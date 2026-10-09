@@ -1,268 +1,226 @@
-# Smartventa Landing Page
+# SmartVenta Landing
 
-Landing page moderna y profesional para **Smartventa**, el sistema de punto de venta inteligente para negocios multi-tienda.
+Landing page de **SmartVenta**, punto de venta en la nube para negocios con inventario (de una tienda a varias sucursales y almacenes). Este README es la **fuente de verdad del frontend**: aquí está cada decisión de estilo y dónde cambiarla.
 
-## 🚀 Tecnologías
+## Stack
 
-- **Vite** - Build tool
-- **React 19** - Framework UI
-- **Material UI (MUI)** - Componentes y diseño
-- **@mui/icons-material** - Iconos
-- **@mui/x-charts** - Gráficos y visualizaciones
-- **Framer Motion** - Animaciones
-- **EmailJS** - Envío de formularios
+- **Next.js 16** (App Router) y **React 19**. Requiere **Node 20.9 o superior**.
+- **Material UI 7** (`@mui/material`, `@mui/icons-material`) con **Emotion**. Los estilos se escriben con la prop `sx`.
+- **Framer Motion** para animaciones (`MotionConfig reducedMotion="user"` en `app/providers.jsx`).
+- Despliegue en **Vercel** (`vercel.json`). Google Analytics con `gtag` cargado en `app/layout.jsx`.
 
-## 🎨 Diseño
-
-### Paleta de colores
-
-- **Primary**: `#04346b`
-- **Primary Light**: `#065a9e`
-- **Primary Dark**: `#022347`
-- **Background**: `#f8fafc`
-- **Paper**: `#ffffff`
-- **Text Primary**: `#0f172a`
-- **Text Secondary**: `#64748b`
-- **Success (CTA)**: `#10b981`
-
-### Características de diseño
-
-- Diseño minimalista y profesional
-- Responsive (mobile-first)
-- Animaciones suaves con Framer Motion
-- Cards elevadas con hover effects
-- Border radius: 12px (general), 16px (cards)
-- Sombras sutiles
-- Transiciones: 0.25s cubic-bezier(0.4, 0, 0.2, 1)
-
-## 📦 Instalación
+## Comandos
 
 ```bash
 npm install
+npm run dev     # http://localhost:3000
+npm run build   # compila para producción
+npm run start   # sirve el build
 ```
-
-## 🏃 Desarrollo
-
-```bash
-npm run dev
-```
-
-El servidor de desarrollo se ejecutará en `http://localhost:5173`
-
-## 🏗️ Build
-
-```bash
-npm run build
-```
-
-## ⚙️ Configuración
 
 ### Variables de entorno
 
+Copia `.env.template` a `.env` y completa:
 
-### Imagen Open Graph
+| Variable | Uso |
+| --- | --- |
+| `NEXT_PUBLIC_WHATSAPP_PHONE` | Número de WhatsApp (solo dígitos) |
+| `NEXT_PUBLIC_WHATSAPP_PHONE_FORMATTED` | Número como se muestra en pantalla y en los textos legales |
+| `NEXT_PUBLIC_APP_URL` | URL de la app; el botón "Probar SmartVenta" abre `${APP_URL}/registrarme` |
+| `NEXT_PUBLIC_CONTACT_EMAIL` | Correo de contacto |
 
-Crea una imagen de 1200x630px con tu logo y texto, guárdala como `/public/og-image.jpg`
+Sin estas variables los textos legales muestran el teléfono vacío y los botones de registro no tienen destino.
 
-## 📁 Estructura del Proyecto
+## Estructura
 
 ```
+app/
+  layout.jsx            Metadata, fuentes, JSON-LD y scripts
+  page.jsx              Orden de las secciones
+  providers.jsx         Tema MUI, contextos y MotionConfig
+  site.js               BASE_URL (URL pública única)
+  structured-data.js    Esquemas JSON-LD (Organization, SoftwareApplication, FAQPage)
+  robots.js, sitemap.js, manifest.js
 src/
-├── components/              # Componentes de la aplicación
-│   ├── ui/                 # Componentes reutilizables
-│   │   ├── Card.jsx
-│   │   ├── CardGridItem.jsx
-│   │   └── SectionHeader.jsx
-│   ├── LazyImage.jsx       # Imágenes con lazy loading
-│   ├── Navbar.jsx
-│   ├── Hero.jsx
-│   ├── Industries.jsx
-│   ├── Features.jsx
-│   ├── HowItWorks.jsx
-│   ├── Benefits.jsx
-│   ├── Pricing.jsx
-│   ├── FAQ.jsx
-│   ├── Contact.jsx
-│   ├── Footer.jsx
-│   └── WhatsAppButton.jsx
-├── contexts/               # React Contexts
-│   ├── AppContext.jsx      # Estado global (drawer, scroll)
-│   ├── WhatsAppContext.jsx # Funciones de WhatsApp
-│   └── index.js
-├── hooks/                  # Hooks personalizados
-│   ├── useScroll.js
-│   ├── useActiveSection.js
-│   ├── useMemoized.js
-│   ├── useSEO.js
-│   └── index.js
-├── constants/              # Constantes y estilos
-│   ├── index.js
-│   ├── colors.js
-│   ├── animations.js
-│   └── styles.js
-├── config/                 # Configuración
-│   ├── index.js
-│   └── constants.js
-├── utils/                  # Utilidades
-│   ├── helpers.js
-│   └── animations.js
-├── App.jsx                 # Componente principal
-├── main.jsx                # Entry point
-├── theme.js                # Tema de Material UI
-├── analytics.js            # Configuración de Google Analytics
-└── index.css               # Estilos globales
+  theme.js              Tema MUI base (tipografía de cuerpo, paleta, botones)
+  constants/
+    design.js           TOKENS DE DISEÑO (fuentes, degradados, ámbar, botones)  <- empieza aquí
+    animations.js       Presets de Framer Motion
+    config.js           Datos de contacto y empresa (leen las variables de entorno)
+    index.js            Reexporta todo lo anterior
+  data/                 Contenido separado del diseño
+    industries.js       19 industrias con icono y color
+    scenarios.js        4 casos de negocio (lo que buscas / lo que logras)
+    features.js         5 grupos de funciones
+    legal.js            Términos y Privacidad
+  hooks/usePricing.js   Tabla de precios, reglas y cálculo
+  contexts/             AppContext (drawer, scroll) y WhatsAppContext
+  components/
+    layout/             Navbar, NavDrawer, Footer, LegalDialog
+    sections/           Una carpeta de contenido por bloque de la página
+    ui/                 SectionHeading, ilustraciones SVG, SampleWindows, CountUp
+public/                 hero-bg.png, triangle-double.png, og-image.jpg, favicon y logos e iconos (SVG/PNG, variantes blanca y azul)
 ```
 
-## 🎯 Secciones
+## Orden de la página
 
-1. **Hero** - "Punto de venta en la nube para múltiples sucursales" + "Controla todas tus tiendas y almacenes desde un solo lugar"
-2. **Industries** - Ropa, Abarrotes, Farmacias, Ferreterías, Mini Súpers, Papelerías, Cosméticos, Mascotas, Jugueterías
-3. **Features** - 16 características ordenadas por impacto (diferenciadores → importantes → básicos)
-4. **HowItWorks** - 4 pasos: Configura, Distribuye, Vende, Analiza
-5. **Benefits** - 4 beneficios enfocados en dolores del dueño: Visibilidad, Caja cuadrada, Operación ágil, Fácil de usar
-6. **Pricing** - 2 planes: Emprendedor ($500/mes, 1 tienda) y Empresarial ($2500/mes, hasta 8 sucursales)
-7. **FAQ** - 7 preguntas sobre instalación, contrato, dispositivos, soporte, demo, hardware, internet
-8. **Contact** - Botón de WhatsApp para solicitar demo
-9. **Footer** - Información de contacto y enlaces legales
+| # | Sección | Archivo | Fondo |
+| --- | --- | --- | --- |
+| 1 | Hero | `sections/Hero.jsx` | Imagen `hero-bg.png` (azul con curva) |
+| 2 | Industrias (rotativo de 3) | `sections/Industries.jsx` | Blanco |
+| 3 | Cifras | `sections/Stats.jsx` | `BLUE_BG` |
+| 4 | Una solución para cada tipo de negocio | `sections/BeforeAfter.jsx` | Blanco |
+| 5 | Funciones (5 grupos) | `sections/ProductShowcase.jsx` | `BLUE_BG` |
+| 6 | Precios (deslizador) | `sections/Pricing.jsx` | Blanco |
+| 7 | Preguntas frecuentes | `sections/FAQ.jsx` | Blanco |
+| 8 | Empieza hoy (3 pasos y botones) | `sections/Contact.jsx` | `CTA_BG` con triángulos |
+| 9 | Pie de página | `layout/Footer.jsx` | Degradado azul profundo |
 
-## 📱 Funcionalidades
-
-- ✅ SEO optimizado (meta tags, Open Graph, Twitter Cards)
-- ✅ Google Analytics integrado
-- ✅ Botón flotante de WhatsApp
-- ✅ Animaciones suaves con Framer Motion
-- ✅ Responsive design (mobile-first)
-- ✅ Lazy loading de imágenes
-- ✅ React Context para estado global
-- ✅ Componentes reutilizables
-- ✅ Hooks personalizados
-- ✅ Optimización de performance (memoización)
-- ✅ Política de privacidad y términos
-- ✅ Página 404
-
-## 📝 Objetivo
-
-Captar leads para demos del sistema POS multi-tienda Smartventa, ofreciendo acceso a una cuenta demo genérica para explorar el sistema.
-
-## 🎯 Público objetivo
-
-Dueños de negocios retail con 2 o más sucursales:
-- Abarrotes
-- Ferreterías
-- Papelerías
-- Cosméticos
-- Jugueterías
-
-
-## 🌟 Características del Sistema
-
-### 💰 Punto de Venta Rápido y Versátil
-- Búsqueda instantánea por código de barras o nombre de producto
-- Crear producto desde búsqueda — Si no se encuentra, puedes crearlo directamente con stock inicial
-- Múltiples carritos simultáneos — Atiende a varios clientes al mismo tiempo sin perder información
-- Precios dinámicos (unitario y mayoreo automático según cantidad)
-- Una pantalla para todo — Ventas, traspasos y distribuciones desde la misma interfaz
-- Atajos de teclado — Ctrl+Q/W para buscar, Ctrl+E/R/T/Y/U/I para tipo de operación, Ctrl+B para enfocar búsqueda, Ctrl+J para seleccionar cliente
-- Impresión de tickets compatible con impresoras térmicas estándar
-- Indicador de impresora — Ícono visual verde/rojo que muestra si la impresora está conectada o desconectada
-
-### 🏪 Control Total de Todas tus Tiendas
-- Panel centralizado — Administra todas tus tiendas y almacenes desde un solo lugar
-- Cambio instantáneo entre tiendas sin cerrar sesión
-- Indicador de catálogo — Sabes qué tiendas tienen el catálogo completo y cuáles les faltan productos
-- Límite por plan — El sistema valida automáticamente cuántas tiendas puedes crear según tu plan
-- Crear tienda rápido — Botón siempre visible para agregar tiendas o almacenes
-
-### 📦 Inventario en Tiempo Real
-- Stock unificado en todas las tiendas
-- Reservas inteligentes entre carritos para evitar ventas duplicadas
-- Historial de stock (ventas, traspasos, ajustes)
-- Revisión de Stock — Modal para consultar stock en otras tiendas y agregar stock directamente
-- Agregar stock durante la venta — Acceso rápido para aumentar inventario
-
-### 🚚 Traslados Entre Tiendas
-- Traspasos con trazabilidad completa
-- Distribuciones desde almacén a múltiples tiendas en una sola operación
-- Confirmación obligatoria por cada tienda receptora
-- Dashboard de pendientes separados por hoy y anteriores
-- Filtros por estado (pendientes o aplicados) con actualización automática
-
-### 🔄 Conversiones de Producto
-- Desempaque automático — Convierte un producto en otro con un clic (ej: 1 Costal → 10 Kg)
-- Configuración única — Define la equivalencia una sola vez por par de productos
-- Múltiples unidades — Soporta Pieza, Kilogramo, Costal, Litro, Metro, Rollo y Caja
-- Trazabilidad — Cada conversión queda registrada en la bitácora de stock
-- Acceso rápido — Botón "Desempacar" directamente desde la tabla de conversiones
-
-### 👥 Gestión de Clientes
-- Registro completo con historial de compras
-- Descuentos personalizados por porcentaje
-- Historial de compras por cliente
-
-### 📊 Corte de Caja Inteligente
-- Resumen diario por método de pago (efectivo, tarjeta, transferencia)
-- Movimientos detallados (entradas y salidas de dinero)
-- Exportación a Excel
-- Corte parcial y total
-
-### 📋 Sistema de Apartados
-- Apartados desde el POS — Separa productos para un cliente sin cobrar el total
-- Reserva de stock — Los productos apartados se descuentan del inventario disponible
-- Listado de apartados — Consulta todos los apartados activos y su estado
-- Seguimiento por cliente — Vincula apartados a clientes para control personalizado
-
-### 🔄 Devoluciones y Cancelaciones
-- Cancelación total con motivo registrado
-- Devolución parcial
-- Motivos documentados
-- Filtros rápidos
-
-### 📈 Tableros de Análisis y Métricas
-- Tablero de ventas (KPIs: mejor/peor tienda, mejor/peor día, hora pico, ticket promedio)
-- Heatmap de ventas
-- Análisis de cancelaciones
-- Top de marcas y productos
-- Gráficas de tendencia (día, semana, mes)
-
-### 🔍 Auditoría Integrada
-- Detección automática de problemas:
-  - Ventas duplicadas
-  - Códigos de producto repetidos
-  - Productos sin precio de mayoreo
-  - Stock faltante en tiendas
-  - Productos sin movimiento
-  - Inconsistencias en registros
-- Auditoría de inventario dinámica — Modal interactivo para confirmar o modificar stock con eliminación automática de productos revisados
-- Acceso configurable por horario
-
-### 📋 Gestión de Productos
-- Importación masiva desde Excel
-- Plantillas descargables
-- Validación previa antes de importar
-- Historial de precios
-- Actualización masiva de precios — Actualiza costo, precio unitario y mayoreo de múltiples productos seleccionados a la vez
-- Imágenes de productos
-
-### 🔐 Roles y Permisos
-- Tres niveles de acceso:
-  - **Dueño** — Acceso total a todo el sistema
-  - **Administrador** — Gestión de tienda con algunas restricciones
-  - **Vendedor** — Solo ventas y operaciones básicas
-- Vistas personalizadas por rol
-
-### 🌙 Interfaz Adaptable
-- Modo oscuro/claro
-- Diseño intuitivo
-
-### 📞 Soporte Integrado
-- WhatsApp directo con información de tienda prellenada
-- Ayuda contextual en cada página
-
-### ⏰ Funcionalidades Operativas
-- Solicitudes de ajuste — Vendedores y admins pueden pedir cambios de stock; el dueño aprueba o rechaza
-- Notificaciones en tiempo real sobre traspasos, distribuciones y solicitudes
-- Indicador de ventas duplicadas
+Se alternan fondos blancos y azules. Las anclas del menú son `#industries`, `#product`, `#pricing` y `#faq`; el cierre es `#start`.
 
 ---
 
-**Smartventa** - El punto de venta inteligente para negocios multi-tienda
+# Guía de estilos (fuente de verdad)
+
+Regla general: **un valor visual se define una sola vez**. Los tokens van en `src/constants/design.js`; si un valor se repite en más de dos componentes, súbelo ahí.
+
+## Tipografía
+
+Se cargan en `app/layout.jsx` (Google Fonts, `display=swap`):
+
+| Fuente | Pesos | Dónde se usa |
+| --- | --- | --- |
+| **Poppins** | 500 | Títulos, botones, menú, etiquetas y números destacados. Token `POPPINS` |
+| **Rubik** | 400 a 700 | Texto de cuerpo por defecto (definido en `theme.js`) |
+| **Open Sans** | 400 | Solo el subtítulo del Hero |
+
+Escala usada:
+
+| Elemento | Tamaño (móvil / escritorio) | Detalle |
+| --- | --- | --- |
+| Título del Hero | 38 / 60 px (44 en tablet) | Poppins 500, interlineado 50 / 68 px |
+| Título de sección (h2) | 30 / 40 px | Poppins 500, `letterSpacing: 0`, interlineado 1.2, color `#242F3E` |
+| Etiqueta sobre el título (eyebrow) | 14 px | Poppins 500, color `#0030AB` |
+| Subtítulo de sección | 15 / 16 px | Interlineado 1.7, color `#5B6472` |
+| Título de tarjeta (h3) | 16 a 20 px | Poppins 500 |
+| Texto de tarjeta | 14 a 15 px | Interlineado 1.6 a 1.7 |
+
+Los títulos de sección **no se escriben a mano**: usa `components/ui/SectionHeading.jsx` (props `eyebrow`, `title`, `subtitle`, `dark`, `maxWidth`, `mb`, `titleSx`, `subtitleSx`).
+
+## Colores
+
+### Marca y degradados (`constants/design.js`)
+
+| Token | Valor | Uso |
+| --- | --- | --- |
+| `GRADIENT` | `linear-gradient(80deg, #0030CC 0%, #00A4DB 100%)` | Iconos en círculo, barra del menú, tarjeta destacada, bordes de acento |
+| `BLUE_BG` | `linear-gradient(134deg, #0079BE 0%, #00269E 100%)` | Secciones azules de contenido (Cifras, Funciones, Precios). El inicio está oscurecido para que el texto blanco mantenga 4.5:1 |
+| `CTA_BG` | `linear-gradient(134deg, #00A4DB 0%, #00269E 100%)` | Cierre "Empieza hoy" y tarjeta "Lo que logras" |
+| `ACCENT` | `#00E0D8` | Hover de enlaces del menú y del pie, borde del botón del menú |
+| `AMBER` | `#FFB020` | **Único color cálido**: botones principales (Hero, Precios, cierre) y palabras destacadas |
+
+### Neutros y texto
+
+| Valor | Uso |
+| --- | --- |
+| `#242F3E` | Títulos sobre fondo claro |
+| `#0F172A` | Texto principal del tema |
+| `#5B6472` / `#475569` | Texto secundario |
+| `#FFFFFF` y `rgba(255,255,255,0.92)` | Texto sobre fondos azules |
+| `#0B1B4D` | Texto **sobre ámbar** (contraste 9:1; nunca usar blanco sobre ámbar) |
+| `#0030AB` | Azul de énfasis sobre fondo claro (etiquetas, pestañas activas, enlaces) |
+| `#F5F9FF`, `#EFF6FF` | Fondos celestes muy claros de paneles |
+| `#E6EDF5`, `#DBEAFE`, `#E2E8F0` | Bordes finos de tarjetas |
+| `#047857`, `#10B981` | Positivo (confirmaciones, ganancia) |
+| `#25D366` | Verde de WhatsApp (botón flotante), solo ahí |
+
+### Colores por industria
+Cada industria tiene su color en `src/data/industries.js`. Todos cumplen al menos 3:1 contra blanco. Para cambiar uno, edita ese archivo.
+
+### Regla del acento cálido
+El ámbar se usa en pocos lugares a propósito. Si agregas otro uso, que sea un botón principal o un detalle puntual; nunca fondos grandes.
+
+## Forma, espacio y sombras
+
+| Elemento | Valor |
+| --- | --- |
+| Botones y pestañas (píldora) | `borderRadius: 45px`, Poppins 500 de 16 px, altura mínima 44 px |
+| Padding de botón | `13-14px` vertical, `40-45px` horizontal |
+| Tarjetas y paneles | Radio `20-28px`, borde de 1 px (`#E6EDF5` o `#DBEAFE`) |
+| Sombra de tarjeta clara | `0 10-12px 30px rgba(0,141,236,0.08)` |
+| Sombra de tarjeta destacada | `0 16-24px 36-50px rgba(0,60,180,0.12 a 0.25)` |
+| Sombra del botón ámbar | `0 8px 24px rgba(255,176,32,0.35)` |
+| Padding vertical de sección | `py: { xs: 7, md: 10 }` (también 6/8, 7/9 y 9/13 en bloques puntuales) |
+| Contenedor | `Container maxWidth="lg"` (1200 px); `md` para Precios |
+| Gutters del contenedor | 20 px en móvil, 32 px desde 600 px (definido en `theme.js`) |
+
+Breakpoints de MUI: `xs` 0, `sm` 600, `md` 900, `lg` 1200, `xl` 1536. El diseño es mobile-first: se escribe el caso móvil y se sube con `md`.
+
+## Componentes y patrones
+
+- **Botón principal:** `{ ...pillSx, ...amberSx }` más padding. Contiene "Probar SmartVenta".
+- **Botón secundario:** píldora con borde (blanco sobre azul, `#0030AB` sobre blanco).
+- **Icono en círculo:** círculo de `GRADIENT` (o translúcido blanco sobre azul), icono blanco de MUI.
+- **Menú (`Navbar`):** fijo y transparente arriba; al pasar los 40 px de scroll aparece una capa con `GRADIENT` mediante un fade de 0.4 s. Altura constante. Enlaces en Poppins 500 de 16 px. El menú móvil (`NavDrawer`) usa el mismo degradado.
+- **Pie (`Footer`):** degradado `#00269E` a `#00103F`, logo transparente, enlaces con hover `ACCENT`, ventanas legales con `LegalDialog`.
+- **Ilustraciones:** SVG propios en `components/ui` (`HeroIllustration`, `OwnerPhoneIllustration`, `SupportChatIllustration`, `ScenarioScenes`). Estilo plano, sin licencias externas. Usan `AMBER` para los acentos cálidos.
+- **Ventanas de ejemplo** (`SampleWindows`): maquetas con datos ilustrativos, ocultas a lectores de pantalla (`aria-hidden`). Los datos son inventados; reemplázalos por capturas reales cuando existan.
+
+## Movimiento
+
+- Presets en `constants/animations.js` (`fadeUp`, `faqItem`, `heroContainer`, `heroItem`, `heroImage`). Curva `[0.25, 0.1, 0.25, 1]`, duración 0.5 s.
+- Industrias rota cada 2.5 s y se detiene al pasar el cursor; las cifras cuentan hasta 5 s.
+- **Siempre** respetar `prefers-reduced-motion`: `MotionConfig` lo hace para Framer Motion y los efectos CSS llevan `@media (prefers-reduced-motion: reduce)`.
+
+## Accesibilidad (criterios que no se rompen)
+
+- Contraste mínimo 4.5:1 en texto normal (3:1 en texto grande e iconos).
+- Objetivos táctiles de al menos 44 px (botones, menú, enlaces del pie).
+- Cada sección lleva `aria-labelledby` apuntando al `id` de su título.
+- Pestañas con `role="tablist"`, navegación por flechas, Inicio y Fin.
+- Foco visible en todos los controles.
+- Sin scroll horizontal: no usar `width: 1` en MUI (equivale a 100%); para ocultar texto visualmente usa `width: '1px'`.
+
+---
+
+# Cómo cambiar...
+
+| Quiero cambiar | Dónde |
+| --- | --- |
+| El azul de marca o el ámbar | `src/constants/design.js` (`GRADIENT`, `BLUE_BG`, `CTA_BG`, `AMBER`) |
+| La fuente de títulos | `POPPINS` en `design.js` y el `<link>` de fuentes en `app/layout.jsx` |
+| La fuente del cuerpo | `src/theme.js` (`typography.fontFamily`) y `app/layout.jsx` |
+| El tamaño o color de los títulos de sección | `components/ui/SectionHeading.jsx` |
+| El estilo de los botones | `pillSx` y `amberSx` en `design.js` |
+| Colores o iconos de las industrias | `src/data/industries.js` |
+| Textos de los casos de negocio | `src/data/scenarios.js` (y dibujos en `ui/ScenarioScenes.jsx`) |
+| Funciones del producto | `src/data/features.js` |
+| Precios | `PRICE_TABLE` en `src/hooks/usePricing.js` (hoy: 1 sucursal $399 hasta 10 sucursales $3,399; más de 10 se cotiza por WhatsApp) |
+| Preguntas frecuentes | Arreglo `faqs` en `sections/FAQ.jsx` **y** `app/structured-data.js` (deben coincidir) |
+| Términos y Privacidad | `src/data/legal.js` |
+| Orden o fondos de las secciones | `app/page.jsx` y el `bgcolor`/`background` de cada sección |
+| Enlaces del menú | `NAV_ITEMS` en `layout/Navbar.jsx` (y el pie en `layout/Footer.jsx`) |
+| Metadata, Open Graph y esquemas | `app/layout.jsx`, `app/structured-data.js`, `app/site.js` |
+
+## Añadir una sección nueva
+
+1. Crea `src/components/sections/Nombre.jsx` con `component="section"`, un `id` y `aria-labelledby`.
+2. Usa `SectionHeading` para el título y `py: { xs: 7, md: 10 }`.
+3. Alterna el fondo con la sección vecina (blanco o `BLUE_BG`).
+4. Importa el contenido desde `src/data/` si es una lista.
+5. Registrála en `app/page.jsx` y, si debe tener enlace, en `NAV_ITEMS`.
+
+## Contenido y tono
+
+- Lenguaje en positivo, directo, orientado a resultados; tuteo; sin promesas que no se puedan respaldar.
+- Afirmaciones confirmadas: "empiezas en minutos". No afirmar "prueba gratis", cifras de importación ni historiales de meses hasta confirmarlos.
+- Cada idea aparece una vez: lo de "mes a mes y sin instalación" vive en Precios; el soporte por WhatsApp, en el cierre y la FAQ.
+- Los precios no se reescriben fuera de `usePricing.js`.
+
+## Pendientes conocidos
+
+- Fotos o ilustraciones por industria en la sección Industrias.
+- Capturas reales del sistema en lugar de las ventanas con datos de ejemplo.
+- Convertir `public/hero-bg.png` y `public/triangle-double.png` a WebP.
+- El fondo del Hero (`hero-bg.png`) y los triángulos provienen de la plantilla de referencia (Agico): confirmar que su licencia permita el uso comercial o reemplazarlos.
+- `npm run lint` requiere instalar `eslint-plugin-react-refresh` (falta en las dependencias).
