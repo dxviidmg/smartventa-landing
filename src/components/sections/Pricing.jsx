@@ -6,7 +6,7 @@ import CheckCircle from '@mui/icons-material/CheckCircle';
 
 import { POPPINS, GRADIENT, BLUE_BG, SURFACE_MUTED, pillSx, amberSx, NAVY, PRIMARY, SURFACE, BORDER } from '../../constants';
 import SectionHeading from '../ui/SectionHeading';
-import { usePricing, formatPrice, formatPriceDecimals, MAX_UNITS_WITH_PRICE } from '../../hooks/usePricing';
+import { usePricing, formatPriceDecimals, MAX_UNITS_WITH_PRICE } from '../../hooks/usePricing';
 
 const INCLUDED = [
   'Punto de venta, caja e inventario',
@@ -30,13 +30,15 @@ const PriceBlock = ({ p, dark, size = 56 }) =>
     <Box sx={{ textAlign: 'center' }}>
       <Stack direction="row" alignItems="baseline" justifyContent="center" spacing={0.75}>
         <Typography sx={{ fontFamily: POPPINS, fontWeight: 600, fontSize: { xs: size * 0.75, md: size }, lineHeight: 1.1, fontVariantNumeric: 'tabular-nums', ...(dark ? { color: '#fff' } : { background: GRADIENT, WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }) }}>
-          {formatPrice(p.price)}
+          {formatPriceDecimals(p.price)}
         </Typography>
         <Typography sx={{ fontSize: 15, fontWeight: 500, color: dark ? 'rgba(255,255,255,0.9)' : '#475569' }}>/mes MXN</Typography>
       </Stack>
       <Typography sx={{ fontSize: 13, mt: 0.25, color: dark ? 'rgba(255,255,255,0.85)' : '#64748B' }}>Precio final</Typography>
-      {p.hasDiscount && (
-        <Typography sx={{ fontSize: 14, fontWeight: 600, mt: 0.5, color: dark ? '#BBF7D0' : '#047857' }}>{formatPriceDecimals(p.pricePerUnit)} por sucursal</Typography>
+      {p.pricePerUnit && (
+        <Typography sx={{ fontSize: 14, fontWeight: 600, mt: 0.5, color: dark ? '#BBF7D0' : '#047857' }}>
+          {p.stores === 1 ? 'Empieza hoy y vende desde el navegador' : `${formatPriceDecimals(p.pricePerUnit)} por sucursal`}
+        </Typography>
       )}
     </Box>
   );
