@@ -13,13 +13,19 @@ export const useApp = () => {
 export const AppProvider = ({ children }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
+  // The drawer is a modal that locks page scroll while it is open (and during its exit animation),
+  // so close it first and scroll once the lock is released.
   const scrollToSection = useCallback((id) => {
     const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth'});
+    if (!el) return;
+    const go = () => el.scrollIntoView({ behavior: 'smooth' });
+    if (drawerOpen) {
       setDrawerOpen(false);
+      setTimeout(go, 350);
+    } else {
+      go();
     }
-  }, []);
+  }, [drawerOpen]);
 
   const value = useMemo(() => ({
     drawerOpen,

@@ -33,7 +33,7 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const handleNav = (id) => { scrollToSection(id); setDrawerOpen(false); };
+  const handleNav = scrollToSection;
 
   const handleOpenDrawer = () => {
     setDrawerLoaded(true);
