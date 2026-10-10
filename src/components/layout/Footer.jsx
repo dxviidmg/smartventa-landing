@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Box, Container, Typography, Stack, Link } from '@mui/material';
 import Close from '@mui/icons-material/Close';
+import { useApp } from '../../contexts/AppContext';
 import { CONFIG, POPPINS, ACCENT, FOOTER_BG } from '../../constants';
 import LegalDialog from './LegalDialog';
 import { legalDocuments } from '../../data/legal';
@@ -18,6 +19,8 @@ const CURRENT_YEAR = new Date().getFullYear();
 const Footer = () => {
   const [openPrivacy, setOpenPrivacy] = useState(false);
   const [openTerms, setOpenTerms] = useState(false);
+  const { scrollToSection } = useApp();
+  const goTo = (id) => (e) => { e.preventDefault(); scrollToSection(id); };
 
   return (
     <>
@@ -36,13 +39,13 @@ const Footer = () => {
                   Producto
                 </Typography>
                 <Stack direction="column" spacing={0} component="nav" aria-label="Enlaces del sitio">
-                  <Link href="#product" sx={footerLinkSx}>
+                  <Link href="#product" onClick={goTo('product')} sx={footerLinkSx}>
                     Funciones
                   </Link>
-                  <Link href="#pricing" sx={footerLinkSx}>
+                  <Link href="#pricing" onClick={goTo('pricing')} sx={footerLinkSx}>
                     Precios
                   </Link>
-                  <Link href="#faq" sx={footerLinkSx}>
+                  <Link href="#faq" onClick={goTo('faq')} sx={footerLinkSx}>
                     Preguntas frecuentes
                   </Link>
                 </Stack>
