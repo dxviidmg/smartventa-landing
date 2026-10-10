@@ -65,10 +65,10 @@ export const SaleMockup = () => {
         <Box sx={{ px: 1, py: 0.5, fontSize: '0.8rem', fontWeight: 700, color: '#475569' }}>+</Box>
       </Stack>
       <TableHead cols={['Producto', 'Cant.', 'Precio', 'Subtotal']} template={template} />
-      <Row template={template} delay={0.1} cells={['Martillo Truper 16 oz', '1', '$189.00', '$189.00']} />
+      <Row template={template} delay={0.1} cells={['Martillo 16 oz', '1', '$189.00', '$189.00']} />
       <Row template={template} delay={0.2} cells={['Clavo 2" (kg)', '2.5 kg', '$45.00', '$112.50']} />
       <Row template={template} delay={0.3} cells={[
-        <Stack key="p" direction="row" spacing={0.75} alignItems="center"><span>Cinta de aislar 3M</span><Chip color="#047857" bg="rgba(4,120,87,0.1)">Mayoreo</Chip></Stack>,
+        <Stack key="p" direction="row" spacing={0.75} alignItems="center"><span>Cinta de aislar</span><Chip color="#047857" bg="rgba(4,120,87,0.1)">Mayoreo</Chip></Stack>,
         '12', '$15.00', '$180.00',
       ]} />
       <Stack direction={{ xs: 'column', sm: 'row' }} justifyContent="space-between" alignItems={{ xs: 'stretch', sm: 'center' }} spacing={1.5} sx={{ mt: 2 }}>
