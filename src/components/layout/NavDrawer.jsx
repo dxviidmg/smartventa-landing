@@ -33,8 +33,8 @@ const NavDrawer = ({ open, onClose, navItems, onNav }) => (
           </ListItem>
         ))}
         <ListItem disablePadding>
-          <ListItemButton onClick={() => window.open(`${CONFIG.urls.app}/registrarme`, '_blank')}>
-            <ListItemText primary="Probar SmartVenta" primaryTypographyProps={{ color: ACCENT, fontFamily: POPPINS, fontWeight: 500 }} />
+          <ListItemButton onClick={() => window.open(CONFIG.urls.app, '_blank')}>
+            <ListItemText primary="Iniciar sesión" primaryTypographyProps={{ color: ACCENT, fontFamily: POPPINS, fontWeight: 500 }} />
           </ListItemButton>
         </ListItem>
       </List>

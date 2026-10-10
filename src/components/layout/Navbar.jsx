@@ -103,7 +103,7 @@ const Navbar = () => {
 
             <Button
               variant="outlined"
-              href={`${CONFIG.urls.app}/registrarme`}
+              href={CONFIG.urls.app}
               target="_blank"
               rel="noopener noreferrer"
               sx={{
@@ -119,7 +119,7 @@ const Navbar = () => {
                 '&:hover::after': { left: 0 },
               }}
             >
-              Probar SmartVenta
+              Iniciar sesión
             </Button>
 
             <IconButton
