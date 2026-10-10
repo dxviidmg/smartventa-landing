@@ -26,7 +26,7 @@ Copia `.env.template` a `.env` y completa:
 | --- | --- |
 | `NEXT_PUBLIC_WHATSAPP_PHONE` | Número de WhatsApp (solo dígitos) |
 | `NEXT_PUBLIC_WHATSAPP_PHONE_FORMATTED` | Número como se muestra en pantalla y en los textos legales |
-| `NEXT_PUBLIC_APP_URL` | URL de la app; el botón "Probar SmartVenta" abre `${APP_URL}/registrarme` |
+| `NEXT_PUBLIC_APP_URL` | URL de la app; "Iniciar sesión" (menú) abre `${APP_URL}` y "Crear mi cuenta" (hero, precios y contacto) abre `${APP_URL}/registrarme` |
 | `NEXT_PUBLIC_CONTACT_EMAIL` | Correo de contacto |
 
 Sin estas variables los textos legales muestran el teléfono vacío y los botones de registro no tienen destino.
@@ -49,7 +49,7 @@ src/
     config.js           Datos de contacto y empresa (leen las variables de entorno)
     index.js            Reexporta todo lo anterior
   data/                 Contenido separado del diseño
-    industries.js       19 industrias con icono y color
+    industries.js       27 industrias con icono y color
     scenarios.js        4 casos de negocio (lo que buscas / lo que logras)
     features.js         5 grupos de funciones
     legal.js            Términos y Privacidad
@@ -167,7 +167,7 @@ Breakpoints de MUI: `xs` 0, `sm` 600, `md` 900, `lg` 1200, `xl` 1536. El diseño
 
 ## Componentes y patrones
 
-- **Botón principal:** `{ ...pillSx, ...amberSx }` más padding. Contiene "Probar SmartVenta".
+- **Botón principal:** `{ ...pillSx, ...amberSx }` más padding. Contiene "Crear mi cuenta".
 - **Botón secundario:** píldora con borde (blanco sobre azul, `NAVY` sobre claro).
 - **Icono en círculo:** círculo de `GRADIENT` (o translúcido blanco sobre azul), icono blanco de MUI.
 - **Menú (`Navbar`):** fijo y transparente arriba; al pasar los 40 px de scroll aparece una capa con `NAV_BG` mediante un fade de 0.4 s. Altura constante. Enlaces en Poppins 500 de 16 px. El menú móvil (`NavDrawer`) usa el mismo degradado.
