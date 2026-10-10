@@ -8,12 +8,15 @@ import { faqItem, POPPINS, GRADIENT, NAVY, SURFACE_MUTED, SURFACE, BORDER, SHADO
 import SectionHeading from '../ui/SectionHeading';
 
 const faqs = [
-  { q: '¿Qué necesito para empezar?', a: 'Solo un navegador e internet. Funciona en computadora, tableta y celular, y te ayudamos a configurar tu impresora de tickets.' },
-  { q: '¿Puedo empezar con una sola tienda?', a: 'Sí. Y cuando crezcas no cambias de sistema: agregas sucursales y el precio por cada una baja.' },
-  { q: '¿Puedo traer mi catálogo actual?', a: 'Sí. Si lo tienes en Excel, lo importamos por ti con plantillas y validación, para que empieces con datos reales.' },
-  { q: '¿Quién puede cambiar precios, inventario y caja?', a: 'Solo el dueño. Vendedores y administradores solicitan los ajustes de inventario y el dueño los aprueba. Todo movimiento queda registrado.' },
-  { q: '¿Mi información está segura?', a: 'Sí. Vive en la nube y queda respaldada, así que tus datos están protegidos aunque tu computadora falle o se pierda.' },
-  { q: '¿Cómo funciona el soporte?', a: 'Directo por WhatsApp. Te ayudamos a configurar, resolver dudas y empezar a vender.' },
+  { q: '¿Qué necesito para empezar?', a: 'Solo un navegador e internet. Funciona en computadora, tableta y celular. Si usas impresora de tickets, te ayudamos a configurarla.' },
+  { q: '¿Puedo empezar con una sola tienda?', a: 'Sí. Cuando abras más sucursales o un almacén, las funciones para varias sucursales se activan solas y no cambias de sistema. Además, el precio por sucursal baja conforme creces.' },
+  { q: '¿Puedo traer mi catálogo actual?', a: 'Sí. Si lo tienes en Excel, lo cargamos por ti sin costo, con plantillas y validación, en un máximo de una semana.' },
+  { q: '¿Quién puede cambiar precios, inventario y caja?', a: 'Los costos y los precios de productos existentes solo los ve y cambia el dueño. El administrador pide los ajustes de inventario y el dueño los aprueba. Todo movimiento queda registrado con quién lo hizo y cuándo.' },
+  { q: '¿Mi información está protegida?', a: 'Tu información vive en la nube y se entra con usuario y contraseña. Cada persona solo ve lo que su rol permite, y el sistema guarda quién hizo cada movimiento.' },
+  { q: '¿Qué impresora necesito?', a: 'Una impresora térmica de tickets. Recomendamos la Epson TM-88V, por USB. Desde celular no se imprimen tickets.' },
+  { q: '¿Puedo ver una demo antes de contratar?', a: 'Sí. Escríbenos por WhatsApp y te damos acceso a una cuenta demo.' },
+  { q: '¿Cómo se paga y cómo se cancela?', a: 'El pago es mensual con tarjeta, con Mercado Pago, sin contratos largos. El propietario puede cancelar cuando quiera desde Mi plan: se detiene el cobro y el acceso se cierra de inmediato. No hay reembolsos, tus datos se conservan y puedes reactivar con soporte.' },
+  { q: '¿Cómo funciona el soporte?', a: 'Directo por WhatsApp, desde el mismo sistema, con los datos de tu negocio ya escritos. Te ayudamos a configurar, resolver dudas y empezar a vender.' },
 ];
 
 const FAQ = () => (
