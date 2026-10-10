@@ -29,6 +29,6 @@ export const usePricing = () => {
   const cta = () => (needsQuote ? openWhatsApp(ctaMessage) : window.open(`${CONFIG.urls.app}/registrarme`, '_blank'));
   return {
     stores, setStores, needsQuote, price, pricePerUnit, hasDiscount, cta,
-    ctaLabel: needsQuote ? 'Contáctanos' : 'Probar SmartVenta',
+    ctaLabel: needsQuote ? 'Contáctanos' : 'Crear mi cuenta',
   };
 };

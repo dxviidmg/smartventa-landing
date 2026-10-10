@@ -9,9 +9,9 @@ import { CONFIG, POPPINS, CTA_BG, AMBER, pillSx, amberSx, NAVY } from '../../con
 import SectionHeading from '../ui/SectionHeading';
 
 const steps = [
-  { title: 'Crea tu cuenta', desc: 'Regístrate y entra desde el navegador, en computadora, tableta o celular.' },
-  { title: 'Importamos tu catálogo', desc: 'Envíanos tu Excel y lo cargamos por ti, con plantillas y validación, para que empieces con datos reales.' },
-  { title: 'Vende con acompañamiento', desc: 'Te ayudamos por WhatsApp a configurar todo, resolver dudas y empezar a vender.' },
+  { title: 'Crea tu cuenta', desc: 'Regístrate en línea: tu negocio, tus datos y tu plan. Entras desde el navegador, en computadora, tableta o celular.' },
+  { title: 'Importamos tu catálogo', desc: 'Envíanos tu Excel y lo cargamos por ti, sin costo y en un máximo de una semana. Validamos los datos para que empieces con tus productos reales.' },
+  { title: 'Vende con acompañamiento', desc: 'Te ayudamos por WhatsApp a configurar tu impresora y tus sucursales, resolver dudas y empezar a vender.' },
 ];
 
 const pill = { ...pillSx, px: '45px', py: '14px' };
@@ -39,7 +39,7 @@ const Contact = () => {
         <SectionHeading
           id="start-title"
           title="Empieza hoy y toma el control de tu negocio"
-          subtitle="Tu cuenta lista en minutos, con tu catálogo cargado y soporte directo por WhatsApp."
+          subtitle="Tu cuenta lista en minutos, tu catálogo cargado por nosotros sin costo y soporte directo por WhatsApp."
           dark
           spacing={2}
           maxWidth={960}
@@ -85,14 +85,14 @@ const Contact = () => {
                 rel="noopener noreferrer"
                 sx={{ ...pill, ...amberSx }}
               >
-                Probar SmartVenta
+                Crear mi cuenta
               </Button>
               <Button
                 variant="outlined"
-                onClick={() => openWhatsApp('Hola, quiero conocer más sobre SmartVenta')}
+                onClick={() => openWhatsApp('Hola, quiero una demo de SmartVenta')}
                 sx={{ ...pill, color: '#fff', borderColor: 'rgba(255,255,255,0.7)', borderWidth: 2, '&:hover': { borderColor: '#fff', borderWidth: 2, bgcolor: 'rgba(255,255,255,0.1)' } }}
               >
-                Hablar con nosotros
+                Pedir una demo
               </Button>
             </Stack>
           </Box>

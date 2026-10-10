@@ -36,7 +36,7 @@ const Hero = () => (
 
               <motion.div variants={heroItem}>
                 <Typography sx={{ fontFamily: '"Open Sans", sans-serif', fontWeight: 400, color: '#fff', opacity: 0.7, maxWidth: 520, fontSize: { xs: 14, sm: 15 }, lineHeight: 1.6 }}>
-                  Ventas, inventario, caja y sucursales en un solo sistema. Empieza en minutos.
+                  Vende, controla tu inventario y cierra tu caja desde el navegador. De una tienda a varias sucursales y almacenes, sin instalar nada.
                 </Typography>
               </motion.div>
 
@@ -50,7 +50,7 @@ const Hero = () => (
                   rel="noopener noreferrer"
                   sx={{ ...pillSx, ...amberSx, mt: 1, px: '45px', py: '14px' }}
                 >
-                  Probar SmartVenta
+                  Crear mi cuenta
                 </Button>
               </motion.div>
             </Stack>
@@ -60,7 +60,7 @@ const Hero = () => (
         <Grid size={{ xs: 12, lg: 6 }}>
           <motion.div {...heroImage} initial="initial" animate="animate">
             <Box sx={{ maxWidth: { xs: 360, lg: 400 }, mx: 'auto' }}>
-            <HeroIllustration label="El dueño, tranquilo y feliz, controla desde una tableta 3 tiendas y 2 almacenes, con traspasos de almacén a tienda, de almacén central a almacén y entre tiendas" />
+            <HeroIllustration label="El dueño, tranquilo y feliz, controla desde una tableta 3 tiendas y 2 almacenes, con distribuciones del almacén a las tiendas y traspasos entre tiendas" />
             </Box>
           </motion.div>
         </Grid>
