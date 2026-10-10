@@ -49,7 +49,7 @@ export const tabs = [
   {
     key: 'inventario', label: 'Inventario y catálogo', mockup: InventoryMockup,
     features: [
-      { icon: History, title: 'Historial de stock', desc: 'Cada movimiento registra quién, cuándo y cuánto cambió.' },
+      { icon: History, title: 'Historial de inventario', desc: 'Cada movimiento registra quién, cuándo y cuánto cambió.' },
       { icon: PriceChange, title: 'Cambio masivo de precios', desc: 'Actualiza costo, precio y mayoreo de varios productos en 2 clics, con registro de antes, después, fecha y responsable.' },
       { icon: PhotoCamera, title: 'Catálogo con fotos', desc: 'Toma la foto con tu celular y distingue al instante productos parecidos al vender.' },
       { icon: Inventory2, title: 'Desempaque', desc: 'Convierte un costal de 20 kg en kilos listos para vender a granel, con un clic.' },
@@ -59,8 +59,8 @@ export const tabs = [
   {
     key: 'sucursales', label: 'Sucursales y análisis', mockup: BranchesMockup,
     features: [
-      { icon: SyncAlt, title: 'Traspasos entre tiendas', desc: 'Consulta el stock de otras tiendas y pide mercancía con un botón. El traspaso se confirma al escanear.' },
-      { icon: LocalShipping, title: 'Distribución desde almacén', desc: 'El almacén arma los envíos viendo el stock de todas las tiendas, y cada tienda confirma lo que recibe.' },
+      { icon: SyncAlt, title: 'Traspasos entre tiendas', desc: 'Consulta el inventario de otras tiendas y pide mercancía con un botón. El traspaso se confirma al escanear.' },
+      { icon: LocalShipping, title: 'Distribución desde almacén', desc: 'El almacén arma los envíos viendo el inventario de todas las tiendas, y cada tienda confirma lo que recibe.' },
       { icon: Insights, title: 'Tableros de ventas', desc: 'Ventas, ganancia y ticket promedio: descubre tu mejor tienda, día y hora.' },
       { icon: TrendingDown, title: 'Cancelaciones y devoluciones', desc: 'Mide cuánto se cancela o devuelve, en qué tienda, cuándo y por qué.' },
       { icon: Badge, title: 'Vendedores y permisos', desc: 'Vendedores ilimitados por tienda con tres roles (dueño, administrador y vendedor) y ventas por vendedor.' },
@@ -69,10 +69,10 @@ export const tabs = [
   {
     key: 'control', label: 'Control total del inventario', mockup: null,
     features: [
-      { icon: ManageSearch, title: 'Auditoría interna', desc: 'Detecta diferencias de stock, movimientos que no cuadran, códigos repetidos, errores de costo o mayoreo y productos sin movimiento.' },
+      { icon: ManageSearch, title: 'Auditoría interna', desc: 'Detecta diferencias de inventario, movimientos que no cuadran, códigos repetidos, errores de costo o mayoreo y productos sin movimiento.' },
       { icon: HowToReg, title: 'Ajustes con aprobación', desc: 'Vendedores y administradores piden el ajuste con la cantidad real y el dueño lo aprueba.' },
-      { icon: Lock, title: 'Stock, caja y precios protegidos', desc: 'Solo el dueño cambia el stock, edita entradas y salidas de dinero y modifica precios. El costo y el mayoreo nunca superan el precio de venta.' },
-      { icon: QrCodeScanner, title: 'Traspasos verificados', desc: 'Solo se envía lo que hay en stock, la tienda confirma escaneando lo que recibe y el dueño puede corregir cantidades.' },
+      { icon: Lock, title: 'Inventario, caja y precios protegidos', desc: 'Solo el dueño cambia el inventario, edita entradas y salidas de dinero y modifica precios. El costo y el mayoreo nunca superan el precio de venta.' },
+      { icon: QrCodeScanner, title: 'Traspasos verificados', desc: 'Solo se envía lo que hay en inventario, la tienda confirma escaneando lo que recibe y el dueño puede corregir cantidades.' },
     ],
   },
 ];

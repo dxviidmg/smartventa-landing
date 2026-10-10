@@ -17,7 +17,7 @@ const NAV_ITEMS = [
   { label: 'Industrias', id: 'industries' },
   { label: 'Funciones', id: 'product' },
   { label: 'Precios', id: 'pricing' },
-  { label: 'FAQ', id: 'faq' },
+  { label: 'Preguntas frecuentes', id: 'faq' },
 ];
 
 const Navbar = () => {

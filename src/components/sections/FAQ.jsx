@@ -11,7 +11,7 @@ const faqs = [
   { q: '¿Qué necesito para empezar?', a: 'Solo un navegador e internet. Funciona en computadora, tableta y celular, y te ayudamos a configurar tu impresora de tickets.' },
   { q: '¿Puedo empezar con una sola tienda?', a: 'Sí. Y cuando crezcas no cambias de sistema: agregas sucursales y el precio por cada una baja.' },
   { q: '¿Puedo traer mi catálogo actual?', a: 'Sí. Si lo tienes en Excel, lo importamos por ti con plantillas y validación, para que empieces con datos reales.' },
-  { q: '¿Quién puede cambiar precios, stock y caja?', a: 'Solo el dueño. Vendedores y administradores solicitan los ajustes de stock y el dueño los aprueba. Todo movimiento queda registrado.' },
+  { q: '¿Quién puede cambiar precios, inventario y caja?', a: 'Solo el dueño. Vendedores y administradores solicitan los ajustes de inventario y el dueño los aprueba. Todo movimiento queda registrado.' },
   { q: '¿Mi información está segura?', a: 'Sí. Vive en la nube y queda respaldada, así que tus datos están protegidos aunque tu computadora falle o se pierda.' },
   { q: '¿Cómo funciona el soporte?', a: 'Directo por WhatsApp. Te ayudamos a configurar, resolver dudas y empezar a vender.' },
 ];

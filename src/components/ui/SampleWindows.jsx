@@ -125,7 +125,7 @@ export const InventoryMockup = () => {
     <Window title="Historial · Croquetas 20 kg">
       <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ mb: 1.5 }}>
         <Typography sx={{ fontSize: '0.85rem', fontWeight: 700, color: '#0f172a' }}>Movimientos de hoy</Typography>
-        <Chip color="#047857" bg="rgba(4,120,87,0.1)">Stock actual: 41 kg</Chip>
+        <Chip color="#047857" bg="rgba(4,120,87,0.1)">Inventario actual: 41 kg</Chip>
       </Stack>
       <TableHead cols={['Movimiento', 'Usuario', 'Antes', 'Después']} template={template} />
       {rows.map((r, i) => (

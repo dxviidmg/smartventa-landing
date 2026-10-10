@@ -24,7 +24,7 @@ export const scenarios = {
     ],
     solutions: [
       'Ve todas tus tiendas en una sola pantalla.',
-      'Consulta el stock de cada sucursal y haz traspasos al instante.',
+      'Consulta el inventario de cada sucursal y haz traspasos al instante.',
       'Cambia un precio una vez y se aplica en todas.',
     ],
   },
@@ -37,7 +37,7 @@ export const scenarios = {
     ],
     solutions: [
       'Controla tienda y almacén aunque no estés presente.',
-      'Conoce tu stock real y cuándo reponer según lo que vendes.',
+      'Conoce tu inventario real y cuándo reponer según lo que vendes.',
       'Cada movimiento queda registrado: quién, qué, cuándo y dónde.',
     ],
   },
@@ -46,12 +46,12 @@ export const scenarios = {
     problems: [
       'Tener el control de cada ubicación.',
       'Mover mercancía entre tiendas y almacenes con orden.',
-      'Conocer el stock exacto de cada lugar.',
+      'Conocer el inventario exacto de cada lugar.',
     ],
     solutions: [
       'Todas tus ubicaciones en una sola pantalla.',
       'Traspasos y surtido registrados de principio a fin.',
-      'Stock exacto por tienda y almacén, en tiempo real.',
+      'Inventario exacto por tienda y almacén, en tiempo real.',
     ],
   },
 };
