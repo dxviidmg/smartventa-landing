@@ -1,6 +1,6 @@
 'use client';
 
-import { Box, Container, Typography, Stack, Button } from '@mui/material';
+import { Box, Container, Typography, Stack, Button, Collapse } from '@mui/material';
 import ArrowForward from '@mui/icons-material/ArrowForward';
 import CheckCircle from '@mui/icons-material/CheckCircle';
 
@@ -8,9 +8,11 @@ import { POPPINS, GRADIENT, BLUE_BG, SURFACE_MUTED, pillSx, amberSx, NAVY, PRIMA
 import SectionHeading from '../ui/SectionHeading';
 import { usePricing, formatPriceDecimals, MAX_UNITS_WITH_PRICE } from '../../hooks/usePricing';
 
+const MULTI_STORE_ITEM = 'Traspasos y distribuciones entre sucursales';
+
 const INCLUDED = [
   'Punto de venta, caja e inventario',
-  'Traspasos y distribuciones entre sucursales',
+  MULTI_STORE_ITEM,
   'Tableros de ventas, auditoría y cambios masivos de precios',
   'Vendedores ilimitados sin costo',
   'Catálogo cargado por nosotros sin costo',
@@ -43,13 +45,15 @@ const PriceBlock = ({ p, dark, size = 56 }) =>
     </Box>
   );
 
-const Included = ({ dark, columns }) => (
-  <Box component="ul" sx={{ listStyle: 'none', m: 0, p: 0, display: 'grid', gap: 1.75, gridTemplateColumns: columns ? { xs: '1fr', sm: 'repeat(2, 1fr)' } : '1fr' }}>
+const Included = ({ dark, columns, multiStore }) => (
+  <Box component="ul" sx={{ listStyle: 'none', m: 0, p: 0, display: 'grid', columnGap: 1.75, gridTemplateColumns: columns ? { xs: '1fr', sm: 'repeat(2, 1fr)' } : '1fr' }}>
     {INCLUDED.map((t) => (
-      <Stack component="li" key={t} direction="row" spacing={1.25} alignItems="flex-start">
-        <CheckCircle aria-hidden="true" sx={{ color: dark ? '#BAE6FD' : PRIMARY, fontSize: 20, flexShrink: 0, mt: '1px' }} />
-        <Typography sx={{ fontSize: 15, color: dark ? '#fff' : '#475569' }}>{t}</Typography>
-      </Stack>
+      <Collapse component="li" key={t} in={multiStore || t !== MULTI_STORE_ITEM} timeout={350}>
+        <Stack direction="row" spacing={1.25} alignItems="flex-start" sx={{ pb: 1.75 }}>
+          <CheckCircle aria-hidden="true" sx={{ color: dark ? '#BAE6FD' : PRIMARY, fontSize: 20, flexShrink: 0, mt: '1px' }} />
+          <Typography sx={{ fontSize: 15, color: dark ? '#fff' : '#475569' }}>{t}</Typography>
+        </Stack>
+      </Collapse>
     ))}
   </Box>
 );
@@ -94,7 +98,7 @@ const Pricing = () => {
           </Box>
           <Box sx={{ p: { xs: 3, sm: 4.5 }, background: BLUE_BG, color: '#fff' }}>
             <Typography sx={{ fontFamily: POPPINS, fontWeight: 500, fontSize: 18, mb: 3 }}>Qué incluye cada plan</Typography>
-            <Included dark />
+            <Included dark multiStore={p.stores > 1} />
           </Box>
         </Box>
       </Container>
