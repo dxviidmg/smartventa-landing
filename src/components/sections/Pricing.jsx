@@ -8,6 +8,9 @@ import { POPPINS, GRADIENT, BLUE_BG, SURFACE_MUTED, pillSx, amberSx, NAVY, PRIMA
 import SectionHeading from '../ui/SectionHeading';
 import { usePricing, formatPriceDecimals, MAX_UNITS_WITH_PRICE } from '../../hooks/usePricing';
 
+const CHECK_GREEN = '#4ADE80';
+const CHECK_GREEN_LIGHT = '#16A34A';
+
 const MULTI_STORE_ITEM = 'Traspasos y distribuciones entre sucursales';
 
 const INCLUDED = [
@@ -50,7 +53,7 @@ const Included = ({ dark, columns, multiStore }) => (
     {INCLUDED.map((t) => (
       <Collapse component="li" key={t} in={multiStore || t !== MULTI_STORE_ITEM} timeout={350}>
         <Stack direction="row" spacing={1.25} alignItems="flex-start" sx={{ pb: 1.75 }}>
-          <CheckCircle aria-hidden="true" sx={{ color: dark ? '#BAE6FD' : PRIMARY, fontSize: 20, flexShrink: 0, mt: '1px' }} />
+          <CheckCircle aria-hidden="true" sx={{ color: dark ? CHECK_GREEN : CHECK_GREEN_LIGHT, fontSize: 20, flexShrink: 0, mt: '1px' }} />
           <Typography sx={{ fontSize: 15, color: dark ? '#fff' : '#475569' }}>{t}</Typography>
         </Stack>
       </Collapse>
