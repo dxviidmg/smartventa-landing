@@ -10,7 +10,7 @@ import { POPPINS, BLUE_BG } from '../../constants';
 // Same blue as the other gradient blocks, with a darker start so white text keeps good contrast
 
 const stats = [
-  { value: 163475, label: 'ventas procesadas con SmartVenta', icon: ReceiptLong },
+  { value: 167365, label: 'ventas procesadas con SmartVenta', icon: ReceiptLong },
   { value: 'Enero 2025', label: 'inicio de operaciones', plain: true, icon: CalendarMonth },
 ];
 
