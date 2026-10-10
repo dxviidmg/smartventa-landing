@@ -28,7 +28,7 @@ const LegalDialog = ({ open, onClose, document }) => (
               {title}
             </Typography>
             <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
-              {text.replace('{phone}', CONFIG.contact.phone)}
+              {text.replace('{phone}', CONFIG.contact.phone).replace('{email}', CONFIG.contact.email ?? '')}
             </Typography>
           </Box>
         ))}
