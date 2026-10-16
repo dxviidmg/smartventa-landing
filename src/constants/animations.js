@@ -15,18 +15,18 @@ export const faqItem = {
 // Hero stagger
 export const heroContainer = {
   initial: {},
-  animate: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
+  animate: { transition: { staggerChildren: 0.08, delayChildren: 0.05 } },
 };
 
 export const heroItem = {
   initial: { opacity: 0, y: 30 },
-  animate: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE } },
+  animate: { opacity: 1, y: 0, transition: { duration: 0.4, ease: EASE } },
 };
 
 // Hero image
 export const heroImage = {
   initial: { opacity: 0, x: 40, scale: 0.96 },
-  animate: { opacity: 1, x: 0, scale: 1, transition: { duration: 0.7, delay: 0.3, ease: EASE } },
+  animate: { opacity: 1, x: 0, scale: 1, transition: { duration: 0.5, delay: 0.45, ease: EASE } },
 };
 
 // Generic fade up

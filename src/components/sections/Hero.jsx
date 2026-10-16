@@ -58,7 +58,7 @@ const Hero = () => (
         </Grid>
 
         <Grid size={{ xs: 12, lg: 6 }}>
-          <motion.div {...heroImage} initial="initial" animate="animate">
+          <motion.div {...heroImage}>
             <Box sx={{ maxWidth: { xs: 360, lg: 400 }, mx: 'auto' }}>
             <HeroIllustration label="El dueño, tranquilo y feliz, controla desde una tableta 3 tiendas y 2 almacenes, con distribuciones del almacén a las tiendas y traspasos entre tiendas" />
             </Box>
