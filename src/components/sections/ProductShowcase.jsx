@@ -1,7 +1,8 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import { Box, Container, Typography, Stack } from '@mui/material';
-import { POPPINS, BLUE_BG } from '../../constants';
+import { slideIn, fadeUpDelay, POPPINS, BLUE_BG } from '../../constants';
 import SectionHeading from '../ui/SectionHeading';
 import { tabs } from '../../data/features';
 
@@ -34,14 +35,14 @@ const ProductShowcase = () => (
               aria-labelledby={`product-${t.key}`}
               sx={{ display: 'grid', gap: { xs: 3, md: 6 }, gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, alignItems: 'center' }}
             >
-              {Mockup && <Box sx={{ order: { md: flip ? 2 : 1 } }}><Mockup /></Box>}
-              <Box sx={{ order: { md: flip ? 1 : 2 }, gridColumn: Mockup ? 'auto' : { md: '1 / -1' } }}>
+              {Mockup && <Box component={motion.div} {...slideIn(flip ? 1 : -1)} sx={{ order: { md: flip ? 2 : 1 } }}><Mockup /></Box>}
+              <Box component={motion.div} {...slideIn(flip ? -1 : 1, 0.1)} sx={{ order: { md: flip ? 1 : 2 }, gridColumn: Mockup ? 'auto' : { md: '1 / -1' } }}>
                 <Typography id={`product-${t.key}`} component="h3" sx={{ fontFamily: POPPINS, fontWeight: 500, fontSize: { xs: 24, md: 30 }, color: '#fff', mb: 2.5 }}>
                   {t.label}
                 </Typography>
                 <Stack spacing={Mockup ? 2 : 0} sx={Mockup ? undefined : { display: 'grid', gap: 3, gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)' }, '& > *': { m: 0 } }}>
-                  {t.features.map((f) => (
-                    <Stack key={f.title} direction="row" spacing={1.5} alignItems="flex-start">
+                  {t.features.map((f, j) => (
+                    <Stack component={motion.div} {...fadeUpDelay(0.25 + j * 0.08)} key={f.title} direction="row" spacing={1.5} alignItems="flex-start">
                       <IconBadge icon={f.icon} />
                       <Box>
                         <Typography component="h4" sx={{ fontFamily: POPPINS, fontWeight: 500, fontSize: 15, color: '#fff' }}>{f.title}</Typography>

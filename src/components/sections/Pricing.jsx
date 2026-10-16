@@ -1,10 +1,11 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import { Box, Container, Typography, Stack, Button, Collapse } from '@mui/material';
 import ArrowForward from '@mui/icons-material/ArrowForward';
 import CheckCircle from '@mui/icons-material/CheckCircle';
 
-import { POPPINS, GRADIENT, BLUE_BG, SURFACE_MUTED, pillSx, amberSx, NAVY, PRIMARY, SURFACE, BORDER } from '../../constants';
+import { scaleIn, POPPINS, GRADIENT, BLUE_BG, SURFACE_MUTED, pillSx, amberSx, NAVY, PRIMARY, SURFACE, BORDER } from '../../constants';
 import SectionHeading from '../ui/SectionHeading';
 import { usePricing, formatPriceDecimals, MAX_UNITS_WITH_PRICE } from '../../hooks/usePricing';
 
@@ -69,7 +70,7 @@ const Pricing = () => {
     <Box component="section" id="pricing" aria-labelledby="pricing-title" sx={{ py: { xs: 7, md: 10 }, bgcolor: SURFACE_MUTED, scrollMarginTop: '80px' }}>
       <Container maxWidth="md">
         <SectionHeading id="pricing-title" eyebrow="Precios transparentes" title="Un precio por sucursal que baja al crecer" subtitle="Elige cuántas sucursales tienes y ve cuánto pagarías al mes. Entre más sucursales, menos pagas por cada una." maxWidth={680} />
-        <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, borderRadius: '28px', border: `1px solid ${BORDER}`, overflow: 'hidden', boxShadow: '0 20px 44px rgba(15,23,42,0.14)', maxWidth: 880, mx: 'auto' }}>
+        <Box component={motion.div} {...scaleIn(0.1)} sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, borderRadius: '28px', border: `1px solid ${BORDER}`, overflow: 'hidden', boxShadow: '0 20px 44px rgba(15,23,42,0.14)', maxWidth: 880, mx: 'auto' }}>
           <Box sx={{ p: { xs: 3, sm: 4.5 }, bgcolor: SURFACE }}>
             <Box sx={{ textAlign: 'center', mb: 2 }}>
               <Typography component="label" htmlFor="pricing-range" sx={{ display: 'block', fontFamily: POPPINS, fontWeight: 500, fontSize: 18, color: '#0F172A' }}>

@@ -36,3 +36,22 @@ export const fadeUp = {
   viewport: once,
   transition: { duration: 0.5, ease: EASE },
 };
+
+// Scroll reveal from a side (dir: -1 left, 1 right)
+export const slideIn = (dir = 1, delay = 0) => ({
+  initial: { opacity: 0, x: 40 * dir },
+  whileInView: { opacity: 1, x: 0 },
+  viewport: once,
+  transition: { duration: 0.6, delay, ease: EASE },
+});
+
+// Scroll reveal with scale
+export const scaleIn = (delay = 0) => ({
+  initial: { opacity: 0, y: 24, scale: 0.97 },
+  whileInView: { opacity: 1, y: 0, scale: 1 },
+  viewport: once,
+  transition: { duration: 0.6, delay, ease: EASE },
+});
+
+// Fade up with custom delay (for staggering lists/cards)
+export const fadeUpDelay = (delay = 0) => ({ ...fadeUp, transition: { duration: 0.5, delay, ease: EASE } });

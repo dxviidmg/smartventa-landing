@@ -1,10 +1,11 @@
 'use client';
 
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { Box, Container, Typography, Stack } from '@mui/material';
 import Check from '@mui/icons-material/Check';
 import Flag from '@mui/icons-material/Flag';
-import { POPPINS, CTA_BG, SURFACE_MUTED, NAVY, PRIMARY, SURFACE, BORDER, SHADOW_CARD } from '../../constants';
+import { fadeUpDelay, POPPINS, CTA_BG, SURFACE_MUTED, NAVY, PRIMARY, SURFACE, BORDER, SHADOW_CARD } from '../../constants';
 import { Arrows, scenes } from '../ui/ScenarioScenes';
 import { scenarioKeys, scenarios } from '../../data/scenarios';
 import SectionHeading from '../ui/SectionHeading';
@@ -40,7 +41,7 @@ const BeforeAfter = () => {
       <Container maxWidth="lg">
         <SectionHeading id="situation-title" title="Una solución para cada tipo de negocio" mb={{ xs: 3.5, md: 5 }} />
 
-        <Box sx={{ display: 'flex', justifyContent: 'center', mb: 3.5 }}>
+        <Box component={motion.div} {...fadeUpDelay(0.1)} sx={{ display: 'flex', justifyContent: 'center', mb: 3.5 }}>
           <Box
             role="tablist"
             aria-label="Configuración de tu negocio"
@@ -80,14 +81,14 @@ const BeforeAfter = () => {
           aria-labelledby={`situation-tab-${key}`}
           sx={{ display: 'grid', gap: 3, alignItems: 'stretch', gridTemplateColumns: { xs: '1fr', md: 'repeat(12, 1fr)' } }}
         >
-          <Box sx={{ gridColumn: { md: 'span 4' }, bgcolor: '#D5DFEE', borderRadius: '24px', p: { xs: 2, md: 2 }, display: 'grid', placeItems: 'center', border: `1px solid ${BORDER}`, boxShadow: SHADOW_CARD }}>
+          <Box component={motion.div} {...fadeUpDelay(0.1)} sx={{ gridColumn: { md: 'span 4' }, bgcolor: '#D5DFEE', borderRadius: '24px', p: { xs: 2, md: 2 }, display: 'grid', placeItems: 'center', border: `1px solid ${BORDER}`, boxShadow: SHADOW_CARD }}>
             <svg viewBox="0 0 420 330" role="img" aria-label={`Ilustración del caso: ${sc.title}`} style={{ width: '100%', maxWidth: 420, height: 'auto', display: 'block', margin: '0 auto' }}>
               <Arrows />
               {scenes[key]}
             </svg>
           </Box>
 
-            <Box sx={{ gridColumn: { md: 'span 4' }, p: { xs: 3, md: 3.5 }, borderRadius: '24px', bgcolor: SURFACE, border: `1px solid ${BORDER}`, boxShadow: SHADOW_CARD }}>
+            <Box component={motion.div} {...fadeUpDelay(0.25)} sx={{ gridColumn: { md: 'span 4' }, p: { xs: 3, md: 3.5 }, borderRadius: '24px', bgcolor: SURFACE, border: `1px solid ${BORDER}`, boxShadow: SHADOW_CARD }}>
               <Typography sx={{ fontFamily: POPPINS, fontWeight: 500, fontSize: 18, color: PRIMARY, mb: 2 }}>Lo que buscas</Typography>
               <Stack spacing={1.75}>
                 {sc.problems.map((p) => (
@@ -98,7 +99,7 @@ const BeforeAfter = () => {
                 ))}
               </Stack>
             </Box>
-            <Box sx={{ gridColumn: { md: 'span 4' }, p: { xs: 3, md: 3.5 }, borderRadius: '24px', background: CTA_BG, boxShadow: '0 16px 36px rgba(0,60,180,0.22)' }}>
+            <Box component={motion.div} {...fadeUpDelay(0.4)} sx={{ gridColumn: { md: 'span 4' }, p: { xs: 3, md: 3.5 }, borderRadius: '24px', background: CTA_BG, boxShadow: '0 16px 36px rgba(0,60,180,0.22)' }}>
               <Typography sx={{ fontFamily: POPPINS, fontWeight: 500, fontSize: 18, color: '#fff', mb: 2 }}>Lo que logras con SmartVenta</Typography>
               <Stack spacing={1.75}>
                 {sc.solutions.map((p) => (
