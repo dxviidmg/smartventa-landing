@@ -42,13 +42,15 @@ const ProductShowcase = () => (
                 </Typography>
                 <Stack spacing={Mockup ? 2 : 0} sx={Mockup ? undefined : { display: 'grid', gap: 3, gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)' }, '& > *': { m: 0 } }}>
                   {t.features.map((f, j) => (
-                    <Stack component={motion.div} {...fadeUpDelay(0.25 + j * 0.08)} key={f.title} direction="row" spacing={1.5} alignItems="flex-start">
-                      <IconBadge icon={f.icon} />
-                      <Box>
-                        <Typography component="h4" sx={{ fontFamily: POPPINS, fontWeight: 500, fontSize: 15, color: '#fff' }}>{f.title}</Typography>
-                        <Typography sx={{ fontSize: 14, color: 'rgba(255,255,255,0.92)', lineHeight: 1.6 }}>{f.desc}</Typography>
-                      </Box>
-                    </Stack>
+                    <motion.div key={f.title} {...fadeUpDelay(0.25 + j * 0.08)}>
+                      <Stack direction="row" spacing={1.5} alignItems="flex-start">
+                        <IconBadge icon={f.icon} />
+                        <Box>
+                          <Typography component="h4" sx={{ fontFamily: POPPINS, fontWeight: 500, fontSize: 15, color: '#fff' }}>{f.title}</Typography>
+                          <Typography sx={{ fontSize: 14, color: 'rgba(255,255,255,0.92)', lineHeight: 1.6 }}>{f.desc}</Typography>
+                        </Box>
+                      </Stack>
+                    </motion.div>
                   ))}
                 </Stack>
               </Box>
