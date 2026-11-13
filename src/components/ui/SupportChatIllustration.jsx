@@ -22,17 +22,21 @@ const SupportChatIllustration = ({ label }) => (
 
     {/* messages */}
     <g fontFamily="Poppins, sans-serif">
-      <rect x="116" y="104" width="112" height="46" rx="14" fill="#DCF8C6" />
-      <text x="126" y="123" fontSize="11" fontWeight="500" fill="#0F172A">¿Cómo importo</text>
-      <text x="126" y="138" fontSize="11" fontWeight="500" fill="#0F172A">mi Excel?</text>
+      <rect x="116" y="96" width="112" height="46" rx="14" fill="#DCF8C6" />
+      <text x="126" y="115" fontSize="11" fontWeight="500" fill="#0F172A">¿Cómo importo</text>
+      <text x="126" y="130" fontSize="11" fontWeight="500" fill="#0F172A">mi Excel?</text>
 
-      <rect x="92" y="164" width="132" height="62" rx="14" fill="#fff" />
-      <text x="102" y="183" fontSize="11" fontWeight="500" fill="#0F172A">Te ayudamos a</text>
-      <text x="102" y="198" fontSize="11" fontWeight="500" fill="#0F172A">cargarlo, paso a</text>
-      <text x="102" y="213" fontSize="11" fontWeight="500" fill="#0F172A">paso.</text>
+      <rect x="92" y="150" width="132" height="62" rx="14" fill="#fff" />
+      <text x="102" y="169" fontSize="11" fontWeight="500" fill="#0F172A">Te ayudamos a</text>
+      <text x="102" y="184" fontSize="11" fontWeight="500" fill="#0F172A">cargarlo, paso a</text>
+      <text x="102" y="199" fontSize="11" fontWeight="500" fill="#0F172A">paso.</text>
 
-      <rect x="92" y="240" width="96" height="34" rx="14" fill="#fff" />
-      <text x="102" y="261" fontSize="11" fontWeight="500" fill="#0F172A">Listo, ya vendes</text>
+      <rect x="92" y="220" width="116" height="38" rx="14" fill="#fff" />
+      <text x="102" y="236" fontSize="11" fontWeight="500" fill="#0F172A">Listo, ya puedes</text>
+      <text x="102" y="250" fontSize="11" fontWeight="500" fill="#0F172A">iniciar a vender</text>
+
+      <rect x="164" y="266" width="64" height="26" rx="13" fill="#DCF8C6" />
+      <text x="175" y="283" fontSize="11" fontWeight="500" fill="#0F172A">¡Gracias!</text>
     </g>
     {/* input bar */}
     <rect x="88" y="300" width="144" height="28" rx="14" fill="#fff" />
