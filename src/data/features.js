@@ -47,13 +47,13 @@ export const tabs = [
     ],
   },
   {
-    key: 'inventario', label: 'Inventario y catálogo', mockup: InventoryMockup,
+    key: 'inventario', label: 'Inventario', mockup: InventoryMockup,
     features: [
       { icon: History, title: 'Sabes quién movió qué', desc: 'Cada venta, entrada, traspaso o ajuste guarda quién lo hizo, cuándo y cuánto cambió el inventario.' },
       { icon: PriceChange, title: 'Cambia precios de golpe', desc: 'Sube el costo y el precio de varios productos a la vez. Queda registrado el precio anterior, el nuevo, la fecha y quién lo cambió.' },
-      { icon: PhotoCamera, title: 'Catálogo con fotos', desc: 'Tomas la foto desde el celular. Al vender, distingues al instante productos parecidos.' },
+      { icon: PhotoCamera, title: 'Inventario con fotos', desc: 'Tomas la foto desde el celular. Al vender, distingues al instante productos parecidos.' },
       { icon: Inventory2, title: 'Del costal al kilo', desc: 'Defines una vez que 1 costal = 20 kilos y lo desempacas en la tienda para venderlo a granel.' },
-      { icon: UploadFile, title: 'Tu catálogo actual, sin teclear', desc: 'Subes tu Excel y el sistema revisa los datos antes de guardarlos. También puedes exportar tu catálogo e inventario.' },
+      { icon: UploadFile, title: 'Tu inventario actual, sin teclear', desc: 'Subes tu Excel y el sistema revisa los datos antes de guardarlos. También puedes exportar tu inventario.' },
     ],
   },
   {

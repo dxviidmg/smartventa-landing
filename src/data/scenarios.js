@@ -25,7 +25,7 @@ export const scenarios = {
     solutions: [
       'Entras a cualquier tienda desde una sola cuenta y comparas sus ventas.',
       'Ves cuánto hay en las otras sucursales y pides el traspaso desde la venta.',
-      'Tu catálogo y tus precios son uno solo para todo el negocio: cambias un precio una vez y vale en todas.',
+      'Tu inventario y tus precios son uno solo para todo el negocio: cambias un precio una vez y vale en todas.',
     ],
   },
   singleWarehouse: {

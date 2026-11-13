@@ -10,7 +10,7 @@ import SectionHeading from '../ui/SectionHeading';
 const faqs = [
   { q: '¿Qué necesito para empezar?', a: 'Solo un navegador e internet. Funciona en computadora, tableta y celular. Si usas impresora de tickets, te ayudamos a configurarla.' },
   { q: '¿Puedo empezar con una sola tienda?', a: 'Sí. Cuando abras más sucursales o un almacén, las funciones para varias sucursales se activan solas y no cambias de sistema. Además, el precio por sucursal baja conforme creces.' },
-  { q: '¿Puedo traer mi catálogo actual?', a: 'Sí. Si lo tienes en Excel, lo cargamos por ti sin costo, con plantillas y validación, en un máximo de una semana.' },
+  { q: '¿Puedo traer mi inventario actual?', a: 'Sí. Si lo tienes en Excel, lo cargamos por ti sin costo, con plantillas y validación, en un máximo de una semana.' },
   { q: '¿Quién puede cambiar precios, inventario y caja?', a: 'Los costos y los precios de productos existentes solo los ve y cambia el dueño. El administrador pide los ajustes de inventario y el dueño los aprueba. Todo movimiento queda registrado con quién lo hizo y cuándo.' },
   { q: '¿Mi información está protegida?', a: 'Tu información vive en la nube y se entra con usuario y contraseña. Cada persona solo ve lo que su rol permite, y el sistema guarda quién hizo cada movimiento.' },
   { q: '¿Qué impresora necesito?', a: 'Una impresora térmica de tickets. Recomendamos la Epson TM-88V, por USB. Desde celular no se imprimen tickets.' },

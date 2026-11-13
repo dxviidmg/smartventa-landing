@@ -19,7 +19,7 @@ const INCLUDED = [
   MULTI_STORE_ITEM,
   'Tableros de ventas, auditoría y cambios masivos de precios',
   'Vendedores ilimitados sin costo',
-  'Catálogo cargado por nosotros sin costo',
+  'Inventario cargado por nosotros sin costo',
   'Soporte directo por WhatsApp',
   'Mes a mes, listo para usar desde el navegador',
 ];

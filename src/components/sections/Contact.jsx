@@ -10,7 +10,7 @@ import SectionHeading from '../ui/SectionHeading';
 
 const steps = [
   { title: 'Crea tu cuenta', desc: 'Regístrate en línea: tu negocio, tus datos y tu plan. Entras desde el navegador, en computadora, tableta o celular.' },
-  { title: 'Importamos tu catálogo', desc: 'Envíanos tu Excel y lo cargamos por ti, sin costo y en un máximo de una semana. Validamos los datos para que empieces con tus productos reales.' },
+  { title: 'Importamos tu inventario', desc: 'Envíanos tu Excel y lo cargamos por ti, sin costo y en un máximo de una semana. Validamos los datos para que empieces con tus productos reales.' },
   { title: 'Vende con acompañamiento', desc: 'Te ayudamos por WhatsApp a configurar tu impresora y tus sucursales, resolver dudas y empezar a vender.' },
 ];
 
@@ -39,7 +39,7 @@ const Contact = () => {
         <SectionHeading
           id="start-title"
           title="Empieza hoy y toma el control de tu negocio"
-          subtitle="Tu cuenta lista en minutos, tu catálogo cargado por nosotros sin costo y soporte directo por WhatsApp."
+          subtitle="Tu cuenta lista en minutos, tu inventario cargado por nosotros sin costo y soporte directo por WhatsApp."
           dark
           spacing={2}
           maxWidth={960}
@@ -50,7 +50,7 @@ const Contact = () => {
 
         <Box sx={{ display: 'grid', gap: { xs: 4, md: 6 }, gridTemplateColumns: { xs: '1fr', md: '5fr 7fr' }, alignItems: 'center' }}>
           <Box sx={{ maxWidth: { xs: 320, md: 'none' }, mx: 'auto', width: '100%' }}>
-            <OwnerPhoneIllustration label="El dueño revisa una venta desde su celular, con el catálogo ya cargado" />
+            <OwnerPhoneIllustration label="El dueño revisa una venta desde su celular, con el inventario ya cargado" />
           </Box>
 
           <Box>
