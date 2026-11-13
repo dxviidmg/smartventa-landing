@@ -23,8 +23,8 @@ export default function Home() {
         <BeforeAfter />
         <ProductShowcase />
         <Pricing />
-        <FAQ />
         <Contact />
+        <FAQ />
       </main>
       <WhatsAppButton />
       <Footer />
